@@ -56,6 +56,7 @@ input, button {
 input { flex: 1; min-width: 0; }
 button { cursor: pointer; }
 button:hover { border-color: var(--accent); }
+button:disabled { cursor: wait; opacity: .6; }
 
 .kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
 .kpi { background: #0b162c; border: 1px solid #28406a; border-radius: 12px; padding: 10px; text-align: center; }

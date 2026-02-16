@@ -8,6 +8,7 @@ const TARGET_PHRASES = [
 ];
 
 const DATA_URL = "./data/latest.json";
+const FORCE_REFRESH_URL = "/api/refresh";
 
 const norm = (s) => (s || "")
   .toLowerCase()
@@ -118,6 +119,32 @@ async function refresh() {
   }
 }
 
+async function forceRefresh() {
+  const status = document.getElementById("helenaStatus");
+  const button = document.getElementById("forceRefreshBtn");
+
+  button.disabled = true;
+  status.className = "status";
+  status.textContent = "Trwa wymuszona aktualizacja monitorowanych źródeł…";
+
+  try {
+    const response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || payload.ok === false) {
+      throw new Error(payload.error || `HTTP ${response.status}`);
+    }
+
+    await refresh();
+  } catch (error) {
+    status.className = "status err";
+    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}`;
+    console.error(error);
+  } finally {
+    button.disabled = false;
+  }
+}
+
 document.getElementById("refreshBtn").addEventListener("click", refresh);
+document.getElementById("forceRefreshBtn").addEventListener("click", forceRefresh);
 document.getElementById("q").addEventListener("input", refresh);
 refresh();
