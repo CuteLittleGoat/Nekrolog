@@ -158,7 +158,7 @@ function renderHelenaStatus(container, snap) {
 function renderSources(container, sources) {
   container.innerHTML = "";
   if (!sources?.length) {
-    container.innerHTML = `<div class="small">Brak źródeł (uzupełnij Nekrologi_config/sources).</div>`;
+    container.innerHTML = `<div class="small">Brak źródeł (uzupełnij Nekrolog_config/sources).</div>`;
     return;
   }
 

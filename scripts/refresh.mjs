@@ -379,9 +379,9 @@ async function main() {
   const db = initAdmin();
 
   const cfg = {
-    nekrologConfigCollection: "Nekrologi_config",
-    nekrologSnapshotsCollection: "Nekrologi_snapshots",
-    nekrologRefreshJobsCollection: "Nekrologi_refresh_jobs",
+    nekrologConfigCollection: "Nekrolog_config",
+    nekrologSnapshotsCollection: "Nekrolog_snapshots",
+    nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
     nekrologSnapshotDocId: "latest",
     nekrologRefreshJobDocId: "latest",
   };
@@ -413,7 +413,7 @@ async function main() {
     if (sources.length !== (Array.isArray(sourcesRaw) ? sourcesRaw.length : 0)) {
       await srcRef.set({ sources, updated_at: nowISO() }, { merge: true });
     }
-    if (!sources.length) throw new Error("Brak źródeł w Nekrologi_config/sources");
+    if (!sources.length) throw new Error("Brak źródeł w Nekrolog_config/sources");
 
     const targetPhrases = HELENA_GAWIN_PHRASES;
     const phraseVariants = makePhraseVariants(targetPhrases);
