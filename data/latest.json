@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T07:36:31.443719+00:00",
+  "generated_at": "2026-02-16T08:06:07.494239+00:00",
   "source_center": {
     "label": "ul. Kapelanka, Kraków",
     "lat": 50.03528,
@@ -70,8 +70,140 @@
       "distance_km": 3.562
     }
   ],
-  "recent_deaths": [],
-  "upcoming_funerals": [],
+  "recent_deaths": [
+    {
+      "kind": "death",
+      "name": "ARTUR KOHUT",
+      "date_death": "2026-02-10",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Dom pogrzebowy — nekrolog",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/artur-kohut/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "EDWARD STAROBRAT",
+      "date_death": "2026-02-10",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Dom pogrzebowy — nekrolog",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/edward-starobrat/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "ROMANA KOŃCZAKOWSKA",
+      "date_death": "2026-02-09",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Dom pogrzebowy — nekrolog",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/romana-konczakowska/",
+      "note": null,
+      "priority_hit": false
+    }
+  ],
+  "upcoming_funerals": [
+    {
+      "kind": "funeral",
+      "name": "EDWARD STAROBRAT",
+      "date_death": null,
+      "date_funeral": "2026-02-14",
+      "time_funeral": "14:30",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/edward-starobrat/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "JACEK BALCERSKI",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "09:40",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jacek-balcerski/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "HELENA POPIOŁEK",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "11:00",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/helena-popiolek/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "PROF. DR HAB. INŻ. JAN PIETRZYK",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "11:30",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/prof-dr-hab-inz-jan-pietrzyk/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "JOLANTA ŚLIWA",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "12:20",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jolanta-sliwa/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "ARTUR KOHUT",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "13:00",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/artur-kohut/",
+      "note": null,
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "ROMANA KOŃCZAKOWSKA",
+      "date_death": null,
+      "date_funeral": "2026-02-16",
+      "time_funeral": "13:40",
+      "place": "Dom pogrzebowy — szczegóły pogrzebu",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrolog/romana-konczakowska/",
+      "note": null,
+      "priority_hit": false
+    }
+  ],
   "target_phrases": [
     "Helena Gawin",
     "Helena Dereń",

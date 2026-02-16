@@ -3,9 +3,11 @@ import math
 import os
 import re
 import sys
+import unicodedata
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -30,14 +32,44 @@ def norm(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").strip()).lower()
 
 
+def norm_loose(text: str) -> str:
+    value = unicodedata.normalize("NFKD", (text or "").strip().lower())
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = re.sub(r"[\-_]", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
 def safe_date(value: str) -> Optional[str]:
     value = (value or "").strip()
     if not value:
         return None
+    if re.match(r"^\d{4}-\d{2}-\d{2}$", value):
+        return value
     try:
         return dtparse(value, dayfirst=True).date().isoformat()
     except Exception:
         return None
+
+
+def extract_name(value: str) -> Optional[str]:
+    cleaned = re.sub(r"\s+", " ", (value or "")).strip(" -:;,|")
+    cleaned = re.sub(r"\bśp\.?\s*", "", cleaned, flags=re.I).strip()
+    if not cleaned:
+        return None
+
+    match = re.search(
+        r"([A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\-.']+(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\-.']+)+)",
+        cleaned,
+    )
+    return match.group(1).strip() if match else None
+
+
+def should_keep_by_date(row: "Row", cutoff: date) -> bool:
+    candidate = row.date_funeral if row.kind == "funeral" else row.date_death
+    parsed = safe_date(candidate or "")
+    if not parsed:
+        return False
+    return parsed >= cutoff.isoformat()
 
 
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -208,6 +240,7 @@ def parse_funeral_home(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
     deaths: List[Row] = []
     funerals: List[Row] = []
     checked = 0
+    seen_urls = set()
 
     for link in soup.find_all("a", href=True):
         href = link["href"].strip()
@@ -215,38 +248,60 @@ def parse_funeral_home(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
         if not text or ("nekrolog" not in href.lower() and "nekrolog" not in text.lower()):
             continue
 
-        if href.startswith("http"):
-            url = href
-        elif href.startswith("/"):
-            base = re.match(r"^https?://[^/]+", source["url"])
-            url = f"{base.group(0)}{href}" if base else source["url"]
-        else:
-            url = source["url"].rstrip("/") + "/" + href.lstrip("/")
+        url = urljoin(source["url"], href)
+        if "/nekrolog/" not in url.lower() or url in seen_urls:
+            continue
+        seen_urls.add(url)
 
         if checked >= 15:
             break
         checked += 1
-
-        m_name = re.search(r"([A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż-]+(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż-]+)+)", text)
-        if not m_name:
-            continue
 
         try:
             detail = fetch_html(url).get_text(" ", strip=True)
         except Exception:
             continue
 
-        d_match = re.search(r"(zm\.|data zgonu[:\s]*)(\d{2}\.\d{2}\.\d{4}|\d{4}-\d{2}-\d{2})", detail, flags=re.I)
-        f_match = re.search(r"(data pogrzebu|pogrzeb[:\s]*)(\d{2}\.\d{2}\.\d{4}|\d{4}-\d{2}-\d{2})", detail, flags=re.I)
-        t_match = re.search(r"(godz\.|godzina|o godz\.)[:\s]*([0-2]?\d[:.][0-5]\d)", detail, flags=re.I)
+        m_name_detail = re.search(r"Śp\.?\s+([^\d|]+)", detail, flags=re.I)
+        name = extract_name(text) or (extract_name(m_name_detail.group(1)) if m_name_detail else None)
+        if not name:
+            continue
 
-        name = m_name.group(1)
+        d_match = re.search(
+            r"(?:\bzm\.|data\s+zgonu)\s*[:\-]?\s*(\d{2}\.\d{2}\.\d{4}|\d{4}-\d{2}-\d{2})",
+            detail,
+            flags=re.I,
+        )
+        if not d_match:
+            range_match = re.search(
+                r"\b(\d{2}\.\d{2}\.\d{4})\s*[-–—]\s*(\d{2}\.\d{2}\.\d{4})\b",
+                detail,
+            )
+            if range_match:
+                d_match = range_match
+
+        f_match = re.search(
+            r"(?:data\s+pogrzebu|pogrzeb(?:\s+(?:dziś|dzisiaj|jutro))?)\s*[:\-]?\s*(\d{2}\.\d{2}\.\d{4}|\d{4}-\d{2}-\d{2})",
+            detail,
+            flags=re.I,
+        )
+        if not f_match:
+            fallback_funeral = re.search(
+                r"pogrzeb\s+odbędzie\s+się\s*(\d{2}\.\d{2}\.\d{4}|\d{4}-\d{2}-\d{2})",
+                detail,
+                flags=re.I,
+            )
+            if fallback_funeral:
+                f_match = fallback_funeral
+
+        t_match = re.search(r"(?:godz\.|godzina|o\s+godz\.)\s*[:\-]?\s*([0-2]?\d[:.][0-5]\d)", detail, flags=re.I)
         if d_match:
             deaths.append(
                 Row(
                     kind="death",
                     name=name,
-                    date_death=safe_date(d_match.group(2)) or d_match.group(2),
+                    date_death=safe_date(d_match.group(1) if d_match.lastindex == 1 else d_match.group(2))
+                    or (d_match.group(1) if d_match.lastindex == 1 else d_match.group(2)),
                     place="Dom pogrzebowy — nekrolog",
                     source_id=source["id"],
                     source_name=source["name"],
@@ -258,8 +313,8 @@ def parse_funeral_home(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
                 Row(
                     kind="funeral",
                     name=name,
-                    date_funeral=safe_date(f_match.group(2)) if f_match else None,
-                    time_funeral=t_match.group(2).replace(".", ":") if t_match else None,
+                    date_funeral=safe_date(f_match.group(1)) if f_match else None,
+                    time_funeral=t_match.group(1).replace(".", ":") if t_match else None,
                     place="Dom pogrzebowy — szczegóły pogrzebu",
                     source_id=source["id"],
                     source_name=source["name"],
@@ -285,10 +340,18 @@ PARSERS = {
 
 
 def add_priority_hit(rows: List[Row]) -> None:
-    phrases = [norm(p) for p in TARGET_PHRASES]
+    phrases = [norm_loose(p) for p in TARGET_PHRASES]
     for row in rows:
-        hay = norm(f"{row.name} {row.note or ''} {row.place or ''}")
+        hay = norm_loose(f"{row.name} {row.note or ''} {row.place or ''}")
         row.priority_hit = any(p in hay for p in phrases)
+
+
+def filter_recent_rows(deaths: List[Row], funerals: List[Row]) -> Tuple[List[Row], List[Row]]:
+    cutoff = datetime.now(timezone.utc).date() - timedelta(days=7)
+
+    filtered_deaths = [row for row in deaths if row.priority_hit or should_keep_by_date(row, cutoff)]
+    filtered_funerals = [row for row in funerals if row.priority_hit or should_keep_by_date(row, cutoff)]
+    return filtered_deaths, filtered_funerals
 
 
 def run(out_path: str = "data/latest.json", sources_path: str = "sources.json") -> int:
@@ -322,6 +385,8 @@ def run(out_path: str = "data/latest.json", sources_path: str = "sources.json") 
 
     add_priority_hit(all_deaths)
     add_priority_hit(all_funerals)
+
+    all_deaths, all_funerals = filter_recent_rows(all_deaths, all_funerals)
 
     all_deaths.sort(key=lambda r: r.date_death or "0000-00-00", reverse=True)
     all_funerals.sort(key=lambda r: ((r.date_funeral or "9999-99-99"), (r.time_funeral or "99:99")))

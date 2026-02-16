@@ -113,7 +113,7 @@ async function refresh() {
     render(data);
   } catch (error) {
     status.className = "status err";
-    status.textContent = "Błąd odczytu data/latest.json. Uruchom collector.py i odśwież.";
+    status.textContent = "Błąd odczytu data/latest.json. Aktualizacja danych wymaga uruchomienia collector.py (np. w CI), ten przycisk tylko odświeża widok.";
     console.error(error);
   }
 }
