@@ -86,8 +86,8 @@ function normalizeSources(sources) {
 }
 
 async function main() {
-  const snapPath = "Nekrolog_snapshots/latest";
-  const cfgPath = "Nekrolog_config/sources";
+  const snapPath = "Nekrologi_snapshots/latest";
+  const cfgPath = "Nekrologi_config/sources";
 
   const cfgDoc = await getDocument(cfgPath);
   const currentSources = fromFirestoreValue(cfgDoc.fields?.sources) || [];

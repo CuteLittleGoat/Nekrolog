@@ -12,10 +12,10 @@ window.NEKROLOG_CONFIG = {
     gameDetailsCollection: "rows",
     userGamesCollection: "UserGames",
 
-    nekrologConfigCollection: "Nekrolog_config",
-    nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
+    nekrologConfigCollection: "Nekrologi_config",
+    nekrologRefreshJobsCollection: "Nekrologi_refresh_jobs",
     nekrologRefreshJobDocId: "latest",
-    nekrologSnapshotsCollection: "Nekrolog_snapshots",
+    nekrologSnapshotsCollection: "Nekrologi_snapshots",
     nekrologSnapshotDocId: "latest",
   },
 
