@@ -20,7 +20,6 @@ window.NEKROLOG_CONFIG = {
 
     // Kolekcje dedykowane dla Nekrolog.
     nekrologConfigCollection: "Nekrolog_config",
-    nekrologConfigDocId: "sources",
     nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
     nekrologRefreshJobDocId: "latest",
     nekrologSnapshotsCollection: "Nekrolog_snapshots",
