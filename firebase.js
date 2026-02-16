@@ -58,13 +58,15 @@ async function requestRefreshViaBackend() {
 
 export async function requestRefresh(jobRef) {
   const backendEndpoint = String(window.NEKROLOG_CONFIG?.backend?.refreshEndpoint || "").trim();
-  if (backendEndpoint) {
-    await requestRefreshViaBackend();
-    return;
+  if (!backendEndpoint) {
+    throw new Error(
+      "Odświeżanie wymaga backend.refreshEndpoint. Bez endpointu status joba utknie na queued i snapshot nie zostanie przebudowany."
+    );
   }
 
+  await requestRefreshViaBackend();
+
   await setDoc(jobRef, {
-    status: "queued",
     trigger: "manual_ui",
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
