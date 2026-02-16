@@ -138,6 +138,8 @@ function renderList(container, rows, phrases, type) {
     const firstName = resolveFirstName(r);
     const dateLabel = type === "death" ? "Data zgonu" : "Data pogrzebu";
     const dateValue = resolveRowDate(r, type);
+    const sourceLabel = String(r.source_name || r.source || "Źródło wpisu").trim() || "Źródło wpisu";
+    const sourceUrl = String(r.url || r.source_url || "").trim();
     const div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
@@ -146,6 +148,9 @@ function renderList(container, rows, phrases, type) {
         <div class="badge ${hit ? "hit" : ""}">${hit ? "TRAFIENIE" : (r.kind || r.category || "wpis")}</div>
       </div>
       <div class="small">${escapeHtml(dateLabel)}: ${escapeHtml(dateValue)}</div>
+      <div class="small">Źródło: ${sourceUrl
+        ? `<a href="${escapeAttr(sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(sourceLabel)}</a>`
+        : escapeHtml(sourceLabel)}</div>
     `;
     container.appendChild(div);
   }
