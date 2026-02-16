@@ -308,7 +308,7 @@ async function runRefresh() {
 
   try {
     await requestRefresh(jobRef);
-    log("Wysłano żądanie odświeżenia do Firestore (Nekrolog_refresh_jobs/latest).");
+    log("Wysłano żądanie odświeżenia (backend/Firestore).");
   } catch (err) {
     log("Nie udało się wysłać żądania odświeżenia:", String(err?.message || err));
   }

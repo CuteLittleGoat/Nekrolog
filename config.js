@@ -16,7 +16,12 @@ window.NEKROLOG_CONFIG = {
     nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
     nekrologRefreshJobDocId: "latest",
     nekrologSnapshotsCollection: "Nekrolog_snapshots",
-    nekrologSnapshotDocId: "latest",
+    nekrologSnapshotDocId: "latest"
+  },
+
+  backend: {
+    refreshEndpoint: "",
+    refreshEndpointSecret: ""
   },
 
   // Okno czasowe (dni)
