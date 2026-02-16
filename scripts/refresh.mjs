@@ -1,5 +1,5 @@
 import admin from "firebase-admin";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import { fetchText } from "./fetch.mjs";
 import { todayLocalMidnight, addDays, inWindow } from "./date.mjs";
 import { makePhraseVariants, textMatchesAny } from "./normalize.mjs";
@@ -146,12 +146,20 @@ function uniqueBy(items, keyFn) {
 
 function normalizeSource(source) {
   const normalized = { ...source };
-  if (normalized.id === "par_debniki_contact") {
+  const sourceId = String(normalized.id || "").toLowerCase();
+  const sourceUrl = String(normalized.url || "").toLowerCase();
+
+  if (sourceId === "par_debniki_contact" || sourceUrl.includes("debniki.sdb.org.pl/kontakt")) {
     normalized.enabled = false;
   }
-  if (normalized.id === "podgorki_tynieckie_grobonet" && normalized.url === "https://klepsydrakrakow.grobonet.com/") {
+
+  if (
+    sourceId === "podgorki_tynieckie_grobonet"
+    && (sourceUrl === "https://klepsydrakrakow.grobonet.com/" || sourceUrl === "https://klepsydrakrakow.grobonet.com")
+  ) {
     normalized.url = "https://klepsydrakrakow.grobonet.com/nekrologi.php";
   }
+
   return normalized;
 }
 
@@ -198,55 +206,62 @@ function mergeRequiredSources(existingSources) {
  * URL: https://www.zck-krakow.pl/funerals
  * Struktura: dzień -> lista cmentarzy -> wiersze (godzina, miejsce, imię nazwisko + wiek)
  */
-async function parseZckFunerals(source) {
-  const { ok, status, text } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: `HTTP ${status}` };
-
+function parseZckFuneralsHtml(text, source) {
   const $ = cheerio.load(text);
   const rows = [];
 
-  // Nagłówek daty (np. 2026-02-15)
-  const dateHeader = $("h4, h3").filter((_, el) => /\d{4}-\d{2}-\d{2}/.test($(el).text())).first().text();
-  const currentDate = (dateHeader.match(/\d{4}-\d{2}-\d{2}/) || [null])[0];
+  const dateMatches = clean($.text()).match(/\b\d{4}-\d{2}-\d{2}\b/g) || [];
+  const currentDate = dateMatches[0] || null;
 
-  // Sekcje cmentarzy
-  $("h4").each((_, h) => {
-    const cemetery = clean($(h).text());
-    if (!cemetery.toLowerCase().includes("cmentarz")) return;
+  const textNodes = $("body")
+    .find("h1,h2,h3,h4,h5,h6,li,p,div,td,span,strong,b")
+    .map((_, el) => clean($(el).text()))
+    .get()
+    .filter(Boolean);
 
-    // Wiersze po nagłówku – różnie renderowane; łapiemy najbliższe listy
-    let block = $(h).next();
-    // “Brak pogrzebów…”
-    if (clean(block.text()).toLowerCase().includes("brak pogrzebów")) return;
-
-    // Szukamy tekstów typu "10:00, Kaplica, Jan Kowalski (lat 80)."
-    const blob = [];
-    for (let i=0; i<8 && block && block.length; i++) {
-      const t = clean(block.text());
-      if (t) blob.push(t);
-      block = block.next();
-      if (block.is("h4")) break;
+  let currentCemetery = null;
+  for (let i = 0; i < textNodes.length; i += 1) {
+    const line = textNodes[i];
+    if (/cmentarz/i.test(line)) {
+      currentCemetery = line;
+      continue;
     }
+    if (/brak pogrzeb[oó]w/i.test(line)) continue;
 
-    const joined = blob.join(" • ");
-    const re = /(\d{1,2}:\d{2})\s*,\s*([^,]+)\s*,\s*([^•()]+?)(?:\s*\(.*?\))?(?=•|$)/g;
-    let m;
-    while ((m = re.exec(joined)) !== null) {
-      rows.push({
-        kind: "funeral",
-        name: clean(m[3]),
-        date_funeral: currentDate || null,
-        time_funeral: m[1],
-        place: `${clean(m[2])} – ${cemetery}`,
-        source_id: source.id,
-        source_name: source.name,
-        url: source.url,
-        note: null
-      });
-    }
-  });
+    const time = line.match(/^([01]?\d|2[0-3]):([0-5]\d)$/)?.[0]
+      || line.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/)?.[0]
+      || null;
 
-  return { rows, error: null };
+    if (!time) continue;
+
+    const placeCandidate = clean(textNodes[i + 1] || "");
+    const nameCandidate = clean(textNodes[i + 2] || "");
+    if (!nameCandidate || /^(kaplica|cmentarz|brak\b)/i.test(nameCandidate)) continue;
+
+    const name = clean(nameCandidate.replace(/\s*\(.*?\)\s*$/g, "").replace(/^\W+/, ""));
+    if (!name) continue;
+
+    const placeParts = [placeCandidate, currentCemetery].filter(Boolean);
+    rows.push({
+      kind: "funeral",
+      name,
+      date_funeral: currentDate,
+      time_funeral: time,
+      place: placeParts.join(" – "),
+      source_id: source.id,
+      source_name: source.name,
+      url: source.url,
+      note: null
+    });
+  }
+
+  return uniqueBy(rows, (r) => `${r.time_funeral}|${r.name}|${r.place}`);
+}
+
+async function parseZckFunerals(source) {
+  const { ok, status, text } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: `HTTP ${status}` };
+  return { rows: parseZckFuneralsHtml(text, source), error: null };
 }
 
 /**
@@ -254,12 +269,14 @@ async function parseZckFunerals(source) {
  * Wykrywa wpisy, które wyglądają jak: "+ Jan Kowalski", "†† Anna i Piotr ..."
  * NIE gwarantuje, że to pogrzeb – traktujemy jako “death mention”.
  */
-async function parseIntentionsPlus(source) {
-  const { ok, status, text } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: `HTTP ${status}` };
-
+function parseIntentionsPlusHtml(text, source) {
   const $ = cheerio.load(text);
-  const content = clean($("body").text());
+  const bodyLines = $("body")
+    .find("p,li,div,td,tr,h1,h2,h3,h4,h5,h6")
+    .map((_, el) => clean($(el).text()))
+    .get()
+    .filter(Boolean);
+  const content = bodyLines.length ? bodyLines.join("\n") : $("body").text();
 
   // Prosta ekstrakcja: linie z + / †
   const lines = content
@@ -285,7 +302,13 @@ async function parseIntentionsPlus(source) {
     };
   });
 
-  return { rows, error: null };
+  return rows;
+}
+
+async function parseIntentionsPlus(source) {
+  const { ok, status, text } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: `HTTP ${status}` };
+  return { rows: parseIntentionsPlusHtml(text, source), error: null };
 }
 
 /**
@@ -345,13 +368,15 @@ async function main() {
   const snapRef = db.collection(cfg.nekrologSnapshotsCollection).doc(cfg.nekrologSnapshotDocId);
   const srcRef = db.collection(cfg.nekrologConfigCollection).doc("sources");
 
-  await jobRef.set({
-    status: "running",
-    trigger: "github_actions",
-    started_at: nowISO(),
-    updated_at: nowISO(),
-    ok: null,
-    error_message: null
+    await jobRef.set({
+      status: "running",
+      trigger: "github_actions",
+      writer_name: "scripts/refresh.mjs",
+      writer_version: "2026-02-16.2",
+      started_at: nowISO(),
+      updated_at: nowISO(),
+      ok: null,
+      error_message: null
   }, { merge: true });
 
   try {
@@ -369,6 +394,7 @@ async function main() {
     const enabled = sources.filter(s => s.enabled !== false);
 
     const allRows = [];
+    const sourceErrors = [];
     const sourceLite = enabled.map(s => ({
       id: s.id,
       name: s.name,
@@ -392,6 +418,12 @@ async function main() {
       }
 
       if (parsed.error) {
+        sourceErrors.push({
+          source_id: s.id,
+          source_name: s.name,
+          url: s.url,
+          error: clean(parsed.error)
+        });
         allRows.push({
           kind: "meta",
           name: "(błąd źródła)",
@@ -453,7 +485,10 @@ async function main() {
       fallback_summary: fallbackSummary,
       sources: sourceLite,
       target_phrases: targetPhrases,
-      refresh_error: refreshErrors.join(" | ")
+      source_errors: sourceErrors,
+      refresh_error: refreshErrors.join(" | "),
+      writer_name: "scripts/refresh.mjs",
+      writer_version: "2026-02-16.2"
     };
 
     await snapRef.set({
@@ -467,7 +502,8 @@ async function main() {
       finished_at: nowISO(),
       updated_at: nowISO(),
       ok: true,
-      error_message: null
+      error_message: null,
+      source_errors: sourceErrors
     }, { merge: true });
 
     console.log("OK. Rows:", allRows.length, "funerals:", upcoming_funerals.length, "deaths:", recent_deaths.length);
@@ -477,11 +513,25 @@ async function main() {
       finished_at: nowISO(),
       updated_at: nowISO(),
       ok: false,
-      error_message: String(e?.message || e)
+      error_message: String(e?.message || e),
+      writer_name: "scripts/refresh.mjs",
+      writer_version: "2026-02-16.2"
     }, { merge: true });
     console.error("ERROR:", e);
     process.exitCode = 1;
   }
 }
 
-await main();
+if (import.meta.url === `file://${process.argv[1]}`) {
+  await main();
+}
+
+export {
+  parseZckFunerals,
+  parseZckFuneralsHtml,
+  parseIntentionsPlus,
+  parseIntentionsPlusHtml,
+  parseGenericHtml,
+  mergeRequiredSources,
+  normalizeSource
+};
