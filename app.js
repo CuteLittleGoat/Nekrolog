@@ -128,7 +128,10 @@ async function forceRefresh() {
   status.textContent = "Trwa wymuszona aktualizacja monitorowanych źródeł…";
 
   try {
-    const response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
+    let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
+    if (response.status === 405) {
+      response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
+    }
     const payload = await response.json().catch(() => ({}));
     if (!response.ok || payload.ok === false) {
       throw new Error(payload.error || `HTTP ${response.status}`);
