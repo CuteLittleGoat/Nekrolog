@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import { parseZckFuneralsHtml, parseIntentionsPlusHtml, mergeRequiredSources } from '../scripts/refresh.mjs';
+import { parseZckFuneralsHtml, parseIntentionsPlusHtml, mergeRequiredSources, resolveJobOutcome } from '../scripts/refresh.mjs';
 
 const source = { id: 'test', name: 'Test Source', url: 'https://example.com', enabled: true };
 
@@ -25,5 +25,19 @@ const grobonet = merged.find((s) => s.id === 'podgorki_tynieckie_grobonet');
 if (grobonet && grobonet.url === 'https://klepsydrakrakow.grobonet.com/') {
   throw new Error('URL podgorki_tynieckie_grobonet should be normalized to /nekrologi.php');
 }
+
+const noRowsOutcome = resolveJobOutcome({ recentDeaths: 0, upcomingFunerals: 0, refreshErrors: ['A: błąd parsera'] });
+assert.equal(noRowsOutcome.status, 'error');
+assert.equal(noRowsOutcome.ok, false);
+assert.match(noRowsOutcome.errorMessage, /A: błąd parsera/);
+
+const partialOutcome = resolveJobOutcome({ recentDeaths: 2, upcomingFunerals: 0, refreshErrors: ['A: błąd parsera'] });
+assert.equal(partialOutcome.status, 'done_with_errors');
+assert.equal(partialOutcome.ok, true);
+
+const okOutcome = resolveJobOutcome({ recentDeaths: 1, upcomingFunerals: 1, refreshErrors: [] });
+assert.equal(okOutcome.status, 'done');
+assert.equal(okOutcome.ok, true);
+assert.equal(okOutcome.errorMessage, null);
 
 console.log('All parser tests passed.');
