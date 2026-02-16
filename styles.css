@@ -19,6 +19,7 @@ body {
   background: radial-gradient(circle at 20% 10%, #1a315a 0%, var(--bg) 45%, #070b14 100%);
   color: var(--txt);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 .wrap { max-width: 1100px; margin: 0 auto; padding: 16px; }
@@ -44,7 +45,7 @@ h2 { margin: 0 0 10px; font-size: 1.05rem; }
 .small { color: var(--muted); font-size: .85rem; margin: 0; }
 .muted { margin-top: 12px; }
 
-.toolbar { display: flex; gap: 8px; margin: 12px 0; }
+.toolbar { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
 input, button {
   border-radius: 10px;
   border: 1px solid var(--line);
@@ -65,13 +66,23 @@ button:hover { border-color: var(--accent); }
 .title-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .title { font-weight: 700; }
 .badge { font-size: .72rem; border: 1px solid #3e5b90; border-radius: 999px; padding: 2px 8px; color: #b8d5ff; }
-.meta { margin-top: 5px; color: var(--muted); font-size: .85rem; line-height: 1.45; }
+.meta { margin-top: 5px; color: var(--muted); font-size: .85rem; line-height: 1.45; overflow-wrap: anywhere; }
 
 .sources { margin: 0; padding-left: 20px; }
 .sources li { margin-bottom: 8px; line-height: 1.35; }
 a { color: #90c5ff; }
 
+.sources li,
+.title,
+a {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
   .span-2 { grid-column: span 1; }
+  .toolbar button,
+  .toolbar input {
+    width: 100%;
+  }
 }
