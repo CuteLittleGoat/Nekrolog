@@ -6,9 +6,18 @@ const TARGET_PHRASES = [
   "Helena Deren Gawin",
 ];
 
-const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
+const firebaseConfig = appConfig.firebaseConfig || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
+
+const SNAPSHOTS_COLLECTION = firebaseConfig.nekrologSnapshotsCollection || "Nekrolog_snapshots";
+const SNAPSHOT_DOC_ID = firebaseConfig.nekrologSnapshotDocId || "latest";
+const CONFIG_COLLECTION = firebaseConfig.nekrologConfigCollection || "Nekrolog_config";
+const CONFIG_DOC_ID = firebaseConfig.nekrologConfigDocId || "sources";
+const REFRESH_JOBS_COLLECTION = firebaseConfig.nekrologRefreshJobsCollection || "Nekrolog_refresh_jobs";
+const REFRESH_JOB_DOC_ID = firebaseConfig.nekrologRefreshJobDocId || "latest";
+
+let db = null;
 let lastGeneratedAt = null;
 
 const norm = (s) => (s || "")
@@ -30,6 +39,56 @@ const el = (tag, cls, html) => {
   if (html !== undefined) node.innerHTML = html;
   return node;
 };
+
+function toIsoString(value) {
+  if (!value) return null;
+  if (typeof value === "string") return value;
+  if (value instanceof Date) return value.toISOString();
+  if (typeof value.toDate === "function") {
+    return value.toDate().toISOString();
+  }
+  if (typeof value.seconds === "number") {
+    return new Date(value.seconds * 1000).toISOString();
+  }
+  return null;
+}
+
+function normalizeRow(row, fallbackKind) {
+  return {
+    kind: row.kind || row.category || fallbackKind || "wpis",
+    name: row.name || "",
+    date_death: row.date_death || (fallbackKind === "death" ? row.date : null),
+    date_funeral: row.date_funeral || (fallbackKind === "funeral" ? row.date : null),
+    time_funeral: row.time_funeral || null,
+    place: row.place || "",
+    source_name: row.source_name || "",
+    url: row.url || row.source_url || "",
+    note: row.note || "",
+    priority_hit: !!row.priority_hit,
+  };
+}
+
+function mapSnapshotToViewModel(snapshotData, sourcesData) {
+  const deaths = (snapshotData.deaths || snapshotData.recent_deaths || [])
+    .map((row) => normalizeRow(row, "death"));
+  const funerals = (snapshotData.funerals || snapshotData.upcoming_funerals || [])
+    .map((row) => normalizeRow(row, "funeral"));
+
+  const sourcesFromConfig = sourcesData?.sources || [];
+  const fallbackSources = (snapshotData.sources || []).map((src) => ({
+    name: src.name || "",
+    url: src.url || "",
+    distance_km: src.distance_km,
+    enabled: src.enabled !== false,
+  }));
+
+  return {
+    generated_at: toIsoString(snapshotData.generated_at) || toIsoString(snapshotData.updated_at),
+    recent_deaths: deaths,
+    upcoming_funerals: funerals,
+    sources: (sourcesFromConfig.length ? sourcesFromConfig : fallbackSources).filter((src) => src.enabled !== false),
+  };
+}
 
 function renderItem(container, row) {
   const item = el("article", "item");
@@ -99,7 +158,8 @@ function render(data) {
   sources.innerHTML = "";
   (data.sources || []).forEach((src) => {
     const li = document.createElement("li");
-    li.innerHTML = `<b>${src.name}</b> (${(src.distance_km ?? 0).toFixed(2)} km) — <a href="${src.url}" target="_blank" rel="noreferrer">${src.url}</a>`;
+    const km = Number.isFinite(src.distance_km) ? ` (${src.distance_km.toFixed(2)} km)` : "";
+    li.innerHTML = `<b>${src.name}</b>${km}${src.url ? ` — <a href="${src.url}" target="_blank" rel="noreferrer">${src.url}</a>` : ""}`;
     sources.appendChild(li);
   });
 
@@ -113,23 +173,56 @@ function render(data) {
   applyStatus(data);
 }
 
+function initFirebase() {
+  if (!window.firebase || !firebaseConfig.apiKey) {
+    throw new Error("Brak konfiguracji Firebase (window.NEKROLOG_CONFIG.firebaseConfig).");
+  }
+
+  const app = window.firebase.apps.length
+    ? window.firebase.app()
+    : window.firebase.initializeApp(firebaseConfig);
+  db = window.firebase.firestore(app);
+}
+
+async function loadFromFirestore() {
+  const snapshotRef = db.collection(SNAPSHOTS_COLLECTION).doc(SNAPSHOT_DOC_ID);
+  const configRef = db.collection(CONFIG_COLLECTION).doc(CONFIG_DOC_ID);
+
+  const [snapshotDoc, configDoc] = await Promise.all([snapshotRef.get(), configRef.get()]);
+  if (!snapshotDoc.exists) {
+    throw new Error(`Brak dokumentu ${SNAPSHOTS_COLLECTION}/${SNAPSHOT_DOC_ID}`);
+  }
+
+  const snapshotData = snapshotDoc.data() || {};
+  const sourcesData = configDoc.exists ? configDoc.data() : null;
+
+  return mapSnapshotToViewModel(snapshotData, sourcesData);
+}
+
 async function refresh() {
   const status = document.getElementById("helenaStatus");
   status.className = "status";
-  status.textContent = "Ładowanie danych…";
+  status.textContent = "Ładowanie danych z Firebase…";
 
   try {
-    const cacheBustedDataUrl = `${DATA_URL}${DATA_URL.includes("?") ? "&" : "?"}_=${Date.now()}`;
-    const response = await fetch(cacheBustedDataUrl, { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
+    const data = await loadFromFirestore();
     lastGeneratedAt = data.generated_at || null;
     render(data);
   } catch (error) {
     status.className = "status err";
-    status.textContent = "Błąd odczytu data/latest.json.";
+    status.textContent = "Błąd odczytu danych z Firestore.";
     console.error(error);
   }
+}
+
+async function writeRefreshJob(status, extra = {}) {
+  const payload = {
+    status,
+    trigger: "button",
+    updated_at: new Date(),
+    ...extra,
+  };
+  await db.collection(REFRESH_JOBS_COLLECTION).doc(REFRESH_JOB_DOC_ID).set(payload, { merge: true });
 }
 
 async function forceRefresh() {
@@ -141,6 +234,8 @@ async function forceRefresh() {
   status.textContent = "Trwa wymuszona aktualizacja monitorowanych źródeł…";
 
   try {
+    await writeRefreshJob("running", { started_at: new Date(), ok: null, error_message: "" });
+
     let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
     if (response.status === 405) {
       response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
@@ -151,13 +246,23 @@ async function forceRefresh() {
       throw new Error(payload.error || `HTTP ${response.status}`);
     }
 
+    await writeRefreshJob("done", {
+      finished_at: new Date(),
+      ok: true,
+      error_message: "",
+    });
+
     await refresh();
 
-    if (payload.generated_at && payload.generated_at === lastGeneratedAt) {
-      status.className = "status ok";
-      status.textContent = "Aktualizacja danych zakończona.";
-    }
+    status.className = "status ok";
+    status.textContent = "Aktualizacja danych zakończona.";
   } catch (error) {
+    await writeRefreshJob("error", {
+      finished_at: new Date(),
+      ok: false,
+      error_message: error.message,
+    }).catch((writeError) => console.error(writeError));
+
     status.className = "status err";
     status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}`;
     console.error(error);
@@ -169,4 +274,6 @@ async function forceRefresh() {
 document.getElementById("refreshBtn").addEventListener("click", refresh);
 document.getElementById("forceRefreshBtn").addEventListener("click", forceRefresh);
 document.getElementById("q").addEventListener("input", refresh);
+
+initFirebase();
 refresh();

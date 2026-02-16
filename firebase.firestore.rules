@@ -1,0 +1,101 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /admin_messages/{docId} {
+      allow read, write: if true;
+    }
+
+    match /app_settings/{docId} {
+      allow read, write: if true;
+    }
+
+    match /Tables/{tableId} {
+      allow read, write: if true;
+      match /rows/{rowId} {
+        allow read, write: if true;
+      }
+      match /confirmations/{playerId} {
+        allow read, write: if true;
+      }
+    }
+
+    match /UserGames/{gameId} {
+      allow read, write: if true;
+      match /rows/{rowId} {
+        allow read, write: if true;
+      }
+      match /confirmations/{playerId} {
+        allow read, write: if true;
+      }
+    }
+
+    match /Collection1/{docId} {
+      allow read, write: if true;
+    }
+
+    match /chat_messages/{docId} {
+      allow read, write: if true;
+    }
+
+    match /admin_games_stats/{year} {
+      allow read, write: if true;
+    }
+
+    match /players/{docId} {
+      allow read, write: if true;
+    }
+
+    match /calculators/{type} {
+      allow read, write: if true;
+
+      match /definitions/{versionId} {
+        allow read, write: if true;
+      }
+
+      match /placeholders/{placeholderId} {
+        allow read, write: if true;
+      }
+
+      match /sessions/{sessionId} {
+        allow read, write: if true;
+
+        match /variables/{varDocId} {
+          allow read, write: if true;
+        }
+
+        match /calculationFlags/{flagDocId} {
+          allow read, write: if true;
+        }
+
+        match /tables/{tableId} {
+          allow read, write: if true;
+
+          match /rows/{rowId} {
+            allow read, write: if true;
+          }
+        }
+
+        match /snapshots/{snapshotId} {
+          allow read, write: if true;
+        }
+      }
+    }
+
+    // --- NEKROLOG ---
+    match /Nekrolog_config/{docId} {
+      allow read, write: if true;
+    }
+
+    match /Nekrolog_snapshots/{docId} {
+      allow read, write: if true;
+    }
+
+    // Zapis wyłącznie do stałego ID dokumentu, aby uniknąć
+    // narastania nowych dokumentów przy każdym refreshu.
+    match /Nekrolog_refresh_jobs/{docId} {
+      allow read: if true;
+      allow write: if docId == "latest";
+    }
+  }
+}
