@@ -207,6 +207,39 @@ function isMeaningfulRow(row) {
   ].some(hasContent);
 }
 
+function isPriorityHit(row) {
+  return row?.priority_hit === true;
+}
+
+function buildFallbackSummaryForHelena(recentDeaths, upcomingFunerals) {
+  const matchedRecentDeaths = (Array.isArray(recentDeaths) ? recentDeaths : []).filter(isPriorityHit);
+  const matchedUpcomingFunerals = (Array.isArray(upcomingFunerals) ? upcomingFunerals : []).filter(isPriorityHit);
+
+  const latestDeath = [...matchedRecentDeaths]
+    .sort((a, b) => (asDateValue(b.date_death)?.getTime() || 0) - (asDateValue(a.date_death)?.getTime() || 0))[0] || null;
+  const nearestFuneral = [...matchedUpcomingFunerals]
+    .sort((a, b) => (asDateValue(a.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER) - (asDateValue(b.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER))[0] || null;
+
+  const fallbackSummary = {
+    text: "Helena Gawin - brak informacji",
+    date_death: latestDeath?.date_death || null,
+    date_funeral: nearestFuneral?.date_funeral || null,
+    urls: uniqueBy(
+      [latestDeath, nearestFuneral].filter(Boolean).map((r) => ({
+        url: r.url,
+        source_name: r.source_name
+      })),
+      (r) => `${r.url}|${r.source_name}`
+    )
+  };
+
+  if (fallbackSummary.date_death || fallbackSummary.date_funeral) {
+    fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
+  }
+
+  return fallbackSummary;
+}
+
 function mergeRequiredSources(existingSources) {
   const list = Array.isArray(existingSources) ? existingSources.map(normalizeSource) : [];
   const byUrl = new Map(list.map((s) => [String(s.url || "").toLowerCase(), s]));
@@ -507,27 +540,7 @@ async function main() {
     upcoming_funerals.sort((a,b) => (a.date_funeral||"").localeCompare(b.date_funeral||"") || (a.time_funeral||"").localeCompare(b.time_funeral||""));
     recent_deaths.sort((a,b) => (b.date_death||"").localeCompare(a.date_death||""));
 
-    const latestDeath = [...recent_deaths]
-      .sort((a, b) => (asDateValue(b.date_death)?.getTime() || 0) - (asDateValue(a.date_death)?.getTime() || 0))[0] || null;
-    const nearestFuneral = [...upcoming_funerals]
-      .sort((a, b) => (asDateValue(a.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER) - (asDateValue(b.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER))[0] || null;
-
-    const fallbackSummary = {
-      text: "Helena Gawin - brak informacji",
-      date_death: latestDeath?.date_death || null,
-      date_funeral: nearestFuneral?.date_funeral || null,
-      urls: uniqueBy(
-        [latestDeath, nearestFuneral].filter(Boolean).map((r) => ({
-          url: r.url,
-          source_name: r.source_name
-        })),
-        (r) => `${r.url}|${r.source_name}`
-      )
-    };
-
-    if (fallbackSummary.date_death || fallbackSummary.date_funeral) {
-      fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
-    }
+    const fallbackSummary = buildFallbackSummaryForHelena(recent_deaths, upcoming_funerals);
 
     const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
 
@@ -544,7 +557,7 @@ async function main() {
       source_errors: sourceErrors,
       refresh_error: refreshErrors.join(" | "),
       writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-16.2"
+      writer_version: "2026-02-16.3"
     };
 
     await snapRef.set({
@@ -577,7 +590,7 @@ async function main() {
       ok: false,
       error_message: String(e?.message || e),
       writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-16.2"
+      writer_version: "2026-02-16.3"
     }, { merge: true });
     console.error("ERROR:", e);
     process.exitCode = 1;
@@ -596,5 +609,6 @@ export {
   parseGenericHtml,
   mergeRequiredSources,
   normalizeSource,
-  resolveJobOutcome
+  resolveJobOutcome,
+  buildFallbackSummaryForHelena
 };
