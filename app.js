@@ -18,20 +18,18 @@ function detectGithubPagesRefreshConfig() {
   if (!host.endsWith("github.io")) return null;
 
   const [owner] = host.split(".");
-  const [pathRepo] = (window.location.pathname || "")
+  const [repo] = (window.location.pathname || "")
     .replace(/^\/+/, "")
     .split("/")
     .filter(Boolean);
 
-  const repo = pathRepo || `${owner}.github.io`;
   if (!owner || !repo) return null;
 
   return {
     owner,
     repo,
     workflowId: "refresh-data.yml",
-    // Jeżeli nie podano `ref`, spróbujemy pobrać domyślną gałąź repo z GitHub API.
-    ref: "",
+    ref: "main",
     token: "",
   };
 }
