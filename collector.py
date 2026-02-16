@@ -27,6 +27,54 @@ TARGET_PHRASES = [
     "Helena Gawin Dereń",
 ]
 
+COMMON_GIVEN_NAMES = {
+    "adam",
+    "agnieszka",
+    "aleksander",
+    "alicja",
+    "andrzej",
+    "anna",
+    "barbara",
+    "danuta",
+    "elzbieta",
+    "ewa",
+    "franciszek",
+    "grzegorz",
+    "halina",
+    "helena",
+    "irena",
+    "iwona",
+    "jan",
+    "janina",
+    "joanna",
+    "jozef",
+    "jozefa",
+    "katarzyna",
+    "krystyna",
+    "lukasz",
+    "maciej",
+    "magdalena",
+    "malgorzata",
+    "marek",
+    "maria",
+    "marian",
+    "mariusz",
+    "monika",
+    "pawel",
+    "piotr",
+    "rafal",
+    "renata",
+    "roman",
+    "stanislaw",
+    "teresa",
+    "tomasz",
+    "urszula",
+    "wieslaw",
+    "wojciech",
+    "zbigniew",
+    "zofia",
+}
+
 
 def norm(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").strip()).lower()
@@ -37,6 +85,31 @@ def norm_loose(text: str) -> str:
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = re.sub(r"[\-_]", " ", value)
     return re.sub(r"\s+", " ", value).strip()
+
+
+def title_token(token: str) -> str:
+    return "-".join(part[:1].upper() + part[1:].lower() for part in token.split("-"))
+
+
+def canonicalize_name_order(name: str) -> str:
+    clean = re.sub(r"\s+", " ", (name or "")).strip(" -:;,|")
+    if not clean:
+        return clean
+
+    if "," in clean:
+        left, right = [part.strip() for part in clean.split(",", 1)]
+        if left and right:
+            clean = f"{right} {left}"
+
+    tokens = [token for token in clean.split(" ") if token]
+    if len(tokens) >= 2:
+        first_norm = norm_loose(tokens[0])
+        second_norm = norm_loose(tokens[1])
+        if first_norm not in COMMON_GIVEN_NAMES and second_norm in COMMON_GIVEN_NAMES:
+            tokens = tokens[1:] + [tokens[0]]
+
+    normalized_tokens = [title_token(token) if token.isupper() else token for token in tokens]
+    return " ".join(normalized_tokens)
 
 
 def safe_date(value: str) -> Optional[str]:
@@ -61,7 +134,7 @@ def extract_name(value: str) -> Optional[str]:
         r"([A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\-.']+(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\-.']+)+)",
         cleaned,
     )
-    return match.group(1).strip() if match else None
+    return canonicalize_name_order(match.group(1).strip()) if match else None
 
 
 def should_keep_by_date(row: "Row", cutoff: date) -> bool:
@@ -124,7 +197,7 @@ def parse_zck_funerals(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
             funerals.append(
                 Row(
                     kind="funeral",
-                    name=match.group(3).strip(),
+                    name=canonicalize_name_order(match.group(3).strip()),
                     time_funeral=match.group(1),
                     place=f"{current_cemetery} — {match.group(2).strip()}",
                     source_id=source["id"],
@@ -147,7 +220,7 @@ def parse_podwawelskie_nekrologi(source: Dict[str, Any]) -> Tuple[List[Row], Lis
             deaths.append(
                 Row(
                     kind="death",
-                    name=f"{lines[index]} {lines[index + 1]}".strip(),
+                    name=canonicalize_name_order(f"{lines[index]} {lines[index + 1]}".strip()),
                     date_death=safe_date(lines[index + 3]) or lines[index + 3],
                     place="Parafia MB Fatimskiej — Nekrologi",
                     source_id=source["id"],
@@ -173,7 +246,7 @@ def parse_podwawelskie_ogloszenia(source: Dict[str, Any]) -> Tuple[List[Row], Li
                 deaths.append(
                     Row(
                         kind="death",
-                        name=candidate,
+                        name=canonicalize_name_order(candidate),
                         place="Parafia MB Fatimskiej — ogłoszenia",
                         source_id=source["id"],
                         source_name=source["name"],
@@ -197,7 +270,7 @@ def parse_intencje(source: Dict[str, Any], place_name: str) -> Tuple[List[Row], 
             deaths.append(
                 Row(
                     kind="death",
-                    name=tail,
+                    name=canonicalize_name_order(tail),
                     place=place_name,
                     source_id=source["id"],
                     source_name=source["name"],
@@ -223,7 +296,7 @@ def parse_grobonet(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
             deaths.append(
                 Row(
                     kind="death",
-                    name=m_name.group(1),
+                    name=canonicalize_name_order(m_name.group(1)),
                     date_death=safe_date(m_date.group(1)),
                     place="Cmentarz Salwatorski (Grobonet)",
                     source_id=source["id"],
@@ -299,7 +372,7 @@ def parse_funeral_home(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
             deaths.append(
                 Row(
                     kind="death",
-                    name=name,
+                    name=canonicalize_name_order(name),
                     date_death=safe_date(d_match.group(1) if d_match.lastindex == 1 else d_match.group(2))
                     or (d_match.group(1) if d_match.lastindex == 1 else d_match.group(2)),
                     place="Dom pogrzebowy — nekrolog",
@@ -312,7 +385,7 @@ def parse_funeral_home(source: Dict[str, Any]) -> Tuple[List[Row], List[Row]]:
             funerals.append(
                 Row(
                     kind="funeral",
-                    name=name,
+                    name=canonicalize_name_order(name),
                     date_funeral=safe_date(f_match.group(1)) if f_match else None,
                     time_funeral=t_match.group(1).replace(".", ":") if t_match else None,
                     place="Dom pogrzebowy — szczegóły pogrzebu",
