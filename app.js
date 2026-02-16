@@ -10,8 +10,31 @@ const TARGET_PHRASES = [
 const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
-const githubRefreshConfig = appConfig.githubRefresh || null;
+const githubRefreshConfig = appConfig.githubRefresh || detectGithubPagesRefreshConfig();
 let lastGeneratedAt = null;
+
+function detectGithubPagesRefreshConfig() {
+  const host = window.location.hostname || "";
+  if (!host.endsWith("github.io")) return null;
+
+  const [owner] = host.split(".");
+  const [pathRepo] = (window.location.pathname || "")
+    .replace(/^\/+/, "")
+    .split("/")
+    .filter(Boolean);
+
+  const repo = pathRepo || `${owner}.github.io`;
+  if (!owner || !repo) return null;
+
+  return {
+    owner,
+    repo,
+    workflowId: "refresh-data.yml",
+    // Jeżeli nie podano `ref`, spróbujemy pobrać domyślną gałąź repo z GitHub API.
+    ref: "",
+    token: "",
+  };
+}
 
 const norm = (s) => (s || "")
   .toLowerCase()
@@ -58,6 +81,22 @@ function getGithubToken() {
   return normalizedToken;
 }
 
+async function resolveGithubRef(owner, repo, token) {
+  if (githubRefreshConfig && githubRefreshConfig.ref) {
+    return githubRefreshConfig.ref;
+  }
+
+  const repoEndpoint = `https://api.github.com/repos/${owner}/${repo}`;
+  const headers = { Accept: "application/vnd.github+json" };
+  if (token) headers.Authorization = `Bearer ${token}`;
+
+  const response = await fetch(repoEndpoint, { headers });
+  if (!response.ok) return "main";
+
+  const payload = await response.json().catch(() => ({}));
+  return payload.default_branch || "main";
+}
+
 async function dispatchGithubRefresh() {
   const token = getGithubToken();
   if (!token) {
@@ -67,7 +106,7 @@ async function dispatchGithubRefresh() {
   const owner = githubRefreshConfig.owner;
   const repo = githubRefreshConfig.repo;
   const workflowId = githubRefreshConfig.workflowId;
-  const ref = githubRefreshConfig.ref || "main";
+  const ref = await resolveGithubRef(owner, repo, token);
   const endpoint = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`;
 
   const response = await fetch(endpoint, {

@@ -1,4 +1,8 @@
 window.NEKROLOG_CONFIG = {
+  // Na GitHub Pages (https://<owner>.github.io/<repo>/) aplikacja domyślnie
+  // próbuje wykryć owner/repo i uruchamia workflow `refresh-data.yml`.
+  // Poniższe opcje są potrzebne tylko gdy chcesz nadpisać to zachowanie.
+
   // Opcja 1 (lokalnie lub własny backend):
   // forceRefreshUrl: "https://twoj-backend.example.com/api/refresh",
 
@@ -9,7 +13,7 @@ window.NEKROLOG_CONFIG = {
   //   owner: "twoj-login-github",
   //   repo: "Nekrolog",
   //   workflowId: "refresh-data.yml", // nazwa pliku workflow albo ID
-  //   ref: "work", // gałąź z której publikujesz GitHub Pages
+  //   ref: "work", // opcjonalnie; domyślnie pobrana zostanie domyślna gałąź repo
   //   token: "", // opcjonalnie; zalecane: pusty w repo
   // },
 };
