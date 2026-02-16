@@ -1,4 +1,4 @@
-import { getDb, getRefs, readDocSafe } from "./firebase.js";
+import { getDb, getRefs, readDocSafe, requestRefresh } from "./firebase.js";
 import { makePhraseVariants, textMatchesAny } from "./scripts/normalize.mjs";
 
 const HELENA_GAWIN_PHRASES = [
@@ -46,25 +46,6 @@ function resolveName(r) {
     r.item1
   ];
   return candidates.map((v) => String(v ?? "").trim()).find(Boolean) || "(brak nazwiska)";
-}
-
-function resolveLastName(r) {
-  const direct = [r.last_name, r.lastname, r.surname].map((v) => String(v ?? "").trim()).find(Boolean);
-  if (direct) return direct;
-  const name = resolveName(r).replace(/^Śp\.\s*/i, "").trim();
-  if (!name || name === "(brak nazwiska)") return "Brak nazwiska";
-  const parts = name.split(/\s+/).filter(Boolean);
-  return parts[0] || "Brak nazwiska";
-}
-
-function resolveFirstName(r) {
-  const direct = [r.first_name, r.firstname, r.given_name].map((v) => String(v ?? "").trim()).find(Boolean);
-  if (direct) return direct;
-  const name = resolveName(r).replace(/^Śp\.\s*/i, "").trim();
-  if (!name || name === "(brak nazwiska)") return "Brak imienia";
-  const parts = name.split(/\s+/).filter(Boolean);
-  if (parts.length >= 2) return parts.slice(1).join(" ");
-  return "Brak imienia";
 }
 
 function resolveRowDate(r, type) {
@@ -188,8 +169,6 @@ function renderList(container, rows, phrases, type, sourceUrlIndex) {
   for (const r of sorted) {
     const displayName = resolveName(r);
     const hit = textMatchesAny([displayName, r.note, r.place, r.source_name].join(" "), phrases);
-    const lastName = resolveLastName(r);
-    const firstName = resolveFirstName(r);
     const dateLabel = type === "death" ? "Data zgonu" : "Data pogrzebu";
     const dateValue = resolveRowDate(r, type);
     const { sourceLabel, sourceUrl } = resolveSourceMeta(r, sourceUrlIndex);
@@ -197,7 +176,7 @@ function renderList(container, rows, phrases, type, sourceUrlIndex) {
     div.className = "item";
     div.innerHTML = `
       <div class="top">
-        <div class="name">${escapeHtml(lastName)}, ${escapeHtml(firstName)}</div>
+        <div class="name">${escapeHtml(displayName)}</div>
         <div class="badge ${hit ? "hit" : ""}">${hit ? "TRAFIENIE" : (r.kind || r.category || "wpis")}</div>
       </div>
       <div class="small">${escapeHtml(dateLabel)}: ${escapeHtml(dateValue)}</div>
@@ -318,5 +297,26 @@ async function loadAll() {
   else pill.style.borderColor = "rgba(68,209,158,0.35)";
 }
 
-el("btnReload").addEventListener("click", loadAll);
+async function runRefresh() {
+  const btn = el("btnReload");
+  const db = getDb();
+  const { jobRef } = getRefs(db);
+
+  btn.disabled = true;
+  const originalLabel = btn.textContent;
+  btn.textContent = "Odświeżanie…";
+
+  try {
+    await requestRefresh(jobRef);
+    log("Wysłano żądanie odświeżenia do Firestore (Nekrolog_refresh_jobs/latest).");
+  } catch (err) {
+    log("Nie udało się wysłać żądania odświeżenia:", String(err?.message || err));
+  }
+
+  await loadAll();
+  btn.disabled = false;
+  btn.textContent = originalLabel;
+}
+
+el("btnReload").addEventListener("click", runRefresh);
 loadAll();

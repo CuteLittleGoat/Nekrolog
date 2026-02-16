@@ -2,6 +2,7 @@ import dns from "node:dns";
 import http from "node:http";
 import https from "node:https";
 import fetch from "node-fetch";
+import { execFileSync } from "node:child_process";
 
 try {
   dns.setDefaultResultOrder("ipv4first");
@@ -43,6 +44,34 @@ async function runFetch(url, signal, options = {}) {
   return { ok: res.ok, status: res.status, text, error: null };
 }
 
+
+function fetchViaCurl(url, timeoutMs) {
+  try {
+    const seconds = Math.max(5, Math.ceil(timeoutMs / 1000));
+    const out = execFileSync("curl", [
+      "-L",
+      "--silent",
+      "--show-error",
+      "--max-time",
+      String(seconds),
+      "--user-agent",
+      "nekrolog-refresh-bot/1.0 (+https://github.com/)",
+      "--header",
+      "accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      url
+    ], { encoding: "utf8" });
+
+    return { ok: true, status: 200, text: out, error: null };
+  } catch (error) {
+    return {
+      ok: false,
+      status: 0,
+      text: "",
+      error: stringifyError(error, "curl")
+    };
+  }
+}
+
 export async function fetchText(url, timeoutMs = 20000) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -52,17 +81,26 @@ export async function fetchText(url, timeoutMs = 20000) {
       return await runFetch(url, ctrl.signal);
     } catch (error) {
       if (!isRetryableNetworkError(error)) {
-        return { ok: false, status: 0, text: "", error: stringifyError(error, "fetch") };
+        const curlAttempt = fetchViaCurl(url, timeoutMs);
+        if (curlAttempt.ok) return curlAttempt;
+        return {
+          ok: false,
+          status: 0,
+          text: "",
+          error: `${stringifyError(error, "fetch")}; ${curlAttempt.error}`
+        };
       }
 
       try {
         return await runFetch(url, ctrl.signal, { agent: selectIpv4Agent });
       } catch (retryError) {
+        const curlAttempt = fetchViaCurl(url, timeoutMs);
+        if (curlAttempt.ok) return curlAttempt;
         return {
           ok: false,
           status: 0,
           text: "",
-          error: `${stringifyError(error, "fetch")}; ${stringifyError(retryError, "fetch_ipv4")}`
+          error: `${stringifyError(error, "fetch")}; ${stringifyError(retryError, "fetch_ipv4")}; ${curlAttempt.error}`
         };
       }
     }

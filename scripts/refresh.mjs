@@ -333,46 +333,88 @@ function parseIntentionsPlusHtml(text, source) {
 }
 
 async function parseIntentionsPlus(source) {
-  const { ok, status, text, error } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
-  return { rows: parseIntentionsPlusHtml(text, source), error: null };
+  return { rows: [], error: "Parser intencji został wyłączony (brak jednoznacznego potwierdzenia osoby i dat)" };
 }
 
 /**
  * Parser: Generic HTML “nekrolog/pogrzeb/zmarł”
  * (dla prostych stron domów pogrzebowych/parafii)
  */
+
+function parsePolishDateToIso(raw) {
+  const match = clean(raw).match(/(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})/);
+  if (!match) return null;
+  const day = Number(match[1]);
+  const month = Number(match[2]);
+  let year = Number(match[3]);
+  if (year < 100) year += 2000;
+  if (!day || !month || !year) return null;
+  return `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function parsePukPozegnalismyHtml(text, source) {
+  const $ = cheerio.load(text);
+  const rows = [];
+
+  $(".results-klepsydra .eklepsydra").each((_, card) => {
+    const root = $(card);
+    const headerText = clean(root.find("p").first().text());
+    const dateDeath = parsePolishDateToIso(headerText);
+    const fullName = clean(root.find("p.fs-28, p.h-80").first().text().replace(/^ŚP\.?\s*/i, ""));
+    const funeralLine = clean(root.find("p").filter((_, el) => /data pogrzebu/i.test($(el).text())).first().text());
+    const dateFuneral = parsePolishDateToIso(funeralLine);
+    const timeFuneral = funeralLine.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/)?.[0] || null;
+    const detailUrl = root.find("a.btn.link").attr("href") || source.url;
+
+    if (!fullName || (!dateDeath && !dateFuneral)) return;
+
+    rows.push({
+      kind: "death",
+      name: fullName,
+      date_death: dateDeath,
+      date_funeral: dateFuneral,
+      time_funeral: timeFuneral,
+      place: source.name,
+      source_id: source.id,
+      source_name: source.name,
+      url: detailUrl,
+      source_url: source.url,
+      note: clean([headerText, funeralLine].filter(Boolean).join(" | ")) || null
+    });
+
+    if (dateFuneral) {
+      rows.push({
+        kind: "funeral",
+        name: fullName,
+        date_death: dateDeath,
+        date_funeral: dateFuneral,
+        time_funeral: timeFuneral,
+        place: source.name,
+        source_id: source.id,
+        source_name: source.name,
+        url: detailUrl,
+        source_url: source.url,
+        note: headerText || null
+      });
+    }
+  });
+
+  return uniqueBy(rows, (r) => `${r.kind}|${r.name}|${r.date_death || ""}|${r.date_funeral || ""}|${r.url || ""}`);
+}
+
 async function parseGenericHtml(source) {
   const { ok, status, text, error } = await fetchText(source.url);
   if (!ok) return { rows: [], error: error || `HTTP ${status}` };
 
-  const $ = cheerio.load(text);
-  const content = clean($("body").text()).slice(0, 200000);
-
-  // Szukamy zdań z “pogrzeb”, “zmarł”, “śp.” i datą
-  const hits = [];
-  const sentences = content.split(/[.!?]\s+/);
-  for (const s of sentences) {
-    const ss = clean(s);
-    if (!ss) continue;
-    if (!/(pogrzeb|zmarł|zmarła|śp\.)/i.test(ss)) continue;
-    if (!/(\d{1,2}[./-]\d{1,2}[./-]\d{2,4})|(\d{4}-\d{2}-\d{2})/i.test(ss)) continue;
-    hits.push(ss.slice(0, 220));
-    if (hits.length >= 60) break;
+  if (String(source.id || "") === "puk_pozegnalismy") {
+    const rows = parsePukPozegnalismyHtml(text, source);
+    if (!rows.length) {
+      return { rows: [], error: "Brak rekordów możliwych do potwierdzenia na stronie PUK" };
+    }
+    return { rows, error: null };
   }
 
-  const rows = hits.map((h, idx) => ({
-    kind: "death",
-    name: "(wpis tekstowy)",
-    date_death: null,
-    place: source.name,
-    source_id: source.id,
-    source_name: source.name,
-    url: source.url,
-    note: h
-  }));
-
-  return { rows, error: null };
+  return { rows: [], error: "Brak parsera potwierdzającego wpisy dla tego źródła" };
 }
 
 async function main() {
@@ -451,17 +493,6 @@ async function main() {
           url: s.url,
           error: clean(parsed.error)
         });
-        allRows.push({
-          kind: "meta",
-          name: "(błąd źródła)",
-          date: null,
-          place: s.name,
-          source_id: s.id,
-          source_name: s.name,
-          url: s.url,
-          note: `Parser error: ${parsed.error}`,
-          priority_hit: false
-        });
       }
     }
 
@@ -498,9 +529,7 @@ async function main() {
       fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
     }
 
-    const refreshErrors = allRows
-      .filter((r) => r.kind === "meta" && hasContent(r.note))
-      .map((r) => `${r.source_name}: ${clean(r.note)}`);
+    const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
 
     const payload = {
       generated_at: nowISO(),
@@ -522,7 +551,7 @@ async function main() {
       ...payload,
       payload,
       data: payload
-    }, { merge: true });
+    });
 
     const jobOutcome = resolveJobOutcome({
       recentDeaths: recent_deaths.length,

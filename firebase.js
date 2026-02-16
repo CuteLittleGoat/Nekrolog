@@ -30,3 +30,14 @@ export async function saveTargetPhrases(db, phrases) {
     updated_at: serverTimestamp()
   }, { merge: true });
 }
+
+
+export async function requestRefresh(jobRef) {
+  await setDoc(jobRef, {
+    status: "queued",
+    trigger: "manual_ui",
+    requested_at: serverTimestamp(),
+    updated_at: serverTimestamp(),
+    error_message: null
+  }, { merge: true });
+}
