@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import { parseZckFuneralsHtml, parseIntentionsPlusHtml, mergeRequiredSources, resolveJobOutcome } from '../scripts/refresh.mjs';
+import {
+  parseZckFuneralsHtml,
+  parseIntentionsPlusHtml,
+  mergeRequiredSources,
+  resolveJobOutcome,
+  buildFallbackSummaryForHelena
+} from '../scripts/refresh.mjs';
 
 const source = { id: 'test', name: 'Test Source', url: 'https://example.com', enabled: true };
 
@@ -39,5 +45,21 @@ const okOutcome = resolveJobOutcome({ recentDeaths: 1, upcomingFunerals: 1, refr
 assert.equal(okOutcome.status, 'done');
 assert.equal(okOutcome.ok, true);
 assert.equal(okOutcome.errorMessage, null);
+
+const fallbackNoHits = buildFallbackSummaryForHelena(
+  [{ name: 'Tomasz Sobkowiak', date_death: '2026-02-11', priority_hit: false, url: 'https://example.com/a', source_name: 'A' }],
+  [{ name: 'Danuta Skorecka', date_funeral: '2026-02-09', priority_hit: false, url: 'https://example.com/b', source_name: 'B' }]
+);
+assert.equal(fallbackNoHits.text, 'Helena Gawin - brak informacji');
+assert.equal(fallbackNoHits.date_death, null);
+assert.equal(fallbackNoHits.date_funeral, null);
+assert.equal(fallbackNoHits.urls.length, 0);
+
+const fallbackWithHits = buildFallbackSummaryForHelena(
+  [{ name: 'Helena Gawin', date_death: '2026-02-11', priority_hit: true, url: 'https://example.com/a', source_name: 'A' }],
+  [{ name: 'Helena Gawin', date_funeral: '2026-02-12', priority_hit: true, url: 'https://example.com/b', source_name: 'B' }]
+);
+assert.match(fallbackWithHits.text, /Helena Gawin zmarła 2026-02-11, pogrzeb 2026-02-12/);
+assert.equal(fallbackWithHits.urls.length, 2);
 
 console.log('All parser tests passed.');
