@@ -10,10 +10,11 @@ const TARGET_PHRASES = [
 const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
-const githubRefreshConfig = appConfig.githubRefresh || detectGithubPagesRefreshConfig();
+const githubRefreshConfig = appConfig.githubRefresh || null;
+const githubIssueRefreshConfig = appConfig.githubIssueRefresh || detectGithubPagesIssueRefreshConfig();
 let lastGeneratedAt = null;
 
-function detectGithubPagesRefreshConfig() {
+function detectGithubPagesIssueRefreshConfig() {
   const host = window.location.hostname || "";
   if (!host.endsWith("github.io")) return null;
 
@@ -28,9 +29,8 @@ function detectGithubPagesRefreshConfig() {
   return {
     owner,
     repo,
-    workflowId: "refresh-data.yml",
-    ref: "main",
-    token: "",
+    labels: ["refresh-request"],
+    titlePrefix: "[refresh-request]",
   };
 }
 
@@ -61,6 +61,60 @@ function isGithubDispatchConfigured() {
     && githubRefreshConfig.repo
     && githubRefreshConfig.workflowId
   );
+}
+
+function isGithubIssueRefreshConfigured() {
+  return Boolean(
+    githubIssueRefreshConfig
+    && githubIssueRefreshConfig.owner
+    && githubIssueRefreshConfig.repo
+  );
+}
+
+function buildGithubIssueRefreshUrl() {
+  const owner = githubIssueRefreshConfig.owner;
+  const repo = githubIssueRefreshConfig.repo;
+  const labels = (githubIssueRefreshConfig.labels || [])
+    .map((label) => label.trim())
+    .filter(Boolean)
+    .join(",");
+  const titlePrefix = (githubIssueRefreshConfig.titlePrefix || "[refresh-request]").trim();
+  const title = `${titlePrefix} ${new Date().toISOString()}`;
+  const body = [
+    "Automatyczna prośba o odświeżenie danych z aplikacji Nekrolog.",
+    "",
+    `Wysłano z: ${window.location.href}`,
+  ].join("\n");
+
+  const params = new URLSearchParams({
+    title,
+    body,
+  });
+
+  if (labels) {
+    params.set("labels", labels);
+  }
+
+  return `https://github.com/${owner}/${repo}/issues/new?${params.toString()}`;
+}
+
+async function requestGithubIssueRefresh(previousGeneratedAt) {
+  const issueUrl = buildGithubIssueRefreshUrl();
+  window.open(issueUrl, "_blank", "noopener,noreferrer");
+
+  const status = document.getElementById("helenaStatus");
+  status.className = "status warn";
+  status.textContent = "Otworzono GitHub z gotowym zgłoszeniem aktualizacji. Zatwierdź nowe Issue (Submit new issue), a dane odświeżą się automatycznie.";
+
+  const updated = await waitForFreshData(previousGeneratedAt, 180000, 7000);
+  if (updated) {
+    status.className = "status ok";
+    status.textContent = "Wykryto nową wersję danych po zgłoszeniu aktualizacji na GitHub.";
+    return;
+  }
+
+  status.className = "status warn";
+  status.textContent = "Nie wykryto jeszcze nowej wersji danych. Jeśli nie zatwierdzono zgłoszenia na GitHub, dokończ to i odśwież widok za chwilę.";
 }
 
 function getGithubToken() {
@@ -254,6 +308,11 @@ async function forceRefresh() {
       return;
     }
 
+    if (isGithubIssueRefreshConfigured()) {
+      await requestGithubIssueRefresh(generatedAtBeforeRefresh);
+      return;
+    }
+
     let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
     if (response.status === 405) {
       response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
@@ -272,7 +331,7 @@ async function forceRefresh() {
     }
   } catch (error) {
     status.className = "status err";
-    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Skonfiguruj NEKROLOG_CONFIG.githubRefresh dla GitHub Pages lub NEKROLOG_CONFIG.forceRefreshUrl dla backendu /api/refresh.`;
+    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Skonfiguruj NEKROLOG_CONFIG.githubIssueRefresh lub NEKROLOG_CONFIG.githubRefresh dla GitHub Pages albo NEKROLOG_CONFIG.forceRefreshUrl dla backendu /api/refresh.`;
     console.error(error);
   } finally {
     button.disabled = false;

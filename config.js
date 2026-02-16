@@ -1,19 +1,25 @@
 window.NEKROLOG_CONFIG = {
-  // Na GitHub Pages (https://<owner>.github.io/<repo>/) aplikacja domyślnie
-  // próbuje wykryć owner/repo i uruchamia workflow `refresh-data.yml`.
-  // Poniższe opcje są potrzebne tylko gdy chcesz nadpisać to zachowanie.
-
   // Opcja 1 (lokalnie lub własny backend):
   // forceRefreshUrl: "https://twoj-backend.example.com/api/refresh",
 
-  // Opcja 2 (GitHub Pages): uruchamianie workflow GitHub Actions.
-  // Uwaga: tokenu nie commituj do repo. Pozostaw puste `token` i wklej PAT
-  // dopiero w przeglądarce po kliknięciu "Wymuś aktualizację".
+  // Opcja 2 (zalecane na GitHub Pages, bez PAT):
+  // Aplikacja domyślnie wykrywa owner/repo i po kliknięciu "Wymuś aktualizację"
+  // otwiera gotowe Issue na GitHub z etykietą refresh-request.
+  // Wystarczy kliknąć "Submit new issue".
+  // githubIssueRefresh: {
+  //   owner: "twoj-login-github",
+  //   repo: "Nekrolog",
+  //   labels: ["refresh-request"],
+  //   titlePrefix: "[refresh-request]",
+  // },
+
+  // Opcja 3 (zaawansowane, nadal możliwe): bezpośredni workflow_dispatch przez API.
+  // Wymaga tokenu PAT i nie jest domyślnie używane.
   // githubRefresh: {
   //   owner: "twoj-login-github",
   //   repo: "Nekrolog",
-  //   workflowId: "refresh-data.yml", // nazwa pliku workflow albo ID
-  //   ref: "work", // opcjonalnie; domyślnie pobrana zostanie domyślna gałąź repo
-  //   token: "", // opcjonalnie; zalecane: pusty w repo
+  //   workflowId: "refresh-data.yml",
+  //   ref: "work",
+  //   token: "", // opcjonalnie; NIE commituj sekretów
   // },
 };
