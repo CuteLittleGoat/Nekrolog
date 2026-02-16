@@ -1,131 +1,174 @@
-# Analiza: brak wyświetlania danych zmarłych + ręczna weryfikacja źródeł
+# Analiza ponowna: brak wyświetlania danych zmarłych + weryfikacja źródeł (2026-02-16)
 
 ## Prompt użytkownika (kontekst)
-> Przeanalizuj kod aplikacji. Nie wyświetlają się dane zmarłych. Jeżeli trzeba coś poprawić w Firebase to zapisz w Analizy.
-> Przeczytaj linki jakie są podane jako źródło. Ręcznie przeczytaj wszystkie informacje o pogrzebach i zgonach. Sprawdź czy aplikacja poprawnie potrafi wyciągnąć dane.
+> Przeczytaj plik Analizy/analiza_braku_danych_zmarlych_i_weryfikacja_zrodel_2026-02-16.md i przeprowadź ponowną analizę.
+> Skasuj Analizy/analiza_braku_danych_zmarlych_i_weryfikacja_zrodel_2026-02-16.md i zastąp go nową analizą.
+> Część czynności z Analizy/analiza_braku_danych_zmarlych_i_weryfikacja_zrodel_2026-02-16.md zostało wykonane.
+>
+> Zostało poprawione Firebase - masz pełen dostęp do odczytu i zapisu to sprawdź czy już wszystko jest tak jak być powinno.
+> Dodatkowo masz summary z ostatniej poprawki:
+> Summary
+>
+>     Zaktualizowałem scripts/refresh.mjs, żeby automatycznie normalizować problematyczne źródła z sekcji 5.2: wyłączać par_debniki_contact oraz przepinać podgorki_tynieckie_grobonet na .../nekrologi.php podczas scalania konfiguracji źródeł.
+>
+>     Dodałem walidację rekordów przed zapisem (isMeaningfulRow), aby odrzucać puste wpisy i nie produkować „placeholderów” bez treści w snapshotach (zalecenie 5.3).
+>
+>     Dodałem budowanie pola refresh_error na podstawie rzeczywistych błędów parserów (meta), żeby snapshot zawierał diagnostykę przy problemach odświeżania.
+>
+>     Dodałem skrypt narzędziowy scripts/firebase_apply_recommendations_5.mjs, który realizuje zalecenia 5.1/5.2 przez Firestore REST (czyszczenie list i liczników w Nekrolog_snapshots/latest oraz korekta Nekrolog_config/sources).
+>
+>     Zmiany zostały zacommitowane (e3a48fb) i utworzyłem PR przez make_pr.
+>
+>
+> Aplikacja w dalszym ciągu nie wyświetla danych - więc pewnie nie wszystkie poprawki zostały wprowadzone.
+> Przeprowadź pełną analizę oraz propozycję naprawy.
 
-## 1) Co sprawdziłem
-- Kod frontu (`app.js`) odpowiedzialny za render list i wybór pól nazwiska (`resolveName`) oraz list (`pickRows`).
-- Kod odświeżania (`scripts/refresh.mjs`) i parsery:
-  - `parseZckFunerals`
-  - `parseIntentionsPlus`
-  - `parseGenericHtml`
-- Aktualny stan Firestore przez REST API:
-  - `Nekrolog_snapshots/latest`
-  - `Nekrolog_refresh_jobs/latest`
-  - `Nekrolog_config/sources`
-- Ręczne odczytanie stron źródłowych (treści pogrzebów/zgonów, gdzie dostępne):
-  - `https://www.zck-krakow.pl/funerals`
-  - `https://www.ruczaj.diecezja.pl/index.php/aktualnosci/intencje-mszalne`
-  - `https://jp2nowyruczaj.pl/informacje-o-parafii/intencje-mszalne/`
-  - `https://debniki.sdb.org.pl/kontakt/`
-  - `https://klepsydrakrakow.grobonet.com/` (+ sprawdzony `.../nekrologi.php`)
+---
 
-## 2) Główna przyczyna widoku „(brak nazwiska)”
-W `Nekrolog_snapshots/latest` znajdują się rekordy z pustymi polami (`name`, `date`, `source_name`, `note`, `source_url` = `""`) oraz liczniki ustawione na `1`.
-To powoduje, że front renderuje „wpis” bez danych i dla nazwy pokazuje fallback `(brak nazwiska)`.
+## 1) Co sprawdziłem ponownie
 
-Dodatkowo w `Nekrolog_refresh_jobs/latest` status jest `error`, a `error_message` = `HTTP 404`, więc ostatnie odświeżenie nie nadpisało snapshotu poprawnymi danymi.
+1. **Kod parserów i pipeline odświeżania** (`scripts/refresh.mjs`):
+   - normalizacja źródeł,
+   - walidacja `isMeaningfulRow`,
+   - składanie `refresh_error`,
+   - sposób zapisu snapshotu.
+2. **Kod frontu** (`app.js`) odpowiedzialny za:
+   - odczyt snapshotu/job/config,
+   - fallbacki pól (`pickRows`, `resolveName`),
+   - logikę komunikatu błędu.
+3. **Aktualny stan Firestore (live)** przez REST:
+   - `Nekrolog_snapshots/latest`,
+   - `Nekrolog_refresh_jobs/latest`,
+   - `Nekrolog_config/sources`.
+4. **Ręczna weryfikacja URL źródeł** (statusy + dostępność treści, sygnały dla parserów).
+5. **Porównanie “co powinno być po nowym `refresh.mjs`” vs “co realnie jest w Firestore”.**
 
-## 3) Ręczna weryfikacja źródeł i zdolności parserów
+---
 
-### 3.1 ZCK Kraków – porządek pogrzebów
-URL: `https://www.zck-krakow.pl/funerals`
+## 2) Stan Firebase po ostatnich zmianach — co jest już poprawione
 
-Ręcznie odczytana strona zawiera realne wpisy pogrzebów (np. dla dnia `2026-02-16`):
-- 9:40 — Jacek Balcerski (Cmentarz Rakowicki)
-- 10:20 — Władysława Iwanek (Cmentarz Rakowicki)
-- 11:00 — Anna Kuczma (Cmentarz Rakowicki)
-- 11:00 — Helena Popoiołek (Cmentarz Rakowicki)
-- 11:40 — Marian Zuber (Cmentarz Rakowicki)
-- 12:00 — Jan Pietrzyk (Cmentarz Rakowicki)
-- 12:20 — Jolanta Śliwa (Cmentarz Rakowicki)
-- 13:00 — Maria Styczeń (Cmentarz Rakowicki)
-- 13:00 — Artur Kohut (Cmentarz Rakowicki)
-- 13:40 — Romana Kończakowska (Cmentarz Rakowicki)
-- 10:00 — Marcin Grzybek (Cmentarz Podgórski)
-- 11:00 — Krystyna Gajda (Cmentarz Podgórski)
-- 12:00 — Tomasz Sobkowiak (Cmentarz Podgórski)
-- 14:00 — Marianna Lachowska (Cmentarz Maki Czerwone)
-- 10:20 — Małgorzata Wieczorek (Cmentarz Grębałów)
-- 11:00 — Zofia Kniżatko (Cmentarz Grębałów)
-- 11:40 — Józef Brudz (Cmentarz Grębałów)
-- 12:20 — Alicja Skiba (Cmentarz Grębałów)
-- 13:00 — Wiesława Dziedzic (Cmentarz Grębałów)
-- 13:40 — Jolanta Obek-Pacyga (Cmentarz Grębałów)
-- 10:00 — Yasmin Zaki (Cmentarz Komunalny w Podgórkach Tynieckich)
+### 2.1 `Nekrolog_config/sources`
+W konfiguracji źródeł widocznych jest 5 pozycji i **poprawki z sekcji 5.2 są częściowo obecne**:
+- `par_debniki_contact` jest ustawione na `enabled: false` ✅
+- `podgorki_tynieckie_grobonet` ma URL `.../nekrologi.php` ✅
 
-**Wniosek parsera:** obecny parser `parseZckFunerals` oczekuje formatu z przecinkami (`"10:00, Kaplica, Jan Kowalski"`), ale strona ma format bez przecinków (`"10:00 Kaplica Jan Kowalski (lat ...)"`).
-Skutek: parser zwraca 0 albo skrajnie mało rekordów.
+Czyli korekty źródeł wykonane wcześniej zostały zapisane.
 
-### 3.2 Parafia Ruczaj – intencje
-URL: `https://www.ruczaj.diecezja.pl/index.php/aktualnosci/intencje-mszalne`
+### 2.2 `Nekrolog_snapshots/latest`
+W snapshotcie listy są puste i liczniki są wyzerowane (`deaths_count=0`, `funerals_count=0`) — to odpowiada wykonanym porządkom 5.1 ✅
 
-Na stronie są liczne wpisy ze znakami `+`/`++` (wzmianki o zmarłych), np. `+Zofia Denik`, `+Stanisław Nosalski`, `+Alina Gryglewska`, `+Wojciech Szymczak` itd.
+### 2.3 Nadal problematyczne
+`Nekrolog_refresh_jobs/latest` ma nadal:
+- `status: error`,
+- `ok: false`,
+- `error_message: HTTP 404`.
 
-**Wniosek parsera:** `parseIntentionsPlus` najpierw robi `clean($('body').text())`, co usuwa podziały linii, a dopiero potem robi `split(/\n/)`.
-Skutek: praktycznie cały dokument staje się jedną „linią”, parser generuje 1 bardzo zanieczyszczony wpis zamiast wielu konkretnych nazwisk.
+To oznacza, że **mechanizm odświeżania nadal kończy się błędem**, więc snapshot nie jest odtwarzany poprawnymi danymi.
 
-### 3.3 Parafia JP2 Nowy Ruczaj – intencje
-URL: `https://jp2nowyruczaj.pl/informacje-o-parafii/intencje-mszalne/`
+---
 
-Na stronie również jest dużo wpisów `+` (np. `+ Kazimiera Prokocka`, `+ Maria Jakima`, `+ Zofia Dębska`, `+ Włodzimierz Rynkar`, `+ Maria Kaleta`, `+ Wojciech Roczkowski`, `+ Marcin Jurek` itd.).
+## 3) Kluczowa diagnoza: dlaczego aplikacja nadal nic nie pokazuje
 
-**Wniosek parsera:** ten sam problem jak wyżej — parser linii `+` jest logicznie uszkodzony przez wcześniejsze „spłaszczenie” białych znaków.
+### 3.1 Dane „porządkowe” zostały zapisane, ale brak udanego odświeżenia
+Aktualny snapshot jest “wyczyszczony” (brak wpisów), ale nie ma późniejszego udanego runu, który uzupełniłby go realnymi rekordami z parserów.
 
-### 3.4 Dębniki
-URL (w Firebase): `https://debniki.sdb.org.pl/kontakt/`
+### 3.2 Najważniejsza niezgodność: aktualny writer snapshotu wygląda na inny niż `scripts/refresh.mjs`
+W snapshotcie są pola typu `helena_status`, `sources_count`, a **brakuje struktury** spodziewanej po obecnym `refresh.mjs` (`payload`, `data`, pełne `sources`, `target_phrases`, spójny `fallback_summary` z nowego pipeline).
 
-Odpowiedź HTTP: `403` (strona blokowana przez ochronę/Cloudflare).
+Wniosek praktyczny: bardzo możliwe, że środowisko produkcyjne nadal odpala **stary mechanizm** (lub inny skrypt), a nie aktualny `scripts/refresh.mjs` z repo.
 
-**Wniosek parsera:** dla tego źródła parser regularnie będzie zwracał błąd HTTP.
+### 3.3 Parsowanie nadal nie da danych nawet po uruchomieniu aktualnego skryptu (bez dalszych poprawek parserów)
 
-### 3.5 Klepsydra / Grobonet Podgórki Tynieckie
-URL (w Firebase): `https://klepsydrakrakow.grobonet.com/`
+#### a) ZCK (`parseZckFunerals`) — parser nadal niedopasowany
+Kod szuka formatu z przecinkami:
+- `HH:MM, Miejsce, Imię Nazwisko`
 
-Pod URL głównym brak listy nekrologów w treści. Jest odnośnik `nekrologi.php`.
-`https://klepsydrakrakow.grobonet.com/nekrologi.php` ładuje stronę „Nekrologi”, ale bez łatwo dostępnej listy wpisów w statycznym HTML (najpewniej inny przepływ nawigacji / dynamiczne ładowanie / formularze).
+Aktualna strona ZCK ma strukturę blokową/liniową:
+- `HH:MM` + osobna linia miejsca + osobna linia nazwiska (`(lat N)`).
 
-**Wniosek parsera:** `parseGenericHtml` nie znajdzie tam danych po samym root URL.
+Efekt: parser zwraca 0 wierszy dla ZCK (sprawdzone).
 
-## 4) Czy aplikacja poprawnie wyciąga dane?
-Krótko: **nie** (obecnie niepoprawnie).
+#### b) `intencje_plus` (`parseIntentionsPlus`) — błąd logiczny nadal obecny
+Kod robi:
+- `clean($('body').text())` (spłaszcza wszystkie białe znaki),
+- potem `split(/[\n\r]+/)`.
 
-Powody:
-1. Snapshot w Firebase ma „puste” rekordy, które front renderuje jako `(brak nazwiska)`.
-2. Parser ZCK jest niedopasowany do obecnego formatu HTML (oczekuje przecinków, których już nie ma).
-3. Parser `intencje_plus` ma błąd logiczny (utrata podziału linii przed detekcją wpisów `+`).
-4. Co najmniej jedno źródło zwraca `403`, inne jest ustawione na URL, który nie zawiera bezpośrednio nekrologów.
-5. Ostatni job odświeżania ma status `error` i `HTTP 404`.
+Po `clean` nie ma już sensownych podziałów linii, więc parser wykrywa zwykle **1 gigantyczną linię** zamiast wielu wpisów `+`/`†`.
 
-## 5) Co poprawić w Firebase (zalecenia)
+Weryfikacja ręczna:
+- Ruczaj: obecnie ~35 wzmiankowych linii z `+`/`†`, parser w obecnej logice daje 1.
+- JP2: obecnie ~29 wzmiankowych linii z `+`/`†`, parser w obecnej logice daje 1.
 
-### 5.1 Natychmiastowe porządki danych
-- W `Nekrolog_snapshots/latest` usunąć puste placeholdery i ustawić:
-  - `deaths = []`
-  - `funerals = []`
-  - `recent_deaths = []`
-  - `upcoming_funerals = []`
-  - `deaths_count = 0`
-  - `funerals_count = 0`
-- Dopisać pole diagnostyczne `refresh_error` z ostatnim realnym błędem parsera, jeśli występuje.
+---
 
-### 5.2 Korekta źródeł w `Nekrolog_config/sources`
-- Zmienić lub wyłączyć źródła problematyczne:
-  - `par_debniki_contact` (`.../kontakt/`) — blokada `403` → `enabled: false` albo inne źródło bez blokady.
-  - `podgorki_tynieckie_grobonet` — root URL nie daje nekrologów; testować `.../nekrologi.php` lub dedykowany parser.
-- Zweryfikować, które źródło daje `HTTP 404` i poprawić URL/wyłączyć źródło.
+## 4) Weryfikacja źródeł HTTP (tu i teraz)
 
-### 5.3 Dodatkowa walidacja po stronie zapisu
-- Przed zapisem snapshotu odfiltrowywać rekordy bez żadnej treści (`name`, `note`, `date*`, `source*`).
-- Nie zapisywać „sztucznych” pustych rekordów jako elementów list.
+Dla zestawu aktualnie skonfigurowanych źródeł z Firebase (`zck`, `ruczaj`, `jp2`, `debniki kontakt`, `grobonet`) odpowiedzi HTTP są obecnie 200.
 
-## 6) Co poprawić w kodzie (poza samym Firebase)
-1. `parseZckFunerals`: dodać regex pod obecny format tabel (`HH:MM Kaplica|Od bramy|Sala pożegnań Imię Nazwisko (lat N)`).
-2. `parseIntentionsPlus`: najpierw pobrać tekst z zachowaniem separatorów bloków/linii (np. `$('body').text('\n')`), dopiero potem `clean` per-linia.
-3. Dla źródeł `generic_html` dodać parsery dedykowane tam, gdzie struktura jest stała (Grobonet, konkretne parafie), zamiast jednego ogólnego heurystycznego parsera zdań.
-4. W UI rozważyć wyświetlenie `note` jako nazwy awaryjnej, kiedy `name` jest puste.
+To ważne: błąd `HTTP 404` w `Nekrolog_refresh_jobs/latest` prawdopodobnie:
+1. jest z wcześniejszego przebiegu i nie został nadpisany udanym runem,
+2. albo pochodzi z innego źródła/ścieżki uruchomieniowej niż te 5 URL,
+3. albo pochodzi z innego executora (stary kod/inna akcja), nie z aktualnej lokalnej konfiguracji.
 
-## 7) Podsumowanie
-- Problem „brak danych zmarłych” nie wynika z samego frontu, tylko głównie z jakości danych w snapshotcie + niedopasowanych parserów i problematycznych URL-i źródeł.
-- Firebase wymaga korekty danych snapshotu oraz listy źródeł (w szczególności URL-i dających 403/404 i URL-i bez realnych wpisów nekrologów).
+---
+
+## 5) Dlaczego UI pokazuje „brak wpisów” mimo poprawionego Firebase
+
+UI działa zgodnie z danymi:
+- jeśli `recent_deaths` i `upcoming_funerals` są puste, wyświetla „Brak wpisów w oknie czasowym”,
+- jeśli jest `job.error_message` albo `snapshot.refresh_error`, log pokazuje przyczynę.
+
+Czyli front nie jest głównym problemem — problemem jest brak poprawnie napełnionego snapshotu po udanym refreshu.
+
+---
+
+## 6) Propozycja naprawy (plan wykonawczy)
+
+### Etap A — ustalenie i unifikacja jedynego „writera” do Firestore (priorytet 1)
+1. Ustalić, **który proces faktycznie zapisuje** `Nekrolog_refresh_jobs/latest` i `Nekrolog_snapshots/latest` (GitHub Action, Cloud Function, inny skrypt).
+2. Wyłączyć/stoppować stary writer, zostawić **jedną ścieżkę**: `scripts/refresh.mjs`.
+3. Dodać do job payload np. `writer_version`/`writer_name` dla jednoznacznej diagnostyki.
+
+Bez tego kolejne poprawki parserów mogą lądować w repo, ale nie trafiać do produkcji.
+
+### Etap B — naprawa parserów (priorytet 1)
+1. **ZCK:** przepisać parser na sekwencję linii/elementów (`godzina -> miejsce -> osoba`) zamiast regexu z przecinkami.
+2. **intencje_plus:** pobierać tekst z separatorem (`$('body').text('\n')`) i dopiero czyścić per-linia.
+3. Dodać twarde testy parserów na fixture HTML dla:
+   - ZCK,
+   - Ruczaj,
+   - JP2.
+
+### Etap C — diagnostyka błędów 404 (priorytet 2)
+1. W `refresh_error` odkładać błędy per źródło (`source_id + status + final_url`).
+2. W `job.error_message` oprócz skrótu (`HTTP 404`) zapisać też listę źródeł, które poległy.
+3. W UI dodać podgląd szczegółów ostatniego odświeżenia (np. 5 ostatnich errorów źródeł).
+
+### Etap D — operacja po wdrożeniu parserów (priorytet 1)
+1. Ręcznie uruchomić workflow `Nekrolog Refresh` (`workflow_dispatch`).
+2. Zweryfikować po runie:
+   - `Nekrolog_refresh_jobs/latest.status = done`,
+   - `ok = true`,
+   - `error_message = null`.
+3. Sprawdzić snapshot:
+   - `upcoming_funerals` i/lub `recent_deaths` niepuste,
+   - `refresh_error` puste lub zawiera tylko ostrzeżenia, nie krytyczne błędy.
+
+---
+
+## 7) Priorytety naprawy (krótko)
+
+1. **Najpierw:** upewnić się, że produkcja używa właściwego `refresh.mjs` (jeden writer).
+2. **Następnie:** naprawić parser ZCK i parser `intencje_plus`.
+3. **Na końcu:** dołożyć telemetrykę błędów i testy fixture, żeby problem nie wracał.
+
+---
+
+## 8) Końcowy wniosek
+
+Część poprawek Firebase została wykonana poprawnie (czyszczenie snapshotu + korekty 2 źródeł), ale to **nie rozwiązuje braku danych**, ponieważ:
+- refresh kończy się statusem `error` (`HTTP 404`),
+- realny writer danych najpewniej nie jest zsynchronizowany z aktualnym kodem w repo,
+- dwa kluczowe parsery nadal logicznie nie wydobywają danych ze stron, które faktycznie je zawierają.
+
+Dlatego potrzebna jest jednocześnie: unifikacja procesu odświeżania + poprawa parserów.
