@@ -1,0 +1,122 @@
+const TARGET_PHRASES = [
+  "Helena Gawin",
+  "Helena Dereń",
+  "Helena Dereń-Gawin",
+  "Helena Dereń Gawin",
+  "Helena Gawin-Dereń",
+  "Helena Gawin Dereń",
+];
+
+const DATA_URL = "./data/latest.json"; // generowane przez backend (collector.py)
+
+function norm(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .replace(/[’']/g, "'")
+    .trim();
+}
+
+function matchesAny(text) {
+  const t = norm(text);
+  return TARGET_PHRASES.some(p => t.includes(norm(p)));
+}
+
+function el(tag, cls, html) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html != null) e.innerHTML = html;
+  return e;
+}
+
+function renderItem(container, row) {
+  const div = el("div", "item");
+  const title = el("div", "title", `${row.name || "?"}`);
+  if (row.kind) title.appendChild(el("span", "badge", row.kind));
+  div.appendChild(title);
+
+  const metaParts = [];
+  if (row.date_death) metaParts.push(`data śmierci: <b>${row.date_death}</b>`);
+  if (row.date_funeral) metaParts.push(`pogrzeb: <b>${row.date_funeral}</b>`);
+  if (row.time_funeral) metaParts.push(`godz.: <b>${row.time_funeral}</b>`);
+  if (row.place) metaParts.push(`miejsce: ${row.place}`);
+  if (row.source_name) metaParts.push(`źródło: ${row.source_name}`);
+  if (row.url) metaParts.push(`<a href="${row.url}" target="_blank" rel="noreferrer">link</a>`);
+
+  div.appendChild(el("div", "meta", metaParts.join(" • ")));
+  container.appendChild(div);
+}
+
+function applyHelenaStatus(data) {
+  const helenaStatus = document.getElementById("helenaStatus");
+
+  const hits = [];
+  for (const row of [...(data.recent_deaths || []), ...(data.upcoming_funerals || [])]) {
+    const hay = `${row.name || ""} ${row.note || ""} ${row.place || ""}`;
+    if (matchesAny(hay)) hits.push(row);
+  }
+
+  if (hits.length === 0) {
+    helenaStatus.className = "status warn";
+    helenaStatus.textContent = "Nie znaleziono pasujących wpisów (w pobranych źródłach).";
+    return;
+  }
+
+  helenaStatus.className = "status ok";
+  helenaStatus.textContent = `ZNALEZIONO ${hits.length} pasujących wpisów w źródłach — przewiń listy poniżej lub użyj wyszukiwarki.`;
+}
+
+function render(data) {
+  // Źródła
+  const sourcesUl = document.getElementById("sources");
+  sourcesUl.innerHTML = "";
+  (data.sources || []).forEach(s => {
+    const li = document.createElement("li");
+    li.innerHTML = `<b>${s.name}</b> — <a href="${s.url}" target="_blank" rel="noreferrer">${s.url}</a>`;
+    sourcesUl.appendChild(li);
+  });
+
+  // Listy
+  const recent = document.getElementById("recentDeaths");
+  const upcoming = document.getElementById("upcomingFunerals");
+  recent.innerHTML = "";
+  upcoming.innerHTML = "";
+
+  // Filtr tekstowy
+  const q = norm(document.getElementById("q").value);
+  const filterFn = (row) => {
+    if (!q) return true;
+    const hay = norm(`${row.name || ""} ${row.place || ""} ${row.source_name || ""}`);
+    return hay.includes(q);
+  };
+
+  (data.recent_deaths || []).filter(filterFn).forEach(row => renderItem(recent, row));
+  (data.upcoming_funerals || []).filter(filterFn).forEach(row => renderItem(upcoming, row));
+
+  applyHelenaStatus(data);
+}
+
+async function load() {
+  const res = await fetch(DATA_URL, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+async function refresh() {
+  const helenaStatus = document.getElementById("helenaStatus");
+  helenaStatus.className = "status";
+  helenaStatus.textContent = "Ładowanie danych…";
+
+  try {
+    const data = await load();
+    render(data);
+  } catch (e) {
+    helenaStatus.className = "status err";
+    helenaStatus.textContent = "Błąd pobierania danych. Upewnij się, że backend wygenerował data/latest.json.";
+    console.error(e);
+  }
+}
+
+document.getElementById("refreshBtn").addEventListener("click", refresh);
+document.getElementById("q").addEventListener("input", refresh);
+refresh();

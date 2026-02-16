@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monitor zmarłych / pogrzebów — Kapelanka (Kraków)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Helena Gawin</h1>
+    <p id="helenaStatus" class="status">Ładowanie danych…</p>
+    <div class="small">
+      Szukane frazy:
+      <code>Helena Gawin</code>,
+      <code>Helena Dereń</code>,
+      <code>Helena Dereń-Gawin</code>,
+      <code>Helena Dereń Gawin</code>,
+      <code>Helena Gawin-Dereń</code>,
+      <code>Helena Gawin Dereń</code>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Ostatnio zmarli (zebrane ze źródeł)</h2>
+      <div class="toolbar">
+        <input id="q" placeholder="Szukaj nazwiska…" />
+        <button id="refreshBtn">Odśwież</button>
+      </div>
+      <div id="recentDeaths" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Nadchodzące pogrzeby</h2>
+      <div id="upcomingFunerals" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Źródła (monitorowane)</h2>
+      <ul id="sources"></ul>
+    </section>
+
+    <footer class="small">
+      Dane pochodzą z publicznych stron (ogłoszenia/nekrologi/porządki pogrzebów). To narzędzie ma charakter informacyjny.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
