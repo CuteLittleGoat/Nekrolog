@@ -16,6 +16,8 @@ const CONFIG_COLLECTION = firebaseConfig.nekrologConfigCollection || "Nekrolog_c
 const CONFIG_DOC_ID = firebaseConfig.nekrologConfigDocId || "sources";
 const REFRESH_JOBS_COLLECTION = firebaseConfig.nekrologRefreshJobsCollection || "Nekrolog_refresh_jobs";
 const REFRESH_JOB_DOC_ID = firebaseConfig.nekrologRefreshJobDocId || "latest";
+const DEFAULT_FORCE_REFRESH_URL = "/api/refresh";
+const SNAPSHOT_FALLBACK_LIMIT = 25;
 
 let db = null;
 let lastGeneratedAt = null;
@@ -69,13 +71,19 @@ function normalizeRow(row, fallbackKind) {
 }
 
 function mapSnapshotToViewModel(snapshotData, sourcesData) {
+  const normalizedSnapshot = snapshotData.payload || snapshotData.data || snapshotData;
   const deaths = (snapshotData.deaths || snapshotData.recent_deaths || [])
     .map((row) => normalizeRow(row, "death"));
   const funerals = (snapshotData.funerals || snapshotData.upcoming_funerals || [])
     .map((row) => normalizeRow(row, "funeral"));
 
+  const fallbackDeaths = (normalizedSnapshot.deaths || normalizedSnapshot.recent_deaths || [])
+    .map((row) => normalizeRow(row, "death"));
+  const fallbackFunerals = (normalizedSnapshot.funerals || normalizedSnapshot.upcoming_funerals || [])
+    .map((row) => normalizeRow(row, "funeral"));
+
   const sourcesFromConfig = sourcesData?.sources || [];
-  const fallbackSources = (snapshotData.sources || []).map((src) => ({
+  const fallbackSources = (normalizedSnapshot.sources || []).map((src) => ({
     name: src.name || "",
     url: src.url || "",
     distance_km: src.distance_km,
@@ -83,9 +91,9 @@ function mapSnapshotToViewModel(snapshotData, sourcesData) {
   }));
 
   return {
-    generated_at: toIsoString(snapshotData.generated_at) || toIsoString(snapshotData.updated_at),
-    recent_deaths: deaths,
-    upcoming_funerals: funerals,
+    generated_at: toIsoString(normalizedSnapshot.generated_at) || toIsoString(normalizedSnapshot.updated_at),
+    recent_deaths: deaths.length ? deaths : fallbackDeaths,
+    upcoming_funerals: funerals.length ? funerals : fallbackFunerals,
     sources: (sourcesFromConfig.length ? sourcesFromConfig : fallbackSources).filter((src) => src.enabled !== false),
   };
 }
@@ -189,14 +197,41 @@ async function loadFromFirestore() {
   const configRef = db.collection(CONFIG_COLLECTION).doc(CONFIG_DOC_ID);
 
   const [snapshotDoc, configDoc] = await Promise.all([snapshotRef.get(), configRef.get()]);
-  if (!snapshotDoc.exists) {
-    throw new Error(`Brak dokumentu ${SNAPSHOTS_COLLECTION}/${SNAPSHOT_DOC_ID}`);
-  }
-
-  const snapshotData = snapshotDoc.data() || {};
+  const snapshotData = snapshotDoc.exists
+    ? snapshotDoc.data() || {}
+    : await loadLatestSnapshotFromCollection();
   const sourcesData = configDoc.exists ? configDoc.data() : null;
 
   return mapSnapshotToViewModel(snapshotData, sourcesData);
+}
+
+async function loadLatestSnapshotFromCollection() {
+  const snapshotQuery = await db.collection(SNAPSHOTS_COLLECTION).limit(SNAPSHOT_FALLBACK_LIMIT).get();
+  if (snapshotQuery.empty) {
+    throw new Error(`Brak danych w kolekcji ${SNAPSHOTS_COLLECTION}`);
+  }
+
+  const docs = snapshotQuery.docs
+    .map((doc) => doc.data() || {})
+    .sort((left, right) => {
+      const rightTime = Date.parse(toIsoString(right.generated_at) || toIsoString(right.updated_at) || "");
+      const leftTime = Date.parse(toIsoString(left.generated_at) || toIsoString(left.updated_at) || "");
+      return (Number.isNaN(rightTime) ? 0 : rightTime) - (Number.isNaN(leftTime) ? 0 : leftTime);
+    });
+
+  return docs[0] || {};
+}
+
+async function waitForSnapshotUpdate(previousGeneratedAt, timeoutMs = 15000) {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    const data = await loadFromFirestore();
+    if (!previousGeneratedAt || (data.generated_at && data.generated_at !== previousGeneratedAt)) {
+      return data;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+  }
+  return loadFromFirestore();
 }
 
 async function refresh() {
@@ -236,14 +271,26 @@ async function forceRefresh() {
   try {
     await writeRefreshJob("running", { started_at: new Date(), ok: null, error_message: "" });
 
-    let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
-    if (response.status === 405) {
-      response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
+    let shouldWaitForJob = true;
+    if (FORCE_REFRESH_URL) {
+      let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
+      if (response.status === 405) {
+        response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
+      }
+
+      const payload = await response.json().catch(() => ({}));
+      if (response.ok && payload.ok !== false) {
+        shouldWaitForJob = false;
+      } else if (!(response.status === 404 && FORCE_REFRESH_URL === DEFAULT_FORCE_REFRESH_URL)) {
+        throw new Error(payload.error || `HTTP ${response.status}`);
+      }
     }
 
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok || payload.ok === false) {
-      throw new Error(payload.error || `HTTP ${response.status}`);
+    let data = null;
+    if (shouldWaitForJob) {
+      data = await waitForSnapshotUpdate(lastGeneratedAt);
+    } else {
+      data = await loadFromFirestore();
     }
 
     await writeRefreshJob("done", {
@@ -252,7 +299,8 @@ async function forceRefresh() {
       error_message: "",
     });
 
-    await refresh();
+    lastGeneratedAt = data.generated_at || null;
+    render(data);
 
     status.className = "status ok";
     status.textContent = "Aktualizacja danych zakończona.";
