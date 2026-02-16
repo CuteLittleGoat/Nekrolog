@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T08:06:07.494239+00:00",
+  "generated_at": "2026-02-16T11:11:43.851572+00:00",
   "source_center": {
     "label": "ul. Kapelanka, Kraków",
     "lat": 50.03528,
@@ -73,7 +73,7 @@
   "recent_deaths": [
     {
       "kind": "death",
-      "name": "ARTUR KOHUT",
+      "name": "Artur Kohut",
       "date_death": "2026-02-10",
       "date_funeral": null,
       "time_funeral": null,
@@ -86,7 +86,7 @@
     },
     {
       "kind": "death",
-      "name": "EDWARD STAROBRAT",
+      "name": "Edward Starobrat",
       "date_death": "2026-02-10",
       "date_funeral": null,
       "time_funeral": null,
@@ -99,7 +99,7 @@
     },
     {
       "kind": "death",
-      "name": "ROMANA KOŃCZAKOWSKA",
+      "name": "Romana Kończakowska",
       "date_death": "2026-02-09",
       "date_funeral": null,
       "time_funeral": null,
@@ -114,7 +114,7 @@
   "upcoming_funerals": [
     {
       "kind": "funeral",
-      "name": "EDWARD STAROBRAT",
+      "name": "Edward Starobrat",
       "date_death": null,
       "date_funeral": "2026-02-14",
       "time_funeral": "14:30",
@@ -127,7 +127,7 @@
     },
     {
       "kind": "funeral",
-      "name": "JACEK BALCERSKI",
+      "name": "Jacek Balcerski",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "09:40",
@@ -140,7 +140,7 @@
     },
     {
       "kind": "funeral",
-      "name": "HELENA POPIOŁEK",
+      "name": "Helena Popiołek",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "11:00",
@@ -153,7 +153,7 @@
     },
     {
       "kind": "funeral",
-      "name": "PROF. DR HAB. INŻ. JAN PIETRZYK",
+      "name": "Prof. Dr Hab. Inż. Jan Pietrzyk",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "11:30",
@@ -166,7 +166,7 @@
     },
     {
       "kind": "funeral",
-      "name": "JOLANTA ŚLIWA",
+      "name": "Jolanta Śliwa",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "12:20",
@@ -179,7 +179,7 @@
     },
     {
       "kind": "funeral",
-      "name": "ARTUR KOHUT",
+      "name": "Artur Kohut",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "13:00",
@@ -192,7 +192,7 @@
     },
     {
       "kind": "funeral",
-      "name": "ROMANA KOŃCZAKOWSKA",
+      "name": "Romana Kończakowska",
       "date_death": null,
       "date_funeral": "2026-02-16",
       "time_funeral": "13:40",
@@ -206,10 +206,9 @@
   ],
   "target_phrases": [
     "Helena Gawin",
-    "Helena Dereń",
-    "Helena Dereń-Gawin",
-    "Helena Dereń Gawin",
     "Helena Gawin-Dereń",
-    "Helena Gawin Dereń"
+    "Helena Dereń-Gawin",
+    "Helena Gawin Deren",
+    "Helena Deren Gawin"
   ]
 }
