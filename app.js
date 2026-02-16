@@ -10,8 +10,29 @@ const TARGET_PHRASES = [
 const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
-const githubRefreshConfig = appConfig.githubRefresh || null;
+const githubRefreshConfig = appConfig.githubRefresh || detectGithubPagesRefreshConfig();
 let lastGeneratedAt = null;
+
+function detectGithubPagesRefreshConfig() {
+  const host = window.location.hostname || "";
+  if (!host.endsWith("github.io")) return null;
+
+  const [owner] = host.split(".");
+  const [repo] = (window.location.pathname || "")
+    .replace(/^\/+/, "")
+    .split("/")
+    .filter(Boolean);
+
+  if (!owner || !repo) return null;
+
+  return {
+    owner,
+    repo,
+    workflowId: "refresh-data.yml",
+    ref: "main",
+    token: "",
+  };
+}
 
 const norm = (s) => (s || "")
   .toLowerCase()
