@@ -1,8 +1,110 @@
 import admin from "firebase-admin";
 import cheerio from "cheerio";
 import { fetchText } from "./fetch.mjs";
-import { todayLocalMidnight, addDays, toISODate, inWindow } from "./date.mjs";
+import { todayLocalMidnight, addDays, inWindow } from "./date.mjs";
 import { makePhraseVariants, textMatchesAny } from "./normalize.mjs";
+
+const HELENA_GAWIN_PHRASES = [
+  "Helena Gawin",
+  "Helena Gawin-Dereń",
+  "Helena Dereń-Gawin",
+  "Helena Gawin Dereń",
+  "Helena Dereń Gawin",
+  "Helena Dereń",
+  "Gawin Helena",
+  "Gawin-Dereń Helena",
+  "Dereń-Gawin Helena",
+  "Gawin Dereń Helena",
+  "Dereń Gawin Helena",
+  "Dereń Helena",
+  "Śp. Helena Gawin",
+  "Śp. Helena Gawin-Dereń",
+  "Śp. Helena Dereń-Gawin",
+  "Śp. Helena Gawin Dereń",
+  "Śp. Helena Dereń Gawin",
+  "Śp. Helena Dereń",
+  "Śp. Gawin Helena",
+  "Śp. Gawin-Dereń Helena",
+  "Śp. Dereń-Gawin Helena",
+  "Śp. Gawin Dereń Helena",
+  "Śp. Dereń Gawin Helena",
+  "Śp. Dereń Helena"
+];
+
+const REQUIRED_SOURCES = [
+  {
+    id: "zck_funerals",
+    name: "ZCK Kraków – Porządek pogrzebów",
+    type: "zck_funerals",
+    url: "https://www.zck-krakow.pl/funerals",
+    enabled: true,
+    distance_km: 0
+  },
+  {
+    id: "puk_pozegnalismy",
+    name: "PUK Kraków – Pożegnaliśmy",
+    type: "generic_html",
+    url: "https://www.puk.krakow.pl/pozegnalismy/",
+    enabled: true,
+    distance_km: 4.5
+  },
+  {
+    id: "gabriel_nekrologi",
+    name: "Gabriel24 – Nekrologi",
+    type: "generic_html",
+    url: "https://www.gabriel24.pl/nekrologi/",
+    enabled: true,
+    distance_km: 6.5
+  },
+  {
+    id: "karawan_nekrologi",
+    name: "Karawan – Nekrologi",
+    type: "generic_html",
+    url: "https://karawan.pl/nekrologi/",
+    enabled: true,
+    distance_km: 7.5
+  },
+  {
+    id: "salwator_grobonet",
+    name: "Kraków Salwator – Grobonet",
+    type: "generic_html",
+    url: "https://krakowsalwator.grobonet.com/nekrologi.php",
+    enabled: true,
+    distance_km: 5.5
+  },
+  {
+    id: "debniki_sdb",
+    name: "Parafia św. Stanisława Kostki (Dębniki)",
+    type: "generic_html",
+    url: "https://debniki.sdb.org.pl/",
+    enabled: true,
+    distance_km: 2.5
+  },
+  {
+    id: "podwawelskie_nekrologi",
+    name: "Podwawelskie – Nekrologi",
+    type: "generic_html",
+    url: "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+    enabled: true,
+    distance_km: 2.5
+  },
+  {
+    id: "sw_jadwiga_pogrzebowe",
+    name: "Parafia św. Jadwigi – Msze święte pogrzebowe",
+    type: "generic_html",
+    url: "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+    enabled: true,
+    distance_km: 6.5
+  },
+  {
+    id: "facebook_parafia_debniki",
+    name: "Facebook – Parafia Dębniki",
+    type: "generic_html",
+    url: "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+    enabled: true,
+    distance_km: 2.5
+  }
+];
 
 function mustEnv(name) {
   const v = process.env[name];
@@ -25,6 +127,41 @@ function nowISO() {
 
 function clean(s) {
   return String(s ?? "").replace(/\s+/g, " ").trim();
+}
+
+function asDateValue(value) {
+  if (!value) return null;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return parsed;
+}
+
+function uniqueBy(items, keyFn) {
+  const map = new Map();
+  for (const item of items) {
+    map.set(keyFn(item), item);
+  }
+  return [...map.values()];
+}
+
+function mergeRequiredSources(existingSources) {
+  const list = Array.isArray(existingSources) ? [...existingSources] : [];
+  const byUrl = new Map(list.map((s) => [String(s.url || "").toLowerCase(), s]));
+
+  for (const required of REQUIRED_SOURCES) {
+    const existing = byUrl.get(required.url.toLowerCase());
+    if (existing) {
+      if (!existing.id) existing.id = required.id;
+      if (!existing.name) existing.name = required.name;
+      if (!existing.type) existing.type = required.type;
+      if (typeof existing.distance_km !== "number") existing.distance_km = required.distance_km;
+      if (typeof existing.enabled !== "boolean") existing.enabled = true;
+      continue;
+    }
+    list.push({ ...required });
+  }
+
+  return uniqueBy(list, (s) => String(s.url || "").toLowerCase());
 }
 
 /**
@@ -190,17 +327,21 @@ async function main() {
 
   try {
     const srcDoc = await srcRef.get();
-    const sources = (srcDoc.exists ? (srcDoc.data().sources || []) : []);
+    const sourcesRaw = (srcDoc.exists ? (srcDoc.data().sources || []) : []);
+    const sources = mergeRequiredSources(sourcesRaw);
+    if (sources.length !== (Array.isArray(sourcesRaw) ? sourcesRaw.length : 0)) {
+      await srcRef.set({ sources, updated_at: nowISO() }, { merge: true });
+    }
     if (!sources.length) throw new Error("Brak źródeł w Nekrolog_config/sources");
 
-    const snapDoc = await snapRef.get();
-    const targetPhrases = snapDoc.exists ? (snapDoc.data().target_phrases || []) : [];
+    const targetPhrases = HELENA_GAWIN_PHRASES;
     const phraseVariants = makePhraseVariants(targetPhrases);
 
     const enabled = sources.filter(s => s.enabled !== false);
 
     const allRows = [];
     const sourceLite = enabled.map(s => ({
+      id: s.id,
       name: s.name,
       url: s.url,
       distance_km: s.distance_km ?? null,
@@ -246,6 +387,28 @@ async function main() {
     upcoming_funerals.sort((a,b) => (a.date_funeral||"").localeCompare(b.date_funeral||"") || (a.time_funeral||"").localeCompare(b.time_funeral||""));
     recent_deaths.sort((a,b) => (b.date_death||"").localeCompare(a.date_death||""));
 
+    const latestDeath = [...recent_deaths]
+      .sort((a, b) => (asDateValue(b.date_death)?.getTime() || 0) - (asDateValue(a.date_death)?.getTime() || 0))[0] || null;
+    const nearestFuneral = [...upcoming_funerals]
+      .sort((a, b) => (asDateValue(a.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER) - (asDateValue(b.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER))[0] || null;
+
+    const fallbackSummary = {
+      text: "Helena Gawin - brak informacji",
+      date_death: latestDeath?.date_death || null,
+      date_funeral: nearestFuneral?.date_funeral || null,
+      urls: uniqueBy(
+        [latestDeath, nearestFuneral].filter(Boolean).map((r) => ({
+          url: r.url,
+          source_name: r.source_name
+        })),
+        (r) => `${r.url}|${r.source_name}`
+      )
+    };
+
+    if (fallbackSummary.date_death || fallbackSummary.date_funeral) {
+      fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
+    }
+
     const payload = {
       generated_at: nowISO(),
       updated_at: nowISO(),
@@ -253,6 +416,7 @@ async function main() {
       funerals,
       recent_deaths,
       upcoming_funerals,
+      fallback_summary: fallbackSummary,
       sources: sourceLite,
       target_phrases: targetPhrases
     };
