@@ -20,11 +20,7 @@ class AppHandler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def do_POST(self):
-        if self.path != "/api/refresh":
-            self.send_error(HTTPStatus.NOT_FOUND, "Unknown endpoint")
-            return
-
+    def _handle_refresh(self):
         if not REFRESH_LOCK.acquire(blocking=False):
             self._send_json({"ok": False, "error": "Odświeżanie już trwa."}, status=HTTPStatus.CONFLICT)
             return
@@ -40,6 +36,18 @@ class AppHandler(SimpleHTTPRequestHandler):
             self._send_json({"ok": False, "error": str(exc)}, status=HTTPStatus.INTERNAL_SERVER_ERROR)
         finally:
             REFRESH_LOCK.release()
+
+    def do_POST(self):
+        if self.path != "/api/refresh":
+            self.send_error(HTTPStatus.NOT_FOUND, "Unknown endpoint")
+            return
+        self._handle_refresh()
+
+    def do_GET(self):
+        if self.path == "/api/refresh":
+            self._handle_refresh()
+            return
+        super().do_GET()
 
 
 if __name__ == "__main__":
