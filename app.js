@@ -8,7 +8,9 @@ const TARGET_PHRASES = [
 ];
 
 const DATA_URL = "./data/latest.json";
-const FORCE_REFRESH_URL = "/api/refresh";
+const appConfig = window.NEKROLOG_CONFIG || {};
+const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
+let lastGeneratedAt = null;
 
 const norm = (s) => (s || "")
   .toLowerCase()
@@ -108,9 +110,11 @@ async function refresh() {
   status.textContent = "Ładowanie danych…";
 
   try {
-    const response = await fetch(DATA_URL, { cache: "no-store" });
+    const cacheBustedDataUrl = `${DATA_URL}${DATA_URL.includes("?") ? "&" : "?"}_=${Date.now()}`;
+    const response = await fetch(cacheBustedDataUrl, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
+    lastGeneratedAt = data.generated_at || null;
     render(data);
   } catch (error) {
     status.className = "status err";
@@ -128,6 +132,8 @@ async function forceRefresh() {
   status.textContent = "Trwa wymuszona aktualizacja monitorowanych źródeł…";
 
   try {
+    const generatedAtBeforeRefresh = lastGeneratedAt;
+
     let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
     if (response.status === 405) {
       response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
@@ -138,9 +144,15 @@ async function forceRefresh() {
     }
 
     await refresh();
+
+    const backendGeneratedAt = payload.generated_at || null;
+    if (backendGeneratedAt && generatedAtBeforeRefresh && backendGeneratedAt === generatedAtBeforeRefresh) {
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await refresh();
+    }
   } catch (error) {
     status.className = "status err";
-    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}`;
+    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Sprawdź konfigurację NEKROLOG_CONFIG.forceRefreshUrl dla GitHub Pages.`;
     console.error(error);
   } finally {
     button.disabled = false;

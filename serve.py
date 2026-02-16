@@ -12,6 +12,12 @@ DATA_PATH = Path("data/latest.json")
 
 
 class AppHandler(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        super().end_headers()
+
     def _send_json(self, payload, status=HTTPStatus.OK):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
@@ -42,6 +48,10 @@ class AppHandler(SimpleHTTPRequestHandler):
             self.send_error(HTTPStatus.NOT_FOUND, "Unknown endpoint")
             return
         self._handle_refresh()
+
+    def do_OPTIONS(self):
+        self.send_response(HTTPStatus.NO_CONTENT)
+        self.end_headers()
 
     def do_GET(self):
         if self.path == "/api/refresh":
