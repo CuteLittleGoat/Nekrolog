@@ -1,48 +1,27 @@
 const TARGET_PHRASES = [
   "Helena Gawin",
-  "Helena Dereń",
-  "Helena Dereń-Gawin",
-  "Helena Dereń Gawin",
   "Helena Gawin-Dereń",
-  "Helena Gawin Dereń",
+  "Helena Dereń-Gawin",
+  "Helena Gawin Deren",
+  "Helena Deren Gawin",
 ];
 
 const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
-const githubRefreshConfig = appConfig.githubRefresh || null;
-const githubIssueRefreshConfig = appConfig.githubIssueRefresh || detectGithubPagesIssueRefreshConfig();
 let lastGeneratedAt = null;
-
-function detectGithubPagesIssueRefreshConfig() {
-  const host = window.location.hostname || "";
-  if (!host.endsWith("github.io")) return null;
-
-  const [owner] = host.split(".");
-  const [repo] = (window.location.pathname || "")
-    .replace(/^\/+/, "")
-    .split("/")
-    .filter(Boolean);
-
-  if (!owner || !repo) return null;
-
-  return {
-    owner,
-    repo,
-    labels: ["refresh-request"],
-    titlePrefix: "[refresh-request]",
-  };
-}
 
 const norm = (s) => (s || "")
   .toLowerCase()
-  .normalize("NFKC")
+  .normalize("NFKD")
+  .replace(/[\u0300-\u036f]/g, "")
+  .replace(/[\-_]/g, " ")
   .replace(/\s+/g, " ")
   .trim();
 
 const matchesPriority = (text) => {
-  const t = norm(text);
-  return TARGET_PHRASES.some((phrase) => t.includes(norm(phrase)));
+  const tokens = new Set(norm(text).split(" ").filter(Boolean));
+  return tokens.has("helena") && tokens.has("gawin");
 };
 
 const el = (tag, cls, html) => {
@@ -51,148 +30,6 @@ const el = (tag, cls, html) => {
   if (html !== undefined) node.innerHTML = html;
   return node;
 };
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function isGithubDispatchConfigured() {
-  return Boolean(
-    githubRefreshConfig
-    && githubRefreshConfig.owner
-    && githubRefreshConfig.repo
-    && githubRefreshConfig.workflowId
-  );
-}
-
-function isGithubIssueRefreshConfigured() {
-  return Boolean(
-    githubIssueRefreshConfig
-    && githubIssueRefreshConfig.owner
-    && githubIssueRefreshConfig.repo
-  );
-}
-
-function buildGithubIssueRefreshUrl() {
-  const owner = githubIssueRefreshConfig.owner;
-  const repo = githubIssueRefreshConfig.repo;
-  const labels = (githubIssueRefreshConfig.labels || [])
-    .map((label) => label.trim())
-    .filter(Boolean)
-    .join(",");
-  const titlePrefix = (githubIssueRefreshConfig.titlePrefix || "[refresh-request]").trim();
-  const title = `${titlePrefix} ${new Date().toISOString()}`;
-  const body = [
-    "Automatyczna prośba o odświeżenie danych z aplikacji Nekrolog.",
-    "",
-    `Wysłano z: ${window.location.href}`,
-  ].join("\n");
-
-  const params = new URLSearchParams({
-    title,
-    body,
-  });
-
-  if (labels) {
-    params.set("labels", labels);
-  }
-
-  return `https://github.com/${owner}/${repo}/issues/new?${params.toString()}`;
-}
-
-async function requestGithubIssueRefresh(previousGeneratedAt) {
-  const issueUrl = buildGithubIssueRefreshUrl();
-  window.open(issueUrl, "_blank", "noopener,noreferrer");
-
-  const status = document.getElementById("helenaStatus");
-  status.className = "status warn";
-  status.textContent = "Otworzono GitHub z gotowym zgłoszeniem aktualizacji. Zatwierdź nowe Issue (Submit new issue), a dane odświeżą się automatycznie.";
-
-  const updated = await waitForFreshData(previousGeneratedAt, 180000, 7000);
-  if (updated) {
-    status.className = "status ok";
-    status.textContent = "Wykryto nową wersję danych po zgłoszeniu aktualizacji na GitHub.";
-    return;
-  }
-
-  status.className = "status warn";
-  status.textContent = "Nie wykryto jeszcze nowej wersji danych. Jeśli nie zatwierdzono zgłoszenia na GitHub, dokończ to i odśwież widok za chwilę.";
-}
-
-function getGithubToken() {
-  const configToken = (githubRefreshConfig && githubRefreshConfig.token) || "";
-  if (configToken) return configToken.trim();
-
-  const cachedToken = sessionStorage.getItem("nekrolog_github_token") || "";
-  if (cachedToken) return cachedToken.trim();
-
-  const promptMessage = "Brak tokenu GitHub do uruchomienia aktualizacji. Wklej PAT z uprawnieniem Actions: Read and write (token zostanie zapamiętany tylko w tej sesji karty).";
-  const providedToken = window.prompt(promptMessage, "");
-  if (!providedToken) return "";
-
-  const normalizedToken = providedToken.trim();
-  sessionStorage.setItem("nekrolog_github_token", normalizedToken);
-  return normalizedToken;
-}
-
-async function resolveGithubRef(owner, repo, token) {
-  if (githubRefreshConfig && githubRefreshConfig.ref) {
-    return githubRefreshConfig.ref;
-  }
-
-  const repoEndpoint = `https://api.github.com/repos/${owner}/${repo}`;
-  const headers = { Accept: "application/vnd.github+json" };
-  if (token) headers.Authorization = `Bearer ${token}`;
-
-  const response = await fetch(repoEndpoint, { headers });
-  if (!response.ok) return "main";
-
-  const payload = await response.json().catch(() => ({}));
-  return payload.default_branch || "main";
-}
-
-async function dispatchGithubRefresh() {
-  const token = getGithubToken();
-  if (!token) {
-    throw new Error("Brak tokenu GitHub (PAT) do uruchomienia workflow");
-  }
-
-  const owner = githubRefreshConfig.owner;
-  const repo = githubRefreshConfig.repo;
-  const workflowId = githubRefreshConfig.workflowId;
-  const ref = await resolveGithubRef(owner, repo, token);
-  const endpoint = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`;
-
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      Accept: "application/vnd.github+json",
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ ref }),
-  });
-
-  if (!response.ok) {
-    const payload = await response.json().catch(() => ({}));
-    if (response.status === 401 || response.status === 403) {
-      sessionStorage.removeItem("nekrolog_github_token");
-    }
-    throw new Error(payload.message || `GitHub API HTTP ${response.status}`);
-  }
-}
-
-async function waitForFreshData(previousGeneratedAt, maxWaitMs = 120000, pollMs = 6000) {
-  const start = Date.now();
-
-  while (Date.now() - start <= maxWaitMs) {
-    await refresh();
-    if (lastGeneratedAt && lastGeneratedAt !== previousGeneratedAt) {
-      return true;
-    }
-    await sleep(pollMs);
-  }
-
-  return false;
-}
 
 function renderItem(container, row) {
   const item = el("article", "item");
@@ -220,16 +57,24 @@ function applyStatus(data) {
   const rows = [...(data.recent_deaths || []), ...(data.upcoming_funerals || [])];
   const hits = rows.filter((row) => matchesPriority(`${row.name || ""} ${row.note || ""} ${row.place || ""}`));
 
+  if (hits.length) {
+    const first = hits[0];
+    status.className = "status ok";
+    status.innerHTML = [
+      `⚠️ WYKRYTO: ${first.name || "Helena Gawin"}${first.place ? ` (${first.place})` : ""}`,
+      `Znaleziono ${hits.length} wpis(ów) dotyczących Heleny Gawin (również warianty nazwiska).`,
+    ].join("<br>");
+    return;
+  }
+
   if (!rows.length) {
     status.className = "status warn";
     status.textContent = "Brak wyników z monitorowanych źródeł.";
-  } else if (!hits.length) {
-    status.className = "status warn";
-    status.textContent = "Brak trafień dla priorytetowych fraz Helena* w aktualnych danych.";
-  } else {
-    status.className = "status ok";
-    status.textContent = `Znaleziono ${hits.length} potencjalnych trafień dla Helena*.`;
+    return;
   }
+
+  status.className = "status";
+  status.textContent = "Brak wpisów dotyczących Heleny Gawin w aktualnych danych.";
 }
 
 function render(data) {
@@ -282,7 +127,7 @@ async function refresh() {
     render(data);
   } catch (error) {
     status.className = "status err";
-    status.textContent = "Błąd odczytu data/latest.json. Aktualizacja danych wymaga uruchomienia collector.py (np. w CI), ten przycisk tylko odświeża widok.";
+    status.textContent = "Błąd odczytu data/latest.json.";
     console.error(error);
   }
 }
@@ -296,27 +141,11 @@ async function forceRefresh() {
   status.textContent = "Trwa wymuszona aktualizacja monitorowanych źródeł…";
 
   try {
-    const generatedAtBeforeRefresh = lastGeneratedAt;
-
-    if (isGithubDispatchConfigured()) {
-      await dispatchGithubRefresh();
-      const updated = await waitForFreshData(generatedAtBeforeRefresh);
-      if (!updated) {
-        status.className = "status warn";
-        status.textContent = "Workflow został uruchomiony, ale nowa wersja danych nie pojawiła się jeszcze na GitHub Pages. Odśwież stronę za chwilę.";
-      }
-      return;
-    }
-
-    if (isGithubIssueRefreshConfigured()) {
-      await requestGithubIssueRefresh(generatedAtBeforeRefresh);
-      return;
-    }
-
     let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
     if (response.status === 405) {
       response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
     }
+
     const payload = await response.json().catch(() => ({}));
     if (!response.ok || payload.ok === false) {
       throw new Error(payload.error || `HTTP ${response.status}`);
@@ -324,14 +153,13 @@ async function forceRefresh() {
 
     await refresh();
 
-    const backendGeneratedAt = payload.generated_at || null;
-    if (backendGeneratedAt && generatedAtBeforeRefresh && backendGeneratedAt === generatedAtBeforeRefresh) {
-      await sleep(1200);
-      await refresh();
+    if (payload.generated_at && payload.generated_at === lastGeneratedAt) {
+      status.className = "status ok";
+      status.textContent = "Aktualizacja danych zakończona.";
     }
   } catch (error) {
     status.className = "status err";
-    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Skonfiguruj NEKROLOG_CONFIG.githubIssueRefresh lub NEKROLOG_CONFIG.githubRefresh dla GitHub Pages albo NEKROLOG_CONFIG.forceRefreshUrl dla backendu /api/refresh.`;
+    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}`;
     console.error(error);
   } finally {
     button.disabled = false;
