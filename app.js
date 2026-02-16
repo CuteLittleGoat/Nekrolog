@@ -10,6 +10,7 @@ const TARGET_PHRASES = [
 const DATA_URL = "./data/latest.json";
 const appConfig = window.NEKROLOG_CONFIG || {};
 const FORCE_REFRESH_URL = appConfig.forceRefreshUrl || "/api/refresh";
+const githubRefreshConfig = appConfig.githubRefresh || null;
 let lastGeneratedAt = null;
 
 const norm = (s) => (s || "")
@@ -29,6 +30,78 @@ const el = (tag, cls, html) => {
   if (html !== undefined) node.innerHTML = html;
   return node;
 };
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function isGithubDispatchConfigured() {
+  return Boolean(
+    githubRefreshConfig
+    && githubRefreshConfig.owner
+    && githubRefreshConfig.repo
+    && githubRefreshConfig.workflowId
+  );
+}
+
+function getGithubToken() {
+  const configToken = (githubRefreshConfig && githubRefreshConfig.token) || "";
+  if (configToken) return configToken.trim();
+
+  const cachedToken = sessionStorage.getItem("nekrolog_github_token") || "";
+  if (cachedToken) return cachedToken.trim();
+
+  const promptMessage = "Brak tokenu GitHub do uruchomienia aktualizacji. Wklej PAT z uprawnieniem Actions: Read and write (token zostanie zapamiętany tylko w tej sesji karty).";
+  const providedToken = window.prompt(promptMessage, "");
+  if (!providedToken) return "";
+
+  const normalizedToken = providedToken.trim();
+  sessionStorage.setItem("nekrolog_github_token", normalizedToken);
+  return normalizedToken;
+}
+
+async function dispatchGithubRefresh() {
+  const token = getGithubToken();
+  if (!token) {
+    throw new Error("Brak tokenu GitHub (PAT) do uruchomienia workflow");
+  }
+
+  const owner = githubRefreshConfig.owner;
+  const repo = githubRefreshConfig.repo;
+  const workflowId = githubRefreshConfig.workflowId;
+  const ref = githubRefreshConfig.ref || "main";
+  const endpoint = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`;
+
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ref }),
+  });
+
+  if (!response.ok) {
+    const payload = await response.json().catch(() => ({}));
+    if (response.status === 401 || response.status === 403) {
+      sessionStorage.removeItem("nekrolog_github_token");
+    }
+    throw new Error(payload.message || `GitHub API HTTP ${response.status}`);
+  }
+}
+
+async function waitForFreshData(previousGeneratedAt, maxWaitMs = 120000, pollMs = 6000) {
+  const start = Date.now();
+
+  while (Date.now() - start <= maxWaitMs) {
+    await refresh();
+    if (lastGeneratedAt && lastGeneratedAt !== previousGeneratedAt) {
+      return true;
+    }
+    await sleep(pollMs);
+  }
+
+  return false;
+}
 
 function renderItem(container, row) {
   const item = el("article", "item");
@@ -134,6 +207,16 @@ async function forceRefresh() {
   try {
     const generatedAtBeforeRefresh = lastGeneratedAt;
 
+    if (isGithubDispatchConfigured()) {
+      await dispatchGithubRefresh();
+      const updated = await waitForFreshData(generatedAtBeforeRefresh);
+      if (!updated) {
+        status.className = "status warn";
+        status.textContent = "Workflow został uruchomiony, ale nowa wersja danych nie pojawiła się jeszcze na GitHub Pages. Odśwież stronę za chwilę.";
+      }
+      return;
+    }
+
     let response = await fetch(FORCE_REFRESH_URL, { method: "POST" });
     if (response.status === 405) {
       response = await fetch(FORCE_REFRESH_URL, { method: "GET" });
@@ -147,12 +230,12 @@ async function forceRefresh() {
 
     const backendGeneratedAt = payload.generated_at || null;
     if (backendGeneratedAt && generatedAtBeforeRefresh && backendGeneratedAt === generatedAtBeforeRefresh) {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await sleep(1200);
       await refresh();
     }
   } catch (error) {
     status.className = "status err";
-    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Sprawdź konfigurację NEKROLOG_CONFIG.forceRefreshUrl dla GitHub Pages.`;
+    status.textContent = `Nie udało się wymusić aktualizacji: ${error.message}. Skonfiguruj NEKROLOG_CONFIG.githubRefresh dla GitHub Pages lub NEKROLOG_CONFIG.forceRefreshUrl dla backendu /api/refresh.`;
     console.error(error);
   } finally {
     button.disabled = false;
