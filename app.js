@@ -1,6 +1,5 @@
 import { getDb, getRefs, readDocSafe } from "./firebase.js";
 import { makePhraseVariants, textMatchesAny } from "./scripts/normalize.mjs";
-import { fmtRow } from "./parsers.js";
 
 const HELENA_GAWIN_PHRASES = [
   "Helena Gawin",
@@ -49,6 +48,41 @@ function resolveName(r) {
   return candidates.map((v) => String(v ?? "").trim()).find(Boolean) || "(brak nazwiska)";
 }
 
+function resolveLastName(r) {
+  const direct = [r.last_name, r.lastname, r.surname].map((v) => String(v ?? "").trim()).find(Boolean);
+  if (direct) return direct;
+  const name = resolveName(r).replace(/^Śp\.\s*/i, "").trim();
+  if (!name || name === "(brak nazwiska)") return "Brak nazwiska";
+  const parts = name.split(/\s+/).filter(Boolean);
+  return parts[0] || "Brak nazwiska";
+}
+
+function resolveFirstName(r) {
+  const direct = [r.first_name, r.firstname, r.given_name].map((v) => String(v ?? "").trim()).find(Boolean);
+  if (direct) return direct;
+  const name = resolveName(r).replace(/^Śp\.\s*/i, "").trim();
+  if (!name || name === "(brak nazwiska)") return "Brak imienia";
+  const parts = name.split(/\s+/).filter(Boolean);
+  if (parts.length >= 2) return parts.slice(1).join(" ");
+  return "Brak imienia";
+}
+
+function resolveRowDate(r, type) {
+  if (type === "death") {
+    return String(r.date_death || r.date || "").trim() || "Brak daty";
+  }
+  return String(r.date_funeral || r.date || "").trim() || "Brak daty";
+}
+
+function sortRowsByDateDesc(rows, type) {
+  const stamp = (row) => {
+    const raw = resolveRowDate(row, type);
+    const t = Date.parse(raw);
+    return Number.isNaN(t) ? Number.NEGATIVE_INFINITY : t;
+  };
+  return [...rows].sort((a, b) => stamp(b) - stamp(a));
+}
+
 function rowHasContent(r) {
   if (!r || typeof r !== "object") return false;
   const keys = ["name", "full_name", "note", "date", "date_death", "date_funeral", "place", "source_name", "item1"];
@@ -88,28 +122,30 @@ function formatTs(value) {
   return String(value);
 }
 
-function renderList(container, rows, phrases) {
+function renderList(container, rows, phrases, type) {
   container.innerHTML = "";
   if (!rows?.length) {
     container.innerHTML = `<div class="small">Brak wpisów w oknie czasowym.</div>`;
     return;
   }
 
-  for (const r of rows) {
+  const sorted = sortRowsByDateDesc(rows, type);
+
+  for (const r of sorted) {
     const displayName = resolveName(r);
     const hit = textMatchesAny([displayName, r.note, r.place, r.source_name].join(" "), phrases);
+    const lastName = resolveLastName(r);
+    const firstName = resolveFirstName(r);
+    const dateLabel = type === "death" ? "Data zgonu" : "Data pogrzebu";
+    const dateValue = resolveRowDate(r, type);
     const div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
       <div class="top">
-        <div class="name">${escapeHtml(displayName)}</div>
+        <div class="name">${escapeHtml(lastName)}, ${escapeHtml(firstName)}</div>
         <div class="badge ${hit ? "hit" : ""}">${hit ? "TRAFIENIE" : (r.kind || r.category || "wpis")}</div>
       </div>
-      <div class="small">${escapeHtml(fmtRow(r))}</div>
-      <div class="small">
-        Źródło: <a href="${escapeAttr(r.url || r.source_url || "#")}" target="_blank" rel="noopener">${escapeHtml(r.source_name || r.source_id || "link")}</a>
-      </div>
-      ${r.note ? `<div class="small">${escapeHtml(r.note)}</div>` : ""}
+      <div class="small">${escapeHtml(dateLabel)}: ${escapeHtml(dateValue)}</div>
     `;
     container.appendChild(div);
   }
@@ -197,8 +233,8 @@ async function loadAll() {
   const deaths = pickRows(snap, "recent_deaths", "deaths");
   const funerals = pickRows(snap, "upcoming_funerals", "funerals");
 
-  renderList(el("deaths"), deaths, phrases);
-  renderList(el("funerals"), funerals, phrases);
+  renderList(el("deaths"), deaths, phrases, "death");
+  renderList(el("funerals"), funerals, phrases, "funeral");
   renderHelenaStatus(el("helenaStatus"), snap ?? {});
   renderSources(el("sources"), snap?.sources ?? snap?.payload?.sources ?? snap?.data?.sources ?? cfg?.sources ?? []);
 
