@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-02-16T07:36:31.443719+00:00",
+  "source_center": {
+    "label": "ul. Kapelanka, Kraków",
+    "lat": 50.03528,
+    "lon": 19.92487
+  },
+  "sources": [
+    {
+      "id": "podwawelskie_nekrologi",
+      "name": "Parafia MB Fatimskiej (Podwawelskie) — Nekrologi",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "type": "table_nekrologi_podwawelskie",
+      "distance_km": 0.893
+    },
+    {
+      "id": "podwawelskie_ogloszenia",
+      "name": "Parafia MB Fatimskiej (Podwawelskie) — Ogłoszenia",
+      "url": "https://www.podwawelskie.pl/ogloszenia-duszpasterskie-1.html",
+      "type": "podwawelskie_ogloszenia",
+      "distance_km": 0.893
+    },
+    {
+      "id": "debniki_intencje",
+      "name": "Parafia Dębniki (Salezjanie) — Intencje",
+      "url": "https://debniki.sdb.org.pl/intencje/",
+      "type": "intencje_debniki",
+      "distance_km": 0.993
+    },
+    {
+      "id": "zck_funerals",
+      "name": "ZCK Kraków — Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "type": "zck_funerals",
+      "distance_km": 1.633
+    },
+    {
+      "id": "gabriel_nekrologi",
+      "name": "Gabriel — Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "type": "funeral_home_nekrologi_generic",
+      "distance_km": 2.014
+    },
+    {
+      "id": "salwator_grobonet_nekrologi",
+      "name": "Cmentarz Kraków–Salwator (Grobonet) — Nekrologi",
+      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "type": "grobonet_nekrologi",
+      "distance_km": 2.268
+    },
+    {
+      "id": "pychowice_intencje",
+      "name": "Parafia Pychowice — Intencje mszalne",
+      "url": "https://pychowicesdb.pl/informacje/intencje-mszalne",
+      "type": "intencje_pychowice",
+      "distance_km": 3.027
+    },
+    {
+      "id": "ruczaj_intencje",
+      "name": "Parafia Ruczaj — Intencje mszalne",
+      "url": "https://www.ruczaj.diecezja.pl/index.php/aktualnosci/intencje-mszalne",
+      "type": "intencje_simple",
+      "distance_km": 3.267
+    },
+    {
+      "id": "karawan_nekrologi",
+      "name": "Karawan — Nekrologi",
+      "url": "https://karawan.pl/nekrologi/",
+      "type": "funeral_home_nekrologi_generic",
+      "distance_km": 3.562
+    }
+  ],
+  "recent_deaths": [],
+  "upcoming_funerals": [],
+  "target_phrases": [
+    "Helena Gawin",
+    "Helena Dereń",
+    "Helena Dereń-Gawin",
+    "Helena Dereń Gawin",
+    "Helena Gawin-Dereń",
+    "Helena Gawin Dereń"
+  ]
+}
