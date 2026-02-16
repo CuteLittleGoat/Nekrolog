@@ -13,8 +13,8 @@ export function getDb() {
 export function getRefs(db) {
   const cfg = window.NEKROLOG_CONFIG.firebaseConfig;
   const snapRef = doc(db, cfg.nekrologSnapshotsCollection, cfg.nekrologSnapshotDocId);
-  const jobRef  = doc(db, cfg.nekrologRefreshJobsCollection, cfg.nekrologRefreshJobDocId);
-  const srcRef  = doc(db, cfg.nekrologConfigCollection, "sources");
+  const jobRef = doc(db, cfg.nekrologRefreshJobsCollection, cfg.nekrologRefreshJobDocId);
+  const srcRef = doc(db, cfg.nekrologConfigCollection, "sources");
   return { snapRef, jobRef, srcRef };
 }
 
@@ -31,8 +31,38 @@ export async function saveTargetPhrases(db, phrases) {
   }, { merge: true });
 }
 
+async function requestRefreshViaBackend() {
+  const backendCfg = window.NEKROLOG_CONFIG?.backend || {};
+  const endpoint = String(backendCfg.refreshEndpoint || "").trim();
+  if (!endpoint) {
+    throw new Error("Brak NEKROLOG_CONFIG.backend.refreshEndpoint");
+  }
+
+  const headers = { "Content-Type": "application/json" };
+  const endpointSecret = String(backendCfg.refreshEndpointSecret || "").trim();
+  if (endpointSecret) {
+    headers["x-refresh-secret"] = endpointSecret;
+  }
+
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ reason: "manual_ui" })
+  });
+
+  if (!response.ok) {
+    const payload = await response.text();
+    throw new Error(`Backend odrzucił żądanie odświeżenia (${response.status}): ${payload.slice(0, 200)}`);
+  }
+}
 
 export async function requestRefresh(jobRef) {
+  const backendEndpoint = String(window.NEKROLOG_CONFIG?.backend?.refreshEndpoint || "").trim();
+  if (backendEndpoint) {
+    await requestRefreshViaBackend();
+    return;
+  }
+
   await setDoc(jobRef, {
     status: "queued",
     trigger: "manual_ui",

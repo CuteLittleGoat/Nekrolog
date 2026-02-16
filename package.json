@@ -1,0 +1,13 @@
+{
+  "name": "nekrolog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "refresh": "node scripts/refresh.mjs",
+    "test": "node --test tests/refresh.parsers.test.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "firebase-admin": "^13.0.2"
+  }
+}

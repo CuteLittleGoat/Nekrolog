@@ -1,0 +1,34 @@
+name: Nekrolog refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Dlaczego uruchomiono odświeżenie"
+        required: false
+        default: "manual_ui"
+  schedule:
+    - cron: "15 */4 * * *"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run refresh
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          REFRESH_TRIGGER: ${{ github.event.inputs.reason || 'schedule' }}
+        run: npm run refresh
