@@ -144,8 +144,36 @@ function uniqueBy(items, keyFn) {
   return [...map.values()];
 }
 
+function normalizeSource(source) {
+  const normalized = { ...source };
+  if (normalized.id === "par_debniki_contact") {
+    normalized.enabled = false;
+  }
+  if (normalized.id === "podgorki_tynieckie_grobonet" && normalized.url === "https://klepsydrakrakow.grobonet.com/") {
+    normalized.url = "https://klepsydrakrakow.grobonet.com/nekrologi.php";
+  }
+  return normalized;
+}
+
+function hasContent(value) {
+  return clean(value).length > 0;
+}
+
+function isMeaningfulRow(row) {
+  return [
+    row?.name,
+    row?.note,
+    row?.date,
+    row?.date_death,
+    row?.date_funeral,
+    row?.time_funeral,
+    row?.source_name,
+    row?.url
+  ].some(hasContent);
+}
+
 function mergeRequiredSources(existingSources) {
-  const list = Array.isArray(existingSources) ? [...existingSources] : [];
+  const list = Array.isArray(existingSources) ? existingSources.map(normalizeSource) : [];
   const byUrl = new Map(list.map((s) => [String(s.url || "").toLowerCase(), s]));
 
   for (const required of REQUIRED_SOURCES) {
@@ -156,9 +184,10 @@ function mergeRequiredSources(existingSources) {
       if (!existing.type) existing.type = required.type;
       if (typeof existing.distance_km !== "number") existing.distance_km = required.distance_km;
       if (typeof existing.enabled !== "boolean") existing.enabled = true;
+      Object.assign(existing, normalizeSource(existing));
       continue;
     }
-    list.push({ ...required });
+    list.push(normalizeSource(required));
   }
 
   return uniqueBy(list, (s) => String(s.url || "").toLowerCase());
@@ -357,6 +386,7 @@ async function main() {
       else parsed = { rows: [], error: `Nieznany parser type=${s.type}` };
 
       for (const r of parsed.rows) {
+        if (!isMeaningfulRow(r)) continue;
         const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(" "), phraseVariants);
         allRows.push({ ...r, priority_hit: !!hit });
       }
@@ -409,6 +439,10 @@ async function main() {
       fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
     }
 
+    const refreshErrors = allRows
+      .filter((r) => r.kind === "meta" && hasContent(r.note))
+      .map((r) => `${r.source_name}: ${clean(r.note)}`);
+
     const payload = {
       generated_at: nowISO(),
       updated_at: nowISO(),
@@ -418,7 +452,8 @@ async function main() {
       upcoming_funerals,
       fallback_summary: fallbackSummary,
       sources: sourceLite,
-      target_phrases: targetPhrases
+      target_phrases: targetPhrases,
+      refresh_error: refreshErrors.join(" | ")
     };
 
     await snapRef.set({
