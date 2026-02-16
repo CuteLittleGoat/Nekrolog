@@ -74,6 +74,30 @@ function resolveRowDate(r, type) {
   return String(r.date_funeral || r.date || "").trim() || "Brak daty";
 }
 
+function resolveSourceMeta(r) {
+  const sourceLabel = String(
+    r.source_name
+    || r.source
+    || r.source_id
+    || r.provider
+    || "Źródło wpisu"
+  ).trim() || "Źródło wpisu";
+
+  const sourceUrlRaw = String(
+    r.url
+    || r.source_url
+    || r.link
+    || r.source_link
+    || ""
+  ).trim();
+
+  const hasRealLink = /^https?:\/\//i.test(sourceUrlRaw);
+  return {
+    sourceLabel,
+    sourceUrl: hasRealLink ? sourceUrlRaw : ""
+  };
+}
+
 function sortRowsByDateDesc(rows, type) {
   const stamp = (row) => {
     const raw = resolveRowDate(row, type);
@@ -138,8 +162,7 @@ function renderList(container, rows, phrases, type) {
     const firstName = resolveFirstName(r);
     const dateLabel = type === "death" ? "Data zgonu" : "Data pogrzebu";
     const dateValue = resolveRowDate(r, type);
-    const sourceLabel = String(r.source_name || r.source || "Źródło wpisu").trim() || "Źródło wpisu";
-    const sourceUrl = String(r.url || r.source_url || "").trim();
+    const { sourceLabel, sourceUrl } = resolveSourceMeta(r);
     const div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
@@ -148,7 +171,7 @@ function renderList(container, rows, phrases, type) {
         <div class="badge ${hit ? "hit" : ""}">${hit ? "TRAFIENIE" : (r.kind || r.category || "wpis")}</div>
       </div>
       <div class="small">${escapeHtml(dateLabel)}: ${escapeHtml(dateValue)}</div>
-      <div class="small">Źródło: ${sourceUrl
+      <div class="small source-row">Źródło: ${sourceUrl
         ? `<a href="${escapeAttr(sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(sourceLabel)}</a>`
         : escapeHtml(sourceLabel)}</div>
     `;
