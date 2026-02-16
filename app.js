@@ -74,7 +74,27 @@ function resolveRowDate(r, type) {
   return String(r.date_funeral || r.date || "").trim() || "Brak daty";
 }
 
-function resolveSourceMeta(r) {
+function normalizeHttpUrl(value) {
+  const raw = String(value ?? "").trim();
+  return /^https?:\/\//i.test(raw) ? raw : "";
+}
+
+function indexSourcesByIdAndName(sources) {
+  const index = new Map();
+  for (const source of Array.isArray(sources) ? sources : []) {
+    const url = normalizeHttpUrl(source?.url || source?.source_url || source?.link);
+    if (!url) continue;
+    const keys = [source?.id, source?.name]
+      .map((value) => String(value ?? "").trim())
+      .filter(Boolean);
+    for (const key of keys) {
+      if (!index.has(key)) index.set(key, url);
+    }
+  }
+  return index;
+}
+
+function resolveSourceMeta(r, sourceUrlIndex = new Map()) {
   const sourceLabel = String(
     r.source_name
     || r.source
@@ -88,13 +108,23 @@ function resolveSourceMeta(r) {
     || r.source_url
     || r.link
     || r.source_link
+    || r.source?.url
+    || r.source?.source_url
+    || r.source?.link
+    || r.manual_source_url
+    || r.origin_url
+    || r.reference_url
     || ""
   ).trim();
 
-  const hasRealLink = /^https?:\/\//i.test(sourceUrlRaw);
+  const sourceFromRow = normalizeHttpUrl(sourceUrlRaw);
+  const sourceFromConfig = sourceUrlIndex.get(String(r.source_id || "").trim())
+    || sourceUrlIndex.get(sourceLabel)
+    || "";
+
   return {
     sourceLabel,
-    sourceUrl: hasRealLink ? sourceUrlRaw : ""
+    sourceUrl: sourceFromRow || sourceFromConfig
   };
 }
 
@@ -146,7 +176,7 @@ function formatTs(value) {
   return String(value);
 }
 
-function renderList(container, rows, phrases, type) {
+function renderList(container, rows, phrases, type, sourceUrlIndex) {
   container.innerHTML = "";
   if (!rows?.length) {
     container.innerHTML = `<div class="small">Brak wpisów w oknie czasowym.</div>`;
@@ -162,7 +192,7 @@ function renderList(container, rows, phrases, type) {
     const firstName = resolveFirstName(r);
     const dateLabel = type === "death" ? "Data zgonu" : "Data pogrzebu";
     const dateValue = resolveRowDate(r, type);
-    const { sourceLabel, sourceUrl } = resolveSourceMeta(r);
+    const { sourceLabel, sourceUrl } = resolveSourceMeta(r, sourceUrlIndex);
     const div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
@@ -260,9 +290,13 @@ async function loadAll() {
   const phrases = makePhraseVariants(HELENA_GAWIN_PHRASES);
   const deaths = pickRows(snap, "recent_deaths", "deaths");
   const funerals = pickRows(snap, "upcoming_funerals", "funerals");
+  const sourceUrlIndex = indexSourcesByIdAndName([
+    ...(snap?.sources ?? snap?.payload?.sources ?? snap?.data?.sources ?? []),
+    ...(cfg?.sources ?? [])
+  ]);
 
-  renderList(el("deaths"), deaths, phrases, "death");
-  renderList(el("funerals"), funerals, phrases, "funeral");
+  renderList(el("deaths"), deaths, phrases, "death", sourceUrlIndex);
+  renderList(el("funerals"), funerals, phrases, "funeral", sourceUrlIndex);
   renderHelenaStatus(el("helenaStatus"), snap ?? {});
   renderSources(el("sources"), snap?.sources ?? snap?.payload?.sources ?? snap?.data?.sources ?? cfg?.sources ?? []);
 
