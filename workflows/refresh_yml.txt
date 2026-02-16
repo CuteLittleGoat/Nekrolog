@@ -1,0 +1,30 @@
+name: Nekrolog Refresh
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "*/30 * * * *"  # co 30 min
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm install firebase-admin node-fetch@3 cheerio@1
+
+      - name: Run refresh
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          NEKROLOG_WINDOW_DAYS_BACK: "7"
+          NEKROLOG_WINDOW_DAYS_FORWARD: "7"
+        run: node scripts/refresh.mjs
