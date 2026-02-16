@@ -16,6 +16,15 @@ class NameCanonicalizationTests(unittest.TestCase):
     def test_extract_name_handles_surname_first_order(self):
         self.assertEqual(extract_name("Śp. Kowalski Jan"), "Jan Kowalski")
 
+    def test_reorders_hyphenated_surname_first(self):
+        self.assertEqual(canonicalize_name_order("Dereń-Gawin Helena"), "Helena Dereń-Gawin")
+
+    def test_reorders_hyphenated_surname_first_with_comma_and_uppercase(self):
+        self.assertEqual(canonicalize_name_order("DEREŃ-GAWIN, HELENA"), "Helena Dereń-Gawin")
+
+    def test_extract_name_handles_hyphenated_surname_first(self):
+        self.assertEqual(extract_name("Śp. Dereń-Gawin Helena"), "Helena Dereń-Gawin")
+
 
 if __name__ == "__main__":
     unittest.main()
