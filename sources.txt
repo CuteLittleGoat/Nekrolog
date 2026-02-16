@@ -1,0 +1,44 @@
+{
+  sources: [
+    {
+      id: "zck_funerals",
+      name: "ZCK Kraków – Porządek pogrzebów",
+      type: "zck_funerals",
+      url: "https://www.zck-krakow.pl/funerals",
+      enabled: true,
+      distance_km: 0
+    },
+    {
+      id: "par_ruczaj_intencje",
+      name: "Parafia Zesłania Ducha Świętego (Ruczaj) – Intencje",
+      type: "intencje_plus",
+      url: "https://www.ruczaj.diecezja.pl/index.php/aktualnosci/intencje-mszalne",
+      enabled: true,
+      distance_km: 2.0
+    },
+    {
+      id: "par_jp2_intencje",
+      name: "Parafia św. Jana Pawła II (Nowy Ruczaj) – Intencje",
+      type: "intencje_plus",
+      url: "https://jp2nowyruczaj.pl/informacje-o-parafii/intencje-mszalne/",
+      enabled: true,
+      distance_km: 4.0
+    },
+    {
+      id: "par_debniki_contact",
+      name: "Parafia św. Stanisława Kostki (Dębniki)",
+      type: "generic_html",
+      url: "https://debniki.sdb.org.pl/kontakt/",
+      enabled: true,
+      distance_km: 2.5
+    },
+    {
+      id: "podgorki_tynieckie_grobonet",
+      name: "Cmentarz Komunalny Podgórki Tynieckie – Grobonet/Klepsydra",
+      type: "generic_html",
+      url: "https://klepsydrakrakow.grobonet.com/",
+      enabled: true,
+      distance_km: 7.5
+    }
+  ]
+}

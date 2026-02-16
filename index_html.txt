@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nekrolog – Kraków (Kapelanka + 10 km)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">
+      <div class="h1">Nekrolog – Kraków (Kapelanka + 10 km)</div>
+      <div class="subtitle">Snapshot z Firestore + automatyczne odświeżanie przez GitHub Actions</div>
+    </div>
+
+    <!-- UWAGA: To pole jest tylko “nagłówkiem/status bar”.
+         Nie ustawiam tu żadnej konkretnej osoby. -->
+    <div class="statusPill" id="statusPill">Status: <span id="jobStatus">…</span></div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="cardHeader">
+        <h2>Odświeżanie</h2>
+        <div class="row">
+          <button id="btnReload" class="btn">Odśwież</button>
+          <div class="meta">
+            <div>Snapshot: <span id="snapshotTime">…</span></div>
+            <div>Job: <span id="jobTime">…</span></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="details">
+        <summary>Konfiguracja wyszukiwania (fraz)</summary>
+        <div class="pad">
+          <p class="hint">
+            Wpisz frazy, które mają być podświetlane jako “trafienia priorytetowe”.
+            Aplikacja automatycznie wygeneruje warianty: „Imię Nazwisko / Nazwisko Imię / Śp. … / łączniki / spacje”.
+          </p>
+          <textarea id="phrases" rows="6" placeholder="Np. Jan Kowalski"></textarea>
+          <div class="row">
+            <button id="btnSavePhrases" class="btn secondary">Zapisz frazy do Firestore</button>
+            <span id="phrasesSaved" class="ok"></span>
+          </div>
+          <p class="hint small">
+            Frazy są zapisywane w <code>Nekrolog_snapshots/latest.target_phrases</code> oraz wyświetlane w źródłach.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <div class="cardHeader">
+          <h2>Ostatnie zgony / wzmianki (okno ±7 dni)</h2>
+        </div>
+        <div id="deaths" class="list"></div>
+      </section>
+
+      <section class="card">
+        <div class="cardHeader">
+          <h2>Najbliższe pogrzeby (okno ±7 dni)</h2>
+        </div>
+        <div id="funerals" class="list"></div>
+      </section>
+    </section>
+
+    <section class="card">
+      <div class="cardHeader">
+        <h2>Źródła</h2>
+      </div>
+      <div id="sources" class="sources"></div>
+    </section>
+
+    <section class="card">
+      <div cl
