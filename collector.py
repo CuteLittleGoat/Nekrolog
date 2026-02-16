@@ -20,11 +20,10 @@ MAX_DISTANCE_KM = 5.0
 
 TARGET_PHRASES = [
     "Helena Gawin",
-    "Helena Dereń",
-    "Helena Dereń-Gawin",
-    "Helena Dereń Gawin",
     "Helena Gawin-Dereń",
-    "Helena Gawin Dereń",
+    "Helena Dereń-Gawin",
+    "Helena Gawin Deren",
+    "Helena Deren Gawin",
 ]
 
 COMMON_GIVEN_NAMES = {
@@ -85,6 +84,20 @@ def norm_loose(text: str) -> str:
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = re.sub(r"[\-_]", " ", value)
     return re.sub(r"\s+", " ", value).strip()
+
+
+def is_helena_gawin_variant(text: str) -> bool:
+    normalized = norm_loose(text)
+    if not normalized:
+        return False
+
+    tokens = set(normalized.split(" "))
+    has_helena = "helena" in tokens
+    has_gawin = "gawin" in tokens
+
+    # Drugi człon nazwiska (Dereń/Deren) bywa obecny lub pomijany w źródłach,
+    # dlatego wymagamy obowiązkowo "Helena" i "Gawin".
+    return has_helena and has_gawin
 
 
 def title_token(token: str) -> str:
@@ -413,10 +426,9 @@ PARSERS = {
 
 
 def add_priority_hit(rows: List[Row]) -> None:
-    phrases = [norm_loose(p) for p in TARGET_PHRASES]
     for row in rows:
-        hay = norm_loose(f"{row.name} {row.note or ''} {row.place or ''}")
-        row.priority_hit = any(p in hay for p in phrases)
+        hay = f"{row.name} {row.note or ''} {row.place or ''}"
+        row.priority_hit = is_helena_gawin_variant(hay)
 
 
 def filter_recent_rows(deaths: List[Row], funerals: List[Row]) -> Tuple[List[Row], List[Row]]:

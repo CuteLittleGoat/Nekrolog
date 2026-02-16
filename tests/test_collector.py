@@ -1,6 +1,6 @@
 import unittest
 
-from collector import canonicalize_name_order, extract_name
+from collector import canonicalize_name_order, extract_name, is_helena_gawin_variant
 
 
 class NameCanonicalizationTests(unittest.TestCase):
@@ -24,6 +24,17 @@ class NameCanonicalizationTests(unittest.TestCase):
 
     def test_extract_name_handles_hyphenated_surname_first(self):
         self.assertEqual(extract_name("Śp. Dereń-Gawin Helena"), "Helena Dereń-Gawin")
+
+
+class HelenaVariantMatchingTests(unittest.TestCase):
+    def test_matches_hyphenated_variant(self):
+        self.assertTrue(is_helena_gawin_variant("Helena Dereń-Gawin"))
+
+    def test_matches_without_polish_diacritics(self):
+        self.assertTrue(is_helena_gawin_variant("Helena Deren Gawin"))
+
+    def test_rejects_missing_gawin(self):
+        self.assertFalse(is_helena_gawin_variant("Helena Dereń"))
 
 
 if __name__ == "__main__":
