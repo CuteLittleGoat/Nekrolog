@@ -13,8 +13,6 @@
       <div class="subtitle">Snapshot z Firestore + automatyczne odświeżanie przez GitHub Actions</div>
     </div>
 
-    <!-- UWAGA: To pole jest tylko “nagłówkiem/status bar”.
-         Nie ustawiam tu żadnej konkretnej osoby. -->
     <div class="statusPill" id="statusPill">Status: <span id="jobStatus">…</span></div>
   </header>
 
@@ -31,21 +29,12 @@
         </div>
       </div>
 
-      <details class="details">
-        <summary>Konfiguracja wyszukiwania (fraz)</summary>
+      <details class="details" open>
+        <summary>Helena Gawin</summary>
         <div class="pad">
-          <p class="hint">
-            Wpisz frazy, które mają być podświetlane jako “trafienia priorytetowe”.
-            Aplikacja automatycznie wygeneruje warianty: „Imię Nazwisko / Nazwisko Imię / Śp. … / łączniki / spacje”.
-          </p>
-          <textarea id="phrases" rows="6" placeholder="Np. Jan Kowalski"></textarea>
-          <div class="row">
-            <button id="btnSavePhrases" class="btn secondary">Zapisz frazy do Firestore</button>
-            <span id="phrasesSaved" class="ok"></span>
-          </div>
-          <p class="hint small">
-            Frazy są zapisywane w <code>Nekrolog_snapshots/latest.target_phrases</code> oraz wyświetlane w źródłach.
-          </p>
+          <p class="hint">Konfiguracja wyszukiwania jest ustawiona na stałe dla Heleny Gawin.</p>
+          <pre id="phrasesStatic" class="phraseList"></pre>
+          <div id="helenaStatus" class="hint"></div>
         </div>
       </details>
     </section>

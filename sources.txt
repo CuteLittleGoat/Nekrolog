@@ -9,36 +9,68 @@
       distance_km: 0
     },
     {
-      id: "par_ruczaj_intencje",
-      name: "Parafia Zesłania Ducha Świętego (Ruczaj) – Intencje",
-      type: "intencje_plus",
-      url: "https://www.ruczaj.diecezja.pl/index.php/aktualnosci/intencje-mszalne",
+      id: "puk_pozegnalismy",
+      name: "PUK Kraków – Pożegnaliśmy",
+      type: "generic_html",
+      url: "https://www.puk.krakow.pl/pozegnalismy/",
       enabled: true,
-      distance_km: 2.0
+      distance_km: 4.5
     },
     {
-      id: "par_jp2_intencje",
-      name: "Parafia św. Jana Pawła II (Nowy Ruczaj) – Intencje",
-      type: "intencje_plus",
-      url: "https://jp2nowyruczaj.pl/informacje-o-parafii/intencje-mszalne/",
+      id: "gabriel_nekrologi",
+      name: "Gabriel24 – Nekrologi",
+      type: "generic_html",
+      url: "https://www.gabriel24.pl/nekrologi/",
       enabled: true,
-      distance_km: 4.0
+      distance_km: 6.5
     },
     {
-      id: "par_debniki_contact",
+      id: "karawan_nekrologi",
+      name: "Karawan – Nekrologi",
+      type: "generic_html",
+      url: "https://karawan.pl/nekrologi/",
+      enabled: true,
+      distance_km: 7.5
+    },
+    {
+      id: "salwator_grobonet",
+      name: "Kraków Salwator – Grobonet",
+      type: "generic_html",
+      url: "https://krakowsalwator.grobonet.com/nekrologi.php",
+      enabled: true,
+      distance_km: 5.5
+    },
+    {
+      id: "debniki_sdb",
       name: "Parafia św. Stanisława Kostki (Dębniki)",
       type: "generic_html",
-      url: "https://debniki.sdb.org.pl/kontakt/",
+      url: "https://debniki.sdb.org.pl/",
       enabled: true,
       distance_km: 2.5
     },
     {
-      id: "podgorki_tynieckie_grobonet",
-      name: "Cmentarz Komunalny Podgórki Tynieckie – Grobonet/Klepsydra",
+      id: "podwawelskie_nekrologi",
+      name: "Podwawelskie – Nekrologi",
       type: "generic_html",
-      url: "https://klepsydrakrakow.grobonet.com/",
+      url: "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
       enabled: true,
-      distance_km: 7.5
+      distance_km: 2.5
+    },
+    {
+      id: "sw_jadwiga_pogrzebowe",
+      name: "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      type: "generic_html",
+      url: "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      enabled: true,
+      distance_km: 6.5
+    },
+    {
+      id: "facebook_parafia_debniki",
+      name: "Facebook – Parafia Dębniki",
+      type: "generic_html",
+      url: "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+      enabled: true,
+      distance_km: 2.5
     }
   ]
 }
