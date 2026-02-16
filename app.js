@@ -193,10 +193,6 @@ async function loadAll() {
 
   log("snapshot:", snap ? "OK" : "BRAK", "job:", job ? "OK" : "BRAK", "sources:", cfg?.sources?.length ?? 0);
 
-  const phrasesRaw = HELENA_GAWIN_PHRASES.join("\n");
-  const staticEl = el("phrasesStatic");
-  if (staticEl) staticEl.textContent = phrasesRaw;
-
   const phrases = makePhraseVariants(HELENA_GAWIN_PHRASES);
   const deaths = pickRows(snap, "recent_deaths", "deaths");
   const funerals = pickRows(snap, "upcoming_funerals", "funerals");
