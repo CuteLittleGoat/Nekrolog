@@ -35,8 +35,57 @@ const log = (...a) => {
 };
 
 function resolveName(r) {
-  const candidates = [r.name, r.full_name, r.person, r.person_name, r.deceased, r.deceased_name, r.note_name, r.title];
+  const candidates = [
+    r.name,
+    r.full_name,
+    r.person,
+    r.person_name,
+    r.deceased,
+    r.deceased_name,
+    r.note_name,
+    r.title,
+    r.item1
+  ];
   return candidates.map((v) => String(v ?? "").trim()).find(Boolean) || "(brak nazwiska)";
+}
+
+function rowHasContent(r) {
+  if (!r || typeof r !== "object") return false;
+  const keys = ["name", "full_name", "note", "date", "date_death", "date_funeral", "place", "source_name", "item1"];
+  return keys.some((k) => String(r[k] ?? "").trim());
+}
+
+function normalizeRows(rows) {
+  return (Array.isArray(rows) ? rows : []).filter(rowHasContent);
+}
+
+function pickRows(snap, preferred, fallback) {
+  const candidates = [
+    snap?.[preferred],
+    snap?.[fallback],
+    snap?.payload?.[preferred],
+    snap?.payload?.[fallback],
+    snap?.data?.[preferred],
+    snap?.data?.[fallback]
+  ];
+
+  for (const list of candidates) {
+    const rows = normalizeRows(list);
+    if (rows.length) return rows;
+  }
+
+  return [];
+}
+
+function formatTs(value) {
+  if (!value) return "—";
+  if (typeof value === "string") return value;
+  if (typeof value?.toDate === "function") return value.toDate().toISOString();
+  if (value?.seconds != null) {
+    const ms = Number(value.seconds) * 1000 + Math.floor(Number(value.nanoseconds || 0) / 1e6);
+    return new Date(ms).toISOString();
+  }
+  return String(value);
 }
 
 function renderList(container, rows, phrases) {
@@ -93,6 +142,16 @@ function renderHelenaStatus(container, snap) {
     return;
   }
 
+  const legacy = snap?.helena_status;
+  if (legacy && legacy.hit === true) {
+    const items = (legacy.items || []).map((it) => it?.item1).filter(Boolean);
+    container.innerHTML = `
+      <div><strong>Helena Gawin</strong>: znaleziono ${Number(legacy.hits_count || items.length || 0)} pasujących wpisów.</div>
+      ${items.length ? `<div class="small">${items.map(escapeHtml).join(" • ")}</div>` : ""}
+    `;
+    return;
+  }
+
   container.innerHTML = `<div><strong>Helena Gawin - brak informacji</strong></div>`;
 }
 
@@ -139,14 +198,24 @@ async function loadAll() {
   if (staticEl) staticEl.textContent = phrasesRaw;
 
   const phrases = makePhraseVariants(HELENA_GAWIN_PHRASES);
-  renderList(el("deaths"), snap?.recent_deaths ?? snap?.deaths ?? [], phrases);
-  renderList(el("funerals"), snap?.upcoming_funerals ?? snap?.funerals ?? [], phrases);
-  renderHelenaStatus(el("helenaStatus"), snap ?? {});
-  renderSources(el("sources"), snap?.sources ?? cfg?.sources ?? []);
+  const deaths = pickRows(snap, "recent_deaths", "deaths");
+  const funerals = pickRows(snap, "upcoming_funerals", "funerals");
 
-  el("snapshotTime").textContent = (snap?.generated_at || snap?.updated_at || "—");
+  renderList(el("deaths"), deaths, phrases);
+  renderList(el("funerals"), funerals, phrases);
+  renderHelenaStatus(el("helenaStatus"), snap ?? {});
+  renderSources(el("sources"), snap?.sources ?? snap?.payload?.sources ?? snap?.data?.sources ?? cfg?.sources ?? []);
+
+  el("snapshotTime").textContent = formatTs(snap?.generated_at || snap?.updated_at);
   el("jobStatus").textContent = (job?.status || "—");
-  el("jobTime").textContent = (job?.updated_at || job?.finished_at || job?.started_at || "—");
+  el("jobTime").textContent = formatTs(job?.updated_at || job?.finished_at || job?.started_at);
+
+  if (!deaths.length && !funerals.length) {
+    const reason = snap?.refresh_error || job?.error_message;
+    if (reason) {
+      log("Brak prawidłowych wpisów. Ostatni błąd odświeżania:", reason);
+    }
+  }
 
   const st = (job?.status || "").toLowerCase();
   const pill = el("statusPill");
