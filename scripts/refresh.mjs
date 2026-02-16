@@ -259,8 +259,8 @@ function parseZckFuneralsHtml(text, source) {
 }
 
 async function parseZckFunerals(source) {
-  const { ok, status, text } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: `HTTP ${status}` };
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
   return { rows: parseZckFuneralsHtml(text, source), error: null };
 }
 
@@ -306,8 +306,8 @@ function parseIntentionsPlusHtml(text, source) {
 }
 
 async function parseIntentionsPlus(source) {
-  const { ok, status, text } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: `HTTP ${status}` };
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
   return { rows: parseIntentionsPlusHtml(text, source), error: null };
 }
 
@@ -316,8 +316,8 @@ async function parseIntentionsPlus(source) {
  * (dla prostych stron domów pogrzebowych/parafii)
  */
 async function parseGenericHtml(source) {
-  const { ok, status, text } = await fetchText(source.url);
-  if (!ok) return { rows: [], error: `HTTP ${status}` };
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
 
   const $ = cheerio.load(text);
   const content = clean($("body").text()).slice(0, 200000);
