@@ -167,6 +167,33 @@ function hasContent(value) {
   return clean(value).length > 0;
 }
 
+function resolveJobOutcome({ recentDeaths, upcomingFunerals, refreshErrors }) {
+  const validEntries = Number(recentDeaths || 0) + Number(upcomingFunerals || 0);
+  const errors = Array.isArray(refreshErrors) ? refreshErrors.filter(hasContent) : [];
+
+  if (validEntries <= 0) {
+    return {
+      status: "error",
+      ok: false,
+      errorMessage: errors.join(" | ") || "Brak prawidłowych wpisów w odświeżaniu"
+    };
+  }
+
+  if (errors.length) {
+    return {
+      status: "done_with_errors",
+      ok: true,
+      errorMessage: errors.join(" | ")
+    };
+  }
+
+  return {
+    status: "done",
+    ok: true,
+    errorMessage: null
+  };
+}
+
 function isMeaningfulRow(row) {
   return [
     row?.name,
@@ -497,12 +524,18 @@ async function main() {
       data: payload
     }, { merge: true });
 
+    const jobOutcome = resolveJobOutcome({
+      recentDeaths: recent_deaths.length,
+      upcomingFunerals: upcoming_funerals.length,
+      refreshErrors
+    });
+
     await jobRef.set({
-      status: "done",
+      status: jobOutcome.status,
       finished_at: nowISO(),
       updated_at: nowISO(),
-      ok: true,
-      error_message: null,
+      ok: jobOutcome.ok,
+      error_message: jobOutcome.errorMessage,
       source_errors: sourceErrors
     }, { merge: true });
 
@@ -533,5 +566,6 @@ export {
   parseIntentionsPlusHtml,
   parseGenericHtml,
   mergeRequiredSources,
-  normalizeSource
+  normalizeSource,
+  resolveJobOutcome
 };
