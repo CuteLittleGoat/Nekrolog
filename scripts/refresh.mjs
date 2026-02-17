@@ -183,6 +183,11 @@ function isIntentionLikeRow(row) {
   return /(intencj|msz[ey]\s+w\s+intencji)/i.test(marker);
 }
 
+function isEligibleDeathRow(row) {
+  if (row?.kind !== "death") return false;
+  return !isIntentionLikeRow(row);
+}
+
 function resolveJobOutcome({ recentDeaths, upcomingFunerals, refreshErrors }) {
   const validEntries = Number(recentDeaths || 0) + Number(upcomingFunerals || 0);
   const errors = Array.isArray(refreshErrors) ? refreshErrors.filter(hasContent) : [];
@@ -560,7 +565,7 @@ async function main() {
 
     // Podział na zgony/pogrzeby + okno czasowe
     const funerals = allRows.filter(r => (r.kind === "funeral"));
-    const deaths   = allRows.filter(r => (r.kind === "death"));
+    const deaths   = allRows.filter(isEligibleDeathRow);
 
     const upcoming_funerals = funerals.filter(r => inWindow(r.date_funeral, funeralStart, funeralEnd));
     const recent_deaths = deaths.filter(r => inWindow(r.date_death, deathStart, deathEnd) || (!r.date_death && r.note));
@@ -638,6 +643,7 @@ export {
   parseGenericHtml,
   isIntentionLikeSource,
   isIntentionLikeRow,
+  isEligibleDeathRow,
   mergeRequiredSources,
   normalizeSource,
   resolveJobOutcome,
