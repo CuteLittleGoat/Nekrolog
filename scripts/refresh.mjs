@@ -167,6 +167,14 @@ function hasContent(value) {
   return clean(value).length > 0;
 }
 
+function isIntentionLikeSource(source) {
+  const marker = [source?.id, source?.name, source?.url, source?.type]
+    .map((value) => clean(value).toLowerCase())
+    .join(" ");
+
+  return /(intencj|msz[ey]\s+w\s+intencji)/i.test(marker);
+}
+
 function resolveJobOutcome({ recentDeaths, upcomingFunerals, refreshErrors }) {
   const validEntries = Number(recentDeaths || 0) + Number(upcomingFunerals || 0);
   const errors = Array.isArray(refreshErrors) ? refreshErrors.filter(hasContent) : [];
@@ -523,8 +531,11 @@ async function main() {
       else if (s.type === "generic_html") parsed = await parseGenericHtml(s);
       else parsed = { rows: [], error: `Nieznany parser type=${s.type}` };
 
+      const skipDeathsForSource = isIntentionLikeSource(s);
+
       for (const r of parsed.rows) {
         if (!isMeaningfulRow(r)) continue;
+        if (skipDeathsForSource && r.kind === "death") continue;
         const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(" "), phraseVariants);
         allRows.push({ ...r, priority_hit: !!hit });
       }
@@ -617,6 +628,7 @@ export {
   parseIntentionsPlus,
   parseIntentionsPlusHtml,
   parseGenericHtml,
+  isIntentionLikeSource,
   mergeRequiredSources,
   normalizeSource,
   resolveJobOutcome,
