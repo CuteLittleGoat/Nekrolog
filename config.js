@@ -21,7 +21,11 @@ window.NEKROLOG_CONFIG = {
 
   backend: {
     refreshEndpoint: "",
-    refreshEndpointSecret: ""
+    refreshEndpointSecret: "",
+    // Fallback używany gdy refreshEndpoint jest pusty:
+    // https://<region>-<projectId>.cloudfunctions.net/<functionName>
+    refreshFunctionRegion: "europe-central2",
+    refreshFunctionName: "requestNekrologRefresh"
   },
 
   // Okno czasowe (dni)

@@ -31,11 +31,26 @@ export async function saveTargetPhrases(db, phrases) {
   }, { merge: true });
 }
 
+
+function resolveRefreshEndpoint() {
+  const backendCfg = window.NEKROLOG_CONFIG?.backend || {};
+  const explicitEndpoint = String(backendCfg.refreshEndpoint || "").trim();
+  if (explicitEndpoint) return explicitEndpoint;
+
+  const firebaseCfg = window.NEKROLOG_CONFIG?.firebaseConfig || {};
+  const projectId = String(firebaseCfg.projectId || "").trim();
+  const region = String(backendCfg.refreshFunctionRegion || "europe-central2").trim();
+  const functionName = String(backendCfg.refreshFunctionName || "requestNekrologRefresh").trim();
+
+  if (!projectId || !region || !functionName) return "";
+  return `https://${region}-${projectId}.cloudfunctions.net/${encodeURIComponent(functionName)}`;
+}
+
 async function requestRefreshViaBackend() {
   const backendCfg = window.NEKROLOG_CONFIG?.backend || {};
-  const endpoint = String(backendCfg.refreshEndpoint || "").trim();
+  const endpoint = resolveRefreshEndpoint();
   if (!endpoint) {
-    throw new Error("Brak NEKROLOG_CONFIG.backend.refreshEndpoint");
+    throw new Error("Brak endpointu odświeżania. Ustaw backend.refreshEndpoint albo skonfiguruj firebaseConfig.projectId + backend.refreshFunctionRegion + backend.refreshFunctionName.");
   }
 
   const headers = { "Content-Type": "application/json" };
@@ -57,10 +72,10 @@ async function requestRefreshViaBackend() {
 }
 
 export async function requestRefresh(jobRef) {
-  const backendEndpoint = String(window.NEKROLOG_CONFIG?.backend?.refreshEndpoint || "").trim();
+  const backendEndpoint = resolveRefreshEndpoint();
   if (!backendEndpoint) {
     throw new Error(
-      "Odświeżanie wymaga backend.refreshEndpoint. Bez endpointu status joba utknie na queued i snapshot nie zostanie przebudowany."
+      "Odświeżanie wymaga endpointu backendu. Ustaw backend.refreshEndpoint lub fallback (projectId/region/functionName)."
     );
   }
 
