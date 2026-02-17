@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import {
   parseZckFuneralsHtml,
   parseIntentionsPlusHtml,
+  isIntentionLikeSource,
   mergeRequiredSources,
   resolveJobOutcome,
   buildFallbackSummaryForHelena
@@ -23,6 +24,10 @@ const intRows = parseIntentionsPlusHtml(intHtml, source);
 assert.equal(intRows.length, 2);
 assert.equal(intRows[0].name, 'Jan Kowalski');
 assert.match(intRows[1].note, /Maria Nowak/);
+
+
+assert.equal(isIntentionLikeSource({ id: 'sw_jadwiga_intencje', name: 'Msze w intencji', url: 'https://example.com/intencje' }), true);
+assert.equal(isIntentionLikeSource({ id: 'zck_funerals', name: 'Porządek pogrzebów', url: 'https://example.com/funerals' }), false);
 
 const merged = mergeRequiredSources([{ id: 'par_debniki_contact', url: 'https://old.example', enabled: true }]);
 const debniki = merged.find((s) => s.id === 'par_debniki_contact');
