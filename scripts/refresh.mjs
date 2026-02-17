@@ -470,8 +470,11 @@ async function main() {
 
   const back = Number(process.env.NEKROLOG_WINDOW_DAYS_BACK ?? "7");
   const fwd  = Number(process.env.NEKROLOG_WINDOW_DAYS_FORWARD ?? "7");
-  const start = addDays(todayLocalMidnight(), -back);
-  const end   = addDays(todayLocalMidnight(), fwd);
+  const today = todayLocalMidnight();
+  const funeralStart = addDays(today, -back);
+  const funeralEnd = addDays(today, fwd);
+  const deathStart = addDays(today, -back);
+  const deathEnd = today;
 
   const jobRef = db.collection(cfg.nekrologRefreshJobsCollection).doc(cfg.nekrologRefreshJobDocId);
   const snapRef = db.collection(cfg.nekrologSnapshotsCollection).doc(cfg.nekrologSnapshotDocId);
@@ -540,8 +543,8 @@ async function main() {
     const funerals = allRows.filter(r => (r.kind === "funeral"));
     const deaths   = allRows.filter(r => (r.kind === "death"));
 
-    const upcoming_funerals = funerals.filter(r => inWindow(r.date_funeral, start, end));
-    const recent_deaths = deaths.filter(r => inWindow(r.date_death, start, end) || (!r.date_death && r.note));
+    const upcoming_funerals = funerals.filter(r => inWindow(r.date_funeral, funeralStart, funeralEnd));
+    const recent_deaths = deaths.filter(r => inWindow(r.date_death, deathStart, deathEnd) || (!r.date_death && r.note));
 
     // Uporządkuj
     upcoming_funerals.sort((a,b) => (a.date_funeral||"").localeCompare(b.date_funeral||"") || (a.time_funeral||"").localeCompare(b.time_funeral||""));
@@ -564,7 +567,7 @@ async function main() {
       source_errors: sourceErrors,
       refresh_error: refreshErrors.join(" | "),
       writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-16.3"
+      writer_version: "2026-02-17.1"
     };
 
     await snapRef.set({
@@ -597,7 +600,7 @@ async function main() {
       ok: false,
       error_message: String(e?.message || e),
       writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-16.3"
+      writer_version: "2026-02-17.1"
     }, { merge: true });
     console.error("ERROR:", e);
     process.exitCode = 1;
