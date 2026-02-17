@@ -366,7 +366,14 @@ function parseIntentionsPlusHtml(text, source) {
 }
 
 async function parseIntentionsPlus(source) {
-  return { rows: [], error: "Parser intencji został wyłączony (brak jednoznacznego potwierdzenia osoby i dat)" };
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
+
+  const rows = parseIntentionsPlusHtml(text, source);
+  return {
+    rows,
+    error: rows.length ? null : "Brak wzmianek oznaczonych + lub † na stronie intencji"
+  };
 }
 
 /**
@@ -447,7 +454,7 @@ async function parseGenericHtml(source) {
     return { rows, error: null };
   }
 
-  return { rows: [], error: "Brak parsera potwierdzającego wpisy dla tego źródła" };
+  return { rows: [], error: null };
 }
 
 async function main() {
