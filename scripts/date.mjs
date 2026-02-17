@@ -27,6 +27,8 @@ export function addDays(d, days) {
 export function inWindow(isoDate, start, end) {
   const d = parseISODate(isoDate);
   if (!d) return false;
-  // porównujemy po dacie (UTC ok)
-  return d.getTime() >= start.getTime() && d.getTime() <= end.getTime();
+  const normalized = toISODate(d);
+  const startIso = toISODate(start);
+  const endIso = toISODate(end);
+  return normalized >= startIso && normalized <= endIso;
 }
