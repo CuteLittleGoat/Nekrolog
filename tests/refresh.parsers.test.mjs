@@ -5,6 +5,7 @@ import {
   parseIntentionsPlusHtml,
   isIntentionLikeSource,
   isIntentionLikeRow,
+  isEligibleDeathRow,
   mergeRequiredSources,
   resolveJobOutcome,
   buildFallbackSummaryForHelena
@@ -31,6 +32,10 @@ assert.equal(isIntentionLikeSource({ id: 'sw_jadwiga_intencje', name: 'Msze w in
 assert.equal(isIntentionLikeSource({ id: 'zck_funerals', name: 'Porządek pogrzebów', url: 'https://example.com/funerals' }), false);
 assert.equal(isIntentionLikeRow({ name: 'Msza w intencji + Jan Kowalski', note: 'Parafia XYZ' }), true);
 assert.equal(isIntentionLikeRow({ name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), false);
+
+assert.equal(isEligibleDeathRow({ kind: 'death', name: 'Msza w intencji + Jan Kowalski', note: 'Parafia XYZ' }), false);
+assert.equal(isEligibleDeathRow({ kind: 'death', name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), true);
+assert.equal(isEligibleDeathRow({ kind: 'funeral', name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), false);
 
 const merged = mergeRequiredSources([{ id: 'par_debniki_contact', url: 'https://old.example', enabled: true }]);
 const debniki = merged.find((s) => s.id === 'par_debniki_contact');
