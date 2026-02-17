@@ -4,6 +4,7 @@ import {
   parseZckFuneralsHtml,
   parseIntentionsPlusHtml,
   isIntentionLikeSource,
+  isIntentionLikeRow,
   mergeRequiredSources,
   resolveJobOutcome,
   buildFallbackSummaryForHelena
@@ -28,6 +29,8 @@ assert.match(intRows[1].note, /Maria Nowak/);
 
 assert.equal(isIntentionLikeSource({ id: 'sw_jadwiga_intencje', name: 'Msze w intencji', url: 'https://example.com/intencje' }), true);
 assert.equal(isIntentionLikeSource({ id: 'zck_funerals', name: 'Porządek pogrzebów', url: 'https://example.com/funerals' }), false);
+assert.equal(isIntentionLikeRow({ name: 'Msza w intencji + Jan Kowalski', note: 'Parafia XYZ' }), true);
+assert.equal(isIntentionLikeRow({ name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), false);
 
 const merged = mergeRequiredSources([{ id: 'par_debniki_contact', url: 'https://old.example', enabled: true }]);
 const debniki = merged.find((s) => s.id === 'par_debniki_contact');

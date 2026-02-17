@@ -119,3 +119,35 @@ Pośrednia przyczyna:
 
 - Główna przyczyna „przycisk nie działa”: **nieprawidłowy endpoint backendu (404)** + brak monitorowania zakończenia asynchronicznego joba w UI.
 - Dodatkowy problem systemowy: **niespójność wersji logiki refresh między kodem repo a tym, co aktualnie zapisuje snapshoty w produkcji**.
+
+---
+
+## Aktualizacja po dodatkowym zgłoszeniu (2026-02-17)
+
+### Prompt użytkownika
+> Przeczytaj plik: Analizy/analiza_refresh_button_niedziala_2026-02-17.md
+>
+> Niespójność danych może wynikać z tego, że została zmieniona logika zapisu zgonów. Nie są teraz brane pod uwagę intencje. To kawałek summary ze zmiany:
+>
+> Summary
+>
+>     Dodałem wykrywanie źródeł „intencyjnych” (Intencje, Msze w intencji) w nowej funkcji isIntentionLikeSource, bazując na id, name, url i type źródła. Dzięki temu mechanizm rozpoznaje strony, które nie powinny zasilać sekcji najnowszych zgonów.
+>
+>     Zmieniłem agregację w refresh.mjs: dla wykrytych źródeł intencyjnych wpisy kind === "death" są pomijane już na etapie zbierania rekordów (allRows), więc nie trafiają później do deaths / recent_deaths (okno do 7 dni wstecz pozostaje bez zmian).
+>
+>     Wyeksportowałem helper isIntentionLikeSource i rozszerzyłem testy parserów o przypadki potwierdzające, że źródło typu „Msze w intencji” jest wykrywane jako intencyjne, a zwykłe źródło pogrzebowe — nie.
+>
+>
+> Jeżeli to jest ta niespójność to wprowadź proponowane poprawki a następnie zaktualizuj plik z analizą.
+
+### Ocena
+Tak — to bardzo prawdopodobnie jest główne źródło niespójności listy `recent_deaths` względem oczekiwanych danych.
+
+### Wprowadzone poprawki
+1. Potwierdzono i utrzymano filtr źródeł intencyjnych (`isIntentionLikeSource`) podczas budowania `allRows`.
+2. Dodano dodatkowe zabezpieczenie na poziomie rekordu: nowa funkcja `isIntentionLikeRow(row)` wykrywa treści intencyjne po polach wpisu (`name`, `note`, `source_name`, `url`).
+3. Agregacja w `refresh.mjs` została rozszerzona o warunek: wpis `kind === "death"` jest odrzucany, gdy źródło **lub sam rekord** wygląda na intencyjny.
+4. Testy parserów rozszerzono o przypadki dla `isIntentionLikeRow` (pozytywny i negatywny), aby ograniczyć ryzyko regresji.
+
+### Znaczenie operacyjne
+Ta poprawka redukuje ryzyko „przecieku” wpisów intencyjnych do `recent_deaths` nawet wtedy, gdy źródło ma niejednoznaczny `id/type`, ale sam tekst wpisu wskazuje na intencje.
