@@ -31,7 +31,7 @@ const HELENA_GAWIN_PHRASES = [
   "Śp. Dereń Helena"
 ];
 
-const REQUIRED_SOURCES = [
+export const REQUIRED_SOURCES = [
   {
     id: "zck_funerals",
     name: "ZCK Kraków – Porządek pogrzebów",
@@ -113,7 +113,8 @@ function mustEnv(name) {
 }
 
 function initAdmin() {
-  const raw = mustEnv("FIREBASE_SERVICE_ACCOUNT_JSON");
+  const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  if (!raw) return null;
   const creds = JSON.parse(raw);
   if (!admin.apps.length) {
     admin.initializeApp({ credential: admin.credential.cert(creds) });
@@ -478,16 +479,47 @@ async function parseGenericHtml(source) {
   return { rows: [], error: null };
 }
 
-async function main() {
-  const db = initAdmin();
+async function collectSnapshotPayload(sources) {
+  const targetPhrases = HELENA_GAWIN_PHRASES;
+  const phraseVariants = makePhraseVariants(targetPhrases);
+  const enabled = sources.filter((s) => s.enabled !== false);
 
-  const cfg = {
-    nekrologConfigCollection: "Nekrolog_config",
-    nekrologSnapshotsCollection: "Nekrolog_snapshots",
-    nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
-    nekrologSnapshotDocId: "latest",
-    nekrologRefreshJobDocId: "latest",
-  };
+  const allRows = [];
+  const sourceErrors = [];
+  const sourceLite = enabled.map((s) => ({
+    id: s.id,
+    name: s.name,
+    url: s.url,
+    distance_km: s.distance_km ?? null,
+    enabled: s.enabled !== false
+  }));
+
+  for (const s of enabled) {
+    let parsed = { rows: [], error: null };
+
+    if (s.type === "zck_funerals") parsed = await parseZckFunerals(s);
+    else if (s.type === "intencje_plus") parsed = await parseIntentionsPlus(s);
+    else if (s.type === "generic_html") parsed = await parseGenericHtml(s);
+    else parsed = { rows: [], error: `Nieznany parser type=${s.type}` };
+
+    const skipDeathsForSource = isIntentionLikeSource(s);
+
+    for (const r of parsed.rows) {
+      if (!isMeaningfulRow(r)) continue;
+      if ((skipDeathsForSource || isIntentionLikeRow(r)) && r.kind === "death") continue;
+      const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(" "), phraseVariants);
+      allRows.push({ ...r, priority_hit: !!hit });
+    }
+
+    if (parsed.error) {
+      sourceErrors.push({
+        source_id: s.id,
+        source_name: s.name,
+        url: s.url,
+        error: clean(parsed.error)
+      });
+    }
+  }
 
   const back = Number(process.env.NEKROLOG_WINDOW_DAYS_BACK ?? "7");
   const fwd  = Number(process.env.NEKROLOG_WINDOW_DAYS_FORWARD ?? "7");
@@ -497,88 +529,20 @@ async function main() {
   const deathStart = addDays(today, -back);
   const deathEnd = today;
 
-  const jobRef = db.collection(cfg.nekrologRefreshJobsCollection).doc(cfg.nekrologRefreshJobDocId);
-  const snapRef = db.collection(cfg.nekrologSnapshotsCollection).doc(cfg.nekrologSnapshotDocId);
-  const srcRef = db.collection(cfg.nekrologConfigCollection).doc("sources");
+  const funerals = allRows.filter((r) => r.kind === "funeral");
+  const deaths = allRows.filter(isEligibleDeathRow);
 
-    await jobRef.set({
-      status: "running",
-      trigger: "github_actions",
-      writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-16.2",
-      started_at: nowISO(),
-      updated_at: nowISO(),
-      ok: null,
-      error_message: null
-  }, { merge: true });
+  const upcoming_funerals = funerals.filter((r) => inWindow(r.date_funeral, funeralStart, funeralEnd));
+  const recent_deaths = deaths.filter((r) => inWindow(r.date_death, deathStart, deathEnd) || (!r.date_death && r.note));
 
-  try {
-    const srcDoc = await srcRef.get();
-    const sourcesRaw = (srcDoc.exists ? (srcDoc.data().sources || []) : []);
-    const sources = mergeRequiredSources(sourcesRaw);
-    if (sources.length !== (Array.isArray(sourcesRaw) ? sourcesRaw.length : 0)) {
-      await srcRef.set({ sources, updated_at: nowISO() }, { merge: true });
-    }
-    if (!sources.length) throw new Error("Brak źródeł w Nekrolog_config/sources");
+  upcoming_funerals.sort((a, b) => (a.date_funeral || "").localeCompare(b.date_funeral || "") || (a.time_funeral || "").localeCompare(b.time_funeral || ""));
+  recent_deaths.sort((a, b) => (b.date_death || "").localeCompare(a.date_death || ""));
 
-    const targetPhrases = HELENA_GAWIN_PHRASES;
-    const phraseVariants = makePhraseVariants(targetPhrases);
+  const fallbackSummary = buildFallbackSummaryForHelena(recent_deaths, upcoming_funerals);
+  const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
 
-    const enabled = sources.filter(s => s.enabled !== false);
-
-    const allRows = [];
-    const sourceErrors = [];
-    const sourceLite = enabled.map(s => ({
-      id: s.id,
-      name: s.name,
-      url: s.url,
-      distance_km: s.distance_km ?? null,
-      enabled: s.enabled !== false
-    }));
-
-    for (const s of enabled) {
-      let parsed = { rows: [], error: null };
-
-      if (s.type === "zck_funerals") parsed = await parseZckFunerals(s);
-      else if (s.type === "intencje_plus") parsed = await parseIntentionsPlus(s);
-      else if (s.type === "generic_html") parsed = await parseGenericHtml(s);
-      else parsed = { rows: [], error: `Nieznany parser type=${s.type}` };
-
-      const skipDeathsForSource = isIntentionLikeSource(s);
-
-      for (const r of parsed.rows) {
-        if (!isMeaningfulRow(r)) continue;
-        if ((skipDeathsForSource || isIntentionLikeRow(r)) && r.kind === "death") continue;
-        const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(" "), phraseVariants);
-        allRows.push({ ...r, priority_hit: !!hit });
-      }
-
-      if (parsed.error) {
-        sourceErrors.push({
-          source_id: s.id,
-          source_name: s.name,
-          url: s.url,
-          error: clean(parsed.error)
-        });
-      }
-    }
-
-    // Podział na zgony/pogrzeby + okno czasowe
-    const funerals = allRows.filter(r => (r.kind === "funeral"));
-    const deaths   = allRows.filter(isEligibleDeathRow);
-
-    const upcoming_funerals = funerals.filter(r => inWindow(r.date_funeral, funeralStart, funeralEnd));
-    const recent_deaths = deaths.filter(r => inWindow(r.date_death, deathStart, deathEnd) || (!r.date_death && r.note));
-
-    // Uporządkuj
-    upcoming_funerals.sort((a,b) => (a.date_funeral||"").localeCompare(b.date_funeral||"") || (a.time_funeral||"").localeCompare(b.time_funeral||""));
-    recent_deaths.sort((a,b) => (b.date_death||"").localeCompare(a.date_death||""));
-
-    const fallbackSummary = buildFallbackSummaryForHelena(recent_deaths, upcoming_funerals);
-
-    const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
-
-    const payload = {
+  return {
+    payload: {
       generated_at: nowISO(),
       updated_at: nowISO(),
       deaths,
@@ -591,33 +555,91 @@ async function main() {
       source_errors: sourceErrors,
       refresh_error: refreshErrors.join(" | "),
       writer_name: "scripts/refresh.mjs",
-      writer_version: "2026-02-17.1"
-    };
-
-    await snapRef.set({
-      ...payload,
-      payload,
-      data: payload
-    });
-
-    const jobOutcome = resolveJobOutcome({
-      recentDeaths: recent_deaths.length,
-      upcomingFunerals: upcoming_funerals.length,
+      writer_version: "2026-02-21.1"
+    },
+    stats: {
+      allRowsCount: allRows.length,
+      recentDeathsCount: recent_deaths.length,
+      upcomingFuneralsCount: upcoming_funerals.length,
       refreshErrors
-    });
+    }
+  };
+}
 
+async function main() {
+  const db = initAdmin();
+  const localSnapshotOut = process.env.NEKROLOG_LOCAL_SNAPSHOT_OUT || "";
+
+  const cfg = {
+    nekrologConfigCollection: "Nekrolog_config",
+    nekrologSnapshotsCollection: "Nekrolog_snapshots",
+    nekrologRefreshJobsCollection: "Nekrolog_refresh_jobs",
+    nekrologSnapshotDocId: "latest",
+    nekrologRefreshJobDocId: "latest",
+  };
+
+  const jobRef = db?.collection(cfg.nekrologRefreshJobsCollection).doc(cfg.nekrologRefreshJobDocId);
+  const snapRef = db?.collection(cfg.nekrologSnapshotsCollection).doc(cfg.nekrologSnapshotDocId);
+  const srcRef = db?.collection(cfg.nekrologConfigCollection).doc("sources");
+
+  if (jobRef) {
     await jobRef.set({
-      status: jobOutcome.status,
-      finished_at: nowISO(),
+      status: "running",
+      trigger: "github_actions",
+      writer_name: "scripts/refresh.mjs",
+      writer_version: "2026-02-16.2",
+      started_at: nowISO(),
       updated_at: nowISO(),
-      ok: jobOutcome.ok,
-      error_message: jobOutcome.errorMessage,
-      source_errors: sourceErrors
-    }, { merge: true });
+      ok: null,
+      error_message: null
+  }, { merge: true });
+  }
 
-    console.log("OK. Rows:", allRows.length, "funerals:", upcoming_funerals.length, "deaths:", recent_deaths.length);
+  try {
+    const srcDoc = srcRef ? await srcRef.get() : null;
+    const sourcesRaw = srcDoc?.exists ? (srcDoc.data().sources || []) : [];
+    const sources = mergeRequiredSources(sourcesRaw);
+    if (srcRef && sources.length !== (Array.isArray(sourcesRaw) ? sourcesRaw.length : 0)) {
+      await srcRef.set({ sources, updated_at: nowISO() }, { merge: true });
+    }
+    if (!sources.length) throw new Error("Brak źródeł w Nekrolog_config/sources");
+
+    const { payload, stats } = await collectSnapshotPayload(sources);
+
+    if (snapRef) {
+      await snapRef.set({
+        ...payload,
+        payload,
+        data: payload
+      });
+    }
+
+    if (localSnapshotOut) {
+      const fs = await import("node:fs/promises");
+      await fs.mkdir((await import("node:path")).dirname(localSnapshotOut), { recursive: true });
+      await fs.writeFile(localSnapshotOut, JSON.stringify(payload, null, 2), "utf8");
+    }
+
+    if (jobRef) {
+      const jobOutcome = resolveJobOutcome({
+        recentDeaths: stats.recentDeathsCount,
+        upcomingFunerals: stats.upcomingFuneralsCount,
+        refreshErrors: stats.refreshErrors
+      });
+
+      await jobRef.set({
+        status: jobOutcome.status,
+        finished_at: nowISO(),
+        updated_at: nowISO(),
+        ok: jobOutcome.ok,
+        error_message: jobOutcome.errorMessage,
+        source_errors: payload.source_errors
+      }, { merge: true });
+    }
+
+    console.log("OK. Rows:", stats.allRowsCount, "funerals:", stats.upcomingFuneralsCount, "deaths:", stats.recentDeathsCount);
   } catch (e) {
-    await jobRef.set({
+    if (jobRef) await jobRef.set({
       status: "error",
       finished_at: nowISO(),
       updated_at: nowISO(),
@@ -647,5 +669,6 @@ export {
   mergeRequiredSources,
   normalizeSource,
   resolveJobOutcome,
-  buildFallbackSummaryForHelena
+  buildFallbackSummaryForHelena,
+  collectSnapshotPayload
 };

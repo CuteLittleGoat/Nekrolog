@@ -255,20 +255,46 @@ function escapeAttr(s) {
   return escapeHtml(s).replace(/"/g, "%22");
 }
 
+async function readLocalSnapshot() {
+  try {
+    const res = await fetch("./data/latest_snapshot.json", { cache: "no-store" });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
 async function loadAll() {
   el("log").textContent = "";
   const db = getDb();
   const { snapRef, jobRef, srcRef } = getRefs(db);
 
-  const snap = await readDocSafe(snapRef);
+  let snap = await readDocSafe(snapRef);
   const job = await readDocSafe(jobRef);
-  const cfg = await readDocSafe(srcRef);
+  let cfg = await readDocSafe(srcRef);
 
-  log("snapshot:", snap ? "OK" : "BRAK", "job:", job ? "OK" : "BRAK", "sources:", cfg?.sources?.length ?? 0);
+  let deaths = pickRows(snap, "recent_deaths", "deaths");
+  let funerals = pickRows(snap, "upcoming_funerals", "funerals");
+
+  if ((!deaths.length && !funerals.length) || !snap) {
+    const localSnap = await readLocalSnapshot();
+    if (localSnap) {
+      snap = localSnap;
+      if (!cfg?.sources?.length && Array.isArray(localSnap.sources)) {
+        cfg = { ...(cfg || {}), sources: localSnap.sources };
+      }
+      deaths = pickRows(snap, "recent_deaths", "deaths");
+      funerals = pickRows(snap, "upcoming_funerals", "funerals");
+      log("snapshot:", "LOCAL_FALLBACK", "job:", job ? "OK" : "BRAK", "sources:", cfg?.sources?.length ?? 0);
+    }
+  }
+
+  if (!el("log").textContent.includes("snapshot:")) {
+    log("snapshot:", snap ? "OK" : "BRAK", "job:", job ? "OK" : "BRAK", "sources:", cfg?.sources?.length ?? 0);
+  }
 
   const phrases = makePhraseVariants(HELENA_GAWIN_PHRASES);
-  const deaths = pickRows(snap, "recent_deaths", "deaths");
-  const funerals = pickRows(snap, "upcoming_funerals", "funerals");
   const sourceUrlIndex = indexSourcesByIdAndName([
     ...(snap?.sources ?? snap?.payload?.sources ?? snap?.data?.sources ?? []),
     ...(cfg?.sources ?? [])
