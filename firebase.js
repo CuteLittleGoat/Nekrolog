@@ -32,24 +32,33 @@ export async function saveTargetPhrases(db, phrases) {
 }
 
 
-function resolveRefreshEndpoint() {
+function resolveRefreshEndpoints() {
   const backendCfg = window.NEKROLOG_CONFIG?.backend || {};
-  const explicitEndpoint = String(backendCfg.refreshEndpoint || "").trim();
-  if (explicitEndpoint) return explicitEndpoint;
-
   const firebaseCfg = window.NEKROLOG_CONFIG?.firebaseConfig || {};
+
+  const explicitEndpoint = String(backendCfg.refreshEndpoint || "").trim();
   const projectId = String(firebaseCfg.projectId || "").trim();
   const region = String(backendCfg.refreshFunctionRegion || "europe-central2").trim();
   const functionName = String(backendCfg.refreshFunctionName || "requestNekrologRefresh").trim();
 
-  if (!projectId || !region || !functionName) return "";
-  return `https://${region}-${projectId}.cloudfunctions.net/${encodeURIComponent(functionName)}`;
+  const candidates = [];
+  if (explicitEndpoint) candidates.push(explicitEndpoint);
+
+  if (typeof window !== "undefined" && window.location?.origin && functionName) {
+    candidates.push(new URL(`/${encodeURIComponent(functionName)}`, window.location.origin).toString());
+  }
+
+  if (projectId && region && functionName) {
+    candidates.push(`https://${region}-${projectId}.cloudfunctions.net/${encodeURIComponent(functionName)}`);
+  }
+
+  return [...new Set(candidates)];
 }
 
 async function requestRefreshViaBackend() {
   const backendCfg = window.NEKROLOG_CONFIG?.backend || {};
-  const endpoint = resolveRefreshEndpoint();
-  if (!endpoint) {
+  const endpoints = resolveRefreshEndpoints();
+  if (!endpoints.length) {
     throw new Error("Brak endpointu odświeżania. Ustaw backend.refreshEndpoint albo skonfiguruj firebaseConfig.projectId + backend.refreshFunctionRegion + backend.refreshFunctionName.");
   }
 
@@ -59,40 +68,50 @@ async function requestRefreshViaBackend() {
     headers["x-refresh-secret"] = endpointSecret;
   }
 
-  let response;
-  try {
-    response = await fetch(endpoint, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ reason: "manual_ui" })
-    });
-  } catch (err) {
-    const networkDetails = String(err?.message || err);
-    throw new Error(`Błąd sieci/CORS dla endpointu ${endpoint}: ${networkDetails}`);
+  const errors = [];
+
+  for (const endpoint of endpoints) {
+    let response;
+    try {
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ reason: "manual_ui" })
+      });
+    } catch (err) {
+      const networkDetails = String(err?.message || err);
+      errors.push(`Błąd sieci/CORS dla endpointu ${endpoint}: ${networkDetails}`);
+      continue;
+    }
+
+    if (!response.ok) {
+      const payload = await response.text();
+      errors.push(`Backend odrzucił żądanie odświeżenia (${response.status}) dla ${endpoint}: ${payload.slice(0, 200)}`);
+      continue;
+    }
+
+    return { endpoint, attempts: endpoints, errors };
   }
 
-  if (!response.ok) {
-    const payload = await response.text();
-    throw new Error(`Backend odrzucił żądanie odświeżenia (${response.status}) dla ${endpoint}: ${payload.slice(0, 200)}`);
-  }
-
-  return { endpoint };
+  throw new Error(errors.join(" | "));
 }
 
 export async function requestRefresh(jobRef) {
-  const backendEndpoint = resolveRefreshEndpoint();
-  if (!backendEndpoint) {
+  const backendEndpoints = resolveRefreshEndpoints();
+  if (!backendEndpoints.length) {
     throw new Error("Brak endpointu backendu odświeżania. Ustaw backend.refreshEndpoint.");
   }
 
+  let requestResult;
   try {
-    await requestRefreshViaBackend();
+    requestResult = await requestRefreshViaBackend();
   } catch (err) {
     const backendError = String(err?.message || err);
     await setDoc(jobRef, {
       manual_request_attempted_at: serverTimestamp(),
       manual_request_error: backendError,
-      manual_request_endpoint: backendEndpoint
+      manual_request_endpoint: backendEndpoints[0],
+      manual_request_endpoint_candidates: backendEndpoints
     }, { merge: true });
     throw new Error(`Nie udało się uruchomić backendowego odświeżania: ${backendError}`);
   }
@@ -102,12 +121,13 @@ export async function requestRefresh(jobRef) {
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
     manual_request_error: null,
-    manual_request_endpoint: backendEndpoint
+    manual_request_endpoint: requestResult.endpoint,
+    manual_request_endpoint_candidates: requestResult.attempts
   }, { merge: true });
 
   return {
     ok: true,
     mode: "backend",
-    backendEndpoint
+    backendEndpoint: requestResult.endpoint
   };
 }

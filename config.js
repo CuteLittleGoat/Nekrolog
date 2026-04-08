@@ -22,8 +22,9 @@ window.NEKROLOG_CONFIG = {
   backend: {
     refreshEndpoint: "",
     refreshEndpointSecret: "",
-    // Fallback używany gdy refreshEndpoint jest pusty:
-    // https://<region>-<projectId>.cloudfunctions.net/<functionName>
+    // Fallbacki używane gdy refreshEndpoint jest pusty (w tej kolejności):
+    // 1) <origin>/<functionName> (np. rewrite w Firebase Hosting),
+    // 2) https://<region>-<projectId>.cloudfunctions.net/<functionName>
     refreshFunctionRegion: "europe-central2",
     refreshFunctionName: "requestNekrologRefresh"
   },
