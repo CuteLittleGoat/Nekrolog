@@ -40,6 +40,51 @@ const appendLog = (id, ...a) => {
 const log = (...a) => appendLog("log", ...a);
 const logRefresh = (...a) => appendLog("refreshLog", ...a);
 
+const COPY_REFRESH_LOG_PREFIX = `Przeczytaj i zaktualizuj analizę Analizy/Refresh.md
+Naciśnięcie przycisku Odśwież skutkuje pojawieniem się komunikatu:`;
+
+function resolveRefreshErrorDetails(err) {
+  const details = err?.refreshDetails;
+  if (!details || typeof details !== "object") return null;
+
+  const lines = [];
+  if (Array.isArray(details.endpointCandidates) && details.endpointCandidates.length) {
+    lines.push(`Endpointy sprawdzone przez UI: ${details.endpointCandidates.join(" | ")}`);
+  }
+
+  if (Array.isArray(details.attemptErrors) && details.attemptErrors.length) {
+    details.attemptErrors.forEach((attemptErr, idx) => {
+      lines.push(`Szczegóły próby #${idx + 1}: ${attemptErr}`);
+    });
+  }
+
+  if (details.originalMessage) {
+    lines.push(`Treść błędu backendu: ${details.originalMessage}`);
+  }
+
+  return lines;
+}
+
+async function copyRefreshLogWithIntro() {
+  const refreshLogNode = el("refreshLog");
+  const payload = [
+    COPY_REFRESH_LOG_PREFIX,
+    String(refreshLogNode?.textContent || "").trim()
+  ].filter(Boolean).join("\n");
+
+  if (!payload.trim()) {
+    logRefresh("Brak treści logu do skopiowania.");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(payload);
+    logRefresh("Skopiowano log błędów do schowka (z dodanym wstępem).");
+  } catch (err) {
+    logRefresh("Nie udało się skopiować logu do schowka:", String(err?.message || err));
+  }
+}
+
 function resolveName(r) {
   const candidates = [
     r.name,
@@ -363,8 +408,20 @@ async function runRefresh() {
       logRefresh("Nie wykryto zakończenia nowego joba w czasie oczekiwania (90 s).");
     }
   } catch (err) {
-    log("Nie udało się wysłać żądania odświeżenia:", String(err?.message || err));
-    logRefresh("Błąd wysyłki żądania odświeżenia:", String(err?.message || err));
+    const errorMessage = String(err?.message || err);
+    log("Nie udało się wysłać żądania odświeżenia:", errorMessage);
+    logRefresh("Błąd wysyłki żądania odświeżenia:", errorMessage);
+
+    const detailLines = resolveRefreshErrorDetails(err);
+    if (detailLines?.length) {
+      detailLines.forEach((line) => logRefresh(line));
+    }
+
+    logRefresh("Diagnostyka klienta:", {
+      online: typeof navigator !== "undefined" ? navigator.onLine : "unknown",
+      userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "unknown",
+      page: typeof window !== "undefined" ? window.location?.href : "unknown"
+    });
   }
 
   await loadAll();
@@ -375,4 +432,5 @@ async function runRefresh() {
 }
 
 el("btnReload").addEventListener("click", runRefresh);
+el("btnCopyRefreshLog")?.addEventListener("click", copyRefreshLogWithIntro);
 loadAll();
