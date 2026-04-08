@@ -214,3 +214,56 @@ Weryfikacja wykonana komendą `curl -i -X POST ...` (zwrócony 404).
 
 - Naprawia przypadki, gdy funkcja jest poprawnie podpięta przez rewrite (same-origin), a bezpośredni `cloudfunctions.net` nie działał z powodów CORS/routingu.
 - Jeśli funkcja **realnie nie jest wdrożona** nigdzie (404 na wszystkich kandydatach), UI nadal zwróci błąd — ale teraz z pełniejszą diagnostyką i listą sprawdzonych endpointów.
+
+---
+
+# Historia zmian – 2026-04-08 (błąd 405 na GitHub Pages + CORS na cloudfunctions.net)
+
+## Prompt użytkownika
+
+> Przeczytaj i zaktualizuj analizę Refresh.md
+>
+> Użycie przycisku odśwież zwraca błąd
+>
+> Log odświeżania
+> === Start odświeżania ===
+> [2026-04-08T18:08:19.862Z] Kliknięto przycisk Odśwież.
+> [2026-04-08T18:08:19.863Z] Poprzedni czas joba: 2026-04-08T12:58:56.274Z
+> [2026-04-08T18:08:20.149Z] Błąd wysyłki żądania odświeżenia: Nie udało się uruchomić backendowego odświeżania: Backend odrzucił żądanie odświeżenia (405) dla https://cutelittlegoat.github.io/requestNekrologRefresh: <html>
+> <head><title>405 Not Allowed</title></head>
+> <body bgcolor="white">
+> <center><h1>405 Not Allowed</h1></center>
+> </body>
+> </html> | Błąd sieci/CORS dla endpointu https://europe-central2-karty-turniej.cloudfunctions.net/requestNekrologRefresh: Failed to fetch
+> [2026-04-08T18:08:20.460Z] Odświeżono widok danych po zakończeniu procesu.
+> [2026-04-08T18:08:20.462Z] === Koniec odświeżania ===
+
+## Zweryfikowana interpretacja błędu
+
+1. Aplikacja próbuje co najmniej dwa endpointy:
+   - `https://cutelittlegoat.github.io/requestNekrologRefresh` (same-origin na GitHub Pages),
+   - `https://europe-central2-karty-turniej.cloudfunctions.net/requestNekrologRefresh` (Cloud Functions).
+2. `405 Not Allowed` z GitHub Pages jest oczekiwany dla `POST` na statycznym hostingu (`github.io` nie obsługuje takiego backend route).
+3. Drugi błąd (`Failed to fetch`) oznacza problem CORS/sieci lub brak poprawnej obsługi żądania po stronie funkcji (np. endpoint nieosiągalny z przeglądarki albo odpowiedź bez CORS).
+4. Sam przycisk i flow UI działają poprawnie (log przechodzi przez start/catch/finally i końcowe odświeżenie widoku), problem pozostaje backendowo-konfiguracyjny.
+
+## Najbardziej prawdopodobny root-cause (aktualny stan)
+
+- Ścieżka same-origin `/<functionName>` nie powinna być używana dla produkcji hostowanej na `*.github.io` (zawsze zwróci 405 dla POST).
+- Równolegle endpoint Cloud Functions nadal nie jest poprawnie osiągalny z przeglądarki (CORS/routing/deploy).
+
+## Zalecane następne kroki
+
+1. Wymusić jawny `backend.refreshEndpoint` na właściwy URL działającej funkcji (i nie polegać na same-origin przy GitHub Pages).
+2. W kodzie resolvera endpointu pominąć kandydata same-origin, jeśli `location.hostname.endsWith("github.io")`.
+3. Na backendzie funkcji upewnić się, że:
+   - metoda `POST` jest obsługiwana,
+   - nagłówki CORS są dodawane dla originu GitHub Pages,
+   - endpoint faktycznie odpowiada pod oczekiwanym URL i nazwą funkcji.
+4. Zweryfikować ręcznie:
+   - `curl -i -X POST <endpoint>` (czy nie 404/405),
+   - test z przeglądarki (czy brak `Failed to fetch`).
+
+## Co zostało zmienione w kodzie
+
+W ramach tej aktualizacji **nie wprowadzono zmian w kodzie aplikacji** — zaktualizowano wyłącznie analizę i historię diagnostyki w `Analizy/Refresh.md`.
