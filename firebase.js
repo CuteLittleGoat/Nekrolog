@@ -44,7 +44,12 @@ function resolveRefreshEndpoints() {
   const candidates = [];
   if (explicitEndpoint) candidates.push(explicitEndpoint);
 
-  if (typeof window !== "undefined" && window.location?.origin && functionName) {
+  const hostname = typeof window !== "undefined"
+    ? String(window.location?.hostname || "").toLowerCase()
+    : "";
+  const isGithubPages = hostname.endsWith(".github.io");
+
+  if (typeof window !== "undefined" && window.location?.origin && functionName && !isGithubPages) {
     candidates.push(new URL(`/${encodeURIComponent(functionName)}`, window.location.origin).toString());
   }
 
@@ -61,7 +66,7 @@ async function requestRefreshViaBackend(endpoints) {
     throw new Error("Brak endpointu odświeżania. Ustaw backend.refreshEndpoint albo skonfiguruj firebaseConfig.projectId + backend.refreshFunctionRegion + backend.refreshFunctionName.");
   }
 
-  const headers = { "Content-Type": "application/json" };
+  const headers = {};
   const endpointSecret = String(backendCfg.refreshEndpointSecret || "").trim();
   if (endpointSecret) {
     headers["x-refresh-secret"] = endpointSecret;
@@ -76,7 +81,7 @@ async function requestRefreshViaBackend(endpoints) {
       response = await fetch(endpoint, {
         method: "POST",
         headers,
-        body: JSON.stringify({ reason: "manual_ui" })
+        body: endpointSecret ? JSON.stringify({ reason: "manual_ui" }) : undefined
       });
     } catch (err) {
       const networkDetails = String(err?.message || err);

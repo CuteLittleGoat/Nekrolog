@@ -12,8 +12,9 @@ Docelowy endpoint backendowy powinien działać jako **Firebase Cloud Function 2
 - Frontend:
   - UI zawsze wywołuje backendowy endpoint odświeżania,
   - jeżeli `NEKROLOG_CONFIG.backend.refreshEndpoint` jest puste, UI próbuje kolejno:
-    1. `https://<hosting-origin>/<functionName>` (dla setupu z rewrite),
+    1. `https://<hosting-origin>/<functionName>` (dla setupu z rewrite; pomijane na `*.github.io`),
     2. `https://<region>-<projectId>.cloudfunctions.net/<functionName>`.
+  - Dla braku sekretu endpointu UI wysyła prosty `POST` bez niestandardowych nagłówków (mniej problemów CORS/preflight).
 
 ## Sekrety backendowe (Firebase Functions Secrets)
 
@@ -55,3 +56,6 @@ Następnie ustaw w `config.js`:
 
 - `backend.refreshEndpoint` – URL wdrożonej funkcji,
 - `backend.refreshEndpointSecret` – ten sam sekret co `REFRESH_ENDPOINT_SECRET`.
+
+> Rekomendacja dla GitHub Pages: ustaw `backend.refreshEndpoint` jawnie na działający URL funkcji.
+> Dzięki temu UI nie będzie próbować trasy same-origin (`/<functionName>`), która na GitHub Pages zwraca `405 Not Allowed`.
