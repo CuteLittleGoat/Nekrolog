@@ -336,12 +336,7 @@ async function runRefresh() {
 
   try {
     const result = await requestRefresh(jobRef);
-    if (result.mode === "backend") {
-      log("Wysłano żądanie odświeżenia do backendu:", result.backendEndpoint);
-    } else {
-      log("Backend odświeżania niedostępny; zapisano trigger fallback w Firestore.");
-      if (result.backendError) log("Szczegóły błędu backendu:", result.backendError);
-    }
+    log("Wysłano żądanie odświeżenia do backendu:", result.backendEndpoint);
 
     const changed = await waitForJobChange(jobRef, previousJobTime);
     if (!changed) {

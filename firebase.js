@@ -75,34 +75,31 @@ async function requestRefreshViaBackend() {
 
 export async function requestRefresh(jobRef) {
   const backendEndpoint = resolveRefreshEndpoint();
-  let backendError = null;
-  let mode = "firestore_fallback";
+  if (!backendEndpoint) {
+    throw new Error("Brak endpointu backendu odświeżania. Ustaw backend.refreshEndpoint.");
+  }
 
-  if (backendEndpoint) {
-    try {
-      await requestRefreshViaBackend();
-      mode = "backend";
-    } catch (err) {
-      backendError = String(err?.message || err);
-    }
-  } else {
-    backendError = "Brak endpointu backendu odświeżania.";
+  try {
+    await requestRefreshViaBackend();
+  } catch (err) {
+    const backendError = String(err?.message || err);
+    await setDoc(jobRef, {
+      manual_request_attempted_at: serverTimestamp(),
+      manual_request_error: backendError
+    }, { merge: true });
+    throw new Error(`Nie udało się uruchomić backendowego odświeżania: ${backendError}`);
   }
 
   await setDoc(jobRef, {
     trigger: mode === "backend" ? "manual_ui" : "manual_ui_firestore_fallback",
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
-    status: mode === "backend" ? "requested" : "requested_fallback",
-    error_message: backendError
-      ? `Manualny trigger UI zapisany przez fallback Firestore. Backend: ${backendError}`
-      : null
+    manual_request_error: null
   }, { merge: true });
 
   return {
     ok: true,
-    mode,
-    backendEndpoint,
-    backendError
+    mode: "backend",
+    backendEndpoint
   };
 }
