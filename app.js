@@ -29,9 +29,16 @@ const HELENA_GAWIN_PHRASES = [
 ];
 
 const el = (id) => document.getElementById(id);
-const log = (...a) => {
-  el("log").textContent += a.map((x) => typeof x === "string" ? x : JSON.stringify(x, null, 2)).join(" ") + "\n";
+const formatLogLine = (...a) => a.map((x) => typeof x === "string" ? x : JSON.stringify(x, null, 2)).join(" ");
+const withStamp = (line) => `[${new Date().toISOString()}] ${line}`;
+const appendLog = (id, ...a) => {
+  const node = el(id);
+  if (!node) return;
+  node.textContent += `${withStamp(formatLogLine(...a))}\n`;
+  node.scrollTop = node.scrollHeight;
 };
+const log = (...a) => appendLog("log", ...a);
+const logRefresh = (...a) => appendLog("refreshLog", ...a);
 
 function resolveName(r) {
   const candidates = [
@@ -310,17 +317,21 @@ async function waitForJobChange(jobRef, previousJobTime) {
     const job = await readDocSafe(jobRef);
     const currentJobTime = formatTs(job?.updated_at || job?.finished_at || job?.started_at);
     const status = String(job?.status || "").toLowerCase();
+    logRefresh(`Poll #${i + 1}/${maxChecks}: status=${job?.status || "—"}, jobTime=${currentJobTime}`);
 
     if (currentJobTime && currentJobTime !== "—" && currentJobTime !== previousJobTime) {
       log(`Wykryto zmianę job.updated_at: ${previousJobTime} -> ${currentJobTime}`);
+      logRefresh(`Wykryto zmianę job.updated_at: ${previousJobTime} -> ${currentJobTime}`);
       return true;
     }
 
     if (status === "done" || status === "done_with_errors" || status === "error") {
       log(`Job zakończony statusem: ${job?.status || "—"}`);
+      logRefresh(`Job zakończony statusem: ${job?.status || "—"}`);
       return true;
     }
   }
+  logRefresh("Przekroczono limit oczekiwania na zmianę joba (90 s).");
   return false;
 }
 
@@ -333,22 +344,34 @@ async function runRefresh() {
   btn.disabled = true;
   const originalLabel = btn.textContent;
   btn.textContent = "Odświeżanie…";
+  const refreshLogEl = el("refreshLog");
+  if (refreshLogEl) {
+    const separator = refreshLogEl.textContent.trim() ? "\n" : "";
+    refreshLogEl.textContent += `${separator}=== Start odświeżania ===\n`;
+  }
+  logRefresh("Kliknięto przycisk Odśwież.");
+  logRefresh("Poprzedni czas joba:", previousJobTime);
 
   try {
     const result = await requestRefresh(jobRef);
     log("Wysłano żądanie odświeżenia do backendu:", result.backendEndpoint);
+    logRefresh("Wysłano żądanie odświeżenia do backendu:", result.backendEndpoint);
 
     const changed = await waitForJobChange(jobRef, previousJobTime);
     if (!changed) {
       log("Nie wykryto zakończenia nowego joba w czasie oczekiwania (90 s).");
+      logRefresh("Nie wykryto zakończenia nowego joba w czasie oczekiwania (90 s).");
     }
   } catch (err) {
     log("Nie udało się wysłać żądania odświeżenia:", String(err?.message || err));
+    logRefresh("Błąd wysyłki żądania odświeżenia:", String(err?.message || err));
   }
 
   await loadAll();
+  logRefresh("Odświeżono widok danych po zakończeniu procesu.");
   btn.disabled = false;
   btn.textContent = originalLabel;
+  logRefresh("=== Koniec odświeżania ===");
 }
 
 el("btnReload").addEventListener("click", runRefresh);
