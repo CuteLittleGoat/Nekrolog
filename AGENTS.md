@@ -1,3 +1,4 @@
 1. Jeżeli polecenie użytkownika nie dotyczy zmiany kodu a tylko analizy to wnioski zapisz w folderze Analizy w nowoutworzonym pliku o odekwatnej nazwie do przeprowadzanej analizy
 2. Jeżeli zapisujesz plik z wynikami analizy to w pliku uwzględnij prompt użytkownika, żeby zachować kontekst zapisanych odpowiedzi
 3. W ustawieniach Repository secrets istnienie tajny klucz FIREBASE_SERVICE_ACCOUNT_JSON - daje on dostęp do Firebase. Możesz w pełni modyfikować kolekcje Nekrolog_config, Nekrolog_refresh_jobs i Nekrolog_snapshots pozostałe są do innego projektu i nie możesz nic tam zmieniać
+Jeżeli polecenie użytkownika jest związane z przeczytaniem pliku Analizy/Refresh.md to zawsze dopisz co zostało zmienione w kodzie. Plik Analizy/Refresh.md ma być pełnym repozytorium zawierającym historię zmian dotyczących odświeżania danych.
