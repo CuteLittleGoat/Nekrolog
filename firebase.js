@@ -91,7 +91,7 @@ export async function requestRefresh(jobRef) {
   }
 
   await setDoc(jobRef, {
-    trigger: "manual_ui",
+    trigger: mode === "backend" ? "manual_ui" : "manual_ui_firestore_fallback",
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
     manual_request_error: null
