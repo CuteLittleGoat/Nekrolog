@@ -128,3 +128,35 @@ Jeżeli funkcja nie jest wdrożona pod dokładną nazwą/regionem/projektem wyni
 ## 8) Wynik końcowy analizy
 
 Aktualne niepowodzenie „Odśwież” nie wynika z samego przycisku/UI, tylko z warstwy endpointu backendowego (niedostępny lub nieistniejący URL fallbackowy). Dodatkowo kod zawiera niezależny błąd (`mode`), który ujawni się natychmiast po przywróceniu dostępności endpointu.
+
+---
+
+# Historia zmian – 2026-04-08 (wdrożenie poprawek po analizie)
+
+## Prompt użytkownika
+
+> Przeczytaj analizę Analizy/Refresh.md a następnie wprowadź rekomendowane poprawki.
+> Następnie zaktualizuj analizę Analizy/Refresh.md o informację co zostało poprawione. Plik Analizy/Refresh.md ma być pełną historią zmian i poprawek związanych z odświeżaniem.
+
+## Co zostało poprawione w kodzie
+
+1. **Naprawiono krytyczny błąd `mode is not defined`** w `firebase.js`:
+   - zapis triggera po udanym żądaniu jest teraz stały: `trigger: "manual_ui"`.
+   - usunięto martwą/niepoprawną referencję do nieistniejącej zmiennej `mode`.
+
+2. **Dodano dokładniejszą diagnostykę błędów wywołania backendu**:
+   - `fetch` jest opakowany obsługą błędu sieci/CORS i zwraca jednoznaczny komunikat zawierający endpoint.
+   - przy błędzie HTTP komunikat zawiera status + endpoint + skrócony payload odpowiedzi.
+
+3. **Rozszerzono ślad diagnostyczny w Firestore (`Nekrolog_refresh_jobs/latest`)**:
+   - przy błędzie zapisywane jest `manual_request_endpoint`,
+   - przy sukcesie czyszczony jest błąd i również zapisywany jest `manual_request_endpoint`.
+
+4. **Ujednolicono dokumentację z implementacją** (`BACKEND_GITHUB_SETUP.md`):
+   - usunięto nieaktualny opis o „fallbacku do zapisu Firestore z UI”,
+   - doprecyzowano, że UI działa przez endpoint backendowy (jawny lub składany z region/projectId/functionName).
+
+## Uwagi operacyjne po poprawkach
+
+- Poprawki usuwają błąd wykonania po stronie frontendu i poprawiają debugowanie, ale **nie zastępują poprawnej konfiguracji/deployu endpointu**.
+- Jeżeli endpoint nadal zwraca 404 lub jest niedostępny, UI nadal pokaże błąd, ale teraz z dokładniejszą informacją diagnostyczną (w logu i w dokumencie joba).

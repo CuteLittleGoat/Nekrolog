@@ -9,9 +9,10 @@ Docelowy endpoint backendowy powinien działać jako **Firebase Cloud Function 2
   - opcjonalnie weryfikuje nagłówek `x-refresh-secret`,
   - uruchamia `workflow_dispatch` w GitHub API.
 - Workflow GitHub Actions: `.github/workflows/nekrolog-refresh.yml`.
-- Frontend fallback:
-  - jeżeli `NEKROLOG_CONFIG.backend.refreshEndpoint` jest ustawione, UI woła backend,
-  - jeżeli nie, zostaje dotychczasowy tryb (zapis do Firestore).
+- Frontend:
+  - UI zawsze wywołuje backendowy endpoint odświeżania,
+  - jeżeli `NEKROLOG_CONFIG.backend.refreshEndpoint` jest puste, adres jest składany z:
+    `https://<region>-<projectId>.cloudfunctions.net/<functionName>`.
 
 ## Sekrety backendowe (Firebase Functions Secrets)
 

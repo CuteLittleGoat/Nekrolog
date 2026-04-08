@@ -59,15 +59,21 @@ async function requestRefreshViaBackend() {
     headers["x-refresh-secret"] = endpointSecret;
   }
 
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({ reason: "manual_ui" })
-  });
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ reason: "manual_ui" })
+    });
+  } catch (err) {
+    const networkDetails = String(err?.message || err);
+    throw new Error(`Błąd sieci/CORS dla endpointu ${endpoint}: ${networkDetails}`);
+  }
 
   if (!response.ok) {
     const payload = await response.text();
-    throw new Error(`Backend odrzucił żądanie odświeżenia (${response.status}): ${payload.slice(0, 200)}`);
+    throw new Error(`Backend odrzucił żądanie odświeżenia (${response.status}) dla ${endpoint}: ${payload.slice(0, 200)}`);
   }
 
   return { endpoint };
@@ -85,16 +91,18 @@ export async function requestRefresh(jobRef) {
     const backendError = String(err?.message || err);
     await setDoc(jobRef, {
       manual_request_attempted_at: serverTimestamp(),
-      manual_request_error: backendError
+      manual_request_error: backendError,
+      manual_request_endpoint: backendEndpoint
     }, { merge: true });
     throw new Error(`Nie udało się uruchomić backendowego odświeżania: ${backendError}`);
   }
 
   await setDoc(jobRef, {
-    trigger: mode === "backend" ? "manual_ui" : "manual_ui_firestore_fallback",
+    trigger: "manual_ui",
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
-    manual_request_error: null
+    manual_request_error: null,
+    manual_request_endpoint: backendEndpoint
   }, { merge: true });
 
   return {
