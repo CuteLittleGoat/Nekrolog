@@ -160,3 +160,57 @@ Aktualne niepowodzenie „Odśwież” nie wynika z samego przycisku/UI, tylko z
 
 - Poprawki usuwają błąd wykonania po stronie frontendu i poprawiają debugowanie, ale **nie zastępują poprawnej konfiguracji/deployu endpointu**.
 - Jeżeli endpoint nadal zwraca 404 lub jest niedostępny, UI nadal pokaże błąd, ale teraz z dokładniejszą informacją diagnostyczną (w logu i w dokumencie joba).
+
+---
+
+# Historia zmian – 2026-04-08 (weryfikacja błędu CORS/NetworkError po poprawkach)
+
+## Prompt użytkownika
+
+> Przeczytaj i zaktualizuj analizę Analizy/Refresh.md
+>
+> Po poprawkach przy próbie odświeżenia w logu pojawia się informacja:
+>
+> Log odświeżania
+>
+> === Start odświeżania ===
+> [2026-04-08T13:34:27.470Z] Kliknięto przycisk Odśwież.
+> [2026-04-08T13:34:27.470Z] Poprzedni czas joba: 2026-04-08T12:58:56.274Z
+> [2026-04-08T13:34:27.930Z] Błąd wysyłki żądania odświeżenia: Nie udało się uruchomić backendowego odświeżania: Błąd sieci/CORS dla endpointu https://europe-central2-karty-turniej.cloudfunctions.net/requestNekrologRefresh: NetworkError when attempting to fetch resource.
+> [2026-04-08T13:34:28.197Z] Odświeżono widok danych po zakończeniu procesu.
+> [2026-04-08T13:34:28.200Z] === Koniec odświeżania ===
+>
+> Zweryfikuj przyczynę błędu i napraw to oraz zaktualizuj plik Analizy/Refresh.md
+
+## Zweryfikowana przyczyna (root-cause)
+
+1. Endpoint używany przez UI (`https://europe-central2-karty-turniej.cloudfunctions.net/requestNekrologRefresh`) zwraca HTTP **404 Not Found**.
+2. W przeglądarce taki cross-origin 404 bez poprawnego CORS jest mapowany jako `NetworkError when attempting to fetch resource`.
+3. To oznacza, że problemem nie jest przycisk, tylko brak dostępnego endpointu pod tym adresem (brak deployu/rewrite albo inny URL funkcji).
+
+Weryfikacja wykonana komendą `curl -i -X POST ...` (zwrócony 404).
+
+## Co zostało zmienione w kodzie
+
+1. **Rozszerzono strategię rozwiązywania endpointu odświeżania** (`firebase.js`):
+   - zamiast pojedynczego URL, UI buduje listę kandydatów i próbuje je po kolei:
+     - endpoint jawny `backend.refreshEndpoint` (jeśli ustawiony),
+     - endpoint same-origin `/<functionName>` (dla setupu z rewrite),
+     - fallback `https://<region>-<projectId>.cloudfunctions.net/<functionName>`.
+
+2. **Dodano retry po endpointach + pełny ślad błędów** (`firebase.js`):
+   - każda nieudana próba jest agregowana (network/CORS/HTTP),
+   - dopiero po wyczerpaniu kandydatów rzucany jest końcowy błąd.
+
+3. **Rozszerzono zapisy diagnostyczne do `Nekrolog_refresh_jobs/latest`** (`firebase.js`):
+   - zapisywana jest lista `manual_request_endpoint_candidates`,
+   - `manual_request_endpoint` wskazuje endpoint faktycznie użyty przy sukcesie lub pierwszy kandydat przy błędzie.
+
+4. **Zaktualizowano dokumentację**:
+   - `config.js`: komentarz o kolejności fallbacków endpointu,
+   - `BACKEND_GITHUB_SETUP.md`: doprecyzowanie, że UI obsługuje wariant rewrite (`/<functionName>`) i cloudfunctions URL.
+
+## Co to naprawia, a czego nie
+
+- Naprawia przypadki, gdy funkcja jest poprawnie podpięta przez rewrite (same-origin), a bezpośredni `cloudfunctions.net` nie działał z powodów CORS/routingu.
+- Jeśli funkcja **realnie nie jest wdrożona** nigdzie (404 na wszystkich kandydatach), UI nadal zwróci błąd — ale teraz z pełniejszą diagnostyką i listą sprawdzonych endpointów.
