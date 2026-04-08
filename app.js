@@ -157,6 +157,10 @@ function formatTs(value) {
   return String(value);
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function renderList(container, rows, phrases, type, sourceUrlIndex) {
   container.innerHTML = "";
   if (!rows?.length) {
@@ -295,20 +299,54 @@ async function loadAll() {
   if (st.includes("error")) pill.style.borderColor = "rgba(255,107,107,0.45)";
   else if (st.includes("running")) pill.style.borderColor = "rgba(255,209,102,0.45)";
   else pill.style.borderColor = "rgba(68,209,158,0.35)";
+
+  return { snap, job, cfg };
+}
+
+async function waitForJobChange(jobRef, previousJobTime) {
+  const maxChecks = 30;
+  for (let i = 0; i < maxChecks; i += 1) {
+    await sleep(3000);
+    const job = await readDocSafe(jobRef);
+    const currentJobTime = formatTs(job?.updated_at || job?.finished_at || job?.started_at);
+    const status = String(job?.status || "").toLowerCase();
+
+    if (currentJobTime && currentJobTime !== "—" && currentJobTime !== previousJobTime) {
+      log(`Wykryto zmianę job.updated_at: ${previousJobTime} -> ${currentJobTime}`);
+      return true;
+    }
+
+    if (status === "done" || status === "done_with_errors" || status === "error") {
+      log(`Job zakończony statusem: ${job?.status || "—"}`);
+      return true;
+    }
+  }
+  return false;
 }
 
 async function runRefresh() {
   const btn = el("btnReload");
   const db = getDb();
   const { jobRef } = getRefs(db);
+  const previousJobTime = el("jobTime").textContent || "—";
 
   btn.disabled = true;
   const originalLabel = btn.textContent;
   btn.textContent = "Odświeżanie…";
 
   try {
-    await requestRefresh(jobRef);
-    log("Wysłano żądanie odświeżenia (backend/Firestore).");
+    const result = await requestRefresh(jobRef);
+    if (result.mode === "backend") {
+      log("Wysłano żądanie odświeżenia do backendu:", result.backendEndpoint);
+    } else {
+      log("Backend odświeżania niedostępny; zapisano trigger fallback w Firestore.");
+      if (result.backendError) log("Szczegóły błędu backendu:", result.backendError);
+    }
+
+    const changed = await waitForJobChange(jobRef, previousJobTime);
+    if (!changed) {
+      log("Nie wykryto zakończenia nowego joba w czasie oczekiwania (90 s).");
+    }
   } catch (err) {
     log("Nie udało się wysłać żądania odświeżenia:", String(err?.message || err));
   }
