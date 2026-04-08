@@ -69,22 +69,37 @@ async function requestRefreshViaBackend() {
     const payload = await response.text();
     throw new Error(`Backend odrzucił żądanie odświeżenia (${response.status}): ${payload.slice(0, 200)}`);
   }
+
+  return { endpoint };
 }
 
 export async function requestRefresh(jobRef) {
   const backendEndpoint = resolveRefreshEndpoint();
   if (!backendEndpoint) {
-    throw new Error(
-      "Odświeżanie wymaga endpointu backendu. Ustaw backend.refreshEndpoint lub fallback (projectId/region/functionName)."
-    );
+    throw new Error("Brak endpointu backendu odświeżania. Ustaw backend.refreshEndpoint.");
   }
 
-  await requestRefreshViaBackend();
+  try {
+    await requestRefreshViaBackend();
+  } catch (err) {
+    const backendError = String(err?.message || err);
+    await setDoc(jobRef, {
+      manual_request_attempted_at: serverTimestamp(),
+      manual_request_error: backendError
+    }, { merge: true });
+    throw new Error(`Nie udało się uruchomić backendowego odświeżania: ${backendError}`);
+  }
 
   await setDoc(jobRef, {
     trigger: "manual_ui",
     requested_at: serverTimestamp(),
     updated_at: serverTimestamp(),
-    error_message: null
+    manual_request_error: null
   }, { merge: true });
+
+  return {
+    ok: true,
+    mode: "backend",
+    backendEndpoint
+  };
 }
