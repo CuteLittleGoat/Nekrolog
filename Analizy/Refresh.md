@@ -304,3 +304,66 @@ W ramach tej aktualizacji **nie wprowadzono zmian w kodzie aplikacji** — zaktu
 
 - Po kolejnej awarii „Odśwież” log zawiera teraz pełniejszy kontekst techniczny (endpointy, wynik każdej próby, metadane klienta), co znacząco skraca czas identyfikacji root-cause.
 - Zgłoszenie błędu do kolejnej analizy można wygenerować jednym kliknięciem, bez ręcznego przepisywania treści logu.
+
+---
+
+# Historia zmian – 2026-04-08 (naprawa 405 na GitHub Pages + ograniczenie ryzyka CORS preflight)
+
+## Prompt użytkownika
+
+> Przeczytaj i zaktualizuj analizę Analizy/Refresh.md
+>
+> Log błędów wyświetla:
+> === Start odświeżania ===
+> [2026-04-08T19:00:33.968Z] Kliknięto przycisk Odśwież.
+> [2026-04-08T19:00:33.971Z] Poprzedni czas joba: 2026-04-08T12:58:56.274Z
+> [2026-04-08T19:00:34.412Z] Błąd wysyłki żądania odświeżenia: Nie udało się uruchomić backendowego odświeżania: Backend odrzucił żądanie odświeżenia (405) dla https://cutelittlegoat.github.io/requestNekrologRefresh: <html>
+> <head><title>405 Not Allowed</title></head>
+> <body bgcolor="white">
+> <center><h1>405 Not Allowed</h1></center>
+> </body>
+> </html> | Błąd sieci/CORS dla endpointu https://europe-central2-karty-turniej.cloudfunctions.net/requestNekrologRefresh: Failed to fetch
+> [2026-04-08T19:00:34.714Z] Odświeżono widok danych po zakończeniu procesu.
+> [2026-04-08T19:00:34.716Z] === Koniec odświeżania ===
+>
+> Przeprowadź analizę błędu i wprowadź naprawę. Jeżeli jest wymagane jakieś działanie ze strony użytkownika w ustawieniach Github albo Firebase to to napisz.
+> Jeżeli potrzeba to rozbuduj log błędów.
+
+## Diagnoza
+
+1. `405` dla `https://cutelittlegoat.github.io/requestNekrologRefresh` wynika z tego, że GitHub Pages nie hostuje backendowego route dla `POST` (to statyczny hosting).
+2. Drugi błąd (`Failed to fetch` dla `cloudfunctions.net`) wskazuje na problem CORS/preflight/sieci po stronie przeglądarki dla endpointu funkcji.
+3. Dotychczas UI próbował endpoint same-origin nawet na `*.github.io`, co zawsze generowało niepotrzebny błąd 405 i zaciemniało diagnozę.
+
+## Wprowadzone poprawki w kodzie
+
+1. **Pominięto same-origin fallback na GitHub Pages** (`firebase.js`):
+   - endpoint `/<functionName>` jest teraz dodawany tylko poza hostami `*.github.io`.
+   - efekt: koniec „szumu” 405 z GitHub Pages przy każdym kliknięciu „Odśwież”.
+
+2. **Zmniejszono ryzyko błędu CORS preflight** (`firebase.js`):
+   - dla scenariusza bez sekretu endpointu UI wysyła prosty `POST` bez `Content-Type: application/json` i bez body,
+   - to ogranicza wymuszanie preflight (`OPTIONS`) i pomaga przy restrykcyjnych konfiguracjach pośrednich.
+
+3. **Zaktualizowano dokumentację konfiguracji**:
+   - `config.js`: komentarz doprecyzowuje, że fallback same-origin jest pomijany na `*.github.io`,
+   - `BACKEND_GITHUB_SETUP.md`: dodano notatkę o prostym `POST` oraz rekomendację jawnego `backend.refreshEndpoint` przy GitHub Pages.
+
+## Wymagane działania po stronie użytkownika (GitHub/Firebase)
+
+1. **W Firebase (najważniejsze):**
+   - potwierdź, że funkcja `requestNekrologRefresh` jest wdrożona w `europe-central2` dla projektu `karty-turniej`,
+   - sprawdź czy endpoint odpowiada na `POST` (np. `curl -i -X POST <endpoint>`),
+   - jeśli używasz `REFRESH_ENDPOINT_SECRET`, ustaw identyczną wartość w `config.js -> backend.refreshEndpointSecret`.
+
+2. **W konfiguracji frontendu (repo):**
+   - ustaw jawnie `backend.refreshEndpoint` na działający URL funkcji, zamiast polegać na fallbackach.
+
+3. **W GitHub:**
+   - zweryfikuj secret `FIREBASE_SERVICE_ACCOUNT_JSON` (dla workflow odświeżania danych),
+   - upewnij się, że token w Firebase Secret `GITHUB_TRIGGER_TOKEN` ma uprawnienie `actions:write` do uruchamiania workflow dispatch.
+
+## Efekt po wdrożeniu tej poprawki
+
+- Log odświeżania powinien przestać pokazywać 405 z `github.io`.
+- Jeśli błąd nadal wystąpi, diagnostyka skupi się już na realnym endpointcie backendowym (Cloud Functions), co pozwoli szybciej domknąć konfigurację CORS/deploy.
