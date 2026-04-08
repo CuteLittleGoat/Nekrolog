@@ -7,8 +7,6 @@ on:
         description: "Dlaczego uruchomiono odświeżenie"
         required: false
         default: "manual_ui"
-  schedule:
-    - cron: "15 */4 * * *"
 
 jobs:
   refresh:
@@ -30,5 +28,5 @@ jobs:
       - name: Run refresh
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-          REFRESH_TRIGGER: ${{ github.event.inputs.reason || 'schedule' }}
+          REFRESH_TRIGGER: ${{ github.event.inputs.reason || 'manual_dispatch' }}
         run: npm run refresh
