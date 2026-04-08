@@ -267,3 +267,40 @@ Weryfikacja wykonana komendą `curl -i -X POST ...` (zwrócony 404).
 ## Co zostało zmienione w kodzie
 
 W ramach tej aktualizacji **nie wprowadzono zmian w kodzie aplikacji** — zaktualizowano wyłącznie analizę i historię diagnostyki w `Analizy/Refresh.md`.
+
+---
+
+# Historia zmian – 2026-04-08 (rozszerzenie diagnostyki + kopiowanie logu błędów)
+
+## Prompt użytkownika
+
+> Przeczytaj i zaktualizuj analizę Analizy/Refresh.md
+>
+> Wprowadź rekomendowaną naprawę oraz rozszerz log błędów o więcej informacji, które pomogą zidentyfikować błąd.
+> Przy polu z logiem błędów dodaj przycisk który skopiuje treść z okna oraz doda wstęp o treści:
+>
+> "Przeczytaj i zaktualizuj analizę Analizy/Refresh.md
+> Naciśnięcie przycisku Odśwież skutkuje pojawieniem się komunikatu:"
+
+## Co zostało zmienione w kodzie
+
+1. **Rozszerzono diagnostykę błędu odświeżania po stronie backend requestu** (`firebase.js`):
+   - dodano zbieranie szczegółów każdej próby (`manual_request_attempt_details`), w tym typu błędu (`network` / `http`), endpointu, statusu HTTP i skróconego payloadu,
+   - błąd zwracany do UI przenosi teraz strukturalne dane diagnostyczne (`refreshDetails`),
+   - dane diagnostyczne są zapisywane do `Nekrolog_refresh_jobs/latest` zarówno przy błędzie, jak i po udanym requestcie.
+
+2. **Rozszerzono log błędów w UI** (`app.js`):
+   - po nieudanym `requestRefresh` log odświeżania pokazuje teraz listę endpointów sprawdzonych przez UI,
+   - dla każdej próby wypisywany jest osobny wpis z błędem,
+   - dodano sekcję „Diagnostyka klienta” (online/offline, userAgent, URL strony), żeby łatwiej odróżnić błąd backendu od problemu środowiskowego po stronie przeglądarki.
+
+3. **Dodano przycisk kopiowania logu błędów** (`index.html`, `app.js`, `styles.css`):
+   - przy polu „Log odświeżania” dodano przycisk `Kopiuj log błędów`,
+   - przycisk kopiuje zawartość okna logu i automatycznie dokleja wymagany wstęp:
+     - „Przeczytaj i zaktualizuj analizę Analizy/Refresh.md”
+     - „Naciśnięcie przycisku Odśwież skutkuje pojawieniem się komunikatu:”.
+
+## Efekt praktyczny
+
+- Po kolejnej awarii „Odśwież” log zawiera teraz pełniejszy kontekst techniczny (endpointy, wynik każdej próby, metadane klienta), co znacząco skraca czas identyfikacji root-cause.
+- Zgłoszenie błędu do kolejnej analizy można wygenerować jednym kliknięciem, bez ręcznego przepisywania treści logu.
