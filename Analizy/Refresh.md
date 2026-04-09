@@ -351,19 +351,97 @@ W ramach tej aktualizacji **nie wprowadzono zmian w kodzie aplikacji** — zaktu
 
 ## Wymagane działania po stronie użytkownika (GitHub/Firebase)
 
-1. **W Firebase (najważniejsze):**
-   - potwierdź, że funkcja `requestNekrologRefresh` jest wdrożona w `europe-central2` dla projektu `karty-turniej`,
-   - sprawdź czy endpoint odpowiada na `POST` (np. `curl -i -X POST <endpoint>`),
-   - jeśli używasz `REFRESH_ENDPOINT_SECRET`, ustaw identyczną wartość w `config.js -> backend.refreshEndpointSecret`.
+Poniżej jest pełna instrukcja „klik po kliku”, żeby domknąć konfigurację i uniknąć błędów `405`/`Failed to fetch`.
 
-2. **W konfiguracji frontendu (repo):**
-   - ustaw jawnie `backend.refreshEndpoint` na działający URL funkcji, zamiast polegać na fallbackach.
+### A) Firebase Console — sprawdzenie funkcji backendowej
 
-3. **W GitHub:**
-   - zweryfikuj secret `FIREBASE_SERVICE_ACCOUNT_JSON` (dla workflow odświeżania danych),
-   - upewnij się, że token w Firebase Secret `GITHUB_TRIGGER_TOKEN` ma uprawnienie `actions:write` do uruchamiania workflow dispatch.
+1. Otwórz: `https://console.firebase.google.com/`.
+2. Kliknij projekt **karty-turniej**.
+3. W lewym menu kliknij **Build** → **Functions**.
+4. Na liście funkcji znajdź **requestNekrologRefresh**.
+   - Jeżeli funkcji nie ma: wdrożenie backendu nie zostało wykonane albo funkcja ma inną nazwę.
+5. Kliknij funkcję i zweryfikuj:
+   - **Region** = `europe-central2`,
+   - funkcja przyjmuje metodę `POST` (to sprawdzasz też w kodzie funkcji / logach),
+   - ostatnie wywołania nie zwracają błędów autoryzacji/CORS.
+6. Skopiuj produkcyjny URL funkcji (ten, który faktycznie obsługuje requesty).
+
+### B) Google Cloud Console — sekret funkcji (jeśli używasz nagłówka `x-refresh-secret`)
+
+1. Otwórz: `https://console.cloud.google.com/security/secret-manager`.
+2. Upewnij się, że jesteś w projekcie **karty-turniej** (górny selector projektu).
+3. Znajdź sekret używany przez funkcję, np. **REFRESH_ENDPOINT_SECRET** (nazwa zależna od implementacji).
+4. Kliknij sekret → **Versions** → sprawdź, czy istnieje aktywna wersja (`Enabled`).
+5. Jeżeli rotowałeś sekret, upewnij się, że frontend i funkcja używają **tej samej aktualnej wartości**.
+
+### C) Repozytorium GitHub — konfiguracja frontendu (endpoint + opcjonalny sekret)
+
+1. Otwórz repozytorium z aplikacją na GitHub.
+2. Wejdź w plik `config.js` (web UI GitHub: **Code** → `config.js` → ikona ołówka / Edytuj).
+3. W sekcji `backend` ustaw:
+   - `refreshEndpoint` = dokładny URL działającej funkcji (skopiowany z Firebase/Cloud Functions),
+   - `refreshEndpointSecret` = ustaw tylko jeśli backend tego wymaga.
+4. Zapisz zmiany (**Commit changes...**) do właściwej gałęzi produkcyjnej.
+5. Jeśli używasz GitHub Pages, poczekaj aż deployment strony się zakończy (zakładka **Actions** albo **Pages**).
+
+### D) GitHub — sekrety workflow (wyzwalanie odświeżania przez Actions)
+
+1. W repo kliknij **Settings**.
+2. W menu po lewej: **Secrets and variables** → **Actions**.
+3. W sekcji **Repository secrets** sprawdź:
+   - `FIREBASE_SERVICE_ACCOUNT_JSON` — musi istnieć i zawierać poprawny JSON konta serwisowego Firebase,
+   - (jeśli używane) dodatkowe sekrety wymagane przez workflow odświeżania.
+4. Otwórz workflow odpowiedzialny za odświeżanie danych:
+   - **Actions** → wybierz workflow (np. refresh/snapshot) → sprawdź ostatnie uruchomienia.
+5. Jeżeli workflow wywołuje się przez `workflow_dispatch`, token używany przez funkcję (`GITHUB_TRIGGER_TOKEN`) musi mieć minimum uprawnienie **Actions: Read and write** dla repo.
+
+### E) Firebase Secret dla tokenu GitHub (częsty punkt awarii)
+
+1. Wróć do Google Cloud **Secret Manager** w projekcie `karty-turniej`.
+2. Odszukaj sekret **GITHUB_TRIGGER_TOKEN**.
+3. Sprawdź, czy:
+   - sekret istnieje,
+   - ma aktywną wersję,
+   - zawartość to aktualny token z uprawnieniami do `workflow_dispatch`.
+4. Po zmianie tokenu uruchom ponowny test odświeżenia (stary token przestaje działać natychmiast po unieważnieniu).
+
+### F) Weryfikacja końcowa (co kliknąć i co uznać za sukces)
+
+1. Na stronie aplikacji kliknij **Odśwież**.
+2. W logu odświeżania potwierdź, że:
+   - nie ma `405` dla `github.io`,
+   - nie ma `Failed to fetch` dla endpointu funkcji,
+   - pojawia się informacja o poprawnym przyjęciu żądania backendowego.
+3. W Firebase Console → **Functions** → `requestNekrologRefresh` → **Logs** sprawdź wpis odpowiadający kliknięciu.
+4. W GitHub → **Actions** potwierdź, że workflow został uruchomiony i zakończył się statusem `Success`.
+
+### G) Najczęstsze pomyłki (checklista)
+
+- Zły projekt w Firebase/Google Cloud (inny niż `karty-turniej`).
+- Zły region funkcji (inny niż `europe-central2`).
+- Wpisanie URL-a testowego/starego zamiast produkcyjnego `refreshEndpoint`.
+- Niezgodność sekretów między frontendem, funkcją i Secret Managerem.
+- Token GitHub bez uprawnień do uruchamiania workflow.
 
 ## Efekt po wdrożeniu tej poprawki
 
 - Log odświeżania powinien przestać pokazywać 405 z `github.io`.
 - Jeśli błąd nadal wystąpi, diagnostyka skupi się już na realnym endpointcie backendowym (Cloud Functions), co pozwoli szybciej domknąć konfigurację CORS/deploy.
+
+---
+
+# Historia zmian – 2026-04-09 (rozbudowanie instrukcji operacyjnej GitHub/Firebase)
+
+## Prompt użytkownika
+
+> Przeczytaj i rozbuduj analizę Analizy/Refresh.md
+>
+> Rozbuduj sekcję:
+> Wymagane działania po stronie użytkownika (GitHub/Firebase)
+>
+> Napisz bardzo dokładnie gdzie i co klikać, żeby wszystko ustawić tak jak być powinno.
+
+## Co zostało zmienione w kodzie
+
+W ramach tej aktualizacji **nie wprowadzono zmian w kodzie aplikacji**. Rozbudowano wyłącznie dokumentację operacyjną w `Analizy/Refresh.md` o szczegółową instrukcję krok po kroku (Firebase Console, Google Cloud Secret Manager, GitHub Secrets, GitHub Actions i walidację końcową).
+
