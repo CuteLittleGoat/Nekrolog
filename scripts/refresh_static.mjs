@@ -90,7 +90,7 @@ async function main() {
     const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
     const generatedAt = nowISO();
 
-    const sourceLite = enabled.map((s) => ({ id: s.id, name: s.name, type: s.type, url: s.url, distance_km: s.distance_km ?? null, enabled: s.enabled !== false }));
+    const sourceLite = mergedSources.map((s) => ({ id: s.id, name: s.name, type: s.type, url: s.url, distance_km: s.distance_km ?? null, enabled: s.enabled !== false }));
     const base = {
       generated_at: generatedAt, updated_at: generatedAt, deaths, funerals, recent_deaths, upcoming_funerals,
       fallback_summary: fallbackSummary, sources: sourceLite, target_phrases: HELENA_GAWIN_PHRASES,

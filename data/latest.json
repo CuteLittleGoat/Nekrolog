@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T07:02:30.056Z",
-  "updated_at": "2026-05-08T07:02:30.056Z",
+  "generated_at": "2026-05-08T07:42:57.208Z",
+  "updated_at": "2026-05-08T07:42:57.208Z",
   "deaths": [
     {
       "kind": "death",
@@ -1487,6 +1487,14 @@
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "distance_km": 6.5,
       "enabled": true
+    },
+    {
+      "id": "facebook_parafia_debniki",
+      "name": "Facebook – Parafia Dębniki",
+      "type": "generic_html",
+      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+      "distance_km": 2.5,
+      "enabled": false
     }
   ],
   "target_phrases": [
@@ -1520,8 +1528,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-08T07:02:30.056Z",
-    "updated_at": "2026-05-08T07:02:30.056Z",
+    "generated_at": "2026-05-08T07:42:57.208Z",
+    "updated_at": "2026-05-08T07:42:57.208Z",
     "deaths": [
       {
         "kind": "death",
@@ -3008,6 +3016,14 @@
         "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
         "distance_km": 6.5,
         "enabled": true
+      },
+      {
+        "id": "facebook_parafia_debniki",
+        "name": "Facebook – Parafia Dębniki",
+        "type": "generic_html",
+        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+        "distance_km": 2.5,
+        "enabled": false
       }
     ],
     "target_phrases": [
@@ -3042,8 +3058,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-08T07:02:30.056Z",
-    "updated_at": "2026-05-08T07:02:30.056Z",
+    "generated_at": "2026-05-08T07:42:57.208Z",
+    "updated_at": "2026-05-08T07:42:57.208Z",
     "deaths": [
       {
         "kind": "death",
@@ -4530,6 +4546,14 @@
         "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
         "distance_km": 6.5,
         "enabled": true
+      },
+      {
+        "id": "facebook_parafia_debniki",
+        "name": "Facebook – Parafia Dębniki",
+        "type": "generic_html",
+        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+        "distance_km": 2.5,
+        "enabled": false
       }
     ],
     "target_phrases": [
