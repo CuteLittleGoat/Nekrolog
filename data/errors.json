@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-05-08T06:49:27.630Z",
+  "errors": [
+    {
+      "source_id": "facebook_parafia_debniki",
+      "source_name": "Facebook – Parafia Dębniki",
+      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+      "error": "fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]"
+    }
+  ]
+}

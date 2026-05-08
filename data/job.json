@@ -1,0 +1,19 @@
+{
+  "status": "done_with_errors",
+  "started_at": "2026-05-08T06:49:08.603Z",
+  "finished_at": "2026-05-08T06:49:27.630Z",
+  "updated_at": "2026-05-08T06:49:27.630Z",
+  "ok": true,
+  "error_message": "Facebook – Parafia Dębniki: fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]",
+  "source_errors": [
+    {
+      "source_id": "facebook_parafia_debniki",
+      "source_name": "Facebook – Parafia Dębniki",
+      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+      "error": "fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]"
+    }
+  ],
+  "writer_name": "scripts/refresh_static.mjs",
+  "writer_version": "static-1",
+  "trigger": "manual_or_schedule"
+}

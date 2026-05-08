@@ -1,79 +1,13 @@
 <!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nekrolog – Kraków (Kapelanka + 10 km)</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Nekrolog – Kraków (Kapelanka + 10 km)</title><link rel="stylesheet" href="./styles.css" /></head>
 <body>
-  <header class="topbar">
-    <div class="title">
-      <div class="h1">Nekrolog – Kraków (Kapelanka + 10 km)</div>
-      <div class="subtitle">Snapshot z Firestore + automatyczne odświeżanie przez GitHub Actions</div>
-    </div>
-
-    <div class="statusPill" id="statusPill">Status: <span id="jobStatus">…</span></div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <div class="cardHeader">
-        <h2>Odświeżanie</h2>
-        <div class="row">
-          <button id="btnReload" class="btn">Odśwież</button>
-          <div class="meta">
-            <div>Snapshot: <span id="snapshotTime">…</span></div>
-            <div>Job: <span id="jobTime">…</span></div>
-          </div>
-          <div class="refreshPanel">
-            <div class="refreshPanelHeader">
-              <div class="refreshPanelTitle">Log odświeżania</div>
-              <button id="btnCopyRefreshLog" class="btn secondary btnSmall" type="button">Kopiuj log błędów</button>
-            </div>
-            <pre id="refreshLog" class="refreshLog"></pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="pad" id="helenaSection">
-        <h3>Sekcja: Helena Gawin</h3>
-        <div id="helenaStatus" class="hint"></div>
-      </div>
-    </section>
-
-    <section class="grid">
-      <section class="card">
-        <div class="cardHeader">
-          <h2>Ostatnie zgony / wzmianki (okno -7 dni)</h2>
-        </div>
-        <div id="deaths" class="list"></div>
-      </section>
-
-      <section class="card">
-        <div class="cardHeader">
-          <h2>Najbliższe pogrzeby (okno ±7 dni)</h2>
-        </div>
-        <div id="funerals" class="list"></div>
-      </section>
-    </section>
-
-    <section class="card">
-      <div class="cardHeader">
-        <h2>Źródła</h2>
-      </div>
-      <div id="sources" class="sources"></div>
-    </section>
-
-    <section class="card">
-      <div class="cardHeader">
-        <h2>Log</h2>
-      </div>
-      <pre id="log" class="log"></pre>
-    </section>
-  </main>
-
-  <script src="./config.js"></script>
-  <script type="module" src="./app.js"></script>
-</body>
-</html>
+<header class="topbar"><div class="title"><div class="h1">Nekrolog – Kraków (Kapelanka + 10 km)</div><div class="subtitle">Snapshot z plików JSON aktualizowany automatycznie przez GitHub Actions</div></div><div class="statusPill" id="statusPill">Status: <span id="jobStatus">…</span></div></header>
+<main class="container">
+<section class="card"><div class="cardHeader"><h2>Status danych</h2><div class="meta"><div>Snapshot: <span id="snapshotTime">…</span></div><div>Job: <span id="jobTime">…</span></div></div></div><div class="pad"><h3>Sekcja: Helena Gawin</h3><div id="helenaStatus" class="hint"></div></div></section>
+<section class="grid"><section class="card"><div class="cardHeader"><h2>Ostatnie zgony / wzmianki (okno -7 dni)</h2></div><div id="deaths" class="list"></div></section><section class="card"><div class="cardHeader"><h2>Najbliższe pogrzeby (okno ±7 dni)</h2></div><div id="funerals" class="list"></div></section></section>
+<section class="card"><div class="cardHeader"><h2>Źródła</h2></div><div id="sources" class="sources"></div></section>
+<section class="card"><div class="cardHeader"><h2>Log</h2></div><pre id="log" class="log"></pre></section>
+</main>
+<script type="module" src="./app.js"></script>
+</body></html>

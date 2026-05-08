@@ -9,7 +9,7 @@ import {
   mergeRequiredSources,
   resolveJobOutcome,
   buildFallbackSummaryForHelena
-} from '../scripts/refresh.mjs';
+} from '../scripts/nekrolog_core.mjs';
 
 const source = { id: 'test', name: 'Test Source', url: 'https://example.com', enabled: true };
 

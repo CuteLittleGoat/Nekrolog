@@ -1,0 +1,482 @@
+import * as cheerio from "cheerio";
+import { fetchText } from "./fetch.mjs";
+import { makePhraseVariants, textMatchesAny } from "./normalize.mjs";
+const HELENA_GAWIN_PHRASES = [
+  "Helena Gawin",
+  "Helena Gawin-Dereń",
+  "Helena Dereń-Gawin",
+  "Helena Gawin Dereń",
+  "Helena Dereń Gawin",
+  "Helena Dereń",
+  "Gawin Helena",
+  "Gawin-Dereń Helena",
+  "Dereń-Gawin Helena",
+  "Gawin Dereń Helena",
+  "Dereń Gawin Helena",
+  "Dereń Helena",
+  "Śp. Helena Gawin",
+  "Śp. Helena Gawin-Dereń",
+  "Śp. Helena Dereń-Gawin",
+  "Śp. Helena Gawin Dereń",
+  "Śp. Helena Dereń Gawin",
+  "Śp. Helena Dereń",
+  "Śp. Gawin Helena",
+  "Śp. Gawin-Dereń Helena",
+  "Śp. Dereń-Gawin Helena",
+  "Śp. Gawin Dereń Helena",
+  "Śp. Dereń Gawin Helena",
+  "Śp. Dereń Helena"
+];
+
+const REQUIRED_SOURCES = [
+  {
+    id: "zck_funerals",
+    name: "ZCK Kraków – Porządek pogrzebów",
+    type: "zck_funerals",
+    url: "https://www.zck-krakow.pl/funerals",
+    enabled: true,
+    distance_km: 0
+  },
+  {
+    id: "puk_pozegnalismy",
+    name: "PUK Kraków – Pożegnaliśmy",
+    type: "generic_html",
+    url: "https://www.puk.krakow.pl/pozegnalismy/",
+    enabled: true,
+    distance_km: 4.5
+  },
+  {
+    id: "gabriel_nekrologi",
+    name: "Gabriel24 – Nekrologi",
+    type: "generic_html",
+    url: "https://www.gabriel24.pl/nekrologi/",
+    enabled: true,
+    distance_km: 6.5
+  },
+  {
+    id: "karawan_nekrologi",
+    name: "Karawan – Nekrologi",
+    type: "generic_html",
+    url: "https://karawan.pl/nekrologi/",
+    enabled: true,
+    distance_km: 7.5
+  },
+  {
+    id: "salwator_grobonet",
+    name: "Kraków Salwator – Grobonet",
+    type: "generic_html",
+    url: "https://krakowsalwator.grobonet.com/nekrologi.php",
+    enabled: true,
+    distance_km: 5.5
+  },
+  {
+    id: "debniki_sdb",
+    name: "Parafia św. Stanisława Kostki (Dębniki)",
+    type: "generic_html",
+    url: "https://debniki.sdb.org.pl/",
+    enabled: true,
+    distance_km: 2.5
+  },
+  {
+    id: "podwawelskie_nekrologi",
+    name: "Podwawelskie – Nekrologi",
+    type: "generic_html",
+    url: "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+    enabled: true,
+    distance_km: 2.5
+  },
+  {
+    id: "sw_jadwiga_pogrzebowe",
+    name: "Parafia św. Jadwigi – Msze święte pogrzebowe",
+    type: "generic_html",
+    url: "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+    enabled: true,
+    distance_km: 6.5
+  },
+  {
+    id: "facebook_parafia_debniki",
+    name: "Facebook – Parafia Dębniki",
+    type: "generic_html",
+    url: "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+    enabled: true,
+    distance_km: 2.5
+  }
+];
+
+function nowISO() {
+  return new Date().toISOString();
+}
+
+function clean(s) {
+  return String(s ?? "").replace(/\s+/g, " ").trim();
+}
+
+function asDateValue(value) {
+  if (!value) return null;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return parsed;
+}
+
+function uniqueBy(items, keyFn) {
+  const map = new Map();
+  for (const item of items) {
+    map.set(keyFn(item), item);
+  }
+  return [...map.values()];
+}
+
+function normalizeSource(source) {
+  const normalized = { ...source };
+  const sourceId = String(normalized.id || "").toLowerCase();
+  const sourceUrl = String(normalized.url || "").toLowerCase();
+
+  if (sourceId === "par_debniki_contact" || sourceUrl.includes("debniki.sdb.org.pl/kontakt")) {
+    normalized.enabled = false;
+  }
+
+  if (
+    sourceId === "podgorki_tynieckie_grobonet"
+    && (sourceUrl === "https://klepsydrakrakow.grobonet.com/" || sourceUrl === "https://klepsydrakrakow.grobonet.com")
+  ) {
+    normalized.url = "https://klepsydrakrakow.grobonet.com/nekrologi.php";
+  }
+
+  return normalized;
+}
+
+function hasContent(value) {
+  return clean(value).length > 0;
+}
+
+function isIntentionLikeSource(source) {
+  const marker = [source?.id, source?.name, source?.url, source?.type]
+    .map((value) => clean(value).toLowerCase())
+    .join(" ");
+
+  return /(intencj|msz[ey]\s+w\s+intencji)/i.test(marker);
+}
+
+function isIntentionLikeRow(row) {
+  const marker = [row?.name, row?.note, row?.source_name, row?.url]
+    .map((value) => clean(value).toLowerCase())
+    .join(" ");
+
+  return /(intencj|msz[ey]\s+w\s+intencji)/i.test(marker);
+}
+
+function isEligibleDeathRow(row) {
+  if (row?.kind !== "death") return false;
+  return !isIntentionLikeRow(row);
+}
+
+function resolveJobOutcome({ recentDeaths, upcomingFunerals, refreshErrors }) {
+  const validEntries = Number(recentDeaths || 0) + Number(upcomingFunerals || 0);
+  const errors = Array.isArray(refreshErrors) ? refreshErrors.filter(hasContent) : [];
+
+  if (validEntries <= 0) {
+    return {
+      status: "error",
+      ok: false,
+      errorMessage: errors.join(" | ") || "Brak prawidłowych wpisów w odświeżaniu"
+    };
+  }
+
+  if (errors.length) {
+    return {
+      status: "done_with_errors",
+      ok: true,
+      errorMessage: errors.join(" | ")
+    };
+  }
+
+  return {
+    status: "done",
+    ok: true,
+    errorMessage: null
+  };
+}
+
+function isMeaningfulRow(row) {
+  return [
+    row?.name,
+    row?.note,
+    row?.date,
+    row?.date_death,
+    row?.date_funeral,
+    row?.time_funeral,
+    row?.source_name,
+    row?.url
+  ].some(hasContent);
+}
+
+function isPriorityHit(row) {
+  return row?.priority_hit === true;
+}
+
+function buildFallbackSummaryForHelena(recentDeaths, upcomingFunerals) {
+  const matchedRecentDeaths = (Array.isArray(recentDeaths) ? recentDeaths : []).filter(isPriorityHit);
+  const matchedUpcomingFunerals = (Array.isArray(upcomingFunerals) ? upcomingFunerals : []).filter(isPriorityHit);
+
+  const latestDeath = [...matchedRecentDeaths]
+    .sort((a, b) => (asDateValue(b.date_death)?.getTime() || 0) - (asDateValue(a.date_death)?.getTime() || 0))[0] || null;
+  const nearestFuneral = [...matchedUpcomingFunerals]
+    .sort((a, b) => (asDateValue(a.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER) - (asDateValue(b.date_funeral)?.getTime() || Number.MAX_SAFE_INTEGER))[0] || null;
+
+  const fallbackSummary = {
+    text: "Helena Gawin - brak informacji",
+    date_death: latestDeath?.date_death || null,
+    date_funeral: nearestFuneral?.date_funeral || null,
+    urls: uniqueBy(
+      [latestDeath, nearestFuneral].filter(Boolean).map((r) => ({
+        url: r.url,
+        source_name: r.source_name
+      })),
+      (r) => `${r.url}|${r.source_name}`
+    )
+  };
+
+  if (fallbackSummary.date_death || fallbackSummary.date_funeral) {
+    fallbackSummary.text = `Helena Gawin zmarła ${fallbackSummary.date_death || "(brak daty)"}, pogrzeb ${fallbackSummary.date_funeral || "(brak daty)"}`;
+  }
+
+  return fallbackSummary;
+}
+
+function mergeRequiredSources(existingSources) {
+  const list = Array.isArray(existingSources) ? existingSources.map(normalizeSource) : [];
+  const byUrl = new Map(list.map((s) => [String(s.url || "").toLowerCase(), s]));
+
+  for (const required of REQUIRED_SOURCES) {
+    const existing = byUrl.get(required.url.toLowerCase());
+    if (existing) {
+      if (!existing.id) existing.id = required.id;
+      if (!existing.name) existing.name = required.name;
+      if (!existing.type) existing.type = required.type;
+      if (typeof existing.distance_km !== "number") existing.distance_km = required.distance_km;
+      if (typeof existing.enabled !== "boolean") existing.enabled = true;
+      Object.assign(existing, normalizeSource(existing));
+      continue;
+    }
+    list.push(normalizeSource(required));
+  }
+
+  return uniqueBy(list, (s) => String(s.url || "").toLowerCase());
+}
+
+/**
+ * Parser: ZCK Porządek pogrzebów
+ * URL: https://www.zck-krakow.pl/funerals
+ * Struktura: dzień -> lista cmentarzy -> wiersze (godzina, miejsce, imię nazwisko + wiek)
+ */
+function parseZckFuneralsHtml(text, source) {
+  const $ = cheerio.load(text);
+  const rows = [];
+
+  const dateMatches = clean($.text()).match(/\b\d{4}-\d{2}-\d{2}\b/g) || [];
+  const currentDate = dateMatches[0] || null;
+
+  const textNodes = $("body")
+    .find("h1,h2,h3,h4,h5,h6,li,p,div,td,span,strong,b")
+    .map((_, el) => clean($(el).text()))
+    .get()
+    .filter(Boolean);
+
+  let currentCemetery = null;
+  for (let i = 0; i < textNodes.length; i += 1) {
+    const line = textNodes[i];
+    if (/cmentarz/i.test(line)) {
+      currentCemetery = line;
+      continue;
+    }
+    if (/brak pogrzeb[oó]w/i.test(line)) continue;
+
+    const time = line.match(/^([01]?\d|2[0-3]):([0-5]\d)$/)?.[0]
+      || line.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/)?.[0]
+      || null;
+
+    if (!time) continue;
+
+    const placeCandidate = clean(textNodes[i + 1] || "");
+    const nameCandidate = clean(textNodes[i + 2] || "");
+    if (!nameCandidate || /^(kaplica|cmentarz|brak\b)/i.test(nameCandidate)) continue;
+
+    const name = clean(nameCandidate.replace(/\s*\(.*?\)\s*$/g, "").replace(/^\W+/, ""));
+    if (!name) continue;
+
+    const placeParts = [placeCandidate, currentCemetery].filter(Boolean);
+    rows.push({
+      kind: "funeral",
+      name,
+      date_funeral: currentDate,
+      time_funeral: time,
+      place: placeParts.join(" – "),
+      source_id: source.id,
+      source_name: source.name,
+      url: source.url,
+      note: null
+    });
+  }
+
+  return uniqueBy(rows, (r) => `${r.time_funeral}|${r.name}|${r.place}`);
+}
+
+async function parseZckFunerals(source) {
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
+  return { rows: parseZckFuneralsHtml(text, source), error: null };
+}
+
+/**
+ * Parser: Intencje “+ / †” (strona HTML z listą intencji)
+ * Wykrywa wpisy, które wyglądają jak: "+ Jan Kowalski", "†† Anna i Piotr ..."
+ * NIE gwarantuje, że to pogrzeb – traktujemy jako “death mention”.
+ */
+function parseIntentionsPlusHtml(text, source) {
+  const $ = cheerio.load(text);
+  const bodyLines = $("body")
+    .find("p,li,div,td,tr,h1,h2,h3,h4,h5,h6")
+    .map((_, el) => clean($(el).text()))
+    .get()
+    .filter(Boolean);
+  const content = bodyLines.length ? bodyLines.join("\n") : $("body").text();
+
+  // Prosta ekstrakcja: linie z + / †
+  const lines = content
+    .split(/[\n\r]+/)
+    .map(clean)
+    .filter(Boolean)
+    .filter(l => /(^|\s)[+†]{1,2}\s*/.test(l));
+
+  const rows = lines.slice(0, 200).map(l => {
+    // wytnij prefiks +/†
+    const namePart = clean(l.replace(/^.*?([+†]{1,2})\s*/,"").slice(0, 120));
+    return {
+      kind: "death",
+      name: namePart || "(wzmianka w intencjach)",
+      date_death: null,
+      date_funeral: null,
+      time_funeral: null,
+      place: source.name,
+      source_id: source.id,
+      source_name: source.name,
+      url: source.url,
+      note: `Wzmianka z intencji: ${l.slice(0, 140)}`
+    };
+  });
+
+  return rows;
+}
+
+async function parseIntentionsPlus(source) {
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
+
+  const rows = parseIntentionsPlusHtml(text, source);
+  return {
+    rows,
+    error: rows.length ? null : "Brak wzmianek oznaczonych + lub † na stronie intencji"
+  };
+}
+
+/**
+ * Parser: Generic HTML “nekrolog/pogrzeb/zmarł”
+ * (dla prostych stron domów pogrzebowych/parafii)
+ */
+
+function parsePolishDateToIso(raw) {
+  const match = clean(raw).match(/(\d{1,2})[./-](\d{1,2})[./-](\d{2,4})/);
+  if (!match) return null;
+  const day = Number(match[1]);
+  const month = Number(match[2]);
+  let year = Number(match[3]);
+  if (year < 100) year += 2000;
+  if (!day || !month || !year) return null;
+  return `${String(year).padStart(4, "0")}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function parsePukPozegnalismyHtml(text, source) {
+  const $ = cheerio.load(text);
+  const rows = [];
+
+  $(".results-klepsydra .eklepsydra").each((_, card) => {
+    const root = $(card);
+    const headerText = clean(root.find("p").first().text());
+    const dateDeath = parsePolishDateToIso(headerText);
+    const fullName = clean(root.find("p.fs-28, p.h-80").first().text().replace(/^ŚP\.?\s*/i, ""));
+    const funeralLine = clean(root.find("p").filter((_, el) => /data pogrzebu/i.test($(el).text())).first().text());
+    const dateFuneral = parsePolishDateToIso(funeralLine);
+    const timeFuneral = funeralLine.match(/\b([01]?\d|2[0-3]):([0-5]\d)\b/)?.[0] || null;
+    const detailUrl = root.find("a.btn.link").attr("href") || source.url;
+
+    if (!fullName || (!dateDeath && !dateFuneral)) return;
+
+    rows.push({
+      kind: "death",
+      name: fullName,
+      date_death: dateDeath,
+      date_funeral: dateFuneral,
+      time_funeral: timeFuneral,
+      place: source.name,
+      source_id: source.id,
+      source_name: source.name,
+      url: detailUrl,
+      source_url: source.url,
+      note: clean([headerText, funeralLine].filter(Boolean).join(" | ")) || null
+    });
+
+    if (dateFuneral) {
+      rows.push({
+        kind: "funeral",
+        name: fullName,
+        date_death: dateDeath,
+        date_funeral: dateFuneral,
+        time_funeral: timeFuneral,
+        place: source.name,
+        source_id: source.id,
+        source_name: source.name,
+        url: detailUrl,
+        source_url: source.url,
+        note: headerText || null
+      });
+    }
+  });
+
+  return uniqueBy(rows, (r) => `${r.kind}|${r.name}|${r.date_death || ""}|${r.date_funeral || ""}|${r.url || ""}`);
+}
+
+async function parseGenericHtml(source) {
+  const { ok, status, text, error } = await fetchText(source.url);
+  if (!ok) return { rows: [], error: error || `HTTP ${status}` };
+
+  if (String(source.id || "") === "puk_pozegnalismy") {
+    const rows = parsePukPozegnalismyHtml(text, source);
+    if (!rows.length) {
+      return { rows: [], error: "Brak rekordów możliwych do potwierdzenia na stronie PUK" };
+    }
+    return { rows, error: null };
+  }
+
+  return { rows: [], error: null };
+}
+
+
+export {
+  HELENA_GAWIN_PHRASES,
+  REQUIRED_SOURCES,
+  clean,
+  nowISO,
+  parseZckFunerals,
+  parseZckFuneralsHtml,
+  parseIntentionsPlus,
+  parseIntentionsPlusHtml,
+  parseGenericHtml,
+  isIntentionLikeSource,
+  isIntentionLikeRow,
+  isEligibleDeathRow,
+  mergeRequiredSources,
+  normalizeSource,
+  resolveJobOutcome,
+  buildFallbackSummaryForHelena,
+  isMeaningfulRow
+};
