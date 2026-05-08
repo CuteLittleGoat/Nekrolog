@@ -27,8 +27,13 @@ const gList=await fs.readFile(new URL('./fixtures/gabriel24_list.html',import.me
 assert.equal(parseGabriel24NekrologiHtml(gList,{...source,url:'https://www.gabriel24.pl'}).length,1); assert.match(parseGabriel24DetailHtml(gDet,source,'https://x').name,/Jan Kowalski/);
 const grList=await fs.readFile(new URL('./fixtures/grobonet_list.html',import.meta.url),'utf8'); const grDet=await fs.readFile(new URL('./fixtures/grobonet_detail.html',import.meta.url),'utf8');
 assert.equal(parseGrobonetNekrologiHtml(grList,{...source,url:'https://krakowsalwator.grobonet.com'}).length,1); assert.match(parseGrobonetDetailHtml(grDet,source,'https://x').name,/Anna Nowak/);
+const grob=parseGrobonetDetailHtml(grDet,source,'https://x');
+assert.equal(grob.date_funeral,'2026-05-08'); assert.equal(grob.time_funeral,'09:00'); assert.ok(!/iframe|googletagmanager|clickcease|src=|href=/i.test(grob.note)); assert.ok(!/iframe|googletagmanager|clickcease|src=|href=/i.test(grob.place));
 const pList=await fs.readFile(new URL('./fixtures/podwawelskie_list.html',import.meta.url),'utf8'); const pDet=await fs.readFile(new URL('./fixtures/podwawelskie_detail.html',import.meta.url),'utf8');
-assert.equal(parsePodwawelskieNekrologiHtml(pList,{...source,url:'https://www.podwawelskie.pl'}).length,1); assert.equal(parsePodwawelskieDetailHtml(pDet,source,'https://x').date_funeral,'2026-05-08');
+const pLinks=parsePodwawelskieNekrologiHtml(pList,{...source,url:'https://www.podwawelskie.pl'});
+assert.equal(pLinks.length,1); assert.ok(!/kategoria/.test(pLinks[0].url));
+const pRow=parsePodwawelskieDetailHtml(pDet,source,'https://x');
+assert.equal(pRow.date_funeral,'2026-05-08'); assert.equal(pRow.time_funeral,'09:00'); assert.ok(!/2026-05-01/.test(pRow.date_funeral)); assert.ok(!/iframe|googletagmanager|clickcease|src=|href=/i.test(pRow.note));
 const deb=await fs.readFile(new URL('./fixtures/debniki_sdb_list.html',import.meta.url),'utf8'); const debLinks=parseDebnikiSdbPogrzebyHtml(deb,source); assert.ok(debLinks.length>=1);
 const debPos=await fs.readFile(new URL('./fixtures/debniki_sdb_detail_funeral.html',import.meta.url),'utf8'); const debPosRow=parseDebnikiSdbDetailHtml(debPos,source,'https://example.com/x');
 assert.equal(debPosRow.kind,'funeral'); assert.match(debPosRow.name,/Jan Nowak/); assert.equal(debPosRow.date_funeral,'2026-05-08'); assert.equal(debPosRow.time_funeral,'09:00');
