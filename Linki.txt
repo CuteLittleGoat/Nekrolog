@@ -1,11 +1,5 @@
-https://cutelittlegoat.github.io/Nekrolog/AGENTS.md
-https://cutelittlegoat.github.io/Nekrolog/Analizy/Migracja_Bez_Firebase_Static_JSON_2026-05-08.md
 https://cutelittlegoat.github.io/Nekrolog/Instrukcja_odczytu_zrodel_Nekrolog.md
 https://cutelittlegoat.github.io/Nekrolog/README.md
-https://cutelittlegoat.github.io/Nekrolog/Zadanie1.md
-https://cutelittlegoat.github.io/Nekrolog/Zadanie2.md
-https://cutelittlegoat.github.io/Nekrolog/Zadanie3.md
-https://cutelittlegoat.github.io/Nekrolog/Zadanie4.md
 https://cutelittlegoat.github.io/Nekrolog/app.js
 https://cutelittlegoat.github.io/Nekrolog/config/sources.json
 https://cutelittlegoat.github.io/Nekrolog/data/errors.json
