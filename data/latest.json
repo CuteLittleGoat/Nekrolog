@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T09:56:36.123Z",
-  "updated_at": "2026-05-08T09:56:36.123Z",
+  "generated_at": "2026-05-08T20:13:46.808Z",
+  "updated_at": "2026-05-08T20:13:46.808Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Elżbieta Rajkowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-15",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Danuta Szajnowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-12",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
       "priority_hit": false
     },
     {
@@ -1098,6 +1126,34 @@
     },
     {
       "kind": "funeral",
+      "name": "Elżbieta Rajkowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-15",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Danuta Szajnowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-12",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Barbara Piechnik",
       "date_death": "2026-04-14",
       "date_funeral": "2026-05-12",
@@ -1814,6 +1870,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Elżbieta Rajkowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-15",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Danuta Szajnowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-12",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Adam Tabakiernik",
       "date_death": "2026-05-03",
       "date_funeral": "2026-05-22",
@@ -2499,6 +2583,34 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Danuta Szajnowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-12",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Elżbieta Rajkowska",
+      "date_death": "2026-05-07",
+      "date_funeral": "2026-05-15",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2582,7 +2694,30 @@
     }
   ],
   "target_phrases": [
-    "Helena Gawin"
+    "Helena Gawin",
+    "Gawin Helena",
+    "Śp. Helena Gawin",
+    "Śp. Gawin Helena",
+    "Helena Dereń",
+    "Dereń Helena",
+    "Śp. Helena Dereń",
+    "Śp. Dereń Helena",
+    "Helena Gawin-Dereń",
+    "Gawin-Dereń Helena",
+    "Śp. Helena Gawin-Dereń",
+    "Śp. Gawin-Dereń Helena",
+    "Helena Dereń-Gawin",
+    "Dereń-Gawin Helena",
+    "Śp. Helena Dereń-Gawin",
+    "Śp. Dereń-Gawin Helena",
+    "Helena Gawin Dereń",
+    "Gawin Dereń Helena",
+    "Śp. Helena Gawin Dereń",
+    "Śp. Gawin Dereń Helena",
+    "Helena Dereń Gawin",
+    "Dereń Gawin Helena",
+    "Śp. Helena Dereń Gawin",
+    "Śp. Dereń Gawin Helena"
   ],
   "source_errors": [
     {
@@ -2595,7 +2730,7 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
-      "error": "Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu"
+      "error": "HTTP 403"
     },
     {
       "source_id": "podwawelskie_nekrologi",
@@ -2604,12 +2739,12 @@
       "error": "Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów"
     }
   ],
-  "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
+  "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-08T09:56:36.123Z",
-    "updated_at": "2026-05-08T09:56:36.123Z",
+    "generated_at": "2026-05-08T20:13:46.808Z",
+    "updated_at": "2026-05-08T20:13:46.808Z",
     "deaths": [
       {
         "kind": "death",
@@ -2623,6 +2758,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
         "priority_hit": false
       },
       {
@@ -3707,6 +3870,34 @@
       },
       {
         "kind": "funeral",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Barbara Piechnik",
         "date_death": "2026-04-14",
         "date_funeral": "2026-05-12",
@@ -4423,6 +4614,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Adam Tabakiernik",
         "date_death": "2026-05-03",
         "date_funeral": "2026-05-22",
@@ -5108,6 +5327,34 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
         "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
       }
     ],
     "fallback_summary": {
@@ -5191,7 +5438,30 @@
       }
     ],
     "target_phrases": [
-      "Helena Gawin"
+      "Helena Gawin",
+      "Gawin Helena",
+      "Śp. Helena Gawin",
+      "Śp. Gawin Helena",
+      "Helena Dereń",
+      "Dereń Helena",
+      "Śp. Helena Dereń",
+      "Śp. Dereń Helena",
+      "Helena Gawin-Dereń",
+      "Gawin-Dereń Helena",
+      "Śp. Helena Gawin-Dereń",
+      "Śp. Gawin-Dereń Helena",
+      "Helena Dereń-Gawin",
+      "Dereń-Gawin Helena",
+      "Śp. Helena Dereń-Gawin",
+      "Śp. Dereń-Gawin Helena",
+      "Helena Gawin Dereń",
+      "Gawin Dereń Helena",
+      "Śp. Helena Gawin Dereń",
+      "Śp. Gawin Dereń Helena",
+      "Helena Dereń Gawin",
+      "Dereń Gawin Helena",
+      "Śp. Helena Dereń Gawin",
+      "Śp. Dereń Gawin Helena"
     ],
     "source_errors": [
       {
@@ -5204,7 +5474,7 @@
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
-        "error": "Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu"
+        "error": "HTTP 403"
       },
       {
         "source_id": "podwawelskie_nekrologi",
@@ -5213,13 +5483,13 @@
         "error": "Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów"
       }
     ],
-    "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
+    "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-08T09:56:36.123Z",
-    "updated_at": "2026-05-08T09:56:36.123Z",
+    "generated_at": "2026-05-08T20:13:46.808Z",
+    "updated_at": "2026-05-08T20:13:46.808Z",
     "deaths": [
       {
         "kind": "death",
@@ -5233,6 +5503,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
         "priority_hit": false
       },
       {
@@ -6317,6 +6615,34 @@
       },
       {
         "kind": "funeral",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Barbara Piechnik",
         "date_death": "2026-04-14",
         "date_funeral": "2026-05-12",
@@ -7033,6 +7359,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła | Data pogrzebu 15.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Adam Tabakiernik",
         "date_death": "2026-05-03",
         "date_funeral": "2026-05-22",
@@ -7718,6 +8072,34 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
         "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Szajnowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-12",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Elżbieta Rajkowska",
+        "date_death": "2026-05-07",
+        "date_funeral": "2026-05-15",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Rajkowska-H4A7IUWI6WEX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.05.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
       }
     ],
     "fallback_summary": {
@@ -7801,7 +8183,30 @@
       }
     ],
     "target_phrases": [
-      "Helena Gawin"
+      "Helena Gawin",
+      "Gawin Helena",
+      "Śp. Helena Gawin",
+      "Śp. Gawin Helena",
+      "Helena Dereń",
+      "Dereń Helena",
+      "Śp. Helena Dereń",
+      "Śp. Dereń Helena",
+      "Helena Gawin-Dereń",
+      "Gawin-Dereń Helena",
+      "Śp. Helena Gawin-Dereń",
+      "Śp. Gawin-Dereń Helena",
+      "Helena Dereń-Gawin",
+      "Dereń-Gawin Helena",
+      "Śp. Helena Dereń-Gawin",
+      "Śp. Dereń-Gawin Helena",
+      "Helena Gawin Dereń",
+      "Gawin Dereń Helena",
+      "Śp. Helena Gawin Dereń",
+      "Śp. Gawin Dereń Helena",
+      "Helena Dereń Gawin",
+      "Dereń Gawin Helena",
+      "Śp. Helena Dereń Gawin",
+      "Śp. Dereń Gawin Helena"
     ],
     "source_errors": [
       {
@@ -7814,7 +8219,7 @@
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
-        "error": "Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu"
+        "error": "HTTP 403"
       },
       {
         "source_id": "podwawelskie_nekrologi",
@@ -7823,7 +8228,7 @@
         "error": "Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów"
       }
     ],
-    "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
+    "refresh_error": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   }

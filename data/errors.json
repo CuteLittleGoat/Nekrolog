@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T09:56:36.135Z",
+  "generated_at": "2026-05-08T20:13:46.811Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -11,7 +11,7 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
-      "error": "Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu"
+      "error": "HTTP 403"
     },
     {
       "source_id": "podwawelskie_nekrologi",

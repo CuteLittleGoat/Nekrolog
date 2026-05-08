@@ -1,10 +1,10 @@
 {
   "status": "done_with_errors",
-  "started_at": "2026-05-08T09:55:37.800Z",
-  "finished_at": "2026-05-08T09:56:36.135Z",
-  "updated_at": "2026-05-08T09:56:36.135Z",
+  "started_at": "2026-05-08T20:13:08.592Z",
+  "finished_at": "2026-05-08T20:13:46.811Z",
+  "updated_at": "2026-05-08T20:13:46.811Z",
   "ok": true,
-  "error_message": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
+  "error_message": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
   "source_errors": [
     {
       "source_id": "salwator_grobonet",
@@ -16,7 +16,7 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
-      "error": "Dębniki SDB: pobrano 3 podstron, ale żadna nie zawierała jednoznacznej mszy/pogrzebu"
+      "error": "HTTP 403"
     },
     {
       "source_id": "podwawelskie_nekrologi",
@@ -27,5 +27,5 @@
   ],
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
-  "trigger": "manual_or_schedule"
+  "trigger": "schedule"
 }
