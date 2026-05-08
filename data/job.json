@@ -1,11 +1,30 @@
 {
-  "status": "done",
-  "started_at": "2026-05-08T08:36:29.021Z",
-  "finished_at": "2026-05-08T08:37:42.402Z",
-  "updated_at": "2026-05-08T08:37:42.402Z",
+  "status": "done_with_errors",
+  "started_at": "2026-05-08T09:39:37.838Z",
+  "finished_at": "2026-05-08T09:40:54.771Z",
+  "updated_at": "2026-05-08T09:40:54.771Z",
   "ok": true,
-  "error_message": null,
-  "source_errors": [],
+  "error_message": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: znaleziono 2 linków, ale zero poprawnych rekordów | Parafia św. Stanisława Kostki (Dębniki): Dębniki SDB: pobrano 3 podstron, ale zero jednoznacznych pogrzebów | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 8 linków, ale zero poprawnych rekordów",
+  "source_errors": [
+    {
+      "source_id": "salwator_grobonet",
+      "source_name": "Kraków Salwator – Grobonet",
+      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "error": "Kraków Salwator – Grobonet: znaleziono 2 linków, ale zero poprawnych rekordów"
+    },
+    {
+      "source_id": "debniki_sdb",
+      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
+      "url": "https://debniki.sdb.org.pl/",
+      "error": "Dębniki SDB: pobrano 3 podstron, ale zero jednoznacznych pogrzebów"
+    },
+    {
+      "source_id": "podwawelskie_nekrologi",
+      "source_name": "Podwawelskie – Nekrologi",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "error": "Podwawelskie – Nekrologi: znaleziono 8 linków, ale zero poprawnych rekordów"
+    }
+  ],
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "trigger": "manual_or_schedule"
