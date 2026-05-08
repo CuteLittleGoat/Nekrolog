@@ -4,7 +4,7 @@ import {
   parsePolishDateToIso, parseTime, parseZckFuneralsHtml, parsePukPozegnalismyHtml,
   parseGabriel24NekrologiHtml, parseGabriel24DetailHtml, parseKarawanNekrologiHtml, parseKarawanDetailHtml,
   parseGrobonetNekrologiHtml, parseGrobonetDetailHtml, parsePodwawelskieNekrologiHtml, parsePodwawelskieDetailHtml,
-  parseDebnikiSdbPogrzebyHtml, parseSwJadwigaPogrzeboweHtml, parseSource, parseGenericHtml, validateParsedRow
+  parseDebnikiSdbPogrzebyHtml, parseDebnikiSdbDetailHtml, parseSwJadwigaPogrzeboweHtml, parseSource, parseGenericHtml, validateParsedRow
 } from '../scripts/nekrolog_core.mjs';
 const source={id:'x',name:'X',url:'https://example.com',list_url:'https://example.com'};
 assert.equal(parsePolishDateToIso('08.05.2026'),'2026-05-08');
@@ -12,8 +12,10 @@ assert.equal(parsePolishDateToIso('8 maja 2026'),'2026-05-08');
 assert.equal(parsePolishDateToIso('8 maj 2026'),'2026-05-08');
 assert.equal(parsePolishDateToIso('8 V 2026'),'2026-05-08');
 assert.equal(parseTime('9:00'),'09:00'); assert.equal(parseTime('godz. 9.00'),'09:00');
+assert.equal(parseTime('Data pogrzebu 12.05.2026 12:00'),'12:00');
+assert.equal(parseTime('12.04.2026 09:30 Anna Nowak msza pogrzebowa'),'09:30');
 const zck=await fs.readFile(new URL('./fixtures/zck_sample.html',import.meta.url),'utf8'); assert.ok(parseZckFuneralsHtml(zck,source).length>=1);
-const puk=await fs.readFile(new URL('./fixtures/puk_sample.html',import.meta.url),'utf8'); assert.equal(parsePukPozegnalismyHtml(puk,source)[0].kind,'death');
+const puk=await fs.readFile(new URL('./fixtures/puk_sample.html',import.meta.url),'utf8'); const pukRows=parsePukPozegnalismyHtml(puk,source); assert.equal(pukRows[0].kind,'death'); assert.equal(pukRows[0].time_funeral,'12:00');
 const karawanList=await fs.readFile(new URL('./fixtures/karawan_list.html',import.meta.url),'utf8'); assert.equal(parseKarawanNekrologiHtml(karawanList,{...source,url:'https://karawan.pl'}).length,2);
 const kw=await fs.readFile(new URL('./fixtures/karawan_detail_wladyslaw_stozek.html',import.meta.url),'utf8');
 const ke=await fs.readFile(new URL('./fixtures/karawan_detail_elzbieta_rodecka.html',import.meta.url),'utf8');
@@ -27,7 +29,10 @@ const grList=await fs.readFile(new URL('./fixtures/grobonet_list.html',import.me
 assert.equal(parseGrobonetNekrologiHtml(grList,{...source,url:'https://krakowsalwator.grobonet.com'}).length,1); assert.match(parseGrobonetDetailHtml(grDet,source,'https://x').name,/Anna Nowak/);
 const pList=await fs.readFile(new URL('./fixtures/podwawelskie_list.html',import.meta.url),'utf8'); const pDet=await fs.readFile(new URL('./fixtures/podwawelskie_detail.html',import.meta.url),'utf8');
 assert.equal(parsePodwawelskieNekrologiHtml(pList,{...source,url:'https://www.podwawelskie.pl'}).length,1); assert.equal(parsePodwawelskieDetailHtml(pDet,source,'https://x').date_funeral,'2026-05-08');
-const deb=await fs.readFile(new URL('./fixtures/debniki_sdb_list.html',import.meta.url),'utf8'); const debRows=parseDebnikiSdbPogrzebyHtml(deb,source); assert.ok(debRows.some(r=>/pogrzeb/i.test(r.note))); assert.ok(!debRows.some(r=>/\+ Jan Kowalski/.test(r.note)));
+const deb=await fs.readFile(new URL('./fixtures/debniki_sdb_list.html',import.meta.url),'utf8'); const debLinks=parseDebnikiSdbPogrzebyHtml(deb,source); assert.ok(debLinks.length>=1);
+const debPos=await fs.readFile(new URL('./fixtures/debniki_sdb_detail_funeral.html',import.meta.url),'utf8'); const debPosRow=parseDebnikiSdbDetailHtml(debPos,source,'https://example.com/x');
+assert.equal(debPosRow.kind,'funeral'); assert.match(debPosRow.name,/Jan Nowak/); assert.equal(debPosRow.date_funeral,'2026-05-08'); assert.equal(debPosRow.time_funeral,'09:00');
+const debNeg=await fs.readFile(new URL('./fixtures/debniki_sdb_detail_intention_only.html',import.meta.url),'utf8'); assert.equal(parseDebnikiSdbDetailHtml(debNeg,source,'https://example.com/y'),null);
 const jad=await fs.readFile(new URL('./fixtures/sw_jadwiga_pogrzebowe_sample.html',import.meta.url),'utf8'); assert.equal(parseSwJadwigaPogrzeboweHtml(jad,source)[0].kind,'funeral');
 assert.equal(validateParsedRow({kind:'funeral',name:'Główna Nekrologi',note:'ok',place:'ok',source_id:'1',source_name:'x',url:'u'}),false);
 assert.match((await parseSource({type:'unknown'})).error,/Nieznany parser/); assert.match((await parseGenericHtml({id:'abc'})).error,/Brak parsera/);
