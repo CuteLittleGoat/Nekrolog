@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T06:49:27.616Z",
-  "updated_at": "2026-05-08T06:49:27.616Z",
+  "generated_at": "2026-05-08T07:02:30.056Z",
+  "updated_at": "2026-05-08T07:02:30.056Z",
   "deaths": [
     {
       "kind": "death",
@@ -1487,14 +1487,6 @@
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "distance_km": 6.5,
       "enabled": true
-    },
-    {
-      "id": "facebook_parafia_debniki",
-      "name": "Facebook – Parafia Dębniki",
-      "type": "generic_html",
-      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-      "distance_km": 2.5,
-      "enabled": true
     }
   ],
   "target_phrases": [
@@ -1523,20 +1515,13 @@
     "Śp. Dereń Gawin Helena",
     "Śp. Dereń Helena"
   ],
-  "source_errors": [
-    {
-      "source_id": "facebook_parafia_debniki",
-      "source_name": "Facebook – Parafia Dębniki",
-      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-      "error": "fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]"
-    }
-  ],
-  "refresh_error": "Facebook – Parafia Dębniki: fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]",
+  "source_errors": [],
+  "refresh_error": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-08T06:49:27.616Z",
-    "updated_at": "2026-05-08T06:49:27.616Z",
+    "generated_at": "2026-05-08T07:02:30.056Z",
+    "updated_at": "2026-05-08T07:02:30.056Z",
     "deaths": [
       {
         "kind": "death",
@@ -3023,14 +3008,6 @@
         "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
         "distance_km": 6.5,
         "enabled": true
-      },
-      {
-        "id": "facebook_parafia_debniki",
-        "name": "Facebook – Parafia Dębniki",
-        "type": "generic_html",
-        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-        "distance_km": 2.5,
-        "enabled": true
       }
     ],
     "target_phrases": [
@@ -3059,21 +3036,14 @@
       "Śp. Dereń Gawin Helena",
       "Śp. Dereń Helena"
     ],
-    "source_errors": [
-      {
-        "source_id": "facebook_parafia_debniki",
-        "source_name": "Facebook – Parafia Dębniki",
-        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-        "error": "fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]"
-      }
-    ],
-    "refresh_error": "Facebook – Parafia Dębniki: fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]",
+    "source_errors": [],
+    "refresh_error": null,
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-08T06:49:27.616Z",
-    "updated_at": "2026-05-08T06:49:27.616Z",
+    "generated_at": "2026-05-08T07:02:30.056Z",
+    "updated_at": "2026-05-08T07:02:30.056Z",
     "deaths": [
       {
         "kind": "death",
@@ -4560,14 +4530,6 @@
         "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
         "distance_km": 6.5,
         "enabled": true
-      },
-      {
-        "id": "facebook_parafia_debniki",
-        "name": "Facebook – Parafia Dębniki",
-        "type": "generic_html",
-        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-        "distance_km": 2.5,
-        "enabled": true
       }
     ],
     "target_phrases": [
@@ -4596,15 +4558,8 @@
       "Śp. Dereń Gawin Helena",
       "Śp. Dereń Helena"
     ],
-    "source_errors": [
-      {
-        "source_id": "facebook_parafia_debniki",
-        "source_name": "Facebook – Parafia Dębniki",
-        "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-        "error": "fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]"
-      }
-    ],
-    "refresh_error": "Facebook – Parafia Dębniki: fetch: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: [ENETUNREACH]; fetch_ipv4: request to https://www.facebook.com/parafiadebniki/?locale=pl_PL failed, reason: connect ENETUNREACH 57.144.180.1:443 - Local (0.0.0.0:0) [ENETUNREACH]; curl: spawnSync curl ENOBUFS [ENOBUFS]",
+    "source_errors": [],
+    "refresh_error": null,
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   }
