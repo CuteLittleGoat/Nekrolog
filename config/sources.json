@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "id": "zck_funerals",
+      "name": "ZCK Kraków – Porządek pogrzebów",
+      "type": "zck_funerals",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "enabled": true,
+      "distance_km": 0
+    },
+    {
+      "id": "puk_pozegnalismy",
+      "name": "PUK Kraków – Pożegnaliśmy",
+      "type": "generic_html",
+      "url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "enabled": true,
+      "distance_km": 4.5
+    },
+    {
+      "id": "gabriel_nekrologi",
+      "name": "Gabriel24 – Nekrologi",
+      "type": "generic_html",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "enabled": true,
+      "distance_km": 6.5
+    },
+    {
+      "id": "karawan_nekrologi",
+      "name": "Karawan – Nekrologi",
+      "type": "generic_html",
+      "url": "https://karawan.pl/nekrologi/",
+      "enabled": true,
+      "distance_km": 7.5
+    },
+    {
+      "id": "salwator_grobonet",
+      "name": "Kraków Salwator – Grobonet",
+      "type": "generic_html",
+      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "enabled": true,
+      "distance_km": 5.5
+    },
+    {
+      "id": "debniki_sdb",
+      "name": "Parafia św. Stanisława Kostki (Dębniki)",
+      "type": "generic_html",
+      "url": "https://debniki.sdb.org.pl/",
+      "enabled": true,
+      "distance_km": 2.5
+    },
+    {
+      "id": "podwawelskie_nekrologi",
+      "name": "Podwawelskie – Nekrologi",
+      "type": "generic_html",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "enabled": true,
+      "distance_km": 2.5
+    },
+    {
+      "id": "sw_jadwiga_pogrzebowe",
+      "name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "type": "generic_html",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "enabled": true,
+      "distance_km": 6.5
+    },
+    {
+      "id": "facebook_parafia_debniki",
+      "name": "Facebook – Parafia Dębniki",
+      "type": "generic_html",
+      "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
+      "enabled": true,
+      "distance_km": 2.5
+    }
+  ]
+}
