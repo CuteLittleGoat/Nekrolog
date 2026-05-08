@@ -10,6 +10,10 @@ Odświeżanie danych realizuje GitHub Actions (`Nekrolog refresh`):
 - cron: `17 * * * *` (co godzinę)
 - ręcznie: GitHub → Actions → Nekrolog refresh → Run workflow
 
+Źródło `Facebook – Parafia Dębniki` pozostaje w `config/sources.json`, ale domyślnie jest wyłączone, bo publiczne pobieranie Facebooka z GitHub Actions bywa niestabilne.
+
+Dane są nadal aktualizowane wyłącznie przez GitHub Actions.
+
 Nie ma aktywnego flow Firebase / Firestore ani przycisku ręcznego odświeżania.
 
 ## Lokalnie

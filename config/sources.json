@@ -69,7 +69,7 @@
       "name": "Facebook – Parafia Dębniki",
       "type": "generic_html",
       "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
-      "enabled": true,
+      "enabled": false,
       "distance_km": 2.5
     }
   ]
