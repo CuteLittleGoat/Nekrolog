@@ -6,26 +6,26 @@
   <title>Nekrolog → Discord Webhook — instrukcja i specyfikacja dla Codex</title>
   <style>
     :root {
-      --bg: #f5f2ec;
-      --paper: #fffdf8;
-      --ink: #221f1b;
-      --muted: #6d6257;
-      --line: #ddd4c7;
-      --accent: #5b2e91;
-      --accent2: #324f7a;
-      --warn-bg: #fff3d8;
-      --warn-line: #e1b969;
-      --ok-bg: #eaf7ea;
-      --bad-bg: #ffe8e4;
-      --code-bg: #171717;
-      --code-ink: #f4f4f4;
+      --bg: #0f1117;
+      --paper: #161b22;
+      --ink: #e6edf3;
+      --muted: #9ba6b2;
+      --line: #30363d;
+      --accent: #a371f7;
+      --accent2: #58a6ff;
+      --warn-bg: #3f2f1f;
+      --warn-line: #d29922;
+      --ok-bg: #1f3a2e;
+      --bad-bg: #3b2025;
+      --code-bg: #0d1117;
+      --code-ink: #f0f6fc;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #efe8dc 0%, var(--bg) 220px);
+      background: linear-gradient(180deg, #0b0f14 0%, var(--bg) 220px);
       color: var(--ink);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
@@ -63,7 +63,7 @@
       margin: 42px 0 16px;
       padding-bottom: 10px;
       border-bottom: 2px solid var(--line);
-      color: #17130f;
+      color: #f0f6fc;
       font-size: clamp(24px, 3vw, 34px);
       letter-spacing: -0.025em;
     }
@@ -71,7 +71,7 @@
     h3 {
       margin: 28px 0 10px;
       font-size: 22px;
-      color: #2b251f;
+      color: #dce5ee;
     }
 
     h4 {
@@ -103,8 +103,8 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 7px 12px;
-      background: #faf7ef;
-      color: #4d4239;
+      background: #1c2128;
+      color: #d2dae2;
       font-size: 14px;
       font-weight: 650;
     }
@@ -114,7 +114,7 @@
       padding: 20px;
       border-radius: 18px;
       border: 1px solid var(--line);
-      background: rgba(255, 253, 248, 0.78);
+      background: rgba(22, 27, 34, 0.78);
     }
 
     .toc ol {
@@ -137,7 +137,7 @@
       display: inline-block;
       margin-bottom: 8px;
       border-radius: 999px;
-      background: #ede6f5;
+      background: #2a1f3c;
       color: var(--accent);
       padding: 6px 12px;
       font-weight: 800;
@@ -153,10 +153,10 @@
       border: 1px solid var(--line);
     }
 
-    .note { background: #eef3fb; border-color: #bfd0e8; }
+    .note { background: #1a2736; border-color: #2f4f6e; }
     .warning { background: var(--warn-bg); border-color: var(--warn-line); }
-    .success { background: var(--ok-bg); border-color: #b6d9b6; }
-    .danger { background: var(--bad-bg); border-color: #eca99f; }
+    .success { background: var(--ok-bg); border-color: #3f8f67; }
+    .danger { background: var(--bad-bg); border-color: #b35b6b; }
 
     .steps {
       counter-reset: step;
@@ -172,7 +172,7 @@
       padding: 16px 16px 16px 58px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: #fffaf0;
+      background: #1a2028;
     }
 
     .steps > li::before {
@@ -194,7 +194,7 @@
     li { margin: 7px 0; }
 
     code {
-      background: #eee7dc;
+      background: #2b313c;
       padding: 2px 5px;
       border-radius: 6px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -225,7 +225,7 @@
       width: 100%;
       border-collapse: collapse;
       margin: 16px 0;
-      background: #fffaf0;
+      background: #1a2028;
       border-radius: 14px;
       overflow: hidden;
     }
@@ -238,7 +238,7 @@
     }
 
     th {
-      background: #eee7dc;
+      background: #2b313c;
       font-weight: 800;
     }
 
