@@ -2,13 +2,29 @@ import { makePhraseVariants, textMatchesAny } from "./scripts/normalize.mjs";
 
 const HELENA_GAWIN_PHRASES = [
   "Helena Gawin",
-  "Helena Gawin-Dereń",
-  "Helena Dereń-Gawin",
-  "Helena Gawin Dereń",
-  "Helena Dereń Gawin",
-  "Helena Dereń",
   "Gawin Helena",
-  "Śp. Helena Gawin"
+  "Śp. Helena Gawin",
+  "Śp. Gawin Helena",
+  "Helena Dereń",
+  "Dereń Helena",
+  "Śp. Helena Dereń",
+  "Śp. Dereń Helena",
+  "Helena Gawin-Dereń",
+  "Gawin-Dereń Helena",
+  "Śp. Helena Gawin-Dereń",
+  "Śp. Gawin-Dereń Helena",
+  "Helena Dereń-Gawin",
+  "Dereń-Gawin Helena",
+  "Śp. Helena Dereń-Gawin",
+  "Śp. Dereń-Gawin Helena",
+  "Helena Gawin Dereń",
+  "Gawin Dereń Helena",
+  "Śp. Helena Gawin Dereń",
+  "Śp. Gawin Dereń Helena",
+  "Helena Dereń Gawin",
+  "Dereń Gawin Helena",
+  "Śp. Helena Dereń Gawin",
+  "Śp. Dereń Gawin Helena"
 ];
 
 function el(id) {
