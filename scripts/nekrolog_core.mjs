@@ -1,7 +1,32 @@
 import * as cheerio from "cheerio";
 import { fetchText } from "./fetch.mjs";
 
-const HELENA_GAWIN_PHRASES = ["Helena Gawin"];
+const HELENA_GAWIN_PHRASES = [
+  "Helena Gawin",
+  "Gawin Helena",
+  "Śp. Helena Gawin",
+  "Śp. Gawin Helena",
+  "Helena Dereń",
+  "Dereń Helena",
+  "Śp. Helena Dereń",
+  "Śp. Dereń Helena",
+  "Helena Gawin-Dereń",
+  "Gawin-Dereń Helena",
+  "Śp. Helena Gawin-Dereń",
+  "Śp. Gawin-Dereń Helena",
+  "Helena Dereń-Gawin",
+  "Dereń-Gawin Helena",
+  "Śp. Helena Dereń-Gawin",
+  "Śp. Dereń-Gawin Helena",
+  "Helena Gawin Dereń",
+  "Gawin Dereń Helena",
+  "Śp. Helena Gawin Dereń",
+  "Śp. Gawin Dereń Helena",
+  "Helena Dereń Gawin",
+  "Dereń Gawin Helena",
+  "Śp. Helena Dereń Gawin",
+  "Śp. Dereń Gawin Helena"
+];
 const DEFAULT_FLAGS = { requires_detail_fetch: false, requires_ocr: false, requires_pdf: false };
 const REQUIRED_SOURCES = [
   { id:"zck_funerals", name:"ZCK Kraków – Porządek pogrzebów", type:"zck_funerals", url:"https://www.zck-krakow.pl/funerals", enabled:true, distance_km:0, list_url:"https://www.zck-krakow.pl/funerals", ...DEFAULT_FLAGS },
