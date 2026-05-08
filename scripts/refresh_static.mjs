@@ -7,9 +7,7 @@ import {
   REQUIRED_SOURCES,
   clean,
   nowISO,
-  parseZckFunerals,
-  parseGenericHtml,
-  parseIntentionsPlus,
+  parseSource,
   isIntentionLikeSource,
   isIntentionLikeRow,
   isEligibleDeathRow,
@@ -64,10 +62,7 @@ async function main() {
 
     for (const s of enabled) {
       let parsed;
-      if (s.type === 'zck_funerals') parsed = await parseZckFunerals(s);
-      else if (s.type === 'intencje_plus') parsed = await parseIntentionsPlus(s);
-      else if (s.type === 'generic_html') parsed = await parseGenericHtml(s);
-      else parsed = { rows: [], error: `Nieznany parser type=${s.type}` };
+      parsed = await parseSource(s);
 
       const skipDeathsForSource = isIntentionLikeSource(s);
       for (const r of parsed.rows || []) {
