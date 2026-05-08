@@ -6,63 +6,101 @@
       "type": "zck_funerals",
       "url": "https://www.zck-krakow.pl/funerals",
       "enabled": true,
-      "distance_km": 0
+      "distance_km": 0,
+      "list_url": "https://www.zck-krakow.pl/funerals",
+      "requires_detail_fetch": false,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "puk_pozegnalismy",
       "name": "PUK Kraków – Pożegnaliśmy",
-      "type": "generic_html",
+      "type": "puk_pozegnalismy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "enabled": true,
-      "distance_km": 4.5
+      "distance_km": 4.5,
+      "list_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "requires_detail_fetch": true,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "gabriel_nekrologi",
       "name": "Gabriel24 – Nekrologi",
-      "type": "generic_html",
+      "type": "gabriel24_nekrologi",
       "url": "https://www.gabriel24.pl/nekrologi/",
       "enabled": true,
-      "distance_km": 6.5
+      "distance_km": 6.5,
+      "list_url": "https://www.gabriel24.pl/nekrologi/",
+      "requires_detail_fetch": true,
+      "max_detail_pages": 50,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "karawan_nekrologi",
       "name": "Karawan – Nekrologi",
-      "type": "generic_html",
+      "type": "karawan_nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "enabled": true,
-      "distance_km": 7.5
+      "distance_km": 7.5,
+      "list_url": "https://karawan.pl/nekrologi/",
+      "requires_detail_fetch": true,
+      "max_detail_pages": 50,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "salwator_grobonet",
       "name": "Kraków Salwator – Grobonet",
-      "type": "generic_html",
+      "type": "grobonet_nekrologi",
       "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
       "enabled": true,
-      "distance_km": 5.5
+      "distance_km": 5.5,
+      "list_url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "base_url": "https://krakowsalwator.grobonet.com/",
+      "requires_detail_fetch": true,
+      "max_detail_pages": 50,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "debniki_sdb",
       "name": "Parafia św. Stanisława Kostki (Dębniki)",
-      "type": "generic_html",
+      "type": "debniki_sdb_pogrzeby",
       "url": "https://debniki.sdb.org.pl/",
       "enabled": true,
-      "distance_km": 2.5
+      "distance_km": 2.5,
+      "list_url": "https://debniki.sdb.org.pl/",
+      "requires_detail_fetch": true,
+      "max_detail_pages": 30,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "podwawelskie_nekrologi",
       "name": "Podwawelskie – Nekrologi",
-      "type": "generic_html",
+      "type": "podwawelskie_nekrologi",
       "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
       "enabled": true,
-      "distance_km": 2.5
+      "distance_km": 2.5,
+      "list_url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "requires_detail_fetch": true,
+      "max_detail_pages": 50,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "sw_jadwiga_pogrzebowe",
       "name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "type": "generic_html",
+      "type": "sw_jadwiga_pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "enabled": true,
-      "distance_km": 6.5
+      "distance_km": 6.5,
+      "list_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "requires_detail_fetch": false,
+      "requires_ocr": false,
+      "requires_pdf": false
     },
     {
       "id": "facebook_parafia_debniki",

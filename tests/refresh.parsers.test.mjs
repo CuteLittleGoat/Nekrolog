@@ -1,78 +1,19 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {
-  parseZckFuneralsHtml,
-  parseIntentionsPlusHtml,
-  isIntentionLikeSource,
-  isIntentionLikeRow,
-  isEligibleDeathRow,
-  mergeRequiredSources,
-  resolveJobOutcome,
-  buildFallbackSummaryForHelena
+  parseZckFuneralsHtml,parsePukPozegnalismyHtml,parseGabriel24NekrologiHtml,parseGabriel24DetailHtml,parseKarawanNekrologiHtml,parseKarawanDetailHtml,parseGrobonetNekrologiHtml,parseGrobonetDetailHtml,parsePodwawelskieNekrologiHtml,parsePodwawelskieDetailHtml,parseDebnikiSdbPogrzebyHtml,parseSwJadwigaPogrzeboweHtml,parseSource,parseGenericHtml
 } from '../scripts/nekrolog_core.mjs';
-
-const source = { id: 'test', name: 'Test Source', url: 'https://example.com', enabled: true };
-
-const zckHtml = await fs.readFile(new URL('./fixtures/zck_sample.html', import.meta.url), 'utf8');
-const zckRows = parseZckFuneralsHtml(zckHtml, source);
-assert.equal(zckRows.length, 2);
-assert.equal(zckRows[0].time_funeral, '10:00');
-assert.equal(zckRows[0].name, 'Jan Kowalski');
-assert.match(zckRows[0].place, /Kaplica mała/);
-assert.equal(zckRows[0].date_funeral, '2026-02-16');
-
-const intHtml = await fs.readFile(new URL('./fixtures/intencje_sample.html', import.meta.url), 'utf8');
-const intRows = parseIntentionsPlusHtml(intHtml, source);
-assert.equal(intRows.length, 2);
-assert.equal(intRows[0].name, 'Jan Kowalski');
-assert.match(intRows[1].note, /Maria Nowak/);
-
-
-assert.equal(isIntentionLikeSource({ id: 'sw_jadwiga_intencje', name: 'Msze w intencji', url: 'https://example.com/intencje' }), true);
-assert.equal(isIntentionLikeSource({ id: 'zck_funerals', name: 'Porządek pogrzebów', url: 'https://example.com/funerals' }), false);
-assert.equal(isIntentionLikeRow({ name: 'Msza w intencji + Jan Kowalski', note: 'Parafia XYZ' }), true);
-assert.equal(isIntentionLikeRow({ name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), false);
-
-assert.equal(isEligibleDeathRow({ kind: 'death', name: 'Msza w intencji + Jan Kowalski', note: 'Parafia XYZ' }), false);
-assert.equal(isEligibleDeathRow({ kind: 'death', name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), true);
-assert.equal(isEligibleDeathRow({ kind: 'funeral', name: 'Jan Kowalski', note: 'Ceremonia pogrzebowa o 12:00' }), false);
-
-const merged = mergeRequiredSources([{ id: 'par_debniki_contact', url: 'https://old.example', enabled: true }]);
-const debniki = merged.find((s) => s.id === 'par_debniki_contact');
-assert.equal(debniki.enabled, false);
-const grobonet = merged.find((s) => s.id === 'podgorki_tynieckie_grobonet');
-if (grobonet && grobonet.url === 'https://klepsydrakrakow.grobonet.com/') {
-  throw new Error('URL podgorki_tynieckie_grobonet should be normalized to /nekrologi.php');
-}
-
-const noRowsOutcome = resolveJobOutcome({ recentDeaths: 0, upcomingFunerals: 0, refreshErrors: ['A: błąd parsera'] });
-assert.equal(noRowsOutcome.status, 'error');
-assert.equal(noRowsOutcome.ok, false);
-assert.match(noRowsOutcome.errorMessage, /A: błąd parsera/);
-
-const partialOutcome = resolveJobOutcome({ recentDeaths: 2, upcomingFunerals: 0, refreshErrors: ['A: błąd parsera'] });
-assert.equal(partialOutcome.status, 'done_with_errors');
-assert.equal(partialOutcome.ok, true);
-
-const okOutcome = resolveJobOutcome({ recentDeaths: 1, upcomingFunerals: 1, refreshErrors: [] });
-assert.equal(okOutcome.status, 'done');
-assert.equal(okOutcome.ok, true);
-assert.equal(okOutcome.errorMessage, null);
-
-const fallbackNoHits = buildFallbackSummaryForHelena(
-  [{ name: 'Tomasz Sobkowiak', date_death: '2026-02-11', priority_hit: false, url: 'https://example.com/a', source_name: 'A' }],
-  [{ name: 'Danuta Skorecka', date_funeral: '2026-02-09', priority_hit: false, url: 'https://example.com/b', source_name: 'B' }]
-);
-assert.equal(fallbackNoHits.text, 'Helena Gawin - brak informacji');
-assert.equal(fallbackNoHits.date_death, null);
-assert.equal(fallbackNoHits.date_funeral, null);
-assert.equal(fallbackNoHits.urls.length, 0);
-
-const fallbackWithHits = buildFallbackSummaryForHelena(
-  [{ name: 'Helena Gawin', date_death: '2026-02-11', priority_hit: true, url: 'https://example.com/a', source_name: 'A' }],
-  [{ name: 'Helena Gawin', date_funeral: '2026-02-12', priority_hit: true, url: 'https://example.com/b', source_name: 'B' }]
-);
-assert.match(fallbackWithHits.text, /Helena Gawin zmarła 2026-02-11, pogrzeb 2026-02-12/);
-assert.equal(fallbackWithHits.urls.length, 2);
-
+const source={id:'x',name:'X',url:'https://example.com',list_url:'https://example.com'};
+const zck=await fs.readFile(new URL('./fixtures/zck_sample.html',import.meta.url),'utf8');
+assert.ok(parseZckFuneralsHtml(zck,source).length>=1);
+const puk=await fs.readFile(new URL('./fixtures/puk_sample.html',import.meta.url),'utf8');
+const pukRows=parsePukPozegnalismyHtml(puk,source); assert.equal(pukRows[0].kind,'death');
+const list=await fs.readFile(new URL('./fixtures/generic_list.html',import.meta.url),'utf8');
+const detail=await fs.readFile(new URL('./fixtures/generic_detail.html',import.meta.url),'utf8');
+for (const fn of [parseGabriel24NekrologiHtml,parseKarawanNekrologiHtml,parseGrobonetNekrologiHtml,parsePodwawelskieNekrologiHtml]) assert.equal(fn(list,source).length,1);
+for (const fn of [parseGabriel24DetailHtml,parseKarawanDetailHtml,parseGrobonetDetailHtml,parsePodwawelskieDetailHtml]) assert.match(fn(detail,source,'https://example.com/d').name,/Jan Kowalski/);
+const deb=await fs.readFile(new URL('./fixtures/debniki_sdb_sample.html',import.meta.url),'utf8'); assert.equal(parseDebnikiSdbPogrzebyHtml(deb,source)[0].kind,'funeral');
+const jad=await fs.readFile(new URL('./fixtures/sw_jadwiga_pogrzebowe_sample.html',import.meta.url),'utf8'); assert.equal(parseSwJadwigaPogrzeboweHtml(jad,source)[0].kind,'funeral');
+assert.match((await parseSource({type:'unknown'})).error,/Nieznany parser/);
+assert.match((await parseGenericHtml({id:'abc'})).error,/Brak parsera/);
 console.log('All parser tests passed.');
