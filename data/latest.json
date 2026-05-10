@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T19:59:36.792Z",
-  "updated_at": "2026-05-09T19:59:36.792Z",
+  "generated_at": "2026-05-10T08:59:37.142Z",
+  "updated_at": "2026-05-10T08:59:37.142Z",
   "deaths": [
     {
       "kind": "death",
@@ -530,20 +530,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wladyslaw-jozef-kordela/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. DOMINIKA KIEŁTYKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/dominika-kieltyka/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1335,20 +1321,6 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 03.05.2026 przeżywszy 82 lat zmarła | Data pogrzebu 07.05.2026 11:00",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Helena Zielińska",
-      "date_death": "2026-05-02",
-      "date_funeral": "2026-05-08",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Zielinska-J2Q2BBVT7C4Q",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 02.05.2026 przeżywszy 74 lat zmarła | Data pogrzebu 08.05.2026 12:00",
-      "priority_hit": false
     }
   ],
   "upcoming_funerals": [
@@ -1539,8 +1511,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-09T19:59:36.792Z",
-    "updated_at": "2026-05-09T19:59:36.792Z",
+    "generated_at": "2026-05-10T08:59:37.142Z",
+    "updated_at": "2026-05-10T08:59:37.142Z",
     "deaths": [
       {
         "kind": "death",
@@ -2070,20 +2042,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/wladyslaw-jozef-kordela/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. DOMINIKA KIEŁTYKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/dominika-kieltyka/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -2874,20 +2832,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Nowak-2H7CESB0R3LJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 82 lat zmarła | Data pogrzebu 07.05.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Helena Zielińska",
-        "date_death": "2026-05-02",
-        "date_funeral": "2026-05-08",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Zielinska-J2Q2BBVT7C4Q",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 02.05.2026 przeżywszy 74 lat zmarła | Data pogrzebu 08.05.2026 12:00",
         "priority_hit": false
       }
     ],
@@ -3080,8 +3024,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-09T19:59:36.792Z",
-    "updated_at": "2026-05-09T19:59:36.792Z",
+    "generated_at": "2026-05-10T08:59:37.142Z",
+    "updated_at": "2026-05-10T08:59:37.142Z",
     "deaths": [
       {
         "kind": "death",
@@ -3611,20 +3555,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/wladyslaw-jozef-kordela/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. DOMINIKA KIEŁTYKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/dominika-kieltyka/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4415,20 +4345,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Nowak-2H7CESB0R3LJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 82 lat zmarła | Data pogrzebu 07.05.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Helena Zielińska",
-        "date_death": "2026-05-02",
-        "date_funeral": "2026-05-08",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Zielinska-J2Q2BBVT7C4Q",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 02.05.2026 przeżywszy 74 lat zmarła | Data pogrzebu 08.05.2026 12:00",
         "priority_hit": false
       }
     ],
