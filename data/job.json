@@ -1,8 +1,8 @@
 {
   "status": "done_with_errors",
-  "started_at": "2026-05-10T20:00:53.894Z",
-  "finished_at": "2026-05-10T20:01:21.918Z",
-  "updated_at": "2026-05-10T20:01:21.918Z",
+  "started_at": "2026-05-11T10:41:05.033Z",
+  "finished_at": "2026-05-11T10:41:33.477Z",
+  "updated_at": "2026-05-11T10:41:33.477Z",
   "ok": true,
   "error_message": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
   "source_errors": [
