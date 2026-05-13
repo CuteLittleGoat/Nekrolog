@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { constants as fsConstants } from 'node:fs';
 import { todayLocalMidnight, addDays, inWindow } from './date.mjs';
+import { notifyCzerwonaHelena } from './discord_notify.mjs';
 import { makePhraseVariants, textMatchesAny } from './normalize.mjs';
 import {
   HELENA_GAWIN_PHRASES,
@@ -95,8 +96,14 @@ async function main() {
     await writeJson(LATEST_PATH, latest);
 
     const outcome = resolveJobOutcome({ recentDeaths: recent_deaths.length, upcomingFunerals: upcoming_funerals.length, refreshErrors });
+    const discordNotification = await notifyCzerwonaHelena({
+      rows: [...recent_deaths, ...upcoming_funerals],
+      webhookUrl: process.env.DISCORD_WEBHOOK_URL,
+      enabled: process.env.DISCORD_NOTIFY_ENABLED !== 'false'
+    });
+
     const finishedAt = nowISO();
-    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, source_errors: sourceErrors, writer_name: WRITER, writer_version: VERSION, trigger };
+    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, source_errors: sourceErrors, writer_name: WRITER, writer_version: VERSION, trigger, discord_notification: discordNotification };
     await writeJson(JOB_PATH, job);
     await writeJson(ERR_PATH, { generated_at: finishedAt, errors: sourceErrors });
 
