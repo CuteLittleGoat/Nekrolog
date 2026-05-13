@@ -99,7 +99,8 @@ async function main() {
     const discordNotification = await notifyCzerwonaHelena({
       rows: [...recent_deaths, ...upcoming_funerals],
       webhookUrl: process.env.DISCORD_WEBHOOK_URL,
-      enabled: process.env.DISCORD_NOTIFY_ENABLED !== 'false'
+      enabled: process.env.DISCORD_NOTIFY_ENABLED !== 'false',
+      refreshedAt: generatedAt
     });
 
     const finishedAt = nowISO();
