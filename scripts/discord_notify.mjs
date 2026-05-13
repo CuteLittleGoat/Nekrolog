@@ -1,7 +1,9 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { HELENA_GAWIN_PHRASES } from './nekrolog_core.mjs';
+import { makePhraseVariants, textMatchesAny } from './normalize.mjs';
 
 const DEFAULT_STATE_PATH = 'data/discord_notified.json';
-const TARGET_KEYWORDS = ['czerwona helena'];
+const TARGET_PHRASES = makePhraseVariants(HELENA_GAWIN_PHRASES);
 
 function cleanValue(value) {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -15,13 +17,13 @@ function normalizeForMatch(value) {
 }
 
 function isCzerwonaHelenaRow(row) {
-  const haystack = normalizeForMatch([
+  const haystack = [
     row?.name,
     row?.full_name,
     row?.note,
     row?.source_name
-  ].filter(Boolean).join(' '));
-  return TARGET_KEYWORDS.some((keyword) => haystack.includes(keyword));
+  ].filter(Boolean).join(' ');
+  return textMatchesAny(haystack, TARGET_PHRASES);
 }
 
 function selectFirstHit(rows = []) {
@@ -46,6 +48,19 @@ function buildDiscordMessage(row) {
     `Imię/nazwisko w rekordzie: ${name}`,
     `Źródło: ${source}`,
     `Link: ${link}`
+  ].join('\n');
+}
+
+function formatHeartbeatDate(value) {
+  const date = new Date(value || Date.now());
+  const iso = Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+  return iso.slice(0, 10) + ' ' + iso.slice(11, 16);
+}
+
+function buildNoMatchMessage(refreshedAt) {
+  return [
+    `Data: ${formatHeartbeatDate(refreshedAt)}`,
+    'Brak danych dotyczących stanu Helenomatu.'
   ].join('\n');
 }
 
@@ -75,8 +90,8 @@ async function postDiscordWebhook(webhookUrl, content, fetchImpl = globalThis.fe
   return { ok: false, status: response.status, reason: `discord_http_${response.status}` };
 }
 
-async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImpl = globalThis.fetch, statePath = DEFAULT_STATE_PATH }) {
-  const result = { attempted: false, sent: false, skipped: false, skipped_reason: null, status: null, key: null };
+async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImpl = globalThis.fetch, statePath = DEFAULT_STATE_PATH, refreshedAt = null }) {
+  const result = { attempted: false, sent: false, skipped: false, skipped_reason: null, status: null, key: null, type: null };
 
   if (!enabled) {
     result.skipped = true;
@@ -86,8 +101,24 @@ async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImp
 
   const hit = selectFirstHit(rows);
   if (!hit) {
-    result.skipped = true;
-    result.skipped_reason = 'no_match';
+    if (!webhookUrl) {
+      result.skipped = true;
+      result.skipped_reason = 'missing_secret_DISCORD_WEBHOOK_URL';
+      return result;
+    }
+
+    result.type = 'heartbeat_no_match';
+    result.attempted = true;
+    const post = await postDiscordWebhook(webhookUrl, buildNoMatchMessage(refreshedAt), fetchImpl);
+    if (post.ok) {
+      result.sent = true;
+      result.status = post.status ?? null;
+      return result;
+    }
+
+    result.sent = false;
+    result.status = post.status ?? null;
+    result.skipped_reason = post.reason || 'unknown_error';
     return result;
   }
 
@@ -109,6 +140,7 @@ async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImp
   }
 
   const message = buildDiscordMessage(hit);
+  result.type = 'alert_match';
   result.attempted = true;
 
   const post = await postDiscordWebhook(webhookUrl, message, fetchImpl);
@@ -125,4 +157,4 @@ async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImp
   return result;
 }
 
-export { buildDiscordMessage, notifyCzerwonaHelena, postDiscordWebhook, isCzerwonaHelenaRow };
+export { buildDiscordMessage, buildNoMatchMessage, notifyCzerwonaHelena, postDiscordWebhook, isCzerwonaHelenaRow };

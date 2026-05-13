@@ -202,3 +202,91 @@ Przeczytaj plik Analizy/Webhook.md\n\n1. Aplikacja ma w dalszym ciągu szukać "
 3. Rozdzielić typy powiadomień (`alert_match`, `heartbeat_no_match`) i zasady deduplikacji.
 4. Dodać testy jednostkowe dla nowego przebiegu.
 5. Zweryfikować działanie na dwóch kolejnych uruchomieniach harmonogramu.
+
+# Aktualizacja analizy i wdrożenia webhooka Discord (warianty: trafienie/brak trafienia)
+
+Data analizy: 2026-05-13  
+Temat analizy: Uzupełnienie wymagań webhooka Discord o dwa warianty wiadomości (alert i heartbeat) przy zachowaniu obecnej mechaniki wyszukiwania wpisów w aplikacji Nekrolog.
+
+## Oryginalny pełny prompt użytkownika
+
+Przeczytaj plik Analizy/Webhook.md\n\nZałożenia projektu:\n\n1. Aplikacja Nekrolog przeszukuje wpisy w poszukiwaniu "Helena Gawin" (Wraz ze wszystkimi wariantami zapisu). Aplikacja Nekrolog działa poprawnie i na obecną chwilę nic w mechanice przeszukiwania wpisów nie zmieniamy.\n2. Aplikacja, poprzez webhook ma wysyłać wiadomości na Discord.\n3. Istnieją dwa warianty wiadomości. W pierwszym jest informacja, że nie znaleziono wpisów (wysyłka po każdym odświeżeniu danych). W drugim jest informacja, że odnaleziono wpis.\n4. Oba warianty będą się różnić treścią.\n\nWarianty wpisu po odnalezieniu "Helena Gawin" (Wraz ze wszystkimi wariantami zapisu):\n@koza_z_zagrody, @loshumbakos\nZmienił się status Czerwonej Heleny!\nImię/nazwisko w rekordzie: [...]\nŹródło: [...] Link: [...]\n\nWarianty wpisu po odświeżeniu danych (2x dziennie) bez odnalezienia "Helena Gawin" (Wraz ze wszystkimi wariantami zapisu):\nData: [data] [godzina]\nBrak danych dotyczących stanu Helenomatu.\n\nW miejsce [...] podaj dane odczytane w aplikacji. W miejsce [data] i [godzina] podaj datę i godzinę odświeżenia danych.\n\nDopisz te informacje do analizy Analizy/Webhook.md a następnie wprowadź poprawki do kodu.
+
+## Zakres analizy
+
+- Uzupełnienie dokumentu `Analizy/Webhook.md` o nowe wymagania funkcjonalne.
+- Dopasowanie webhooka do wariantów wyszukiwania „Helena Gawin” (zgodnych z aplikacją).
+- Dodanie drugiego wariantu komunikatu Discord wysyłanego po każdym odświeżeniu bez dopasowania.
+- Zachowanie deduplikacji tylko dla alertu „znaleziono wpis”.
+- Rozszerzenie testów automatycznych dla nowego przebiegu.
+
+## Wnioski
+
+- Wdrożono dwa warianty wiadomości Discord:
+  - alert przy znalezieniu wpisu pasującego do wariantów „Helena Gawin”,
+  - heartbeat po odświeżeniu bez dopasowania.
+- Mechanika wyszukiwania w głównej aplikacji nie została zmieniona; webhook korzysta ze zgodnych wariantów fraz (`HELENA_GAWIN_PHRASES`).
+- Heartbeat jest wysyłany przy każdym `no_match` (bez deduplikacji), natomiast alert pozostaje deduplikowany po kluczu rekordu.
+
+## Rekomendacje
+
+- Pozostawić obecną deduplikację alertów, aby uniknąć wielokrotnych powiadomień dla tego samego wpisu.
+- Rozważyć docelowe formatowanie czasu heartbeat w strefie lokalnej, jeśli wymagane będą konkretne godziny lokalne zamiast UTC.
+
+## Ryzyka
+
+- Treść heartbeat używa znacznika czasu odświeżenia przekazanego przez proces refresh; przy niestandardowych uruchomieniach ręcznych komunikaty będą również wysyłane.
+- W przypadku niedostępności webhooka Discord heartbeat lub alert może nie zostać dostarczony (status pozostaje w `job.json`).
+
+## Następne kroki
+
+1. Potwierdzić na dwóch kolejnych uruchomieniach harmonogramu, że przy braku dopasowania pojawiają się dwa heartbeaty dziennie.
+2. Potwierdzić, że przy dopasowaniu „Helena Gawin” wysyła się alert z danymi rekordu.
+3. Potwierdzić brak duplikacji alertu dla tego samego rekordu.
+
+## Zmiany wykonane w kodzie
+
+### Plik: `scripts/discord_notify.mjs`
+
+Lokalizacja: funkcje `isCzerwonaHelenaRow`, `notifyCzerwonaHelena`, oraz nowa funkcja `buildNoMatchMessage`.
+
+Było:
+
+- Webhook dopasowywał wpisy do frazy „czerwona helena”.
+- Przy `no_match` nie wysyłał żadnego komunikatu na Discord.
+
+Jest:
+
+- Webhook dopasowuje wpisy do wariantów „Helena Gawin” przez `HELENA_GAWIN_PHRASES` + `makePhraseVariants`/`textMatchesAny`.
+- Dodany wariant heartbeat:
+  - `Data: YYYY-MM-DD HH:mm`
+  - `Brak danych dotyczących stanu Helenomatu.`
+- Heartbeat wysyłany przy każdym `no_match`.
+- Deduplikacja pozostawiona tylko dla alertu z trafieniem rekordu.
+
+### Plik: `scripts/refresh_static.mjs`
+
+Lokalizacja: wywołanie `notifyCzerwonaHelena(...)`.
+
+Było:
+
+- Funkcja powiadomień nie otrzymywała jawnie daty/godziny odświeżenia do heartbeat.
+
+Jest:
+
+- Dodane przekazanie `refreshedAt: generatedAt`, aby komunikat heartbeat zawierał czas odświeżenia danych.
+
+### Plik: `tests/discord_notify.test.mjs`
+
+Lokalizacja: testy wiadomości i zachowania `notifyCzerwonaHelena`.
+
+Było:
+
+- Testy obejmowały wyłącznie alert i deduplikację dla rekordu „Czerwona Helena”.
+
+Jest:
+
+- Zaktualizowane testy alertu pod rekord „Helena Gawin”.
+- Dodane testy heartbeat:
+  - poprawny format komunikatu `Data: ...` + „Brak danych...”,
+  - wysyłka heartbeat przy każdym `no_match` (brak deduplikacji).
