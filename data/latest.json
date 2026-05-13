@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-13T09:49:32.818Z",
-  "updated_at": "2026-05-13T09:49:32.818Z",
+  "generated_at": "2026-05-13T20:49:10.168Z",
+  "updated_at": "2026-05-13T20:49:10.168Z",
   "deaths": [
     {
       "kind": "death",
@@ -28,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucyna-Jaworska-Y5HM8ILQGMHV",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 10.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 18.05.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Rafał Kolano",
+      "date_death": "2026-05-12",
+      "date_funeral": "2026-05-18",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
       "priority_hit": false
     },
     {
@@ -860,6 +874,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Rafał Kolano",
+      "date_death": "2026-05-12",
+      "date_funeral": "2026-05-18",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Zofia Słupek",
       "date_death": "2026-05-11",
       "date_funeral": "2026-05-15",
@@ -1604,6 +1632,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Rafał Kolano",
+      "date_death": "2026-05-12",
+      "date_funeral": "2026-05-18",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Zofia Słupek",
       "date_death": "2026-05-11",
       "date_funeral": "2026-05-15",
@@ -1914,6 +1956,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Rafał Kolano",
+      "date_death": "2026-05-12",
+      "date_funeral": "2026-05-18",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Lucyna Jaworska",
       "date_death": "2026-05-10",
       "date_funeral": "2026-05-18",
@@ -2057,8 +2113,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-13T09:49:32.818Z",
-    "updated_at": "2026-05-13T09:49:32.818Z",
+    "generated_at": "2026-05-13T20:49:10.168Z",
+    "updated_at": "2026-05-13T20:49:10.168Z",
     "deaths": [
       {
         "kind": "death",
@@ -2086,6 +2142,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucyna-Jaworska-Y5HM8ILQGMHV",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 10.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 18.05.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
         "priority_hit": false
       },
       {
@@ -2918,6 +2988,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Zofia Słupek",
         "date_death": "2026-05-11",
         "date_funeral": "2026-05-15",
@@ -3662,6 +3746,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Słupek",
         "date_death": "2026-05-11",
         "date_funeral": "2026-05-15",
@@ -3968,6 +4066,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Slupek-H1JXM38XLZQT",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 11.05.2026 przeżywszy 93 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4116,8 +4228,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-13T09:49:32.818Z",
-    "updated_at": "2026-05-13T09:49:32.818Z",
+    "generated_at": "2026-05-13T20:49:10.168Z",
+    "updated_at": "2026-05-13T20:49:10.168Z",
     "deaths": [
       {
         "kind": "death",
@@ -4145,6 +4257,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucyna-Jaworska-Y5HM8ILQGMHV",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 10.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 18.05.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
         "priority_hit": false
       },
       {
@@ -4977,6 +5103,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Zofia Słupek",
         "date_death": "2026-05-11",
         "date_funeral": "2026-05-15",
@@ -5721,6 +5861,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł | Data pogrzebu 18.05.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Słupek",
         "date_death": "2026-05-11",
         "date_funeral": "2026-05-15",
@@ -6027,6 +6181,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Slupek-H1JXM38XLZQT",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 11.05.2026 przeżywszy 93 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rafał Kolano",
+        "date_death": "2026-05-12",
+        "date_funeral": "2026-05-18",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rafal--Kolano-LR8QMZC5268Y",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.05.2026 przeżywszy 38 lat zmarł",
         "priority_hit": false
       },
       {
