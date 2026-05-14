@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import { constants as fsConstants } from 'node:fs';
 import { todayLocalMidnight, addDays, inWindow } from './date.mjs';
 import { notifyCzerwonaHelena } from './discord_notify.mjs';
-import { makePhraseVariants, textMatchesAny } from './normalize.mjs';
+import { textMatchesAny } from './normalize.mjs';
 import {
   HELENA_GAWIN_PHRASES,
   REQUIRED_SOURCES,
@@ -59,7 +59,7 @@ async function main() {
     const enabled = mergedSources.filter((s) => s.enabled !== false);
     const allRows = [];
     const sourceErrors = [];
-    const phraseVariants = makePhraseVariants(HELENA_GAWIN_PHRASES);
+    const targetPhrases = HELENA_GAWIN_PHRASES;
 
     for (const s of enabled) {
       let parsed;
@@ -69,7 +69,7 @@ async function main() {
       for (const r of parsed.rows || []) {
         if (!isMeaningfulRow(r)) continue;
         if ((skipDeathsForSource || isIntentionLikeRow(r)) && r.kind === 'death') continue;
-        const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(' '), phraseVariants);
+        const hit = textMatchesAny([r.name, r.note, r.place, r.source_name].join(' '), targetPhrases);
         allRows.push({ ...r, priority_hit: !!hit });
       }
       if (parsed.error) sourceErrors.push({ source_id: s.id, source_name: s.name, url: s.url, error: clean(parsed.error) });

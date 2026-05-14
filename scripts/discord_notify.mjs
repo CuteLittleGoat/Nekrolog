@@ -1,20 +1,14 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { HELENA_GAWIN_PHRASES } from './nekrolog_core.mjs';
-import { makePhraseVariants, textMatchesAny } from './normalize.mjs';
+import { textMatchesAny } from './normalize.mjs';
 
 const DEFAULT_STATE_PATH = 'data/discord_notified.json';
-const TARGET_PHRASES = makePhraseVariants(HELENA_GAWIN_PHRASES);
+const TARGET_PHRASES = HELENA_GAWIN_PHRASES;
 
 function cleanValue(value) {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
 }
 
-function normalizeForMatch(value) {
-  return cleanValue(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-}
 
 function isCzerwonaHelenaRow(row) {
   const haystack = [

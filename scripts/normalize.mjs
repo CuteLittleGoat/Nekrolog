@@ -2,6 +2,19 @@ export function normalizeSpaces(s) {
   return (s ?? "").replace(/\s+/g, " ").trim();
 }
 
+export function normalizeForLooseMatch(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/[+†]/g, " ")
+    .replace(/[\u2010\u2011\u2012\u2013\u2014\u2015\u2212-]/g, " ")
+    .replace(/[.,;:/\\|()[\]{}"'`~!@#$%^&*_=?<>]/g, " ")
+    .replace(/\b(?:s\.?p\.?|sw\.?p\.?|sp\.?|\u015bp\.?|\u015b\.p\.?)+\b/giu, " ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function stripSpPrefix(s) {
   return normalizeSpaces(s.replace(/^śp\.?\s+/i, ""));
 }
@@ -49,9 +62,9 @@ export function makePhraseVariants(lines) {
 }
 
 export function textMatchesAny(text, phrases) {
-  const t = (text ?? "").toLowerCase();
+  const t = normalizeForLooseMatch(text);
   for (const p of phrases) {
-    const pp = (p ?? "").toLowerCase();
+    const pp = normalizeForLooseMatch(p);
     if (!pp) continue;
     if (t.includes(pp)) return true;
   }
