@@ -1,16 +1,52 @@
 {
   "status": "done_with_errors",
-  "started_at": "2026-05-13T20:48:38.689Z",
-  "finished_at": "2026-05-13T20:49:10.853Z",
-  "updated_at": "2026-05-13T20:49:10.853Z",
+  "started_at": "2026-05-14T20:39:36.574Z",
+  "finished_at": "2026-05-14T20:40:08.556Z",
+  "updated_at": "2026-05-14T20:40:08.556Z",
   "ok": true,
-  "error_message": "Kraków Salwator – Grobonet: Kraków Salwator – Grobonet: nie znaleziono linków szczegółów | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 | Podwawelskie – Nekrologi: Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów",
+  "error_message": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
   "source_errors": [
+    {
+      "source_id": "debniki_sdb",
+      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
+      "url": "https://debniki.sdb.org.pl/",
+      "error": "HTTP 403"
+    }
+  ],
+  "source_diagnostics": [
+    {
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "error": null
+    },
+    {
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "error": null
+    },
+    {
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "error": null
+    },
+    {
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrologi/",
+      "error": null
+    },
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Grobonet",
       "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
-      "error": "Kraków Salwator – Grobonet: nie znaleziono linków szczegółów"
+      "http_status": 200,
+      "candidate_links": 0,
+      "accepted_rows": 0,
+      "parser_status": "empty",
+      "error": null
     },
     {
       "source_id": "debniki_sdb",
@@ -22,7 +58,17 @@
       "source_id": "podwawelskie_nekrologi",
       "source_name": "Podwawelskie – Nekrologi",
       "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
-      "error": "Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów"
+      "http_status": 200,
+      "candidate_pages": 7,
+      "accepted_rows": 0,
+      "parser_status": "empty",
+      "error": null
+    },
+    {
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "error": null
     }
   ],
   "writer_name": "scripts/refresh_static.mjs",

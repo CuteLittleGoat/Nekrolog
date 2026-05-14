@@ -1,23 +1,11 @@
 {
-  "generated_at": "2026-05-13T20:49:10.853Z",
+  "generated_at": "2026-05-14T20:40:08.556Z",
   "errors": [
-    {
-      "source_id": "salwator_grobonet",
-      "source_name": "Kraków Salwator – Grobonet",
-      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
-      "error": "Kraków Salwator – Grobonet: nie znaleziono linków szczegółów"
-    },
     {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
       "error": "HTTP 403"
-    },
-    {
-      "source_id": "podwawelskie_nekrologi",
-      "source_name": "Podwawelskie – Nekrologi",
-      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
-      "error": "Podwawelskie – Nekrologi: znaleziono 6 linków, ale zero poprawnych rekordów"
     }
   ]
 }
