@@ -59,11 +59,13 @@ async function main() {
     const enabled = mergedSources.filter((s) => s.enabled !== false);
     const allRows = [];
     const sourceErrors = [];
+    const sourceDiagnostics = [];
     const targetPhrases = HELENA_GAWIN_PHRASES;
 
     for (const s of enabled) {
       let parsed;
       parsed = await parseSource(s);
+      sourceDiagnostics.push({ source_id: s.id, source_name: s.name, url: s.url, ...(parsed.diagnostics || {}), error: parsed.error || null });
 
       const skipDeathsForSource = isIntentionLikeSource(s);
       for (const r of parsed.rows || []) {
@@ -104,7 +106,7 @@ async function main() {
     });
 
     const finishedAt = nowISO();
-    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, source_errors: sourceErrors, writer_name: WRITER, writer_version: VERSION, trigger, discord_notification: discordNotification };
+    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, source_errors: sourceErrors, source_diagnostics: sourceDiagnostics, writer_name: WRITER, writer_version: VERSION, trigger, discord_notification: discordNotification };
     await writeJson(JOB_PATH, job);
     await writeJson(ERR_PATH, { generated_at: finishedAt, errors: sourceErrors });
 

@@ -1231,3 +1231,65 @@ Zadanie można uznać za dobrze wykonane dopiero wtedy, gdy:
 - fallback curl nie udaje HTTP 200 dla stron błędu,
 - diagnostyka w `job.json` albo dodatkowym kompatybilnym polu pozwala zrozumieć, co stało się z każdym problematycznym źródłem,
 - istniejące działające źródła nie zostały popsute.
+
+## Zmiany wykonane w kodzie
+
+### Plik: `scripts/fetch.mjs`
+Lokalizacja: funkcje `fetchViaCurl`, `fetchText`.
+
+Było:
+- fallback curl zwracał `status: 200` dla każdego poprawnie zakończonego procesu curl.
+- brak dedykowanego retry po HTTP 403 z bardziej przeglądarkowymi nagłówkami.
+
+Jest:
+- curl zapisuje i parsuje realny kod HTTP przez `--write-out` (`__HTTP_STATUS__`).
+- `fetchText()` wykonuje retry z nagłówkami przeglądarkowymi po HTTP 403.
+- statusy HTTP z fallbacku są wiarygodne (`ok` zależne od rzeczywistego statusu).
+
+### Plik: `scripts/nekrolog_core.mjs`
+Lokalizacja: parsery `parsePodwawelskieNekrologi*`, `parseGrobonetNekrologi`, `parseDebnikiSdbDetailHtml`, `parseDebnikiSdbPogrzeby`.
+
+Było:
+- Podwawelskie używało modelu lista→detail i myliło paginację z detail pages.
+- Grobonet zgłaszał błąd parsera przy braku linków.
+- Dębniki wymagały mocnych słów pogrzebowych i odrzucały wzmianki o zgonie bez daty pogrzebu.
+
+Jest:
+- Podwawelskie parsuje rekordy `death` bezpośrednio ze stron listy i paginacji.
+- Grobonet rozpoznaje puste źródło (`parser_status: empty`) bez błędu parsera.
+- Dębniki tworzą `death` także dla wzmianki o zgonie bez daty pogrzebu.
+- parsery zwracają diagnostykę (`diagnostics`) zgodną z kompatybilnym modelem rozszerzeń.
+
+### Plik: `scripts/refresh_static.mjs`
+Lokalizacja: pętla przetwarzania źródeł i zapis `latest.json`/`job.json`.
+
+Było:
+- brak usystematyzowanego pola diagnostycznego per źródło.
+
+Jest:
+- dodane `source_diagnostics` z danymi per źródło (w tym parser status/error), bez usuwania istniejących pól.
+
+### Plik: `tests/refresh.parsers.test.mjs`
+Lokalizacja: testy parserów Podwawelskie/Dębniki/Grobonet.
+
+Było:
+- Podwawelskie testowało stary model linków detail.
+- brak testu dla death-only w Dębnikach.
+- brak testu pustego Grobonetu.
+
+Jest:
+- testy Podwawelskiego pokrywają paginację i rekord `death` z listy.
+- test Dębnik potwierdza `kind: death` bez daty pogrzebu.
+- test Grobonetu sprawdza pustą stronę bez linków szczegółów.
+
+### Pliki fixture:
+- `tests/fixtures/podwawelskie_list.html`
+- `tests/fixtures/podwawelskie_page_2.html`
+- `tests/fixtures/debniki_sdb_detail_death_only.html`
+- `tests/fixtures/grobonet_empty.html`
+
+Było:
+- fixture nie odzwierciedlały kluczowych przypadków z analizy.
+
+Jest:
+- fixture obejmują paginację listową Podwawelskiego, death-only dla Dębnik i pusty Grobonet.
