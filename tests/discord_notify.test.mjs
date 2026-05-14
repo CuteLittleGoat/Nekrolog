@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { HELENA_GAWIN_PHRASES } from '../scripts/nekrolog_core.mjs';
+import { textMatchesAny } from '../scripts/normalize.mjs';
 import { buildDiscordMessage, buildNoMatchMessage, notifyCzerwonaHelena } from '../scripts/discord_notify.mjs';
 
 test('buildDiscordMessage uses expected template', () => {
@@ -57,4 +59,18 @@ test('notifyCzerwonaHelena sends heartbeat for no match on each refresh', async 
   assert.equal(first.type, 'heartbeat_no_match');
   assert.equal(second.type, 'heartbeat_no_match');
   assert.equal(calls, 2);
+});
+
+test('loose matching handles punctuation, prefixes, dashes and diacritics', () => {
+  const phrases = HELENA_GAWIN_PHRASES;
+  assert.equal(textMatchesAny('+ Helena Gawin', phrases), true);
+  assert.equal(textMatchesAny('† Helena Gawin', phrases), true);
+  assert.equal(textMatchesAny('Ś.P. Helena Gawin', phrases), true);
+  assert.equal(textMatchesAny('ś.p. Helenę Gawin', phrases), true);
+  assert.equal(textMatchesAny('Helena Gawin–Dereń', phrases), true);
+  assert.equal(textMatchesAny('Helena Gawin Deren', phrases), true);
+  assert.equal(textMatchesAny('Gawin, Helena', phrases), true);
+  assert.equal(textMatchesAny('Helena Nowak', phrases), false);
+  assert.equal(textMatchesAny('Gawron Helena', phrases), false);
+  assert.equal(textMatchesAny('Helena', phrases), false);
 });
