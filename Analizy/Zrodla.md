@@ -953,4 +953,281 @@ Najpierw naprawić:
    - deduplikować,
    - dodać fixture.
 
-2. `sa
+2. `salwator_grobonet`
+   - rozróżnić puste źródło od błędu parsera,
+   - brak linków na poprawnie pobranej stronie „Nekrologi” = `empty`, nie error.
+
+3. `fetch.mjs`
+   - curl musi raportować realny HTTP status,
+   - dodać retry po HTTP 403 z browser headers.
+
+4. `debniki_sdb`
+   - dodać parsing strony głównej,
+   - obsłużyć „W minionym tygodniu pożegnaliśmy…” jako `death`,
+   - nie wymagać słowa „pogrzeb” dla każdego rekordu,
+   - dodać parser wpisów typu „Zmarł Ks. Jan Kucharczyk” jako przykład `funeral`.
+
+============================================================
+6. MINIMALNE KRYTERIA AKCEPTACJI PO TEJ DODATKOWEJ ANALIZIE
+============================================================
+
+Po poprawkach:
+- Podwawelskie:
+  - nie może już zgłaszać błędu:
+    „znaleziono 6 linków, ale zero poprawnych rekordów”,
+  - linki 1–6 mają być traktowane jako paginacja,
+  - rekordy ze strony listy mają trafić do `data/latest.json` jako `death`.
+
+- Dębniki:
+  - przy dostępnym HTML strony głównej parser ma znaleźć wzmiankę:
+    „Śp. Irenę Jaworską l. 89”,
+  - brak daty pogrzebu nie może powodować odrzucenia rekordu,
+  - jeśli fetch nadal zwraca 403 po retry, źródło ma dostać status `blocked`, nie `parser_broken`.
+
+- Salwator Grobonet:
+  - aktualnie pusta strona „Nekrologi” ma dać:
+    `rows: []`,
+    `error: null`,
+    status `empty` albo warning `source_empty`,
+  - nie może trafiać do `source_errors` tylko z powodu braku linków szczegółów.
+
+- Fetch:
+  - curl nie może udawać HTTP 200,
+  - HTTP 403/404/500 muszą być widoczne jako realne statusy,
+  - `job.json` ma pozwalać odróżnić:
+    blokadę,
+    puste źródło,
+    błąd HTTP,
+    błąd parsera,
+    brak kandydatów,
+    kandydatów odrzuconych przez walidację.
+
+- Testy:
+  - `npm test` musi przechodzić.
+  - Testy nie powinny wymagać internetu.
+  - Aktualne HTML-e użyte do analizy powinny zostać zapisane jako fixture albo skrócone fixture z zachowaniem istotnej struktury.
+ 
+    ============================================================
+DODATKOWE INSTRUKCJE WDROŻENIOWE DLA AGENTA AI / CODEX
+============================================================
+
+Ten dokument jest wystarczającą specyfikacją do rozpoczęcia prac, ale przed zmianą kodu agent powinien wykonać krótki etap weryfikacyjny i dopiero potem kodować.
+
+PRIORYTET OGÓLNY:
+- Nie traktuj tego zadania jako „dopisz parsery na ślepo”.
+- Najpierw sprawdź aktualny stan kodu, fixture’ów i istniejących testów.
+- Następnie zrób minimalne, kompatybilne zmiany w pipeline.
+- Na końcu uruchom testy i upewnij się, że stare działające źródła nadal działają.
+
+WAŻNA DIAGNOZA PO PRZEGLĄDZIE REPO:
+1. `config/sources.json` rzeczywiście zawiera problematyczne źródła:
+   - `salwator_grobonet`
+   - `debniki_sdb`
+   - `podwawelskie_nekrologi`
+
+2. `data/job.json` potwierdza obecny problem:
+   - `salwator_grobonet`: nie znaleziono linków szczegółów
+   - `debniki_sdb`: HTTP 403
+   - `podwawelskie_nekrologi`: znaleziono 6 linków, ale zero poprawnych rekordów
+
+3. `scripts/fetch.mjs` ma istotny problem diagnostyczny:
+   - fallback przez `curl` obecnie może zwracać `status: 200`, jeśli proces curl się udał,
+   - nawet jeśli rzeczywisty HTTP status był np. 403/404/500,
+   - dlatego naprawa wiarygodnego statusu HTTP powinna być jednym z pierwszych kroków.
+
+4. `scripts/nekrolog_core.mjs` potwierdza diagnozę:
+   - Podwawelskie jest obecnie traktowane jako lista linków do szczegółów przez `parseByListAndDetails`,
+   - Grobonet też działa w modelu „lista linków → szczegóły”,
+   - Dębniki odrzucają treści, które nie zawierają mocnych słów pogrzebowych, więc nie złapią zwykłej wzmianki o zgonie.
+
+5. `tests/refresh.parsers.test.mjs` zawiera testy pod stary model parserów.
+   - Testy dla Podwawelskiego mogą zakładać listę linków i detail page.
+   - Przy zmianie na parser listowy trzeba je świadomie zaktualizować, a nie próbować utrzymać błędnego modelu tylko dlatego, że stary test tak zakłada.
+
+ZALECANA KOLEJNOŚĆ PRAC:
+
+ETAP 0 — ROZPOZNANIE I BEZPIECZEŃSTWO
+- Przeczytaj:
+  - `AGENTS.md`, jeśli istnieje,
+  - `package.json`,
+  - `config/sources.json`,
+  - `scripts/fetch.mjs`,
+  - `scripts/nekrolog_core.mjs`,
+  - `scripts/refresh_static.mjs`,
+  - `tests/refresh.parsers.test.mjs`,
+  - aktualne fixture’y w `tests/fixtures/`.
+- Nie zmieniaj `Frazy.json`.
+- Nie wysyłaj powiadomień testowych na Discord.
+- Jeżeli uruchamiasz lokalny refresh, ustaw:
+  `DISCORD_NOTIFY_ENABLED=false`
+
+ETAP 1 — NAPRAW FETCH / HTTP STATUS
+- Najpierw napraw `scripts/fetch.mjs`, żeby statusy HTTP były wiarygodne.
+- Fallback curl nie może zakładać `status: 200` tylko dlatego, że curl zwrócił body.
+- Użyj mechanizmu w stylu:
+  `curl -L --silent --show-error --max-time ... --write-out "\n__HTTP_STATUS__:%{http_code}"`
+- Rozdziel body od statusu.
+- Zwracaj realne:
+  - `ok`
+  - `status`
+  - `text`
+  - `error`
+- Jeśli dodajesz fallback z nagłówkami przeglądarkowymi, zrób go ostrożnie:
+  - najlepiej jako drugą próbę po 403 albo jako opcję wewnętrzną,
+  - nie psuj źródeł, które już działają.
+- Zalecane nagłówki dla fallbacku:
+  - `User-Agent: Mozilla/5.0 ...`
+  - `Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`
+  - `Accept-Language: pl-PL,pl;q=0.9,en;q=0.8`
+  - `Referer: origin źródła`
+
+ETAP 2 — DIAGNOSTYKA ŹRÓDEŁ
+- Dodaj lekką diagnostykę źródeł, ale zachowaj kompatybilność obecnych plików JSON.
+- Nie usuwaj istniejących pól:
+  - `status`
+  - `ok`
+  - `error_message`
+  - `source_errors`
+  - `data/latest.json`
+  - `data/errors.json`
+- Możesz dodać nowe pole, np.:
+  - `source_statuses`
+  - `source_warnings`
+  - `source_diagnostics`
+- Diagnostyka powinna pozwalać odróżnić:
+  - `ok`
+  - `empty`
+  - `blocked`
+  - `http_error`
+  - `parser_broken`
+  - `fetch_error`
+- Dla każdego problematycznego źródła warto zapisać, jeśli to możliwe:
+  - `source_id`
+  - `http_status`
+  - `html_length`
+  - `candidate_links`
+  - `candidate_rows`
+  - `accepted_rows`
+  - `rejected_rows`
+  - `parser_status`
+
+ETAP 3 — PODWAWELSKIE
+- To jest najbardziej jednoznaczny problem logiczny.
+- Linki `1, 2, 3, 4, 5, 6` na stronie Podwawelskiego to paginacja, a nie linki do szczegółów pojedynczych nekrologów.
+- Nie używaj dla tego źródła ślepo `parseByListAndDetails`.
+- Zrób parser listowy:
+  - strona główna listy,
+  - strony paginacji jako kolejne strony listy,
+  - rekordy wyciągane bezpośrednio z treści listy.
+- Rekord logiczny ma mieć:
+  - `kind: "death"`
+  - `name`
+  - `date_death`
+  - `date_funeral: null`
+  - `time_funeral: null`
+  - `place: "Podwawelskie – Nekrologi"`
+  - `source_id: "podwawelskie_nekrologi"`
+  - `source_name: "Podwawelskie – Nekrologi"`
+  - `source_url`
+  - `url`
+  - `note`
+- Jeśli jest data urodzenia i data śmierci:
+  - data śmierci idzie do `date_death`,
+  - data urodzenia może trafić do `note`,
+  - nie dodawaj sztucznej daty pogrzebu.
+- Dodaj deduplikację.
+- Ważny przypadek: Marek Kubik był widoczny na końcu strony 1 i początku strony 2.
+- Zalecany klucz deduplikacji:
+  `source_id + name + date_birth + date_death`
+  albo, jeśli `date_birth` nie jest polem rekordu:
+  `source_id + name + date_death + note zawierający date_birth`
+- Jeśli agent ma dostęp do internetu przez curl/fetch:
+  - pobierz strony paginacji 3–6,
+  - potwierdź, że mają ten sam układ,
+  - dodaj albo zaktualizuj fixture’y.
+- Jeśli agent nie ma internetu:
+  - użyj obecnych informacji z tego dokumentu,
+  - utwórz fixture minimalny na podstawie opisanych przykładów.
+
+ETAP 4 — DĘBNIKI SDB
+- Dębniki mają dwa niezależne problemy:
+  1. fetch może zwracać 403,
+  2. parser może odrzucać poprawne wzmianki, bo szuka tylko silnych informacji pogrzebowych.
+- Po stronie fetch:
+  - spróbuj fallbacku z przeglądarkowymi nagłówkami,
+  - jeśli nadal jest 403, raportuj to jako `blocked`, a nie jako parser broken.
+- Po stronie parsera:
+  - obsłuż nie tylko pogrzeby, ale też wzmianki o zgonach.
+- Szukaj fraz typu:
+  - `W minionym tygodniu pożegnaliśmy`
+  - `pożegnaliśmy z naszej wspólnoty`
+  - `Śp.`
+  - `śp.`
+  - `zmarła`
+  - `zmarł`
+- Jeśli brak daty/godziny pogrzebu, ale jest jednoznaczna osoba zmarła:
+  - utwórz rekord `kind: "death"`,
+  - `date_death: null`, jeśli nie da się jej ustalić,
+  - `date_funeral: null`,
+  - `time_funeral: null`,
+  - `place: "Parafia św. Stanisława Kostki (Dębniki)"`,
+  - `note` z krótkim fragmentem ogłoszenia.
+- Jeśli jest data/godzina pogrzebu:
+  - utwórz rekord `kind: "funeral"`.
+- Nie odrzucaj rekordu tylko dlatego, że nie ma słowa `pogrzeb`.
+
+ETAP 5 — SALWATOR / GROBONET
+- Brak linków szczegółów nie zawsze oznacza błąd parsera.
+- Dla Grobonetu rozróżnij:
+  1. HTTP/fetch error,
+  2. źródło dostępne, ale puste,
+  3. źródło zawiera rekordy, ale parser ich nie rozpoznaje.
+- Jeśli HTML jest poprawnie pobrany i wygląda jak strona Grobonetu/Nekrologi, ale nie ma aktualnych nekrologów:
+  - nie zgłaszaj błędu `nie znaleziono linków szczegółów`,
+  - zwróć pustą listę i status/warning `empty` albo brak błędu, zależnie od obecnej architektury.
+- Jeśli znajdziesz prawdziwy endpoint AJAX/API Grobonetu:
+  - możesz go użyć,
+  - ale tylko po dodaniu fixture’a/testu,
+  - nie opieraj całego parsera na niezweryfikowanej hipotezie.
+
+ETAP 6 — TESTY
+- Zaktualizuj istniejące testy zamiast utrwalać błędny model.
+- Dodaj lub zmień fixture’y dla:
+  - Podwawelskiego jako listy rekordów, nie detail page,
+  - Podwawelskiego z paginacją,
+  - Dębnik z ogłoszeniem o zgonie bez daty pogrzebu,
+  - Grobonetu z pustą, ale poprawną stroną,
+  - ewentualnie fetch/curl status 403.
+- Testy powinny potwierdzać:
+  - Podwawelskie zwraca rekordy `death`,
+  - paginacja Podwawelskiego nie jest traktowana jako detail page,
+  - Podwawelskie deduplikuje rekord powtórzony na granicy stron,
+  - Dębniki tworzą `death` bez daty pogrzebu,
+  - Dębniki nie mylą zwykłych intencji mszalnych z nekrologiem,
+  - Grobonet pusty nie jest `parser_broken`,
+  - HTTP 403 jest widoczne jako 403/blocked, a nie sztuczne 200.
+
+ETAP 7 — WERYFIKACJA KOŃCOWA
+- Uruchom:
+  `npm test`
+- Jeśli uruchamiasz refresh lokalnie, użyj:
+  `DISCORD_NOTIFY_ENABLED=false`
+- Po zmianach sprawdź:
+  - `data/job.json`,
+  - `data/errors.json`,
+  - `data/latest.json`.
+- Nie twórz dodatkowych raportów w repo.
+- Nie zmieniaj mechanizmu fraz Heleny.
+- Nie przebudowuj frontendu, chyba że jest to minimalna zmiana do pokazania nowego statusu diagnostycznego.
+
+KRYTERIUM „DOBRZE WYKONANE”
+Zadanie można uznać za dobrze wykonane dopiero wtedy, gdy:
+- `npm test` przechodzi,
+- Podwawelskie nie myli paginacji z linkami szczegółów,
+- Podwawelskie potrafi zwrócić rekordy `death` z listy,
+- Dębniki mają albo działający fetch po fallbacku nagłówków, albo czytelny status `blocked`,
+- parser Dębnik umie utworzyć `death` bez daty pogrzebu,
+- Grobonet rozróżnia puste źródło od zepsutego parsera,
+- fallback curl nie udaje HTTP 200 dla stron błędu,
+- diagnostyka w `job.json` albo dodatkowym kompatybilnym polu pozwala zrozumieć, co stało się z każdym problematycznym źródłem,
+- istniejące działające źródła nie zostały popsute.
