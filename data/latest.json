@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-20T10:27:45.513Z",
-  "updated_at": "2026-05-20T10:27:45.513Z",
+  "generated_at": "2026-05-20T21:02:33.608Z",
+  "updated_at": "2026-05-20T21:02:33.608Z",
   "deaths": [
     {
       "kind": "death",
@@ -28,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Henryk Hinc",
+      "date_death": "2026-05-18",
+      "date_funeral": "2026-05-22",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
       "priority_hit": false
     },
     {
@@ -550,6 +564,34 @@
     },
     {
       "kind": "death",
+      "name": "Śp. BOGUSŁAW ŁASAK",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. MACIEJ PIWOWARCZYK",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Śp. HALINA KWIECIEŃ",
       "date_death": null,
       "date_funeral": null,
@@ -860,6 +902,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Henryk Hinc",
+      "date_death": null,
+      "date_funeral": "2026-05-20",
+      "time_funeral": "10:00",
+      "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Jan Raś",
       "date_death": "2026-05-16",
       "date_funeral": "2026-05-25",
@@ -884,6 +940,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Henryk Hinc",
+      "date_death": "2026-05-18",
+      "date_funeral": "2026-05-22",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
       "priority_hit": false
     },
     {
@@ -1660,6 +1730,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Henryk Hinc",
+      "date_death": "2026-05-18",
+      "date_funeral": "2026-05-22",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Jan Raś",
       "date_death": "2026-05-16",
       "date_funeral": "2026-05-25",
@@ -1714,6 +1798,20 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Henryk Hinc",
+      "date_death": null,
+      "date_funeral": "2026-05-20",
+      "time_funeral": "10:00",
+      "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
       "priority_hit": false
     },
     {
@@ -1938,6 +2036,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Henryk Hinc",
+      "date_death": "2026-05-18",
+      "date_funeral": "2026-05-22",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
       "priority_hit": false
     },
     {
@@ -2327,8 +2439,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-20T10:27:45.513Z",
-    "updated_at": "2026-05-20T10:27:45.513Z",
+    "generated_at": "2026-05-20T21:02:33.608Z",
+    "updated_at": "2026-05-20T21:02:33.608Z",
     "deaths": [
       {
         "kind": "death",
@@ -2356,6 +2468,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
         "priority_hit": false
       },
       {
@@ -2878,6 +3004,34 @@
       },
       {
         "kind": "death",
+        "name": "Śp. BOGUSŁAW ŁASAK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MACIEJ PIWOWARCZYK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. HALINA KWIECIEŃ",
         "date_death": null,
         "date_funeral": null,
@@ -3188,6 +3342,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": null,
+        "date_funeral": "2026-05-20",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Jan Raś",
         "date_death": "2026-05-16",
         "date_funeral": "2026-05-25",
@@ -3212,6 +3380,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
         "priority_hit": false
       },
       {
@@ -3988,6 +4170,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Jan Raś",
         "date_death": "2026-05-16",
         "date_funeral": "2026-05-25",
@@ -4042,6 +4238,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": null,
+        "date_funeral": "2026-05-20",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
         "priority_hit": false
       },
       {
@@ -4266,6 +4476,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4656,8 +4880,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-20T10:27:45.513Z",
-    "updated_at": "2026-05-20T10:27:45.513Z",
+    "generated_at": "2026-05-20T21:02:33.608Z",
+    "updated_at": "2026-05-20T21:02:33.608Z",
     "deaths": [
       {
         "kind": "death",
@@ -4685,6 +4909,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł | Data pogrzebu 22.05.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
         "priority_hit": false
       },
       {
@@ -5207,6 +5445,34 @@
       },
       {
         "kind": "death",
+        "name": "Śp. BOGUSŁAW ŁASAK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MACIEJ PIWOWARCZYK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. HALINA KWIECIEŃ",
         "date_death": null,
         "date_funeral": null,
@@ -5517,6 +5783,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": null,
+        "date_funeral": "2026-05-20",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Jan Raś",
         "date_death": "2026-05-16",
         "date_funeral": "2026-05-25",
@@ -5541,6 +5821,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam--Tabakiernik-GU72MD42AMJJ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.05.2026 przeżywszy 76 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
         "priority_hit": false
       },
       {
@@ -6317,6 +6611,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Jan Raś",
         "date_death": "2026-05-16",
         "date_funeral": "2026-05-25",
@@ -6371,6 +6679,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": null,
+        "date_funeral": "2026-05-20",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
         "priority_hit": false
       },
       {
@@ -6595,6 +6917,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Henryk Hinc",
+        "date_death": "2026-05-18",
+        "date_funeral": "2026-05-22",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł",
         "priority_hit": false
       },
       {
