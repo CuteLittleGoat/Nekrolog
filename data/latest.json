@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T20:09:26.048Z",
-  "updated_at": "2026-05-23T20:09:26.048Z",
+  "generated_at": "2026-05-24T09:24:13.605Z",
+  "updated_at": "2026-05-24T09:24:13.605Z",
   "deaths": [
     {
       "kind": "death",
@@ -396,20 +396,6 @@
     },
     {
       "kind": "death",
-      "name": "Kazimierz Głowania",
-      "date_death": "2026-04-23",
-      "date_funeral": "2026-04-30",
-      "time_funeral": "13:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł | Data pogrzebu 30.04.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Alicja Janowska",
       "date_death": "2026-04-22",
       "date_funeral": "2026-04-30",
@@ -448,48 +434,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła | Data pogrzebu 28.04.2026 12:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Tadeusz Bierowski",
-      "date_death": "2026-04-21",
-      "date_funeral": "2026-04-27",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł | Data pogrzebu 27.04.2026 13:40",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. WIESŁAW PIWOWARSKI",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. ARKADIUSZ TOMASZEWSKI",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
       "priority_hit": false
     },
     {
@@ -536,6 +480,34 @@
     },
     {
       "kind": "death",
+      "name": "Śp. WIESŁAW PIWOWARSKI",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. ARKADIUSZ TOMASZEWSKI",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Śp. GRAŻYNA ADAMCZYK",
       "date_death": null,
       "date_funeral": null,
@@ -572,34 +544,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/rett-ryszard-ludwikowski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. BOGUSŁAW ŁASAK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. MACIEJ PIWOWARCZYK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1000,20 +944,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Kazimierz Głowania",
-      "date_death": "2026-04-23",
-      "date_funeral": "2026-04-30",
-      "time_funeral": "13:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Alicja Janowska",
       "date_death": "2026-04-22",
       "date_funeral": "2026-04-30",
@@ -1052,20 +982,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Tadeusz Bierowski",
-      "date_death": "2026-04-21",
-      "date_funeral": "2026-04-27",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł",
       "priority_hit": false
     },
     {
@@ -1390,20 +1306,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jan Raś",
-      "date_death": "2026-05-16",
-      "date_funeral": "2026-05-25",
-      "time_funeral": "10:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Ras-V3T17HUFYX15",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 16.05.2026 przeżywszy 93 lata zmarł | Data pogrzebu 25.05.2026 10:20",
       "priority_hit": false
     }
   ],
@@ -1781,8 +1683,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-23T20:09:26.048Z",
-    "updated_at": "2026-05-23T20:09:26.048Z",
+    "generated_at": "2026-05-24T09:24:13.605Z",
+    "updated_at": "2026-05-24T09:24:13.605Z",
     "deaths": [
       {
         "kind": "death",
@@ -2178,20 +2080,6 @@
       },
       {
         "kind": "death",
-        "name": "Kazimierz Głowania",
-        "date_death": "2026-04-23",
-        "date_funeral": "2026-04-30",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł | Data pogrzebu 30.04.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Alicja Janowska",
         "date_death": "2026-04-22",
         "date_funeral": "2026-04-30",
@@ -2230,48 +2118,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła | Data pogrzebu 28.04.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Tadeusz Bierowski",
-        "date_death": "2026-04-21",
-        "date_funeral": "2026-04-27",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł | Data pogrzebu 27.04.2026 13:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. WIESŁAW PIWOWARSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ARKADIUSZ TOMASZEWSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
         "priority_hit": false
       },
       {
@@ -2318,6 +2164,34 @@
       },
       {
         "kind": "death",
+        "name": "Śp. WIESŁAW PIWOWARSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. ARKADIUSZ TOMASZEWSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. GRAŻYNA ADAMCZYK",
         "date_death": null,
         "date_funeral": null,
@@ -2354,34 +2228,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/rett-ryszard-ludwikowski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. BOGUSŁAW ŁASAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MACIEJ PIWOWARCZYK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -2782,20 +2628,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Kazimierz Głowania",
-        "date_death": "2026-04-23",
-        "date_funeral": "2026-04-30",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Alicja Janowska",
         "date_death": "2026-04-22",
         "date_funeral": "2026-04-30",
@@ -2834,20 +2666,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Tadeusz Bierowski",
-        "date_death": "2026-04-21",
-        "date_funeral": "2026-04-27",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł",
         "priority_hit": false
       },
       {
@@ -3172,20 +2990,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Jan Raś",
-        "date_death": "2026-05-16",
-        "date_funeral": "2026-05-25",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Ras-V3T17HUFYX15",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.05.2026 przeżywszy 93 lata zmarł | Data pogrzebu 25.05.2026 10:20",
         "priority_hit": false
       }
     ],
@@ -3564,8 +3368,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-23T20:09:26.048Z",
-    "updated_at": "2026-05-23T20:09:26.048Z",
+    "generated_at": "2026-05-24T09:24:13.605Z",
+    "updated_at": "2026-05-24T09:24:13.605Z",
     "deaths": [
       {
         "kind": "death",
@@ -3961,20 +3765,6 @@
       },
       {
         "kind": "death",
-        "name": "Kazimierz Głowania",
-        "date_death": "2026-04-23",
-        "date_funeral": "2026-04-30",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł | Data pogrzebu 30.04.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Alicja Janowska",
         "date_death": "2026-04-22",
         "date_funeral": "2026-04-30",
@@ -4013,48 +3803,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła | Data pogrzebu 28.04.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Tadeusz Bierowski",
-        "date_death": "2026-04-21",
-        "date_funeral": "2026-04-27",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł | Data pogrzebu 27.04.2026 13:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. WIESŁAW PIWOWARSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ARKADIUSZ TOMASZEWSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
         "priority_hit": false
       },
       {
@@ -4101,6 +3849,34 @@
       },
       {
         "kind": "death",
+        "name": "Śp. WIESŁAW PIWOWARSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/wieslaw-piwowarski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. ARKADIUSZ TOMASZEWSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/arkadiusz-tomaszewski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. GRAŻYNA ADAMCZYK",
         "date_death": null,
         "date_funeral": null,
@@ -4137,34 +3913,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/rett-ryszard-ludwikowski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. BOGUSŁAW ŁASAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/boguslaw-lasak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MACIEJ PIWOWARCZYK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/maciej-piwowarczyk/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4565,20 +4313,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Kazimierz Głowania",
-        "date_death": "2026-04-23",
-        "date_funeral": "2026-04-30",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Glowania-0FP9JYA6WO40",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.04.2026 przeżywszy 87 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Alicja Janowska",
         "date_death": "2026-04-22",
         "date_funeral": "2026-04-30",
@@ -4617,20 +4351,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Dembinska-ZFMEDE10TW8X",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Tadeusz Bierowski",
-        "date_death": "2026-04-21",
-        "date_funeral": "2026-04-27",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Bierowski-FLA5MPICLAZ9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 21.04.2026 przeżywszy 75 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4955,20 +4675,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Henryk-Hinc-KX03YXJSM65W",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 18.05.2026 przeżywszy 46 lat zmarł | Data pogrzebu 22.05.2026 10:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Jan Raś",
-        "date_death": "2026-05-16",
-        "date_funeral": "2026-05-25",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Ras-V3T17HUFYX15",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.05.2026 przeżywszy 93 lata zmarł | Data pogrzebu 25.05.2026 10:20",
         "priority_hit": false
       }
     ],
