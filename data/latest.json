@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-30T20:12:10.639Z",
-  "updated_at": "2026-05-30T20:12:10.639Z",
+  "generated_at": "2026-05-31T09:49:21.867Z",
+  "updated_at": "2026-05-31T09:49:21.867Z",
   "deaths": [
     {
       "kind": "death",
@@ -452,20 +452,6 @@
     },
     {
       "kind": "death",
-      "name": "Stanisława Kołakowska",
-      "date_death": "2026-04-28",
-      "date_funeral": "2026-05-06",
-      "time_funeral": "10:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła | Data pogrzebu 06.05.2026 10:20",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Barbara Bułat",
       "date_death": "2026-04-29",
       "date_funeral": "2026-05-05",
@@ -578,20 +564,6 @@
     }
   ],
   "funerals": [
-    {
-      "kind": "funeral",
-      "name": "Krzysztof Potocki",
-      "date_death": null,
-      "date_funeral": "2026-05-30",
-      "time_funeral": "12:00",
-      "place": "Kaplica – Cmentarz Rakowicki",
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "source_url": "https://www.zck-krakow.pl/funerals",
-      "note": "ZCK fallback date; Cmentarz Rakowicki",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Barbara Groyecka",
@@ -1042,20 +1014,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Stanisława Kołakowska",
-      "date_death": "2026-04-28",
-      "date_funeral": "2026-05-06",
-      "time_funeral": "10:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Barbara Bułat",
       "date_death": "2026-04-29",
       "date_funeral": "2026-05-05",
@@ -1461,65 +1419,9 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 25.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 29.05.2026 14:20",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zdzisława Różewicz- Zielińska",
-      "date_death": "2026-05-23",
-      "date_funeral": "2026-06-02",
-      "time_funeral": "13:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislawa-Rozewicz--Zielinska-1BHU4S7PXV70",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.05.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.06.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Stanisław Kaczmarczyk",
-      "date_death": "2026-05-23",
-      "date_funeral": "2026-05-29",
-      "time_funeral": "11:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Kaczmarczyk-53XW2LR3NJPE",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.05.2026 przeżywszy 85 lat zmarł | Data pogrzebu 29.05.2026 11:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zofia Domańska",
-      "date_death": "2026-05-23",
-      "date_funeral": "2026-05-28",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Domanska-ZY01JUCTOILU",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 28.05.2026 12:00",
-      "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Krzysztof Potocki",
-      "date_death": null,
-      "date_funeral": "2026-05-30",
-      "time_funeral": "12:00",
-      "place": "Kaplica – Cmentarz Rakowicki",
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "source_url": "https://www.zck-krakow.pl/funerals",
-      "note": "ZCK fallback date; Cmentarz Rakowicki",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Genowefa Rachwał",
@@ -1935,8 +1837,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-05-30T20:12:10.639Z",
-    "updated_at": "2026-05-30T20:12:10.639Z",
+    "generated_at": "2026-05-31T09:49:21.867Z",
+    "updated_at": "2026-05-31T09:49:21.867Z",
     "deaths": [
       {
         "kind": "death",
@@ -2388,20 +2290,6 @@
       },
       {
         "kind": "death",
-        "name": "Stanisława Kołakowska",
-        "date_death": "2026-04-28",
-        "date_funeral": "2026-05-06",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła | Data pogrzebu 06.05.2026 10:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Barbara Bułat",
         "date_death": "2026-04-29",
         "date_funeral": "2026-05-05",
@@ -2514,20 +2402,6 @@
       }
     ],
     "funerals": [
-      {
-        "kind": "funeral",
-        "name": "Krzysztof Potocki",
-        "date_death": null,
-        "date_funeral": "2026-05-30",
-        "time_funeral": "12:00",
-        "place": "Kaplica – Cmentarz Rakowicki",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Rakowicki",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Barbara Groyecka",
@@ -2978,20 +2852,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Stanisława Kołakowska",
-        "date_death": "2026-04-28",
-        "date_funeral": "2026-05-06",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Barbara Bułat",
         "date_death": "2026-04-29",
         "date_funeral": "2026-05-05",
@@ -3397,65 +3257,9 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 25.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 29.05.2026 14:20",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Zdzisława Różewicz- Zielińska",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-06-02",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislawa-Rozewicz--Zielinska-1BHU4S7PXV70",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.06.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Stanisław Kaczmarczyk",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-05-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Kaczmarczyk-53XW2LR3NJPE",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 85 lat zmarł | Data pogrzebu 29.05.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Zofia Domańska",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-05-28",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Domanska-ZY01JUCTOILU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 28.05.2026 12:00",
-        "priority_hit": false
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Krzysztof Potocki",
-        "date_death": null,
-        "date_funeral": "2026-05-30",
-        "time_funeral": "12:00",
-        "place": "Kaplica – Cmentarz Rakowicki",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Rakowicki",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Genowefa Rachwał",
@@ -3872,8 +3676,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-05-30T20:12:10.639Z",
-    "updated_at": "2026-05-30T20:12:10.639Z",
+    "generated_at": "2026-05-31T09:49:21.867Z",
+    "updated_at": "2026-05-31T09:49:21.867Z",
     "deaths": [
       {
         "kind": "death",
@@ -4325,20 +4129,6 @@
       },
       {
         "kind": "death",
-        "name": "Stanisława Kołakowska",
-        "date_death": "2026-04-28",
-        "date_funeral": "2026-05-06",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła | Data pogrzebu 06.05.2026 10:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Barbara Bułat",
         "date_death": "2026-04-29",
         "date_funeral": "2026-05-05",
@@ -4451,20 +4241,6 @@
       }
     ],
     "funerals": [
-      {
-        "kind": "funeral",
-        "name": "Krzysztof Potocki",
-        "date_death": null,
-        "date_funeral": "2026-05-30",
-        "time_funeral": "12:00",
-        "place": "Kaplica – Cmentarz Rakowicki",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Rakowicki",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Barbara Groyecka",
@@ -4915,20 +4691,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Stanisława Kołakowska",
-        "date_death": "2026-04-28",
-        "date_funeral": "2026-05-06",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Kolakowska-2Y7JG6I6TBNM",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 28.04.2026 przeżywszy 76 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Barbara Bułat",
         "date_death": "2026-04-29",
         "date_funeral": "2026-05-05",
@@ -5334,65 +5096,9 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 25.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 29.05.2026 14:20",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Zdzisława Różewicz- Zielińska",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-06-02",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislawa-Rozewicz--Zielinska-1BHU4S7PXV70",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.06.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Stanisław Kaczmarczyk",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-05-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Kaczmarczyk-53XW2LR3NJPE",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 85 lat zmarł | Data pogrzebu 29.05.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Zofia Domańska",
-        "date_death": "2026-05-23",
-        "date_funeral": "2026-05-28",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Domanska-ZY01JUCTOILU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.05.2026 przeżywszy 90 lat zmarła | Data pogrzebu 28.05.2026 12:00",
-        "priority_hit": false
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Krzysztof Potocki",
-        "date_death": null,
-        "date_funeral": "2026-05-30",
-        "time_funeral": "12:00",
-        "place": "Kaplica – Cmentarz Rakowicki",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Rakowicki",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Genowefa Rachwał",
