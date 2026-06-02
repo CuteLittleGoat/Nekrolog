@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-06-02T11:23:06.843Z",
-  "updated_at": "2026-06-02T11:23:06.843Z",
+  "generated_at": "2026-06-02T21:53:50.773Z",
+  "updated_at": "2026-06-02T21:53:50.773Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Maria Bogumiła Bil",
+      "date_death": "2026-05-30",
+      "date_funeral": "2026-06-05",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Barbara Groyecka",
@@ -758,6 +772,20 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Grębałów",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Bogumiła Bil",
+      "date_death": "2026-05-30",
+      "date_funeral": "2026-06-05",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1604,6 +1632,20 @@
     },
     {
       "kind": "death",
+      "name": "Maria Bogumiła Bil",
+      "date_death": "2026-05-30",
+      "date_funeral": "2026-06-05",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Krystyna Jaglarz",
       "date_death": "2026-05-27",
       "date_funeral": "2026-06-02",
@@ -1924,6 +1966,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Groyecka-8GBYA409PIZ5",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 26.05.2026 przeżywszy 83 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Bogumiła Bil",
+      "date_death": "2026-05-30",
+      "date_funeral": "2026-06-05",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -2285,9 +2341,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-02T11:23:06.843Z",
-    "updated_at": "2026-06-02T11:23:06.843Z",
+    "generated_at": "2026-06-02T21:53:50.773Z",
+    "updated_at": "2026-06-02T21:53:50.773Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Barbara Groyecka",
@@ -3044,6 +3114,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3890,6 +3974,20 @@
       },
       {
         "kind": "death",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Krystyna Jaglarz",
         "date_death": "2026-05-27",
         "date_funeral": "2026-06-02",
@@ -4210,6 +4308,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Groyecka-8GBYA409PIZ5",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 26.05.2026 przeżywszy 83 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -4572,9 +4684,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-02T11:23:06.843Z",
-    "updated_at": "2026-06-02T11:23:06.843Z",
+    "generated_at": "2026-06-02T21:53:50.773Z",
+    "updated_at": "2026-06-02T21:53:50.773Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Barbara Groyecka",
@@ -5331,6 +5457,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6177,6 +6317,20 @@
       },
       {
         "kind": "death",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Krystyna Jaglarz",
         "date_death": "2026-05-27",
         "date_funeral": "2026-06-02",
@@ -6497,6 +6651,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Groyecka-8GBYA409PIZ5",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 26.05.2026 przeżywszy 83 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Bogumiła Bil",
+        "date_death": "2026-05-30",
+        "date_funeral": "2026-06-05",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła",
         "priority_hit": false
       }
     ],
