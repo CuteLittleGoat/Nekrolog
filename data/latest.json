@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-06T20:14:59.619Z",
-  "updated_at": "2026-06-06T20:14:59.619Z",
+  "generated_at": "2026-06-07T10:08:29.803Z",
+  "updated_at": "2026-06-07T10:08:29.803Z",
   "deaths": [
     {
       "kind": "death",
@@ -406,20 +406,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Piechnik",
-      "date_death": "2026-04-14",
-      "date_funeral": "2026-05-12",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła | Data pogrzebu 12.05.2026 12:00",
       "priority_hit": false
     },
     {
@@ -958,20 +944,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Barbara Piechnik",
-      "date_death": "2026-04-14",
-      "date_funeral": "2026-05-12",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Maria Kardasz",
       "date_death": "2026-05-07",
       "date_funeral": "2026-05-12",
@@ -1348,20 +1320,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislaw-Stanach-8MINVWV0XZD2",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 31.05.2026 przeżywszy 73 lat zmarł | Data pogrzebu 03.06.2026 08:30",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Bogumiła Bil",
-      "date_death": "2026-05-30",
-      "date_funeral": "2026-06-05",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
       "priority_hit": false
     }
   ],
@@ -1753,8 +1711,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-06T20:14:59.619Z",
-    "updated_at": "2026-06-06T20:14:59.619Z",
+    "generated_at": "2026-06-07T10:08:29.803Z",
+    "updated_at": "2026-06-07T10:08:29.803Z",
     "deaths": [
       {
         "kind": "death",
@@ -2160,20 +2118,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Barbara Piechnik",
-        "date_death": "2026-04-14",
-        "date_funeral": "2026-05-12",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła | Data pogrzebu 12.05.2026 12:00",
         "priority_hit": false
       },
       {
@@ -2712,20 +2656,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Barbara Piechnik",
-        "date_death": "2026-04-14",
-        "date_funeral": "2026-05-12",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Maria Kardasz",
         "date_death": "2026-05-07",
         "date_funeral": "2026-05-12",
@@ -3102,20 +3032,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislaw-Stanach-8MINVWV0XZD2",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 31.05.2026 przeżywszy 73 lat zmarł | Data pogrzebu 03.06.2026 08:30",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Maria Bogumiła Bil",
-        "date_death": "2026-05-30",
-        "date_funeral": "2026-06-05",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
         "priority_hit": false
       }
     ],
@@ -3508,8 +3424,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-06T20:14:59.619Z",
-    "updated_at": "2026-06-06T20:14:59.619Z",
+    "generated_at": "2026-06-07T10:08:29.803Z",
+    "updated_at": "2026-06-07T10:08:29.803Z",
     "deaths": [
       {
         "kind": "death",
@@ -3915,20 +3831,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Szajnowska-5CL4D8QSHHIN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 07.05.2026 przeżywszy 79 lat zmarła | Data pogrzebu 12.05.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Barbara Piechnik",
-        "date_death": "2026-04-14",
-        "date_funeral": "2026-05-12",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła | Data pogrzebu 12.05.2026 12:00",
         "priority_hit": false
       },
       {
@@ -4467,20 +4369,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Barbara Piechnik",
-        "date_death": "2026-04-14",
-        "date_funeral": "2026-05-12",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Piechnik-BJ80636JEP1U",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 14.04.2026 przeżywszy 64 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Maria Kardasz",
         "date_death": "2026-05-07",
         "date_funeral": "2026-05-12",
@@ -4857,20 +4745,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zdzislaw-Stanach-8MINVWV0XZD2",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 31.05.2026 przeżywszy 73 lat zmarł | Data pogrzebu 03.06.2026 08:30",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Maria Bogumiła Bil",
-        "date_death": "2026-05-30",
-        "date_funeral": "2026-06-05",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Bil-BMSNT88MWAMD",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.05.2026 przeżywszy 69 lat zmarła | Data pogrzebu 05.06.2026 11:40",
         "priority_hit": false
       }
     ],
