@@ -1,8 +1,8 @@
 {
   "status": "done_with_errors",
-  "started_at": "2026-06-08T12:02:49.651Z",
-  "finished_at": "2026-06-08T12:03:16.868Z",
-  "updated_at": "2026-06-08T12:03:16.868Z",
+  "started_at": "2026-06-08T21:12:01.962Z",
+  "finished_at": "2026-06-08T21:12:23.860Z",
+  "updated_at": "2026-06-08T21:12:23.860Z",
   "ok": true,
   "error_message": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
   "source_errors": [
