@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-06-10T11:00:23.118Z",
-  "updated_at": "2026-06-10T11:00:23.118Z",
+  "generated_at": "2026-06-10T21:26:58.535Z",
+  "updated_at": "2026-06-10T21:26:58.535Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Krystyna Cygan",
+      "date_death": "2026-06-09",
+      "date_funeral": "2026-06-12",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Anna Elżbieta Maleszka",
@@ -28,6 +42,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł | Data pogrzebu 11.06.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lidia Burliga",
+      "date_death": "2026-06-07",
+      "date_funeral": "2026-06-11",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
       "priority_hit": false
     },
     {
@@ -874,6 +902,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Krystyna Cygan",
+      "date_death": "2026-06-09",
+      "date_funeral": "2026-06-12",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Anna Elżbieta Maleszka",
       "date_death": "2026-06-01",
       "date_funeral": "2026-06-12",
@@ -898,6 +940,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Lidia Burliga",
+      "date_death": "2026-06-07",
+      "date_funeral": "2026-06-11",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1618,6 +1674,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Krystyna Cygan",
+      "date_death": "2026-06-09",
+      "date_funeral": "2026-06-12",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lidia Burliga",
+      "date_death": "2026-06-07",
+      "date_funeral": "2026-06-11",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Marian Strug",
       "date_death": "2026-06-06",
       "date_funeral": "2026-06-11",
@@ -2012,6 +2096,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Lidia Burliga",
+      "date_death": "2026-06-07",
+      "date_funeral": "2026-06-11",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Marian Strug",
       "date_death": "2026-06-06",
       "date_funeral": "2026-06-11",
@@ -2036,6 +2134,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Elzbieta-Maleszka-1C6TM8Q4U2EX",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 01.06.2026 przeżywszy 80 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Krystyna Cygan",
+      "date_death": "2026-06-09",
+      "date_funeral": "2026-06-12",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
       "priority_hit": false
     }
   ],
@@ -2397,9 +2509,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-10T11:00:23.118Z",
-    "updated_at": "2026-06-10T11:00:23.118Z",
+    "generated_at": "2026-06-10T21:26:58.535Z",
+    "updated_at": "2026-06-10T21:26:58.535Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Anna Elżbieta Maleszka",
@@ -2426,6 +2552,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł | Data pogrzebu 11.06.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
         "priority_hit": false
       },
       {
@@ -3272,6 +3412,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Elżbieta Maleszka",
         "date_death": "2026-06-01",
         "date_funeral": "2026-06-12",
@@ -3296,6 +3450,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4016,6 +4184,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Marian Strug",
         "date_death": "2026-06-06",
         "date_funeral": "2026-06-11",
@@ -4410,6 +4606,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Marian Strug",
         "date_death": "2026-06-06",
         "date_funeral": "2026-06-11",
@@ -4434,6 +4644,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Elzbieta-Maleszka-1C6TM8Q4U2EX",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 01.06.2026 przeżywszy 80 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
         "priority_hit": false
       }
     ],
@@ -4796,9 +5020,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-10T11:00:23.118Z",
-    "updated_at": "2026-06-10T11:00:23.118Z",
+    "generated_at": "2026-06-10T21:26:58.535Z",
+    "updated_at": "2026-06-10T21:26:58.535Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Anna Elżbieta Maleszka",
@@ -4825,6 +5063,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł | Data pogrzebu 11.06.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
         "priority_hit": false
       },
       {
@@ -5671,6 +5923,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Elżbieta Maleszka",
         "date_death": "2026-06-01",
         "date_funeral": "2026-06-12",
@@ -5695,6 +5961,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Strug-DDNQ95ONWJC8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.06.2026 przeżywszy 93 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6415,6 +6695,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła | Data pogrzebu 12.06.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła | Data pogrzebu 11.06.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Marian Strug",
         "date_death": "2026-06-06",
         "date_funeral": "2026-06-11",
@@ -6809,6 +7117,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Lidia Burliga",
+        "date_death": "2026-06-07",
+        "date_funeral": "2026-06-11",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lidia-Burliga-JKCGKP5C25N3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.06.2026 przeżywszy 90 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Marian Strug",
         "date_death": "2026-06-06",
         "date_funeral": "2026-06-11",
@@ -6833,6 +7155,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Elzbieta-Maleszka-1C6TM8Q4U2EX",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 01.06.2026 przeżywszy 80 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Cygan",
+        "date_death": "2026-06-09",
+        "date_funeral": "2026-06-12",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cygan-LILXRQREKUQX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 09.06.2026 przeżywszy 84 lata zmarła",
         "priority_hit": false
       }
     ],
