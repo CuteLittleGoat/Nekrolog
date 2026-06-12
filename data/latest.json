@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-06-12T11:05:28.189Z",
-  "updated_at": "2026-06-12T11:05:28.189Z",
+  "generated_at": "2026-06-12T21:04:15.014Z",
+  "updated_at": "2026-06-12T21:04:15.014Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Józefa Skoczylas",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-17",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Zofia Hajduga",
@@ -1028,6 +1042,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Józefa Skoczylas",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-17",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Zofia Hajduga",
       "date_death": "2026-06-09",
       "date_funeral": "2026-06-15",
@@ -1772,6 +1800,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Józefa Skoczylas",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-17",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Zofia Hajduga",
       "date_death": "2026-06-09",
       "date_funeral": "2026-06-15",
@@ -2331,6 +2373,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Józefa Skoczylas",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-17",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2691,9 +2747,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-12T11:05:28.189Z",
-    "updated_at": "2026-06-12T11:05:28.189Z",
+    "generated_at": "2026-06-12T21:04:15.014Z",
+    "updated_at": "2026-06-12T21:04:15.014Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Zofia Hajduga",
@@ -3720,6 +3790,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -4464,6 +4548,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -5022,6 +5120,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Hajduga-W259BZEGKCKW",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -5384,9 +5496,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-12T11:05:28.189Z",
-    "updated_at": "2026-06-12T11:05:28.189Z",
+    "generated_at": "2026-06-12T21:04:15.014Z",
+    "updated_at": "2026-06-12T21:04:15.014Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Zofia Hajduga",
@@ -6413,6 +6539,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -7157,6 +7297,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -7715,6 +7869,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Hajduga-W259BZEGKCKW",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Józefa Skoczylas",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-17",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
         "priority_hit": false
       }
     ],
