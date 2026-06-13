@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-13T10:06:11.761Z",
-  "updated_at": "2026-06-13T10:06:11.761Z",
+  "generated_at": "2026-06-13T20:21:13.068Z",
+  "updated_at": "2026-06-13T20:21:13.068Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Janina Bal",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-16",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
       "priority_hit": false
     },
     {
@@ -590,6 +604,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janina Bal",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-16",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1324,6 +1352,20 @@
     },
     {
       "kind": "death",
+      "name": "Janina Bal",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-16",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Zofia Hajduga",
       "date_death": "2026-06-09",
       "date_funeral": "2026-06-15",
@@ -1406,6 +1448,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Hajduga-W259BZEGKCKW",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janina Bal",
+      "date_death": "2026-06-12",
+      "date_funeral": "2026-06-16",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1781,8 +1837,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-13T10:06:11.761Z",
-    "updated_at": "2026-06-13T10:06:11.761Z",
+    "generated_at": "2026-06-13T20:21:13.068Z",
+    "updated_at": "2026-06-13T20:21:13.068Z",
     "deaths": [
       {
         "kind": "death",
@@ -1796,6 +1852,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
         "priority_hit": false
       },
       {
@@ -2372,6 +2442,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3106,6 +3190,20 @@
       },
       {
         "kind": "death",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -3188,6 +3286,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Hajduga-W259BZEGKCKW",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3564,8 +3676,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-13T10:06:11.761Z",
-    "updated_at": "2026-06-13T10:06:11.761Z",
+    "generated_at": "2026-06-13T20:21:13.068Z",
+    "updated_at": "2026-06-13T20:21:13.068Z",
     "deaths": [
       {
         "kind": "death",
@@ -3579,6 +3691,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła | Data pogrzebu 17.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
         "priority_hit": false
       },
       {
@@ -4155,6 +4281,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Skoczylas-IAKU3JSY1WD9",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.06.2026 przeżywszy 87 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4889,6 +5029,20 @@
       },
       {
         "kind": "death",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła | Data pogrzebu 16.06.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Zofia Hajduga",
         "date_death": "2026-06-09",
         "date_funeral": "2026-06-15",
@@ -4971,6 +5125,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Hajduga-W259BZEGKCKW",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 09.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janina Bal",
+        "date_death": "2026-06-12",
+        "date_funeral": "2026-06-16",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Bal-GE6RWWOUCUET",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 12.06.2026 przeżywszy 94 lat zmarła",
         "priority_hit": false
       },
       {
