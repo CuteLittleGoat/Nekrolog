@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-14T10:28:58.570Z",
-  "updated_at": "2026-06-14T10:28:58.570Z",
+  "generated_at": "2026-06-14T20:23:27.072Z",
+  "updated_at": "2026-06-14T20:23:27.072Z",
   "deaths": [
     {
       "kind": "death",
@@ -392,132 +392,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł | Data pogrzebu 21.05.2026 12:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. ZOFIA CZECH",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zofia-czech/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. MAŁGORZATA JAGLARZ",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/malgorzata-jaglarz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. JERZY NOWIŃSKI",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jerzy-nowinski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. URSZULA GRODECKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/urszula-grodecka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. JAN ZAWIŚLAK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jan-zawislak/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. KRYSTYNA WITOSIŃSKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/krystyna-witosinska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. HALINA RADWAN",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/halina-radwan/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. KRYSTYNA SKIBIŃSKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/krystyna-skibinska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. KRYSTYNA BARANOWSKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/krystyna-baranowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
       "priority_hit": false
     }
   ],
@@ -1687,18 +1561,24 @@
   ],
   "source_errors": [
     {
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrologi/",
+      "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds"
+    },
+    {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
       "error": "HTTP 403"
     }
   ],
-  "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+  "refresh_error": "Karawan – Nekrologi: fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-14T10:28:58.570Z",
-    "updated_at": "2026-06-14T10:28:58.570Z",
+    "generated_at": "2026-06-14T20:23:27.072Z",
+    "updated_at": "2026-06-14T20:23:27.072Z",
     "deaths": [
       {
         "kind": "death",
@@ -2090,132 +1970,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł | Data pogrzebu 21.05.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ZOFIA CZECH",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/zofia-czech/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MAŁGORZATA JAGLARZ",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/malgorzata-jaglarz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JERZY NOWIŃSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jerzy-nowinski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. URSZULA GRODECKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/urszula-grodecka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JAN ZAWIŚLAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jan-zawislak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA WITOSIŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-witosinska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. HALINA RADWAN",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/halina-radwan/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA SKIBIŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-skibinska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA BARANOWSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-baranowska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
         "priority_hit": false
       }
     ],
@@ -3385,19 +3139,25 @@
     ],
     "source_errors": [
       {
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrologi/",
+        "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds"
+      },
+      {
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
         "error": "HTTP 403"
       }
     ],
-    "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+    "refresh_error": "Karawan – Nekrologi: fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-14T10:28:58.570Z",
-    "updated_at": "2026-06-14T10:28:58.570Z",
+    "generated_at": "2026-06-14T20:23:27.072Z",
+    "updated_at": "2026-06-14T20:23:27.072Z",
     "deaths": [
       {
         "kind": "death",
@@ -3789,132 +3549,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Klobuch-GUJAWWHUF0MF",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.05.2026 przeżywszy 91 lat zmarł | Data pogrzebu 21.05.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ZOFIA CZECH",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/zofia-czech/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MAŁGORZATA JAGLARZ",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/malgorzata-jaglarz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JERZY NOWIŃSKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jerzy-nowinski/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. URSZULA GRODECKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/urszula-grodecka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JAN ZAWIŚLAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jan-zawislak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA WITOSIŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-witosinska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. HALINA RADWAN",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/halina-radwan/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA SKIBIŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-skibinska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA BARANOWSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-baranowska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
         "priority_hit": false
       }
     ],
@@ -5084,13 +4718,19 @@
     ],
     "source_errors": [
       {
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrologi/",
+        "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds"
+      },
+      {
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
         "error": "HTTP 403"
       }
     ],
-    "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+    "refresh_error": "Karawan – Nekrologi: fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   }
