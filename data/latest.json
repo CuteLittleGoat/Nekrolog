@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-15T13:22:19.294Z",
-  "updated_at": "2026-06-15T13:22:19.294Z",
+  "generated_at": "2026-06-15T21:47:04.526Z",
+  "updated_at": "2026-06-15T21:47:04.526Z",
   "deaths": [
     {
       "kind": "death",
@@ -823,6 +823,20 @@
       "date_funeral": "2026-06-15",
       "time_funeral": "08:30",
       "place": "8:30 – Cmentarz Komunalny w Podgórkach Tynieckich",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Aniela Knura",
+      "date_death": null,
+      "date_funeral": "2026-06-15",
+      "time_funeral": "10:00",
+      "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
       "source_id": "zck_funerals",
       "source_name": "ZCK Kraków – Porządek pogrzebów",
       "url": "https://www.zck-krakow.pl/funerals",
@@ -1676,6 +1690,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Aniela Knura",
+      "date_death": null,
+      "date_funeral": "2026-06-15",
+      "time_funeral": "10:00",
+      "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Danuta Wałach",
       "date_death": null,
       "date_funeral": "2026-06-15",
@@ -2355,8 +2383,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-15T13:22:19.294Z",
-    "updated_at": "2026-06-15T13:22:19.294Z",
+    "generated_at": "2026-06-15T21:47:04.526Z",
+    "updated_at": "2026-06-15T21:47:04.526Z",
     "deaths": [
       {
         "kind": "death",
@@ -3179,6 +3207,20 @@
         "date_funeral": "2026-06-15",
         "time_funeral": "08:30",
         "place": "8:30 – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Aniela Knura",
+        "date_death": null,
+        "date_funeral": "2026-06-15",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
@@ -4028,6 +4070,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Podgórski",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Aniela Knura",
+        "date_death": null,
+        "date_funeral": "2026-06-15",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
         "priority_hit": false
       },
       {
@@ -4712,8 +4768,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-15T13:22:19.294Z",
-    "updated_at": "2026-06-15T13:22:19.294Z",
+    "generated_at": "2026-06-15T21:47:04.526Z",
+    "updated_at": "2026-06-15T21:47:04.526Z",
     "deaths": [
       {
         "kind": "death",
@@ -5536,6 +5592,20 @@
         "date_funeral": "2026-06-15",
         "time_funeral": "08:30",
         "place": "8:30 – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Aniela Knura",
+        "date_death": null,
+        "date_funeral": "2026-06-15",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
@@ -6385,6 +6455,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Podgórski",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Aniela Knura",
+        "date_death": null,
+        "date_funeral": "2026-06-15",
+        "time_funeral": "10:00",
+        "place": "Kaplica – Cmentarz Komunalny w Podgórkach Tynieckich",
+        "source_id": "zck_funerals",
+        "source_name": "ZCK Kraków – Porządek pogrzebów",
+        "url": "https://www.zck-krakow.pl/funerals",
+        "source_url": "https://www.zck-krakow.pl/funerals",
+        "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
         "priority_hit": false
       },
       {
