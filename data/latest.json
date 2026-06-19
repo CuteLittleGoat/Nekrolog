@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-19T11:27:48.639Z",
-  "updated_at": "2026-06-19T11:27:48.639Z",
+  "generated_at": "2026-06-19T20:40:32.696Z",
+  "updated_at": "2026-06-19T20:40:32.696Z",
   "deaths": [
     {
       "kind": "death",
@@ -488,6 +488,20 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. MARIANNA KROCHMAL",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/marianna-krochmal/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -2593,8 +2607,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-19T11:27:48.639Z",
-    "updated_at": "2026-06-19T11:27:48.639Z",
+    "generated_at": "2026-06-19T20:40:32.696Z",
+    "updated_at": "2026-06-19T20:40:32.696Z",
     "deaths": [
       {
         "kind": "death",
@@ -3082,6 +3096,20 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MARIANNA KROCHMAL",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/marianna-krochmal/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -5188,8 +5216,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-19T11:27:48.639Z",
-    "updated_at": "2026-06-19T11:27:48.639Z",
+    "generated_at": "2026-06-19T20:40:32.696Z",
+    "updated_at": "2026-06-19T20:40:32.696Z",
     "deaths": [
       {
         "kind": "death",
@@ -5677,6 +5705,20 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MARIANNA KROCHMAL",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/marianna-krochmal/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
