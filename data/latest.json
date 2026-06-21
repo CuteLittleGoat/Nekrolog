@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-20T20:19:54.381Z",
-  "updated_at": "2026-06-20T20:19:54.381Z",
+  "generated_at": "2026-06-21T10:35:33.232Z",
+  "updated_at": "2026-06-21T10:35:33.232Z",
   "deaths": [
     {
       "kind": "death",
@@ -488,34 +488,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. ROMANA RYBICKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/romana-rybicka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. MARIA MICHTA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-michta/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1753,8 +1725,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-20T20:19:54.381Z",
-    "updated_at": "2026-06-20T20:19:54.381Z",
+    "generated_at": "2026-06-21T10:35:33.232Z",
+    "updated_at": "2026-06-21T10:35:33.232Z",
     "deaths": [
       {
         "kind": "death",
@@ -2242,34 +2214,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ROMANA RYBICKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/romana-rybicka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MARIA MICHTA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/maria-michta/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -3508,8 +3452,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-20T20:19:54.381Z",
-    "updated_at": "2026-06-20T20:19:54.381Z",
+    "generated_at": "2026-06-21T10:35:33.232Z",
+    "updated_at": "2026-06-21T10:35:33.232Z",
     "deaths": [
       {
         "kind": "death",
@@ -3997,34 +3941,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/stanislaw-sroka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. ROMANA RYBICKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/romana-rybicka/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MARIA MICHTA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/maria-michta/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
