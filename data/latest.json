@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-25T10:18:14.706Z",
-  "updated_at": "2026-06-25T10:18:14.706Z",
+  "generated_at": "2026-06-25T21:01:01.938Z",
+  "updated_at": "2026-06-25T21:01:01.938Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła | Data pogrzebu 29.06.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Irena Sięka",
+      "date_death": "2026-06-23",
+      "date_funeral": "2026-06-29",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
       "priority_hit": false
     },
     {
@@ -1000,6 +1014,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Irena Sięka",
+      "date_death": "2026-06-23",
+      "date_funeral": "2026-06-29",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Włodzimierz Gręda",
       "date_death": "2026-06-16",
       "date_funeral": "2026-06-26",
@@ -1744,6 +1772,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Irena Sięka",
+      "date_death": "2026-06-23",
+      "date_funeral": "2026-06-29",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Jerzy Sorochtej",
       "date_death": "2026-06-22",
       "date_funeral": "2026-06-25",
@@ -2208,6 +2250,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Irena Sięka",
+      "date_death": "2026-06-23",
+      "date_funeral": "2026-06-29",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Marta Krasnopolska-Gąsior",
       "date_death": "2026-06-19",
       "date_funeral": "2026-06-29",
@@ -2579,8 +2635,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-25T10:18:14.706Z",
-    "updated_at": "2026-06-25T10:18:14.706Z",
+    "generated_at": "2026-06-25T21:01:01.938Z",
+    "updated_at": "2026-06-25T21:01:01.938Z",
     "deaths": [
       {
         "kind": "death",
@@ -2594,6 +2650,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła | Data pogrzebu 29.06.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
         "priority_hit": false
       },
       {
@@ -3580,6 +3650,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Włodzimierz Gręda",
         "date_death": "2026-06-16",
         "date_funeral": "2026-06-26",
@@ -4324,6 +4408,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Jerzy Sorochtej",
         "date_death": "2026-06-22",
         "date_funeral": "2026-06-25",
@@ -4784,6 +4882,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wlodzimierz-Greda-YC4UE29NPMCN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.06.2026 przeżywszy 68 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5160,8 +5272,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-25T10:18:14.706Z",
-    "updated_at": "2026-06-25T10:18:14.706Z",
+    "generated_at": "2026-06-25T21:01:01.938Z",
+    "updated_at": "2026-06-25T21:01:01.938Z",
     "deaths": [
       {
         "kind": "death",
@@ -5175,6 +5287,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła | Data pogrzebu 29.06.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
         "priority_hit": false
       },
       {
@@ -6161,6 +6287,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Włodzimierz Gręda",
         "date_death": "2026-06-16",
         "date_funeral": "2026-06-26",
@@ -6905,6 +7045,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Jerzy Sorochtej",
         "date_death": "2026-06-22",
         "date_funeral": "2026-06-25",
@@ -7365,6 +7519,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wlodzimierz-Greda-YC4UE29NPMCN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.06.2026 przeżywszy 68 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Sięka",
+        "date_death": "2026-06-23",
+        "date_funeral": "2026-06-29",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
