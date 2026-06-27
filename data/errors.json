@@ -1,12 +1,6 @@
 {
-  "generated_at": "2026-06-26T20:50:16.194Z",
+  "generated_at": "2026-06-27T09:31:58.263Z",
   "errors": [
-    {
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrologi/",
-      "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://karawan.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds"
-    },
     {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
