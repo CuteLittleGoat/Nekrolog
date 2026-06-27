@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-27T09:31:58.036Z",
-  "updated_at": "2026-06-27T09:31:58.036Z",
+  "generated_at": "2026-06-27T20:13:16.260Z",
+  "updated_at": "2026-06-27T20:13:16.260Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła | Data pogrzebu 03.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Stanisław Filipek",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
       "priority_hit": false
     },
     {
@@ -548,6 +562,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Stanisław Filipek",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
       "priority_hit": false
     },
     {
@@ -1282,6 +1310,20 @@
     },
     {
       "kind": "death",
+      "name": "Stanisław Filipek",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Irena Sięka",
       "date_death": "2026-06-23",
       "date_funeral": "2026-06-29",
@@ -1336,6 +1378,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Stanisław Filipek",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
       "priority_hit": false
     },
     {
@@ -1711,8 +1767,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-27T09:31:58.036Z",
-    "updated_at": "2026-06-27T09:31:58.036Z",
+    "generated_at": "2026-06-27T20:13:16.260Z",
+    "updated_at": "2026-06-27T20:13:16.260Z",
     "deaths": [
       {
         "kind": "death",
@@ -1726,6 +1782,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła | Data pogrzebu 03.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
         "priority_hit": false
       },
       {
@@ -2260,6 +2330,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
         "priority_hit": false
       },
       {
@@ -2994,6 +3078,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Sięka",
         "date_death": "2026-06-23",
         "date_funeral": "2026-06-29",
@@ -3048,6 +3146,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
         "priority_hit": false
       },
       {
@@ -3424,8 +3536,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-27T09:31:58.036Z",
-    "updated_at": "2026-06-27T09:31:58.036Z",
+    "generated_at": "2026-06-27T20:13:16.260Z",
+    "updated_at": "2026-06-27T20:13:16.260Z",
     "deaths": [
       {
         "kind": "death",
@@ -3439,6 +3551,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła | Data pogrzebu 03.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
         "priority_hit": false
       },
       {
@@ -3973,6 +4099,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4707,6 +4847,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Sięka",
         "date_death": "2026-06-23",
         "date_funeral": "2026-06-29",
@@ -4761,6 +4915,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marta-Krasnopolska-Gasior-AC0R0BYQ2PTH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Filipek",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "09:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
         "priority_hit": false
       },
       {
