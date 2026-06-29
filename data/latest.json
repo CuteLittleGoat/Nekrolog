@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-29T12:03:43.185Z",
-  "updated_at": "2026-06-29T12:03:43.185Z",
+  "generated_at": "2026-06-29T20:51:53.005Z",
+  "updated_at": "2026-06-29T20:51:53.005Z",
   "deaths": [
     {
       "kind": "death",
@@ -18,6 +18,20 @@
     },
     {
       "kind": "death",
+      "name": "Irena Ibkowska",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Stanisław Filipek",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-03",
@@ -28,6 +42,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jozefa Lasoń",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-02",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
       "priority_hit": false
     },
     {
@@ -804,6 +832,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Irena Ibkowska",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stanisław Filipek",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-03",
@@ -814,6 +856,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Jozefa Lasoń",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-02",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1478,6 +1534,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Irena Ibkowska",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jozefa Lasoń",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-02",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Barbara Tworzewska-Mikołajewicz",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-03",
@@ -1886,6 +1970,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Jozefa Lasoń",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-02",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stanisław Filipek",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-03",
@@ -1896,6 +1994,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Irena Ibkowska",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
       "priority_hit": false
     },
     {
@@ -2271,8 +2383,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-06-29T12:03:43.185Z",
-    "updated_at": "2026-06-29T12:03:43.185Z",
+    "generated_at": "2026-06-29T20:51:53.005Z",
+    "updated_at": "2026-06-29T20:51:53.005Z",
     "deaths": [
       {
         "kind": "death",
@@ -2290,6 +2402,20 @@
       },
       {
         "kind": "death",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -2300,6 +2426,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
         "priority_hit": false
       },
       {
@@ -3076,6 +3216,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -3086,6 +3240,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3750,6 +3918,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Barbara Tworzewska-Mikołajewicz",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -4158,6 +4354,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -4168,6 +4378,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
         "priority_hit": false
       },
       {
@@ -4544,8 +4768,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-06-29T12:03:43.185Z",
-    "updated_at": "2026-06-29T12:03:43.185Z",
+    "generated_at": "2026-06-29T20:51:53.005Z",
+    "updated_at": "2026-06-29T20:51:53.005Z",
     "deaths": [
       {
         "kind": "death",
@@ -4563,6 +4787,20 @@
       },
       {
         "kind": "death",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -4573,6 +4811,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 03.07.2026 09:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
         "priority_hit": false
       },
       {
@@ -5349,6 +5601,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -5359,6 +5625,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6023,6 +6303,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła | Data pogrzebu 03.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Barbara Tworzewska-Mikołajewicz",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -6431,6 +6739,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Jozefa Lasoń",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-02",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Filipek",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-03",
@@ -6441,6 +6763,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Filipek-HXU9HCYNTTEN",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Ibkowska",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "10:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Ibkowska-ZJQZL8LBWLTX",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 64 lata zmarła",
         "priority_hit": false
       },
       {
