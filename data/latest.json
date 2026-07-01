@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-07-01T10:45:48.195Z",
-  "updated_at": "2026-07-01T10:45:48.195Z",
+  "generated_at": "2026-07-01T20:50:36.984Z",
+  "updated_at": "2026-07-01T20:50:36.984Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Maria Rewilak",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Irena Janiszewska",
+      "date_death": "2026-06-29",
+      "date_funeral": "2026-07-06",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Aleksander Wojtanek",
@@ -744,6 +772,34 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Grębałów",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Rewilak",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Irena Janiszewska",
+      "date_death": "2026-06-29",
+      "date_funeral": "2026-07-06",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1492,6 +1548,20 @@
     },
     {
       "kind": "death",
+      "name": "Irena Janiszewska",
+      "date_death": "2026-06-29",
+      "date_funeral": "2026-07-06",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Irena Ibkowska",
       "date_death": "2026-06-27",
       "date_funeral": "2026-07-03",
@@ -1516,6 +1586,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Rewilak",
+      "date_death": "2026-06-24",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
       "priority_hit": false
     },
     {
@@ -1784,6 +1868,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Irena Janiszewska",
+      "date_death": "2026-06-29",
+      "date_funeral": "2026-07-06",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -2145,9 +2243,37 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-01T10:45:48.195Z",
-    "updated_at": "2026-07-01T10:45:48.195Z",
+    "generated_at": "2026-07-01T20:50:36.984Z",
+    "updated_at": "2026-07-01T20:50:36.984Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Aleksander Wojtanek",
@@ -2890,6 +3016,34 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3638,6 +3792,20 @@
       },
       {
         "kind": "death",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Ibkowska",
         "date_death": "2026-06-27",
         "date_funeral": "2026-07-03",
@@ -3662,6 +3830,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -3930,6 +4112,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -4292,9 +4488,37 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-01T10:45:48.195Z",
-    "updated_at": "2026-07-01T10:45:48.195Z",
+    "generated_at": "2026-07-01T20:50:36.984Z",
+    "updated_at": "2026-07-01T20:50:36.984Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Aleksander Wojtanek",
@@ -5037,6 +5261,34 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5785,6 +6037,20 @@
       },
       {
         "kind": "death",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Ibkowska",
         "date_death": "2026-06-27",
         "date_funeral": "2026-07-03",
@@ -5809,6 +6075,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła | Data pogrzebu 02.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Maria Rewilak",
+        "date_death": "2026-06-24",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -6077,6 +6357,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Irena Janiszewska",
+        "date_death": "2026-06-29",
+        "date_funeral": "2026-07-06",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła",
         "priority_hit": false
       }
     ],
