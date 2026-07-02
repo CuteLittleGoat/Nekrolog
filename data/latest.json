@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-02T10:13:24.292Z",
-  "updated_at": "2026-07-02T10:13:24.292Z",
+  "generated_at": "2026-07-02T20:23:09.290Z",
+  "updated_at": "2026-07-02T20:23:09.290Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Ryszar Wojtowicz",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
       "priority_hit": false
     },
     {
@@ -42,6 +56,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 06.07.2026 10:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Anna Ramza - Kozioł",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
       "priority_hit": false
     },
     {
@@ -986,6 +1014,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Ryszar Wojtowicz",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Irena Janiszewska",
       "date_death": "2026-06-29",
       "date_funeral": "2026-07-06",
@@ -1010,6 +1052,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Anna Ramza - Kozioł",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1730,6 +1786,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Ryszar Wojtowicz",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Aleksander Wojtanek",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-06",
@@ -1754,6 +1824,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Anna Ramza - Kozioł",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
       "priority_hit": false
     },
     {
@@ -2222,6 +2306,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Anna Ramza - Kozioł",
+      "date_death": "2026-06-27",
+      "date_funeral": "2026-07-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Aleksander Wojtanek",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-06",
@@ -2607,8 +2705,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-02T10:13:24.292Z",
-    "updated_at": "2026-07-02T10:13:24.292Z",
+    "generated_at": "2026-07-02T20:23:09.290Z",
+    "updated_at": "2026-07-02T20:23:09.290Z",
     "deaths": [
       {
         "kind": "death",
@@ -2622,6 +2720,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
         "priority_hit": false
       },
       {
@@ -2650,6 +2762,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 06.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -3594,6 +3720,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Irena Janiszewska",
         "date_death": "2026-06-29",
         "date_funeral": "2026-07-06",
@@ -3618,6 +3758,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4338,6 +4492,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Aleksander Wojtanek",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-06",
@@ -4362,6 +4530,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -4826,6 +5008,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5216,8 +5412,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-02T10:13:24.292Z",
-    "updated_at": "2026-07-02T10:13:24.292Z",
+    "generated_at": "2026-07-02T20:23:09.290Z",
+    "updated_at": "2026-07-02T20:23:09.290Z",
     "deaths": [
       {
         "kind": "death",
@@ -5231,6 +5427,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
         "priority_hit": false
       },
       {
@@ -5259,6 +5469,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł | Data pogrzebu 06.07.2026 10:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -6203,6 +6427,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Irena Janiszewska",
         "date_death": "2026-06-29",
         "date_funeral": "2026-07-06",
@@ -6227,6 +6465,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Aleksander-Wojtanek-YFSHHN5DIQIH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 86 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6947,6 +7199,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Ryszar Wojtowicz",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Aleksander Wojtanek",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-06",
@@ -6971,6 +7237,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena--Janiszewska-QKH2IKLMGAU8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 29.06.2026 przeżywszy 98 lat zmarła | Data pogrzebu 06.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -7435,6 +7715,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Tworzewska-Mikolajewicz-BMP7AA8BVKO1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 75 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Ramza - Kozioł",
+        "date_death": "2026-06-27",
+        "date_funeral": "2026-07-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
