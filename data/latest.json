@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-03T10:08:56.756Z",
-  "updated_at": "2026-07-03T10:08:56.756Z",
+  "generated_at": "2026-07-03T20:18:37.880Z",
+  "updated_at": "2026-07-03T20:18:37.880Z",
   "deaths": [
     {
       "kind": "death",
@@ -18,6 +18,20 @@
     },
     {
       "kind": "death",
+      "name": "Mateusz Gałka",
+      "date_death": "2026-06-19",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł | Data pogrzebu 10.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Ryszard Wojtowicz",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-10",
@@ -28,6 +42,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Rozalia Bugajska",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-09",
+      "time_funeral": "13:30",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
       "priority_hit": false
     },
     {
@@ -1070,6 +1098,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Mateusz Gałka",
+      "date_death": "2026-06-19",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ryszard Wojtowicz",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-10",
@@ -1080,6 +1122,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Rozalia Bugajska",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-09",
+      "time_funeral": "13:30",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1814,6 +1870,20 @@
     },
     {
       "kind": "death",
+      "name": "Rozalia Bugajska",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-09",
+      "time_funeral": "13:30",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Aleksander Wojtanek",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-06",
@@ -2446,6 +2516,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Rozalia Bugajska",
+      "date_death": "2026-06-30",
+      "date_funeral": "2026-07-09",
+      "time_funeral": "13:30",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ryszard Wojtowicz",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-10",
@@ -2456,6 +2540,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Mateusz Gałka",
+      "date_death": "2026-06-19",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
       "priority_hit": false
     }
   ],
@@ -2817,8 +2915,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-03T10:08:56.756Z",
-    "updated_at": "2026-07-03T10:08:56.756Z",
+    "generated_at": "2026-07-03T20:18:37.880Z",
+    "updated_at": "2026-07-03T20:18:37.880Z",
     "deaths": [
       {
         "kind": "death",
@@ -2836,6 +2934,20 @@
       },
       {
         "kind": "death",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł | Data pogrzebu 10.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -2846,6 +2958,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
         "priority_hit": false
       },
       {
@@ -3888,6 +4014,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -3898,6 +4038,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4632,6 +4786,20 @@
       },
       {
         "kind": "death",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Aleksander Wojtanek",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-06",
@@ -5264,6 +5432,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -5274,6 +5456,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
         "priority_hit": false
       }
     ],
@@ -5636,8 +5832,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-03T10:08:56.756Z",
-    "updated_at": "2026-07-03T10:08:56.756Z",
+    "generated_at": "2026-07-03T20:18:37.880Z",
+    "updated_at": "2026-07-03T20:18:37.880Z",
     "deaths": [
       {
         "kind": "death",
@@ -5655,6 +5851,20 @@
       },
       {
         "kind": "death",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł | Data pogrzebu 10.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -5665,6 +5875,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
         "priority_hit": false
       },
       {
@@ -6707,6 +6931,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -6717,6 +6955,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       },
       {
@@ -7451,6 +7703,20 @@
       },
       {
         "kind": "death",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła | Data pogrzebu 09.07.2026 13:30",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Aleksander Wojtanek",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-06",
@@ -8083,6 +8349,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rozalia Bugajska",
+        "date_death": "2026-06-30",
+        "date_funeral": "2026-07-09",
+        "time_funeral": "13:30",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Bugajska-53AGWIRB746U",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.06.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -8093,6 +8373,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Mateusz Gałka",
+        "date_death": "2026-06-19",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
         "priority_hit": false
       }
     ],
