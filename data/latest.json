@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-05T09:45:11.113Z",
-  "updated_at": "2026-07-05T09:45:11.113Z",
+  "generated_at": "2026-07-05T20:18:54.283Z",
+  "updated_at": "2026-07-05T20:18:54.283Z",
   "deaths": [
     {
       "kind": "death",
@@ -1767,8 +1767,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-05T09:45:11.113Z",
-    "updated_at": "2026-07-05T09:45:11.113Z",
+    "generated_at": "2026-07-05T20:18:54.283Z",
+    "updated_at": "2026-07-05T20:18:54.283Z",
     "deaths": [
       {
         "kind": "death",
@@ -3536,8 +3536,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-05T09:45:11.113Z",
-    "updated_at": "2026-07-05T09:45:11.113Z",
+    "generated_at": "2026-07-05T20:18:54.283Z",
+    "updated_at": "2026-07-05T20:18:54.283Z",
     "deaths": [
       {
         "kind": "death",
