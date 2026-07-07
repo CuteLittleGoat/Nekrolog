@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-07T10:29:22.721Z",
-  "updated_at": "2026-07-07T10:29:22.721Z",
+  "generated_at": "2026-07-07T20:52:11.077Z",
+  "updated_at": "2026-07-07T20:52:11.077Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Simmler",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
       "priority_hit": false
     },
     {
@@ -42,6 +56,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Alina Bednarz",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
       "priority_hit": false
     },
     {
@@ -874,6 +902,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Barbara Simmler",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Mateusz Gałka",
       "date_death": "2026-06-19",
       "date_funeral": "2026-07-10",
@@ -898,6 +940,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Alina Bednarz",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1618,6 +1674,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Barbara Simmler",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Alina Bednarz",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Wiesława Wygaś-Fiałkowska",
       "date_death": "2026-07-05",
       "date_funeral": "2026-07-09",
@@ -2054,6 +2138,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Alina Bednarz",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-10",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ryszard Wojtowicz",
       "date_death": "2026-06-30",
       "date_funeral": "2026-07-10",
@@ -2078,6 +2176,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Barbara Simmler",
+      "date_death": "2026-07-06",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
       "priority_hit": false
     },
     {
@@ -2453,8 +2565,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-07T10:29:22.721Z",
-    "updated_at": "2026-07-07T10:29:22.721Z",
+    "generated_at": "2026-07-07T20:52:11.077Z",
+    "updated_at": "2026-07-07T20:52:11.077Z",
     "deaths": [
       {
         "kind": "death",
@@ -2468,6 +2580,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
         "priority_hit": false
       },
       {
@@ -2496,6 +2622,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
         "priority_hit": false
       },
       {
@@ -3328,6 +3468,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Mateusz Gałka",
         "date_death": "2026-06-19",
         "date_funeral": "2026-07-10",
@@ -3352,6 +3506,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4072,6 +4240,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Wiesława Wygaś-Fiałkowska",
         "date_death": "2026-07-05",
         "date_funeral": "2026-07-09",
@@ -4508,6 +4704,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -4532,6 +4742,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4908,8 +5132,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-07T10:29:22.721Z",
-    "updated_at": "2026-07-07T10:29:22.721Z",
+    "generated_at": "2026-07-07T20:52:11.077Z",
+    "updated_at": "2026-07-07T20:52:11.077Z",
     "deaths": [
       {
         "kind": "death",
@@ -4923,6 +5147,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
         "priority_hit": false
       },
       {
@@ -4951,6 +5189,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
         "priority_hit": false
       },
       {
@@ -5783,6 +6035,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Mateusz Gałka",
         "date_death": "2026-06-19",
         "date_funeral": "2026-07-10",
@@ -5807,6 +6073,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6527,6 +6807,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła | Data pogrzebu 13.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła | Data pogrzebu 10.07.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Wiesława Wygaś-Fiałkowska",
         "date_death": "2026-07-05",
         "date_funeral": "2026-07-09",
@@ -6963,6 +7271,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Alina Bednarz",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-10",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Alina-Bednarz-UNZEFFIS6FVG",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 63 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ryszard Wojtowicz",
         "date_death": "2026-06-30",
         "date_funeral": "2026-07-10",
@@ -6987,6 +7309,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Mateusz-Galka-47WRL31OKPQP",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.06.2026 przeżywszy 40 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Simmler",
+        "date_death": "2026-07-06",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
