@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-08T09:29:32.028Z",
-  "updated_at": "2026-07-08T09:29:32.028Z",
+  "generated_at": "2026-07-08T20:24:54.290Z",
+  "updated_at": "2026-07-08T20:24:54.290Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Rozalia Szymańska",
+      "date_death": "2026-07-07",
+      "date_funeral": "2026-07-15",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Maria Rewilak",
@@ -986,6 +1000,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Rozalia Szymańska",
+      "date_death": "2026-07-07",
+      "date_funeral": "2026-07-15",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Maria Rewilak",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-14",
@@ -1772,6 +1800,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Rozalia Szymańska",
+      "date_death": "2026-07-07",
+      "date_funeral": "2026-07-15",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Barbara Simmler",
       "date_death": "2026-07-06",
       "date_funeral": "2026-07-13",
@@ -2331,6 +2373,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Rozalia Szymańska",
+      "date_death": "2026-07-07",
+      "date_funeral": "2026-07-15",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2691,9 +2747,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-08T09:29:32.028Z",
-    "updated_at": "2026-07-08T09:29:32.028Z",
+    "generated_at": "2026-07-08T20:24:54.290Z",
+    "updated_at": "2026-07-08T20:24:54.290Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Maria Rewilak",
@@ -3678,6 +3748,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Maria Rewilak",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-14",
@@ -4464,6 +4548,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Barbara Simmler",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-13",
@@ -5022,6 +5120,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -5384,9 +5496,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-08T09:29:32.028Z",
-    "updated_at": "2026-07-08T09:29:32.028Z",
+    "generated_at": "2026-07-08T20:24:54.290Z",
+    "updated_at": "2026-07-08T20:24:54.290Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Maria Rewilak",
@@ -6371,6 +6497,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Maria Rewilak",
         "date_death": "2026-06-24",
         "date_funeral": "2026-07-14",
@@ -7157,6 +7297,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła | Data pogrzebu 15.07.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Barbara Simmler",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-13",
@@ -7715,6 +7869,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Rozalia Szymańska",
+        "date_death": "2026-07-07",
+        "date_funeral": "2026-07-15",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Szymanska-LGIZI46TATZS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 07.07.2026 przeżywszy 79 lat zmarła",
         "priority_hit": false
       }
     ],
