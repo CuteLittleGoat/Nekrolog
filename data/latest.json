@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-09T10:38:42.890Z",
-  "updated_at": "2026-07-09T10:38:42.890Z",
+  "generated_at": "2026-07-09T20:51:23.087Z",
+  "updated_at": "2026-07-09T20:51:23.087Z",
   "deaths": [
     {
       "kind": "death",
@@ -28,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Józef Matura",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
       "priority_hit": false
     },
     {
@@ -1042,6 +1056,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Józef Matura",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Barbara Simmler",
       "date_death": "2026-07-06",
       "date_funeral": "2026-07-13",
@@ -1800,6 +1828,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Józef Matura",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Rozalia Szymańska",
       "date_death": "2026-07-07",
       "date_funeral": "2026-07-15",
@@ -2306,6 +2348,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Józef Matura",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-14",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Maria Rewilak",
       "date_death": "2026-06-24",
       "date_funeral": "2026-07-14",
@@ -2691,8 +2747,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-09T10:38:42.890Z",
-    "updated_at": "2026-07-09T10:38:42.890Z",
+    "generated_at": "2026-07-09T20:51:23.087Z",
+    "updated_at": "2026-07-09T20:51:23.087Z",
     "deaths": [
       {
         "kind": "death",
@@ -2720,6 +2776,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
         "priority_hit": false
       },
       {
@@ -3734,6 +3804,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Barbara Simmler",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-13",
@@ -4492,6 +4576,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Rozalia Szymańska",
         "date_death": "2026-07-07",
         "date_funeral": "2026-07-15",
@@ -4994,6 +5092,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
         "priority_hit": false
       },
       {
@@ -5384,8 +5496,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-09T10:38:42.890Z",
-    "updated_at": "2026-07-09T10:38:42.890Z",
+    "generated_at": "2026-07-09T20:51:23.087Z",
+    "updated_at": "2026-07-09T20:51:23.087Z",
     "deaths": [
       {
         "kind": "death",
@@ -5413,6 +5525,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Rewilak-VDZSMUML1E09",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 24.06.2026 przeżywszy 81 lat zmarła | Data pogrzebu 14.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
         "priority_hit": false
       },
       {
@@ -6427,6 +6553,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Barbara Simmler",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-13",
@@ -7185,6 +7325,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Rozalia Szymańska",
         "date_death": "2026-07-07",
         "date_funeral": "2026-07-15",
@@ -7687,6 +7841,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Józef Matura",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-14",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
         "priority_hit": false
       },
       {
