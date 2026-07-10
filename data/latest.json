@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-10T10:27:18.587Z",
-  "updated_at": "2026-07-10T10:27:18.587Z",
+  "generated_at": "2026-07-10T20:37:35.153Z",
+  "updated_at": "2026-07-10T20:37:35.153Z",
   "deaths": [
     {
       "kind": "death",
@@ -42,6 +42,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Stanisław Serafin",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
       "priority_hit": false
     },
     {
@@ -530,6 +544,20 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/boguslaw-zmudzinski/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. DR INŻ. BOGUSŁAW MALUDZIŃSKI",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/dr-inz-boguslaw-maludzinski/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1164,6 +1192,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Stanisław Serafin",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
       "priority_hit": false
     },
     {
@@ -1912,6 +1954,20 @@
     },
     {
       "kind": "death",
+      "name": "Stanisław Serafin",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Rozalia Szymańska",
       "date_death": "2026-07-07",
       "date_funeral": "2026-07-15",
@@ -2474,6 +2530,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Stanisław Serafin",
+      "date_death": "2026-07-08",
+      "date_funeral": "2026-07-13",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Józef Matura",
       "date_death": "2026-07-08",
       "date_funeral": "2026-07-14",
@@ -2873,8 +2943,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-10T10:27:18.587Z",
-    "updated_at": "2026-07-10T10:27:18.587Z",
+    "generated_at": "2026-07-10T20:37:35.153Z",
+    "updated_at": "2026-07-10T20:37:35.153Z",
     "deaths": [
       {
         "kind": "death",
@@ -2916,6 +2986,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -3404,6 +3488,20 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/boguslaw-zmudzinski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. DR INŻ. BOGUSŁAW MALUDZIŃSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/dr-inz-boguslaw-maludzinski/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4038,6 +4136,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4786,6 +4898,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Rozalia Szymańska",
         "date_death": "2026-07-07",
         "date_funeral": "2026-07-15",
@@ -5344,6 +5470,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
         "priority_hit": false
       },
       {
@@ -5748,8 +5888,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-10T10:27:18.587Z",
-    "updated_at": "2026-07-10T10:27:18.587Z",
+    "generated_at": "2026-07-10T20:37:35.153Z",
+    "updated_at": "2026-07-10T20:37:35.153Z",
     "deaths": [
       {
         "kind": "death",
@@ -5791,6 +5931,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -6279,6 +6433,20 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/boguslaw-zmudzinski/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. DR INŻ. BOGUSŁAW MALUDZIŃSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/dr-inz-boguslaw-maludzinski/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -6913,6 +7081,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
         "priority_hit": false
       },
       {
@@ -7661,6 +7843,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł | Data pogrzebu 13.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Rozalia Szymańska",
         "date_death": "2026-07-07",
         "date_funeral": "2026-07-15",
@@ -8219,6 +8415,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Simmler-VPX1VM32CBY8",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 06.07.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Serafin",
+        "date_death": "2026-07-08",
+        "date_funeral": "2026-07-13",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Serafin-LVQ041H4Y4XW",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 08.07.2026 przeżywszy 79 lat zmarł",
         "priority_hit": false
       },
       {
