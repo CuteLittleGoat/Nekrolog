@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-17T09:13:53.294Z",
-  "updated_at": "2026-07-17T09:13:53.294Z",
+  "generated_at": "2026-07-17T20:10:40.301Z",
+  "updated_at": "2026-07-17T20:10:40.301Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Stanisław Műller",
+      "date_death": "2026-07-15",
+      "date_funeral": "2026-07-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Janina Górecka",
@@ -1070,6 +1084,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Stanisław Műller",
+      "date_death": "2026-07-15",
+      "date_funeral": "2026-07-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Janina Górecka",
       "date_death": "2026-07-16",
       "date_funeral": "2026-07-23",
@@ -1884,6 +1912,20 @@
     },
     {
       "kind": "death",
+      "name": "Stanisław Műller",
+      "date_death": "2026-07-15",
+      "date_funeral": "2026-07-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Anna Wąsik",
       "date_death": "2026-07-15",
       "date_funeral": "2026-07-18",
@@ -2555,6 +2597,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Stanisław Műller",
+      "date_death": "2026-07-15",
+      "date_funeral": "2026-07-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2915,9 +2971,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-17T09:13:53.294Z",
-    "updated_at": "2026-07-17T09:13:53.294Z",
+    "generated_at": "2026-07-17T20:10:40.301Z",
+    "updated_at": "2026-07-17T20:10:40.301Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Janina Górecka",
@@ -3986,6 +4056,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Janina Górecka",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-23",
@@ -4800,6 +4884,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Anna Wąsik",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-18",
@@ -5470,6 +5568,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Gorecka-35MXW7GYC7VD",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
         "priority_hit": false
       }
     ],
@@ -5832,9 +5944,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-17T09:13:53.294Z",
-    "updated_at": "2026-07-17T09:13:53.294Z",
+    "generated_at": "2026-07-17T20:10:40.301Z",
+    "updated_at": "2026-07-17T20:10:40.301Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Janina Górecka",
@@ -6903,6 +7029,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Janina Górecka",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-23",
@@ -7717,6 +7857,20 @@
       },
       {
         "kind": "death",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł | Data pogrzebu 23.07.2026 11:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Anna Wąsik",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-18",
@@ -8387,6 +8541,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Gorecka-35MXW7GYC7VD",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisław Műller",
+        "date_death": "2026-07-15",
+        "date_funeral": "2026-07-23",
+        "time_funeral": "11:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
         "priority_hit": false
       }
     ],
