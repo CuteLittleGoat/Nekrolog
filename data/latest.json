@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-18T20:05:49.554Z",
-  "updated_at": "2026-07-18T20:05:49.554Z",
+  "generated_at": "2026-07-19T09:08:31.141Z",
+  "updated_at": "2026-07-19T09:08:31.141Z",
   "deaths": [
     {
       "kind": "death",
@@ -480,20 +480,6 @@
     },
     {
       "kind": "death",
-      "name": "Halina Paleczny",
-      "date_death": "2026-06-17",
-      "date_funeral": "2026-06-22",
-      "time_funeral": "10:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 22.06.2026 10:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Śp. DARIA DYDAŚ",
       "date_death": null,
       "date_funeral": null,
@@ -600,20 +586,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/konrad-kuduk/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. JAN PIESZCZEK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jan-piszczek/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1098,20 +1070,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Halina Paleczny",
-      "date_death": "2026-06-17",
-      "date_funeral": "2026-06-22",
-      "time_funeral": "10:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Pogrzeby tradycyjne",
       "date_death": null,
       "date_funeral": null,
@@ -1545,37 +1503,9 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 12.07.2026 przeżywszy 85 lat zmarł | Data pogrzebu 16.07.2026 12:20",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Józef Kozioł",
-      "date_death": "2026-07-11",
-      "date_funeral": "2026-07-17",
-      "time_funeral": "10:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Koziol-FDC75YWZZNW6",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 11.07.2026 przeżywszy 80 lat zmarł | Data pogrzebu 17.07.2026 10:20",
-      "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Anna Wąsik",
-      "date_death": "2026-07-15",
-      "date_funeral": "2026-07-18",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Ireneusz Szarek",
@@ -1991,8 +1921,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-18T20:05:49.554Z",
-    "updated_at": "2026-07-18T20:05:49.554Z",
+    "generated_at": "2026-07-19T09:08:31.141Z",
+    "updated_at": "2026-07-19T09:08:31.141Z",
     "deaths": [
       {
         "kind": "death",
@@ -2472,20 +2402,6 @@
       },
       {
         "kind": "death",
-        "name": "Halina Paleczny",
-        "date_death": "2026-06-17",
-        "date_funeral": "2026-06-22",
-        "time_funeral": "10:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 22.06.2026 10:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. DARIA DYDAŚ",
         "date_death": null,
         "date_funeral": null,
@@ -2592,20 +2508,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/konrad-kuduk/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JAN PIESZCZEK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jan-piszczek/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -3090,20 +2992,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Halina Paleczny",
-        "date_death": "2026-06-17",
-        "date_funeral": "2026-06-22",
-        "time_funeral": "10:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Pogrzeby tradycyjne",
         "date_death": null,
         "date_funeral": null,
@@ -3537,37 +3425,9 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.07.2026 przeżywszy 85 lat zmarł | Data pogrzebu 16.07.2026 12:20",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Józef Kozioł",
-        "date_death": "2026-07-11",
-        "date_funeral": "2026-07-17",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Koziol-FDC75YWZZNW6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 11.07.2026 przeżywszy 80 lat zmarł | Data pogrzebu 17.07.2026 10:20",
-        "priority_hit": false
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Ireneusz Szarek",
@@ -3984,8 +3844,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-18T20:05:49.554Z",
-    "updated_at": "2026-07-18T20:05:49.554Z",
+    "generated_at": "2026-07-19T09:08:31.141Z",
+    "updated_at": "2026-07-19T09:08:31.141Z",
     "deaths": [
       {
         "kind": "death",
@@ -4465,20 +4325,6 @@
       },
       {
         "kind": "death",
-        "name": "Halina Paleczny",
-        "date_death": "2026-06-17",
-        "date_funeral": "2026-06-22",
-        "time_funeral": "10:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 22.06.2026 10:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. DARIA DYDAŚ",
         "date_death": null,
         "date_funeral": null,
@@ -4585,20 +4431,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/konrad-kuduk/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JAN PIESZCZEK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jan-piszczek/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -5083,20 +4915,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Halina Paleczny",
-        "date_death": "2026-06-17",
-        "date_funeral": "2026-06-22",
-        "time_funeral": "10:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Paleczny-XOMZEVFGGLHU",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 17.06.2026 przeżywszy 85 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Pogrzeby tradycyjne",
         "date_death": null,
         "date_funeral": null,
@@ -5530,37 +5348,9 @@
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 12.07.2026 przeżywszy 85 lat zmarł | Data pogrzebu 16.07.2026 12:20",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Józef Kozioł",
-        "date_death": "2026-07-11",
-        "date_funeral": "2026-07-17",
-        "time_funeral": "10:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Koziol-FDC75YWZZNW6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 11.07.2026 przeżywszy 80 lat zmarł | Data pogrzebu 17.07.2026 10:20",
-        "priority_hit": false
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Ireneusz Szarek",
