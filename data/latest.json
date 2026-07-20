@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-20T10:17:29.334Z",
-  "updated_at": "2026-07-20T10:17:29.334Z",
+  "generated_at": "2026-07-20T20:25:39.899Z",
+  "updated_at": "2026-07-20T20:25:39.899Z",
   "deaths": [
     {
       "kind": "death",
@@ -28,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Gorecka-35MXW7GYC7VD",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła | Data pogrzebu 23.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Stanisława Chechelska",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-22",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
       "priority_hit": false
     },
     {
@@ -874,6 +888,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Stanisława Chechelska",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-22",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Rozalia Kapusta",
       "date_death": "2026-07-16",
       "date_funeral": "2026-07-22",
@@ -1632,6 +1660,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Stanisława Chechelska",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-22",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Janina Górecka",
       "date_death": "2026-07-16",
       "date_funeral": "2026-07-23",
@@ -2082,6 +2124,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Stanisława Chechelska",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-22",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Janina Górecka",
       "date_death": "2026-07-16",
       "date_funeral": "2026-07-23",
@@ -2467,8 +2523,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-20T10:17:29.334Z",
-    "updated_at": "2026-07-20T10:17:29.334Z",
+    "generated_at": "2026-07-20T20:25:39.899Z",
+    "updated_at": "2026-07-20T20:25:39.899Z",
     "deaths": [
       {
         "kind": "death",
@@ -2496,6 +2552,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Gorecka-35MXW7GYC7VD",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła | Data pogrzebu 23.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -3342,6 +3412,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Rozalia Kapusta",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-22",
@@ -4100,6 +4184,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Janina Górecka",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-23",
@@ -4546,6 +4644,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Kapusta-IL3NADIH7AUB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
         "priority_hit": false
       },
       {
@@ -4936,8 +5048,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-20T10:17:29.334Z",
-    "updated_at": "2026-07-20T10:17:29.334Z",
+    "generated_at": "2026-07-20T20:25:39.899Z",
+    "updated_at": "2026-07-20T20:25:39.899Z",
     "deaths": [
       {
         "kind": "death",
@@ -4965,6 +5077,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Gorecka-35MXW7GYC7VD",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 94 lat zmarła | Data pogrzebu 23.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -5811,6 +5937,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Rozalia Kapusta",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-22",
@@ -6569,6 +6709,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła | Data pogrzebu 22.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Janina Górecka",
         "date_death": "2026-07-16",
         "date_funeral": "2026-07-23",
@@ -7015,6 +7169,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Kapusta-IL3NADIH7AUB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 88 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Stanisława Chechelska",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-22",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Chechelska-GWTH21Q41DB3",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 93 lata zmarła",
         "priority_hit": false
       },
       {
