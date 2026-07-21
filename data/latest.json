@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-21T09:31:59.319Z",
-  "updated_at": "2026-07-21T09:31:59.319Z",
+  "generated_at": "2026-07-21T20:21:42.731Z",
+  "updated_at": "2026-07-21T20:21:42.731Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Arden",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
       "priority_hit": false
     },
     {
@@ -832,6 +846,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Krystyna Arden",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stanisław Műller",
       "date_death": "2026-07-15",
       "date_funeral": "2026-07-23",
@@ -1646,6 +1674,20 @@
     },
     {
       "kind": "death",
+      "name": "Krystyna Arden",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Stanisława Chechelska",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-22",
@@ -1994,6 +2036,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Krystyna Arden",
+      "date_death": "2026-07-19",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
       "priority_hit": false
     }
   ],
@@ -2355,8 +2411,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-21T09:31:59.319Z",
-    "updated_at": "2026-07-21T09:31:59.319Z",
+    "generated_at": "2026-07-21T20:21:42.731Z",
+    "updated_at": "2026-07-21T20:21:42.731Z",
     "deaths": [
       {
         "kind": "death",
@@ -2370,6 +2426,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
         "priority_hit": false
       },
       {
@@ -3188,6 +3258,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Műller",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-23",
@@ -4002,6 +4086,20 @@
       },
       {
         "kind": "death",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stanisława Chechelska",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-22",
@@ -4350,6 +4448,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
         "priority_hit": false
       }
     ],
@@ -4712,8 +4824,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-21T09:31:59.319Z",
-    "updated_at": "2026-07-21T09:31:59.319Z",
+    "generated_at": "2026-07-21T20:21:42.731Z",
+    "updated_at": "2026-07-21T20:21:42.731Z",
     "deaths": [
       {
         "kind": "death",
@@ -4727,6 +4839,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
         "priority_hit": false
       },
       {
@@ -5545,6 +5671,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Műller",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-23",
@@ -6359,6 +6499,20 @@
       },
       {
         "kind": "death",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stanisława Chechelska",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-22",
@@ -6707,6 +6861,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Muller-0HZ44XVE0FCP",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 15.07.2026 przeżywszy 95 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Arden",
+        "date_death": "2026-07-19",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "12:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła",
         "priority_hit": false
       }
     ],
