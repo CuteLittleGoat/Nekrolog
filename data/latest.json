@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-23T09:29:00.830Z",
-  "updated_at": "2026-07-23T09:29:00.830Z",
+  "generated_at": "2026-07-23T20:17:43.795Z",
+  "updated_at": "2026-07-23T20:17:43.795Z",
   "deaths": [
     {
       "kind": "death",
@@ -28,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Halina Puchała",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
       "priority_hit": false
     },
     {
@@ -1014,6 +1028,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Halina Puchała",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stanisław Műller",
       "date_death": "2026-07-15",
       "date_funeral": "2026-07-23",
@@ -1800,6 +1828,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Halina Puchała",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Ewa Jakubiec",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-29",
@@ -2250,6 +2292,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Halina Puchała",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Krystyna Arden",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-28",
@@ -2635,8 +2691,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-23T09:29:00.830Z",
-    "updated_at": "2026-07-23T09:29:00.830Z",
+    "generated_at": "2026-07-23T20:17:43.795Z",
+    "updated_at": "2026-07-23T20:17:43.795Z",
     "deaths": [
       {
         "kind": "death",
@@ -2664,6 +2720,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -3650,6 +3720,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Műller",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-23",
@@ -4436,6 +4520,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -4882,6 +4980,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Wola Duchacka",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5272,8 +5384,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-23T09:29:00.830Z",
-    "updated_at": "2026-07-23T09:29:00.830Z",
+    "generated_at": "2026-07-23T20:17:43.795Z",
+    "updated_at": "2026-07-23T20:17:43.795Z",
     "deaths": [
       {
         "kind": "death",
@@ -5301,6 +5413,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Arden-1QZKC6WJGBGB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 73 lata zmarła | Data pogrzebu 28.07.2026 12:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
         "priority_hit": false
       },
       {
@@ -6287,6 +6413,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Stanisław Műller",
         "date_death": "2026-07-15",
         "date_funeral": "2026-07-23",
@@ -7073,6 +7213,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -7519,6 +7673,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Wola Duchacka",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Halina Puchała",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       },
       {
