@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-24T09:25:35.612Z",
-  "updated_at": "2026-07-24T09:25:35.612Z",
+  "generated_at": "2026-07-24T20:24:49.594Z",
+  "updated_at": "2026-07-24T20:24:49.594Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Bogusława Cholewa-Hrynkowska",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Ewa Jakubiec",
@@ -14,6 +28,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jolanta Nowak",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
       "priority_hit": false
     },
     {
@@ -32,6 +60,20 @@
     },
     {
       "kind": "death",
+      "name": "Andrzej Pytel",
+      "date_death": "2026-07-23",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Halina Puchała",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -42,6 +84,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Teresa Panek",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
       "priority_hit": false
     },
     {
@@ -1042,6 +1098,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Bogusława Cholewa-Hrynkowska",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ewa Jakubiec",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-29",
@@ -1052,6 +1122,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Jolanta Nowak",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1070,6 +1154,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Andrzej Pytel",
+      "date_death": "2026-07-23",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Halina Puchała",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -1078,6 +1176,20 @@
       "source_id": "puk_pozegnalismy",
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Teresa Panek",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
       "priority_hit": false
@@ -1842,6 +1954,48 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Andrzej Pytel",
+      "date_death": "2026-07-23",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Bogusława Cholewa-Hrynkowska",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jolanta Nowak",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Halina Puchała",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -1852,6 +2006,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Teresa Panek",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
       "priority_hit": false
     },
     {
@@ -2264,6 +2432,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Teresa Panek",
+      "date_death": "2026-07-21",
+      "date_funeral": "2026-07-27",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Halina Puchała",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -2274,6 +2456,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Andrzej Pytel",
+      "date_death": "2026-07-23",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
       "priority_hit": false
     },
     {
@@ -2292,6 +2488,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Jolanta Nowak",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-28",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ewa Jakubiec",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-29",
@@ -2302,6 +2512,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Bogusława Cholewa-Hrynkowska",
+      "date_death": "2026-07-22",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -2663,9 +2887,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-24T09:25:35.612Z",
-    "updated_at": "2026-07-24T09:25:35.612Z",
+    "generated_at": "2026-07-24T20:24:49.594Z",
+    "updated_at": "2026-07-24T20:24:49.594Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Ewa Jakubiec",
@@ -2678,6 +2916,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
         "priority_hit": false
       },
       {
@@ -2696,6 +2948,20 @@
       },
       {
         "kind": "death",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -2706,6 +2972,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -3706,6 +3986,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -3716,6 +4010,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3734,6 +4042,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -3742,6 +4064,20 @@
         "source_id": "puk_pozegnalismy",
         "source_name": "PUK Kraków – Pożegnaliśmy",
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
@@ -4506,6 +4842,48 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -4516,6 +4894,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -4928,6 +5320,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -4938,6 +5344,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
         "priority_hit": false
       },
       {
@@ -4956,6 +5376,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -4966,6 +5400,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -5328,9 +5776,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-24T09:25:35.612Z",
-    "updated_at": "2026-07-24T09:25:35.612Z",
+    "generated_at": "2026-07-24T20:24:49.594Z",
+    "updated_at": "2026-07-24T20:24:49.594Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Ewa Jakubiec",
@@ -5343,6 +5805,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 29.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
         "priority_hit": false
       },
       {
@@ -5361,6 +5837,20 @@
       },
       {
         "kind": "death",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -5371,6 +5861,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -6371,6 +6875,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -6381,6 +6899,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6399,6 +6931,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -6407,6 +6953,20 @@
         "source_id": "puk_pozegnalismy",
         "source_name": "PUK Kraków – Pożegnaliśmy",
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
@@ -7171,6 +7731,48 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł | Data pogrzebu 28.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła | Data pogrzebu 28.07.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -7181,6 +7783,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:00",
         "priority_hit": false
       },
       {
@@ -7593,6 +8209,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Teresa Panek",
+        "date_death": "2026-07-21",
+        "date_funeral": "2026-07-27",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Teresa-Panek-OPU9KYAH9W0M",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Halina Puchała",
         "date_death": "2026-07-21",
         "date_funeral": "2026-07-27",
@@ -7603,6 +8233,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Andrzej Pytel",
+        "date_death": "2026-07-23",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Pytel-9S7U1GCICGFU",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 23.07.2026 przeżywszy 76 lat zmarł",
         "priority_hit": false
       },
       {
@@ -7621,6 +8265,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Jolanta Nowak",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-28",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jolanta-Nowak-QHCA5WRMH3PB",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 67 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -7631,6 +8289,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Bogusława Cholewa-Hrynkowska",
+        "date_death": "2026-07-22",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       }
     ],
