@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-25T20:13:17.296Z",
-  "updated_at": "2026-07-25T20:13:17.296Z",
+  "generated_at": "2026-07-26T09:19:49.683Z",
+  "updated_at": "2026-07-26T09:19:49.683Z",
   "deaths": [
     {
       "kind": "death",
@@ -536,20 +536,6 @@
     },
     {
       "kind": "death",
-      "name": "Irena Sięka",
-      "date_death": "2026-06-23",
-      "date_funeral": "2026-06-29",
-      "time_funeral": "11:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Śp. MARIA GÓRNA",
       "date_death": null,
       "date_funeral": null,
@@ -684,48 +670,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jozef-mondkiewicz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "PROF. JÓZEF KAZIMIERZ MOŚCICKI",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/prof-jozef-kazimierz-moscicki/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. KAZIMIERZ NOSAL",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/kazimierz-nosal/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. STANISŁAWA SOCHACKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/stanislawa-sochacka/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1262,20 +1206,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Irena Sięka",
-      "date_death": "2026-06-23",
-      "date_funeral": "2026-06-29",
-      "time_funeral": "11:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
       "priority_hit": false
     },
     {
@@ -2159,8 +2089,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-25T20:13:17.296Z",
-    "updated_at": "2026-07-25T20:13:17.296Z",
+    "generated_at": "2026-07-26T09:19:49.683Z",
+    "updated_at": "2026-07-26T09:19:49.683Z",
     "deaths": [
       {
         "kind": "death",
@@ -2696,20 +2626,6 @@
       },
       {
         "kind": "death",
-        "name": "Irena Sięka",
-        "date_death": "2026-06-23",
-        "date_funeral": "2026-06-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. MARIA GÓRNA",
         "date_death": null,
         "date_funeral": null,
@@ -2844,48 +2760,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/jozef-mondkiewicz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "PROF. JÓZEF KAZIMIERZ MOŚCICKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/prof-jozef-kazimierz-moscicki/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KAZIMIERZ NOSAL",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/kazimierz-nosal/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. STANISŁAWA SOCHACKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/stanislawa-sochacka/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -3422,20 +3296,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Irena Sięka",
-        "date_death": "2026-06-23",
-        "date_funeral": "2026-06-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4320,8 +4180,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-25T20:13:17.296Z",
-    "updated_at": "2026-07-25T20:13:17.296Z",
+    "generated_at": "2026-07-26T09:19:49.683Z",
+    "updated_at": "2026-07-26T09:19:49.683Z",
     "deaths": [
       {
         "kind": "death",
@@ -4857,20 +4717,6 @@
       },
       {
         "kind": "death",
-        "name": "Irena Sięka",
-        "date_death": "2026-06-23",
-        "date_funeral": "2026-06-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła | Data pogrzebu 29.06.2026 11:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. MARIA GÓRNA",
         "date_death": null,
         "date_funeral": null,
@@ -5005,48 +4851,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/jozef-mondkiewicz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "PROF. JÓZEF KAZIMIERZ MOŚCICKI",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/prof-jozef-kazimierz-moscicki/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KAZIMIERZ NOSAL",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/kazimierz-nosal/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. STANISŁAWA SOCHACKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/stanislawa-sochacka/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -5583,20 +5387,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozefa-Lason-4WX9XS552H0N",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.06.2026 przeżywszy 88 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Irena Sięka",
-        "date_death": "2026-06-23",
-        "date_funeral": "2026-06-29",
-        "time_funeral": "11:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Sieka-9FO04BV4HWN9",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 23.06.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
