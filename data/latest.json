@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-27T10:48:30.329Z",
-  "updated_at": "2026-07-27T10:48:30.329Z",
+  "generated_at": "2026-07-27T20:26:27.139Z",
+  "updated_at": "2026-07-27T20:26:27.139Z",
   "deaths": [
     {
       "kind": "death",
@@ -14,6 +14,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Katarzyna Dzieszko",
+      "date_death": "2026-07-24",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
       "priority_hit": false
     },
     {
@@ -944,6 +958,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Katarzyna Dzieszko",
+      "date_death": "2026-07-24",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Ewa Jakubiec",
       "date_death": "2026-07-19",
       "date_funeral": "2026-07-29",
@@ -1758,6 +1786,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Katarzyna Dzieszko",
+      "date_death": "2026-07-24",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Andrzej Pytel",
       "date_death": "2026-07-23",
       "date_funeral": "2026-07-28",
@@ -2236,6 +2278,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Katarzyna Dzieszko",
+      "date_death": "2026-07-24",
+      "date_funeral": "2026-07-30",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Bogusława Cholewa-Hrynkowska",
       "date_death": "2026-07-22",
       "date_funeral": "2026-07-30",
@@ -2607,8 +2663,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-27T10:48:30.329Z",
-    "updated_at": "2026-07-27T10:48:30.329Z",
+    "generated_at": "2026-07-27T20:26:27.139Z",
+    "updated_at": "2026-07-27T20:26:27.139Z",
     "deaths": [
       {
         "kind": "death",
@@ -2622,6 +2678,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
         "priority_hit": false
       },
       {
@@ -3552,6 +3622,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -4366,6 +4450,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Andrzej Pytel",
         "date_death": "2026-07-23",
         "date_funeral": "2026-07-28",
@@ -4840,6 +4938,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5216,8 +5328,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-27T10:48:30.329Z",
-    "updated_at": "2026-07-27T10:48:30.329Z",
+    "generated_at": "2026-07-27T20:26:27.139Z",
+    "updated_at": "2026-07-27T20:26:27.139Z",
     "deaths": [
       {
         "kind": "death",
@@ -5231,6 +5343,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Cholewa-Hrynkowska-5G34MZYUKBKM",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 22.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
         "priority_hit": false
       },
       {
@@ -6161,6 +6287,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Ewa Jakubiec",
         "date_death": "2026-07-19",
         "date_funeral": "2026-07-29",
@@ -6975,6 +7115,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła | Data pogrzebu 30.07.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Andrzej Pytel",
         "date_death": "2026-07-23",
         "date_funeral": "2026-07-28",
@@ -7449,6 +7603,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa--Jakubiec-A9TW4KRLPNYQ",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 19.07.2026 przeżywszy 77 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Katarzyna Dzieszko",
+        "date_death": "2026-07-24",
+        "date_funeral": "2026-07-30",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Katarzyna-Dzieszko-PX80CF3UFRXP",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 24.07.2026 przeżywszy 89 lat zmarła",
         "priority_hit": false
       },
       {
