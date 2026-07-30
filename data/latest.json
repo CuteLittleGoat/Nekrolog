@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-30T09:34:09.946Z",
-  "updated_at": "2026-07-30T09:34:09.946Z",
+  "generated_at": "2026-07-30T20:18:40.196Z",
+  "updated_at": "2026-07-30T20:18:40.196Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Sylwester Gradzik",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Ewa Długosz-Ślusarczyk",
@@ -550,6 +564,20 @@
     },
     {
       "kind": "death",
+      "name": "Śp. ELŻBIETA TARNOWSKA",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/elzbieta-tarnowska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "ANDRZEJ KRZYSZTOF TORBUS",
       "date_death": null,
       "date_funeral": null,
@@ -1024,6 +1052,20 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Grębałów",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Sylwester Gradzik",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
       "priority_hit": false
     },
     {
@@ -1856,6 +1898,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Sylwester Gradzik",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Wojciech Gajoch",
       "date_death": "2026-07-28",
       "date_funeral": "2026-07-31",
@@ -2275,6 +2331,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 27.07.2026 przeżywszy 76 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Sylwester Gradzik",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2635,9 +2705,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-30T09:34:09.946Z",
-    "updated_at": "2026-07-30T09:34:09.946Z",
+    "generated_at": "2026-07-30T20:18:40.196Z",
+    "updated_at": "2026-07-30T20:18:40.196Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Ewa Długosz-Ślusarczyk",
@@ -3186,6 +3270,20 @@
       },
       {
         "kind": "death",
+        "name": "Śp. ELŻBIETA TARNOWSKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/elzbieta-tarnowska/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -3660,6 +3758,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
         "priority_hit": false
       },
       {
@@ -4492,6 +4604,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Wojciech Gajoch",
         "date_death": "2026-07-28",
         "date_funeral": "2026-07-31",
@@ -4910,6 +5036,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa-Dlugosz-Slusarczyk-K0Z5RWTOXKY1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.07.2026 przeżywszy 76 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
         "priority_hit": false
       }
     ],
@@ -5272,9 +5412,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-30T09:34:09.946Z",
-    "updated_at": "2026-07-30T09:34:09.946Z",
+    "generated_at": "2026-07-30T20:18:40.196Z",
+    "updated_at": "2026-07-30T20:18:40.196Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Ewa Długosz-Ślusarczyk",
@@ -5823,6 +5977,20 @@
       },
       {
         "kind": "death",
+        "name": "Śp. ELŻBIETA TARNOWSKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/elzbieta-tarnowska/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -6297,6 +6465,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
         "priority_hit": false
       },
       {
@@ -7129,6 +7311,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł | Data pogrzebu 03.08.2026 13:40",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Wojciech Gajoch",
         "date_death": "2026-07-28",
         "date_funeral": "2026-07-31",
@@ -7547,6 +7743,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ewa-Dlugosz-Slusarczyk-K0Z5RWTOXKY1",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 27.07.2026 przeżywszy 76 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Sylwester Gradzik",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-03",
+        "time_funeral": "13:40",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
         "priority_hit": false
       }
     ],
