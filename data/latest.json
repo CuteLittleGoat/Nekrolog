@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-07-31T09:49:32.362Z",
-  "updated_at": "2026-07-31T09:49:32.362Z",
+  "generated_at": "2026-07-31T20:22:59.659Z",
+  "updated_at": "2026-07-31T20:22:59.659Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Janusz Minczewski",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-05",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Sylwester Gradzik",
@@ -1112,6 +1126,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Janusz Minczewski",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-05",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Sylwester Gradzik",
       "date_death": "2026-07-30",
       "date_funeral": "2026-08-03",
@@ -1968,6 +1996,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Janusz Minczewski",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-05",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Sylwester Gradzik",
       "date_death": "2026-07-30",
       "date_funeral": "2026-08-03",
@@ -2499,6 +2541,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janusz Minczewski",
+      "date_death": "2026-07-30",
+      "date_funeral": "2026-08-05",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2859,9 +2915,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-07-31T09:49:32.362Z",
-    "updated_at": "2026-07-31T09:49:32.362Z",
+    "generated_at": "2026-07-31T20:22:59.659Z",
+    "updated_at": "2026-07-31T20:22:59.659Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Sylwester Gradzik",
@@ -3972,6 +4042,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Sylwester Gradzik",
         "date_death": "2026-07-30",
         "date_funeral": "2026-08-03",
@@ -4828,6 +4912,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Sylwester Gradzik",
         "date_death": "2026-07-30",
         "date_funeral": "2026-08-03",
@@ -5358,6 +5456,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
         "priority_hit": false
       }
     ],
@@ -5720,9 +5832,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-07-31T09:49:32.362Z",
-    "updated_at": "2026-07-31T09:49:32.362Z",
+    "generated_at": "2026-07-31T20:22:59.659Z",
+    "updated_at": "2026-07-31T20:22:59.659Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Sylwester Gradzik",
@@ -6833,6 +6959,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Sylwester Gradzik",
         "date_death": "2026-07-30",
         "date_funeral": "2026-08-03",
@@ -7689,6 +7829,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł | Data pogrzebu 05.08.2026 10:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Sylwester Gradzik",
         "date_death": "2026-07-30",
         "date_funeral": "2026-08-03",
@@ -8219,6 +8373,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Sylwester-Gradzik-YJRA9FVYSPIO",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 30.07.2026 przeżywszy 74 lata zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Janusz Minczewski",
+        "date_death": "2026-07-30",
+        "date_funeral": "2026-08-05",
+        "time_funeral": "10:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Minczewski-72SUG93PJPWR",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 30.07.2026 przeżywszy 72 lat zmarł",
         "priority_hit": false
       }
     ],
