@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T20:11:42.272Z",
-  "updated_at": "2026-08-01T20:11:42.272Z",
+  "generated_at": "2026-08-02T09:13:25.809Z",
+  "updated_at": "2026-08-02T09:13:25.809Z",
   "deaths": [
     {
       "kind": "death",
@@ -466,20 +466,6 @@
     },
     {
       "kind": "death",
-      "name": "Ryszard Wojtowicz",
-      "date_death": "2026-06-30",
-      "date_funeral": "2026-07-10",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Alina Bednarz",
       "date_death": "2026-07-06",
       "date_funeral": "2026-07-10",
@@ -536,20 +522,6 @@
     },
     {
       "kind": "death",
-      "name": "Anna Ramza - Kozioł",
-      "date_death": "2026-06-27",
-      "date_funeral": "2026-07-03",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "ANDRZEJ KRZYSZTOF TORBUS",
       "date_death": null,
       "date_funeral": null,
@@ -589,51 +561,9 @@
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. TADEUSZ BARAN",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/tadeusz-baran/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. LUCYNA OWCZYŃSKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/lucyna-owczynska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
     }
   ],
   "funerals": [
-    {
-      "kind": "funeral",
-      "name": "Piotr Apryjas",
-      "date_death": null,
-      "date_funeral": "2026-08-01",
-      "time_funeral": "10:00",
-      "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "source_url": "https://www.zck-krakow.pl/funerals",
-      "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Małgorzata Plewniak",
@@ -1098,20 +1028,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Ryszard Wojtowicz",
-      "date_death": "2026-06-30",
-      "date_funeral": "2026-07-10",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Alina Bednarz",
       "date_death": "2026-07-06",
       "date_funeral": "2026-07-10",
@@ -1164,20 +1080,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wieslawa-Wygas-Fialkowska-AMSF0IAAWFD2",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 05.07.2026 przeżywszy 98 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Anna Ramza - Kozioł",
-      "date_death": "2026-06-27",
-      "date_funeral": "2026-07-03",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1590,20 +1492,6 @@
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Piotr Apryjas",
-      "date_death": null,
-      "date_funeral": "2026-08-01",
-      "time_funeral": "10:00",
-      "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "source_url": "https://www.zck-krakow.pl/funerals",
-      "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Beata Rzeczkowska",
@@ -2047,8 +1935,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-01T20:11:42.272Z",
-    "updated_at": "2026-08-01T20:11:42.272Z",
+    "generated_at": "2026-08-02T09:13:25.809Z",
+    "updated_at": "2026-08-02T09:13:25.809Z",
     "deaths": [
       {
         "kind": "death",
@@ -2514,20 +2402,6 @@
       },
       {
         "kind": "death",
-        "name": "Ryszard Wojtowicz",
-        "date_death": "2026-06-30",
-        "date_funeral": "2026-07-10",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Alina Bednarz",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-10",
@@ -2584,20 +2458,6 @@
       },
       {
         "kind": "death",
-        "name": "Anna Ramza - Kozioł",
-        "date_death": "2026-06-27",
-        "date_funeral": "2026-07-03",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -2637,51 +2497,9 @@
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. TADEUSZ BARAN",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/tadeusz-baran/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. LUCYNA OWCZYŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/lucyna-owczynska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
       }
     ],
     "funerals": [
-      {
-        "kind": "funeral",
-        "name": "Piotr Apryjas",
-        "date_death": null,
-        "date_funeral": "2026-08-01",
-        "time_funeral": "10:00",
-        "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Małgorzata Plewniak",
@@ -3146,20 +2964,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Ryszard Wojtowicz",
-        "date_death": "2026-06-30",
-        "date_funeral": "2026-07-10",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Alina Bednarz",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-10",
@@ -3212,20 +3016,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wieslawa-Wygas-Fialkowska-AMSF0IAAWFD2",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 05.07.2026 przeżywszy 98 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Anna Ramza - Kozioł",
-        "date_death": "2026-06-27",
-        "date_funeral": "2026-07-03",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3638,20 +3428,6 @@
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Piotr Apryjas",
-        "date_death": null,
-        "date_funeral": "2026-08-01",
-        "time_funeral": "10:00",
-        "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Beata Rzeczkowska",
@@ -4096,8 +3872,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-01T20:11:42.272Z",
-    "updated_at": "2026-08-01T20:11:42.272Z",
+    "generated_at": "2026-08-02T09:13:25.809Z",
+    "updated_at": "2026-08-02T09:13:25.809Z",
     "deaths": [
       {
         "kind": "death",
@@ -4563,20 +4339,6 @@
       },
       {
         "kind": "death",
-        "name": "Ryszard Wojtowicz",
-        "date_death": "2026-06-30",
-        "date_funeral": "2026-07-10",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł | Data pogrzebu 10.07.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Alina Bednarz",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-10",
@@ -4633,20 +4395,6 @@
       },
       {
         "kind": "death",
-        "name": "Anna Ramza - Kozioł",
-        "date_death": "2026-06-27",
-        "date_funeral": "2026-07-03",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła | Data pogrzebu 03.07.2026 13:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -4686,51 +4434,9 @@
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. TADEUSZ BARAN",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/tadeusz-baran/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. LUCYNA OWCZYŃSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/lucyna-owczynska/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
       }
     ],
     "funerals": [
-      {
-        "kind": "funeral",
-        "name": "Piotr Apryjas",
-        "date_death": null,
-        "date_funeral": "2026-08-01",
-        "time_funeral": "10:00",
-        "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Małgorzata Plewniak",
@@ -5195,20 +4901,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Ryszard Wojtowicz",
-        "date_death": "2026-06-30",
-        "date_funeral": "2026-07-10",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszar-Wojtowicz-WS8QD02C96SC",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 30.06.2026 przeżywszy 90 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Alina Bednarz",
         "date_death": "2026-07-06",
         "date_funeral": "2026-07-10",
@@ -5261,20 +4953,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wieslawa-Wygas-Fialkowska-AMSF0IAAWFD2",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 05.07.2026 przeżywszy 98 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Anna Ramza - Kozioł",
-        "date_death": "2026-06-27",
-        "date_funeral": "2026-07-03",
-        "time_funeral": "13:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Ramza---Koziol-UF1X1QTT12AT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 27.06.2026 przeżywszy 85 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5687,20 +5365,6 @@
       }
     ],
     "upcoming_funerals": [
-      {
-        "kind": "funeral",
-        "name": "Piotr Apryjas",
-        "date_death": null,
-        "date_funeral": "2026-08-01",
-        "time_funeral": "10:00",
-        "place": "Kaplica - ul. Powstańców – Cmentarz Prądnik Czerwony",
-        "source_id": "zck_funerals",
-        "source_name": "ZCK Kraków – Porządek pogrzebów",
-        "url": "https://www.zck-krakow.pl/funerals",
-        "source_url": "https://www.zck-krakow.pl/funerals",
-        "note": "ZCK fallback date; Cmentarz Prądnik Czerwony",
-        "priority_hit": false
-      },
       {
         "kind": "funeral",
         "name": "Beata Rzeczkowska",
