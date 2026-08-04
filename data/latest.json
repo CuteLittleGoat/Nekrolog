@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-08-04T09:41:44.553Z",
-  "updated_at": "2026-08-04T09:41:44.553Z",
+  "generated_at": "2026-08-04T20:37:16.271Z",
+  "updated_at": "2026-08-04T20:37:16.271Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Danuta Płaza",
+      "date_death": "2026-08-03",
+      "date_funeral": "2026-08-07",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Irena Zemełka",
@@ -564,6 +578,20 @@
     },
     {
       "kind": "death",
+      "name": "Śp. CECYLIA SKORUPA",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "ANDRZEJ KRZYSZTOF TORBUS",
       "date_death": null,
       "date_funeral": null,
@@ -870,6 +898,20 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Grębałów",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Danuta Płaza",
+      "date_death": "2026-08-03",
+      "date_funeral": "2026-08-07",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1702,6 +1744,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Danuta Płaza",
+      "date_death": "2026-08-03",
+      "date_funeral": "2026-08-07",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Irena Zemełka",
       "date_death": "2026-08-01",
       "date_funeral": "2026-08-06",
@@ -2177,6 +2233,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Danuta Płaza",
+      "date_death": "2026-08-03",
+      "date_funeral": "2026-08-07",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2537,9 +2607,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-04T09:41:44.553Z",
-    "updated_at": "2026-08-04T09:41:44.553Z",
+    "generated_at": "2026-08-04T20:37:16.271Z",
+    "updated_at": "2026-08-04T20:37:16.271Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Irena Zemełka",
@@ -3102,6 +3186,20 @@
       },
       {
         "kind": "death",
+        "name": "Śp. CECYLIA SKORUPA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -3408,6 +3506,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4240,6 +4352,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Zemełka",
         "date_death": "2026-08-01",
         "date_funeral": "2026-08-06",
@@ -4714,6 +4840,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Zemelka-KEXJOK8XURUH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -5076,9 +5216,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-04T09:41:44.553Z",
-    "updated_at": "2026-08-04T09:41:44.553Z",
+    "generated_at": "2026-08-04T20:37:16.271Z",
+    "updated_at": "2026-08-04T20:37:16.271Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Irena Zemełka",
@@ -5641,6 +5795,20 @@
       },
       {
         "kind": "death",
+        "name": "Śp. CECYLIA SKORUPA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "ANDRZEJ KRZYSZTOF TORBUS",
         "date_death": null,
         "date_funeral": null,
@@ -5947,6 +6115,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Grębałów",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6779,6 +6961,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Irena Zemełka",
         "date_death": "2026-08-01",
         "date_funeral": "2026-08-06",
@@ -7253,6 +7449,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Zemelka-KEXJOK8XURUH",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Danuta Płaza",
+        "date_death": "2026-08-03",
+        "date_funeral": "2026-08-07",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła",
         "priority_hit": false
       }
     ],
