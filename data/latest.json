@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-05T09:40:44.031Z",
-  "updated_at": "2026-08-05T09:40:44.031Z",
+  "generated_at": "2026-08-05T20:35:49.549Z",
+  "updated_at": "2026-08-05T20:35:49.549Z",
   "deaths": [
     {
       "kind": "death",
@@ -544,6 +544,48 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. JERZY STROŃCZYK",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. ANDRZEJ STEFAŃSKI",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1574,6 +1616,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Bogusław Brożek",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Gabriel24 – Nekrologi",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/boguslaw-brozek/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Śp. Janina Daca",
       "date_death": null,
       "date_funeral": null,
@@ -1722,20 +1778,6 @@
       "source_id": "gabriel_nekrologi",
       "source_name": "Gabriel24 – Nekrologi",
       "url": "https://www.gabriel24.pl/nekrolog/barbara-biel/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Śp. Elżbieta Wojtacka",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Gabriel24 – Nekrologi",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/elzbieta-wojtacka/",
       "source_url": "https://www.gabriel24.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -2579,8 +2621,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-05T09:40:44.031Z",
-    "updated_at": "2026-08-05T09:40:44.031Z",
+    "generated_at": "2026-08-05T20:35:49.549Z",
+    "updated_at": "2026-08-05T20:35:49.549Z",
     "deaths": [
       {
         "kind": "death",
@@ -3124,6 +3166,48 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. JERZY STROŃCZYK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. ANDRZEJ STEFAŃSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4154,6 +4238,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Bogusław Brożek",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Gabriel24 – Nekrologi",
+        "source_id": "gabriel_nekrologi",
+        "source_name": "Gabriel24 – Nekrologi",
+        "url": "https://www.gabriel24.pl/nekrolog/boguslaw-brozek/",
+        "source_url": "https://www.gabriel24.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Śp. Janina Daca",
         "date_death": null,
         "date_funeral": null,
@@ -4302,20 +4400,6 @@
         "source_id": "gabriel_nekrologi",
         "source_name": "Gabriel24 – Nekrologi",
         "url": "https://www.gabriel24.pl/nekrolog/barbara-biel/",
-        "source_url": "https://www.gabriel24.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Śp. Elżbieta Wojtacka",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Gabriel24 – Nekrologi",
-        "source_id": "gabriel_nekrologi",
-        "source_name": "Gabriel24 – Nekrologi",
-        "url": "https://www.gabriel24.pl/nekrolog/elzbieta-wojtacka/",
         "source_url": "https://www.gabriel24.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -5160,8 +5244,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-05T09:40:44.031Z",
-    "updated_at": "2026-08-05T09:40:44.031Z",
+    "generated_at": "2026-08-05T20:35:49.549Z",
+    "updated_at": "2026-08-05T20:35:49.549Z",
     "deaths": [
       {
         "kind": "death",
@@ -5705,6 +5789,48 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/cecylia-skorupa/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. JERZY STROŃCZYK",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. ANDRZEJ STEFAŃSKI",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -6735,6 +6861,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Bogusław Brożek",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Gabriel24 – Nekrologi",
+        "source_id": "gabriel_nekrologi",
+        "source_name": "Gabriel24 – Nekrologi",
+        "url": "https://www.gabriel24.pl/nekrolog/boguslaw-brozek/",
+        "source_url": "https://www.gabriel24.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Śp. Janina Daca",
         "date_death": null,
         "date_funeral": null,
@@ -6883,20 +7023,6 @@
         "source_id": "gabriel_nekrologi",
         "source_name": "Gabriel24 – Nekrologi",
         "url": "https://www.gabriel24.pl/nekrolog/barbara-biel/",
-        "source_url": "https://www.gabriel24.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Śp. Elżbieta Wojtacka",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Gabriel24 – Nekrologi",
-        "source_id": "gabriel_nekrologi",
-        "source_name": "Gabriel24 – Nekrologi",
-        "url": "https://www.gabriel24.pl/nekrolog/elzbieta-wojtacka/",
         "source_url": "https://www.gabriel24.pl/nekrologi/",
         "note": "",
         "priority_hit": false
