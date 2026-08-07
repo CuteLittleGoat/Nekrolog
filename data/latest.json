@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-07T00:43:22.712Z",
-  "updated_at": "2026-08-07T00:43:22.712Z",
+  "generated_at": "2026-08-07T08:18:33.776Z",
+  "updated_at": "2026-08-07T08:18:33.776Z",
   "deaths": [
     {
       "kind": "death",
@@ -550,14 +550,14 @@
     },
     {
       "kind": "death",
-      "name": "Śp. ANDRZEJ STEFAŃSKI",
+      "name": "Śp. ANDRZEJ STACHOWICZ",
       "date_death": null,
       "date_funeral": null,
       "time_funeral": null,
       "place": "Karawan – Nekrologi",
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
+      "url": "https://karawan.pl/nekrolog/andrzej-stachowicz/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -892,7 +892,7 @@
       "date_death": null,
       "date_funeral": "2026-08-07",
       "time_funeral": "12:30",
-      "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+      "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
       "source_id": "zck_funerals",
       "source_name": "ZCK Kraków – Porządek pogrzebów",
       "url": "https://www.zck-krakow.pl/funerals",
@@ -2156,7 +2156,7 @@
       "date_death": null,
       "date_funeral": "2026-08-07",
       "time_funeral": "12:30",
-      "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+      "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
       "source_id": "zck_funerals",
       "source_name": "ZCK Kraków – Porządek pogrzebów",
       "url": "https://www.zck-krakow.pl/funerals",
@@ -2635,8 +2635,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-07T00:43:22.712Z",
-    "updated_at": "2026-08-07T00:43:22.712Z",
+    "generated_at": "2026-08-07T08:18:33.776Z",
+    "updated_at": "2026-08-07T08:18:33.776Z",
     "deaths": [
       {
         "kind": "death",
@@ -3186,14 +3186,14 @@
       },
       {
         "kind": "death",
-        "name": "Śp. ANDRZEJ STEFAŃSKI",
+        "name": "Śp. ANDRZEJ STACHOWICZ",
         "date_death": null,
         "date_funeral": null,
         "time_funeral": null,
         "place": "Karawan – Nekrologi",
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
+        "url": "https://karawan.pl/nekrolog/andrzej-stachowicz/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -3528,7 +3528,7 @@
         "date_death": null,
         "date_funeral": "2026-08-07",
         "time_funeral": "12:30",
-        "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+        "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
@@ -4792,7 +4792,7 @@
         "date_death": null,
         "date_funeral": "2026-08-07",
         "time_funeral": "12:30",
-        "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+        "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
@@ -5272,8 +5272,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-07T00:43:22.712Z",
-    "updated_at": "2026-08-07T00:43:22.712Z",
+    "generated_at": "2026-08-07T08:18:33.776Z",
+    "updated_at": "2026-08-07T08:18:33.776Z",
     "deaths": [
       {
         "kind": "death",
@@ -5823,14 +5823,14 @@
       },
       {
         "kind": "death",
-        "name": "Śp. ANDRZEJ STEFAŃSKI",
+        "name": "Śp. ANDRZEJ STACHOWICZ",
         "date_death": null,
         "date_funeral": null,
         "time_funeral": null,
         "place": "Karawan – Nekrologi",
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/andrzej-stefanski/",
+        "url": "https://karawan.pl/nekrolog/andrzej-stachowicz/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -6165,7 +6165,7 @@
         "date_death": null,
         "date_funeral": "2026-08-07",
         "time_funeral": "12:30",
-        "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+        "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
@@ -7429,7 +7429,7 @@
         "date_death": null,
         "date_funeral": "2026-08-07",
         "time_funeral": "12:30",
-        "place": "Od bramy - ul. Powstańców – Cmentarz Prądnik Czerwony",
+        "place": "Od bramy - ul. Reduta – Cmentarz Prądnik Czerwony",
         "source_id": "zck_funerals",
         "source_name": "ZCK Kraków – Porządek pogrzebów",
         "url": "https://www.zck-krakow.pl/funerals",
