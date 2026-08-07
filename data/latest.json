@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-08-07T08:18:33.776Z",
-  "updated_at": "2026-08-07T08:18:33.776Z",
+  "generated_at": "2026-08-07T19:54:37.585Z",
+  "updated_at": "2026-08-07T19:54:37.585Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Jan Smach",
+      "date_death": "2026-08-06",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Ciałowicz",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Danuta Płaza",
@@ -1014,6 +1042,34 @@
     },
     {
       "kind": "funeral",
+      "name": "Jan Smach",
+      "date_death": "2026-08-06",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Krystyna Ciałowicz",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Danuta Płaza",
       "date_death": "2026-08-03",
       "date_funeral": "2026-08-07",
@@ -1800,6 +1856,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Jan Smach",
+      "date_death": "2026-08-06",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Ciałowicz",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Danuta Płaza",
       "date_death": "2026-08-03",
       "date_funeral": "2026-08-07",
@@ -2275,6 +2359,34 @@
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Prokocim",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Krystyna Ciałowicz",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Jan Smach",
+      "date_death": "2026-08-06",
+      "date_funeral": "2026-08-11",
+      "time_funeral": "14:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2635,9 +2747,37 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-07T08:18:33.776Z",
-    "updated_at": "2026-08-07T08:18:33.776Z",
+    "generated_at": "2026-08-07T19:54:37.585Z",
+    "updated_at": "2026-08-07T19:54:37.585Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Danuta Płaza",
@@ -3650,6 +3790,34 @@
       },
       {
         "kind": "funeral",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Danuta Płaza",
         "date_death": "2026-08-03",
         "date_funeral": "2026-08-07",
@@ -4436,6 +4604,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Danuta Płaza",
         "date_death": "2026-08-03",
         "date_funeral": "2026-08-07",
@@ -4910,6 +5106,34 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Prokocim",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
         "priority_hit": false
       }
     ],
@@ -5272,9 +5496,37 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-07T08:18:33.776Z",
-    "updated_at": "2026-08-07T08:18:33.776Z",
+    "generated_at": "2026-08-07T19:54:37.585Z",
+    "updated_at": "2026-08-07T19:54:37.585Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Danuta Płaza",
@@ -6287,6 +6539,34 @@
       },
       {
         "kind": "funeral",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Danuta Płaza",
         "date_death": "2026-08-03",
         "date_funeral": "2026-08-07",
@@ -7073,6 +7353,34 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł | Data pogrzebu 11.08.2026 14:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 11.08.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Danuta Płaza",
         "date_death": "2026-08-03",
         "date_funeral": "2026-08-07",
@@ -7547,6 +7855,34 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Prokocim",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Krystyna Ciałowicz",
+        "date_death": "2026-08-05",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Cialowicz-EJ2TQET0E5J7",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 05.08.2026 przeżywszy 84 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Jan Smach",
+        "date_death": "2026-08-06",
+        "date_funeral": "2026-08-11",
+        "time_funeral": "14:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Smach-00YN0EC9MDBI",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 06.08.2026 przeżywszy 85 lat zmarł",
         "priority_hit": false
       }
     ],
