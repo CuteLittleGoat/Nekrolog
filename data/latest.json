@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-08T19:35:01.111Z",
-  "updated_at": "2026-08-08T19:35:01.111Z",
+  "generated_at": "2026-08-09T07:56:20.388Z",
+  "updated_at": "2026-08-09T07:56:20.388Z",
   "deaths": [
     {
       "kind": "death",
@@ -466,20 +466,6 @@
     },
     {
       "kind": "death",
-      "name": "Józef Matura",
-      "date_death": "2026-07-08",
-      "date_funeral": "2026-07-14",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Stanisław Serafin",
       "date_death": "2026-07-08",
       "date_funeral": "2026-07-13",
@@ -614,34 +600,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jacek-jarnuszkiewicz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. JERZY STROŃCZYK",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -1112,20 +1070,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Józef Matura",
-      "date_death": "2026-07-08",
-      "date_funeral": "2026-07-14",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Stanisław Serafin",
       "date_death": "2026-07-08",
       "date_funeral": "2026-07-13",
@@ -1488,34 +1432,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Irena Zemełka",
-      "date_death": "2026-08-01",
-      "date_funeral": "2026-08-06",
-      "time_funeral": "13:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Zemelka-KEXJOK8XURUH",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła | Data pogrzebu 06.08.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Małgorzata Plewniak",
-      "date_death": "2026-08-01",
-      "date_funeral": "2026-08-05",
-      "time_funeral": "15:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Malgorzata-Plewniak-5CSJSRVNSC97",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 01.08.2026 przeżywszy 78 lat zmarła | Data pogrzebu 05.08.2026 15:00",
       "priority_hit": false
     }
   ],
@@ -1907,8 +1823,8 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-08T19:35:01.111Z",
-    "updated_at": "2026-08-08T19:35:01.111Z",
+    "generated_at": "2026-08-09T07:56:20.388Z",
+    "updated_at": "2026-08-09T07:56:20.388Z",
     "deaths": [
       {
         "kind": "death",
@@ -2374,20 +2290,6 @@
       },
       {
         "kind": "death",
-        "name": "Józef Matura",
-        "date_death": "2026-07-08",
-        "date_funeral": "2026-07-14",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Stanisław Serafin",
         "date_death": "2026-07-08",
         "date_funeral": "2026-07-13",
@@ -2522,34 +2424,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/jacek-jarnuszkiewicz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JERZY STROŃCZYK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -3020,20 +2894,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Józef Matura",
-        "date_death": "2026-07-08",
-        "date_funeral": "2026-07-14",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Stanisław Serafin",
         "date_death": "2026-07-08",
         "date_funeral": "2026-07-13",
@@ -3396,34 +3256,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Irena Zemełka",
-        "date_death": "2026-08-01",
-        "date_funeral": "2026-08-06",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Zemelka-KEXJOK8XURUH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła | Data pogrzebu 06.08.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Małgorzata Plewniak",
-        "date_death": "2026-08-01",
-        "date_funeral": "2026-08-05",
-        "time_funeral": "15:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Malgorzata-Plewniak-5CSJSRVNSC97",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 01.08.2026 przeżywszy 78 lat zmarła | Data pogrzebu 05.08.2026 15:00",
         "priority_hit": false
       }
     ],
@@ -3816,8 +3648,8 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-08T19:35:01.111Z",
-    "updated_at": "2026-08-08T19:35:01.111Z",
+    "generated_at": "2026-08-09T07:56:20.388Z",
+    "updated_at": "2026-08-09T07:56:20.388Z",
     "deaths": [
       {
         "kind": "death",
@@ -4283,20 +4115,6 @@
       },
       {
         "kind": "death",
-        "name": "Józef Matura",
-        "date_death": "2026-07-08",
-        "date_funeral": "2026-07-14",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł | Data pogrzebu 14.07.2026 11:40",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Stanisław Serafin",
         "date_death": "2026-07-08",
         "date_funeral": "2026-07-13",
@@ -4431,34 +4249,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/jacek-jarnuszkiewicz/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. MAREK KAZIMIERZ GRZEGORZAK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/marek-kazimierz-grzegorzak/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. JERZY STROŃCZYK",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/jerzy-stronczyk/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4929,20 +4719,6 @@
       },
       {
         "kind": "funeral",
-        "name": "Józef Matura",
-        "date_death": "2026-07-08",
-        "date_funeral": "2026-07-14",
-        "time_funeral": "11:40",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Matura-9G8484PRV3FH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 08.07.2026 przeżywszy 70 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
         "name": "Stanisław Serafin",
         "date_death": "2026-07-08",
         "date_funeral": "2026-07-13",
@@ -5305,34 +5081,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Plaza-NBM8KW5WEN7K",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 03.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 07.08.2026 12:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Irena Zemełka",
-        "date_death": "2026-08-01",
-        "date_funeral": "2026-08-06",
-        "time_funeral": "13:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Zemelka-KEXJOK8XURUH",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 01.08.2026 przeżywszy 89 lat zmarła | Data pogrzebu 06.08.2026 13:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Małgorzata Plewniak",
-        "date_death": "2026-08-01",
-        "date_funeral": "2026-08-05",
-        "time_funeral": "15:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Malgorzata-Plewniak-5CSJSRVNSC97",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 01.08.2026 przeżywszy 78 lat zmarła | Data pogrzebu 05.08.2026 15:00",
         "priority_hit": false
       }
     ],
