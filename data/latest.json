@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-08-14T08:20:50.324Z",
-  "updated_at": "2026-08-14T08:20:50.324Z",
+  "generated_at": "2026-08-14T19:50:39.712Z",
+  "updated_at": "2026-08-14T19:50:39.712Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Anna Pawlik",
+      "date_death": "2026-08-13",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Zbigniew Weber",
@@ -466,6 +480,48 @@
     },
     {
       "kind": "death",
+      "name": "Śp. MARIA GRONKOWSKA",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-gronkowska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. KRYSTYNA JANICKA",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/krystyna-janicka/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Śp. JANINA KRAMARZ-GÓRKA",
+      "date_death": null,
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Karawan – Nekrologi",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/janina-kramarz-gorka/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Śp. MIROSŁAW KĘPA",
       "date_death": null,
       "date_funeral": null,
@@ -884,6 +940,20 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Anna Pawlik",
+      "date_death": "2026-08-13",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1660,6 +1730,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Anna Pawlik",
+      "date_death": "2026-08-13",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Stefan Pyciński",
       "date_death": "2026-08-12",
       "date_funeral": "2026-08-17",
@@ -2107,6 +2191,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 10.08.2026 przeżywszy 72 lat zmarł",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Anna Pawlik",
+      "date_death": "2026-08-13",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
     }
   ],
   "fallback_summary": {
@@ -2467,9 +2565,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-14T08:20:50.324Z",
-    "updated_at": "2026-08-14T08:20:50.324Z",
+    "generated_at": "2026-08-14T19:50:39.712Z",
+    "updated_at": "2026-08-14T19:50:39.712Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Zbigniew Weber",
@@ -2934,6 +3046,48 @@
       },
       {
         "kind": "death",
+        "name": "Śp. MARIA GRONKOWSKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/maria-gronkowska/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. KRYSTYNA JANICKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/krystyna-janicka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. JANINA KRAMARZ-GÓRKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/janina-kramarz-gorka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. MIROSŁAW KĘPA",
         "date_death": null,
         "date_funeral": null,
@@ -3352,6 +3506,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
@@ -4128,6 +4296,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stefan Pyciński",
         "date_death": "2026-08-12",
         "date_funeral": "2026-08-17",
@@ -4574,6 +4756,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Weber-7CF8Z6BY5DUK",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 10.08.2026 przeżywszy 72 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       }
     ],
@@ -4936,9 +5132,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-14T08:20:50.324Z",
-    "updated_at": "2026-08-14T08:20:50.324Z",
+    "generated_at": "2026-08-14T19:50:39.712Z",
+    "updated_at": "2026-08-14T19:50:39.712Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Zbigniew Weber",
@@ -5403,6 +5613,48 @@
       },
       {
         "kind": "death",
+        "name": "Śp. MARIA GRONKOWSKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/maria-gronkowska/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. KRYSTYNA JANICKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/krystyna-janicka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Śp. JANINA KRAMARZ-GÓRKA",
+        "date_death": null,
+        "date_funeral": null,
+        "time_funeral": null,
+        "place": "Karawan – Nekrologi",
+        "source_id": "karawan_nekrologi",
+        "source_name": "Karawan – Nekrologi",
+        "url": "https://karawan.pl/nekrolog/janina-kramarz-gorka/",
+        "source_url": "https://karawan.pl/nekrologi/",
+        "note": "",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Śp. MIROSŁAW KĘPA",
         "date_death": null,
         "date_funeral": null,
@@ -5821,6 +6073,20 @@
         "url": "https://www.zck-krakow.pl/funerals",
         "source_url": "https://www.zck-krakow.pl/funerals",
         "note": "ZCK fallback date; Cmentarz Komunalny w Podgórkach Tynieckich",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       },
       {
@@ -6597,6 +6863,20 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Stefan Pyciński",
         "date_death": "2026-08-12",
         "date_funeral": "2026-08-17",
@@ -7043,6 +7323,20 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Weber-7CF8Z6BY5DUK",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 10.08.2026 przeżywszy 72 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Anna Pawlik",
+        "date_death": "2026-08-13",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
         "priority_hit": false
       }
     ],
