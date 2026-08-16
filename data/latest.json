@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-15T19:25:45.157Z",
-  "updated_at": "2026-08-15T19:25:45.157Z",
+  "generated_at": "2026-08-16T07:36:06.746Z",
+  "updated_at": "2026-08-16T07:36:06.746Z",
   "deaths": [
     {
       "kind": "death",
@@ -438,34 +438,6 @@
     },
     {
       "kind": "death",
-      "name": "Ireneusz Szarek",
-      "date_death": "2026-07-16",
-      "date_funeral": "2026-07-20",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł | Data pogrzebu 20.07.2026 12:20",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Anna Wąsik",
-      "date_death": "2026-07-15",
-      "date_funeral": "2026-07-18",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 18.07.2026 12:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Śp. MARIA GRONKOWSKA",
       "date_death": null,
       "date_funeral": null,
@@ -516,20 +488,6 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/miroslaw-kepa/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Śp. KRYSTYNA ZWOROWSKA",
-      "date_death": null,
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Karawan – Nekrologi",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/krystyna-zworowska/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "",
       "priority_hit": false
@@ -968,34 +926,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Kapusta-IL3NADIH7AUB",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 16.07.2026 przeżywszy 88 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Ireneusz Szarek",
-      "date_death": "2026-07-16",
-      "date_funeral": "2026-07-20",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Anna Wąsik",
-      "date_death": "2026-07-15",
-      "date_funeral": "2026-07-18",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1785,18 +1715,24 @@
   ],
   "source_errors": [
     {
+      "source_id": "salwator_grobonet",
+      "source_name": "Kraków Salwator – Grobonet",
+      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "error": "fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above."
+    },
+    {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
       "error": "HTTP 403"
     }
   ],
-  "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+  "refresh_error": "Kraków Salwator – Grobonet: fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-15T19:25:45.157Z",
-    "updated_at": "2026-08-15T19:25:45.157Z",
+    "generated_at": "2026-08-16T07:36:06.746Z",
+    "updated_at": "2026-08-16T07:36:06.746Z",
     "deaths": [
       {
         "kind": "death",
@@ -2234,34 +2170,6 @@
       },
       {
         "kind": "death",
-        "name": "Ireneusz Szarek",
-        "date_death": "2026-07-16",
-        "date_funeral": "2026-07-20",
-        "time_funeral": "12:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł | Data pogrzebu 20.07.2026 12:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 18.07.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. MARIA GRONKOWSKA",
         "date_death": null,
         "date_funeral": null,
@@ -2312,20 +2220,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/miroslaw-kepa/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA ZWOROWSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-zworowska/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -2764,34 +2658,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Kapusta-IL3NADIH7AUB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 88 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Ireneusz Szarek",
-        "date_death": "2026-07-16",
-        "date_funeral": "2026-07-20",
-        "time_funeral": "12:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3581,19 +3447,25 @@
     ],
     "source_errors": [
       {
+        "source_id": "salwator_grobonet",
+        "source_name": "Kraków Salwator – Grobonet",
+        "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+        "error": "fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above."
+      },
+      {
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
         "error": "HTTP 403"
       }
     ],
-    "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+    "refresh_error": "Kraków Salwator – Grobonet: fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-15T19:25:45.157Z",
-    "updated_at": "2026-08-15T19:25:45.157Z",
+    "generated_at": "2026-08-16T07:36:06.746Z",
+    "updated_at": "2026-08-16T07:36:06.746Z",
     "deaths": [
       {
         "kind": "death",
@@ -4031,34 +3903,6 @@
       },
       {
         "kind": "death",
-        "name": "Ireneusz Szarek",
-        "date_death": "2026-07-16",
-        "date_funeral": "2026-07-20",
-        "time_funeral": "12:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł | Data pogrzebu 20.07.2026 12:20",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła | Data pogrzebu 18.07.2026 12:00",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
         "name": "Śp. MARIA GRONKOWSKA",
         "date_death": null,
         "date_funeral": null,
@@ -4109,20 +3953,6 @@
         "source_id": "karawan_nekrologi",
         "source_name": "Karawan – Nekrologi",
         "url": "https://karawan.pl/nekrolog/miroslaw-kepa/",
-        "source_url": "https://karawan.pl/nekrologi/",
-        "note": "",
-        "priority_hit": false
-      },
-      {
-        "kind": "death",
-        "name": "Śp. KRYSTYNA ZWOROWSKA",
-        "date_death": null,
-        "date_funeral": null,
-        "time_funeral": null,
-        "place": "Karawan – Nekrologi",
-        "source_id": "karawan_nekrologi",
-        "source_name": "Karawan – Nekrologi",
-        "url": "https://karawan.pl/nekrolog/krystyna-zworowska/",
         "source_url": "https://karawan.pl/nekrologi/",
         "note": "",
         "priority_hit": false
@@ -4561,34 +4391,6 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Rozalia-Kapusta-IL3NADIH7AUB",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 16.07.2026 przeżywszy 88 lat zmarła",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Ireneusz Szarek",
-        "date_death": "2026-07-16",
-        "date_funeral": "2026-07-20",
-        "time_funeral": "12:20",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ireneusz-Szarek-2M9ZL0VNS3Z6",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 16.07.2026 przeżywszy 63 lat zmarł",
-        "priority_hit": false
-      },
-      {
-        "kind": "funeral",
-        "name": "Anna Wąsik",
-        "date_death": "2026-07-15",
-        "date_funeral": "2026-07-18",
-        "time_funeral": "12:00",
-        "place": "PUK Kraków – Pożegnaliśmy",
-        "source_id": "puk_pozegnalismy",
-        "source_name": "PUK Kraków – Pożegnaliśmy",
-        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Wasik-7J076JXU1PZT",
-        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-        "note": "W dniu 15.07.2026 przeżywszy 77 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5378,13 +5180,19 @@
     ],
     "source_errors": [
       {
+        "source_id": "salwator_grobonet",
+        "source_name": "Kraków Salwator – Grobonet",
+        "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+        "error": "fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above."
+      },
+      {
         "source_id": "debniki_sdb",
         "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
         "url": "https://debniki.sdb.org.pl/",
         "error": "HTTP 403"
       }
     ],
-    "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
+    "refresh_error": "Kraków Salwator – Grobonet: fetch: request to https://krakowsalwator.grobonet.com/nekrologi.php failed, reason: certificate has expired [CERT_HAS_EXPIRED]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://krakowsalwator.grobonet.com/nekrologi.php curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. | Parafia św. Stanisława Kostki (Dębniki): HTTP 403",
     "writer_name": "scripts/refresh_static.mjs",
     "writer_version": "static-1"
   }
