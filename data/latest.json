@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-08-17T07:55:45.790Z",
-  "updated_at": "2026-08-17T07:55:45.790Z",
+  "generated_at": "2026-08-17T19:33:03.747Z",
+  "updated_at": "2026-08-17T19:33:03.747Z",
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Marek Nalborski",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Anna Pawlik",
@@ -14,6 +28,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Czyżło",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
       "priority_hit": false
     },
     {
@@ -664,6 +706,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Marek Nalborski",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Anna Pawlik",
       "date_death": "2026-08-13",
       "date_funeral": "2026-08-19",
@@ -674,6 +730,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Barbara Czyżło",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
       "priority_hit": false
     },
     {
@@ -1366,6 +1450,48 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Marek Nalborski",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Czyżło",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Anna Pawlik",
       "date_death": "2026-08-13",
       "date_funeral": "2026-08-19",
@@ -1662,6 +1788,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Anna Pawlik",
       "date_death": "2026-08-13",
       "date_funeral": "2026-08-19",
@@ -1672,6 +1812,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Barbara Czyżło",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-19",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Marek Nalborski",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
       "priority_hit": false
     }
   ],
@@ -2033,9 +2201,23 @@
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-1",
   "payload": {
-    "generated_at": "2026-08-17T07:55:45.790Z",
-    "updated_at": "2026-08-17T07:55:45.790Z",
+    "generated_at": "2026-08-17T19:33:03.747Z",
+    "updated_at": "2026-08-17T19:33:03.747Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Anna Pawlik",
@@ -2048,6 +2230,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
         "priority_hit": false
       },
       {
@@ -2698,6 +2908,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -2708,6 +2932,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
         "priority_hit": false
       },
       {
@@ -3400,6 +3652,48 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -3696,6 +3990,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -3706,6 +4014,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
         "priority_hit": false
       }
     ],
@@ -4068,9 +4404,23 @@
     "writer_version": "static-1"
   },
   "data": {
-    "generated_at": "2026-08-17T07:55:45.790Z",
-    "updated_at": "2026-08-17T07:55:45.790Z",
+    "generated_at": "2026-08-17T19:33:03.747Z",
+    "updated_at": "2026-08-17T19:33:03.747Z",
     "deaths": [
+      {
+        "kind": "death",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+        "priority_hit": false
+      },
       {
         "kind": "death",
         "name": "Anna Pawlik",
@@ -4083,6 +4433,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
         "priority_hit": false
       },
       {
@@ -4733,6 +5111,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -4743,6 +5135,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
         "priority_hit": false
       },
       {
@@ -5435,6 +5855,48 @@
     "recent_deaths": [
       {
         "kind": "death",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł | Data pogrzebu 20.08.2026 12:20",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła | Data pogrzebu 19.08.2026 13:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 19.08.2026 11:00",
+        "priority_hit": false
+      },
+      {
+        "kind": "death",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -5731,6 +6193,20 @@
       },
       {
         "kind": "funeral",
+        "name": "Ludwika Góra",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "11:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ludwika-Gora-1NGNQMUY98NO",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
         "name": "Anna Pawlik",
         "date_death": "2026-08-13",
         "date_funeral": "2026-08-19",
@@ -5741,6 +6217,34 @@
         "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Pawlik-53N5PH7AMMSY",
         "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
         "note": "W dniu 13.08.2026 przeżywszy 82 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Barbara Czyżło",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-19",
+        "time_funeral": "13:00",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Czyzlo-1S0SS0390ULJ",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 74 lat zmarła",
+        "priority_hit": false
+      },
+      {
+        "kind": "funeral",
+        "name": "Marek Nalborski",
+        "date_death": "2026-08-14",
+        "date_funeral": "2026-08-20",
+        "time_funeral": "12:20",
+        "place": "PUK Kraków – Pożegnaliśmy",
+        "source_id": "puk_pozegnalismy",
+        "source_name": "PUK Kraków – Pożegnaliśmy",
+        "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marek-Nalborski-8K93QYTRAGDS",
+        "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+        "note": "W dniu 14.08.2026 przeżywszy 69 lat zmarł",
         "priority_hit": false
       }
     ],
