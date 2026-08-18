@@ -1,16 +1,29 @@
 {
-  "status": "done",
-  "started_at": "2026-08-18T10:49:18.275Z",
-  "finished_at": "2026-08-18T10:49:49.054Z",
-  "updated_at": "2026-08-18T10:49:49.054Z",
+  "status": "done_with_errors",
+  "started_at": "2026-08-18T19:31:27.578Z",
+  "finished_at": "2026-08-18T19:31:53.278Z",
+  "updated_at": "2026-08-18T19:31:53.278Z",
   "ok": true,
-  "error_message": null,
+  "error_message": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403 (prób: 3) | Parafia Dębniki – Intencje mszalne: HTTP 403 (prób: 3)",
   "sources_total": 9,
-  "sources_healthy": 9,
-  "rows_total": 250,
+  "sources_healthy": 7,
+  "rows_total": 219,
   "graves_total": 12,
   "matches_total": 0,
-  "source_errors": [],
+  "source_errors": [
+    {
+      "source_id": "debniki_sdb",
+      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
+      "url": "https://debniki.sdb.org.pl/",
+      "error": "HTTP 403 (prób: 3)"
+    },
+    {
+      "source_id": "debniki_intencje",
+      "source_name": "Parafia Dębniki – Intencje mszalne",
+      "url": "https://debniki.sdb.org.pl/intencje",
+      "error": "HTTP 403 (prób: 3)"
+    }
+  ],
   "source_diagnostics": [
     {
       "source_id": "zck_funerals",
@@ -28,9 +41,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 62,
+      "accepted_rows": 66,
       "parser_status": "ok",
-      "rows": 62,
+      "rows": 66,
       "empty_streak": 0,
       "error": null
     },
@@ -74,13 +87,11 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
-      "http_status": 200,
-      "candidate_links": 2,
-      "accepted_rows": 0,
-      "parser_status": "empty",
+      "http_status": 403,
+      "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 1,
-      "error": null
+      "empty_streak": 2,
+      "error": "HTTP 403 (prób: 3)"
     },
     {
       "source_id": "podwawelskie_nekrologi",
@@ -109,12 +120,11 @@
       "source_id": "debniki_intencje",
       "source_name": "Parafia Dębniki – Intencje mszalne",
       "url": "https://debniki.sdb.org.pl/intencje",
-      "http_status": 200,
-      "accepted_rows": 35,
-      "parser_status": "ok",
-      "rows": 35,
-      "empty_streak": 0,
-      "error": null
+      "http_status": 403,
+      "parser_status": "blocked",
+      "rows": 0,
+      "empty_streak": 1,
+      "error": "HTTP 403 (prób: 3)"
     }
   ],
   "source_health": {
@@ -122,8 +132,8 @@
       "source_id": "zck_funerals",
       "source_name": "ZCK Kraków – Porządek pogrzebów",
       "last_rows": 20,
-      "last_run": "2026-08-18T10:49:20.122Z",
-      "last_nonempty_run": "2026-08-18T10:49:20.122Z",
+      "last_run": "2026-08-18T19:31:28.682Z",
+      "last_nonempty_run": "2026-08-18T19:31:28.682Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -131,9 +141,9 @@
     "puk_pozegnalismy": {
       "source_id": "puk_pozegnalismy",
       "source_name": "PUK Kraków – Pożegnaliśmy",
-      "last_rows": 62,
-      "last_run": "2026-08-18T10:49:23.341Z",
-      "last_nonempty_run": "2026-08-18T10:49:23.341Z",
+      "last_rows": 66,
+      "last_run": "2026-08-18T19:31:32.152Z",
+      "last_nonempty_run": "2026-08-18T19:31:32.152Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -142,8 +152,8 @@
       "source_id": "gabriel_nekrologi",
       "source_name": "Gabriel24 – Nekrologi",
       "last_rows": 12,
-      "last_run": "2026-08-18T10:49:26.819Z",
-      "last_nonempty_run": "2026-08-18T10:49:26.819Z",
+      "last_run": "2026-08-18T19:31:35.369Z",
+      "last_nonempty_run": "2026-08-18T19:31:35.369Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -152,8 +162,8 @@
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "last_rows": 7,
-      "last_run": "2026-08-18T10:49:37.070Z",
-      "last_nonempty_run": "2026-08-18T10:49:37.070Z",
+      "last_run": "2026-08-18T19:31:45.892Z",
+      "last_nonempty_run": "2026-08-18T19:31:45.892Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -162,8 +172,8 @@
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "last_rows": 12,
-      "last_run": "2026-08-18T10:49:38.298Z",
-      "last_nonempty_run": "2026-08-18T10:49:38.298Z",
+      "last_run": "2026-08-18T19:31:46.855Z",
+      "last_nonempty_run": "2026-08-18T19:31:46.855Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -172,18 +182,18 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "last_rows": 0,
-      "last_run": "2026-08-18T10:49:42.517Z",
+      "last_run": "2026-08-18T19:31:47.098Z",
       "last_nonempty_run": null,
-      "empty_streak": 1,
-      "http_ok": true,
+      "empty_streak": 2,
+      "http_ok": false,
       "known_empty": true
     },
     "podwawelskie_nekrologi": {
       "source_id": "podwawelskie_nekrologi",
       "source_name": "Podwawelskie – Nekrologi",
       "last_rows": 72,
-      "last_run": "2026-08-18T10:49:46.434Z",
-      "last_nonempty_run": "2026-08-18T10:49:46.434Z",
+      "last_run": "2026-08-18T19:31:51.149Z",
+      "last_nonempty_run": "2026-08-18T19:31:51.149Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -192,8 +202,8 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "last_rows": 30,
-      "last_run": "2026-08-18T10:49:47.717Z",
-      "last_nonempty_run": "2026-08-18T10:49:47.717Z",
+      "last_run": "2026-08-18T19:31:52.548Z",
+      "last_nonempty_run": "2026-08-18T19:31:52.548Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -201,25 +211,25 @@
     "debniki_intencje": {
       "source_id": "debniki_intencje",
       "source_name": "Parafia Dębniki – Intencje mszalne",
-      "last_rows": 35,
-      "last_run": "2026-08-18T10:49:48.968Z",
+      "last_rows": 0,
+      "last_run": "2026-08-18T19:31:52.632Z",
       "last_nonempty_run": "2026-08-18T10:49:48.968Z",
-      "empty_streak": 0,
-      "http_ok": true,
+      "empty_streak": 1,
+      "http_ok": false,
       "known_empty": false
     }
   },
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2",
-  "trigger": "manual_or_schedule",
+  "trigger": "schedule",
   "discord_notification": {
-    "attempted": false,
-    "sent": false,
-    "skipped": true,
-    "skipped_reason": "disabled",
-    "status": null,
+    "attempted": true,
+    "sent": true,
+    "skipped": false,
+    "skipped_reason": null,
+    "status": 204,
     "key": null,
-    "type": null,
+    "type": "heartbeat_no_match",
     "hits": 0,
     "sent_count": 0,
     "alerts": []

@@ -1,4 +1,17 @@
 {
-  "generated_at": "2026-08-18T10:49:49.054Z",
-  "errors": []
+  "generated_at": "2026-08-18T19:31:53.278Z",
+  "errors": [
+    {
+      "source_id": "debniki_sdb",
+      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
+      "url": "https://debniki.sdb.org.pl/",
+      "error": "HTTP 403 (prób: 3)"
+    },
+    {
+      "source_id": "debniki_intencje",
+      "source_name": "Parafia Dębniki – Intencje mszalne",
+      "url": "https://debniki.sdb.org.pl/intencje",
+      "error": "HTTP 403 (prób: 3)"
+    }
+  ]
 }
