@@ -1,11 +1,4 @@
 {
-  "generated_at": "2026-08-17T19:33:04.070Z",
-  "errors": [
-    {
-      "source_id": "debniki_sdb",
-      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
-      "url": "https://debniki.sdb.org.pl/",
-      "error": "HTTP 403"
-    }
-  ]
+  "generated_at": "2026-08-18T10:47:31.677Z",
+  "errors": []
 }

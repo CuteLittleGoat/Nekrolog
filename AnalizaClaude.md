@@ -1,9 +1,9 @@
 # Analiza Claude — audyt mechanizmu odczytu danych, wyszukiwania fraz i powiadomień
 
-**Data analizy:** 2026-08-18 (wersja 2 — weryfikacja na żywych źródłach)
+**Data analizy:** 2026-08-18 (wersja 3 — wdrożenie rekomendacji; sekcja 13)
 **Poprzednia wersja:** 2026-08-18 (wersja 1 — analiza statyczna, bez dostępu do sieci)
 **Temat:** Audyt działania mechanizmu odczytu źródeł, ekstrakcji rekordów, filtrowania okien czasowych, dopasowywania fraz osoby monitorowanej oraz powiadomień Discord w aplikacji Nekrolog.
-**Charakter zadania:** wyłącznie analiza — **nie wprowadzono żadnych zmian w kodzie aplikacji**.
+**Charakter zadania:** analiza (rozdziały 1–12) oraz wdrożenie wynikających z niej zmian w kodzie (rozdział 13).
 **Analizowana rewizja:** branch `claude/analiza-claude-md-9ovcd9`, stan repozytorium z 2026-08-18.
 **Materiał dowodowy:** żywy HTML wszystkich 9 źródeł pobrany 2026-08-18 ok. 06:15–06:30 UTC + dwa pełne przebiegi produkcyjne `npm run refresh` wykonane w tym samym oknie czasowym.
 
@@ -747,8 +747,352 @@ curl -sSL -A "$UA" https://www.zck-krakow.pl/funerals -o tests/fixtures/zck_fune
 
 `AGENTS.md` przewiduje zapisywanie analiz w katalogu `Analizy/`. Niniejszy dokument pozostaje w katalogu głównym jako `AnalizaClaude.md` **na wyraźne polecenie użytkownika** (prompt pierwotny: „zapisz jej wyniki w pliku AnalizaClaude.md"; prompt bieżący: „Zaktualizuj plik AnalizaClaude.md"). Struktura treści jest zgodna z `AGENTS.md` sekcja 2 (data, temat, pełny prompt, zakres, wnioski, rekomendacje, ryzyka, następne kroki).
 
-**W ramach tego zadania nie wprowadzono żadnych zmian w kodzie aplikacji.** Jedyną modyfikacją repozytorium jest aktualizacja tego pliku.
+Rozdziały 1–12 opisują stan **sprzed** wdrożenia i zostały zachowane bez zmian jako materiał dowodowy. Wykonane poprawki opisuje rozdział 13.
 
 Podczas audytu uruchomiono dwa przebiegi `npm run refresh`, które nadpisały `data/latest.json`, `data/job.json`, `data/errors.json` oraz `config/sources.json`. **Wszystkie te pliki zostały przywrócone do stanu z repozytorium** (`git checkout -- data/ config/`) i nie zawierają śladów przebiegów testowych. Pipeline cienia, użyty do ilościowego zmierzenia strat, powstał i pozostał **poza repozytorium** — nie jest propozycją kodu, lecz narzędziem pomiarowym.
 
 Zgodnie z `AGENTS.md` sekcja 4: gdy na podstawie tej analizy zostaną wykonane zmiany w kodzie, do niniejszego pliku należy dopisać sekcję „Zmiany wykonane w kodzie" z nazwą pliku, lokalizacją oraz stanem przed i po zmianie.
+
+---
+
+## 13. Zmiany wykonane w kodzie
+
+**Data wdrożenia:** 2026-08-18
+**Prompt użytkownika inicjujący ten etap:**
+
+> Gałąź sam usunąłem. Zrobiłem backup repo. Wprowadź zmiany w kodzie zgodnie z rekomendacjami z analizy.
+>
+> (poprawki też od razu wypchnij na main. Po realizacji zaktualizuj dokumentację oraz plik AnalizaClaude.md)
+
+**Decyzje produktowe przekazane przez użytkownika w trakcie wdrożenia:**
+
+> Podjąć decyzję produktową o „potrzebach” — Może być prezentacja w osobnej sekcji i osobny alert.
+>
+> Podjąć decyzję o Grobonet Salwator — Jeżeli jest szansa, że będą tu informacje o miejscu pochówku poszukiwanej osoby to zostawiamy. W innym razie do skasowania. Podobnie jak powyżej może być osobna sekcja i osobny alert.
+>
+> Rozstrzygnąć zakres monitorowania Podwawelskiego — Zostawiamy. Działaniem oczekiwanym jest, żeby aplikacja zwróciła informacje o znalezieniu wpisu pasującego do poszukiwanej osoby nawet jeżeli wpis pojawił się poza 7 dniowym oknem czasowym.
+
+### 13.1. Wynik mierzalny
+
+Porównanie przebiegu produkcyjnego przed wdrożeniem i po nim, ta sama data odniesienia (2026-08-18), te same okna czasowe:
+
+| Metryka | Przed | Po |
+|---|---|---|
+| Rekordy sparsowane | 111 (w tym 10 stron marketingowych) | **250** (bez śmieci) |
+| Źródła dostarczające dane | 4 z 8 | **7 z 9** |
+| Źródła zasilające okna czasowe | 2 | **5** |
+| `recent_deaths` | 5 | **10** |
+| `upcoming_funerals` | 25 | **25** |
+| `upcoming_intentions` („potrzeby”) | — kategoria nie istniała | **26** |
+| `graves` (miejsca pochówku) | — kategoria nie istniała | **12** |
+| Rekordy bez jakiejkolwiek daty | 27 | **0** |
+| Rekordy skanowane pod kątem monitorowanej osoby | 30 (27 %) | **250 (100 %)** |
+| Status zadania | `done_with_errors` | `done`, 9/9 źródeł sprawnych |
+| Rozmiar `data/latest.json` | 276 276 B / 111 rekordów | **191 086 B / 250 rekordów** |
+| Testy | 6 (fixture'y syntetyczne) | **36** (zrzuty realnych stron) |
+
+### 13.2. Zmiany plik po pliku
+
+#### Plik: `scripts/fetch.mjs`
+
+Lokalizacja: cały moduł; kluczowo `fetchText` i nowa `attemptOnce`.
+
+Było: fallback awaryjny uruchamiał się wyłącznie przy statusie dokładnie `403`; każdy inny błąd HTTP kończył się zerowym wynikiem źródła bez ponowienia.
+
+```js
+let first = await runFetch(url, ctrl.signal);
+if (first.status === 403) { /* ... */ }
+return first;
+```
+
+Jest: dwa ponowienia z backoffem (700 ms, 2 s) dla statusów przejściowych (`408, 425, 429, 500, 502, 503, 504, 521, 522, 524`), błędów sieciowych i statusu `0`; awaryjne pobranie przez `curl` z nagłówkami przeglądarkowymi przy `403` **oraz** przy statusach przejściowych; kolejne podejścia wymuszają IPv4. Wynik niesie licznik `attempts`.
+
+*Powód: A1 — przejściowy `503` na ZCK obciął interfejs o 80 % między dwoma przebiegami odległymi o trzy minuty.*
+
+---
+
+#### Plik: `scripts/nekrolog_core.mjs`
+
+**Lokalizacja: stała `NOISE` (dawna linia 20) → `TECH_NOISE` + `BOILERPLATE_LINE`**
+
+Było: jeden filtr stosowany zarówno do odrzucania rekordów, jak i do czyszczenia tekstu — zawierał m.in. `facebook`, `cookie`.
+
+Jest: `TECH_NOISE` (ślady kodu i znaczników) dyskwalifikuje rekord; `BOILERPLATE_LINE` (cookies, „Udostępnij”, Facebook, „Napędzane przez technologię”) usuwa wyłącznie pojedynczą linię.
+
+**Lokalizacja: nowa `extractBlockText($, root)`; `extractMainText` przepisana na jej bazie**
+
+Było: `extractMainText` używała `$(sel).first().text()`, co dawało tekst bez znaków nowej linii; `cleanTechnicalNoise` dzieliła go przez `split(/\n+/)`, więc cała treść była jedną „linią”.
+
+Jest: `extractBlockText` wstawia granice bloków (`br` → `\n`, znacznik zamykający bloku → `\n`) przed odczytem tekstu.
+
+**Lokalizacja: `cleanTechnicalNoise`**
+
+Było: `lines.filter(x=>!NOISE.test(x))` — jedna linia zawierająca „Facebook” kasowała cały nekrolog.
+
+Jest: filtrowanie dwupoziomowe plus zabezpieczenie — gdy po odsianiu nie zostaje nic, zwracany jest tekst pozbawiony wyłącznie fragmentów technicznych.
+
+*Powód: B2 — najpoważniejszy defekt aplikacji; niszczył 100 % treści Karawana i Gabriel24 (19 rekordów dziennie z kompletem dat).*
+
+**Lokalizacja: nowa `isoFromParts`, przepisana `parsePolishDateToIso`**
+
+Było: `parsePolishDateToIso("31.02.2026")` → `"2026-02-31"`, następnie `Date.UTC` po cichu przewijało datę na 3 marca.
+
+Jest: walidacja kalendarzowa; niepoprawna data zwraca `null` zamiast być podmienianą.
+
+**Lokalizacja: nowa `normalizePersonName`**
+
+Było: brak wspólnej normalizacji — PUK „Marek Nalborski”, Karawan „Śp. JAN SADZIK”, ZCK „Anna Jakobschy (lat 82)”.
+
+Jest: usunięcie prefiksu `Śp.`/`+`, sufiksu `(lat 82)`, sprowadzenie wersalików do formy tytułowej z polskim odwzorowaniem wielkości liter.
+
+**Lokalizacja: `parseZckFuneralsHtml` (dawna linia 108)**
+
+Było:
+
+```js
+let date = clean($.text()).match(/\b\d{4}-\d{2}-\d{2}\b/)?.[0] || todayIso();
+```
+
+Jest: odczyt daty z `$('h4 strong')` i rekordów z `td.funeral-time` / `td.funeral-place` / `td.funeral-label`; pole `date_is_fallback` oznacza rekordy z datą zastępczą.
+
+*Powód: B1 — po sklejeniu tekstu powstawało `2026-08-18Cmentarz`, więc końcowe `\b` nie zachodziło i data była zawsze podmieniana na dzień pobrania. Naprawia też B10 (godzina wsiąkająca w `place`).*
+
+**Lokalizacja: `parseGabriel24DetailHtml` i `parseKarawanDetailHtml` → wspólna `parseObituaryWidgetDetail`**
+
+Było: dwa niemal identyczne parsery czytające tekst z `NOISE`-owanego bloku; oba zwracały `note:""` i `date_*: null`.
+
+Jest: jeden parser widżetu e-Nekrolog (oba serwisy używają tej samej wtyczki) czytający etykiety `Śp.`, `zm.`, `Data pogrzebu:`/`Pogrzeb:`, `Msza Święta:`, `Cmentarz:`. Strona bez `Śp.` i bez dat nie tworzy rekordu — to odsiewa strony oferty typu „Zasiłek pogrzebowy”.
+
+**Lokalizacja: `parseGabriel24NekrologiHtml`, `parseKarawanNekrologiHtml`**
+
+Było: filtr `/gabriel24/i.test(url) || /nekrolog/i.test(url)` przepuszczał strony oferty i paginację.
+
+Jest: `\/\/(?:www\.)?gabriel24\.pl\/nekrolog\/[^/]+\/?$` — wyłącznie strony pojedynczych nekrologów. *Powód: B6 — 10 z 22 rekordów Gabriel24 stanowiły strony marketingowe.*
+
+**Lokalizacja: `parsePodwawelskieRowsFromListHtml` (dawna linia 62)**
+
+Było: regex wymagający etykiet `ur.` / `zm.`, których strona nie zawiera ani razu.
+
+Jest: odczyt przez selektory `.section__box.necrology .section__box-element`, `p > strong` (imię, nazwisko), `i.fa-star` (urodziny), `i.fa-cross` (zgon). *Powód: B3 — 72 rekordy ignorowane.*
+
+**Lokalizacja: `parseSwJadwigaPogrzeboweHtml` (dawna linia 106)**
+
+Było: regex oczekujący sekwencji `DATA … GODZINA … Nazwisko`; strona podaje `+ Nazwisko` i datę publikacji, bez godzin.
+
+Jest: odczyt przez `li.artykul`, `h2.tytul`, `span.data[title]`; data trafia do `date_death` (zgłoszenie), nigdy do `date_funeral`, bo strony szczegółowe zawierają intencje mszalne, a nie termin pogrzebu. *Powód: B4 — do 796 rekordów ignorowanych.*
+
+**Lokalizacja: `parseDebnikiSdbPogrzebyHtml` (dawna linia 103)**
+
+Było: `prepareReadableDocument` usuwała nawigację **przed** zebraniem linków (78 → 21), niszcząc jedyny link do treści; pozostałe trafienia prowadziły do innych parafii salezjańskich.
+
+Jest: linki zbierane z surowego dokumentu, filtrowane do własnego hosta. *Powód: B5.*
+
+**Lokalizacja: nowe `parseDebnikiIntencjeHtml`, `parseDebnikiIntencje`, `resolveIntentionDate`, typ źródła `debniki_intencje`**
+
+Było: brak — `isIntentionLikeSource` i `isIntentionLikeRow` były zaślepkami zwracającymi `false`.
+
+Jest: parser tygodniowego harmonogramu intencji (`PONIEDZIAŁEK 18 sierpnia` → `07:00 + Nazwisko`), z rozwiązywaniem roku na przełomie grudnia i stycznia. Rekordy mają `kind:'intention'`, `date_intention`, `time_intention`. *Powód: C5 — realizacja wymagania „najbliższych potrzeb”.*
+
+**Lokalizacja: `parseGrobonetNekrologi*`, `parseGrobonetDetailHtml` → `parseGrobonetGroby`, `parseGrobonetGrobyHtml`, `grobonetSearchUrl`**
+
+Było: parser listy nekrologów Salwatora, która jest **faktycznie pusta** — źródło produkowało wieczny `parser_status: 'empty'`.
+
+Jest: odpytywanie bazy pochówków (`start.php?id=wyniki&name=<nazwisko>`) nazwiskami z pola `search_terms`; rekordy `kind:'grave'` z datą urodzenia, datą zgonu i cmentarzem. *Powód: decyzja użytkownika — źródło zostaje, bo daje miejsce pochówku szukanej osoby.*
+
+**Lokalizacja: `validateParsedRow`**
+
+Było: dopuszczała `kind` `death`/`funeral`; stosowała `NOISE` do `note` i `place`; regułę „imię + nazwisko” do wszystkich rekordów.
+
+Jest: dopuszcza też `intention` i `grave`; używa `TECH_NOISE`; reguły nazwiska nie stosuje do intencji (bywają opisowe) i grobów; odrzuca adresy o schemacie `javascript:`/`data:`.
+
+**Lokalizacja: `mergeRequiredSources` (dawna linia 114)**
+
+Było: `{...r, ...byId.get(r.id)}` — zastana konfiguracja wygrywała nad definicją, także co do `type`.
+
+Jest: `type`, `known_empty`, `requires_ocr`, `requires_pdf` wymuszane z definicji; przy zmianie typu parsera (migracja źródła) przejmowane są też adresy i `search_terms`. *Powód: G4 oraz migracja Grobonetu.*
+
+**Lokalizacja: nowe `buildMatchHaystack`, `rowMatchesPhrases`**
+
+Było: trzy różne zbiory przeszukiwanych pól w `refresh_static.mjs`, `discord_notify.mjs` i `app.js`; Discord pomijał `place`.
+
+Jest: jedna definicja (`name`, `full_name`, `note`, `place`, `source_name`) używana we wszystkich trzech miejscach. *Powód: D2.*
+
+**Lokalizacja: nowe `mergeDuplicateRows`, `dedupeKeyForRow`, `rowCompleteness`**
+
+Było: deduplikacja wyłącznie w obrębie jednego parsera.
+
+Jest: scalanie po `kind` + znormalizowanym nazwisku + dacie; zachowywany jest rekord bogatszy, pozostałe źródła trafiają do `also_in_sources`, flaga trafienia jest propagowana. *Powód: B11 — po naprawie B2 duplikaty międzyźródłowe stały się normą.*
+
+**Lokalizacja: `resolveJobOutcome` (dawna linia 115)**
+
+Było: `recentDeaths + upcomingFunerals <= 0` → `status: 'error'`.
+
+Jest: status opisuje kondycję odczytu — `error` tylko wtedy, gdy żadne źródło nie odpowiedziało poprawnie; tydzień bez pogrzebów w oknie to `done`. *Powód: C1.*
+
+**Lokalizacja: `buildFallbackSummaryForHelena` (dawna linia 116)**
+
+Było: zaślepka zwracająca stały tekst mimo przekazywanych argumentów.
+
+Jest: podsumowanie liczone z rekordów — liczba trafień, liczba źródeł, najwcześniejsze daty, lista adresów. *Powód: C6.*
+
+**Lokalizacja: usunięte `parseDetail`, `parsePodwawelskieDetailHtml`, `parseGenericList` (dawne domyślne parsery)**
+
+Było: martwy kod; `parsePodwawelskieDetailHtml` miał testy, mimo że nigdy nie był wywoływany w produkcji.
+
+Jest: usunięte; `parseByListAndDetails` wymaga jawnego parsera detali. *Powód: G3.*
+
+---
+
+#### Plik: `scripts/refresh_static.mjs`
+
+Lokalizacja: pętla po źródłach (dawne linie 65–78).
+
+Było: `parsed = await parseSource(s);` poza blokiem `try/catch` — wyjątek jednego parsera przerywał cały przebieg i `data/latest.json` nie był zapisywany.
+
+Jest: `try/catch` per źródło; wyjątek daje `parser_status: 'exception'` i nie zatrzymuje pozostałych źródeł. *Powód: R10.*
+
+Lokalizacja: nowa `updateSourceHealth` + plik `data/source_health.json`.
+
+Było: źródło zwracające zero rekordów robiło to bezterminowo z `error: null`.
+
+Jest: licznik kolejnych pustych przebiegów; po trzech z rzędu źródło trafia do `source_errors` (z wyjątkiem oznaczonych `known_empty`). *Powód: B8.*
+
+Lokalizacja: przekazanie rekordów do powiadomień (dawna linia 101–106).
+
+Było:
+
+```js
+rows: [...recent_deaths, ...upcoming_funerals]
+```
+
+Jest:
+
+```js
+rows   // wszystkie rekordy, niezależnie od okien czasowych
+```
+
+*Powód: E1 oraz wprost wyrażone oczekiwanie użytkownika, żeby wpis pasujący do poszukiwanej osoby był zgłaszany także spoza okna 7-dniowego.*
+
+Lokalizacja: filtr „ostatnich zgonów” (dawna linia 83).
+
+Było: `inWindow(...) || (!r.date_death && r.note)` — rekord bez daty kwalifikował się bezterminowo.
+
+Jest: wyłącznie `inWindow(...)`; rekordy bez daty widać w sekcji trafień, która nie ma okna. *Powód: C2.*
+
+Lokalizacja: budowa snapshotu (dawna linia 97).
+
+Było: `{ ...base, payload: base, data: base }` — 66,7 % objętości pliku stanowiła redundancja.
+
+Jest: pojedyncza struktura z nowymi polami `window`, `intentions`, `graves`, `upcoming_intentions`, `matches`, `source_diagnostics`. *Powód: C4.*
+
+---
+
+#### Plik: `scripts/discord_notify.mjs`
+
+Lokalizacja: `selectFirstHit` → `selectHits` + pętla po trafieniach.
+
+Było: `rows.find(...)` — zgłaszane było wyłącznie pierwsze trafienie, a jeśli jego klucz był już w `sent_keys`, pozostałe nie były nawet sprawdzane.
+
+Jest: iteracja po wszystkich trafieniach, każde z osobnym sprawdzeniem `sent_keys`; wynik niesie `hits`, `sent_count` i listę `alerts`. *Powód: E2.*
+
+Lokalizacja: `buildStateKey` (dawna linia 27).
+
+Było: `name | source_name | url`.
+
+Jest: `kind | name | source_name | url | daty i godziny` — uzupełnienie terminu pogrzebu przez źródło jest nowym zdarzeniem. *Powód: E3.*
+
+Lokalizacja: `buildDiscordMessage` (dawna linia 34).
+
+Było: stała treść bez rozróżnienia kategorii i bez szczegółów terminu.
+
+Jest: etykieta kategorii (`[zgon / wzmianka]`, `[pogrzeb]`, `[intencja mszalna (potrzeba)]`, `[miejsce pochówku]`) oraz daty, godzina, miejsce i lista źródeł, w których rekord wystąpił. *Powód: decyzja użytkownika o osobnych alertach.*
+
+Lokalizacja: nowe `mentionPrefix`, `allowedMentions`.
+
+Było: `'@koza_z_zagrody, @loshumbakos'` jako zwykły tekst — bez powiadomienia push.
+
+Jest: przy ustawionej zmiennej `DISCORD_MENTION_IDS` wysyłane jest `<@ID>` wraz z `allowed_mentions`; bez niej zachowany dotychczasowy tekst. *Powód: E4.*
+
+Lokalizacja: `postDiscordWebhook` (dawna linia 74).
+
+Było: jedna próba; `429` lub `5xx` oznaczał utratę powiadomienia.
+
+Jest: dwa ponowienia z odczytem nagłówka `Retry-After`. *Powód: E5.*
+
+Lokalizacja: `buildNoMatchMessage`, stała `MAX_SENT_KEYS`.
+
+Było: heartbeat bez informacji o kondycji; `sent_keys` rosło bez ograniczeń.
+
+Jest: heartbeat podaje liczbę sprawnych źródeł i rekordów; historia kluczy ograniczona do 500 ostatnich. *Powód: E6, E3.*
+
+---
+
+#### Plik: `app.js`
+
+Było: zaszyta lista 24 fraz (16 unikalnych po normalizacji) przy 100 w `Frazy.json`; brak sygnalizacji nieaktualnych danych; brak walidacji schematu adresu; `source_diagnostics` nieprezentowane.
+
+Jest:
+- odczyt `snap.target_phrases` (lista zapasowa tylko na wypadek braku snapshotu) — *D3*;
+- sekcja **Trafienia monitorowanych fraz** renderowana z pola `matches`, bez ograniczenia czasowego — *E1 i oczekiwanie użytkownika*;
+- sekcje **Najbliższe potrzeby** oraz **Groby monitorowanych nazwisk** — *decyzje produktowe użytkownika*;
+- baner ostrzegawczy przy nieudanym pobraniu snapshotu i przy snapshocie starszym niż 26 h — *F1*;
+- `externalLink` odrzuca schematy `javascript:`, `data:`, `vbscript:`, `file:` — *F2*;
+- sekcja **Log** pokazuje pełną diagnostykę źródeł wraz z licznikiem pustych przebiegów — *F3*;
+- oznaczenie rekordów z datą zastępczą (`date_is_fallback`).
+
+---
+
+#### Plik: `index.html`
+
+Było: dwie sekcje list (zgony, pogrzeby).
+
+Jest: dodatkowo `#dataWarning` (baner), `#matches` (trafienia bez okna), `#intentions` (potrzeby), `#graves` (miejsca pochówku).
+
+#### Plik: `styles.css`
+
+Jest: dopisane style `.banner`, `.banner.warn`, `.banner.bad`, `.hint.hitText`, `.fact.warnText`.
+
+---
+
+#### Plik: `.github/workflows/nekrolog-refresh.yml`
+
+Jest: przekazanie zmiennej `DISCORD_MENTION_IDS` do kroku odświeżania oraz dopisanie `data/source_health.json` do commitowanych plików.
+
+---
+
+#### Testy
+
+Plik: `tests/refresh.parsers.test.mjs` — przepisany w całości. Było: 6 asercji na fixture'ach o rozmiarze 28–435 B, opisujących strukturę, której źródła nigdy nie miały. Jest: **17 testów na zrzutach realnych stron** z 2026-08-18, z asercjami na konkretne nazwiska, daty i liczby rekordów, w tym przypadki negatywne (strona oferty Gabriel24, pusta lista, adres `javascript:`). *Powód: G2.*
+
+Plik: `tests/refresh.snapshot.test.mjs` — **nowy, 19 testów**: okna czasowe, scalanie duplikatów, status zadania, spójność zbioru przeszukiwanych pól między snapshotem, Discordem i UI, klucz deduplikacji, kategorie alertów, wzmianki `<@ID>`, podsumowanie Helenomatu, migracja konfiguracji źródeł. *Powód: G1.*
+
+Katalog `tests/fixtures/` — usunięto 19 fixture'ów syntetycznych, dodano 13 zrzutów realnych stron (nazwa `<źródło>_RRRR-MM-DD.html`, usunięta wyłącznie treść `<script>`/`<style>` i obrazy `data:`).
+
+---
+
+#### Pliki usunięte
+
+| Plik | Powód |
+|---|---|
+| `normalize.js` | duplikat `scripts/normalize.mjs` z gorszą implementacją `textMatchesAny` (bez normalizacji diakrytyki i prefiksów); zero referencji — *D4* |
+| `parsers.js` | zero referencji; nazwa myliła, bo sugerowała, że mieści parsery źródeł (te są w `nekrolog_core.mjs`) |
+| `sources.txt` | nieaktualny zrzut konfiguracji z `type: "generic_html"` dla ośmiu źródeł — *G4* |
+
+`Linki.txt` przegenerowano z rzeczywistego stanu repozytorium. `README.md` przepisano: dodano opis kategorii rekordów, tabelę źródeł, rozdział „Pułapki ekstrakcji”, opis powiadomień Discord i procedurę odświeżania zrzutów testowych; usunięto odwołania do skasowanych plików.
+
+### 13.3. Odpowiedź na pytanie o webhook Discord
+
+> Czy muszę coś zmieniać w webhooku discordowym? Czy „osobny alert” zadziała z obecnym mechanizmem?
+
+**Po stronie Discorda nie trzeba zmieniać nic.** Osobne alerty dla intencji i grobów to zwykłe wiadomości wysyłane tym samym adresem webhooka — różnią się wyłącznie treścią (etykieta kategorii w nagłówku). Ten sam `DISCORD_WEBHOOK_URL` obsługuje wszystkie cztery kategorie.
+
+Jedyna opcjonalna zmiana dotyczy **realnych powiadomień push**: obecne wzmianki `@koza_z_zagrody, @loshumbakos` są zwykłym tekstem i nikogo nie powiadamiają. Aby to naprawić, potrzebne są liczbowe identyfikatory użytkowników Discord (prawy przycisk na użytkowniku → *Kopiuj ID użytkownika*, przy włączonym trybie dewelopera) i ustawienie ich w repozytorium jako zmiennej `DISCORD_MENTION_IDS` (Settings → Secrets and variables → Actions → Variables), np. `123456789012345678,987654321098765432`. Kod odczytuje ją automatycznie i wysyła `<@ID>` wraz z `allowed_mentions`. Bez tej zmiennej wszystko działa jak dotąd, tylko bez pingu.
+
+Warto też mieć na uwadze, że przy pierwszym przebiegu po wdrożeniu liczba wiadomości może być większa niż zwykle: zgłaszane są teraz **wszystkie** trafienia (nie tylko pierwsze) i obejmują wpisy spoza okna czasowego. Kolejne przebiegi wracają do normy, bo klucze trafiają do `data/discord_notified.json`.
+
+### 13.4. Co pozostaje otwarte
+
+1. **Źródło Facebook (`facebook_parafia_debniki`)** — pozostaje `enabled: false`. Ocena, czy da się z niego wyciągać dane o zgonach i pogrzebach, to osobny etap uzgodniony z użytkownikiem.
+2. **Frazy z drugim imieniem** (D1/R4) — `Helena Maria Gawin` nadal nie zostanie dopasowane. Wymaga decyzji: dopisać warianty do `Frazy.json` czy zmienić dopasowanie z „podciąg” na „wszystkie tokeny w promieniu N słów”. Nie zmieniano tego bez uzgodnienia, bo druga opcja podnosi ryzyko fałszywych trafień.
+3. **`search_terms` Grobonetu** wymagają ręcznej aktualizacji razem z `Frazy.json` przy zmianie monitorowanej osoby.
+4. **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem — źródło zostaje ze względu na wyszukiwanie fraz, ale nie zasili okna 7-dniowego. Jest to zachowanie oczekiwane, nie defekt.

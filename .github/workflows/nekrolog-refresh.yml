@@ -39,12 +39,15 @@ jobs:
           REFRESH_TRIGGER: ${{ github.event_name == 'schedule' && 'schedule' || github.event.inputs.reason || 'manual_dispatch' }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_NOTIFY_ENABLED: "true"
+          # Identyfikatory liczbowe użytkowników Discord — bez nich wzmianki są zwykłym tekstem
+          # i nie generują powiadomienia push. Ustaw w Settings > Secrets and variables > Variables.
+          DISCORD_MENTION_IDS: ${{ vars.DISCORD_MENTION_IDS }}
         run: npm run refresh
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/job.json data/errors.json data/discord_notified.json config/sources.json
+          git add data/latest.json data/job.json data/errors.json data/discord_notified.json data/source_health.json config/sources.json
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

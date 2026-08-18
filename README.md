@@ -1,140 +1,156 @@
 # Nekrolog (tryb statyczny)
 
-Aplikacja **Nekrolog** agreguje nekrologi i intencje mszalne z wielu niezależnych źródeł internetowych, normalizuje dane do wspólnego formatu JSON i prezentuje je w prostym interfejsie statycznym (HTML/CSS/JS), bez backendu aplikacyjnego.
+Aplikacja **Nekrolog** agreguje nekrologi, intencje mszalne i wpisy o pochówkach z wielu niezależnych źródeł internetowych, normalizuje dane do wspólnego formatu JSON i prezentuje je w prostym interfejsie statycznym (HTML/CSS/JS), bez backendu aplikacyjnego. Równolegle monitoruje wystąpienia wskazanej osoby (frazy z `Frazy.json`) i zgłasza trafienia webhookiem na Discord.
 
 Projekt działa w modelu:
 1. **Pobierz surowe dane ze źródeł** (różne strony WWW),
 2. **Wydobądź rekordy parserami źródłowymi**,
-3. **Oczyść i ujednolić pola**,
-4. **Zapisz wynik do plików statycznych** (`data/latest.json`, `data/errors.json`),
-5. **Wyświetl wynik po stronie przeglądarki**.
-
-Dzięki temu aplikację można uruchomić lokalnie lub opublikować jako statyczną stronę bez utrzymywania serwera API.
+3. **Oczyść, ujednolić i scal duplikaty**,
+4. **Zapisz wynik do plików statycznych** (`data/latest.json`, `data/job.json`, `data/errors.json`),
+5. **Wyświetl wynik w przeglądarce i zgłoś trafienia na Discord**.
 
 ---
 
 ## 1. Architektura rozwiązania
 
-Najważniejsze elementy repozytorium:
-
-- `scripts/refresh_static.mjs` – główny skrypt odświeżania danych (pipeline ETL do JSON).
-- `scripts/fetch.mjs` – pobieranie treści źródłowych przez HTTP.
-- `scripts/normalize.mjs` – normalizacja rekordów i pól dat/opisów.
-- `scripts/nekrolog_core.mjs` – logika wspólna dla przetwarzania rekordów.
-- `parsers.js` – parsery specyficzne dla źródeł (nie ma jednego parsera uniwersalnego).
-- `config/sources.json` – lista i konfiguracja źródeł.
-- `data/latest.json` – bieżący wynik odświeżenia (używany przez frontend).
-- `data/errors.json` – błędy i problemy napotkane podczas odświeżania.
-- `app.js`, `index.html`, `styles.css` – warstwa prezentacji (interfejs statyczny).
-
-Aplikacja jest celowo podzielona na warstwę pozyskiwania/transformacji i warstwę wyświetlania, co ułatwia diagnostykę błędów parserów i niezależne rozwijanie UI.
-
----
-
-## 2. Przepływ danych – krok po kroku
-
-### Krok A: Start procesu odświeżania
-Uruchomienie `npm run refresh` wywołuje `scripts/refresh_static.mjs`, który inicjuje pełne odświeżenie danych.
-
-### Krok B: Odczyt konfiguracji źródeł
-Skrypt czyta `config/sources.json` i przygotowuje listę aktywnych źródeł do pobrania.
-
-### Krok C: Pobranie HTML/treści
-Dla każdego źródła wykonywane są zapytania HTTP. Treść jest przekazywana do parsera przypisanego do danego typu źródła.
-
-### Krok D: Parsowanie rekordów
-Parsery w `parsers.js` wydobywają dane semantyczne (np. imię i nazwisko zmarłego, daty, miejsce ceremonii, treść nekrologu, link źródłowy).
-
-Ważne założenia:
-- parsery mają mechanizmy filtrujące „śmieci techniczne” (np. fragmenty skryptów/analityki),
-- parsery są dostrojone do konkretnych struktur HTML,
-- część źródeł graficznych jest wspierana bez OCR (z ograniczeniami jakości),
-- źródła Facebook pozostają wyłączone (`disabled`) ze względu na niestabilność i ograniczenia dostępu.
-
-### Krok E: Normalizacja
-Rekordy przechodzą przez normalizację:
-- ujednolicenie nazw pól,
-- porządkowanie dat,
-- czyszczenie nadmiarowych białych znaków i artefaktów,
-- odrzucanie niepoprawnych lub pustych rekordów.
-
-### Krok F: Walidacja jakości
-Dodatkowe reguły walidacyjne ograniczają ryzyko błędnych wpisów. Przykładowo parser Karawan posiada ochronę przed potraktowaniem elementów menu jako danych osoby oraz fallback oparty o slug (`nameFromSlug`).
-
-### Krok G: Zapis wyników
-Po zakończeniu procesu zapis:
-- poprawnych rekordów do `data/latest.json`,
-- błędów/ostrzeżeń do `data/errors.json`.
-
-Frontend czyta dane bezpośrednio z plików JSON.
+- `scripts/refresh_static.mjs` – główny skrypt odświeżania (pipeline ETL do JSON), okna czasowe, scalanie duplikatów, kondycja źródeł.
+- `scripts/fetch.mjs` – pobieranie treści przez HTTP; ponowienia z backoffem przy błędach przejściowych (5xx, 429, zerwane połączenie) i awaryjne pobranie przez `curl` z nagłówkami przeglądarkowymi.
+- `scripts/nekrolog_core.mjs` – definicje źródeł, **wszystkie parsery**, normalizacja nazwisk i dat, walidacja rekordów, dopasowanie fraz.
+- `scripts/normalize.mjs` – luźne dopasowanie tekstu (diakrytyka, prefiksy `śp.`, myślniki, interpunkcja).
+- `scripts/discord_notify.mjs` – powiadomienia Discord: alerty per trafienie i heartbeat.
+- `scripts/date.mjs` – okna czasowe.
+- `config/sources.json` – lista i konfiguracja źródeł (uzupełniana automatycznie z definicji w `nekrolog_core.mjs`).
+- `Frazy.json` – frazy monitorowanej osoby (formy odmienione i warianty zapisu).
+- `data/latest.json` – bieżący snapshot używany przez frontend.
+- `data/job.json` – status przebiegu, diagnostyka i kondycja źródeł.
+- `data/errors.json` – błędy źródeł.
+- `data/source_health.json` – licznik kolejnych pustych przebiegów per źródło (wykrywanie cichych awarii).
+- `app.js`, `index.html`, `styles.css` – warstwa prezentacji.
 
 ---
 
-## 3. Dlaczego parsery per źródło?
+## 2. Kategorie rekordów
 
-Strony zakładów pogrzebowych i cmentarzy różnią się:
-- strukturą DOM,
-- nazewnictwem klas,
-- sposobem paginacji,
-- sposobem osadzania treści (w tym ramki i elementy dynamiczne).
+Każdy rekord ma pole `kind`:
 
-Z tego powodu zastosowano parsery dedykowane, które zapewniają:
-- wyższą skuteczność ekstrakcji,
-- łatwiejsze naprawy po zmianach po stronie źródła,
-- mniejsze ryzyko utraty rekordów przez zbyt ogólne heurystyki.
+| `kind` | Znaczenie | Okno czasowe | Sekcja w UI |
+|---|---|---|---|
+| `death` | zgon lub wzmianka o zgonie | `[dziś-7, dziś]` po `date_death` | Ostatnie zgony / wzmianki |
+| `funeral` | pogrzeb z terminem | `[dziś, dziś+7]` po `date_funeral` | Najbliższe pogrzeby |
+| `intention` | intencja mszalna za zmarłego (**„potrzeby”**) | `[dziś, dziś+7]` po `date_intention` | Najbliższe potrzeby |
+| `grave` | pochówek w bazie cmentarnej | brak (zapisy historyczne) | Groby monitorowanych nazwisk |
 
----
-
-## 4. Frontend i prezentacja danych
-
-Interfejs (plik `index.html` + logika `app.js`) działa jako lekki klient:
-- pobiera `data/latest.json`,
-- renderuje listę rekordów,
-- może filtrować/sortować dane (zgodnie z implementacją w `app.js`),
-- prezentuje informacje źródłowe i daty w sposób czytelny dla użytkownika końcowego.
-
-Style (`styles.css`) odpowiadają za układ i czytelność listy nekrologów/intencji.
+**Trafienia monitorowanych fraz są niezależne od okien czasowych.** Pole `matches` w `data/latest.json` zawiera wszystkie pasujące rekordy — także wpisy sprzed miesięcy (np. Podwawelskie publikuje z opóźnieniem) i rekordy bez daty. Okna czasowe sterują wyłącznie sekcjami przeglądowymi.
 
 ---
 
-## 5. Testy i jakość
+## 3. Źródła i sposób odczytu
 
-Projekt zawiera testy parserów i scenariuszy odświeżania (`tests/*.test.mjs`) oraz zestaw fixture HTML (`tests/fixtures/*`).
+| Źródło | Typ parsera | Co dostarcza |
+|---|---|---|
+| ZCK Kraków – Porządek pogrzebów | `zck_funerals` | pogrzeby na jeden dzień; data z nagłówka `h4`, tabela `td.funeral-time/place/label` |
+| PUK Kraków – Pożegnaliśmy | `puk_pozegnalismy` | zgon + pogrzeb (dwa rekordy na osobę), link do klepsydry |
+| Gabriel24 – Nekrologi | `gabriel24_nekrologi` | nekrologi spod `/nekrolog/<slug>/`; daty, godzina mszy, cmentarz |
+| Karawan – Nekrologi | `karawan_nekrologi` | jak wyżej (ten sam widżet e-Nekrolog) |
+| Kraków Salwator – Groby | `grobonet_groby` | **wyszukiwarka grobów**: miejsce pochówku dla nazwisk z `search_terms` |
+| Parafia Dębniki – ogłoszenia | `debniki_sdb_pogrzeby` | wzmianki o pogrzebach w ogłoszeniach parafialnych |
+| Parafia Dębniki – Intencje mszalne | `debniki_intencje` | **potrzeby**: tygodniowy harmonogram intencji za zmarłych |
+| Podwawelskie – Nekrologi | `podwawelskie_nekrologi` | kafelki z datami ur./zg. (ikony `fa-star` / `fa-cross`), 6 podstron |
+| Parafia św. Jadwigi | `sw_jadwiga_pogrzebowe` | zgłoszenia zgonu (`li.artykul`), data publikacji jako `date_death` |
+| Facebook – Parafia Dębniki | `generic_html` | wyłączone (`enabled: false`) |
 
-Rekomendowany workflow pracy:
-1. `npm test` – najpierw walidacja parserów,
-2. `npm run refresh` – dopiero po przejściu testów aktualizacja danych.
-
-To podejście redukuje ryzyko nadpisania `data/latest.json` niepoprawnymi rekordami.
+Uwagi merytoryczne:
+- **św. Jadwiga** publikuje datę *zgłoszenia*, a strony szczegółowe zawierają intencje mszalne, nie termin pogrzebu — dlatego data trafia do `date_death`, nigdy do `date_funeral`.
+- **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`.
+- **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem; źródło ma wartość dla wyszukiwania fraz, a nie dla okna 7-dniowego.
 
 ---
 
-## 6. Uruchomienie lokalne
+## 4. Pułapki ekstrakcji, których pilnują parsery
+
+Te reguły wynikają z realnych błędów wykrytych na żywych stronach — zmieniając kod, nie cofaj ich:
+
+- **Granice bloków w tekście.** Cheerio skleja tekst sąsiadujących elementów bez separatora (`2026-08-18Cmentarz`). `extractBlockText()` wstawia znaki nowej linii; bez tego regexy z `\b` nie trafiają, a filtrowanie stopek działa na całym dokumencie naraz.
+- **`\b` nie zachodzi przy znakach spoza ASCII.** `\bśp\.` nigdy nie dopasuje „Śp.”. Nie dodawaj `\b` przed polskimi literami.
+- **Filtrowanie szumu jest dwupoziomowe.** `TECH_NOISE` (ślady kodu) dyskwalifikuje rekord; `BOILERPLATE_LINE` (cookies, „Udostępnij”, Facebook) usuwa wyłącznie pojedynczą linię. Wspólny filtr kasował całe nekrologi przez samo słowo „Facebook” w widżecie udostępniania.
+- **Linki zbieraj przed `prepareReadableDocument()`.** Funkcja usuwa `nav`/`header`/`footer`, a w menu bywa jedyny link do treści (Dębniki, `/intencje`).
+- **Daty są walidowane kalendarzowo.** `isoFromParts()` odrzuca `31.02`; wcześniej `Date.UTC` po cichu przewijało taką datę na inny dzień.
+
+---
+
+## 5. Powiadomienia Discord
+
+Wysyłka idzie na `DISCORD_WEBHOOK_URL` (sekret repozytorium). Zachowanie:
+
+- **alert per trafienie** — zgłaszane są wszystkie trafienia w przebiegu, każde z etykietą kategorii (`zgon / wzmianka`, `pogrzeb`, `intencja mszalna (potrzeba)`, `miejsce pochówku`);
+- **deduplikacja** po kluczu `kind|nazwisko|źródło|link|daty` — uzupełnienie terminu pogrzebu przez źródło jest nowym zdarzeniem i wywoła kolejne powiadomienie;
+- **heartbeat** przy braku trafień, z kondycją odczytu (ile źródeł sprawnych, ile rekordów);
+- **ponowienia** przy `429`/`5xx`, z odczytem nagłówka `Retry-After`.
+
+### Realne pingi zamiast tekstu
+
+Discord tworzy powiadomienie push tylko dla składni `<@ID_UŻYTKOWNIKA>`. Ustaw zmienną środowiskową `DISCORD_MENTION_IDS` (identyfikatory liczbowe, rozdzielone przecinkami), aby wzmianki działały:
+
+```yaml
+env:
+  DISCORD_MENTION_IDS: ${{ vars.DISCORD_MENTION_IDS }}
+```
+
+Bez tej zmiennej wiadomość zawiera dotychczasowy tekst `@koza_z_zagrody, @loshumbakos`, który jest wyłącznie napisem. **Sam webhook nie wymaga żadnych zmian po stronie Discorda** — nowe kategorie alertów to zwykłe wiadomości wysyłane tym samym adresem.
+
+---
+
+## 6. Testy i fixture'y regresyjne
+
+```bash
+npm test          # parsery na realnych zrzutach + warstwa okien/scalania/statusu
+npm run refresh   # dopiero po przejściu testów
+```
+
+Testy parserów działają na **zrzutach realnych stron** (`tests/fixtures/<źródło>_RRRR-MM-DD.html`). Poprzedni zestaw był syntetyczny i opisywał strukturę, której źródła nigdy nie miały — testy przechodziły, podczas gdy cztery parsery w produkcji zwracały zero rekordów.
+
+Odświeżenie zrzutu po zmianie strony źródłowej:
+
+```bash
+curl -sSL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" \
+  https://www.zck-krakow.pl/funerals -o tests/fixtures/zck_funerals_$(date +%F).html
+```
+
+Ze zrzutów usuwamy wyłącznie treść `<script>`/`<style>` i osadzone obrazy `data:` — struktura DOM zostaje nienaruszona. Po podmianie zrzutu zaktualizuj datę w nazwie pliku i asercje liczbowe w teście.
+
+---
+
+## 7. Uruchomienie lokalne
 
 ```bash
 npm install
 npm test
-npm run refresh
+DISCORD_NOTIFY_ENABLED=false npm run refresh   # bez zaśmiecania kanału Discord
 python3 -m http.server 8000
 ```
 
-Po uruchomieniu serwera statycznego aplikacja jest dostępna pod adresem lokalnym (np. `http://localhost:8000`).
+---
+
+## 8. Diagnostyka
+
+- `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów.
+- `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty`).
+- Sekcja **Log** w interfejsie pokazuje tę diagnostykę oraz ostrzeżenie, gdy snapshot jest starszy niż 26 h.
+- `status` zadania opisuje **kondycję odczytu**, nie liczbę rekordów: tydzień bez pogrzebów w oknie to `done`, a nie `error`.
 
 ---
 
-## 7. Ograniczenia i uwagi operacyjne
+## 9. Ograniczenia i uwagi operacyjne
 
-- Dane zależą od dostępności i struktury zewnętrznych serwisów.
-- Zmiana HTML źródła może wymagać aktualizacji parsera.
-- Nie wszystkie źródła graficzne dają pełną ekstrakcję bez OCR.
-- Część błędów jest spodziewana i raportowana w `data/errors.json` (np. chwilowa niedostępność strony).
+- Dane zależą od dostępności i struktury zewnętrznych serwisów; zmiana HTML źródła wymaga aktualizacji parsera i zrzutu testowego.
+- Żadne skonfigurowane źródło nie wymaga OCR ani obsługi PDF — wszystkie publikują dane tekstem.
+- Źródło Facebook pozostaje wyłączone (dostęp wymaga uwierzytelnienia; ocena możliwości włączenia to osobne zadanie).
+- Harmonogram: GitHub Actions, cron `0 7,19 * * *` UTC, z bramką `npm test` przed `npm run refresh`.
 
 ---
 
-## 8. Pliki referencyjne
+## 10. Pliki referencyjne
 
 - Szczegółowy opis źródeł: `Instrukcja_odczytu_zrodel_Nekrolog.md`.
-- Bieżące dane: `data/latest.json`.
-- Raport błędów: `data/errors.json`.
+- Bieżące dane: `data/latest.json`; status: `data/job.json`; błędy: `data/errors.json`.
 - Lista źródeł: `config/sources.json`.
-

@@ -50,3 +50,9 @@ a:hover { text-decoration: underline; }
 .hint { color: var(--muted); font-size: 13px; }
 .pad { padding: 12px 14px; border-top: 1px solid var(--line); }
 .log { margin: 0; padding: 12px 14px; background: rgba(0,0,0,.25); max-height: 260px; overflow: auto; }
+.banner { border-radius: 12px; padding: 10px 12px; font-size: 13px; margin-bottom: 10px; border: 1px solid var(--line); }
+.banner.hidden { display: none; }
+.banner.warn { border-color: var(--warn); color: var(--warn); background: rgba(255, 209, 102, .08); }
+.banner.banner.bad { border-color: var(--bad); color: var(--bad); background: rgba(239, 71, 111, .08); }
+.hint.hitText { color: var(--warn); font-weight: 700; }
+.fact.warnText { color: var(--warn); }

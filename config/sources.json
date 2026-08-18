@@ -10,7 +10,8 @@
       "list_url": "https://www.zck-krakow.pl/funerals",
       "requires_detail_fetch": false,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "puk_pozegnalismy",
@@ -22,7 +23,8 @@
       "list_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "requires_detail_fetch": true,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "gabriel_nekrologi",
@@ -35,7 +37,8 @@
       "requires_detail_fetch": true,
       "max_detail_pages": 50,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "karawan_nekrologi",
@@ -48,21 +51,27 @@
       "requires_detail_fetch": true,
       "max_detail_pages": 50,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "salwator_grobonet",
-      "name": "Kraków Salwator – Grobonet",
-      "type": "grobonet_nekrologi",
-      "url": "https://krakowsalwator.grobonet.com/nekrologi.php",
+      "name": "Kraków Salwator – Groby (Grobonet)",
+      "type": "grobonet_groby",
+      "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "enabled": true,
       "distance_km": 5.5,
-      "list_url": "https://krakowsalwator.grobonet.com/nekrologi.php",
-      "base_url": "https://krakowsalwator.grobonet.com/",
-      "requires_detail_fetch": true,
+      "list_url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
+      "base_url": "https://krakowsalwator.grobonet.com/grobonet/",
+      "search_terms": [
+        "Gawin",
+        "Dereń"
+      ],
       "max_detail_pages": 50,
+      "requires_detail_fetch": false,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "debniki_sdb",
@@ -74,6 +83,7 @@
       "list_url": "https://debniki.sdb.org.pl/",
       "requires_detail_fetch": true,
       "max_detail_pages": 30,
+      "known_empty": true,
       "requires_ocr": false,
       "requires_pdf": false
     },
@@ -88,7 +98,8 @@
       "requires_detail_fetch": true,
       "max_detail_pages": 50,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "sw_jadwiga_pogrzebowe",
@@ -100,7 +111,8 @@
       "list_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "requires_detail_fetch": false,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "known_empty": false
     },
     {
       "id": "facebook_parafia_debniki",
@@ -108,7 +120,23 @@
       "type": "generic_html",
       "url": "https://www.facebook.com/parafiadebniki/?locale=pl_PL",
       "enabled": false,
-      "distance_km": 2.5
+      "distance_km": 2.5,
+      "known_empty": false,
+      "requires_ocr": false,
+      "requires_pdf": false
+    },
+    {
+      "id": "debniki_intencje",
+      "name": "Parafia Dębniki – Intencje mszalne",
+      "type": "debniki_intencje",
+      "url": "https://debniki.sdb.org.pl/intencje",
+      "enabled": true,
+      "distance_km": 2.5,
+      "list_url": "https://debniki.sdb.org.pl/intencje",
+      "requires_detail_fetch": false,
+      "requires_ocr": false,
+      "requires_pdf": false,
+      "known_empty": false
     }
   ]
 }
