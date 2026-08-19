@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-19T07:43:48.733Z",
-  "updated_at": "2026-08-19T07:43:48.733Z",
+  "generated_at": "2026-08-19T19:31:10.260Z",
+  "updated_at": "2026-08-19T19:31:10.260Z",
   "window": {
     "today": "2026-08-19",
     "death_from": "2026-08-12",
@@ -9,6 +9,34 @@
     "funeral_to": "2026-08-26"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Maria Kucharczyk",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kucharczyk-A8YFUCRSFH4B",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 85 lat zmarła | Data pogrzebu 25.08.2026 10:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Janusz Leśniak",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Lesniak-TTWB4MU6UORA",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.08.2026 przeżywszy 79 lat zmarł | Data pogrzebu 25.08.2026 10:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Andrzej Jasiński",
@@ -637,6 +665,62 @@
       "url": "https://www.gabriel24.pl/nekrolog/ryszard-dobrzanski/",
       "source_url": "https://www.gabriel24.pl/nekrologi/",
       "note": "Śp. Ryszard Dobrzański | Data pogrzebu: 22.07.2026 | Msza Święta: 22.07.2026 o godz. 13:00 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Cichowska",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-cichowska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MARIA CICHOWSKA | Pogrzeb jutro: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Adam Serwin",
+      "date_death": "2026-08-11",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "11:15",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/adam-serwin/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ADAM SERWIN | Pogrzeb jutro: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:15 SALA POŻEGNAŃ FIRMY KARAWAN",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Dżaman",
+      "date_death": "2026-08-15",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "11:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-dzaman/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MARIA DŻAMAN | Pogrzeb jutro: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Anna Paciorek",
+      "date_death": "2026-08-12",
+      "date_funeral": "2026-08-20",
+      "time_funeral": null,
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/anna-paciorek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Pogrzeb jutro: 20.08.2026 (Czwartek)",
       "priority_hit": false
     },
     {
@@ -1761,6 +1845,20 @@
     },
     {
       "kind": "death",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-19",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/ludwika-gora",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-19 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Waldemar Musiał",
       "date_death": "2026-08-13",
       "date_funeral": null,
@@ -2164,20 +2262,6 @@
       "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Józef Różański",
-      "date_death": "2026-07-28",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "source_id": "sw_jadwiga_pogrzebowe",
-      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/jozef-rozanski",
-      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
     }
   ],
   "funerals": [
@@ -2449,6 +2533,34 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK 2026-08-19; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Kucharczyk",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kucharczyk-A8YFUCRSFH4B",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 85 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janusz Leśniak",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Lesniak-TTWB4MU6UORA",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.08.2026 przeżywszy 79 lat zmarł",
       "priority_hit": false
     },
     {
@@ -3100,6 +3212,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Ludwika Góra",
+      "date_death": "2026-08-19",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/ludwika-gora",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-19 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Janusz Leśniak",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Lesniak-TTWB4MU6UORA",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.08.2026 przeżywszy 79 lat zmarł | Data pogrzebu 25.08.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Helena Doroż",
       "date_death": "2026-08-16",
       "date_funeral": "2026-08-20",
@@ -3124,6 +3264,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej--Jasinski-WSD35OQ6OXJ7",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 15.08.2026 przeżywszy 71 lat zmarł | Data pogrzebu 21.08.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Dżaman",
+      "date_death": "2026-08-15",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "11:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-dzaman/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MARIA DŻAMAN | Pogrzeb jutro: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3184,6 +3338,20 @@
     },
     {
       "kind": "death",
+      "name": "Maria Cichowska",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-20",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-cichowska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MARIA CICHOWSKA | Pogrzeb jutro: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Anna Pawlik",
       "date_death": "2026-08-13",
       "date_funeral": "2026-08-19",
@@ -3222,6 +3390,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stefan-Pycinski-ZG1IF54KQFLJ",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 12.08.2026 przeżywszy 87 lat zmarł | Data pogrzebu 17.08.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Anna Paciorek",
+      "date_death": "2026-08-12",
+      "date_funeral": "2026-08-20",
+      "time_funeral": null,
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/anna-paciorek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Pogrzeb jutro: 20.08.2026 (Czwartek)",
       "priority_hit": false
     },
     {
@@ -3592,6 +3774,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej--Jasinski-WSD35OQ6OXJ7",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 15.08.2026 przeżywszy 71 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janusz Leśniak",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Lesniak-TTWB4MU6UORA",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.08.2026 przeżywszy 79 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Kucharczyk",
+      "date_death": "2026-08-05",
+      "date_funeral": "2026-08-25",
+      "time_funeral": "10:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kucharczyk-A8YFUCRSFH4B",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 05.08.2026 przeżywszy 85 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -3982,9 +4192,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 66,
+      "accepted_rows": 70,
       "parser_status": "ok",
-      "rows": 66,
+      "rows": 70,
       "empty_streak": 0,
       "error": null
     },
@@ -4005,10 +4215,10 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 8,
-      "accepted_rows": 8,
+      "candidate_links": 12,
+      "accepted_rows": 12,
       "parser_status": "ok",
-      "rows": 8,
+      "rows": 12,
       "empty_streak": 0,
       "error": null
     },
@@ -4031,7 +4241,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 3,
+      "empty_streak": 4,
       "error": "HTTP 403 (prób: 3)"
     },
     {
@@ -4064,7 +4274,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 2,
+      "empty_streak": 3,
       "error": "HTTP 403 (prób: 3)"
     }
   ],
