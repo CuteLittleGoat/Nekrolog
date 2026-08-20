@@ -1,13 +1,13 @@
 {
   "status": "done_with_errors",
-  "started_at": "2026-08-19T19:30:33.523Z",
-  "finished_at": "2026-08-19T19:31:10.880Z",
-  "updated_at": "2026-08-19T19:31:10.880Z",
+  "started_at": "2026-08-20T07:46:32.297Z",
+  "finished_at": "2026-08-20T07:46:58.527Z",
+  "updated_at": "2026-08-20T07:46:58.527Z",
   "ok": true,
   "error_message": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403 (prób: 3) | Parafia Dębniki – Intencje mszalne: HTTP 403 (prób: 3)",
   "sources_total": 9,
   "sources_healthy": 7,
-  "rows_total": 226,
+  "rows_total": 227,
   "graves_total": 12,
   "matches_total": 0,
   "source_errors": [
@@ -30,9 +30,9 @@
       "source_name": "ZCK Kraków – Porządek pogrzebów",
       "url": "https://www.zck-krakow.pl/funerals",
       "http_status": 200,
-      "accepted_rows": 18,
+      "accepted_rows": 23,
       "parser_status": "ok",
-      "rows": 18,
+      "rows": 23,
       "empty_streak": 0,
       "error": null
     },
@@ -64,10 +64,10 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 12,
-      "accepted_rows": 12,
+      "candidate_links": 8,
+      "accepted_rows": 8,
       "parser_status": "ok",
-      "rows": 12,
+      "rows": 8,
       "empty_streak": 0,
       "error": null
     },
@@ -90,7 +90,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 4,
+      "empty_streak": 5,
       "error": "HTTP 403 (prób: 3)"
     },
     {
@@ -123,7 +123,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 3,
+      "empty_streak": 4,
       "error": "HTTP 403 (prób: 3)"
     }
   ],
@@ -131,9 +131,9 @@
     "zck_funerals": {
       "source_id": "zck_funerals",
       "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "last_rows": 18,
-      "last_run": "2026-08-19T19:30:34.803Z",
-      "last_nonempty_run": "2026-08-19T19:30:34.803Z",
+      "last_rows": 23,
+      "last_run": "2026-08-20T07:46:33.562Z",
+      "last_nonempty_run": "2026-08-20T07:46:33.562Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -142,8 +142,8 @@
       "source_id": "puk_pozegnalismy",
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "last_rows": 70,
-      "last_run": "2026-08-19T19:30:37.677Z",
-      "last_nonempty_run": "2026-08-19T19:30:37.677Z",
+      "last_run": "2026-08-20T07:46:36.506Z",
+      "last_nonempty_run": "2026-08-20T07:46:36.506Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -152,8 +152,8 @@
       "source_id": "gabriel_nekrologi",
       "source_name": "Gabriel24 – Nekrologi",
       "last_rows": 12,
-      "last_run": "2026-08-19T19:30:44.866Z",
-      "last_nonempty_run": "2026-08-19T19:30:44.866Z",
+      "last_run": "2026-08-20T07:46:39.445Z",
+      "last_nonempty_run": "2026-08-20T07:46:39.445Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -161,9 +161,9 @@
     "karawan_nekrologi": {
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
-      "last_rows": 12,
-      "last_run": "2026-08-19T19:31:00.832Z",
-      "last_nonempty_run": "2026-08-19T19:31:00.832Z",
+      "last_rows": 8,
+      "last_run": "2026-08-20T07:46:50.867Z",
+      "last_nonempty_run": "2026-08-20T07:46:50.867Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -172,8 +172,8 @@
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "last_rows": 12,
-      "last_run": "2026-08-19T19:31:01.789Z",
-      "last_nonempty_run": "2026-08-19T19:31:01.789Z",
+      "last_run": "2026-08-20T07:46:51.862Z",
+      "last_nonempty_run": "2026-08-20T07:46:51.862Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -182,9 +182,9 @@
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "last_rows": 0,
-      "last_run": "2026-08-19T19:31:02.245Z",
+      "last_run": "2026-08-20T07:46:52.261Z",
       "last_nonempty_run": null,
-      "empty_streak": 4,
+      "empty_streak": 5,
       "http_ok": false,
       "known_empty": true
     },
@@ -192,8 +192,8 @@
       "source_id": "podwawelskie_nekrologi",
       "source_name": "Podwawelskie – Nekrologi",
       "last_rows": 72,
-      "last_run": "2026-08-19T19:31:08.704Z",
-      "last_nonempty_run": "2026-08-19T19:31:08.704Z",
+      "last_run": "2026-08-20T07:46:56.049Z",
+      "last_nonempty_run": "2026-08-20T07:46:56.049Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -202,8 +202,8 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "last_rows": 30,
-      "last_run": "2026-08-19T19:31:10.065Z",
-      "last_nonempty_run": "2026-08-19T19:31:10.065Z",
+      "last_run": "2026-08-20T07:46:57.762Z",
+      "last_nonempty_run": "2026-08-20T07:46:57.762Z",
       "empty_streak": 0,
       "http_ok": true,
       "known_empty": false
@@ -212,9 +212,9 @@
       "source_id": "debniki_intencje",
       "source_name": "Parafia Dębniki – Intencje mszalne",
       "last_rows": 0,
-      "last_run": "2026-08-19T19:31:10.238Z",
+      "last_run": "2026-08-20T07:46:57.926Z",
       "last_nonempty_run": "2026-08-18T10:49:48.968Z",
-      "empty_streak": 3,
+      "empty_streak": 4,
       "http_ok": false,
       "known_empty": false
     }
