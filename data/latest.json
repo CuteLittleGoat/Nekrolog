@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-21T07:48:50.509Z",
-  "updated_at": "2026-08-21T07:48:50.509Z",
+  "generated_at": "2026-08-21T19:34:54.036Z",
+  "updated_at": "2026-08-21T19:34:54.036Z",
   "window": {
     "today": "2026-08-21",
     "death_from": "2026-08-14",
@@ -21,6 +21,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tomasz-Krupa-EG9GGFDCG7GD",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 18.08.2026 przeżywszy 68 lat zmarł | Data pogrzebu 26.08.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Kotula",
+      "date_death": "2026-08-19",
+      "date_funeral": "2026-08-26",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kotula-MPT9YI9VCU7S",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 26.08.2026 11:00",
       "priority_hit": false
     },
     {
@@ -721,6 +735,34 @@
       "url": "https://karawan.pl/nekrolog/henryk-krzeminski/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "Śp. HENRYK KRZEMIŃSKI | Pogrzeb dziś: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Józef Gubała",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-24",
+      "time_funeral": "09:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jozef-gubala/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JÓZEF GUBAŁA | Data pogrzebu: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Wanda Sztark",
+      "date_death": "2026-08-16",
+      "date_funeral": "2026-08-24",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wanda-sztark/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WANDA SZTARK | Data pogrzebu: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -1803,6 +1845,62 @@
     },
     {
       "kind": "death",
+      "name": "Andrzej Rybka",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/andrzej-rybka",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Danuta Prasak-Dulińska",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/danuta-prasak-dulinska(2)",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Marian Paciorek",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/marian-paciorek(2)",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Deka",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/krystyna-deka",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Ludwika Góra",
       "date_death": "2026-08-19",
       "date_funeral": null,
@@ -2161,62 +2259,6 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/wanda-borek",
-      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Teresa Baran",
-      "date_death": "2026-07-28",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "source_id": "sw_jadwiga_pogrzebowe",
-      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/teresa-baran",
-      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Henryka Baran",
-      "date_death": "2026-07-28",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "source_id": "sw_jadwiga_pogrzebowe",
-      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/henryka-baran",
-      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Alicja Czarnik",
-      "date_death": "2026-07-28",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "source_id": "sw_jadwiga_pogrzebowe",
-      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/alicja-czarnik",
-      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Adela Woźniak",
-      "date_death": "2026-07-28",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "source_id": "sw_jadwiga_pogrzebowe",
-      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/adela-wozniak",
       "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "note": "Zgłoszenie mszy pogrzebowej z 2026-07-28 – parafia św. Jadwigi Królowej",
       "priority_hit": false
@@ -2670,6 +2712,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tomasz-Krupa-EG9GGFDCG7GD",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 18.08.2026 przeżywszy 68 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Kotula",
+      "date_death": "2026-08-19",
+      "date_funeral": "2026-08-26",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kotula-MPT9YI9VCU7S",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.08.2026 przeżywszy 84 lat zmarła",
       "priority_hit": false
     },
     {
@@ -3335,6 +3391,62 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Andrzej Rybka",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/andrzej-rybka",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Danuta Prasak-Dulińska",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/danuta-prasak-dulinska(2)",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Marian Paciorek",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/marian-paciorek(2)",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Deka",
+      "date_death": "2026-08-21",
+      "date_funeral": null,
+      "time_funeral": null,
+      "place": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/krystyna-deka",
+      "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+      "note": "Zgłoszenie mszy pogrzebowej z 2026-08-21 – parafia św. Jadwigi Królowej",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Edward Półtorak",
       "date_death": "2026-08-20",
       "date_funeral": "2026-08-26",
@@ -3345,6 +3457,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edward-Poltorak-3VAA5QQTTXXP",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 20.08.2026 przeżywszy 75 lat zmarł | Data pogrzebu 26.08.2026 09:30",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Kotula",
+      "date_death": "2026-08-19",
+      "date_funeral": "2026-08-26",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kotula-MPT9YI9VCU7S",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.08.2026 przeżywszy 84 lat zmarła | Data pogrzebu 26.08.2026 11:00",
       "priority_hit": false
     },
     {
@@ -3387,6 +3513,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janusz-Lesniak-TTWB4MU6UORA",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 18.08.2026 przeżywszy 79 lat zmarł | Data pogrzebu 25.08.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Józef Gubała",
+      "date_death": "2026-08-18",
+      "date_funeral": "2026-08-24",
+      "time_funeral": "09:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jozef-gubala/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JÓZEF GUBAŁA | Data pogrzebu: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3443,6 +3583,20 @@
       "url": "https://karawan.pl/nekrolog/florian-fraczek/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "Śp. FLORIAN FRĄCZEK | Pogrzeb dziś: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:00 KAPLICA NA CMENTARZU PARAFIALNYM NA PRĄDNIKU BIAŁYM",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Wanda Sztark",
+      "date_death": "2026-08-16",
+      "date_funeral": "2026-08-24",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wanda-sztark/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WANDA SZTARK | Data pogrzebu: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -4080,6 +4234,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Maria Kotula",
+      "date_death": "2026-08-19",
+      "date_funeral": "2026-08-26",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Kotula-MPT9YI9VCU7S",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.08.2026 przeżywszy 84 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Tomasz Krupa",
       "date_death": "2026-08-18",
       "date_funeral": "2026-08-26",
@@ -4480,9 +4648,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 70,
+      "accepted_rows": 72,
       "parser_status": "ok",
-      "rows": 70,
+      "rows": 72,
       "empty_streak": 0,
       "error": null
     },
@@ -4503,10 +4671,10 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 9,
-      "accepted_rows": 9,
+      "candidate_links": 11,
+      "accepted_rows": 11,
       "parser_status": "ok",
-      "rows": 9,
+      "rows": 11,
       "empty_streak": 0,
       "error": null
     },
@@ -4529,7 +4697,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 7,
+      "empty_streak": 8,
       "error": "HTTP 403 (prób: 3)"
     },
     {
@@ -4562,7 +4730,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 6,
+      "empty_streak": 7,
       "error": "HTTP 403 (prób: 3)"
     }
   ],
