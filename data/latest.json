@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-22T07:36:43.771Z",
-  "updated_at": "2026-08-22T07:36:43.771Z",
+  "generated_at": "2026-08-22T19:26:59.187Z",
+  "updated_at": "2026-08-22T19:26:59.187Z",
   "window": {
     "today": "2026-08-22",
     "death_from": "2026-08-15",
@@ -3742,7 +3742,7 @@
       "accepted_rows": 0,
       "parser_status": "empty",
       "rows": 0,
-      "empty_streak": 1,
+      "empty_streak": 2,
       "error": null
     },
     {
@@ -3799,7 +3799,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 9,
+      "empty_streak": 10,
       "error": "HTTP 403 (prób: 3)"
     },
     {
@@ -3832,7 +3832,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 8,
+      "empty_streak": 9,
       "error": "HTTP 403 (prób: 3)"
     }
   ],
