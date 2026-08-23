@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-22T19:26:59.187Z",
-  "updated_at": "2026-08-22T19:26:59.187Z",
+  "generated_at": "2026-08-23T07:38:20.605Z",
+  "updated_at": "2026-08-23T07:38:20.605Z",
   "window": {
-    "today": "2026-08-22",
-    "death_from": "2026-08-15",
-    "death_to": "2026-08-22",
-    "funeral_from": "2026-08-22",
-    "funeral_to": "2026-08-29"
+    "today": "2026-08-23",
+    "death_from": "2026-08-16",
+    "death_to": "2026-08-23",
+    "funeral_from": "2026-08-23",
+    "funeral_to": "2026-08-30"
   },
   "deaths": [
     {
@@ -487,20 +487,6 @@
     },
     {
       "kind": "death",
-      "name": "Halina Puchała",
-      "date_death": "2026-07-21",
-      "date_funeral": "2026-07-27",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła | Data pogrzebu 27.07.2026 13:40",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Teresa Panek",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -692,7 +678,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jozef-gubala/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JÓZEF GUBAŁA | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JÓZEF GUBAŁA | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -706,7 +692,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wanda-sztark/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WANDA SZTARK | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WANDA SZTARK | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -720,7 +706,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/renata-kijowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. RENATA KIJOWSKA | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. RENATA KIJOWSKA | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -734,7 +720,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/ks-kanonik-michal-mikolajczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KS. KANONIK MICHAŁ MIKOŁAJCZYK | Data pogrzebu: 25.08.2026 (Wtorek) | Msza Święta: 25.08.2026 o godz. 10:00 KOŚCIÓŁ PW. PANA JEZUSA DOBREGO PASTERZA",
+      "note": "Śp. KS. KANONIK MICHAŁ MIKOŁAJCZYK | Pogrzeb pojutrze: 25.08.2026 (Wtorek) | Msza Święta: 25.08.2026 o godz. 10:00 KOŚCIÓŁ PW. PANA JEZUSA DOBREGO PASTERZA",
       "priority_hit": false
     },
     {
@@ -748,7 +734,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/florian-fraczek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. FLORIAN FRĄCZEK | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:00 KAPLICA NA CMENTARZU PARAFIALNYM NA PRĄDNIKU BIAŁYM",
+      "note": "Śp. FLORIAN FRĄCZEK | Pogrzeb przedwczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:00 KAPLICA NA CMENTARZU PARAFIALNYM NA PRĄDNIKU BIAŁYM",
       "priority_hit": false
     },
     {
@@ -762,7 +748,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krystyna-flegier/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA FLEGIER | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. KRYSTYNA FLEGIER | Pogrzeb przedwczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -776,7 +762,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/artur-kaim/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ARTUR KAIM | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ARTUR KAIM | Pogrzeb przedwczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -790,77 +776,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/henryk-krzeminski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. HENRYK KRZEMIŃSKI | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Cichowska",
-      "date_death": "2026-08-14",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-cichowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA CICHOWSKA | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Adam Serwin",
-      "date_death": "2026-08-11",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "11:15",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/adam-serwin/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ADAM SERWIN | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:15 SALA POŻEGNAŃ FIRMY KARAWAN",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Dżaman",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-dzaman/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA DŻAMAN | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Anna Paciorek",
-      "date_death": "2026-08-12",
-      "date_funeral": "2026-08-20",
-      "time_funeral": null,
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/anna-paciorek/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb przedwczoraj: 20.08.2026 (Czwartek)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marek Pomykalski",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marek-pomykalski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAREK POMYKALSKI | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. HENRYK KRZEMIŃSKI | Pogrzeb przedwczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2771,20 +2687,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Halina Puchała",
-      "date_death": "2026-07-21",
-      "date_funeral": "2026-07-27",
-      "time_funeral": "13:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Puchala-VK23HXM7Q0P1",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 21.07.2026 przeżywszy 81 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Teresa Panek",
       "date_death": "2026-07-21",
       "date_funeral": "2026-07-27",
@@ -3119,7 +3021,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jozef-gubala/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JÓZEF GUBAŁA | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JÓZEF GUBAŁA | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3161,7 +3063,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/renata-kijowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. RENATA KIJOWSKA | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. RENATA KIJOWSKA | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3175,7 +3077,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/ks-kanonik-michal-mikolajczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KS. KANONIK MICHAŁ MIKOŁAJCZYK | Data pogrzebu: 25.08.2026 (Wtorek) | Msza Święta: 25.08.2026 o godz. 10:00 KOŚCIÓŁ PW. PANA JEZUSA DOBREGO PASTERZA",
+      "note": "Śp. KS. KANONIK MICHAŁ MIKOŁAJCZYK | Pogrzeb pojutrze: 25.08.2026 (Wtorek) | Msza Święta: 25.08.2026 o godz. 10:00 KOŚCIÓŁ PW. PANA JEZUSA DOBREGO PASTERZA",
       "priority_hit": false
     },
     {
@@ -3203,7 +3105,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wanda-sztark/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WANDA SZTARK | Pogrzeb pojutrze: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WANDA SZTARK | Pogrzeb jutro: 24.08.2026 (Poniedziałek) | Msza Święta: 24.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3217,63 +3119,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/florian-fraczek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. FLORIAN FRĄCZEK | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:00 KAPLICA NA CMENTARZU PARAFIALNYM NA PRĄDNIKU BIAŁYM",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Andrzej Jasiński",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-21",
-      "time_funeral": "10:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej--Jasinski-WSD35OQ6OXJ7",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 15.08.2026 przeżywszy 71 lat zmarł | Data pogrzebu 21.08.2026 10:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Henryk Krzemiński",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-21",
-      "time_funeral": "12:20",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/henryk-krzeminski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. HENRYK KRZEMIŃSKI | Pogrzeb wczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Dżaman",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-dzaman/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA DŻAMAN | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marek Pomykalski",
-      "date_death": "2026-08-15",
-      "date_funeral": "2026-08-20",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marek-pomykalski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAREK POMYKALSKI | Pogrzeb przedwczoraj: 20.08.2026 (Czwartek) | Msza Święta: 20.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. FLORIAN FRĄCZEK | Pogrzeb przedwczoraj: 21.08.2026 (Piątek) | Msza Święta: 21.08.2026 o godz. 11:00 KAPLICA NA CMENTARZU PARAFIALNYM NA PRĄDNIKU BIAŁYM",
       "priority_hit": false
     }
   ],
@@ -3721,6 +3567,12 @@
   ],
   "source_errors": [
     {
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "error": "Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
+    },
+    {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
       "url": "https://debniki.sdb.org.pl/",
@@ -3742,7 +3594,7 @@
       "accepted_rows": 0,
       "parser_status": "empty",
       "rows": 0,
-      "empty_streak": 2,
+      "empty_streak": 3,
       "error": null
     },
     {
@@ -3750,9 +3602,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 72,
+      "accepted_rows": 70,
       "parser_status": "ok",
-      "rows": 72,
+      "rows": 70,
       "empty_streak": 0,
       "error": null
     },
@@ -3773,10 +3625,10 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 13,
-      "accepted_rows": 13,
+      "candidate_links": 8,
+      "accepted_rows": 8,
       "parser_status": "ok",
-      "rows": 13,
+      "rows": 8,
       "empty_streak": 0,
       "error": null
     },
@@ -3799,7 +3651,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 10,
+      "empty_streak": 11,
       "error": "HTTP 403 (prób: 3)"
     },
     {
@@ -3832,11 +3684,11 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 9,
+      "empty_streak": 10,
       "error": "HTTP 403 (prób: 3)"
     }
   ],
-  "refresh_error": "Parafia św. Stanisława Kostki (Dębniki): HTTP 403 (prób: 3) | Parafia Dębniki – Intencje mszalne: HTTP 403 (prób: 3)",
+  "refresh_error": "ZCK Kraków – Porządek pogrzebów: Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 (prób: 3) | Parafia Dębniki – Intencje mszalne: HTTP 403 (prób: 3)",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
 }

@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-08-22T19:26:59.695Z",
+  "generated_at": "2026-08-23T07:38:21.027Z",
   "errors": [
+    {
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "error": "Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
+    },
     {
       "source_id": "debniki_sdb",
       "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
