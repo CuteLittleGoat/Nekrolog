@@ -148,11 +148,16 @@ async function attemptOnce(url, timeoutMs, useIpv4Agent = false) {
 
 export async function fetchText(url, timeoutMs = 20000) {
   let last = null;
+  // Rzeczywista liczba obiegów pętli. Wcześniej komunikat raportował stałe
+  // "(prób: 3)" niezależnie od przebiegu — przy statusie nieponawialnym (np. 403)
+  // wykonywana jest tylko jedna próba, a diagnostyka sugerowała wyczerpanie ponowień.
+  let attempts = 0;
 
   for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt += 1) {
     // Kolejne podejścia wymuszają IPv4 — część hostów zrywa połączenie po IPv6.
     last = await attemptOnce(url, timeoutMs, attempt > 0);
-    if (last.ok) return { ...last, attempts: attempt + 1 };
+    attempts = attempt + 1;
+    if (last.ok) return { ...last, attempts };
 
     const worthRetrying = isTransientStatus(last.status)
       || last.status === 0
@@ -162,7 +167,6 @@ export async function fetchText(url, timeoutMs = 20000) {
     await sleep(RETRY_DELAYS_MS[attempt]);
   }
 
-  const attempts = RETRY_DELAYS_MS.length + 1;
   const error = last?.error || `HTTP ${last?.status ?? 0}`;
   return { ok: false, status: last?.status ?? 0, text: last?.text ?? "", error: `${error} (prób: ${attempts})`, attempts };
 }

@@ -18,8 +18,17 @@ const REQUIRED_SOURCES = [
   // pochówku szukanej osoby — i po to źródło zostaje. search_terms to nazwiska
   // odpytywane w bazie; przy zmianie monitorowanej osoby aktualizuj je razem z Frazy.json.
   { id:"salwator_grobonet", name:"Kraków Salwator – Groby (Grobonet)", type:"grobonet_groby", url:"https://krakowsalwator.grobonet.com/grobonet/start.php", enabled:true, distance_km:5.5, list_url:"https://krakowsalwator.grobonet.com/grobonet/start.php", base_url:"https://krakowsalwator.grobonet.com/grobonet/", search_terms:["Gawin","Dereń"], max_detail_pages:50, ...DEFAULT_FLAGS },
-  { id:"debniki_sdb", name:"Parafia św. Stanisława Kostki (Dębniki)", type:"debniki_sdb_pogrzeby", url:"https://debniki.sdb.org.pl/", enabled:true, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/", requires_detail_fetch:true, max_detail_pages:30, known_empty:true, requires_ocr:false, requires_pdf:false },
-  { id:"debniki_intencje", name:"Parafia Dębniki – Intencje mszalne", type:"debniki_intencje", url:"https://debniki.sdb.org.pl/intencje", enabled:true, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/intencje", ...DEFAULT_FLAGS },
+  // Wyłączone: w całej zapisanej historii przebiegów źródło nie zwróciło ani jednego
+  // rekordu (last_nonempty_run: null), także wtedy, gdy odpowiadało kodem 200 —
+  // parser znajduje linki, ale żaden nie przechodzi walidacji. Zakres tematyczny
+  // (ogłoszenia parafii Dębniki) pokrywa debniki_intencje. Nie usuwamy definicji,
+  // żeby zachować historię i umożliwić powrót po przebudowie parafialnej strony.
+  { id:"debniki_sdb", name:"Parafia św. Stanisława Kostki (Dębniki)", type:"debniki_sdb_pogrzeby", url:"https://debniki.sdb.org.pl/", enabled:false, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/", requires_detail_fetch:true, max_detail_pages:30, known_empty:true, requires_ocr:false, requires_pdf:false },
+  // Host stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów
+  // danych — w tym z runnerów GitHub Actions. Odczyt udaje się z adresów o dobrej
+  // reputacji (uruchomienie lokalne), więc źródło zostaje włączone, a HTTP 403 jest
+  // raportowane jako ostrzeżenie zamiast błędu przebiegu (README §8).
+  { id:"debniki_intencje", name:"Parafia Dębniki – Intencje mszalne", type:"debniki_intencje", url:"https://debniki.sdb.org.pl/intencje", enabled:true, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/intencje", external_block_tolerated:true, ...DEFAULT_FLAGS },
   { id:"podwawelskie_nekrologi", name:"Podwawelskie – Nekrologi", type:"podwawelskie_nekrologi", url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", enabled:true, distance_km:2.5, list_url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", requires_detail_fetch:true, max_detail_pages:50, requires_ocr:false, requires_pdf:false },
   { id:"sw_jadwiga_pogrzebowe", name:"Parafia św. Jadwigi – Msze święte pogrzebowe", type:"sw_jadwiga_pogrzebowe", url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", enabled:true, distance_km:6.5, list_url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", ...DEFAULT_FLAGS },
   { id:"facebook_parafia_debniki", name:"Facebook – Parafia Dębniki", type:"generic_html", url:"https://www.facebook.com/parafiadebniki/?locale=pl_PL", enabled:false, distance_km:2.5 }
@@ -494,7 +503,7 @@ function mergeRequiredSources(existing){
     // wyszukiwania biorą się z definicji, a nie z zastanej konfiguracji.
     const migrating=stored&&stored.type!==r.type;
     const merged=migrating?{...stored,...r}:{...r,...stored};
-    byId.set(r.id,{...merged,type:r.type,known_empty:r.known_empty??false,requires_ocr:r.requires_ocr??false,requires_pdf:r.requires_pdf??false});
+    byId.set(r.id,{...merged,type:r.type,known_empty:r.known_empty??false,external_block_tolerated:r.external_block_tolerated===true,requires_ocr:r.requires_ocr??false,requires_pdf:r.requires_pdf??false});
   }
   return [...byId.values()];
 }
@@ -548,6 +557,45 @@ const resolveJobOutcome=({recentDeaths=0,upcomingFunerals=0,upcomingIntentions=0
   return {status:'done',ok:true,errorMessage:null};
 };
 
+// Blokada anty-botowa (Cloudflare i podobne) to HTTP 403 z warstwy ochronnej —
+// parsery rozpoznają ją jako parser_status: 'blocked'. Odróżnienie jej od awarii
+// parsera jest istotne, bo wymaga innej reakcji: zmiany drogi dostępu, nie poprawki
+// kodu. Bez tego rozróżnienia każdy przebieg kończył się statusem done_with_errors
+// z tego samego, znanego powodu i status przestawał odróżniać regresję od normy.
+const isBlockedByAntiBot=(parsed)=>parsed?.diagnostics?.parser_status==='blocked';
+
+const daysBetween=(iso,now=Date.now())=>{
+  const t=Date.parse(iso||'');
+  if(!Number.isFinite(t)) return 0;
+  return Math.max(0,Math.floor((now-t)/86400000));
+};
+
+// Zwraca {kind:'error'|'warning'|'ok', entry}. Tolerowana blokada zewnętrzna jest
+// ostrzeżeniem tylko dopóki mieści się w progu — trwała utrata źródła musi wrócić
+// do rangi błędu, żeby nie chować się bezterminowo za ostrzeżeniem.
+function classifySourceOutcome({source={},parsed={},health={},toleranceDays=14,emptyStreakAlert=3,now=Date.now()}={}){
+  const base={source_id:source.id,source_name:source.name,url:source.url};
+  const blocked=isBlockedByAntiBot(parsed);
+
+  if(blocked&&source.external_block_tolerated===true){
+    const days=daysBetween(health.blocked_since,now);
+    const label=`${clean(parsed.error)} — blokada anty-botowa źródła, trwa ${days} ${days===1?'dzień':'dni'}`;
+    const entry={...base,blocked_since:health.blocked_since??null,blocked_days:days};
+    if(days>=toleranceDays){
+      return {kind:'error',entry:{...entry,error:`${label}; przekroczono próg ${toleranceDays} dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)`}};
+    }
+    return {kind:'warning',entry:{...entry,error:label}};
+  }
+
+  if(parsed.error) return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+
+  if(health.known_empty!==true&&Number(health.empty_streak||0)>=emptyStreakAlert){
+    return {kind:'error',entry:{...base,error:`Brak rekordów w ${health.empty_streak} kolejnych przebiegach — prawdopodobna zmiana struktury strony`}};
+  }
+
+  return {kind:'ok',entry:null};
+}
+
 // Podsumowanie liczone z realnych rekordów zamiast stałego tekstu.
 function buildFallbackSummaryForHelena(recentDeaths=[],upcomingFunerals=[],intentions=[],phrases=HELENA_GAWIN_PHRASES){
   const all=[...(recentDeaths||[]),...(upcomingFunerals||[]),...(intentions||[])];
@@ -593,5 +641,6 @@ export {
   parseDebnikiIntencje,parseDebnikiIntencjeHtml,
   parseSwJadwigaPogrzebowe,parseSwJadwigaPogrzeboweHtml,parseGenericHtml,parseSource,
   buildMatchHaystack,rowMatchesPhrases,isIntentionLikeSource,isIntentionLikeRow,isEligibleDeathRow,
-  mergeRequiredSources,mergeDuplicateRows,dedupeKeyForRow,resolveJobOutcome,buildFallbackSummaryForHelena,isMeaningfulRow
+  mergeRequiredSources,mergeDuplicateRows,dedupeKeyForRow,resolveJobOutcome,buildFallbackSummaryForHelena,isMeaningfulRow,
+  isBlockedByAntiBot,daysBetween,classifySourceOutcome
 };

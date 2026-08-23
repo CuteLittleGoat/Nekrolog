@@ -284,3 +284,164 @@ Wariant C2 (self-hosted runner) **nie** należy do tej kategorii: nie obchodzi z
 3. Aktualizacja `README.md` §8 („Diagnostyka”) o opis rozróżnienia błąd / ostrzeżenie oraz §3 o status źródeł Dębniki.
 4. Uzupełnienie niniejszego pliku o sekcję „Zmiany wykonane w kodzie” zgodnie z pkt. 4 `AGENTS.md`, jeżeli dojdzie do zmian kodu.
 5. Niezależnie od ścieżki technicznej — wysłanie prośby do parafii (wariant C1). Jest to jedyne rozwiązanie zarazem trwałe, czyste i tanie.
+
+---
+
+## 8. Zmiany wykonane w kodzie
+
+Data wdrożenia: 2026-08-23. Wdrożono rekomendacje **A**, **B** i **D**.
+
+**Decyzje kierunkowe użytkownika:** nie podejmujemy prób obchodzenia blokad (rekomendacja E potwierdzona) ani kontaktu z parafią (wariant C1 odrzucony). Rekomendacja C nie została wdrożona.
+
+**Zakres wyłączeń.** „Nieaktywne źródło” rozumiane jest jako źródło niewnoszące danych, a nie źródło chwilowo niedostępne. Wyłączono `debniki_sdb` (zero rekordów w całej historii, także przy HTTP 200); `facebook_parafia_debniki` pozostaje wyłączone. `debniki_intencje` **pozostaje włączone** mimo blokady — jest jedynym dostawcą kategorii `intention`, a odczyt udaje się przy uruchomieniu lokalnym, więc wyłączenie skasowałoby sekcję „potrzeby” również tam, gdzie ona działa.
+
+### Plik: `scripts/fetch.mjs`
+
+Lokalizacja: funkcja `fetchText`
+
+Było — licznik prób stały, niezależny od rzeczywistego przebiegu pętli:
+
+```js
+const attempts = RETRY_DELAYS_MS.length + 1;
+const error = last?.error || `HTTP ${last?.status ?? 0}`;
+return { ok: false, ..., error: `${error} (prób: ${attempts})`, attempts };
+```
+
+Jest — licznik zliczający faktyczne obiegi:
+
+```js
+let attempts = 0;
+for (let attempt = 0; attempt <= RETRY_DELAYS_MS.length; attempt += 1) {
+  last = await attemptOnce(url, timeoutMs, attempt > 0);
+  attempts = attempt + 1;
+  if (last.ok) return { ...last, attempts };
+  ...
+}
+const error = last?.error || `HTTP ${last?.status ?? 0}`;
+return { ok: false, ..., error: `${error} (prób: ${attempts})`, attempts };
+```
+
+Efekt potwierdzony w przebiegu kontrolnym: komunikat brzmi teraz `HTTP 403 (prób: 1)` zamiast nieprawdziwego `(prób: 3)`.
+
+### Plik: `scripts/nekrolog_core.mjs`
+
+**Lokalizacja: `REQUIRED_SOURCES`, wpis `debniki_sdb`**
+
+Było: `enabled:true`. Jest: `enabled:false` wraz z komentarzem uzasadniającym (brak rekordów w całej historii; zakres pokrywa `debniki_intencje`; definicja zachowana, by umożliwić powrót).
+
+**Lokalizacja: `REQUIRED_SOURCES`, wpis `debniki_intencje`**
+
+Było: bez flagi. Jest: dodano `external_block_tolerated:true` z komentarzem opisującym naturę blokady.
+
+**Lokalizacja: `mergeRequiredSources`**
+
+Było:
+
+```js
+byId.set(r.id,{...merged,type:r.type,known_empty:r.known_empty??false,requires_ocr:...,requires_pdf:...});
+```
+
+Jest — flaga tolerancji wymuszana z definicji w kodzie, analogicznie do `known_empty`, żeby zastana konfiguracja nie mogła jej po cichu przestawić:
+
+```js
+byId.set(r.id,{...merged,type:r.type,known_empty:r.known_empty??false,external_block_tolerated:r.external_block_tolerated===true,requires_ocr:...,requires_pdf:...});
+```
+
+**Lokalizacja: przed `buildFallbackSummaryForHelena`** — nowe, wyeksportowane funkcje:
+
+- `isBlockedByAntiBot(parsed)` — rozpoznaje blokadę po `parser_status === 'blocked'`.
+- `daysBetween(iso, now)` — czas trwania blokady w dniach.
+- `classifySourceOutcome({source, parsed, health, toleranceDays, emptyStreakAlert, now})` — zwraca `{kind:'error'|'warning'|'ok', entry}`. Logika klasyfikacji została celowo wydzielona z `main()` do funkcji czystej, żeby dała się pokryć testami.
+
+Eksport rozszerzono o `isBlockedByAntiBot, daysBetween, classifySourceOutcome`.
+
+### Plik: `scripts/refresh_static.mjs`
+
+**Lokalizacja: stałe modułu**
+
+Dodano `const BLOCK_TOLERANCE_DAYS = 14;` wraz z uzasadnieniem progu.
+
+**Lokalizacja: `updateSourceHealth`**
+
+Dodano pole `blocked_since` — znacznik pierwszego przebiegu z blokadą, zerowany przy pierwszym udanym odczycie, dzięki czemu mierzy czas trwania bieżącej blokady, a nie sumę historyczną.
+
+**Lokalizacja: pętla po źródłach w `main()`**
+
+Było — każdy błąd źródła trafiał do jednego zbioru:
+
+```js
+if (parsed.error) {
+  sourceErrors.push({ source_id: s.id, source_name: s.name, url: s.url, error: clean(parsed.error) });
+} else if (!health.known_empty && health.empty_streak >= EMPTY_STREAK_ALERT) {
+  sourceErrors.push({ ... });
+}
+```
+
+Jest — klasyfikacja rozdziela błędy od ostrzeżeń:
+
+```js
+if (isBlockedByAntiBot(parsed)) sourcesBlocked += 1;
+
+const classified = classifySourceOutcome({
+  source: s, parsed, health,
+  toleranceDays: BLOCK_TOLERANCE_DAYS,
+  emptyStreakAlert: EMPTY_STREAK_ALERT
+});
+if (classified.kind === 'error') sourceErrors.push(classified.entry);
+else if (classified.kind === 'warning') sourceWarnings.push(classified.entry);
+```
+
+**Lokalizacja: budowa `latest`, `job` i `errors.json`**
+
+Dodano pola: `source_warnings` i `refresh_warning` w `latest.json`; `warning_message`, `sources_blocked`, `source_warnings` w `job.json`; `warnings` w `errors.json`. Do `resolveJobOutcome` trafia wyłącznie `refreshErrors` — ostrzeżenia nie degradują statusu. Log konsoli rozszerzono o `blocked=` i `warnings=`.
+
+### Plik: `config/sources.json`
+
+- `debniki_sdb`: `enabled` z `true` na `false`.
+- `debniki_intencje`: dodano `external_block_tolerated: true`.
+- Pozostałym źródłom dodano `external_block_tolerated: false` dla jawności.
+
+### Plik: `app.js`
+
+**Lokalizacja: `renderStatus`**
+
+- Wydzielono `describe()` i zbudowano `errorsList` oraz nową `warningsList` z deduplikacją przez `Set` (wcześniej ten sam błąd obecny w `errors.json` i `job.json` pojawiał się na liście dwukrotnie).
+- Deklaracje obu list przeniesiono **przed** blok banera — baner ich używa, a przy odwrotnej kolejności `const` w martwej strefie czasowej rzucałby `ReferenceError` i wywracał całe renderowanie statusu.
+- Baner: nowa gałąź informująca o źródłach niedostępnych z powodu blokady zewnętrznej, o priorytecie niższym niż błąd wczytania i nieświeży snapshot.
+- Log: wiersz `źródła zablokowane`, rozbicie `errors.json` na błędy i ostrzeżenia, `zablokowane od <data>` w diagnostyce źródła oraz osobna sekcja „Ostrzeżenia (blokady zewnętrzne, nie degradują statusu)” wypisywana przed listą błędów.
+
+### Plik: `tests/refresh.snapshot.test.mjs`
+
+Dopisano 9 testów (łącznie 45, wszystkie zielone):
+
+- rozpoznawanie blokady anty-botowej i odróżnianie jej od `http_error` / `parser_broken`;
+- tolerowana blokada daje ostrzeżenie, blokada bez flagi pozostaje błędem;
+- przekroczenie progu 14 dni przywraca rangę błędu;
+- flaga tolerancji nie tłumi HTTP 500, zepsutego parsera ani serii pustych przebiegów;
+- przebieg bez uwag nie produkuje wpisu;
+- `resolveJobOutcome` reaguje na błędy, ignoruje ostrzeżenia;
+- `debniki_sdb` i `facebook_parafia_debniki` są wyłączone, `debniki_intencje` włączone i oflagowane;
+- `mergeRequiredSources` wymusza flagę tolerancji nad zastaną konfiguracją.
+
+### Plik: `README.md`
+
+- §1: opis `errors.json` (ostrzeżenia) i `source_health.json` (`blocked_since`).
+- §3: tabela źródeł — `debniki_sdb` jako wyłączone, `debniki_intencje` z adnotacją o Cloudflare; dwa nowe akapity w „Uwagach merytorycznych” wyjaśniające oba przypadki, w tym fakt, że sekcja „potrzeby” zapełnia się przy uruchomieniu lokalnym, a nie z GitHub Actions.
+- §8: nowe podrozdziały „Błąd a ostrzeżenie” (tabela porównawcza, opis flagi, próg tolerancji) oraz „Dlaczego to rozróżnienie powstało”; uzupełniono uwagę, że licznik pustych przebiegów zlicza przebiegi, a nie dni.
+- §9: uwaga, że projekt **nie obchodzi** zabezpieczeń anty-botowych i że nagłówki nie mają wpływu na decyzję warstwy ochronnej.
+
+### Weryfikacja
+
+| Sprawdzenie | Wynik |
+|---|---|
+| `npm test` | 45/45 zielonych (przed zmianą 36/36) |
+| Przebieg produkcyjny (`npm run refresh`, sieć bez blokady) | `healthy=8/8 blocked=0 warnings=0 status=done` |
+| Przebieg z symulowaną blokadą (lokalny serwer HTTP 403) | `healthy=7/8 blocked=1 warnings=1 status=done`, `error_message: null`, wpis w `source_warnings` |
+| Przebieg z blokadą starszą niż próg (`blocked_since` cofnięte o 20 dni) | `status=done_with_errors`, komunikat „przekroczono próg 14 dni” |
+| Komunikat licznika prób | `HTTP 403 (prób: 1)` zamiast `(prób: 3)` |
+
+Pliki w `data/` przywrócono do stanu sprzed testów — snapshot generuje harmonogram GitHub Actions. Dane z tego kontenera nie byłyby reprezentatywne, bo jego łącze nie podlega blokadzie, której podlegają runnery.
+
+### Konsekwencja do odnotowania
+
+Przy utrzymaniu obecnego stanu (brak działań przywracających dostęp) blokada `debniki_intencje` przekroczy próg 14 dni **około 2026-09-01** i status wróci do `done_with_errors` — tym razem z komunikatem wprost wskazującym na trwałą utratę źródła. To zachowanie zamierzone: wymusza decyzję zamiast bezterminowego ukrywania problemu. Wyciszenie sprowadza się wtedy do ustawienia `enabled: false` na tym źródle, co jednak trwale usuwa kategorię „potrzeby”, również z uruchomień lokalnych.

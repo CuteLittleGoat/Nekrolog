@@ -11,7 +11,8 @@
       "requires_detail_fetch": false,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "puk_pozegnalismy",
@@ -24,7 +25,8 @@
       "requires_detail_fetch": true,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "gabriel_nekrologi",
@@ -38,7 +40,8 @@
       "max_detail_pages": 50,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "karawan_nekrologi",
@@ -52,7 +55,8 @@
       "max_detail_pages": 50,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "salwator_grobonet",
@@ -71,21 +75,23 @@
       "requires_detail_fetch": false,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "debniki_sdb",
       "name": "Parafia św. Stanisława Kostki (Dębniki)",
       "type": "debniki_sdb_pogrzeby",
       "url": "https://debniki.sdb.org.pl/",
-      "enabled": true,
+      "enabled": false,
       "distance_km": 2.5,
       "list_url": "https://debniki.sdb.org.pl/",
       "requires_detail_fetch": true,
       "max_detail_pages": 30,
       "known_empty": true,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "external_block_tolerated": false
     },
     {
       "id": "podwawelskie_nekrologi",
@@ -99,7 +105,8 @@
       "max_detail_pages": 50,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "sw_jadwiga_pogrzebowe",
@@ -112,7 +119,8 @@
       "requires_detail_fetch": false,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false
+      "known_empty": false,
+      "external_block_tolerated": false
     },
     {
       "id": "facebook_parafia_debniki",
@@ -123,7 +131,8 @@
       "distance_km": 2.5,
       "known_empty": false,
       "requires_ocr": false,
-      "requires_pdf": false
+      "requires_pdf": false,
+      "external_block_tolerated": false
     },
     {
       "id": "debniki_intencje",
@@ -133,6 +142,7 @@
       "enabled": true,
       "distance_km": 2.5,
       "list_url": "https://debniki.sdb.org.pl/intencje",
+      "external_block_tolerated": true,
       "requires_detail_fetch": false,
       "requires_ocr": false,
       "requires_pdf": false,

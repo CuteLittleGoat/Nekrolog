@@ -198,6 +198,18 @@ function renderStatus(snap, job, errors, matches) {
   if (el("snapshotTime")) el("snapshotTime").textContent = formatTs(snapshotTime);
   if (el("jobTime")) el("jobTime").textContent = formatTs(jobTime);
 
+  const describe = (item) => `${item.source_name || item.source_id || "source"}: ${item.error || "błąd"}`;
+  const errorsList = [...new Set([
+    ...(errors?.errors || []).map(describe),
+    ...(job?.source_errors || []).map(describe)
+  ])];
+  // Ostrzeżenia to znane blokady zewnętrzne. Nie degradują statusu przebiegu, ale
+  // muszą być widoczne — inaczej trwała utrata źródła wygląda jak poprawny przebieg.
+  const warningsList = [...new Set([
+    ...(errors?.warnings || []).map(describe),
+    ...(job?.source_warnings || []).map(describe)
+  ])];
+
   // Bez tego pusty interfejs po nieudanym pobraniu wyglądał identycznie jak
   // poprawny przebieg bez wpisów w oknie.
   const banner = el("dataWarning");
@@ -208,23 +220,23 @@ function renderStatus(snap, job, errors, matches) {
     } else if (stale) {
       banner.textContent = `Snapshot ma ${Math.round(age)} h — automatyczne odświeżanie prawdopodobnie nie działa.`;
       banner.className = "banner warn";
+    } else if (warningsList.length) {
+      banner.textContent = `Źródła niedostępne z powodu blokady zewnętrznej: ${warningsList.length}. Część sekcji może być pusta mimo poprawnego przebiegu. Szczegóły w sekcji Log.`;
+      banner.className = "banner warn";
     } else {
       banner.textContent = "";
       banner.className = "banner hidden";
     }
   }
 
-  const errorsList = [];
-  for (const item of errors?.errors || []) errorsList.push(`${item.source_name || item.source_id || "source"}: ${item.error || "błąd"}`);
-  for (const item of job?.source_errors || []) errorsList.push(`${item.source_name || item.source_id || "source"}: ${item.error || "błąd"}`);
-
   const diagnostics = job?.source_diagnostics || snap?.source_diagnostics || [];
   const logLines = [
     `latest.json: ${loadFailed ? "BRAK" : "OK"}`,
     `job.json: ${Object.keys(job || {}).length ? "OK" : "BRAK"}`,
     `źródła sprawne: ${job?.sources_healthy ?? "?"}/${job?.sources_total ?? (snap?.sources || []).length}`,
+    `źródła zablokowane: ${job?.sources_blocked ?? 0}`,
     `rekordy: ${job?.rows_total ?? "?"} | trafienia: ${matches.length}`,
-    `errors.json: ${(errors?.errors || []).length}`
+    `errors.json: ${(errors?.errors || []).length} błędów, ${(errors?.warnings || []).length} ostrzeżeń`
   ];
 
   // Bogata diagnostyka istniała w job.json, ale nie była pokazywana nigdzie —
@@ -240,10 +252,16 @@ function renderStatus(snap, job, errors, matches) {
         d.candidate_pages !== undefined ? `strony=${d.candidate_pages}` : "",
         d.rows !== undefined ? `rekordy=${d.rows}` : "",
         d.empty_streak ? `pustych z rzędu=${d.empty_streak}` : "",
+        d.blocked_since ? `zablokowane od ${formatTs(d.blocked_since)}` : "",
         d.error ? `BŁĄD: ${d.error}` : ""
       ];
       logLines.push(`- ${compact(parts).join(" | ")}`);
     }
+  }
+
+  if (warningsList.length) {
+    logLines.push("", "Ostrzeżenia (blokady zewnętrzne, nie degradują statusu):");
+    logLines.push(...warningsList.slice(0, 10).map((line) => `- ${line}`));
   }
 
   if (errorsList.length) {

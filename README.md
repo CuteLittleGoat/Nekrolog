@@ -23,8 +23,8 @@ Projekt działa w modelu:
 - `Frazy.json` – frazy monitorowanej osoby (formy odmienione i warianty zapisu).
 - `data/latest.json` – bieżący snapshot używany przez frontend.
 - `data/job.json` – status przebiegu, diagnostyka i kondycja źródeł.
-- `data/errors.json` – błędy źródeł.
-- `data/source_health.json` – licznik kolejnych pustych przebiegów per źródło (wykrywanie cichych awarii).
+- `data/errors.json` – błędy źródeł oraz ostrzeżenia (`warnings`) o blokadach zewnętrznych.
+- `data/source_health.json` – licznik kolejnych pustych przebiegów per źródło (wykrywanie cichych awarii) oraz `blocked_since` – moment rozpoczęcia bieżącej blokady anty-botowej.
 - `app.js`, `index.html`, `styles.css` – warstwa prezentacji.
 
 ---
@@ -53,8 +53,8 @@ Każdy rekord ma pole `kind`:
 | Gabriel24 – Nekrologi | `gabriel24_nekrologi` | nekrologi spod `/nekrolog/<slug>/`; daty, godzina mszy, cmentarz |
 | Karawan – Nekrologi | `karawan_nekrologi` | jak wyżej (ten sam widżet e-Nekrolog) |
 | Kraków Salwator – Groby | `grobonet_groby` | **wyszukiwarka grobów**: miejsce pochówku dla nazwisk z `search_terms` |
-| Parafia Dębniki – ogłoszenia | `debniki_sdb_pogrzeby` | wzmianki o pogrzebach w ogłoszeniach parafialnych |
-| Parafia Dębniki – Intencje mszalne | `debniki_intencje` | **potrzeby**: tygodniowy harmonogram intencji za zmarłych |
+| Parafia Dębniki – ogłoszenia | `debniki_sdb_pogrzeby` | wyłączone (`enabled: false`) – nigdy nie zwróciło rekordu |
+| Parafia Dębniki – Intencje mszalne | `debniki_intencje` | **potrzeby**: tygodniowy harmonogram intencji za zmarłych; host za Cloudflare |
 | Podwawelskie – Nekrologi | `podwawelskie_nekrologi` | kafelki z datami ur./zg. (ikony `fa-star` / `fa-cross`), 6 podstron |
 | Parafia św. Jadwigi | `sw_jadwiga_pogrzebowe` | zgłoszenia zgonu (`li.artykul`), data publikacji jako `date_death` |
 | Facebook – Parafia Dębniki | `generic_html` | wyłączone (`enabled: false`) |
@@ -63,6 +63,8 @@ Uwagi merytoryczne:
 - **św. Jadwiga** publikuje datę *zgłoszenia*, a strony szczegółowe zawierają intencje mszalne, nie termin pogrzebu — dlatego data trafia do `date_death`, nigdy do `date_funeral`.
 - **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`.
 - **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem; źródło ma wartość dla wyszukiwania fraz, a nie dla okna 7-dniowego.
+- **Dębniki (ogłoszenia)** są wyłączone. Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. Definicja zostaje w `nekrolog_core.mjs`, żeby zachować historię i umożliwić powrót po przebudowie strony parafii.
+- **Dębniki (intencje)** to jedyny dostawca kategorii `intention`. Host `debniki.sdb.org.pl` stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów danych — w tym z runnerów GitHub Actions. Odczyt udaje się z adresów o dobrej reputacji, więc **uruchomienie lokalne zapełnia sekcję „potrzeby”, a przebieg z GitHub Actions – nie**. Źródło jest oznaczone flagą `external_block_tolerated`, opisaną w §8.
 
 ---
 
@@ -133,10 +135,31 @@ python3 -m http.server 8000
 
 ## 8. Diagnostyka
 
-- `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów.
-- `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty`).
+- `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów, `blocked_since`.
+- `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty`). Uwaga: licznik zlicza **przebiegi, nie dni** — przy harmonogramie 2×/dobę próg to około półtora dnia.
 - Sekcja **Log** w interfejsie pokazuje tę diagnostykę oraz ostrzeżenie, gdy snapshot jest starszy niż 26 h.
 - `status` zadania opisuje **kondycję odczytu**, nie liczbę rekordów: tydzień bez pogrzebów w oknie to `done`, a nie `error`.
+
+### Błąd a ostrzeżenie
+
+Nie każda awaria odczytu jest defektem do naprawienia w kodzie. Pipeline rozdziela dwa przypadki:
+
+| | **Błąd** (`source_errors`) | **Ostrzeżenie** (`source_warnings`) |
+|---|---|---|
+| Co oznacza | regresja parsera, awaria serwera, ciche zamilknięcie źródła | znana blokada zewnętrzna warstwy anty-botowej (HTTP 403, `parser_status: "blocked"`) |
+| Wpływ na `status` | degraduje do `done_with_errors` | **brak** — przebieg kończy się jako `done` |
+| Reakcja | poprawka kodu lub zrzutu testowego | zmiana drogi dostępu; kod nie ma na to wpływu |
+| Widoczność | sekcja Log, `error_message` | sekcja Log (osobna lista), `warning_message`, baner w UI |
+
+Warunkiem potraktowania blokady jako ostrzeżenia jest flaga `external_block_tolerated: true` w definicji źródła. Bez niej HTTP 403 pozostaje zwykłym błędem.
+
+**Tolerancja jest ograniczona w czasie.** Jeżeli blokada trwa dłużej niż `BLOCK_TOLERANCE_DAYS` (domyślnie 14 dni, `scripts/refresh_static.mjs`), ostrzeżenie wraca do rangi błędu z komunikatem wskazującym na potrzebę decyzji. Ma to zapobiec sytuacji, w której trwała utrata źródła chowa się bezterminowo za ostrzeżeniem i status przestaje cokolwiek znaczyć. Wtedy trzeba albo przywrócić dostęp, albo wyłączyć źródło (`enabled: false`).
+
+Flaga tolerancji **nie tłumi** innych awarii tego samego źródła: HTTP 500, zepsuty parser i seria pustych przebiegów nadal są zgłaszane jako błędy.
+
+### Dlaczego to rozróżnienie powstało
+
+Przez kilkadziesiąt kolejnych przebiegów status brzmiał `done_with_errors` z tego samego, nienaprawialnego powodu — blokady Cloudflare na `debniki.sdb.org.pl`. Sygnał uległ wysyceniu: przestał odróżniać stan normalny od realnej regresji parsera, więc prawdziwa awaria innego źródła utonęłaby w szumie.
 
 ---
 
@@ -145,6 +168,7 @@ python3 -m http.server 8000
 - Dane zależą od dostępności i struktury zewnętrznych serwisów; zmiana HTML źródła wymaga aktualizacji parsera i zrzutu testowego.
 - Żadne skonfigurowane źródło nie wymaga OCR ani obsługi PDF — wszystkie publikują dane tekstem.
 - Źródło Facebook pozostaje wyłączone (dostęp wymaga uwierzytelnienia; ocena możliwości włączenia to osobne zadanie).
+- Część serwisów chroni się warstwą anty-botową rozstrzygającą po reputacji adresu IP. Odczyt z runnerów GitHub Actions bywa wtedy odrzucany, mimo że to samo żądanie z innego łącza przechodzi — nagłówki i User-Agent nie mają tu znaczenia. **Projekt nie obchodzi takich zabezpieczeń**; blokada jest raportowana jako ostrzeżenie (§8), a nie omijana.
 - Harmonogram: GitHub Actions, cron `0 7,19 * * *` UTC, z bramką `npm test` przed `npm run refresh`.
 
 ---

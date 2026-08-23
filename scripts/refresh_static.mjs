@@ -14,7 +14,9 @@ import {
   rowMatchesPhrases,
   resolveJobOutcome,
   buildFallbackSummaryForHelena,
-  isMeaningfulRow
+  isMeaningfulRow,
+  isBlockedByAntiBot,
+  classifySourceOutcome
 } from './nekrolog_core.mjs';
 
 const CONFIG_PATH = 'config/sources.json';
@@ -28,6 +30,11 @@ const VERSION = 'static-2';
 // Po ilu kolejnych przebiegach bez rekordów źródło uznajemy za ciche (czyli zepsute,
 // a nie chwilowo puste). Dwa przebiegi dziennie => próg to mniej więcej półtora dnia.
 const EMPTY_STREAK_ALERT = 3;
+// Po ilu dniach blokada zewnętrzna (HTTP 403 z warstwy anty-botowej) przestaje być
+// tolerowanym ostrzeżeniem i wraca do rangi błędu. Tolerancja ma przykrywać awarię
+// przejściową, a nie trwałą utratę źródła — po tym czasie stan wymaga decyzji:
+// albo źródło wraca, albo należy je wyłączyć (enabled: false).
+const BLOCK_TOLERANCE_DAYS = 14;
 
 async function readJson(path, fallback) { try { return JSON.parse(await readFile(path, 'utf8')); } catch { return fallback; } }
 async function writeJson(path, data) { await writeFile(path, JSON.stringify(data, null, 2) + '\n', 'utf8'); }
@@ -48,6 +55,7 @@ function updateSourceHealth(previous, source, parsed) {
   const rows = (parsed.rows || []).length;
   const httpOk = !parsed.error;
   const streak = rows > 0 ? 0 : Number(prev.empty_streak || 0) + 1;
+  const blocked = isBlockedByAntiBot(parsed);
   return {
     source_id: source.id,
     source_name: source.name,
@@ -56,7 +64,10 @@ function updateSourceHealth(previous, source, parsed) {
     last_nonempty_run: rows > 0 ? nowISO() : (prev.last_nonempty_run || null),
     empty_streak: streak,
     http_ok: httpOk,
-    known_empty: source.known_empty === true
+    known_empty: source.known_empty === true,
+    // Znacznik pierwszego przebiegu z blokadą. Zeruje się przy pierwszym udanym
+    // odczycie, więc mierzy czas trwania bieżącej blokady, a nie sumę historyczną.
+    blocked_since: blocked ? (prev.blocked_since || nowISO()) : null
   };
 }
 
@@ -82,10 +93,14 @@ async function main() {
     const previousHealth = await readJson(HEALTH_PATH, {});
     const allRows = [];
     const sourceErrors = [];
+    // Ostrzeżenia opisują stan znany i zewnętrzny — nie degradują statusu przebiegu,
+    // ale pozostają widoczne w job.json, latest.json i w sekcji Log interfejsu.
+    const sourceWarnings = [];
     const sourceDiagnostics = [];
     const sourceHealth = {};
     const targetPhrases = HELENA_GAWIN_PHRASES;
     let sourcesHealthy = 0;
+    let sourcesBlocked = 0;
 
     for (const s of enabled) {
       // Wyjątek w jednym parserze nie może kasować całego przebiegu — wcześniej
@@ -108,6 +123,7 @@ async function main() {
         ...(parsed.diagnostics || {}),
         rows: (parsed.rows || []).length,
         empty_streak: health.empty_streak,
+        blocked_since: health.blocked_since,
         error: parsed.error || null
       });
 
@@ -116,16 +132,17 @@ async function main() {
         allRows.push({ ...r, priority_hit: rowMatchesPhrases(r, targetPhrases) });
       }
 
-      if (parsed.error) {
-        sourceErrors.push({ source_id: s.id, source_name: s.name, url: s.url, error: clean(parsed.error) });
-      } else if (!health.known_empty && health.empty_streak >= EMPTY_STREAK_ALERT) {
-        sourceErrors.push({
-          source_id: s.id,
-          source_name: s.name,
-          url: s.url,
-          error: `Brak rekordów w ${health.empty_streak} kolejnych przebiegach — prawdopodobna zmiana struktury strony`
-        });
-      }
+      if (isBlockedByAntiBot(parsed)) sourcesBlocked += 1;
+
+      const classified = classifySourceOutcome({
+        source: s,
+        parsed,
+        health,
+        toleranceDays: BLOCK_TOLERANCE_DAYS,
+        emptyStreakAlert: EMPTY_STREAK_ALERT
+      });
+      if (classified.kind === 'error') sourceErrors.push(classified.entry);
+      else if (classified.kind === 'warning') sourceWarnings.push(classified.entry);
     }
 
     const rows = mergeDuplicateRows(allRows);
@@ -150,7 +167,10 @@ async function main() {
     matches.sort((a,b)=> (b.date_death||b.date_funeral||b.date_intention||'').localeCompare(a.date_death||a.date_funeral||a.date_intention||''));
 
     const fallbackSummary = buildFallbackSummaryForHelena(recent_deaths, upcoming_funerals, upcoming_intentions, targetPhrases);
+    // Do resolveJobOutcome trafiają wyłącznie błędy wymagające reakcji. Ostrzeżenia
+    // (tolerowane blokady zewnętrzne) są raportowane osobno i nie degradują statusu.
     const refreshErrors = sourceErrors.map((e) => `${e.source_name}: ${clean(e.error)}`);
+    const refreshWarnings = sourceWarnings.map((w) => `${w.source_name}: ${clean(w.error)}`);
     const generatedAt = nowISO();
 
     const sourceLite = mergedSources.map((s) => ({ id: s.id, name: s.name, type: s.type, url: s.url, distance_km: s.distance_km ?? null, enabled: s.enabled !== false }));
@@ -165,8 +185,10 @@ async function main() {
       sources: sourceLite,
       target_phrases: targetPhrases,
       source_errors: sourceErrors,
+      source_warnings: sourceWarnings,
       source_diagnostics: sourceDiagnostics,
       refresh_error: refreshErrors.join(' | ') || null,
+      refresh_warning: refreshWarnings.join(' | ') || null,
       writer_name: WRITER,
       writer_version: VERSION
     };
@@ -191,11 +213,11 @@ async function main() {
     });
 
     const finishedAt = nowISO();
-    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, sources_total: enabled.length, sources_healthy: sourcesHealthy, rows_total: rows.length, graves_total: graves.length, matches_total: matches.length, source_errors: sourceErrors, source_diagnostics: sourceDiagnostics, source_health: sourceHealth, writer_name: WRITER, writer_version: VERSION, trigger, discord_notification: discordNotification };
+    const job = { status: outcome.status, started_at: startedAt, finished_at: finishedAt, updated_at: finishedAt, ok: outcome.ok, error_message: outcome.errorMessage, warning_message: refreshWarnings.join(' | ') || null, sources_total: enabled.length, sources_healthy: sourcesHealthy, sources_blocked: sourcesBlocked, rows_total: rows.length, graves_total: graves.length, matches_total: matches.length, source_errors: sourceErrors, source_warnings: sourceWarnings, source_diagnostics: sourceDiagnostics, source_health: sourceHealth, writer_name: WRITER, writer_version: VERSION, trigger, discord_notification: discordNotification };
     await writeJson(JOB_PATH, job);
-    await writeJson(ERR_PATH, { generated_at: finishedAt, errors: sourceErrors });
+    await writeJson(ERR_PATH, { generated_at: finishedAt, errors: sourceErrors, warnings: sourceWarnings });
 
-    console.log(`Rows=${rows.length} deaths=${recent_deaths.length} funerals=${upcoming_funerals.length} intentions=${upcoming_intentions.length} graves=${graves.length} matches=${matches.length} healthy=${sourcesHealthy}/${enabled.length} status=${job.status}`);
+    console.log(`Rows=${rows.length} deaths=${recent_deaths.length} funerals=${upcoming_funerals.length} intentions=${upcoming_intentions.length} graves=${graves.length} matches=${matches.length} healthy=${sourcesHealthy}/${enabled.length} blocked=${sourcesBlocked} warnings=${sourceWarnings.length} status=${job.status}`);
   } catch (e) {
     const finishedAt = nowISO();
     const message = String(e?.message || e);

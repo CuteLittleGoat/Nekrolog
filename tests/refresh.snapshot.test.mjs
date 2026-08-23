@@ -6,7 +6,8 @@ import { inWindow, todayLocalMidnight, addDays, toISODate } from '../scripts/dat
 import {
   mergeRequiredSources, mergeDuplicateRows, dedupeKeyForRow, resolveJobOutcome,
   buildFallbackSummaryForHelena, buildMatchHaystack, rowMatchesPhrases, HELENA_GAWIN_PHRASES,
-  isIntentionLikeRow, isEligibleDeathRow
+  isIntentionLikeRow, isEligibleDeathRow, isBlockedByAntiBot, classifySourceOutcome,
+  REQUIRED_SOURCES
 } from '../scripts/nekrolog_core.mjs';
 import { isCzerwonaHelenaRow, selectHits, buildStateKey, buildDiscordMessage, mentionPrefix } from '../scripts/discord_notify.mjs';
 
@@ -135,4 +136,115 @@ test('klasyfikacja rodzajów rekordu', () => {
   assert.equal(isEligibleDeathRow(row({ kind: 'intention' })), false);
   assert.equal(isIntentionLikeRow(row({ kind: 'intention' })), true);
   assert.equal(isIntentionLikeRow(row({ kind: 'death' })), false);
+});
+
+// ── Rozróżnienie blokady zewnętrznej od regresji parsera ──
+// Cloudflare na debniki.sdb.org.pl odrzuca ruch z runnerów GitHub Actions. Bez tego
+// rozróżnienia każdy przebieg kończył się statusem done_with_errors z tego samego,
+// nienaprawialnego powodu i status przestawał odróżniać awarię od normy.
+
+const blockedParsed = { rows: [], error: 'HTTP 403 (prób: 1)', diagnostics: { http_status: 403, parser_status: 'blocked' } };
+const DAY = 86_400_000;
+
+test('HTTP 403 z warstwy anty-botowej jest rozpoznawany jako blokada', () => {
+  assert.equal(isBlockedByAntiBot(blockedParsed), true);
+  assert.equal(isBlockedByAntiBot({ diagnostics: { parser_status: 'http_error' } }), false);
+  assert.equal(isBlockedByAntiBot({ diagnostics: { parser_status: 'parser_broken' } }), false);
+  assert.equal(isBlockedByAntiBot({}), false);
+});
+
+test('tolerowana blokada daje ostrzeżenie, nie błąd przebiegu', () => {
+  const now = Date.parse('2026-08-20T00:00:00Z');
+  const out = classifySourceOutcome({
+    source: { id: 'debniki_intencje', name: 'Dębniki – Intencje', url: 'https://example.test/', external_block_tolerated: true },
+    parsed: blockedParsed,
+    health: { blocked_since: '2026-08-18T00:00:00Z' },
+    now
+  });
+  assert.equal(out.kind, 'warning');
+  assert.equal(out.entry.blocked_days, 2);
+  assert.match(out.entry.error, /blokada anty-botowa/);
+});
+
+test('blokada bez flagi tolerancji pozostaje błędem', () => {
+  const out = classifySourceOutcome({
+    source: { id: 'x', name: 'X', url: 'https://example.test/' },
+    parsed: blockedParsed,
+    health: {}
+  });
+  assert.equal(out.kind, 'error');
+});
+
+test('blokada dłuższa niż próg wraca do rangi błędu', () => {
+  const now = Date.parse('2026-09-10T00:00:00Z');
+  const out = classifySourceOutcome({
+    source: { id: 'debniki_intencje', name: 'Dębniki – Intencje', url: 'https://example.test/', external_block_tolerated: true },
+    parsed: blockedParsed,
+    health: { blocked_since: '2026-08-18T00:00:00Z' },
+    toleranceDays: 14,
+    now
+  });
+  assert.equal(out.kind, 'error');
+  assert.match(out.entry.error, /przekroczono próg 14 dni/);
+});
+
+test('tolerancja blokady nie tłumi regresji parsera ani błędów HTTP', () => {
+  // Źródło oflagowane jako tolerowane, ale awaria jest innej natury — musi być błędem.
+  const zepsuty = classifySourceOutcome({
+    source: { id: 'debniki_intencje', name: 'Dębniki – Intencje', external_block_tolerated: true },
+    parsed: { rows: [], error: 'nie znaleziono linków szczegółów', diagnostics: { http_status: 200, parser_status: 'parser_broken' } },
+    health: {}
+  });
+  assert.equal(zepsuty.kind, 'error');
+
+  const serwer = classifySourceOutcome({
+    source: { id: 'debniki_intencje', name: 'Dębniki – Intencje', external_block_tolerated: true },
+    parsed: { rows: [], error: 'HTTP 500 (prób: 3)', diagnostics: { http_status: 500, parser_status: 'http_error' } },
+    health: {}
+  });
+  assert.equal(serwer.kind, 'error');
+
+  // Ciche zamilknięcie źródła nadal eskaluje po progu pustych przebiegów.
+  const cisza = classifySourceOutcome({
+    source: { id: 'debniki_intencje', name: 'Dębniki – Intencje', external_block_tolerated: true },
+    parsed: { rows: [], error: null, diagnostics: { http_status: 200, parser_status: 'empty' } },
+    health: { empty_streak: 3, known_empty: false }
+  });
+  assert.equal(cisza.kind, 'error');
+});
+
+test('przebieg bez uwag nie produkuje wpisu', () => {
+  const out = classifySourceOutcome({
+    source: { id: 'zck_funerals', name: 'ZCK' },
+    parsed: { rows: [{}], error: null, diagnostics: { parser_status: 'ok' } },
+    health: { empty_streak: 0 }
+  });
+  assert.equal(out.kind, 'ok');
+  assert.equal(out.entry, null);
+});
+
+test('status przebiegu ignoruje ostrzeżenia, reaguje na błędy', () => {
+  // Siedem sprawnych źródeł i jedna znana blokada to poprawny przebieg.
+  assert.equal(resolveJobOutcome({ refreshErrors: [], sourcesTotal: 8, sourcesHealthy: 7 }).status, 'done');
+  assert.equal(resolveJobOutcome({ refreshErrors: ['x: błąd'], sourcesTotal: 8, sourcesHealthy: 7 }).status, 'done_with_errors');
+});
+
+test('źródła bez wartości danych są wyłączone w definicji', () => {
+  const byId = Object.fromEntries(REQUIRED_SOURCES.map((s) => [s.id, s]));
+  // debniki_sdb nie zwróciło ani jednego rekordu w całej historii, także przy HTTP 200.
+  assert.equal(byId.debniki_sdb.enabled, false);
+  assert.equal(byId.facebook_parafia_debniki.enabled, false);
+  // Źródło zablokowane, ale wartościowe, zostaje włączone i oflagowane jako tolerowane.
+  assert.equal(byId.debniki_intencje.enabled, true);
+  assert.equal(byId.debniki_intencje.external_block_tolerated, true);
+});
+
+test('mergeRequiredSources wymusza flagę tolerancji nad zastaną konfiguracją', () => {
+  const merged = mergeRequiredSources([
+    { id: 'debniki_intencje', type: 'debniki_intencje', external_block_tolerated: false },
+    { id: 'zck_funerals', type: 'zck_funerals', external_block_tolerated: true }
+  ]);
+  const byId = Object.fromEntries(merged.map((s) => [s.id, s]));
+  assert.equal(byId.debniki_intencje.external_block_tolerated, true);
+  assert.equal(byId.zck_funerals.external_block_tolerated, false);
 });
