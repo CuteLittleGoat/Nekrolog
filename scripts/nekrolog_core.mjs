@@ -24,11 +24,12 @@ const REQUIRED_SOURCES = [
   // (ogłoszenia parafii Dębniki) pokrywa debniki_intencje. Nie usuwamy definicji,
   // żeby zachować historię i umożliwić powrót po przebudowie parafialnej strony.
   { id:"debniki_sdb", name:"Parafia św. Stanisława Kostki (Dębniki)", type:"debniki_sdb_pogrzeby", url:"https://debniki.sdb.org.pl/", enabled:false, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/", requires_detail_fetch:true, max_detail_pages:30, known_empty:true, requires_ocr:false, requires_pdf:false },
-  // Host stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów
-  // danych — w tym z runnerów GitHub Actions. Odczyt udaje się z adresów o dobrej
-  // reputacji (uruchomienie lokalne), więc źródło zostaje włączone, a HTTP 403 jest
-  // raportowane jako ostrzeżenie zamiast błędu przebiegu (README §8).
-  { id:"debniki_intencje", name:"Parafia Dębniki – Intencje mszalne", type:"debniki_intencje", url:"https://debniki.sdb.org.pl/intencje", enabled:true, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/intencje", external_block_tolerated:true, ...DEFAULT_FLAGS },
+  // Wyłączone decyzją operacyjną. Host stoi za Cloudflare Managed Challenge, który
+  // odrzuca ruch z zakresów centrów danych — w tym z runnerów GitHub Actions —
+  // a odzyskanie dostępu nie jest realizowane (zabezpieczeń nie obchodzimy).
+  // Konsekwencja: kategoria `intention` nie ma dostawcy i sekcja "potrzeby" jest pusta.
+  // Definicja i flaga tolerancji zostają, żeby ponowne włączenie było zmianą jednego pola.
+  { id:"debniki_intencje", name:"Parafia Dębniki – Intencje mszalne", type:"debniki_intencje", url:"https://debniki.sdb.org.pl/intencje", enabled:false, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/intencje", external_block_tolerated:true, ...DEFAULT_FLAGS },
   { id:"podwawelskie_nekrologi", name:"Podwawelskie – Nekrologi", type:"podwawelskie_nekrologi", url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", enabled:true, distance_km:2.5, list_url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", requires_detail_fetch:true, max_detail_pages:50, requires_ocr:false, requires_pdf:false },
   { id:"sw_jadwiga_pogrzebowe", name:"Parafia św. Jadwigi – Msze święte pogrzebowe", type:"sw_jadwiga_pogrzebowe", url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", enabled:true, distance_km:6.5, list_url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", ...DEFAULT_FLAGS },
   { id:"facebook_parafia_debniki", name:"Facebook – Parafia Dębniki", type:"generic_html", url:"https://www.facebook.com/parafiadebniki/?locale=pl_PL", enabled:false, distance_km:2.5 }
@@ -201,11 +202,29 @@ function parseZckFuneralsHtml(text,source){
   });
   return uniq(rows,r=>`${r.name}|${r.date_funeral}|${r.time_funeral}|${r.place}`);
 }
+// ZCK publikuje porządek pogrzebów na jeden dzień i w dni bez ceremonii (typowo
+// weekendy) wypisuje przy każdym cmentarzu "Brak pogrzebów". Zero rekordów jest
+// wtedy poprawną odpowiedzią źródła, a nie cichą awarią — struktura strony jest
+// nienaruszona. Bez tego rozróżnienia sobota i niedziela dawały cztery puste
+// przebiegi z rzędu i heurystyka pustych przebiegów (próg 3) co tydzień zgłaszała
+// nieistniejącą regresję parsera.
+const ZCK_NO_FUNERALS = /brak\s+pogrzeb/i;
+
+function zckConfirmsNoFunerals(text){
+  const $=cheerio.load(text);
+  const tables=$('table.funerals');
+  // Wymagamy dowodu strukturalnego: tabele muszą istnieć. Jeśli znikną, to jest
+  // zmiana strony i ma zostać zgłoszona jako awaria, a nie wyciszona.
+  if(!tables.length) return false;
+  return tables.toArray().every((t)=>ZCK_NO_FUNERALS.test(clean($(t).text())));
+}
+
 async function parseZckFunerals(source){
   const r=await fetchText(source.list_url||source.url);
   if(!r.ok) return {rows:[],error:r.error||`HTTP ${r.status}`,diagnostics:{http_status:r.status,parser_status:r.status===403?'blocked':'http_error'}};
   const rows=parseZckFuneralsHtml(r.text,source);
-  return {rows,error:null,diagnostics:{http_status:r.status,accepted_rows:rows.length,parser_status:rows.length?'ok':'empty'}};
+  const status=rows.length?'ok':(zckConfirmsNoFunerals(r.text)?'empty_confirmed':'empty');
+  return {rows,error:null,diagnostics:{http_status:r.status,accepted_rows:rows.length,parser_status:status}};
 }
 
 // ─────────────────────────── PUK ───────────────────────────
@@ -564,6 +583,11 @@ const resolveJobOutcome=({recentDeaths=0,upcomingFunerals=0,upcomingIntentions=0
 // z tego samego, znanego powodu i status przestawał odróżniać regresję od normy.
 const isBlockedByAntiBot=(parsed)=>parsed?.diagnostics?.parser_status==='blocked';
 
+// Odczyt udany, w którym źródło wprost stwierdza brak danych na dany dzień.
+// To poprawny wynik, a nie cisza po awarii — nie może nabijać licznika pustych
+// przebiegów ani degradować statusu.
+const isConfirmedEmpty=(parsed)=>parsed?.diagnostics?.parser_status==='empty_confirmed';
+
 const daysBetween=(iso,now=Date.now())=>{
   const t=Date.parse(iso||'');
   if(!Number.isFinite(t)) return 0;
@@ -588,6 +612,8 @@ function classifySourceOutcome({source={},parsed={},health={},toleranceDays=14,e
   }
 
   if(parsed.error) return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+
+  if(isConfirmedEmpty(parsed)) return {kind:'ok',entry:null};
 
   if(health.known_empty!==true&&Number(health.empty_streak||0)>=emptyStreakAlert){
     return {kind:'error',entry:{...base,error:`Brak rekordów w ${health.empty_streak} kolejnych przebiegach — prawdopodobna zmiana struktury strony`}};
@@ -642,5 +668,5 @@ export {
   parseSwJadwigaPogrzebowe,parseSwJadwigaPogrzeboweHtml,parseGenericHtml,parseSource,
   buildMatchHaystack,rowMatchesPhrases,isIntentionLikeSource,isIntentionLikeRow,isEligibleDeathRow,
   mergeRequiredSources,mergeDuplicateRows,dedupeKeyForRow,resolveJobOutcome,buildFallbackSummaryForHelena,isMeaningfulRow,
-  isBlockedByAntiBot,daysBetween,classifySourceOutcome
+  isBlockedByAntiBot,isConfirmedEmpty,daysBetween,classifySourceOutcome,zckConfirmsNoFunerals
 };

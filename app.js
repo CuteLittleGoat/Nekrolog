@@ -295,7 +295,14 @@ async function loadAll() {
   renderList("matches", matches, "match", phraseVariants, "Brak wpisów pasujących do monitorowanych fraz.");
   renderList("deaths", deaths, "death", phraseVariants);
   renderList("funerals", funerals, "funeral", phraseVariants);
-  renderList("intentions", intentions, "intention", phraseVariants, "Brak intencji w oknie czasowym.");
+  // Bez tego rozróżnienia sekcja bez żadnego zasilania wyglądałaby identycznie jak
+  // tydzień bez intencji w oknie — a to dwie różne informacje dla czytającego.
+  const INTENTION_SOURCE_TYPES = ["debniki_intencje", "intencje_plus"];
+  const hasIntentionSource = sources.some((s) => s?.enabled !== false && INTENTION_SOURCE_TYPES.includes(s?.type));
+  const intentionsEmptyText = hasIntentionSource
+    ? "Brak intencji w oknie czasowym."
+    : "Brak źródła intencji — jedyny dostawca (Parafia Dębniki) jest wyłączony, bo serwis blokuje odczyt automatyczny. Sekcja pozostanie pusta do czasu włączenia innego źródła.";
+  renderList("intentions", intentions, "intention", phraseVariants, intentionsEmptyText);
   renderList("graves", graves, "grave", phraseVariants, "Brak grobów w bazie dla monitorowanych nazwisk.");
   renderSources(sources);
   renderHelenaStatus(snap, matches, phraseVariants);

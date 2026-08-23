@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {
   parsePolishDateToIso, parseTime, isoFromParts, normalizePersonName, isSafeUrl, validateParsedRow,
-  parseZckFuneralsHtml, parsePukPozegnalismyHtml,
+  parseZckFuneralsHtml, zckConfirmsNoFunerals, parsePukPozegnalismyHtml,
   parseGabriel24NekrologiHtml, parseGabriel24DetailHtml,
   parseKarawanNekrologiHtml, parseKarawanDetailHtml,
   parseGrobonetGrobyHtml, grobonetSearchUrl,
@@ -201,4 +201,24 @@ test('walidacja rekordów i bezpieczeństwo adresów', () => {
 test('nieznane typy źródeł zgłaszają czytelny błąd', async () => {
   assert.match((await parseSource({ type: 'unknown' })).error, /Nieznany parser/);
   assert.match((await parseGenericHtml({ id: 'abc' })).error, /Brak parsera/);
+});
+
+test('ZCK: dzień bez pogrzebów jest potwierdzonym brakiem danych, nie awarią parsera', async () => {
+  // Weekend w Krakowie bywa bez ceremonii — strona wypisuje wtedy przy każdym
+  // cmentarzu "Brak pogrzebów", zachowując pełną strukturę. Zero rekordów jest
+  // poprawną odpowiedzią źródła i nie może uruchamiać alarmu o zmianie strony.
+  const html = await fixture('zck_funerals_brak_2026-08-23.html');
+  assert.equal(parseZckFuneralsHtml(html, SOURCES.zck_funerals).length, 0);
+  assert.equal(zckConfirmsNoFunerals(html), true);
+
+  // Dzień z pogrzebami nie może być mylnie uznany za potwierdzony brak.
+  const pelny = await fixture('zck_funerals_2026-08-18.html');
+  assert.equal(zckConfirmsNoFunerals(pelny), false);
+});
+
+test('ZCK: zniknięcie tabel to awaria, nie potwierdzony brak', async () => {
+  // Wyciszenie wymaga dowodu strukturalnego. Gdy tabele znikną — czyli strona
+  // faktycznie się zmieni — alarm ma zadziałać.
+  assert.equal(zckConfirmsNoFunerals('<html><body><h4>2026-08-23</h4><p>Brak pogrzebów</p></body></html>'), false);
+  assert.equal(zckConfirmsNoFunerals('<html><body></body></html>'), false);
 });

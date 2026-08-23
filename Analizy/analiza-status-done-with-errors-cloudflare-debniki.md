@@ -445,3 +445,145 @@ Pliki w `data/` przywrócono do stanu sprzed testów — snapshot generuje harmo
 ### Konsekwencja do odnotowania
 
 Przy utrzymaniu obecnego stanu (brak działań przywracających dostęp) blokada `debniki_intencje` przekroczy próg 14 dni **około 2026-09-01** i status wróci do `done_with_errors` — tym razem z komunikatem wprost wskazującym na trwałą utratę źródła. To zachowanie zamierzone: wymusza decyzję zamiast bezterminowego ukrywania problemu. Wyciszenie sprowadza się wtedy do ustawienia `enabled: false` na tym źródle, co jednak trwale usuwa kategorię „potrzeby”, również z uruchomień lokalnych.
+
+---
+
+## 9. Zmiany wykonane w kodzie — etap drugi (2026-08-23)
+
+Prompt użytkownika:
+
+> Już teraz wyłącz Dębniki. Nie będziemy czekać do września. Popraw też ZCK. Niech nie zwraca błędnie done_with_errors
+
+Dwie zmiany: wyłączenie `debniki_intencje` bez czekania na próg eskalacji oraz usunięcie cotygodniowego fałszywego alarmu ZCK.
+
+### 9.1. Wyłączenie źródła Dębniki – Intencje
+
+Kontekst decyzji: rekomendacja C (odzyskanie dostępu) nie jest realizowana, a rekomendacja E (nieobchodzenie zabezpieczeń) obowiązuje. Blokada jest trwała, więc tolerancja czasowa nie miałaby czego przykrywać.
+
+**Plik: `scripts/nekrolog_core.mjs`** — lokalizacja: `REQUIRED_SOURCES`, wpis `debniki_intencje`
+
+Było: `enabled:true` z komentarzem o tolerowanej blokadzie.
+Jest: `enabled:false` z komentarzem opisującym decyzję i jej konsekwencję. Flaga `external_block_tolerated:true` **pozostaje**, żeby ponowne włączenie było zmianą jednego pola.
+
+**Plik: `config/sources.json`** — `debniki_intencje.enabled` z `true` na `false`.
+
+Stan źródeł po zmianie: 7 czynnych (`zck_funerals`, `puk_pozegnalismy`, `gabriel_nekrologi`, `karawan_nekrologi`, `salwator_grobonet`, `podwawelskie_nekrologi`, `sw_jadwiga_pogrzebowe`), 3 wyłączone (`debniki_sdb`, `debniki_intencje`, `facebook_parafia_debniki`).
+
+**Plik: `app.js`** — lokalizacja: `loadAll`, wywołanie `renderList("intentions", ...)`
+
+Było — stały komunikat sugerujący, że okno czasowe jest puste:
+
+```js
+renderList("intentions", intentions, "intention", phraseVariants, "Brak intencji w oknie czasowym.");
+```
+
+Jest — komunikat zależny od tego, czy kategoria ma w ogóle dostawcę:
+
+```js
+const INTENTION_SOURCE_TYPES = ["debniki_intencje", "intencje_plus"];
+const hasIntentionSource = sources.some((s) => s?.enabled !== false && INTENTION_SOURCE_TYPES.includes(s?.type));
+const intentionsEmptyText = hasIntentionSource
+  ? "Brak intencji w oknie czasowym."
+  : "Brak źródła intencji — jedyny dostawca (Parafia Dębniki) jest wyłączony, bo serwis blokuje odczyt automatyczny. Sekcja pozostanie pusta do czasu włączenia innego źródła.";
+renderList("intentions", intentions, "intention", phraseVariants, intentionsEmptyText);
+```
+
+Sekcja bez zasilania i tydzień bez intencji to dwie różne informacje — bez tego rozróżnienia wyglądałyby identycznie.
+
+### 9.2. ZCK: potwierdzony brak danych zamiast fałszywej regresji
+
+**Ustalenie faktyczne.** ZCK zwracało zero rekordów od 2026-08-22 rano (wcześniej 29 rekordów, HTTP 200 przez cały czas). Odczyt żywej strony dla 2026-08-23 wykazał pełną, nienaruszoną strukturę: 13 tabel `table.funerals`, nagłówek z datą, nagłówki cmentarzy — i w każdej tabeli komunikat „Brak pogrzebów”. W Krakowie weekend bywa bez ceremonii pogrzebowych.
+
+**Mechanizm fałszywego alarmu.** Heurystyka pustych przebiegów liczy **przebiegi, nie dni**. Sobota i niedziela to cztery przebiegi (2×/dobę), co przekracza próg `EMPTY_STREAK_ALERT = 3`. Efekt: co tydzień status `done_with_errors` z komunikatem „prawdopodobna zmiana struktury strony”, mimo że parser działał poprawnie, a źródło odpowiadało zgodnie z prawdą.
+
+Wcześniejsze rozpoznanie tego stanu jako artefaktu testowych przebiegów lokalnych było błędne — dane produkcyjne wykazały to samo niezależnie.
+
+**Plik: `scripts/nekrolog_core.mjs`** — lokalizacja: przed `parseZckFunerals`
+
+Dodano wykrywanie potwierdzonego braku danych:
+
+```js
+const ZCK_NO_FUNERALS = /brak\s+pogrzeb/i;
+
+function zckConfirmsNoFunerals(text){
+  const $=cheerio.load(text);
+  const tables=$('table.funerals');
+  // Wymagamy dowodu strukturalnego: tabele muszą istnieć. Jeśli znikną, to jest
+  // zmiana strony i ma zostać zgłoszona jako awaria, a nie wyciszona.
+  if(!tables.length) return false;
+  return tables.toArray().every((t)=>ZCK_NO_FUNERALS.test(clean($(t).text())));
+}
+```
+
+Lokalizacja: `parseZckFunerals`
+
+Było: `parser_status: rows.length?'ok':'empty'`
+Jest:
+
+```js
+const status=rows.length?'ok':(zckConfirmsNoFunerals(r.text)?'empty_confirmed':'empty');
+```
+
+Lokalizacja: obok `isBlockedByAntiBot` — nowy predykat `isConfirmedEmpty(parsed)` (`parser_status === 'empty_confirmed'`).
+
+Lokalizacja: `classifySourceOutcome` — przed regułą progu pustych przebiegów dodano:
+
+```js
+if(isConfirmedEmpty(parsed)) return {kind:'ok',entry:null};
+```
+
+Eksport rozszerzono o `isConfirmedEmpty` i `zckConfirmsNoFunerals`.
+
+**Plik: `scripts/refresh_static.mjs`** — lokalizacja: `updateSourceHealth`
+
+Było: `const streak = rows > 0 ? 0 : Number(prev.empty_streak || 0) + 1;`
+
+Jest — potwierdzony brak danych traktowany jak odczyt udany:
+
+```js
+const confirmedEmpty = isConfirmedEmpty(parsed);
+const streak = (rows > 0 || confirmedEmpty) ? 0 : Number(prev.empty_streak || 0) + 1;
+```
+
+Dodano pole `last_confirmed_empty_run`.
+
+**Zabezpieczenie przed nadmiernym wyciszeniem.** Wyciszenie wymaga dowodu strukturalnego — tabele `table.funerals` muszą istnieć i **wszystkie** zawierać komunikat o braku pogrzebów. Zniknięcie tabel (czyli realna zmiana strony) daje `parser_status: 'empty'`, licznik rośnie i alarm działa normalnie. Reguła dotyczy wyłącznie ZCK; pozostałe źródła zachowują dotychczasowe zachowanie.
+
+### 9.3. Zrzut regresyjny
+
+Dodano `tests/fixtures/zck_funerals_brak_2026-08-23.html` — realny zrzut dnia bez pogrzebów, przygotowany zgodnie z §6 README (usunięto wyłącznie treść `<script>`/`<style>` i obrazy `data:`).
+
+### 9.4. Testy
+
+Dopisano 5 testów (łącznie 50, wszystkie zielone):
+
+- ZCK: dzień bez pogrzebów to potwierdzony brak danych; dzień z pogrzebami nie jest mylnie tak klasyfikowany;
+- ZCK: zniknięcie tabel to awaria, nie potwierdzony brak (dwa warianty degeneracji HTML);
+- potwierdzony brak danych nie degraduje statusu nawet przy `empty_streak: 5`;
+- cisza bez potwierdzenia nadal eskaluje po progu;
+- `debniki_intencje` wyłączone, flaga tolerancji zachowana;
+- żadne włączone źródło nie dostarcza kategorii `intention` (test pilnuje, by strata była zauważona przy dodawaniu nowego źródła).
+
+Zaktualizowano test stanu źródeł, który wcześniej asertował `debniki_intencje.enabled === true`.
+
+### 9.5. Dokumentacja
+
+- §2: kategoria `intention` oznaczona jako **bez czynnego źródła**.
+- §3: `debniki_intencje` w tabeli jako wyłączone; akapit w „Uwagach merytorycznych” przepisany — opisuje decyzję, kryterium blokady (reputacja IP, nie nagłówki), brak obchodzenia zabezpieczeń i trwałą pustkę sekcji „potrzeby”.
+- §8: nowy podrozdział „Potwierdzony brak danych” (mechanizm, uzasadnienie, wymóg dowodu strukturalnego, wskazanie obu zrzutów); uzupełniono opis `source_health.json`.
+
+### 9.6. Weryfikacja
+
+| Sprawdzenie | Wynik |
+|---|---|
+| `npm test` | 50/50 zielonych |
+| Przebieg produkcyjny po zmianach | `healthy=7/7 blocked=0 warnings=0 status=done` |
+| ZCK w tym przebiegu | `parser_status: "empty_confirmed"`, `empty_streak: 0` (przed zmianą: 3) |
+| `error_message` / `warning_message` | oba `null` |
+| Wykrywanie na zrzutach | dzień pusty → `true`, dzień z pogrzebami → `false`, brak tabel → `false` |
+
+### 9.7. Stan końcowy i skutki
+
+- Status przebiegu wraca do `done` i przestaje być stale czerwony — zarówno blokada Dębnik, jak i weekendowe zera ZCK zniknęły jako źródła szumu.
+- **Kategoria `intention` nie ma dostawcy.** Sekcja „potrzeby” jest trwale pusta i komunikuje przyczynę wprost. To świadomy koszt decyzji o wyłączeniu Dębnik, nie defekt.
+- Mechanizm ostrzeżeń i progu eskalacji (§8 analizy) pozostaje w kodzie i zadziała dla każdego przyszłego źródła oznaczonego `external_block_tolerated`, mimo że obecnie nie ma czynnego źródła w tym stanie.

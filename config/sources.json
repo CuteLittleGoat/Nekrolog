@@ -139,7 +139,7 @@
       "name": "Parafia Dębniki – Intencje mszalne",
       "type": "debniki_intencje",
       "url": "https://debniki.sdb.org.pl/intencje",
-      "enabled": true,
+      "enabled": false,
       "distance_km": 2.5,
       "list_url": "https://debniki.sdb.org.pl/intencje",
       "external_block_tolerated": true,

@@ -16,6 +16,7 @@ import {
   buildFallbackSummaryForHelena,
   isMeaningfulRow,
   isBlockedByAntiBot,
+  isConfirmedEmpty,
   classifySourceOutcome
 } from './nekrolog_core.mjs';
 
@@ -54,7 +55,11 @@ function updateSourceHealth(previous, source, parsed) {
   const prev = previous?.[source.id] || {};
   const rows = (parsed.rows || []).length;
   const httpOk = !parsed.error;
-  const streak = rows > 0 ? 0 : Number(prev.empty_streak || 0) + 1;
+  // Potwierdzony brak danych (źródło wprost pisze, że nic nie ma) jest odczytem
+  // udanym — zeruje licznik, tak samo jak przebieg z rekordami. Licznik ma wykrywać
+  // ciszę po awarii, a nie dni, w których po prostu nic się nie wydarzyło.
+  const confirmedEmpty = isConfirmedEmpty(parsed);
+  const streak = (rows > 0 || confirmedEmpty) ? 0 : Number(prev.empty_streak || 0) + 1;
   const blocked = isBlockedByAntiBot(parsed);
   return {
     source_id: source.id,
@@ -65,6 +70,7 @@ function updateSourceHealth(previous, source, parsed) {
     empty_streak: streak,
     http_ok: httpOk,
     known_empty: source.known_empty === true,
+    last_confirmed_empty_run: confirmedEmpty ? nowISO() : (prev.last_confirmed_empty_run || null),
     // Znacznik pierwszego przebiegu z blokadą. Zeruje się przy pierwszym udanym
     // odczycie, więc mierzy czas trwania bieżącej blokady, a nie sumę historyczną.
     blocked_since: blocked ? (prev.blocked_since || nowISO()) : null

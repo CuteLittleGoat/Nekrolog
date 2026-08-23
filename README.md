@@ -37,7 +37,7 @@ Każdy rekord ma pole `kind`:
 |---|---|---|---|
 | `death` | zgon lub wzmianka o zgonie | `[dziś-7, dziś]` po `date_death` | Ostatnie zgony / wzmianki |
 | `funeral` | pogrzeb z terminem | `[dziś, dziś+7]` po `date_funeral` | Najbliższe pogrzeby |
-| `intention` | intencja mszalna za zmarłego (**„potrzeby”**) | `[dziś, dziś+7]` po `date_intention` | Najbliższe potrzeby |
+| `intention` | intencja mszalna za zmarłego (**„potrzeby”**) — **brak czynnego źródła**, patrz §3 | `[dziś, dziś+7]` po `date_intention` | Najbliższe potrzeby |
 | `grave` | pochówek w bazie cmentarnej | brak (zapisy historyczne) | Groby monitorowanych nazwisk |
 
 **Trafienia monitorowanych fraz są niezależne od okien czasowych.** Pole `matches` w `data/latest.json` zawiera wszystkie pasujące rekordy — także wpisy sprzed miesięcy (np. Podwawelskie publikuje z opóźnieniem) i rekordy bez daty. Okna czasowe sterują wyłącznie sekcjami przeglądowymi.
@@ -54,7 +54,7 @@ Każdy rekord ma pole `kind`:
 | Karawan – Nekrologi | `karawan_nekrologi` | jak wyżej (ten sam widżet e-Nekrolog) |
 | Kraków Salwator – Groby | `grobonet_groby` | **wyszukiwarka grobów**: miejsce pochówku dla nazwisk z `search_terms` |
 | Parafia Dębniki – ogłoszenia | `debniki_sdb_pogrzeby` | wyłączone (`enabled: false`) – nigdy nie zwróciło rekordu |
-| Parafia Dębniki – Intencje mszalne | `debniki_intencje` | **potrzeby**: tygodniowy harmonogram intencji za zmarłych; host za Cloudflare |
+| Parafia Dębniki – Intencje mszalne | `debniki_intencje` | wyłączone (`enabled: false`) – serwis blokuje odczyt automatyczny |
 | Podwawelskie – Nekrologi | `podwawelskie_nekrologi` | kafelki z datami ur./zg. (ikony `fa-star` / `fa-cross`), 6 podstron |
 | Parafia św. Jadwigi | `sw_jadwiga_pogrzebowe` | zgłoszenia zgonu (`li.artykul`), data publikacji jako `date_death` |
 | Facebook – Parafia Dębniki | `generic_html` | wyłączone (`enabled: false`) |
@@ -64,7 +64,7 @@ Uwagi merytoryczne:
 - **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`.
 - **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem; źródło ma wartość dla wyszukiwania fraz, a nie dla okna 7-dniowego.
 - **Dębniki (ogłoszenia)** są wyłączone. Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. Definicja zostaje w `nekrolog_core.mjs`, żeby zachować historię i umożliwić powrót po przebudowie strony parafii.
-- **Dębniki (intencje)** to jedyny dostawca kategorii `intention`. Host `debniki.sdb.org.pl` stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów danych — w tym z runnerów GitHub Actions. Odczyt udaje się z adresów o dobrej reputacji, więc **uruchomienie lokalne zapełnia sekcję „potrzeby”, a przebieg z GitHub Actions – nie**. Źródło jest oznaczone flagą `external_block_tolerated`, opisaną w §8.
+- **Dębniki (intencje)** są wyłączone. Host `debniki.sdb.org.pl` stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów danych — w tym z runnerów GitHub Actions. Decyzja o kryterium blokady zapada po reputacji adresu IP, nie po nagłówkach żądania, więc zmiana User-Agenta niczego nie daje, a **zabezpieczenia nie są obchodzone**. Ponieważ dostęp nie jest odzyskiwany, źródło zostało wyłączone. **Konsekwencja: kategoria `intention` nie ma dostawcy i sekcja „potrzeby” jest trwale pusta** — interfejs komunikuje to wprost, zamiast pokazywać pustą listę bez wyjaśnienia. Definicja źródła i flaga `external_block_tolerated` zostają w kodzie, więc ponowne włączenie to zmiana jednego pola.
 
 ---
 
@@ -136,7 +136,7 @@ python3 -m http.server 8000
 ## 8. Diagnostyka
 
 - `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów, `blocked_since`.
-- `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty`). Uwaga: licznik zlicza **przebiegi, nie dni** — przy harmonogramie 2×/dobę próg to około półtora dnia.
+- `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty` oraz przebiegami z potwierdzonym brakiem danych — patrz niżej). Uwaga: licznik zlicza **przebiegi, nie dni** — przy harmonogramie 2×/dobę próg to około półtora dnia.
 - Sekcja **Log** w interfejsie pokazuje tę diagnostykę oraz ostrzeżenie, gdy snapshot jest starszy niż 26 h.
 - `status` zadania opisuje **kondycję odczytu**, nie liczbę rekordów: tydzień bez pogrzebów w oknie to `done`, a nie `error`.
 
@@ -156,6 +156,14 @@ Warunkiem potraktowania blokady jako ostrzeżenia jest flaga `external_block_tol
 **Tolerancja jest ograniczona w czasie.** Jeżeli blokada trwa dłużej niż `BLOCK_TOLERANCE_DAYS` (domyślnie 14 dni, `scripts/refresh_static.mjs`), ostrzeżenie wraca do rangi błędu z komunikatem wskazującym na potrzebę decyzji. Ma to zapobiec sytuacji, w której trwała utrata źródła chowa się bezterminowo za ostrzeżeniem i status przestaje cokolwiek znaczyć. Wtedy trzeba albo przywrócić dostęp, albo wyłączyć źródło (`enabled: false`).
 
 Flaga tolerancji **nie tłumi** innych awarii tego samego źródła: HTTP 500, zepsuty parser i seria pustych przebiegów nadal są zgłaszane jako błędy.
+
+### Potwierdzony brak danych
+
+Zero rekordów nie zawsze oznacza awarię. ZCK publikuje porządek pogrzebów na jeden dzień i w dni bez ceremonii — typowo w weekend — wypisuje przy każdym cmentarzu „Brak pogrzebów”, zachowując pełną strukturę strony. To poprawna odpowiedź źródła, a nie cisza po awarii.
+
+Parser rozpoznaje ten stan i zwraca `parser_status: "empty_confirmed"`. Taki odczyt **zeruje licznik pustych przebiegów** i nigdy nie degraduje statusu. Wcześniej sobota i niedziela dawały cztery puste przebiegi z rzędu, co przekraczało próg 3 i co tydzień generowało `done_with_errors` z komunikatem o nieistniejącej zmianie struktury strony.
+
+Wyciszenie wymaga **dowodu strukturalnego**: tabele `table.funerals` muszą istnieć i wszystkie zawierać komunikat o braku pogrzebów. Jeżeli tabele znikną — czyli strona faktycznie się zmieni — status wraca do `empty`, licznik rośnie i alarm działa normalnie. Zrzuty regresyjne obu przypadków: `zck_funerals_brak_2026-08-23.html` (dzień pusty) i `zck_funerals_2026-08-18.html` (dzień z pogrzebami).
 
 ### Dlaczego to rozróżnienie powstało
 

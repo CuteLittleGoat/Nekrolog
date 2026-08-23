@@ -7,6 +7,29 @@ Zakres: publiczne pliki aplikacji z GitHub Pages / raw.githubusercontent.com ora
 
 ---
 
+## 0. Status dokumentu (aktualizacja 2026-08-23)
+
+**Ten dokument jest studium projektowym z 2026-05-08, sporządzonym przed wdrożeniem parserów.** Sekcje „Proponowany parser”, „Rekomendacja” i „Minimalny algorytm parsera” opisują zamiar, a nie stan wdrożony. Część zapisów zdezaktualizowała się względem kodu — w szczególności kolumna „obecny type” w §4 opisywała stan sprzed migracji na parsery specyficzne dla źródeł.
+
+**Źródłem prawdy o bieżącym zachowaniu aplikacji jest `README.md`.** Poniżej wyłącznie zmiany stanu źródeł, które zaszły po sporządzeniu tego dokumentu:
+
+| Źródło | Stan na 2026-08-23 | Powód |
+|---|---|---|
+| `zck_funerals` | czynne | Dzień bez ceremonii (typowo weekend) jest rozpoznawany jako **potwierdzony brak danych**, a nie awaria parsera — patrz uzupełnienie w sekcji tego źródła. |
+| `puk_pozegnalismy` | czynne | — |
+| `gabriel_nekrologi` | czynne | — |
+| `karawan_nekrologi` | czynne | — |
+| `salwator_grobonet` | czynne | Wykorzystywana jest **wyszukiwarka grobów**, nie strona „Nekrologi” (ta nie zawiera wpisów). Adres w §4 jest nieaktualny. |
+| `podwawelskie_nekrologi` | czynne | — |
+| `sw_jadwiga_pogrzebowe` | czynne | — |
+| `debniki_sdb` | **wyłączone** | Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. |
+| `debniki_intencje` | **wyłączone** | Źródło zostało wdrożone i działało (35 rekordów w przebiegu z 2026-08-18), po czym serwis objęto ochroną anty-botową odrzucającą ruch z zakresów centrów danych. Zabezpieczenia nie są obchodzone, dostęp nie jest odzyskiwany. |
+| `facebook_parafia_debniki` | wyłączone | Dostęp wymaga uwierzytelnienia (stan bez zmian od 2026-05-08). |
+
+**Konsekwencja:** kategoria `intention` („potrzeby”) nie ma obecnie żadnego dostawcy. Sekcja „Najbliższe potrzeby” w interfejsie jest trwale pusta i komunikuje przyczynę wprost.
+
+---
+
 ## 1. Cel dokumentu
 
 Celem dokumentu jest opisanie, jak aplikacja „Nekrolog” powinna technicznie odczytywać dane z każdego skonfigurowanego źródła, a następnie mapować je do rekordów aplikacji:
@@ -152,10 +175,13 @@ Ważne: intencje mszalne nie powinny być automatycznie traktowane jako zgon. Je
 | `gabriel_nekrologi` | Gabriel24 – Nekrologi | `generic_html` | `https://www.gabriel24.pl/nekrologi/` | true |
 | `karawan_nekrologi` | Karawan – Nekrologi | `generic_html` | `https://karawan.pl/nekrologi/` | true |
 | `salwator_grobonet` | Kraków Salwator – Grobonet | `generic_html` | `https://krakowsalwator.grobonet.com/nekrologi.php` | true |
-| `debniki_sdb` | Parafia św. Stanisława Kostki (Dębniki) | `generic_html` | `https://debniki.sdb.org.pl/` | true |
+| `debniki_sdb` | Parafia św. Stanisława Kostki (Dębniki) | `generic_html` | `https://debniki.sdb.org.pl/` | **false** (patrz §0) |
 | `podwawelskie_nekrologi` | Podwawelskie – Nekrologi | `generic_html` | `https://www.podwawelskie.pl/aktualnosci/nekrologi.html` | true |
 | `sw_jadwiga_pogrzebowe` | Parafia św. Jadwigi – Msze święte pogrzebowe | `generic_html` | `https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe` | true |
 | `facebook_parafia_debniki` | Facebook – Parafia Dębniki | `generic_html` | `https://www.facebook.com/parafiadebniki/?locale=pl_PL` | false |
+| `debniki_intencje` | Parafia Dębniki – Intencje mszalne | `debniki_intencje` | `https://debniki.sdb.org.pl/intencje` | **false** (patrz §0) |
+
+> Tabela odzwierciedla konfigurację z 2026-05-08; kolumna „obecny type” opisuje stan sprzed migracji na parsery specyficzne dla źródeł. Kolumnę `enabled` zaktualizowano 2026-08-23. Bieżącą konfigurację zawiera `config/sources.json`.
 
 ---
 
@@ -172,6 +198,8 @@ Ważne: intencje mszalne nie powinny być automatycznie traktowane jako zgon. Je
 Źródło jest kluczowe dla `kind: "funeral"`. Strona `/funerals` pokazuje porządek pogrzebów na konkretny dzień. W warstwie tekstowej widoczna jest lista pogrzebów pogrupowana według cmentarzy, z godziną, miejscem/kaplicą i nazwiskiem.
 
 Nie potwierdzono stabilnego endpointu JSON/API ani parametru daty. Do obsługi innych dni niż dzień widoczny na stronie trzeba dodatkowo ręcznie sprawdzić DevTools → Network, szczególnie kliknięcia w kalendarz, jeśli jest dostępny w pełnym widoku przeglądarkowym.
+
+> **Uzupełnienie 2026-08-23.** W dni bez ceremonii (typowo weekend) strona zachowuje pełną strukturę — nagłówek z datą, nagłówki cmentarzy, tabele `table.funerals` — ale w każdej tabeli wypisuje „Brak pogrzebów”. Zero rekordów jest wtedy **poprawną odpowiedzią źródła**, nie awarią parsera. Parser zwraca w tym przypadku `parser_status: "empty_confirmed"`, co zeruje licznik pustych przebiegów i nie degraduje statusu zadania. Wyciszenie wymaga dowodu strukturalnego: gdy tabele znikną, status wraca do `empty` i alarm o zmianie strony działa normalnie.
 
 ### 2. Gdzie dokładnie są dane
 
@@ -918,6 +946,8 @@ Brak aktualnych wpisów widocznych w badanym HTML. Nie należy tworzyć fikcyjny
 ## debniki_sdb — Parafia św. Stanisława Kostki (Dębniki)
 
 ### 1. Status źródła
+
+> **Aktualizacja 2026-08-23: źródło wyłączone (`enabled: false`).** Ocena poniżej okazała się trafna — parser znajdował linki kandydujące, ale żaden nie przechodził walidacji rekordu, więc źródło nie zwróciło ani jednego wpisu w całej historii przebiegów, także przy HTTP 200. Wydzielone z niego źródło `debniki_intencje` (intencje mszalne jako kategoria `intention`, nie zgony — zgodnie z zaleceniem z tej sekcji) zostało wdrożone i również jest już wyłączone; powód opisuje §0. Definicje obu źródeł pozostają w kodzie.
 
 **Nie jest dobrym źródłem nekrologów. Strona ma intencje mszalne w statycznym HTML, ale nie należy ich traktować jako zgony ani pogrzeby.**
 

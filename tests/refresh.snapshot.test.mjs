@@ -6,7 +6,7 @@ import { inWindow, todayLocalMidnight, addDays, toISODate } from '../scripts/dat
 import {
   mergeRequiredSources, mergeDuplicateRows, dedupeKeyForRow, resolveJobOutcome,
   buildFallbackSummaryForHelena, buildMatchHaystack, rowMatchesPhrases, HELENA_GAWIN_PHRASES,
-  isIntentionLikeRow, isEligibleDeathRow, isBlockedByAntiBot, classifySourceOutcome,
+  isIntentionLikeRow, isEligibleDeathRow, isBlockedByAntiBot, isConfirmedEmpty, classifySourceOutcome,
   REQUIRED_SOURCES
 } from '../scripts/nekrolog_core.mjs';
 import { isCzerwonaHelenaRow, selectHits, buildStateKey, buildDiscordMessage, mentionPrefix } from '../scripts/discord_notify.mjs';
@@ -229,14 +229,22 @@ test('status przebiegu ignoruje ostrzeżenia, reaguje na błędy', () => {
   assert.equal(resolveJobOutcome({ refreshErrors: ['x: błąd'], sourcesTotal: 8, sourcesHealthy: 7 }).status, 'done_with_errors');
 });
 
-test('źródła bez wartości danych są wyłączone w definicji', () => {
+test('źródła bez dostępu i bez wartości danych są wyłączone w definicji', () => {
   const byId = Object.fromEntries(REQUIRED_SOURCES.map((s) => [s.id, s]));
   // debniki_sdb nie zwróciło ani jednego rekordu w całej historii, także przy HTTP 200.
   assert.equal(byId.debniki_sdb.enabled, false);
   assert.equal(byId.facebook_parafia_debniki.enabled, false);
-  // Źródło zablokowane, ale wartościowe, zostaje włączone i oflagowane jako tolerowane.
-  assert.equal(byId.debniki_intencje.enabled, true);
+  // debniki_intencje wyłączone decyzją operacyjną — host trwale blokuje ruch z CI,
+  // a dostęp nie jest odzyskiwany. Flaga tolerancji zostaje na wypadek powrotu.
+  assert.equal(byId.debniki_intencje.enabled, false);
   assert.equal(byId.debniki_intencje.external_block_tolerated, true);
+});
+
+test('żadne włączone źródło nie dostarcza już kategorii intention', () => {
+  // Świadoma konsekwencja wyłączenia Dębnik: sekcja "potrzeby" nie ma zasilania.
+  // Test pilnuje, by ta strata była zauważona, gdyby ktoś dodawał źródło intencji.
+  const intencje = REQUIRED_SOURCES.filter((s) => s.enabled !== false && s.type === 'debniki_intencje');
+  assert.equal(intencje.length, 0);
 });
 
 test('mergeRequiredSources wymusza flagę tolerancji nad zastaną konfiguracją', () => {
@@ -247,4 +255,27 @@ test('mergeRequiredSources wymusza flagę tolerancji nad zastaną konfiguracją'
   const byId = Object.fromEntries(merged.map((s) => [s.id, s]));
   assert.equal(byId.debniki_intencje.external_block_tolerated, true);
   assert.equal(byId.zck_funerals.external_block_tolerated, false);
+});
+
+test('potwierdzony brak danych nie degraduje statusu mimo serii pustych przebiegów', () => {
+  const parsed = { rows: [], error: null, diagnostics: { http_status: 200, parser_status: 'empty_confirmed' } };
+  assert.equal(isConfirmedEmpty(parsed), true);
+  // Nawet gdyby licznik zdążył urosnąć, potwierdzony brak danych nie jest błędem.
+  const out = classifySourceOutcome({
+    source: { id: 'zck_funerals', name: 'ZCK' },
+    parsed,
+    health: { empty_streak: 5, known_empty: false }
+  });
+  assert.equal(out.kind, 'ok');
+});
+
+test('cisza bez potwierdzenia nadal eskaluje po progu', () => {
+  // Zero rekordów bez komunikatu źródła to podejrzenie zmiany struktury strony.
+  const out = classifySourceOutcome({
+    source: { id: 'zck_funerals', name: 'ZCK' },
+    parsed: { rows: [], error: null, diagnostics: { http_status: 200, parser_status: 'empty' } },
+    health: { empty_streak: 3, known_empty: false }
+  });
+  assert.equal(out.kind, 'error');
+  assert.match(out.entry.error, /Brak rekordów w 3 kolejnych przebiegach/);
 });
