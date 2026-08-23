@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T07:38:20.605Z",
-  "updated_at": "2026-08-23T07:38:20.605Z",
+  "generated_at": "2026-08-23T19:26:26.302Z",
+  "updated_at": "2026-08-23T19:26:26.302Z",
   "window": {
     "today": "2026-08-23",
     "death_from": "2026-08-16",
@@ -3264,7 +3264,7 @@
       "type": "debniki_sdb_pogrzeby",
       "url": "https://debniki.sdb.org.pl/",
       "distance_km": 2.5,
-      "enabled": true
+      "enabled": false
     },
     {
       "id": "podwawelskie_nekrologi",
@@ -3296,7 +3296,7 @@
       "type": "debniki_intencje",
       "url": "https://debniki.sdb.org.pl/intencje",
       "distance_km": 2.5,
-      "enabled": true
+      "enabled": false
     }
   ],
   "target_phrases": [
@@ -3565,26 +3565,8 @@
     "Dereń Heleno Gawin",
     "Śp. Dereń Heleno Gawin"
   ],
-  "source_errors": [
-    {
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "error": "Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
-    },
-    {
-      "source_id": "debniki_sdb",
-      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
-      "url": "https://debniki.sdb.org.pl/",
-      "error": "HTTP 403 (prób: 3)"
-    },
-    {
-      "source_id": "debniki_intencje",
-      "source_name": "Parafia Dębniki – Intencje mszalne",
-      "url": "https://debniki.sdb.org.pl/intencje",
-      "error": "HTTP 403 (prób: 3)"
-    }
-  ],
+  "source_errors": [],
+  "source_warnings": [],
   "source_diagnostics": [
     {
       "source_id": "zck_funerals",
@@ -3592,9 +3574,10 @@
       "url": "https://www.zck-krakow.pl/funerals",
       "http_status": 200,
       "accepted_rows": 0,
-      "parser_status": "empty",
+      "parser_status": "empty_confirmed",
       "rows": 0,
-      "empty_streak": 3,
+      "empty_streak": 0,
+      "blocked_since": null,
       "error": null
     },
     {
@@ -3606,6 +3589,7 @@
       "parser_status": "ok",
       "rows": 70,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
     },
     {
@@ -3618,6 +3602,7 @@
       "parser_status": "ok",
       "rows": 12,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
     },
     {
@@ -3630,6 +3615,7 @@
       "parser_status": "ok",
       "rows": 8,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
     },
     {
@@ -3642,17 +3628,8 @@
       "parser_status": "ok",
       "rows": 12,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
-    },
-    {
-      "source_id": "debniki_sdb",
-      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
-      "url": "https://debniki.sdb.org.pl/",
-      "http_status": 403,
-      "parser_status": "blocked",
-      "rows": 0,
-      "empty_streak": 11,
-      "error": "HTTP 403 (prób: 3)"
     },
     {
       "source_id": "podwawelskie_nekrologi",
@@ -3664,6 +3641,7 @@
       "parser_status": "ok",
       "rows": 72,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
     },
     {
@@ -3675,20 +3653,12 @@
       "parser_status": "ok",
       "rows": 30,
       "empty_streak": 0,
+      "blocked_since": null,
       "error": null
-    },
-    {
-      "source_id": "debniki_intencje",
-      "source_name": "Parafia Dębniki – Intencje mszalne",
-      "url": "https://debniki.sdb.org.pl/intencje",
-      "http_status": 403,
-      "parser_status": "blocked",
-      "rows": 0,
-      "empty_streak": 10,
-      "error": "HTTP 403 (prób: 3)"
     }
   ],
-  "refresh_error": "ZCK Kraków – Porządek pogrzebów: Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony | Parafia św. Stanisława Kostki (Dębniki): HTTP 403 (prób: 3) | Parafia Dębniki – Intencje mszalne: HTTP 403 (prób: 3)",
+  "refresh_error": null,
+  "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
 }

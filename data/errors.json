@@ -1,23 +1,5 @@
 {
-  "generated_at": "2026-08-23T07:38:21.027Z",
-  "errors": [
-    {
-      "source_id": "zck_funerals",
-      "source_name": "ZCK Kraków – Porządek pogrzebów",
-      "url": "https://www.zck-krakow.pl/funerals",
-      "error": "Brak rekordów w 3 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
-    },
-    {
-      "source_id": "debniki_sdb",
-      "source_name": "Parafia św. Stanisława Kostki (Dębniki)",
-      "url": "https://debniki.sdb.org.pl/",
-      "error": "HTTP 403 (prób: 3)"
-    },
-    {
-      "source_id": "debniki_intencje",
-      "source_name": "Parafia Dębniki – Intencje mszalne",
-      "url": "https://debniki.sdb.org.pl/intencje",
-      "error": "HTTP 403 (prób: 3)"
-    }
-  ]
+  "generated_at": "2026-08-23T19:26:26.968Z",
+  "errors": [],
+  "warnings": []
 }
