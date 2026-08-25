@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-25T07:49:31.928Z",
-  "updated_at": "2026-08-25T07:49:31.928Z",
+  "generated_at": "2026-08-25T19:37:57.597Z",
+  "updated_at": "2026-08-25T19:37:57.597Z",
   "window": {
     "today": "2026-08-25",
     "death_from": "2026-08-18",
@@ -21,6 +21,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Janas-TFIVLBI883RR",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 23.08.2026 przeżywszy 73 lat zmarła | Data pogrzebu 27.08.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Janina Koszałka",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Koszalka-FEKJBZGVD8U6",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.08.2026 przeżywszy 100 lat zmarła | Data pogrzebu 27.08.2026 12:00",
       "priority_hit": false
     },
     {
@@ -2452,6 +2466,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Janina Koszałka",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Koszalka-FEKJBZGVD8U6",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.08.2026 przeżywszy 100 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Tomasz Krupa",
       "date_death": "2026-08-18",
       "date_funeral": "2026-08-26",
@@ -3085,6 +3113,20 @@
     },
     {
       "kind": "death",
+      "name": "Janina Koszałka",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Koszalka-FEKJBZGVD8U6",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.08.2026 przeżywszy 100 lat zmarła | Data pogrzebu 27.08.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Krystyna Flaszyńska",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-28",
@@ -3647,6 +3689,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 23.08.2026 przeżywszy 73 lat zmarła",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Janina Koszałka",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Koszalka-FEKJBZGVD8U6",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.08.2026 przeżywszy 100 lat zmarła",
+      "priority_hit": false
     }
   ],
   "upcoming_intentions": [],
@@ -4025,9 +4081,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 64,
+      "accepted_rows": 66,
       "parser_status": "ok",
-      "rows": 64,
+      "rows": 66,
       "empty_streak": 0,
       "blocked_since": null,
       "error": null
