@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T07:51:30.007Z",
-  "updated_at": "2026-08-26T07:51:30.007Z",
+  "generated_at": "2026-08-26T21:44:15.670Z",
+  "updated_at": "2026-08-26T21:44:15.670Z",
   "window": {
     "today": "2026-08-26",
     "death_from": "2026-08-19",
@@ -651,6 +651,48 @@
       "url": "https://karawan.pl/nekrolog/dr-kazimiera-tobiasz-otrebska/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "Śp. dr KAZIMIERA TOBIASZ-OTRĘBSKA | Pogrzeb dziś: 26.08.2026 (Środa) | Msza Święta: 26.08.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Przybyło",
+      "date_death": "2026-08-14",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/barbara-przybylo/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. BARBARA PRZYBYŁO | Pogrzeb jutro: 27.08.2026 (Czwartek) | Msza Święta: 27.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jadwiga Olechów",
+      "date_death": "2026-08-21",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jadwiga-olechow/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JADWIGA OLECHÓW | Pogrzeb jutro: 27.08.2026 (Czwartek) | Msza Święta: 27.08.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Wiesława Dzierwa",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:20",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wieslawa-dzierwa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WIESŁAWA DZIERWA | Pogrzeb jutro: 27.08.2026 (Czwartek) | Msza Święta: 27.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3230,6 +3272,20 @@
     },
     {
       "kind": "death",
+      "name": "Wiesława Dzierwa",
+      "date_death": "2026-08-23",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "12:20",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wieslawa-dzierwa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WIESŁAWA DZIERWA | Pogrzeb jutro: 27.08.2026 (Czwartek) | Msza Święta: 27.08.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Barbara Jachimek",
       "date_death": "2026-08-21",
       "date_funeral": "2026-08-26",
@@ -3240,6 +3296,20 @@
       "url": "https://www.gabriel24.pl/nekrolog/barbara-jachimek/",
       "source_url": "https://www.gabriel24.pl/nekrologi/",
       "note": "Śp. Barbara Jachimek | Data pogrzebu: 26.08.2026 | Msza Święta: 26.08.2026 o godz. 13:00 Kaplica Cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jadwiga Olechów",
+      "date_death": "2026-08-21",
+      "date_funeral": "2026-08-27",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jadwiga-olechow/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JADWIGA OLECHÓW | Pogrzeb jutro: 27.08.2026 (Czwartek) | Msza Święta: 27.08.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -4214,10 +4284,10 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 10,
-      "accepted_rows": 10,
+      "candidate_links": 13,
+      "accepted_rows": 13,
       "parser_status": "ok",
-      "rows": 10,
+      "rows": 13,
       "empty_streak": 0,
       "blocked_since": null,
       "error": null
