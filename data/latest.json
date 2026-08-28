@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-28T03:31:59.677Z",
-  "updated_at": "2026-08-28T03:31:59.677Z",
+  "generated_at": "2026-08-28T19:24:38.170Z",
+  "updated_at": "2026-08-28T19:24:38.170Z",
   "window": {
     "today": "2026-08-28",
     "death_from": "2026-08-21",
@@ -9,6 +9,20 @@
     "funeral_to": "2026-09-04"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Maria Ochmańska",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ochmanska-2C0W37UWKJAY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 31.08.2026 12:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Anna Janas",
@@ -459,174 +473,6 @@
     },
     {
       "kind": "death",
-      "name": "Krystyna Flaszyńska",
-      "date_death": "2026-08-23",
-      "date_funeral": "2026-08-28",
-      "time_funeral": "13:40",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/krystyna-flaszynska/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Krystyna Flaszyńska | Data pogrzebu: 28.08.2026 | Msza Święta: 28.08.2026 o godz. 13:40 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Helena Radecka",
-      "date_death": "2026-08-19",
-      "date_funeral": "2026-08-26",
-      "time_funeral": null,
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/helena-radecka/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Helena Radecka | Data pogrzebu: 26.08.2026 | Msza Święta: 26.08.2026 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Jachimek",
-      "date_death": "2026-08-21",
-      "date_funeral": "2026-08-26",
-      "time_funeral": "13:00",
-      "place": "Cmentarz Parafialny- Salwator",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/barbara-jachimek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Barbara Jachimek | Data pogrzebu: 26.08.2026 | Msza Święta: 26.08.2026 o godz. 13:00 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Lidia Kurpiel",
-      "date_death": "2026-08-08",
-      "date_funeral": "2026-08-21",
-      "time_funeral": null,
-      "place": "Cmentarz w Podgórkach Tynieckich",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/lidia-kurpiel/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Lidia Kurpiel | Data pogrzebu: 21.08.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Rafał Siewierski",
-      "date_death": "2026-08-17",
-      "date_funeral": "2026-08-21",
-      "time_funeral": "15:00",
-      "place": "Cmentarz parafialny w Gdowie",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/rafal-siewierski/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Rafał Siewierski | Data pogrzebu: 21.08.2026 | Msza Święta: 21.08.2026 o godz. 15:00 Kościół Narodzenia NMP w Gdowie",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Stefania Wawrzkowicz",
-      "date_death": "2026-08-14",
-      "date_funeral": "2026-08-21",
-      "time_funeral": "12:00",
-      "place": "Cmentarz Parafialny Borek Fałęcki",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/stefania-wawrzkowicz/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Stefania Wawrzkowicz | Data pogrzebu: 21.08.2026 | Msza Święta: 21.08.2026 o godz. 12:00 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Ptasznik",
-      "date_death": "2026-08-05",
-      "date_funeral": "2026-08-18",
-      "time_funeral": "13:00",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/barbara-ptasznik/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Barbara Ptasznik | Data pogrzebu: 18.08.2026 | Msza Święta: 18.08.2026 o godz. 13:00 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jacek Panek",
-      "date_death": "2026-08-09",
-      "date_funeral": "2026-08-17",
-      "time_funeral": "10:20",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jacek-panek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Jacek Panek | Data pogrzebu: 17.08.2026 | Msza Święta: 17.08.2026 o godz. 10:20 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Edward Kania",
-      "date_death": "2026-08-11",
-      "date_funeral": "2026-08-17",
-      "time_funeral": null,
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/edward-kania/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Edward Kania | Data pogrzebu: 17.08.2026 | Msza Święta: 17.08.2026 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Aniela Bujas",
-      "date_death": "2026-08-08",
-      "date_funeral": "2026-08-13",
-      "time_funeral": "11:40",
-      "place": "Cmentarz komunalny Rakowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/aniela-bujas/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Aniela Bujas | Data pogrzebu: 13.08.2026 | Msza Święta: 13.08.2026 o godz. 11:40 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jerzy Zachara",
-      "date_death": "2026-08-07",
-      "date_funeral": "2026-08-12",
-      "time_funeral": null,
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jerzy-zachara/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Jerzy Zachara | Data pogrzebu: 12.08.2026 | Msza Święta: 12.08.2026 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Piotr Grodecki",
-      "date_death": "2026-08-06",
-      "date_funeral": "2026-08-11",
-      "time_funeral": "13:40",
-      "place": "Cmentarz komunalny Rakowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/piotr-grodecki/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Piotr Grodecki | Data pogrzebu: 11.08.2026 | Msza Święta: 11.08.2026 o godz. 13:40 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Anna Bryksy",
       "date_death": "2026-08-22",
       "date_funeral": "2026-08-28",
@@ -651,6 +497,20 @@
       "url": "https://karawan.pl/nekrolog/pawel-bialic/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "Śp. PAWEŁ BIALIC | Pogrzeb dziś: 28.08.2026 (Piątek) | Msza Święta: 28.08.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Andrzej Szczelina",
+      "date_death": "2026-08-26",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ANDRZEJ SZCZELINA | Data pogrzebu: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2441,6 +2301,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Maria Ochmańska",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ochmanska-2C0W37UWKJAY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.08.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Anna Janas",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-27",
@@ -3074,6 +2948,34 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Maria Ochmańska",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ochmanska-2C0W37UWKJAY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.08.2026 przeżywszy 81 lat zmarła | Data pogrzebu 31.08.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Andrzej Szczelina",
+      "date_death": "2026-08-26",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ANDRZEJ SZCZELINA | Data pogrzebu: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Anna Janas",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-27",
@@ -3102,20 +3004,6 @@
     },
     {
       "kind": "death",
-      "name": "Krystyna Flaszyńska",
-      "date_death": "2026-08-23",
-      "date_funeral": "2026-08-28",
-      "time_funeral": "13:40",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/krystyna-flaszynska/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Krystyna Flaszyńska | Data pogrzebu: 28.08.2026 | Msza Święta: 28.08.2026 o godz. 13:40 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Wiesława Dzierwa",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-27",
@@ -3140,20 +3028,6 @@
       "url": "https://karawan.pl/nekrolog/anna-bryksy/",
       "source_url": "https://karawan.pl/nekrologi/",
       "note": "Pogrzeb dziś: 28.08.2026 (Piątek)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Jachimek",
-      "date_death": "2026-08-21",
-      "date_funeral": "2026-08-26",
-      "time_funeral": "13:00",
-      "place": "Cmentarz Parafialny- Salwator",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/barbara-jachimek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Barbara Jachimek | Data pogrzebu: 26.08.2026 | Msza Święta: 26.08.2026 o godz. 13:00 Kaplica Cmentarna",
       "priority_hit": false
     },
     {
@@ -3527,6 +3401,20 @@
       "source_url": "https://www.zck-krakow.pl/funerals",
       "note": "ZCK 2026-08-28; Cmentarz Grębałów",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Maria Ochmańska",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ochmanska-2C0W37UWKJAY",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 27.08.2026 przeżywszy 81 lat zmarła",
+      "priority_hit": false
     }
   ],
   "upcoming_intentions": [],
@@ -3885,7 +3773,14 @@
     "Dereń Heleno Gawin",
     "Śp. Dereń Heleno Gawin"
   ],
-  "source_errors": [],
+  "source_errors": [
+    {
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://www.gabriel24.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds (prób: 3)"
+    }
+  ],
   "source_warnings": [],
   "source_diagnostics": [
     {
@@ -3905,9 +3800,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 64,
+      "accepted_rows": 66,
       "parser_status": "ok",
-      "rows": 64,
+      "rows": 66,
       "empty_streak": 0,
       "blocked_since": null,
       "error": null
@@ -3916,24 +3811,22 @@
       "source_id": "gabriel_nekrologi",
       "source_name": "Gabriel24 – Nekrologi",
       "url": "https://www.gabriel24.pl/nekrologi/",
-      "http_status": 200,
-      "candidate_links": 12,
-      "accepted_rows": 12,
-      "parser_status": "ok",
-      "rows": 12,
-      "empty_streak": 0,
+      "http_status": 0,
+      "parser_status": "http_error",
+      "rows": 0,
+      "empty_streak": 1,
       "blocked_since": null,
-      "error": null
+      "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out \n__HTTP_STATUS__:%{http_code} https://www.gabriel24.pl/nekrologi/\ncurl: (28) Connection timed out after 20002 milliseconds\n (prób: 3)"
     },
     {
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 6,
-      "accepted_rows": 6,
+      "candidate_links": 7,
+      "accepted_rows": 7,
       "parser_status": "ok",
-      "rows": 6,
+      "rows": 7,
       "empty_streak": 0,
       "blocked_since": null,
       "error": null
@@ -3977,7 +3870,7 @@
       "error": null
     }
   ],
-  "refresh_error": null,
+  "refresh_error": "Gabriel24 – Nekrologi: fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://www.gabriel24.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds (prób: 3)",
   "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
