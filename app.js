@@ -203,8 +203,9 @@ function renderStatus(snap, job, errors, matches) {
     ...(errors?.errors || []).map(describe),
     ...(job?.source_errors || []).map(describe)
   ])];
-  // Ostrzeżenia to znane blokady zewnętrzne. Nie degradują statusu przebiegu, ale
-  // muszą być widoczne — inaczej trwała utrata źródła wygląda jak poprawny przebieg.
+  // Ostrzeżenia to stany zewnętrzne i przejściowe: znana blokada anty-botowa albo
+  // pierwsze nieudane połączenie z hostem. Nie degradują statusu przebiegu, ale muszą
+  // być widoczne — inaczej trwała utrata źródła wygląda jak poprawny przebieg.
   const warningsList = [...new Set([
     ...(errors?.warnings || []).map(describe),
     ...(job?.source_warnings || []).map(describe)
@@ -221,7 +222,7 @@ function renderStatus(snap, job, errors, matches) {
       banner.textContent = `Snapshot ma ${Math.round(age)} h — automatyczne odświeżanie prawdopodobnie nie działa.`;
       banner.className = "banner warn";
     } else if (warningsList.length) {
-      banner.textContent = `Źródła niedostępne z powodu blokady zewnętrznej: ${warningsList.length}. Część sekcji może być pusta mimo poprawnego przebiegu. Szczegóły w sekcji Log.`;
+      banner.textContent = `Źródła z ostrzeżeniem (blokada zewnętrzna lub przejściowy błąd odczytu): ${warningsList.length}. Część sekcji może być pusta mimo poprawnego przebiegu. Szczegóły w sekcji Log.`;
       banner.className = "banner warn";
     } else {
       banner.textContent = "";

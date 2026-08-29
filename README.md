@@ -77,6 +77,8 @@ Te reguły wynikają z realnych błędów wykrytych na żywych stronach — zmie
 - **Filtrowanie szumu jest dwupoziomowe.** `TECH_NOISE` (ślady kodu) dyskwalifikuje rekord; `BOILERPLATE_LINE` (cookies, „Udostępnij”, Facebook) usuwa wyłącznie pojedynczą linię. Wspólny filtr kasował całe nekrologi przez samo słowo „Facebook” w widżecie udostępniania.
 - **Linki zbieraj przed `prepareReadableDocument()`.** Funkcja usuwa `nav`/`header`/`footer`, a w menu bywa jedyny link do treści (Dębniki, `/intencje`).
 - **Daty są walidowane kalendarzowo.** `isoFromParts()` odrzuca `31.02`; wcześniej `Date.UTC` po cichu przewijało taką datę na inny dzień.
+- **Pętla stron szczegółowych ma budżet czasu.** `DETAIL_FETCH_BUDGET_MS` (120 s) ogranicza sekwencyjny obchód stron szczegółowych jednego źródła; po jego wyczerpaniu pętla zwraca rekordy zebrane do tej pory z `partial: true`. Bez tego jedno powolne źródło (`max_detail_pages` sięga 50) przekraczało `timeout-minutes: 20` całego workflow — a przebieg ubity limitem **nie zapisuje ani danych, ani statusu, ani heartbeatu**, więc awaria staje się niewidoczna. Pusty wynik po wyczerpaniu budżetu ma własny `parser_status: "timeout_budget"`, żeby nie mylić go z regresją parsera.
+- **Awaryjne `curl` tylko przy odpowiedzi serwera.** Fallback w `scripts/fetch.mjs` obchodzi odrzucenie po nagłówkach (HTTP 403 i statusy przejściowe). Przy zerwaniu połączenia idzie tą samą drogą sieciową i powtarza ten sam wynik, więc jest pomijany — inaczej jeden martwy adres kosztował 9 wywołań sieciowych i do 183 s zamiast 3 wywołań. Ponowienia po zerwaniu połączenia mają też dłuższe odstępy (2 s i 8 s zamiast 0,7 s i 2 s): host, który nie odpowiada, po 700 ms zachowa się tak samo.
 
 ---
 
@@ -135,7 +137,7 @@ python3 -m http.server 8000
 
 ## 8. Diagnostyka
 
-- `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów, `blocked_since`.
+- `data/job.json` → `source_diagnostics`: status HTTP, liczba linków/podstron, liczba rekordów, `parser_status`, licznik pustych przebiegów, licznik niepowodzeń sieciowych (`fail_streak`), `blocked_since`. Dla źródeł ze stronami szczegółowymi dochodzą `visited_links` i `partial` — patrz budżet czasu w §4.
 - `data/source_health.json`: źródło zwracające zero rekordów przez 3 kolejne przebiegi jest zgłaszane jako błąd (poza źródłami oznaczonymi `known_empty` oraz przebiegami z potwierdzonym brakiem danych — patrz niżej). Uwaga: licznik zlicza **przebiegi, nie dni** — przy harmonogramie 2×/dobę próg to około półtora dnia.
 - Sekcja **Log** w interfejsie pokazuje tę diagnostykę oraz ostrzeżenie, gdy snapshot jest starszy niż 26 h.
 - `status` zadania opisuje **kondycję odczytu**, nie liczbę rekordów: tydzień bez pogrzebów w oknie to `done`, a nie `error`.
@@ -146,12 +148,24 @@ Nie każda awaria odczytu jest defektem do naprawienia w kodzie. Pipeline rozdzi
 
 | | **Błąd** (`source_errors`) | **Ostrzeżenie** (`source_warnings`) |
 |---|---|---|
-| Co oznacza | regresja parsera, awaria serwera, ciche zamilknięcie źródła | znana blokada zewnętrzna warstwy anty-botowej (HTTP 403, `parser_status: "blocked"`) |
+| Co oznacza | regresja parsera, awaria serwera (HTTP 4xx/5xx), ciche zamilknięcie źródła | znana blokada zewnętrzna warstwy anty-botowej (HTTP 403, `parser_status: "blocked"`) **albo** pierwsze niepowodzenie sieciowe |
 | Wpływ na `status` | degraduje do `done_with_errors` | **brak** — przebieg kończy się jako `done` |
-| Reakcja | poprawka kodu lub zrzutu testowego | zmiana drogi dostępu; kod nie ma na to wpływu |
+| Reakcja | poprawka kodu lub zrzutu testowego | zmiana drogi dostępu albo odczekanie kolejnego przebiegu; kod nie ma na to wpływu |
 | Widoczność | sekcja Log, `error_message` | sekcja Log (osobna lista), `warning_message`, baner w UI |
 
 Warunkiem potraktowania blokady jako ostrzeżenia jest flaga `external_block_tolerated: true` w definicji źródła. Bez niej HTTP 403 pozostaje zwykłym błędem.
+
+### Awaria sieciowa: przejściowa czy trwała
+
+Osobnej tolerancji podlega **niepowodzenie sieciowe**, czyli stan, w którym żadna odpowiedź HTTP nie dotarła (`http_status: 0` — przeterminowanie, zerwane połączenie, błąd DNS) albo pętla stron szczegółowych wyczerpała budżet czasu (`parser_status: "timeout_budget"`). To stan sieci, nie regresja kodu, i bywa jednorazowy.
+
+- **Pierwsze** takie niepowodzenie jest ostrzeżeniem — status przebiegu pozostaje `done`.
+- Od `NETWORK_FAIL_ALERT` kolejnych niepowodzeń (domyślnie 2, `scripts/refresh_static.mjs`) ostrzeżenie wraca do rangi błędu. Przy harmonogramie 2×/dobę daje to około pół doby zwłoki.
+- Licznik `fail_streak` w `data/source_health.json` zeruje każdy odczyt, który nie był awarią sieci — także błąd innej natury, żeby seria nie zlepiała przeterminowania połączenia z regresją parsera.
+
+Rozróżnienie **nie obejmuje** odpowiedzi serwera z błędnym statusem: HTTP 404 i 500 pozostają błędem od pierwszego wystąpienia, bo serwer działa i mówi coś konkretnego.
+
+Powód: 2026-08-28 pojedyncze przeterminowanie połączenia do `gabriel24.pl` zdegradowało cały przebieg do `done_with_errors`, choć w następnym przebiegu źródło odpowiadało normalnie. Jedno mrugnięcie sieci nie może wyglądać tak samo jak trwała utrata źródła.
 
 **Tolerancja jest ograniczona w czasie.** Jeżeli blokada trwa dłużej niż `BLOCK_TOLERANCE_DAYS` (domyślnie 14 dni, `scripts/refresh_static.mjs`), ostrzeżenie wraca do rangi błędu z komunikatem wskazującym na potrzebę decyzji. Ma to zapobiec sytuacji, w której trwała utrata źródła chowa się bezterminowo za ostrzeżeniem i status przestaje cokolwiek znaczyć. Wtedy trzeba albo przywrócić dostęp, albo wyłączyć źródło (`enabled: false`).
 
@@ -178,6 +192,7 @@ Przez kilkadziesiąt kolejnych przebiegów status brzmiał `done_with_errors` z 
 - Źródło Facebook pozostaje wyłączone (dostęp wymaga uwierzytelnienia; ocena możliwości włączenia to osobne zadanie).
 - Część serwisów chroni się warstwą anty-botową rozstrzygającą po reputacji adresu IP. Odczyt z runnerów GitHub Actions bywa wtedy odrzucany, mimo że to samo żądanie z innego łącza przechodzi — nagłówki i User-Agent nie mają tu znaczenia. **Projekt nie obchodzi takich zabezpieczeń**; blokada jest raportowana jako ostrzeżenie (§8), a nie omijana.
 - Harmonogram: GitHub Actions, cron `0 7,19 * * *` UTC, z bramką `npm test` przed `npm run refresh`.
+- Wyłączone źródło nie jest przez nic testowane, więc zdjęcie blokady przeszłoby niezauważone. Workflow **Dębniki – sonda dostępu** (`.github/workflows/debniki-probe.yml`, wyłącznie `workflow_dispatch`) wykonuje jedno żądanie GET do `https://debniki.sdb.org.pl/intencje/` i raportuje kod odpowiedzi: `200` oznacza, że źródło można włączyć, `403` — że blokada trwa. Sonda niczego nie obchodzi: wysyła to samo żądanie co zwykły przebieg i tylko odnotowuje wynik.
 
 ---
 

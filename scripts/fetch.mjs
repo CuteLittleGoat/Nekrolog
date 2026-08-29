@@ -22,7 +22,18 @@ const BROWSER_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi
 // ZCK i PUK potrafią zwrócić 503 lub zerwać połączenie, a przy kolejnej próbie
 // odpowiadają 200 — bez ponowienia całe źródło znika z przebiegu na 12 godzin.
 const TRANSIENT_STATUSES = new Set([408, 425, 429, 500, 502, 503, 504, 521, 522, 524]);
+// Dwie tabele opóźnień o tej samej długości — liczba prób jest wspólna, różni się
+// tylko odstęp. Skala setek milisekund pasuje do chwilowego 503, ale nie do hosta,
+// który przestał odpowiadać: po 0,7 s zachowa się tak samo. Przebieg z 2026-08-28
+// wykonał trzy ponowienia do gabriel24.pl i wszystkie zwróciły ten sam curl: (28).
 const RETRY_DELAYS_MS = [700, 2000];
+const CONNECTION_RETRY_DELAYS_MS = [2000, 8000];
+
+// Kody zerwania na poziomie połączenia — żadna odpowiedź HTTP nie dotarła.
+const CONNECTION_ERROR_CODES = new Set([
+  "ETIMEDOUT", "ECONNRESET", "ECONNREFUSED", "EPIPE",
+  "ENETUNREACH", "EHOSTUNREACH", "ENOTFOUND", "EAI_AGAIN"
+]);
 
 function selectIpv4Agent(parsedUrl) {
   return parsedUrl?.protocol === "http:" ? ipv4HttpAgent : ipv4HttpsAgent;
@@ -35,6 +46,16 @@ function isRetryableNetworkError(error) {
 
 function isTransientStatus(status) {
   return TRANSIENT_STATUSES.has(Number(status));
+}
+
+// Awaria połączenia, a nie odpowiedź serwera. Rozróżnienie decyduje o tym, czy
+// uruchamiać awaryjne curl: mają one sens wyłącznie tam, gdzie serwer odpowiedział
+// i odrzucił żądanie po nagłówkach.
+function isConnectionFailure(error) {
+  if (!error) return false;
+  if (error.name === "AbortError") return true; // nasz własny limit czasu
+  const code = String(error.code || error.errno || "").toUpperCase();
+  return CONNECTION_ERROR_CODES.has(code);
 }
 
 function stringifyError(error, attemptLabel) {
@@ -130,6 +151,20 @@ async function attemptOnce(url, timeoutMs, useIpv4Agent = false) {
 
     return first;
   } catch (error) {
+    // Przy zerwaniu połączenia awaryjne curl idą tą samą drogą sieciową i powtarzają
+    // ten sam wynik — potrajają koszt próby (3 × timeoutMs), nie zwiększając szans.
+    // Bez tego skrótu jeden martwy adres kosztował do 183 s i 9 wywołań sieciowych,
+    // co realnie zagrażało limitowi timeout-minutes: 20 całego workflow.
+    if (isConnectionFailure(error)) {
+      return {
+        ok: false,
+        status: 0,
+        text: "",
+        error: stringifyError(error, "fetch"),
+        networkError: error
+      };
+    }
+
     const curlAttempt = fetchViaCurl(url, timeoutMs);
     if (curlAttempt.ok) return curlAttempt;
     const browserAttempt = fetchViaCurl(url, timeoutMs, true);
@@ -164,11 +199,12 @@ export async function fetchText(url, timeoutMs = 20000) {
       || isRetryableNetworkError(last.networkError);
     if (!worthRetrying || attempt === RETRY_DELAYS_MS.length) break;
 
-    await sleep(RETRY_DELAYS_MS[attempt]);
+    const delays = isConnectionFailure(last.networkError) ? CONNECTION_RETRY_DELAYS_MS : RETRY_DELAYS_MS;
+    await sleep(delays[attempt]);
   }
 
   const error = last?.error || `HTTP ${last?.status ?? 0}`;
   return { ok: false, status: last?.status ?? 0, text: last?.text ?? "", error: `${error} (prób: ${attempts})`, attempts };
 }
 
-export { isRetryableNetworkError, isTransientStatus, BOT_USER_AGENT, BROWSER_USER_AGENT };
+export { isRetryableNetworkError, isTransientStatus, isConnectionFailure, BOT_USER_AGENT, BROWSER_USER_AGENT };

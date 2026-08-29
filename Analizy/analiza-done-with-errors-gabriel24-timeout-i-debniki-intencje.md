@@ -320,9 +320,9 @@ Wariant „self-hosted runner” do tej kategorii **nie** należy — zmienia pu
 
 ---
 
-## 9. Zmiany wykonane w kodzie
+## 9. Czynności wykonane podczas samej analizy
 
-**Brak.** Zgodnie z `AGENTS.md` §1 polecenie użytkownika dotyczyło analizy, a nie zmiany kodu. Rekomendacje A–D pozostają do zatwierdzenia przed implementacją.
+Na etapie analizy **nie zmieniano kodu** — zgodnie z `AGENTS.md` §1 polecenie dotyczyło analizy. Wdrożenie rekomendacji opisuje §10.
 
 Czynności wykonane w środowisku i ich odwrócenie:
 
@@ -330,3 +330,307 @@ Czynności wykonane w środowisku i ich odwrócenie:
 - `npm test` — 50/50 pass, bez zmian w plikach.
 - `node scripts/refresh_static.mjs` z `DISCORD_NOTIFY_ENABLED=false` — przebieg diagnostyczny. Nadpisane pliki `data/latest.json`, `data/job.json`, `data/errors.json`, `data/source_health.json` **przywrócono do stanu z repozytorium** (`git checkout -- data/ config/`). Żadne powiadomienie Discord nie zostało wysłane.
 - Sondowanie sieciowe (`curl`, `node-fetch`) — wyłącznie żądania odczytu `GET`, po 1–3 na adres.
+
+---
+
+## 10. Zmiany wykonane w kodzie — wdrożenie rekomendacji A–C
+
+Wdrożono na polecenie użytkownika („Wprowadź poprawki na main zgodnie z analizą"), bezpośrednio na gałęzi `main`.
+
+Zakres: rekomendacje **A** (koszt ścieżki błędu), **B** (tolerancja awarii sieciowej) i **C** (sonda dostępu do Dębnik). Rekomendacja **D** (włączenie źródła `debniki_intencje`) **nie została wdrożona** — jest warunkowa i wymaga najpierw wyniku sondy z rekomendacji C. Rekomendacja **E** to zakaz, nie zmiana.
+
+### Plik: `scripts/fetch.mjs`
+
+**Lokalizacja: linie 25–36, obok `RETRY_DELAYS_MS`**
+
+Było — jedna tabela opóźnień dla wszystkich rodzajów niepowodzenia:
+
+```js
+const RETRY_DELAYS_MS = [700, 2000];
+```
+
+Jest — druga tabela dla zerwań połączenia oraz zbiór kodów rozpoznawanych jako zerwanie:
+
+```js
+const RETRY_DELAYS_MS = [700, 2000];
+const CONNECTION_RETRY_DELAYS_MS = [2000, 8000];
+
+const CONNECTION_ERROR_CODES = new Set([
+  "ETIMEDOUT", "ECONNRESET", "ECONNREFUSED", "EPIPE",
+  "ENETUNREACH", "EHOSTUNREACH", "ENOTFOUND", "EAI_AGAIN"
+]);
+```
+
+**Lokalizacja: linie 51–59, nowa funkcja `isConnectionFailure` (po `isTransientStatus`)**
+
+Było: brak — nie istniało rozróżnienie awarii połączenia od innych wyjątków.
+
+Jest:
+
+```js
+function isConnectionFailure(error) {
+  if (!error) return false;
+  if (error.name === "AbortError") return true; // nasz własny limit czasu
+  const code = String(error.code || error.errno || "").toUpperCase();
+  return CONNECTION_ERROR_CODES.has(code);
+}
+```
+
+**Lokalizacja: linia 158, blok `catch` w `attemptOnce`**
+
+Było — każdy wyjątek uruchamiał dwa awaryjne wywołania `curl`:
+
+```js
+} catch (error) {
+  const curlAttempt = fetchViaCurl(url, timeoutMs);
+  if (curlAttempt.ok) return curlAttempt;
+  const browserAttempt = fetchViaCurl(url, timeoutMs, true);
+  ...
+```
+
+Jest — przy zerwaniu połączenia następuje natychmiastowy powrót, bez `curl`:
+
+```js
+} catch (error) {
+  if (isConnectionFailure(error)) {
+    return { ok: false, status: 0, text: "", error: stringifyError(error, "fetch"), networkError: error };
+  }
+
+  const curlAttempt = fetchViaCurl(url, timeoutMs);
+  ...
+```
+
+**Lokalizacja: linia 202, pętla ponowień w `fetchText`**
+
+Było: `await sleep(RETRY_DELAYS_MS[attempt]);`
+
+Jest:
+
+```js
+const delays = isConnectionFailure(last.networkError) ? CONNECTION_RETRY_DELAYS_MS : RETRY_DELAYS_MS;
+await sleep(delays[attempt]);
+```
+
+**Lokalizacja: linia eksportu** — dopisano `isConnectionFailure`.
+
+**Efekt mierzony.** Przy zerwaniu połączenia jeden adres kosztuje teraz **3 wywołania sieciowe zamiast 9**. Weryfikacja licznikiem wywołań (podstawiony `curl` w `PATH`, zapisujący każde uruchomienie):
+
+| Rodzaj niepowodzenia | Wywołań `curl` przed | Wywołań `curl` po |
+|---|---|---|
+| Awaria połączenia (DNS/timeout) | 6 | **0** |
+| Błąd innej natury (TLS) | 6 | 6 — ścieżka awaryjna zachowana |
+
+Koszt czasowy przy limicie 20 s na próbę spada z ~183 s do ~70 s na jeden martwy adres.
+
+### Plik: `scripts/nekrolog_core.mjs`
+
+**Lokalizacja: linie 148–169, przed `parseByListAndDetails`**
+
+Było: brak — pętla stron szczegółowych była nieograniczona czasowo.
+
+Jest — stała budżetu i wspólna pętla z kontrolą terminu (`fetcher` wstrzykiwany, żeby budżet dało się testować bez ruchu sieciowego):
+
+```js
+const DETAIL_FETCH_BUDGET_MS=120000;
+
+async function fetchDetailRows(source,links,onDetail,fetcher=fetchText){
+  const deadline=Date.now()+(Number(source.detail_budget_ms)||DETAIL_FETCH_BUDGET_MS);
+  const rows=[]; let visited=0; let truncated=false;
+  for(const l of links){
+    if(Date.now()>=deadline){truncated=true;break;}
+    visited+=1;
+    const d=await fetcher(l.url);
+    if(!d.ok) continue;
+    const row=onDetail(d.text,l.url);
+    if(row) rows.push(row);
+  }
+  return {rows,visited,truncated};
+}
+```
+
+**Lokalizacja: linia 175, `parseByListAndDetails`**
+
+Było — pętla inline bez limitu, a pusty wynik zawsze diagnozowany jako regresja parsera:
+
+```js
+const rows=[];
+for(const l of links){const d=await fetchText(l.url); if(!d.ok) continue; const row=detailParser(d.text,source,l.url,forceFuneral); if(row) rows.push(row);}
+if(!rows.length) return {rows:[],error:`${source.name}: znaleziono ${links.length} linków, ale zero poprawnych rekordów`,diagnostics:{…,parser_status:'parser_broken'}};
+```
+
+Jest — pętla z budżetem, a wyczerpanie budżetu ma własny status i komunikat:
+
+```js
+const {rows,visited,truncated}=await fetchDetailRows(source,links,(text,url)=>detailParser(text,source,url,forceFuneral));
+const base={http_status:r.status,candidate_links:links.length,visited_links:visited,partial:truncated};
+if(!rows.length){
+  if(truncated) return {rows:[],error:`${source.name}: wyczerpany budżet czasu odczytu po ${visited}/${links.length} stronach, zero rekordów`,diagnostics:{...base,accepted_rows:0,parser_status:'timeout_budget'}};
+  return {rows:[],error:`${source.name}: znaleziono ${links.length} linków, ale zero poprawnych rekordów`,diagnostics:{...base,accepted_rows:0,parser_status:'parser_broken'}};
+}
+```
+
+**Lokalizacja: linia 453, `parseDebnikiSdbPogrzeby`** — ta sama zamiana własnej pętli na `fetchDetailRows` wraz z obsługą `timeout_budget`. Źródło jest wyłączone, ale miało identyczną, nieograniczoną pętlę (`max_detail_pages: 30`).
+
+**Lokalizacja: linie 630–637, po `isConfirmedEmpty`**
+
+Było: brak — nie istniała kategoria awarii przejściowej.
+
+Jest:
+
+```js
+const isTransientNetworkFailure=(parsed)=>{
+  const d=parsed?.diagnostics||{};
+  if(d.parser_status==='timeout_budget') return true;
+  return d.parser_status==='http_error'&&Number(d.http_status||0)===0;
+};
+```
+
+Warunek jest celowo wąski: odpowiedź serwera z błędnym statusem (404, 500) **nie** wchodzi do tej kategorii, bo serwer działa i mówi coś konkretnego. Dzięki temu istniejący kontrakt „HTTP 500 to błąd od pierwszego wystąpienia" pozostał nienaruszony.
+
+**Lokalizacja: linia 645, sygnatura `classifySourceOutcome`**
+
+Było: `{source={},parsed={},health={},toleranceDays=14,emptyStreakAlert=3,now=Date.now()}`
+
+Jest: dopisany parametr `networkFailAlert=2`.
+
+**Lokalizacja: linia 659, gałąź błędu w `classifySourceOutcome`**
+
+Było — każdy błąd parsera degradował status:
+
+```js
+if(parsed.error) return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+```
+
+Jest — awaria sieciowa przechodzi przez licznik `fail_streak`:
+
+```js
+if(parsed.error){
+  if(isTransientNetworkFailure(parsed)){
+    const streak=Math.max(1,Number(health.fail_streak||0));
+    const entry={...base,fail_streak:streak};
+    if(streak<networkFailAlert){
+      return {kind:'warning',entry:{...entry,error:`${clean(parsed.error)} — przejściowe niepowodzenie odczytu (${streak} z ${networkFailAlert} przed eskalacją do błędu)`}};
+    }
+    return {kind:'error',entry:{...entry,error:`${clean(parsed.error)} — ${streak} nieudane odczyty z rzędu, źródło wymaga sprawdzenia`}};
+  }
+  return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+}
+```
+
+`Math.max(1, …)` zabezpiecza przypadek, w którym odczyt się nie powiódł, a licznik kondycji jeszcze tego nie zapisał (pierwszy przebieg, brak pliku kondycji) — bez tego próg 1 eskalowałby natychmiast.
+
+**Lokalizacja: blok `export`** — dopisano `isTransientNetworkFailure`, `fetchDetailRows`, `DETAIL_FETCH_BUDGET_MS`.
+
+### Plik: `scripts/refresh_static.mjs`
+
+**Lokalizacja: linia 43, obok `BLOCK_TOLERANCE_DAYS`**
+
+Było: brak.
+
+Jest:
+
+```js
+const NETWORK_FAIL_ALERT = 2;
+```
+
+**Lokalizacja: linie 72–73 i 81, `updateSourceHealth`**
+
+Było: brak licznika niepowodzeń sieciowych.
+
+Jest — licznik dopisany do rekordu kondycji:
+
+```js
+const networkFailure = isTransientNetworkFailure(parsed);
+const failStreak = networkFailure ? Number(prev.fail_streak || 0) + 1 : 0;
+…
+fail_streak: failStreak,
+```
+
+**Lokalizacja: linia 143, `source_diagnostics`** — dopisano `fail_streak: health.fail_streak`.
+
+**Lokalizacja: linia 161, wywołanie `classifySourceOutcome`** — dopisano `networkFailAlert: NETWORK_FAIL_ALERT`.
+
+**Lokalizacja: import z `./nekrolog_core.mjs`** — dopisano `isTransientNetworkFailure`.
+
+### Plik: `app.js`
+
+**Lokalizacja: linia 225, treść banera ostrzeżeń**
+
+Było — komunikat zakładał, że jedynym powodem ostrzeżenia jest blokada:
+
+```js
+banner.textContent = `Źródła niedostępne z powodu blokady zewnętrznej: ${warningsList.length}. …`;
+```
+
+Jest:
+
+```js
+banner.textContent = `Źródła z ostrzeżeniem (blokada zewnętrzna lub przejściowy błąd odczytu): ${warningsList.length}. …`;
+```
+
+Zaktualizowano też komentarz nad `warningsList` (linie ~205–207), który opisywał ostrzeżenia wyłącznie jako blokady zewnętrzne.
+
+### Plik: `.github/workflows/debniki-probe.yml`
+
+Było: brak pliku.
+
+Jest: nowy workflow **Dębniki – sonda dostępu** (rekomendacja C). Wyłącznie `workflow_dispatch`, `permissions: contents: read`, `timeout-minutes: 5`. Wykonuje jedno żądanie GET do `https://debniki.sdb.org.pl/intencje/` z nagłówkiem bota, wypisuje kod odpowiedzi w logu i w podsumowaniu przebiegu, po czym kończy się kodem 0 — `403` to prawidłowy negatywny wynik sondy, a nie awaria. Interpretacja jest wypisywana wprost: `200` → przejść do rekomendacji D, `403` → utrzymać `enabled: false`.
+
+Sonda nie obchodzi zabezpieczenia: wysyła to samo żądanie co zwykły przebieg i tylko odnotowuje odpowiedź.
+
+### Plik: `tests/fetch.test.mjs`
+
+Było: brak pliku — warstwa pobierania nie miała żadnych testów.
+
+Jest: 4 testy rozpoznawania awarii połączenia — `AbortError`, komplet kodów z `CONNECTION_ERROR_CODES` (także w `errno` i małymi literami), zachowanie ścieżki `curl` dla błędów innej natury (TLS, `TypeError`) oraz test kontrolny, że klasyfikacja statusów przejściowych pozostała nienaruszona.
+
+### Plik: `tests/refresh.snapshot.test.mjs`
+
+**Lokalizacja: import z `../scripts/nekrolog_core.mjs`** — dopisano `isTransientNetworkFailure`, `fetchDetailRows`.
+
+**Lokalizacja: koniec pliku** — dopisano 8 testów:
+
+- rozpoznanie awarii przejściowej i odrzucenie HTTP 500 / 403 / `parser_broken` z tej kategorii,
+- pierwsza awaria sieciowa → ostrzeżenie,
+- druga z rzędu → błąd,
+- nieudany odczyt bez zapisanego licznika → ostrzeżenie (`Math.max(1, …)`),
+- tolerancja nie obejmuje regresji parsera,
+- budżet przerywa pętlę i zachowuje rekordy zebrane do tej pory,
+- budżet niewyczerpany przepuszcza całą listę bez flagi częściowości,
+- nieosiągalna strona szczegółów nie przerywa pętli.
+
+Żaden istniejący test nie wymagał zmiany — w szczególności kontrakt „tolerancja blokady nie tłumi regresji parsera ani błędów HTTP" pozostał w mocy dzięki wąskiej definicji z §10 (`http_status: 0`).
+
+### Plik: `README.md`
+
+- §4 — dwie nowe pułapki: budżet czasu pętli stron szczegółowych oraz zawężenie awaryjnej ścieżki `curl` do odpowiedzi serwera.
+- §8 — nowe pola diagnostyczne (`fail_streak`, `visited_links`, `partial`); wiersz „Co oznacza" w tabeli błąd/ostrzeżenie rozszerzony o pierwsze niepowodzenie sieciowe; nowy podrozdział **„Awaria sieciowa: przejściowa czy trwała"** z progiem `NETWORK_FAIL_ALERT` i uzasadnieniem z 2026-08-28.
+- §9 — opis workflow sondy dostępu.
+
+### Weryfikacja
+
+| Sprawdzenie | Wynik |
+|---|---|
+| `npm test` | **62/62 pass** (50 przed zmianą + 12 nowych), 0 fail |
+| Przebieg na żywych źródłach, `DISCORD_NOTIFY_ENABLED=false` | `Rows=196 healthy=7/7 warnings=0 status=done` |
+| Nowe pola w `source_diagnostics` | `visited_links` i `partial: false` obecne dla Gabriel24 (12) i Karawana (6); `fail_streak: 0` dla wszystkich siedmiu źródeł |
+| Pominięcie `curl` przy zerwaniu połączenia | licznik wywołań: **0** (przed zmianą 6) |
+| Zachowanie `curl` przy błędzie innej natury | licznik wywołań: **6** — bez zmian |
+| Składnia `node --check` dla trzech zmienionych skryptów | OK |
+| Składnia YAML nowego workflow | OK |
+
+Pliki w `data/` przywrócono do stanu z repozytorium po przebiegu weryfikacyjnym. Żadne powiadomienie Discord nie zostało wysłane.
+
+### Skutek dla zdarzenia z 2026-08-28
+
+Przy nowym kodzie ten sam przebieg zakończyłby się statusem **`done`** z jednym ostrzeżeniem:
+
+```text
+Gabriel24 – Nekrologi: fetch: The operation was aborted. — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)
+```
+
+Odczyt Gabriel24 kosztowałby ~70 s zamiast 183 s. Gdyby źródło nie odpowiedziało również w przebiegu porannym 2026-08-29, `fail_streak` osiągnąłby 2 i status wróciłby do `done_with_errors` — czyli sygnał zadziałałby wtedy, gdy faktycznie coś jest nie tak.
+
+### Czego nadal nie wiadomo
+
+Wynik sondy z rekomendacji C. Do czasu jej uruchomienia źródło `debniki_intencje` pozostaje wyłączone, a kategoria `intention` bez dostawcy.

@@ -1,0 +1,69 @@
+# Sonda dostępu do Parafii Dębniki — rekomendacja C z analizy
+# Analizy/analiza-done-with-errors-gabriel24-timeout-i-debniki-intencje.md
+#
+# Źródła debniki_intencje i debniki_sdb są wyłączone, bo Cloudflare odrzuca ruch
+# z runnerów GitHub Actions. Blokada opiera się na reputacji adresu IP, a ta zmienia
+# się w czasie po stronie usługodawcy — wyłączone źródło nie jest przez nic testowane,
+# więc jej zdjęcie przeszłoby niezauważone. Ten workflow zamyka tę lukę kosztem
+# jednego żądania GET, uruchamianego wyłącznie ręcznie.
+#
+# Sonda niczego nie obchodzi: wysyła to samo żądanie co zwykły przebieg, z tym samym
+# nagłówkiem bota, i tylko odnotowuje odpowiedź.
+name: Dębniki – sonda dostępu
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Sprawdź dostęp do intencji mszalnych
+        run: |
+          URL="https://debniki.sdb.org.pl/intencje/"
+          STATUS=$(curl --silent --location --max-time 25 \
+            --output /tmp/debniki.html \
+            --user-agent "nekrolog-refresh-bot/1.0 (+https://github.com/)" \
+            --header "accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
+            --write-out "%{http_code}" "$URL" || echo "000")
+          SIZE=$(wc -c < /tmp/debniki.html | tr -d ' ')
+
+          echo "URL:    $URL"
+          echo "HTTP:   $STATUS"
+          echo "Rozmiar odpowiedzi: $SIZE B"
+
+          {
+            echo "## Sonda dostępu: Parafia Dębniki – intencje"
+            echo
+            echo "| Pole | Wartość |"
+            echo "|---|---|"
+            echo "| URL | \`$URL\` |"
+            echo "| HTTP | \`$STATUS\` |"
+            echo "| Rozmiar | $SIZE B |"
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          case "$STATUS" in
+            200)
+              echo "Blokada zdjęta — można przejść do rekomendacji D (enabled: true dla debniki_intencje)." >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=Dostęp odzyskany::HTTP 200 — źródło debniki_intencje można włączyć (rekomendacja D analizy)."
+              ;;
+            403)
+              # Cloudflare Managed Challenge odpowiada stroną "Just a moment..." — to nie
+              # jest awaria sondy, tylko jej prawidłowy, negatywny wynik.
+              echo "Blokada nadal obowiązuje — utrzymać \`enabled: false\`. Warianty C1–C4 w analizie." >> "$GITHUB_STEP_SUMMARY"
+              echo "::warning title=Blokada trwa::HTTP 403 (Cloudflare Managed Challenge) — źródło pozostaje wyłączone."
+              ;;
+            *)
+              echo "Wynik nierozstrzygający — powtórzyć sondę." >> "$GITHUB_STEP_SUMMARY"
+              echo "::warning title=Wynik nierozstrzygający::HTTP $STATUS — ani 200, ani 403."
+              ;;
+          esac
+
+          # Sonda jest diagnostyką: 403 to informacja, nie powód do czerwonego przebiegu.
+          exit 0

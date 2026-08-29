@@ -7,6 +7,7 @@ import {
   mergeRequiredSources, mergeDuplicateRows, dedupeKeyForRow, resolveJobOutcome,
   buildFallbackSummaryForHelena, buildMatchHaystack, rowMatchesPhrases, HELENA_GAWIN_PHRASES,
   isIntentionLikeRow, isEligibleDeathRow, isBlockedByAntiBot, isConfirmedEmpty, classifySourceOutcome,
+  isTransientNetworkFailure, fetchDetailRows,
   REQUIRED_SOURCES
 } from '../scripts/nekrolog_core.mjs';
 import { isCzerwonaHelenaRow, selectHits, buildStateKey, buildDiscordMessage, mentionPrefix } from '../scripts/discord_notify.mjs';
@@ -278,4 +279,104 @@ test('cisza bez potwierdzenia nadal eskaluje po progu', () => {
   });
   assert.equal(out.kind, 'error');
   assert.match(out.entry.error, /Brak rekordów w 3 kolejnych przebiegach/);
+});
+
+// ── Awaria sieciowa: rozróżnienie przejściowej od trwałej ──
+// 2026-08-28 pojedyncze przeterminowanie połączenia do gabriel24.pl zdegradowało cały
+// przebieg do done_with_errors, choć w następnym przebiegu źródło odpowiadało normalnie.
+// Bez tolerancji status przestaje odróżniać mrugnięcie sieci od utraty źródła.
+
+const timeoutParsed = {
+  rows: [],
+  error: 'fetch: The operation was aborted. (prób: 3)',
+  diagnostics: { http_status: 0, parser_status: 'http_error' }
+};
+
+test('brak odpowiedzi HTTP jest rozpoznawany jako awaria przejściowa, błąd serwera nie', () => {
+  assert.equal(isTransientNetworkFailure(timeoutParsed), true);
+  assert.equal(isTransientNetworkFailure({ diagnostics: { parser_status: 'timeout_budget' } }), true);
+  // Serwer odpowiedział i powiedział coś konkretnego — to nie jest stan sieci.
+  assert.equal(isTransientNetworkFailure({ diagnostics: { http_status: 500, parser_status: 'http_error' } }), false);
+  assert.equal(isTransientNetworkFailure({ diagnostics: { http_status: 403, parser_status: 'blocked' } }), false);
+  assert.equal(isTransientNetworkFailure({ diagnostics: { http_status: 200, parser_status: 'parser_broken' } }), false);
+  assert.equal(isTransientNetworkFailure({}), false);
+});
+
+test('pierwsza awaria sieciowa daje ostrzeżenie, nie degraduje statusu przebiegu', () => {
+  const out = classifySourceOutcome({
+    source: { id: 'gabriel_nekrologi', name: 'Gabriel24', url: 'https://example.test/' },
+    parsed: timeoutParsed,
+    health: { fail_streak: 1 },
+    networkFailAlert: 2
+  });
+  assert.equal(out.kind, 'warning');
+  assert.equal(out.entry.fail_streak, 1);
+  assert.match(out.entry.error, /przejściowe niepowodzenie odczytu/);
+});
+
+test('seria awarii sieciowych eskaluje do błędu', () => {
+  const out = classifySourceOutcome({
+    source: { id: 'gabriel_nekrologi', name: 'Gabriel24', url: 'https://example.test/' },
+    parsed: timeoutParsed,
+    health: { fail_streak: 2 },
+    networkFailAlert: 2
+  });
+  assert.equal(out.kind, 'error');
+  assert.match(out.entry.error, /2 nieudane odczyty z rzędu/);
+});
+
+test('nieudany odczyt liczy się jako awaria nawet bez zapisanego licznika', () => {
+  // health bez fail_streak (pierwszy przebieg, brak pliku kondycji) nie może dać
+  // streak 0, bo odczyt właśnie się nie powiódł — inaczej próg 1 eskalowałby od razu.
+  const out = classifySourceOutcome({
+    source: { id: 'x', name: 'X' },
+    parsed: timeoutParsed,
+    health: {},
+    networkFailAlert: 2
+  });
+  assert.equal(out.kind, 'warning');
+  assert.equal(out.entry.fail_streak, 1);
+});
+
+test('tolerancja awarii sieciowej nie obejmuje regresji parsera', () => {
+  const out = classifySourceOutcome({
+    source: { id: 'x', name: 'X' },
+    parsed: { rows: [], error: 'zero poprawnych rekordów', diagnostics: { http_status: 200, parser_status: 'parser_broken' } },
+    health: { fail_streak: 1 },
+    networkFailAlert: 2
+  });
+  assert.equal(out.kind, 'error');
+});
+
+// ── Budżet czasu na pętlę stron szczegółowych ──
+// Pętla jest sekwencyjna, a max_detail_pages sięga 50. Bez budżetu jedno powolne
+// źródło przekraczało timeout-minutes: 20 workflow, a wtedy nie zapisuje się nic:
+// ani dane, ani status, ani heartbeat.
+
+test('budżet czasu przerywa pętlę stron szczegółowych i zwraca rekordy zebrane do tej pory', async () => {
+  const links = Array.from({ length: 10 }, (_, i) => ({ url: `https://example.test/${i}` }));
+  const wolny = async (url) => { await new Promise((r) => setTimeout(r, 30)); return { ok: true, status: 200, text: url }; };
+  const out = await fetchDetailRows({ detail_budget_ms: 100 }, links, (text) => ({ url: text }), wolny);
+  assert.equal(out.truncated, true);
+  assert.ok(out.visited > 0, 'budżet musi pozwolić na co najmniej jedną stronę');
+  assert.ok(out.visited < links.length, 'pętla musi przerwać przed końcem listy');
+  assert.equal(out.rows.length, out.visited, 'rekordy zebrane przed przerwaniem nie są tracone');
+});
+
+test('budżet niewyczerpany przepuszcza całą listę bez flagi częściowości', async () => {
+  const links = Array.from({ length: 3 }, (_, i) => ({ url: `https://example.test/${i}` }));
+  const szybki = async (url) => ({ ok: true, status: 200, text: url });
+  const out = await fetchDetailRows({ detail_budget_ms: 5000 }, links, (text) => ({ url: text }), szybki);
+  assert.equal(out.truncated, false);
+  assert.equal(out.visited, 3);
+  assert.equal(out.rows.length, 3);
+});
+
+test('strona szczegółów nieosiągalna nie przerywa pętli', async () => {
+  const links = Array.from({ length: 3 }, (_, i) => ({ url: `https://example.test/${i}` }));
+  const co_drugi = async (url) => (url.endsWith('1') ? { ok: false, status: 0, text: '' } : { ok: true, status: 200, text: url });
+  const out = await fetchDetailRows({ detail_budget_ms: 5000 }, links, (text) => ({ url: text }), co_drugi);
+  assert.equal(out.truncated, false);
+  assert.equal(out.visited, 3);
+  assert.equal(out.rows.length, 2);
 });

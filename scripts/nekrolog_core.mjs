@@ -140,16 +140,48 @@ function validateParsedRow(row){
 function parseGenericList(text,source){return uniq($links(text,source).filter(u=>/nekrolog|pogrzeb|zmar|klepsydr|id=/.test(u)).map(url=>({url})),r=>r.url);}
 function $links(text,source){const $=cheerio.load(text); return uniq($('a[href]').map((_,a)=>absoluteUrl($(a).attr('href'),source.list_url||source.url)).get().filter(Boolean),(u)=>u);}
 
+// Budżet czasowy na pętlę stron szczegółowych jednego źródła. Pętla jest sekwencyjna,
+// a max_detail_pages sięga 50 — przy hoście, który przestał odpowiadać, samo to źródło
+// przekroczyłoby timeout-minutes: 20 całego workflow. Przebieg ubity limitem nie zapisuje
+// ani danych, ani statusu, ani heartbeatu, więc awaria staje się niewidoczna. Rekordy
+// zebrane do momentu wyczerpania budżetu są warte więcej niż przebieg przerwany.
+const DETAIL_FETCH_BUDGET_MS=120000;
+
+// Wspólna pętla po stronach szczegółowych z kontrolą budżetu. Zwraca też informację,
+// czy przerwano ją przed czasem — bez tego pusty wynik po przekroczeniu budżetu
+// zostałby zdiagnozowany jako regresja parsera.
+// fetcher wstrzykiwany, żeby budżet dało się przetestować bez ruchu sieciowego.
+async function fetchDetailRows(source,links,onDetail,fetcher=fetchText){
+  const deadline=Date.now()+(Number(source.detail_budget_ms)||DETAIL_FETCH_BUDGET_MS);
+  const rows=[];
+  let visited=0;
+  let truncated=false;
+  for(const l of links){
+    if(Date.now()>=deadline){truncated=true;break;}
+    visited+=1;
+    const d=await fetcher(l.url);
+    if(!d.ok) continue;
+    const row=onDetail(d.text,l.url);
+    if(row) rows.push(row);
+  }
+  return {rows,visited,truncated};
+}
+
 async function parseByListAndDetails(source,forceFuneral,listParser,detailParser){
   const r=await fetchText(source.list_url||source.url);
   if(!r.ok) return {rows:[],error:r.error||`HTTP ${r.status}`,diagnostics:{http_status:r.status,parser_status:r.status===403?'blocked':'http_error'}};
   const links=listParser(r.text,source).slice(0,source.max_detail_pages||50);
   if(!links.length) return {rows:[],error:`${source.name}: nie znaleziono linków szczegółów`,diagnostics:{http_status:r.status,candidate_links:0,accepted_rows:0,parser_status:'parser_broken'}};
-  const rows=[];
-  for(const l of links){const d=await fetchText(l.url); if(!d.ok) continue; const row=detailParser(d.text,source,l.url,forceFuneral); if(row) rows.push(row);}
-  if(!rows.length) return {rows:[],error:`${source.name}: znaleziono ${links.length} linków, ale zero poprawnych rekordów`,diagnostics:{http_status:r.status,candidate_links:links.length,accepted_rows:0,parser_status:'parser_broken'}};
+  const {rows,visited,truncated}=await fetchDetailRows(source,links,(text,url)=>detailParser(text,source,url,forceFuneral));
+  const base={http_status:r.status,candidate_links:links.length,visited_links:visited,partial:truncated};
+  if(!rows.length){
+    // Wyczerpany budżet i zepsuty parser dają ten sam objaw — zero rekordów — ale
+    // wymagają innej reakcji, więc nie mogą dzielić komunikatu ani statusu.
+    if(truncated) return {rows:[],error:`${source.name}: wyczerpany budżet czasu odczytu po ${visited}/${links.length} stronach, zero rekordów`,diagnostics:{...base,accepted_rows:0,parser_status:'timeout_budget'}};
+    return {rows:[],error:`${source.name}: znaleziono ${links.length} linków, ale zero poprawnych rekordów`,diagnostics:{...base,accepted_rows:0,parser_status:'parser_broken'}};
+  }
   const deduped=uniq(rows,r=>`${r.kind}|${r.name}|${r.url}`);
-  return {rows:deduped,error:null,diagnostics:{http_status:r.status,candidate_links:links.length,accepted_rows:deduped.length,parser_status:'ok'}};
+  return {rows:deduped,error:null,diagnostics:{...base,accepted_rows:deduped.length,parser_status:'ok'}};
 }
 
 // Realne nekrologi Gabriel24 i Karawana leżą wyłącznie pod /nekrolog/<slug>/ (liczba
@@ -418,10 +450,11 @@ async function parseDebnikiSdbPogrzeby(source){
   if(!r.ok) return {rows:[],error:r.error||`HTTP ${r.status}`,diagnostics:{http_status:r.status,parser_status:r.status===403?'blocked':'http_error'}};
   const links=parseDebnikiSdbPogrzebyHtml(r.text,source).slice(0,source.max_detail_pages||30);
   if(!links.length) return {rows:[],error:'Dębniki SDB: nie znaleziono linków szczegółów',diagnostics:{http_status:r.status,candidate_links:0,accepted_rows:0,parser_status:'parser_broken'}};
-  const rows=[];
-  for(const l of links){const d=await fetchText(l.url); if(!d.ok) continue; const row=parseDebnikiSdbDetailHtml(d.text,source,l.url); if(row) rows.push(row);}
+  const {rows,visited,truncated}=await fetchDetailRows(source,links,(text,url)=>parseDebnikiSdbDetailHtml(text,source,url));
   const deduped=uniq(rows,r=>`${r.kind}|${r.name}|${r.url}`);
-  return {rows:deduped,error:null,diagnostics:{http_status:r.status,candidate_links:links.length,accepted_rows:deduped.length,parser_status:deduped.length?'ok':'empty'}};
+  const base={http_status:r.status,candidate_links:links.length,visited_links:visited,partial:truncated,accepted_rows:deduped.length};
+  if(!deduped.length&&truncated) return {rows:[],error:`Dębniki SDB: wyczerpany budżet czasu odczytu po ${visited}/${links.length} stronach, zero rekordów`,diagnostics:{...base,parser_status:'timeout_budget'}};
+  return {rows:deduped,error:null,diagnostics:{...base,parser_status:deduped.length?'ok':'empty'}};
 }
 
 // ─────────────────────────── Dębniki: intencje ───────────────────────────
@@ -588,6 +621,18 @@ const isBlockedByAntiBot=(parsed)=>parsed?.diagnostics?.parser_status==='blocked
 // przebiegów ani degradować statusu.
 const isConfirmedEmpty=(parsed)=>parsed?.diagnostics?.parser_status==='empty_confirmed';
 
+// Awaria przejściowa na poziomie sieci: żadna odpowiedź HTTP nie dotarła
+// (http_status 0 — przeterminowanie, zerwane połączenie, błąd DNS) albo pętla stron
+// szczegółowych wyczerpała budżet czasu. Jedno i drugie jest stanem sieci, nie regresją
+// kodu, i bywa jednorazowe — 2026-08-28 gabriel24.pl przeterminował jeden przebieg
+// i odpowiadał normalnie w następnym. Odpowiedź serwera z błędnym statusem (404, 500)
+// do tej kategorii NIE należy: tam serwer działa i mówi coś konkretnego.
+const isTransientNetworkFailure=(parsed)=>{
+  const d=parsed?.diagnostics||{};
+  if(d.parser_status==='timeout_budget') return true;
+  return d.parser_status==='http_error'&&Number(d.http_status||0)===0;
+};
+
 const daysBetween=(iso,now=Date.now())=>{
   const t=Date.parse(iso||'');
   if(!Number.isFinite(t)) return 0;
@@ -597,7 +642,7 @@ const daysBetween=(iso,now=Date.now())=>{
 // Zwraca {kind:'error'|'warning'|'ok', entry}. Tolerowana blokada zewnętrzna jest
 // ostrzeżeniem tylko dopóki mieści się w progu — trwała utrata źródła musi wrócić
 // do rangi błędu, żeby nie chować się bezterminowo za ostrzeżeniem.
-function classifySourceOutcome({source={},parsed={},health={},toleranceDays=14,emptyStreakAlert=3,now=Date.now()}={}){
+function classifySourceOutcome({source={},parsed={},health={},toleranceDays=14,emptyStreakAlert=3,networkFailAlert=2,now=Date.now()}={}){
   const base={source_id:source.id,source_name:source.name,url:source.url};
   const blocked=isBlockedByAntiBot(parsed);
 
@@ -611,7 +656,24 @@ function classifySourceOutcome({source={},parsed={},health={},toleranceDays=14,e
     return {kind:'warning',entry:{...entry,error:label}};
   }
 
-  if(parsed.error) return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+  if(parsed.error){
+    // Pierwsze niepowodzenie sieciowe to ostrzeżenie, nie błąd przebiegu. Bez tego
+    // rozróżnienia pojedyncze mrugnięcie sieci degradowało status tak samo jak trwały
+    // upadek źródła, a done_with_errors przestawał odróżniać awarię od normy — ten sam
+    // problem, który rozwiązano wcześniej dla blokad anty-botowych. Seria niepowodzeń
+    // nadal eskaluje: przy dwóch przebiegach na dobę próg 2 daje około pół doby zwłoki.
+    if(isTransientNetworkFailure(parsed)){
+      // Nieudany odczyt oznacza co najmniej jedno niepowodzenie, nawet gdy licznik
+      // kondycji jeszcze go nie zapisał.
+      const streak=Math.max(1,Number(health.fail_streak||0));
+      const entry={...base,fail_streak:streak};
+      if(streak<networkFailAlert){
+        return {kind:'warning',entry:{...entry,error:`${clean(parsed.error)} — przejściowe niepowodzenie odczytu (${streak} z ${networkFailAlert} przed eskalacją do błędu)`}};
+      }
+      return {kind:'error',entry:{...entry,error:`${clean(parsed.error)} — ${streak} nieudane odczyty z rzędu, źródło wymaga sprawdzenia`}};
+    }
+    return {kind:'error',entry:{...base,error:clean(parsed.error)}};
+  }
 
   if(isConfirmedEmpty(parsed)) return {kind:'ok',entry:null};
 
@@ -668,5 +730,6 @@ export {
   parseSwJadwigaPogrzebowe,parseSwJadwigaPogrzeboweHtml,parseGenericHtml,parseSource,
   buildMatchHaystack,rowMatchesPhrases,isIntentionLikeSource,isIntentionLikeRow,isEligibleDeathRow,
   mergeRequiredSources,mergeDuplicateRows,dedupeKeyForRow,resolveJobOutcome,buildFallbackSummaryForHelena,isMeaningfulRow,
-  isBlockedByAntiBot,isConfirmedEmpty,daysBetween,classifySourceOutcome,zckConfirmsNoFunerals
+  isBlockedByAntiBot,isConfirmedEmpty,isTransientNetworkFailure,daysBetween,classifySourceOutcome,zckConfirmsNoFunerals,
+  fetchDetailRows,DETAIL_FETCH_BUDGET_MS
 };

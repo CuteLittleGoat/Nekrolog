@@ -17,6 +17,7 @@ import {
   isMeaningfulRow,
   isBlockedByAntiBot,
   isConfirmedEmpty,
+  isTransientNetworkFailure,
   classifySourceOutcome
 } from './nekrolog_core.mjs';
 
@@ -36,6 +37,10 @@ const EMPTY_STREAK_ALERT = 3;
 // przejściową, a nie trwałą utratę źródła — po tym czasie stan wymaga decyzji:
 // albo źródło wraca, albo należy je wyłączyć (enabled: false).
 const BLOCK_TOLERANCE_DAYS = 14;
+// Po ilu kolejnych nieudanych odczytach sieciowych ostrzeżenie staje się błędem.
+// Dwa przebiegi dziennie => próg 2 daje około pół doby tolerancji: chwilowa awaria
+// sieci przechodzi bez degradacji statusu, trwała utrata źródła nie.
+const NETWORK_FAIL_ALERT = 2;
 
 async function readJson(path, fallback) { try { return JSON.parse(await readFile(path, 'utf8')); } catch { return fallback; } }
 async function writeJson(path, data) { await writeFile(path, JSON.stringify(data, null, 2) + '\n', 'utf8'); }
@@ -61,6 +66,11 @@ function updateSourceHealth(previous, source, parsed) {
   const confirmedEmpty = isConfirmedEmpty(parsed);
   const streak = (rows > 0 || confirmedEmpty) ? 0 : Number(prev.empty_streak || 0) + 1;
   const blocked = isBlockedByAntiBot(parsed);
+  // Licznik kolejnych niepowodzeń sieciowych. Zeruje się przy każdym odczycie, który
+  // nie był awarią sieci — także przy błędzie innej natury, żeby seria nie zlepiała
+  // przeterminowania połączenia z regresją parsera w jeden narastający ciąg.
+  const networkFailure = isTransientNetworkFailure(parsed);
+  const failStreak = networkFailure ? Number(prev.fail_streak || 0) + 1 : 0;
   return {
     source_id: source.id,
     source_name: source.name,
@@ -68,6 +78,7 @@ function updateSourceHealth(previous, source, parsed) {
     last_run: nowISO(),
     last_nonempty_run: rows > 0 ? nowISO() : (prev.last_nonempty_run || null),
     empty_streak: streak,
+    fail_streak: failStreak,
     http_ok: httpOk,
     known_empty: source.known_empty === true,
     last_confirmed_empty_run: confirmedEmpty ? nowISO() : (prev.last_confirmed_empty_run || null),
@@ -129,6 +140,7 @@ async function main() {
         ...(parsed.diagnostics || {}),
         rows: (parsed.rows || []).length,
         empty_streak: health.empty_streak,
+        fail_streak: health.fail_streak,
         blocked_since: health.blocked_since,
         error: parsed.error || null
       });
@@ -145,7 +157,8 @@ async function main() {
         parsed,
         health,
         toleranceDays: BLOCK_TOLERANCE_DAYS,
-        emptyStreakAlert: EMPTY_STREAK_ALERT
+        emptyStreakAlert: EMPTY_STREAK_ALERT,
+        networkFailAlert: NETWORK_FAIL_ALERT
       });
       if (classified.kind === 'error') sourceErrors.push(classified.entry);
       else if (classified.kind === 'warning') sourceWarnings.push(classified.entry);
