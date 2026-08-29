@@ -1,12 +1,5 @@
 {
-  "generated_at": "2026-08-28T19:24:38.620Z",
-  "errors": [
-    {
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrologi/",
-      "error": "fetch: The operation was aborted.; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://www.gabriel24.pl/nekrologi/ curl: (28) Connection timed out after 20002 milliseconds (prób: 3)"
-    }
-  ],
+  "generated_at": "2026-08-29T13:05:56.807Z",
+  "errors": [],
   "warnings": []
 }
