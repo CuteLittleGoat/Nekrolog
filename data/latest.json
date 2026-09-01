@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-01T12:29:26.725Z",
-  "updated_at": "2026-09-01T12:29:26.725Z",
+  "generated_at": "2026-09-01T21:40:27.710Z",
+  "updated_at": "2026-09-01T21:40:27.710Z",
   "window": {
     "today": "2026-09-01",
     "death_from": "2026-08-25",
@@ -49,6 +49,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan--Trzoslo-N7PWDU8Q4XVW",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.08.2026 przeżywszy 68 lat zmarł | Data pogrzebu 03.09.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Kazimierz Wójcik",
+      "date_death": "2026-08-31",
+      "date_funeral": "2026-09-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Wojcik-JT195I1J960Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 31.08.2026 przeżywszy 72 lata zmarł | Data pogrzebu 03.09.2026 13:40",
       "priority_hit": false
     },
     {
@@ -2263,6 +2277,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Kazimierz Wójcik",
+      "date_death": "2026-08-31",
+      "date_funeral": "2026-09-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Wojcik-JT195I1J960Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 31.08.2026 przeżywszy 72 lata zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Zofia Dudek",
       "date_death": "2026-08-28",
       "date_funeral": "2026-09-03",
@@ -2826,6 +2854,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Kazimierz Wójcik",
+      "date_death": "2026-08-31",
+      "date_funeral": "2026-09-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Wojcik-JT195I1J960Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 31.08.2026 przeżywszy 72 lata zmarł | Data pogrzebu 03.09.2026 13:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Jan Trzósło",
       "date_death": "2026-08-30",
       "date_funeral": "2026-09-03",
@@ -3086,6 +3128,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan--Trzoslo-N7PWDU8Q4XVW",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.08.2026 przeżywszy 68 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Kazimierz Wójcik",
+      "date_death": "2026-08-31",
+      "date_funeral": "2026-09-03",
+      "time_funeral": "13:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Wojcik-JT195I1J960Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 31.08.2026 przeżywszy 72 lata zmarł",
       "priority_hit": false
     },
     {
@@ -3494,9 +3550,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 60,
+      "accepted_rows": 62,
       "parser_status": "ok",
-      "rows": 60,
+      "rows": 62,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
