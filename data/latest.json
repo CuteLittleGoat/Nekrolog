@@ -1,14 +1,42 @@
 {
-  "generated_at": "2026-08-31T23:09:54.237Z",
-  "updated_at": "2026-08-31T23:09:54.237Z",
+  "generated_at": "2026-09-01T12:29:26.725Z",
+  "updated_at": "2026-09-01T12:29:26.725Z",
   "window": {
-    "today": "2026-08-31",
-    "death_from": "2026-08-24",
-    "death_to": "2026-08-31",
-    "funeral_from": "2026-08-31",
-    "funeral_to": "2026-09-07"
+    "today": "2026-09-01",
+    "death_from": "2026-08-25",
+    "death_to": "2026-09-01",
+    "funeral_from": "2026-09-01",
+    "funeral_to": "2026-09-08"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Krzysztof Wójcik",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krzysztof-Wojcik-N3LUBCT3995H",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 52 lata zmarł | Data pogrzebu 04.09.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Andrzej Wijas",
+      "date_death": "2026-03-14",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Wijas-RZZZYCO2ZDFM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.03.2026 przeżywszy 41 lat zmarł | Data pogrzebu 04.09.2026 09:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Jan Trzósło",
@@ -571,20 +599,6 @@
     },
     {
       "kind": "death",
-      "name": "Andrzej Szczelina",
-      "date_death": "2026-08-26",
-      "date_funeral": "2026-08-31",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANDRZEJ SZCZELINA | Pogrzeb dziś: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Wanda Gaweł",
       "date_death": "2026-08-24",
       "date_funeral": "2026-09-01",
@@ -594,7 +608,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wanda-gawel/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WANDA GAWEŁ | Pogrzeb jutro: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WANDA GAWEŁ | Pogrzeb dziś: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -608,7 +622,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/eugeniusz-stanislaw-czernecki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. EUGENIUSZ STANISŁAW CZERNECKI | Pogrzeb jutro: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. EUGENIUSZ STANISŁAW CZERNECKI | Pogrzeb dziś: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Andrzej Szczelina",
+      "date_death": "2026-08-26",
+      "date_funeral": "2026-08-31",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ANDRZEJ SZCZELINA | Pogrzeb wczoraj: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2193,6 +2221,34 @@
     },
     {
       "kind": "funeral",
+      "name": "Krzysztof Wójcik",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krzysztof-Wojcik-N3LUBCT3995H",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 52 lata zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Andrzej Wijas",
+      "date_death": "2026-03-14",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Wijas-RZZZYCO2ZDFM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.03.2026 przeżywszy 41 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Jan Trzósło",
       "date_death": "2026-08-30",
       "date_funeral": "2026-09-03",
@@ -2784,6 +2840,20 @@
     },
     {
       "kind": "death",
+      "name": "Krzysztof Wójcik",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krzysztof-Wojcik-N3LUBCT3995H",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 52 lata zmarł | Data pogrzebu 04.09.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Zofia Dudek",
       "date_death": "2026-08-28",
       "date_funeral": "2026-09-03",
@@ -2812,20 +2882,6 @@
     },
     {
       "kind": "death",
-      "name": "Andrzej Szczelina",
-      "date_death": "2026-08-26",
-      "date_funeral": "2026-08-31",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANDRZEJ SZCZELINA | Pogrzeb dziś: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Eugeniusz Stanisław Czernecki",
       "date_death": "2026-08-26",
       "date_funeral": "2026-09-01",
@@ -2835,39 +2891,25 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/eugeniusz-stanislaw-czernecki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. EUGENIUSZ STANISŁAW CZERNECKI | Pogrzeb jutro: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. EUGENIUSZ STANISŁAW CZERNECKI | Pogrzeb dziś: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
       "kind": "death",
-      "name": "Wanda Gaweł",
-      "date_death": "2026-08-24",
-      "date_funeral": "2026-09-01",
+      "name": "Andrzej Szczelina",
+      "date_death": "2026-08-26",
+      "date_funeral": "2026-08-31",
       "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICKI",
+      "place": "CMENTARZ RAKOWICE",
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/wanda-gawel/",
+      "url": "https://karawan.pl/nekrolog/andrzej-szczelina/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WANDA GAWEŁ | Pogrzeb jutro: 01.09.2026 (Wtorek) | Msza Święta: 01.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ANDRZEJ SZCZELINA | Pogrzeb wczoraj: 31.08.2026 (Poniedziałek) | Msza Święta: 31.08.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Maria Ochmańska",
-      "date_death": "2026-08-27",
-      "date_funeral": "2026-08-31",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ochmanska-2C0W37UWKJAY",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 27.08.2026 przeżywszy 81 lat zmarła",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Teresa Olekszyk",
@@ -3044,6 +3086,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan--Trzoslo-N7PWDU8Q4XVW",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.08.2026 przeżywszy 68 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Andrzej Wijas",
+      "date_death": "2026-03-14",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "09:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Andrzej-Wijas-RZZZYCO2ZDFM",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 14.03.2026 przeżywszy 41 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Krzysztof Wójcik",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krzysztof-Wojcik-N3LUBCT3995H",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 52 lata zmarł",
       "priority_hit": false
     }
   ],
@@ -3424,9 +3494,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 56,
+      "accepted_rows": 60,
       "parser_status": "ok",
-      "rows": 56,
+      "rows": 60,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
