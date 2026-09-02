@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-02T12:02:28.133Z",
-  "updated_at": "2026-09-02T12:02:28.133Z",
+  "generated_at": "2026-09-02T21:40:10.003Z",
+  "updated_at": "2026-09-02T21:40:10.003Z",
   "window": {
     "today": "2026-09-02",
     "death_from": "2026-08-26",
@@ -9,6 +9,20 @@
     "funeral_to": "2026-09-09"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Agnieszka Jasieńków",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Agnieszka-Jasienkow-LKD7NEVHW751",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 60 lat zmarła | Data pogrzebu 09.09.2026 12:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Halina Nowak",
@@ -2306,6 +2320,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Agnieszka Jasieńków",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Agnieszka-Jasienkow-LKD7NEVHW751",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 60 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Halina Nowak",
       "date_death": "2026-08-30",
       "date_funeral": "2026-09-04",
@@ -3037,6 +3065,20 @@
     },
     {
       "kind": "death",
+      "name": "Agnieszka Jasieńków",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Agnieszka-Jasienkow-LKD7NEVHW751",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 60 lat zmarła | Data pogrzebu 09.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Krzysztof Wójcik",
       "date_death": "2026-08-29",
       "date_funeral": "2026-09-04",
@@ -3382,6 +3424,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Nowak-NSZY9KNNOS94",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 30.08.2026 przeżywszy 73 lata zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Agnieszka Jasieńków",
+      "date_death": "2026-08-29",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Agnieszka-Jasienkow-LKD7NEVHW751",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 29.08.2026 przeżywszy 60 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -3762,9 +3818,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 66,
+      "accepted_rows": 68,
       "parser_status": "ok",
-      "rows": 66,
+      "rows": 68,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
