@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-04T12:03:47.028Z",
-  "updated_at": "2026-09-04T12:03:47.028Z",
+  "generated_at": "2026-09-04T21:19:17.971Z",
+  "updated_at": "2026-09-04T21:19:17.971Z",
   "window": {
     "today": "2026-09-04",
     "death_from": "2026-08-28",
@@ -9,6 +9,20 @@
     "funeral_to": "2026-09-11"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Jan Pieniążek",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-11",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Pieniazek-HEBGD7RSQH8Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 73 lat zmarł | Data pogrzebu 11.09.2026 12:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Agnieszka Jasieńków",
@@ -35,6 +49,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Domoslawski-6NEFV2R3WWH6",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 02.09.2026 przeżywszy 91 lat zmarł | Data pogrzebu 09.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lucjan Ostrowski",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucjan-Ostrowski-CSG5IHOY5166",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 90 lat zmarł | Data pogrzebu 09.09.2026 11:00",
       "priority_hit": false
     },
     {
@@ -2750,6 +2778,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Jan Pieniążek",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-11",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Pieniazek-HEBGD7RSQH8Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 73 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Agnieszka Jasieńków",
       "date_death": "2026-08-29",
       "date_funeral": "2026-09-09",
@@ -2774,6 +2816,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Domoslawski-6NEFV2R3WWH6",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 02.09.2026 przeżywszy 91 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Lucjan Ostrowski",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucjan-Ostrowski-CSG5IHOY5166",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 90 lat zmarł",
       "priority_hit": false
     },
     {
@@ -3437,6 +3493,34 @@
     }
   ],
   "recent_deaths": [
+    {
+      "kind": "death",
+      "name": "Jan Pieniążek",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-11",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Pieniazek-HEBGD7RSQH8Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 73 lat zmarł | Data pogrzebu 11.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lucjan Ostrowski",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucjan-Ostrowski-CSG5IHOY5166",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 90 lat zmarł | Data pogrzebu 09.09.2026 11:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Zofia Tekieli",
@@ -4358,6 +4442,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Lucjan Ostrowski",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "11:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Lucjan-Ostrowski-CSG5IHOY5166",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 90 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Agnieszka Jasieńków",
       "date_death": "2026-08-29",
       "date_funeral": "2026-09-09",
@@ -4382,6 +4480,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Domoslawski-6NEFV2R3WWH6",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 02.09.2026 przeżywszy 91 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Jan Pieniążek",
+      "date_death": "2026-09-03",
+      "date_funeral": "2026-09-11",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Pieniazek-HEBGD7RSQH8Q",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 03.09.2026 przeżywszy 73 lat zmarł",
       "priority_hit": false
     }
   ],
@@ -4762,9 +4874,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 72,
+      "accepted_rows": 76,
       "parser_status": "ok",
-      "rows": 72,
+      "rows": 76,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
