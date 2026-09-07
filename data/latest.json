@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-07T13:25:14.488Z",
-  "updated_at": "2026-09-07T13:25:14.488Z",
+  "generated_at": "2026-09-07T21:56:38.440Z",
+  "updated_at": "2026-09-07T21:56:38.440Z",
   "window": {
     "today": "2026-09-07",
     "death_from": "2026-08-31",
@@ -35,6 +35,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bogumila-Kleczek-PJYU5ZFTHO37",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 06.09.2026 przeżywszy 91 lat zmarła | Data pogrzebu 11.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Edwarda Myśliwczak",
+      "date_death": "2026-09-06",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edwarda-Mysliwczak-ZE9ZQEZ5FFG8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.09.2026 przeżywszy 92 lat zmarła | Data pogrzebu 09.09.2026 13:00",
       "priority_hit": false
     },
     {
@@ -2511,6 +2525,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Edwarda Myśliwczak",
+      "date_death": "2026-09-06",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edwarda-Mysliwczak-ZE9ZQEZ5FFG8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.09.2026 przeżywszy 92 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Agnieszka Jasieńków",
       "date_death": "2026-08-29",
       "date_funeral": "2026-09-09",
@@ -3200,6 +3228,20 @@
     },
     {
       "kind": "death",
+      "name": "Edwarda Myśliwczak",
+      "date_death": "2026-09-06",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edwarda-Mysliwczak-ZE9ZQEZ5FFG8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.09.2026 przeżywszy 92 lat zmarła | Data pogrzebu 09.09.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Jan Pieniążek",
       "date_death": "2026-09-03",
       "date_funeral": "2026-09-11",
@@ -3754,6 +3796,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Edwarda Myśliwczak",
+      "date_death": "2026-09-06",
+      "date_funeral": "2026-09-09",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edwarda-Mysliwczak-ZE9ZQEZ5FFG8",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 06.09.2026 przeżywszy 92 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Jan Pieniążek",
       "date_death": "2026-09-03",
       "date_funeral": "2026-09-11",
@@ -4158,9 +4214,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 74,
+      "accepted_rows": 76,
       "parser_status": "ok",
-      "rows": 74,
+      "rows": 76,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
