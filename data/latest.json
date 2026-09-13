@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-12T21:20:31.242Z",
-  "updated_at": "2026-09-12T21:20:31.242Z",
+  "generated_at": "2026-09-13T12:39:01.875Z",
+  "updated_at": "2026-09-13T12:39:01.875Z",
   "window": {
-    "today": "2026-09-12",
-    "death_from": "2026-09-05",
-    "death_to": "2026-09-12",
-    "funeral_from": "2026-09-12",
-    "funeral_to": "2026-09-19"
+    "today": "2026-09-13",
+    "death_from": "2026-09-06",
+    "death_to": "2026-09-13",
+    "funeral_from": "2026-09-13",
+    "funeral_to": "2026-09-20"
   },
   "deaths": [
     {
@@ -515,20 +515,6 @@
     },
     {
       "kind": "death",
-      "name": "Danuta Galus",
-      "date_death": "2026-07-26",
-      "date_funeral": "2026-08-17",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Galus-YXV3DUBZSS9L",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 26.07.2026 przeżywszy 69 lat zmarła | Data pogrzebu 17.08.2026 12:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Krystyna Flaszyńska",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-28",
@@ -706,7 +692,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/alicja-ratusz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ALICJA RATUSZ | Pogrzeb wczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ALICJA RATUSZ | Pogrzeb przedwczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -720,7 +706,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-labuda/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA ŁABUDA | Pogrzeb wczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA ŁABUDA | Pogrzeb przedwczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -734,35 +720,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/henryk-tatarczuch/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. HENRYK TATARCZUCH | Pogrzeb wczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marian Sobótka",
-      "date_death": "2026-09-06",
-      "date_funeral": "2026-09-10",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marian-sobotka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIAN SOBÓTKA | Pogrzeb przedwczoraj: 10.09.2026 (Czwartek) | Msza Święta: 10.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Stanisław Brańka",
-      "date_death": "2026-08-28",
-      "date_funeral": "2026-09-10",
-      "time_funeral": "12:20",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/stanislaw-branka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STANISŁAW BRAŃKA | Pogrzeb przedwczoraj: 10.09.2026 (Czwartek) | Msza Święta: 10.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. HENRYK TATARCZUCH | Pogrzeb przedwczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2698,20 +2656,6 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 14.08.2026 przeżywszy 93 lat zmarła",
       "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Danuta Galus",
-      "date_death": "2026-07-26",
-      "date_funeral": "2026-08-17",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Danuta-Galus-YXV3DUBZSS9L",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 26.07.2026 przeżywszy 69 lat zmarła",
-      "priority_hit": false
     }
   ],
   "intentions": [],
@@ -2979,7 +2923,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/henryk-tatarczuch/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. HENRYK TATARCZUCH | Pogrzeb wczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. HENRYK TATARCZUCH | Pogrzeb przedwczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3036,48 +2980,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edwarda-Mysliwczak-ZE9ZQEZ5FFG8",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 06.09.2026 przeżywszy 92 lat zmarła | Data pogrzebu 09.09.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marian Sobótka",
-      "date_death": "2026-09-06",
-      "date_funeral": "2026-09-10",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marian-sobotka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIAN SOBÓTKA | Pogrzeb przedwczoraj: 10.09.2026 (Czwartek) | Msza Święta: 10.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Janina Łabuda",
-      "date_death": "2026-09-05",
-      "date_funeral": "2026-09-11",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/janina-labuda/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA ŁABUDA | Pogrzeb wczoraj: 11.09.2026 (Piątek) | Msza Święta: 11.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Ewa Marcjan",
-      "date_death": "2026-09-05",
-      "date_funeral": null,
-      "time_funeral": null,
-      "place": "Podwawelskie – Nekrologi",
-      "source_id": "podwawelskie_nekrologi",
-      "source_name": "Podwawelskie – Nekrologi",
-      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi--str-1.html?str=1",
-      "source_url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
-      "note": "ur.: 1945-10-02; zm.: 2026-09-05; Podwawelskie",
       "priority_hit": false
     }
   ],
@@ -3502,9 +3404,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 74,
+      "accepted_rows": 72,
       "parser_status": "ok",
-      "rows": 74,
+      "rows": 72,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3531,12 +3433,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 5,
-      "visited_links": 5,
+      "candidate_links": 3,
+      "visited_links": 3,
       "partial": false,
-      "accepted_rows": 5,
+      "accepted_rows": 3,
       "parser_status": "ok",
-      "rows": 5,
+      "rows": 3,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
