@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-17T22:00:46.647Z",
-  "updated_at": "2026-09-17T22:00:46.647Z",
+  "generated_at": "2026-09-18T12:09:43.509Z",
+  "updated_at": "2026-09-18T12:09:43.509Z",
   "window": {
-    "today": "2026-09-17",
-    "death_from": "2026-09-10",
-    "death_to": "2026-09-17",
-    "funeral_from": "2026-09-17",
-    "funeral_to": "2026-09-24"
+    "today": "2026-09-18",
+    "death_from": "2026-09-11",
+    "death_to": "2026-09-18",
+    "funeral_from": "2026-09-18",
+    "funeral_to": "2026-09-25"
   },
   "deaths": [
     {
@@ -21,6 +21,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bogdan-Krupa-BRI1S1YKQH9P",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 13.09.2026 przeżywszy 80 lat zmarł | Data pogrzebu 23.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Janina Zawicka-Tylec",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 17.09.2026 przeżywszy 91 lat zmarła | Data pogrzebu 23.09.2026 11:40",
       "priority_hit": false
     },
     {
@@ -697,20 +711,6 @@
     },
     {
       "kind": "death",
-      "name": "Zuzanna Misiorek",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zuzanna-misiorek/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZUZANNA MISIOREK | Pogrzeb dziś: 17.09.2026 (Czwartek) | Msza Święta: 17.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Wacław Gąssowski",
       "date_death": "2026-09-10",
       "date_funeral": "2026-09-18",
@@ -720,7 +720,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/waclaw-gassowski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WACŁAW GĄSSOWSKI | Pogrzeb jutro: 18.09.2026 (Piątek) | Msza Święta: 18.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WACŁAW GĄSSOWSKI | Pogrzeb dziś: 18.09.2026 (Piątek) | Msza Święta: 18.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Zuzanna Misiorek",
+      "date_death": "2026-09-10",
+      "date_funeral": "2026-09-17",
+      "time_funeral": "13:40",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/zuzanna-misiorek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ZUZANNA MISIOREK | Pogrzeb wczoraj: 17.09.2026 (Czwartek) | Msza Święta: 17.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -734,7 +748,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krystyna-skwarczynska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA SKWARCZYŃSKA | Pogrzeb wczoraj: 16.09.2026 (Środa) | Msza Święta: 16.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. KRYSTYNA SKWARCZYŃSKA | Pogrzeb przedwczoraj: 16.09.2026 (Środa) | Msza Święta: 16.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -748,35 +762,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krystyna-tolewska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA TOLEWSKA | Pogrzeb wczoraj: 16.09.2026 (Środa) | Msza Święta: 16.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zbigniew Wąsik",
-      "date_death": "2026-09-08",
-      "date_funeral": "2026-09-15",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zbigniew-wasik/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW WĄSIK | Pogrzeb przedwczoraj: 15.09.2026 (Wtorek) | Msza Święta: 15.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Oleksiy Telega",
-      "date_death": "2026-09-09",
-      "date_funeral": "2026-09-15",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/oleksiy-telega/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. OLEKSIY TELEGA | Pogrzeb przedwczoraj: 15.09.2026 (Wtorek) | Msza Święta: 15.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. KRYSTYNA TOLEWSKA | Pogrzeb przedwczoraj: 16.09.2026 (Środa) | Msza Święta: 16.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2720,6 +2706,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Janina Zawicka-Tylec",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 17.09.2026 przeżywszy 91 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Waldemar Ślęzak",
       "date_death": "2026-09-13",
       "date_funeral": "2026-09-18",
@@ -3409,6 +3409,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Janina Zawicka-Tylec",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 17.09.2026 przeżywszy 91 lat zmarła | Data pogrzebu 23.09.2026 11:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Leszek Miernik",
       "date_death": "2026-09-15",
       "date_funeral": "2026-09-18",
@@ -3518,93 +3532,9 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 11.09.2026 przeżywszy 80 lat zmarł | Data pogrzebu 18.09.2026 11:00",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Janina Rydygier",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-14",
-      "time_funeral": "10:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Rydygier-X8O1VVLCCTXN",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 10.09.2026 przeżywszy 88 lat zmarła | Data pogrzebu 14.09.2026 10:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zuzanna Misiorek",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zuzanna-misiorek/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZUZANNA MISIOREK | Pogrzeb dziś: 17.09.2026 (Czwartek) | Msza Święta: 17.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Wacław Gąssowski",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-18",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/waclaw-gassowski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WACŁAW GĄSSOWSKI | Pogrzeb jutro: 18.09.2026 (Piątek) | Msza Święta: 18.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Krystyna Skwarczyńska",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-16",
-      "time_funeral": "12:20",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/krystyna-skwarczynska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA SKWARCZYŃSKA | Pogrzeb wczoraj: 16.09.2026 (Środa) | Msza Święta: 16.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "płk Jan Stolarek",
-      "date_death": "2026-09-12",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Stolarek-ZQPBELV8UMXN",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 12.09.2026 przeżywszy 94 lata zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Kazimierz Jarczyk",
-      "date_death": "2026-09-14",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Jarczyk-RJG28SN9QA2T",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 14.09.2026 przeżywszy 87 lat zmarł",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Adam Piskorz",
@@ -4158,6 +4088,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Janina Zawicka-Tylec",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-23",
+      "time_funeral": "11:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 17.09.2026 przeżywszy 91 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Bogdan Krupa",
       "date_death": "2026-09-13",
       "date_funeral": "2026-09-23",
@@ -4548,9 +4492,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 74,
+      "accepted_rows": 76,
       "parser_status": "ok",
-      "rows": 74,
+      "rows": 76,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -4577,12 +4521,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 6,
-      "visited_links": 6,
+      "candidate_links": 4,
+      "visited_links": 4,
       "partial": false,
-      "accepted_rows": 6,
+      "accepted_rows": 4,
       "parser_status": "ok",
-      "rows": 6,
+      "rows": 4,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
