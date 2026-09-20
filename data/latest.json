@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-19T21:22:48.785Z",
-  "updated_at": "2026-09-19T21:22:48.785Z",
+  "generated_at": "2026-09-20T12:10:57.353Z",
+  "updated_at": "2026-09-20T12:10:57.353Z",
   "window": {
-    "today": "2026-09-19",
-    "death_from": "2026-09-12",
-    "death_to": "2026-09-19",
-    "funeral_from": "2026-09-19",
-    "funeral_to": "2026-09-26"
+    "today": "2026-09-20",
+    "death_from": "2026-09-13",
+    "death_to": "2026-09-20",
+    "funeral_from": "2026-09-20",
+    "funeral_to": "2026-09-27"
   },
   "deaths": [
     {
@@ -501,20 +501,6 @@
     },
     {
       "kind": "death",
-      "name": "Tomasz Krupa",
-      "date_death": "2026-08-18",
-      "date_funeral": "2026-08-26",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tomasz-Krupa-EG9GGFDCG7GD",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 18.08.2026 przeżywszy 68 lat zmarł | Data pogrzebu 26.08.2026 11:40",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Maria Kotula",
       "date_death": "2026-08-19",
       "date_funeral": "2026-08-26",
@@ -539,20 +525,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edward-Poltorak-3VAA5QQTTXXP",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 20.08.2026 przeżywszy 75 lat zmarł | Data pogrzebu 26.08.2026 09:30",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Helena Salamon",
-      "date_death": "2026-08-17",
-      "date_funeral": "2026-08-24",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Salamon-MQU48AAIGZLE",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 17.08.2026 przeżywszy 93 lat zmarła | Data pogrzebu 24.08.2026 12:20",
       "priority_hit": false
     },
     {
@@ -734,21 +706,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/waclaw-gassowski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WACŁAW GĄSSOWSKI | Pogrzeb wczoraj: 18.09.2026 (Piątek) | Msza Święta: 18.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zuzanna Misiorek",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zuzanna-misiorek/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZUZANNA MISIOREK | Pogrzeb przedwczoraj: 17.09.2026 (Czwartek) | Msza Święta: 17.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WACŁAW GĄSSOWSKI | Pogrzeb przedwczoraj: 18.09.2026 (Piątek) | Msza Święta: 18.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2673,20 +2631,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Tomasz Krupa",
-      "date_death": "2026-08-18",
-      "date_funeral": "2026-08-26",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tomasz-Krupa-EG9GGFDCG7GD",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 18.08.2026 przeżywszy 68 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Maria Kotula",
       "date_death": "2026-08-19",
       "date_funeral": "2026-08-26",
@@ -2711,20 +2655,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Edward-Poltorak-3VAA5QQTTXXP",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 20.08.2026 przeżywszy 75 lat zmarł",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Helena Salamon",
-      "date_death": "2026-08-17",
-      "date_funeral": "2026-08-24",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Salamon-MQU48AAIGZLE",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 17.08.2026 przeżywszy 93 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -3050,20 +2980,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Waldemar-Slezak-R2VT6RHF8UZ4",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 13.09.2026 przeżywszy 73 lata zmarł | Data pogrzebu 18.09.2026 13:00",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "płk Jan Stolarek",
-      "date_death": "2026-09-12",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Stolarek-ZQPBELV8UMXN",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 12.09.2026 przeżywszy 94 lata zmarł | Data pogrzebu 17.09.2026 12:20",
       "priority_hit": false
     }
   ],
@@ -3516,9 +3432,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 78,
+      "accepted_rows": 74,
       "parser_status": "ok",
-      "rows": 78,
+      "rows": 74,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3545,12 +3461,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 2,
-      "visited_links": 2,
+      "candidate_links": 1,
+      "visited_links": 1,
       "partial": false,
-      "accepted_rows": 2,
+      "accepted_rows": 1,
       "parser_status": "ok",
-      "rows": 2,
+      "rows": 1,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
