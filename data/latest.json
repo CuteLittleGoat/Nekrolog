@@ -1,14 +1,28 @@
 {
-  "generated_at": "2026-09-21T22:32:34.803Z",
-  "updated_at": "2026-09-21T22:32:34.803Z",
+  "generated_at": "2026-09-22T12:30:46.949Z",
+  "updated_at": "2026-09-22T12:30:46.949Z",
   "window": {
-    "today": "2026-09-21",
-    "death_from": "2026-09-14",
-    "death_to": "2026-09-21",
-    "funeral_from": "2026-09-21",
-    "funeral_to": "2026-09-28"
+    "today": "2026-09-22",
+    "death_from": "2026-09-15",
+    "death_to": "2026-09-22",
+    "funeral_from": "2026-09-22",
+    "funeral_to": "2026-09-29"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Stanisława Grzyb",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Grzyb-FTYYKIEZ9BBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.09.2026 przeżywszy 98 lat zmarła | Data pogrzebu 25.09.2026 13:00",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Krzysztof Szczepański",
@@ -25,6 +39,20 @@
     },
     {
       "kind": "death",
+      "name": "Anna Kołodziejczyk z domu Kapłońska",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Kolodziejczyk-PP69JVDP17J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.09.2026 przeżywszy 95 lat zmarła | Data pogrzebu 24.09.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Adam Wawrzynkiewicz",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -35,6 +63,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam-Wawrzynkiewicz-2WLUSBSRTEOV",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 17.09.2026 przeżywszy 86 lat zmarł | Data pogrzebu 24.09.2026 11:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jacek Konopelski",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jacek-Konopelski-GDDXIKKJJJN5",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 20.09.2026 przeżywszy 71 lat zmarł | Data pogrzebu 24.09.2026 10:00",
       "priority_hit": false
     },
     {
@@ -678,7 +720,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-kaszuba-debska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -692,7 +734,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/tadeusz-lagosz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ ŁAGOSZ | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. TADEUSZ ŁAGOSZ | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -706,7 +748,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/inz-kazimierz-gzik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. INŻ. KAZIMIERZ GZIK | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. INŻ. KAZIMIERZ GZIK | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -720,7 +762,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stefan-biernat/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFAN BIERNAT | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STEFAN BIERNAT | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lucyna Paleta Solarz",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-23",
+      "time_funeral": null,
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/lucyna-paleta-solarz/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Pogrzeb jutro: 23.09.2026 (Środa)",
       "priority_hit": false
     },
     {
@@ -2380,6 +2436,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Stanisława Grzyb",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Grzyb-FTYYKIEZ9BBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.09.2026 przeżywszy 98 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Krzysztof Szczepański",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -2394,6 +2464,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Anna Kołodziejczyk z domu Kapłońska",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Kolodziejczyk-PP69JVDP17J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.09.2026 przeżywszy 95 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Adam Wawrzynkiewicz",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -2404,6 +2488,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam-Wawrzynkiewicz-2WLUSBSRTEOV",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 17.09.2026 przeżywszy 86 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Jacek Konopelski",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jacek-Konopelski-GDDXIKKJJJN5",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 20.09.2026 przeżywszy 71 lat zmarł",
       "priority_hit": false
     },
     {
@@ -3055,6 +3153,62 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Jacek Konopelski",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jacek-Konopelski-GDDXIKKJJJN5",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 20.09.2026 przeżywszy 71 lat zmarł | Data pogrzebu 24.09.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Stanisława Grzyb",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Grzyb-FTYYKIEZ9BBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.09.2026 przeżywszy 98 lat zmarła | Data pogrzebu 25.09.2026 13:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Anna Kołodziejczyk z domu Kapłońska",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Kolodziejczyk-PP69JVDP17J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.09.2026 przeżywszy 95 lat zmarła | Data pogrzebu 24.09.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lucyna Paleta Solarz",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-23",
+      "time_funeral": null,
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/lucyna-paleta-solarz/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Pogrzeb jutro: 23.09.2026 (Środa)",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Krzysztof Szczepański",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -3120,7 +3274,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-kaszuba-debska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -3134,7 +3288,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stefan-biernat/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFAN BIERNAT | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STEFAN BIERNAT | Pogrzeb dziś: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3177,34 +3331,6 @@
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/adam-gruszkowski",
       "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
       "note": "Zgłoszenie mszy pogrzebowej z 2026-09-15 – parafia św. Jadwigi Królowej",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Kazimierz Jarczyk",
-      "date_death": "2026-09-14",
-      "date_funeral": "2026-09-17",
-      "time_funeral": "12:20",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Jarczyk-RJG28SN9QA2T",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 14.09.2026 przeżywszy 87 lat zmarł | Data pogrzebu 17.09.2026 12:20",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Inż. Kazimierz Gzik",
-      "date_death": "2026-09-14",
-      "date_funeral": "2026-09-22",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/inz-kazimierz-gzik/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. INŻ. KAZIMIERZ GZIK | Pogrzeb jutro: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -3478,6 +3604,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Jacek Konopelski",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "10:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jacek-Konopelski-GDDXIKKJJJN5",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 20.09.2026 przeżywszy 71 lat zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Adam Wawrzynkiewicz",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -3492,6 +3632,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Anna Kołodziejczyk z domu Kapłońska",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-24",
+      "time_funeral": "12:20",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Anna-Kolodziejczyk-PP69JVDP17J7",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 18.09.2026 przeżywszy 95 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Krzysztof Szczepański",
       "date_death": "2026-09-17",
       "date_funeral": "2026-09-24",
@@ -3502,6 +3656,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krzysztof-Szczepanski-R21Z2L5IIY9Y",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 17.09.2026 przeżywszy 72 lata zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Stanisława Grzyb",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Grzyb-FTYYKIEZ9BBI",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 19.09.2026 przeżywszy 98 lat zmarła",
       "priority_hit": false
     }
   ],
@@ -3882,9 +4050,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 70,
+      "accepted_rows": 76,
       "parser_status": "ok",
-      "rows": 70,
+      "rows": 76,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3911,12 +4079,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 4,
-      "visited_links": 4,
+      "candidate_links": 5,
+      "visited_links": 5,
       "partial": false,
-      "accepted_rows": 4,
+      "accepted_rows": 5,
       "parser_status": "ok",
-      "rows": 4,
+      "rows": 5,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
