@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-23T22:09:27.366Z",
-  "updated_at": "2026-09-23T22:09:27.366Z",
+  "generated_at": "2026-09-24T12:39:26.088Z",
+  "updated_at": "2026-09-24T12:39:26.088Z",
   "window": {
-    "today": "2026-09-23",
-    "death_from": "2026-09-16",
-    "death_to": "2026-09-23",
-    "funeral_from": "2026-09-23",
-    "funeral_to": "2026-09-30"
+    "today": "2026-09-24",
+    "death_from": "2026-09-17",
+    "death_to": "2026-09-24",
+    "funeral_from": "2026-09-24",
+    "funeral_to": "2026-10-01"
   },
   "deaths": [
     {
@@ -21,6 +21,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Skotniczny-KH7Y8JNHRKO5",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 18.09.2026 przeżywszy 80 lat zmarł | Data pogrzebu 29.09.2026 12:20",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Irena Jeziorek",
+      "date_death": "2026-09-22",
+      "date_funeral": "2026-09-29",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.09.2026 przeżywszy 84 lat zmarła | Data pogrzebu 29.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Julian Kaleta",
+      "date_death": "2026-09-23",
+      "date_funeral": "2026-09-28",
+      "time_funeral": "09:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.09.2026 przeżywszy 72 lata zmarł | Data pogrzebu 28.09.2026 09:40",
       "priority_hit": false
     },
     {
@@ -725,20 +753,6 @@
     },
     {
       "kind": "death",
-      "name": "Lucyna Paleta Solarz",
-      "date_death": "2026-09-18",
-      "date_funeral": "2026-09-23",
-      "time_funeral": null,
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/lucyna-paleta-solarz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb dziś: 23.09.2026 (Środa)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Mieczysław Kołodziej",
       "date_death": "2026-09-19",
       "date_funeral": "2026-09-24",
@@ -748,7 +762,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/mieczyslaw-kolodziej/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb jutro: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb dziś: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -762,7 +776,77 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/barbara-czernecka/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA CZERNECKA | Pogrzeb jutro: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. BARBARA CZERNECKA | Pogrzeb dziś: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Tadeusz Franaszek",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "12:20",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/tadeusz-franaszek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. TADEUSZ FRANASZEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Wojciech Skrzycki",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wojciech-skrzycki/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Adam Wyrobek",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/adam-wyrobek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ADAM WYROBEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Stanisław Steczek",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ BATOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/stanislaw-steczek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. STANISŁAW STECZEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA BATOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Lucyna Paleta Solarz",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-23",
+      "time_funeral": null,
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/lucyna-paleta-solarz/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Pogrzeb wczoraj: 23.09.2026 (Środa)",
       "priority_hit": false
     },
     {
@@ -776,7 +860,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-kaszuba-debska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb przedwczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -790,7 +874,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/tadeusz-lagosz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ ŁAGOSZ | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. TADEUSZ ŁAGOSZ | Pogrzeb przedwczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -804,7 +888,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/inz-kazimierz-gzik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. INŻ. KAZIMIERZ GZIK | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. INŻ. KAZIMIERZ GZIK | Pogrzeb przedwczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -818,7 +902,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stefan-biernat/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFAN BIERNAT | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STEFAN BIERNAT | Pogrzeb przedwczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2567,6 +2651,34 @@
     },
     {
       "kind": "funeral",
+      "name": "Irena Jeziorek",
+      "date_death": "2026-09-22",
+      "date_funeral": "2026-09-29",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.09.2026 przeżywszy 84 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Julian Kaleta",
+      "date_death": "2026-09-23",
+      "date_funeral": "2026-09-28",
+      "time_funeral": "09:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.09.2026 przeżywszy 72 lata zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stanisława Grzyb",
       "date_death": "2026-09-19",
       "date_funeral": "2026-09-25",
@@ -3284,6 +3396,20 @@
   "recent_deaths": [
     {
       "kind": "death",
+      "name": "Julian Kaleta",
+      "date_death": "2026-09-23",
+      "date_funeral": "2026-09-28",
+      "time_funeral": "09:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.09.2026 przeżywszy 72 lata zmarł | Data pogrzebu 28.09.2026 09:40",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Anna Czort",
       "date_death": "2026-09-23",
       "date_funeral": null,
@@ -3312,6 +3438,20 @@
     },
     {
       "kind": "death",
+      "name": "Irena Jeziorek",
+      "date_death": "2026-09-22",
+      "date_funeral": "2026-09-29",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.09.2026 przeżywszy 84 lat zmarła | Data pogrzebu 29.09.2026 12:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Jacek Konopelski",
       "date_death": "2026-09-20",
       "date_funeral": "2026-09-24",
@@ -3322,6 +3462,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jacek-Konopelski-GDDXIKKJJJN5",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 20.09.2026 przeżywszy 71 lat zmarł | Data pogrzebu 24.09.2026 10:00",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Wojciech Skrzycki",
+      "date_death": "2026-09-20",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/wojciech-skrzycki/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3349,7 +3503,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/mieczyslaw-kolodziej/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb jutro: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb dziś: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3363,7 +3517,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/barbara-czernecka/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA CZERNECKA | Pogrzeb jutro: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. BARBARA CZERNECKA | Pogrzeb dziś: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Adam Wyrobek",
+      "date_death": "2026-09-19",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/adam-wyrobek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. ADAM WYROBEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3396,6 +3564,20 @@
     },
     {
       "kind": "death",
+      "name": "Stanisław Steczek",
+      "date_death": "2026-09-18",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ BATOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/stanislaw-steczek/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. STANISŁAW STECZEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA BATOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Lucyna Paleta Solarz",
       "date_death": "2026-09-18",
       "date_funeral": "2026-09-23",
@@ -3405,7 +3587,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/lucyna-paleta-solarz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb dziś: 23.09.2026 (Środa)",
+      "note": "Pogrzeb wczoraj: 23.09.2026 (Środa)",
       "priority_hit": false
     },
     {
@@ -3466,62 +3648,20 @@
     },
     {
       "kind": "death",
-      "name": "Anna Kaszuba-Dębska",
-      "date_death": "2026-09-16",
-      "date_funeral": "2026-09-22",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ SALWATOR",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/anna-kaszuba-debska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KASZUBA-DĘBSKA | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 11:00 KAPLICA CMENTARNA NA SALWATORZE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Stefan Biernat",
-      "date_death": "2026-09-16",
-      "date_funeral": "2026-09-22",
-      "time_funeral": "13:40",
+      "name": "Tadeusz Franaszek",
+      "date_death": "2026-09-17",
+      "date_funeral": "2026-09-25",
+      "time_funeral": "12:20",
       "place": "CMENTARZ RAKOWICKI",
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/stefan-biernat/",
+      "url": "https://karawan.pl/nekrolog/tadeusz-franaszek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFAN BIERNAT | Pogrzeb wczoraj: 22.09.2026 (Wtorek) | Msza Święta: 22.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. TADEUSZ FRANASZEK | Pogrzeb jutro: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Janina Zawicka-Tylec",
-      "date_death": "2026-09-17",
-      "date_funeral": "2026-09-23",
-      "time_funeral": "11:40",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 17.09.2026 przeżywszy 91 lat zmarła",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Bogdan Krupa",
-      "date_death": "2026-09-13",
-      "date_funeral": "2026-09-23",
-      "time_funeral": "12:00",
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bogdan-Krupa-BRI1S1YKQH9P",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "W dniu 13.09.2026 przeżywszy 80 lat zmarł",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Ewa Daros",
@@ -3890,6 +4030,34 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislawa-Grzyb-FTYYKIEZ9BBI",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "W dniu 19.09.2026 przeżywszy 98 lat zmarła",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Julian Kaleta",
+      "date_death": "2026-09-23",
+      "date_funeral": "2026-09-28",
+      "time_funeral": "09:40",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 23.09.2026 przeżywszy 72 lata zmarł",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Irena Jeziorek",
+      "date_death": "2026-09-22",
+      "date_funeral": "2026-09-29",
+      "time_funeral": "12:00",
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "W dniu 22.09.2026 przeżywszy 84 lat zmarła",
       "priority_hit": false
     },
     {
@@ -4284,9 +4452,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 78,
+      "accepted_rows": 82,
       "parser_status": "ok",
-      "rows": 78,
+      "rows": 82,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -4313,12 +4481,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 7,
-      "visited_links": 7,
+      "candidate_links": 11,
+      "visited_links": 11,
       "partial": false,
-      "accepted_rows": 7,
+      "accepted_rows": 11,
       "parser_status": "ok",
-      "rows": 7,
+      "rows": 11,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
