@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-26T21:55:26.080Z",
-  "updated_at": "2026-09-26T21:55:26.080Z",
+  "generated_at": "2026-09-27T12:54:20.545Z",
+  "updated_at": "2026-09-27T12:54:20.545Z",
   "window": {
-    "today": "2026-09-26",
-    "death_from": "2026-09-19",
-    "death_to": "2026-09-26",
-    "funeral_from": "2026-09-26",
-    "funeral_to": "2026-10-03"
+    "today": "2026-09-27",
+    "death_from": "2026-09-20",
+    "death_to": "2026-09-27",
+    "funeral_from": "2026-09-27",
+    "funeral_to": "2026-10-04"
   },
   "deaths": [
     {
@@ -790,7 +790,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/pawel-korecki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PAWEŁ KORECKI | Pogrzeb pojutrze: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. PAWEŁ KORECKI | Pogrzeb jutro: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -804,7 +804,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-gora/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA GÓRA | Pogrzeb pojutrze: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA GÓRA | Pogrzeb jutro: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -818,7 +818,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/tadeusz-franaszek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ FRANASZEK | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. TADEUSZ FRANASZEK | Pogrzeb przedwczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -832,7 +832,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wojciech-skrzycki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb przedwczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -846,7 +846,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/adam-wyrobek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ADAM WYROBEK | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ADAM WYROBEK | Pogrzeb przedwczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -860,35 +860,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stanislaw-steczek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STANISŁAW STECZEK | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA BATOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Mieczysław Kołodziej",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-24",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/mieczyslaw-kolodziej/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb przedwczoraj: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Czernecka",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-24",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/barbara-czernecka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA CZERNECKA | Pogrzeb przedwczoraj: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STANISŁAW STECZEK | Pogrzeb przedwczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA BATOWICE",
       "priority_hit": false
     },
     {
@@ -3147,7 +3119,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/pawel-korecki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PAWEŁ KORECKI | Pogrzeb pojutrze: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. PAWEŁ KORECKI | Pogrzeb jutro: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3161,7 +3133,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-gora/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA GÓRA | Pogrzeb pojutrze: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA GÓRA | Pogrzeb jutro: 28.09.2026 (Poniedziałek) | Msza Święta: 28.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3203,49 +3175,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/wojciech-skrzycki/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Adam Wyrobek",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-25",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/adam-wyrobek/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ADAM WYROBEK | Pogrzeb wczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Mieczysław Kołodziej",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-24",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/mieczyslaw-kolodziej/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MIECZYSŁAW KOŁODZIEJ | Pogrzeb przedwczoraj: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Czernecka",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-24",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/barbara-czernecka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA CZERNECKA | Pogrzeb przedwczoraj: 24.09.2026 (Czwartek) | Msza Święta: 24.09.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WOJCIECH SKRZYCKI | Pogrzeb przedwczoraj: 25.09.2026 (Piątek) | Msza Święta: 25.09.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -3741,12 +3671,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 8,
-      "visited_links": 8,
+      "candidate_links": 6,
+      "visited_links": 6,
       "partial": false,
-      "accepted_rows": 8,
+      "accepted_rows": 6,
       "parser_status": "ok",
-      "rows": 8,
+      "rows": 6,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
