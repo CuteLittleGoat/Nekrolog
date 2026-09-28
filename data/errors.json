@@ -1,5 +1,13 @@
 {
-  "generated_at": "2026-09-28T15:12:49.179Z",
+  "generated_at": "2026-09-28T23:49:18.946Z",
   "errors": [],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "podwawelskie_nekrologi",
+      "source_name": "Podwawelskie – Nekrologi",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
