@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-02T13:44:12.809Z",
-  "errors": [],
-  "warnings": [
+  "generated_at": "2026-10-02T22:53:54.448Z",
+  "errors": [
     {
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "fail_streak": 1,
-      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: connect ECONNREFUSED 80.94.28.61:443 [ECONNREFUSED] (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+      "fail_streak": 2,
+      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: connect ECONNREFUSED 80.94.28.61:443 [ECONNREFUSED] (prób: 3) — 2 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
     }
-  ]
+  ],
+  "warnings": []
 }
