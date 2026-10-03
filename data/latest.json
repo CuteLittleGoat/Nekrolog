@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T12:23:58.815Z",
-  "updated_at": "2026-10-03T12:23:58.815Z",
+  "generated_at": "2026-10-03T22:04:43.705Z",
+  "updated_at": "2026-10-03T22:04:43.705Z",
   "window": {
     "today": "2026-10-03",
     "death_from": "2026-09-26",
@@ -544,20 +544,6 @@
     },
     {
       "kind": "death",
-      "name": "Zbigniew Domosławski",
-      "date_death": null,
-      "date_funeral": "2026-09-09",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Domoslawski-6NEFV2R3WWH6",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "| Data pogrzebu 09.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Lucjan Ostrowski",
       "date_death": null,
       "date_funeral": "2026-09-09",
@@ -572,34 +558,6 @@
     },
     {
       "kind": "death",
-      "name": "Marian Babiec",
-      "date_death": null,
-      "date_funeral": "2026-09-08",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Babiec-QSAXJV6MJYWN",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p | Data pogrzebu 08.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Helena Chudzik",
-      "date_death": null,
-      "date_funeral": "2026-09-07",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Chudzik-4ZFZ2ZWZZ9W8",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p | Data pogrzebu 07.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Zofia Tekieli",
       "date_death": null,
       "date_funeral": "2026-09-07",
@@ -610,20 +568,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Tekieli-26FX1URJNKMI",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "ŚP | Data pogrzebu 07.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jan Chałupski",
-      "date_death": null,
-      "date_funeral": "2026-09-07",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Chalupski-3RK61XHFCTCA",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "| Data pogrzebu 07.09.2026",
       "priority_hit": false
     },
     {
@@ -2493,20 +2437,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Zbigniew Domosławski",
-      "date_death": null,
-      "date_funeral": "2026-09-09",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Domoslawski-6NEFV2R3WWH6",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Lucjan Ostrowski",
       "date_death": null,
       "date_funeral": "2026-09-09",
@@ -2521,34 +2451,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Marian Babiec",
-      "date_death": null,
-      "date_funeral": "2026-09-08",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Marian-Babiec-QSAXJV6MJYWN",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Helena Chudzik",
-      "date_death": null,
-      "date_funeral": "2026-09-07",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Helena-Chudzik-4ZFZ2ZWZZ9W8",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Zofia Tekieli",
       "date_death": null,
       "date_funeral": "2026-09-07",
@@ -2559,20 +2461,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zofia-Tekieli-26FX1URJNKMI",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "ŚP",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Jan Chałupski",
-      "date_death": null,
-      "date_funeral": "2026-09-07",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Chalupski-3RK61XHFCTCA",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "",
       "priority_hit": false
     }
   ],
@@ -3321,8 +3209,8 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "fail_streak": 3,
-      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 3 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
+      "fail_streak": 4,
+      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 4 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
     }
   ],
   "source_warnings": [],
@@ -3345,9 +3233,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 90,
+      "accepted_rows": 82,
       "parser_status": "ok",
-      "rows": 90,
+      "rows": 82,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3420,13 +3308,13 @@
       "http_status": 0,
       "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 3,
-      "fail_streak": 3,
+      "empty_streak": 4,
+      "fail_streak": 4,
       "blocked_since": null,
       "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out \n__HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe\ncurl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n (prób: 3)"
     }
   ],
-  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 3 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
+  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 4 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
   "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
