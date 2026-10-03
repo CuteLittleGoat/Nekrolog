@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-02T22:53:53.535Z",
-  "updated_at": "2026-10-02T22:53:53.535Z",
+  "generated_at": "2026-10-03T12:23:58.815Z",
+  "updated_at": "2026-10-03T12:23:58.815Z",
   "window": {
-    "today": "2026-10-02",
-    "death_from": "2026-09-25",
-    "death_to": "2026-10-02",
-    "funeral_from": "2026-10-02",
-    "funeral_to": "2026-10-09"
+    "today": "2026-10-03",
+    "death_from": "2026-09-26",
+    "death_to": "2026-10-03",
+    "funeral_from": "2026-10-03",
+    "funeral_to": "2026-10-10"
   },
   "deaths": [
     {
@@ -35,6 +35,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jerzy-Niebudek-H65UWAM5IO0T",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.p | Data pogrzebu 06.10.2026",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Bogusława Golara",
+      "date_death": null,
+      "date_funeral": "2026-10-06",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Golara-5GT29BE0EN04",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P. | Data pogrzebu 06.10.2026",
       "priority_hit": false
     },
     {
@@ -614,6 +628,90 @@
     },
     {
       "kind": "death",
+      "name": "Marian Bieryt",
+      "date_death": "2026-09-01",
+      "date_funeral": "2026-09-04",
+      "time_funeral": null,
+      "place": "cmentarz komunalny Grębałów",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/marian-bieryt/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Marian Bieryt | Data pogrzebu: 04.09.2026 | Msza Święta: 04.09.2026 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Józefa Nowak",
+      "date_death": "2026-08-31",
+      "date_funeral": "2026-09-04",
+      "time_funeral": "13:40",
+      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/jozefa-nowak/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Józefa Nowak | Data pogrzebu: 04.09.2026 | Msza Święta: 04.09.2026 o godz. 13:40 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Alicja Garus",
+      "date_death": "2026-08-28",
+      "date_funeral": "2026-09-04",
+      "time_funeral": null,
+      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/alicja-garus/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Alicja Garus | Data pogrzebu: 04.09.2026",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Maria Pichner",
+      "date_death": "2026-08-30",
+      "date_funeral": "2026-09-03",
+      "time_funeral": null,
+      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/maria-pichner/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Maria Pichner | Data pogrzebu: 03.09.2026 | Msza Święta: 03.09.2026 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jolanta Dul",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-09-03",
+      "time_funeral": "12:00",
+      "place": "Cmentarz Parafialny Borek Fałęcki",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/jolanta-dul/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Jolanta Dul | Data pogrzebu: 03.09.2026 | Msza Święta: 03.09.2026 o godz. 12:00 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Józef Majdan",
+      "date_death": "2026-08-27",
+      "date_funeral": "2026-09-02",
+      "time_funeral": "13:00",
+      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrolog/jozef-majdan/",
+      "source_url": "https://www.gabriel24.pl/nekrologi/",
+      "note": "Śp. Józef Majdan | Data pogrzebu: 02.09.2026 | Msza Święta: 02.09.2026 o godz. 13:00 kaplica cmentarna",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Krystyna Flaszyńska",
       "date_death": "2026-08-23",
       "date_funeral": "2026-08-28",
@@ -698,86 +796,30 @@
     },
     {
       "kind": "death",
-      "name": "Barbara Ptasznik",
-      "date_death": "2026-08-05",
-      "date_funeral": "2026-08-18",
-      "time_funeral": "13:00",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/barbara-ptasznik/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Barbara Ptasznik | Data pogrzebu: 18.08.2026 | Msza Święta: 18.08.2026 o godz. 13:00 Kaplica Cmentarna",
+      "name": "Janina Pabis",
+      "date_death": "2026-09-30",
+      "date_funeral": "2026-10-05",
+      "time_funeral": "09:40",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/janina-pabis/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JANINA PABIS | Pogrzeb pojutrze: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
       "kind": "death",
-      "name": "Jacek Panek",
-      "date_death": "2026-08-09",
-      "date_funeral": "2026-08-17",
-      "time_funeral": "10:20",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jacek-panek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Jacek Panek | Data pogrzebu: 17.08.2026 | Msza Święta: 17.08.2026 o godz. 10:20 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Edward Kania",
-      "date_death": "2026-08-11",
-      "date_funeral": "2026-08-17",
-      "time_funeral": null,
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/edward-kania/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Edward Kania | Data pogrzebu: 17.08.2026 | Msza Święta: 17.08.2026 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Aniela Bujas",
-      "date_death": "2026-08-08",
-      "date_funeral": "2026-08-13",
-      "time_funeral": "11:40",
-      "place": "Cmentarz komunalny Rakowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/aniela-bujas/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Aniela Bujas | Data pogrzebu: 13.08.2026 | Msza Święta: 13.08.2026 o godz. 11:40 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jerzy Zachara",
-      "date_death": "2026-08-07",
-      "date_funeral": "2026-08-12",
-      "time_funeral": null,
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jerzy-zachara/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Jerzy Zachara | Data pogrzebu: 12.08.2026 | Msza Święta: 12.08.2026 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Piotr Grodecki",
-      "date_death": "2026-08-06",
-      "date_funeral": "2026-08-11",
+      "name": "Barbara Lipska",
+      "date_death": "2026-09-28",
+      "date_funeral": "2026-10-06",
       "time_funeral": "13:40",
-      "place": "Cmentarz komunalny Rakowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/piotr-grodecki/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Piotr Grodecki | Data pogrzebu: 11.08.2026 | Msza Święta: 11.08.2026 o godz. 13:40 kaplica cmentarna",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/barbara-lipska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. BARBARA LIPSKA | Data pogrzebu: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -791,7 +833,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-buratynska-seruga/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -805,7 +847,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/andrzej-mruk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANDRZEJ MRUK | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 12:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. ANDRZEJ MRUK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 12:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -819,7 +861,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/br-jan-zajac-op/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
+      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
       "priority_hit": false
     },
     {
@@ -833,7 +875,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/eleonora-kaciuba/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ELEONORA KACIUBA | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ELEONORA KACIUBA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -847,21 +889,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jerzy-nowak/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY NOWAK | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Janina Pabis",
-      "date_death": "2026-09-30",
-      "date_funeral": "2026-10-05",
-      "time_funeral": "09:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/janina-pabis/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA PABIS | Data pogrzebu: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JERZY NOWAK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -875,7 +903,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/marek-reichel/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAREK REICHEL | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 12:00 KOŚCIÓŁ PW. ŚW. FRANCISZKA Z ASYŻU",
+      "note": "Śp. MAREK REICHEL | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 12:00 KOŚCIÓŁ PW. ŚW. FRANCISZKA Z ASYŻU",
       "priority_hit": false
     },
     {
@@ -889,7 +917,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/tadeusz-szewczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -903,7 +931,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jan-czerwinski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JAN CZERWIŃSKI | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JAN CZERWIŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -917,49 +945,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/zbigniew-galczynski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jerzy Osika",
-      "date_death": "2026-09-25",
-      "date_funeral": "2026-09-30",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jerzy-osika/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY OSIKA | Pogrzeb przedwczoraj: 30.09.2026 (Środa) | Msza Święta: 30.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Robert Daczkowski",
-      "date_death": "2026-09-22",
-      "date_funeral": "2026-09-30",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/robert-daczkowski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ROBERT DACZKOWSKI | Pogrzeb przedwczoraj: 30.09.2026 (Środa) | Msza Święta: 30.09.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jolanta Kozakiewicz",
-      "date_death": "2026-09-23",
-      "date_funeral": "2026-09-30",
-      "time_funeral": "12:20",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jolanta-kozakiewicz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JOLANTA KOZAKIEWICZ | Pogrzeb przedwczoraj: 30.09.2026 (Środa) | Msza Święta: 30.09.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2002,6 +1988,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Bogusława Golara",
+      "date_death": null,
+      "date_funeral": "2026-10-06",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Golara-5GT29BE0EN04",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Zuzanna Kowalska",
       "date_death": null,
       "date_funeral": "2026-10-05",
@@ -2771,7 +2771,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-pabis/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA PABIS | Data pogrzebu: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA PABIS | Pogrzeb pojutrze: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Lipska",
+      "date_death": "2026-09-28",
+      "date_funeral": "2026-10-06",
+      "time_funeral": "13:40",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/barbara-lipska/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. BARBARA LIPSKA | Data pogrzebu: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2785,7 +2799,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-buratynska-seruga/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -2799,7 +2813,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/br-jan-zajac-op/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
+      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
       "priority_hit": false
     },
     {
@@ -2813,7 +2827,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jerzy-nowak/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY NOWAK | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JERZY NOWAK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2827,7 +2841,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/zbigniew-galczynski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2841,7 +2855,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/eleonora-kaciuba/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ELEONORA KACIUBA | Pogrzeb dziś: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ELEONORA KACIUBA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2855,81 +2869,11 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/tadeusz-szewczyk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jan Czerwiński",
-      "date_death": "2026-09-25",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jan-czerwinski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JAN CZERWIŃSKI | Pogrzeb wczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jerzy Osika",
-      "date_death": "2026-09-25",
-      "date_funeral": "2026-09-30",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jerzy-osika/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY OSIKA | Pogrzeb przedwczoraj: 30.09.2026 (Środa) | Msza Święta: 30.09.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Stanisław Knapik",
-      "date_death": null,
-      "date_funeral": "2026-10-02",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Knapik-KZMD4MDBJ1XD",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Józef Podolski",
-      "date_death": null,
-      "date_funeral": "2026-10-02",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jozef-Podolski-AYFL8MD07KGS",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Maria Marona",
-      "date_death": null,
-      "date_funeral": "2026-10-02",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Marona-HNC4LZ9P17F0",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Zuzanna Kowalska",
@@ -2999,6 +2943,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jerzy-Niebudek-H65UWAM5IO0T",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.p",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Bogusława Golara",
+      "date_death": null,
+      "date_funeral": "2026-10-06",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Boguslawa-Golara-5GT29BE0EN04",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
       "priority_hit": false
     }
   ],
@@ -3363,8 +3321,8 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "fail_streak": 2,
-      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: connect ECONNREFUSED 80.94.28.61:443 [ECONNREFUSED] (prób: 3) — 2 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
+      "fail_streak": 3,
+      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 3 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
     }
   ],
   "source_warnings": [],
@@ -3387,9 +3345,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 88,
+      "accepted_rows": 90,
       "parser_status": "ok",
-      "rows": 88,
+      "rows": 90,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3416,12 +3374,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 13,
-      "visited_links": 13,
+      "candidate_links": 11,
+      "visited_links": 11,
       "partial": false,
-      "accepted_rows": 13,
+      "accepted_rows": 11,
       "parser_status": "ok",
-      "rows": 13,
+      "rows": 11,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3462,13 +3420,13 @@
       "http_status": 0,
       "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 2,
-      "fail_streak": 2,
+      "empty_streak": 3,
+      "fail_streak": 3,
       "blocked_since": null,
-      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: connect ECONNREFUSED 80.94.28.61:443 [ECONNREFUSED] (prób: 3)"
+      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out \n__HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe\ncurl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n (prób: 3)"
     }
   ],
-  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: connect ECONNREFUSED 80.94.28.61:443 [ECONNREFUSED] (prób: 3) — 2 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
+  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 3 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
   "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
