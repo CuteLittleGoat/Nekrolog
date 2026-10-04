@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-03T22:04:43.705Z",
-  "updated_at": "2026-10-03T22:04:43.705Z",
+  "generated_at": "2026-10-04T13:07:03.657Z",
+  "updated_at": "2026-10-04T13:07:03.657Z",
   "window": {
-    "today": "2026-10-03",
-    "death_from": "2026-09-26",
-    "death_to": "2026-10-03",
-    "funeral_from": "2026-10-03",
-    "funeral_to": "2026-10-10"
+    "today": "2026-10-04",
+    "death_from": "2026-09-27",
+    "death_to": "2026-10-04",
+    "funeral_from": "2026-10-04",
+    "funeral_to": "2026-10-11"
   },
   "deaths": [
     {
@@ -749,7 +749,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-pabis/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA PABIS | Pogrzeb pojutrze: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA PABIS | Pogrzeb jutro: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -763,7 +763,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/barbara-lipska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA LIPSKA | Data pogrzebu: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. BARBARA LIPSKA | Pogrzeb pojutrze: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -777,7 +777,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-buratynska-seruga/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -791,7 +791,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/andrzej-mruk/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANDRZEJ MRUK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 12:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. ANDRZEJ MRUK | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 12:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -805,7 +805,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/br-jan-zajac-op/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
+      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
       "priority_hit": false
     },
     {
@@ -819,7 +819,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/eleonora-kaciuba/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ELEONORA KACIUBA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ELEONORA KACIUBA | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -833,63 +833,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jerzy-nowak/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY NOWAK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marek Reichel",
-      "date_death": "2026-09-23",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "12:00",
-      "place": "CMENTARZ BRONOWICE-PASTERNIK",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/marek-reichel/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAREK REICHEL | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 12:00 KOŚCIÓŁ PW. ŚW. FRANCISZKA Z ASYŻU",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Tadeusz Szewczyk",
-      "date_death": "2026-09-26",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ SALWATOR",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/tadeusz-szewczyk/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jan Czerwiński",
-      "date_death": "2026-09-25",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/jan-czerwinski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JAN CZERWIŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zbigniew Gałczyński",
-      "date_death": "2026-09-27",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zbigniew-galczynski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JERZY NOWAK | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2659,7 +2603,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janina-pabis/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANINA PABIS | Pogrzeb pojutrze: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANINA PABIS | Pogrzeb jutro: 05.10.2026 (Poniedziałek) | Msza Święta: 05.10.2026 o godz. 09:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2673,7 +2617,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/barbara-lipska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA LIPSKA | Data pogrzebu: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. BARBARA LIPSKA | Pogrzeb pojutrze: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2687,7 +2631,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-buratynska-seruga/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. MAŁGORZATA BURATYŃSKA-SERUGA | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
       "priority_hit": false
     },
     {
@@ -2701,7 +2645,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/br-jan-zajac-op/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
+      "note": "Śp. BR. JAN ZAJĄC OP | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 10:00 BAZYLIKA ŚWIĘTEJ TRÓJCY",
       "priority_hit": false
     },
     {
@@ -2715,49 +2659,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jerzy-nowak/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JERZY NOWAK | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Zbigniew Gałczyński",
-      "date_death": "2026-09-27",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/zbigniew-galczynski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW GAŁCZYŃSKI | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Eleonora Kaciuba",
-      "date_death": "2026-09-26",
-      "date_funeral": "2026-10-02",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/eleonora-kaciuba/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ELEONORA KACIUBA | Pogrzeb wczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Tadeusz Szewczyk",
-      "date_death": "2026-09-26",
-      "date_funeral": "2026-10-01",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ SALWATOR",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/tadeusz-szewczyk/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TADEUSZ SZEWCZYK | Pogrzeb przedwczoraj: 01.10.2026 (Czwartek) | Msza Święta: 01.10.2026 o godz. 13:00 KAPLICA CMENTARNA NA SALWATORZE",
+      "note": "Śp. JERZY NOWAK | Pogrzeb przedwczoraj: 02.10.2026 (Piątek) | Msza Święta: 02.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -3209,8 +3111,8 @@
       "source_id": "sw_jadwiga_pogrzebowe",
       "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "fail_streak": 4,
-      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 4 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
+      "fail_streak": 5,
+      "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 5 nieudane odczyty z rzędu, źródło wymaga sprawdzenia"
     }
   ],
   "source_warnings": [],
@@ -3262,12 +3164,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 11,
-      "visited_links": 11,
+      "candidate_links": 7,
+      "visited_links": 7,
       "partial": false,
-      "accepted_rows": 11,
+      "accepted_rows": 7,
       "parser_status": "ok",
-      "rows": 11,
+      "rows": 7,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3308,13 +3210,13 @@
       "http_status": 0,
       "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 4,
-      "fail_streak": 4,
+      "empty_streak": 5,
+      "fail_streak": 5,
       "blocked_since": null,
       "error": "fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out \n__HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe\ncurl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl'\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n (prób: 3)"
     }
   ],
-  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 4 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
+  "refresh_error": "Parafia św. Jadwigi – Msze święte pogrzebowe: fetch: request to https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe failed, reason: Hostname/IP does not match certificate's altnames: Host: swietajadwiga.diecezja.pl. is not in the cert's altnames: DNS:jadwiga.eparafia.pl [ERR_TLS_CERT_ALTNAME_INVALID]; curl: Command failed: curl -L --silent --show-error --max-time 20 --user-agent nekrolog-refresh-bot/1.0 (+https://github.com/) --header accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 --write-out __HTTP_STATUS__:%{http_code} https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe curl: (60) SSL: no alternative certificate subject name matches target host name 'swietajadwiga.diecezja.pl' More details here: https://curl.se/docs/sslcerts.html curl failed to verify the legitimacy of the server and therefore could not establish a secure connection to it. To learn more about this situation and how to fix it, please visit the web page mentioned above. (prób: 3) — 5 nieudane odczyty z rzędu, źródło wymaga sprawdzenia",
   "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
