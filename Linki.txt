@@ -34,5 +34,5 @@ https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/karawan_detail_2026-08-
 https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/karawan_list_2026-08-18.html
 https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/podwawelskie_list_2026-08-18.html
 https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/puk_pozegnalismy_2026-08-18.html
-https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/sw_jadwiga_list_2026-08-18.html
+https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/sw_jadwiga_list_2026-10-05.html
 https://cutelittlegoat.github.io/Nekrolog/tests/fixtures/zck_funerals_2026-08-18.html

@@ -21,7 +21,7 @@ Zakres: publiczne pliki aplikacji z GitHub Pages / raw.githubusercontent.com ora
 | `karawan_nekrologi` | czynne | — |
 | `salwator_grobonet` | czynne | Wykorzystywana jest **wyszukiwarka grobów**, nie strona „Nekrologi” (ta nie zawiera wpisów). Adres w §4 jest nieaktualny. |
 | `podwawelskie_nekrologi` | czynne | — |
-| `sw_jadwiga_pogrzebowe` | czynne | — |
+| `sw_jadwiga_pogrzebowe` | czynne | Od 2026-10-02 strona parafii działa pod **`jadwiga.eparafia.pl`**. Stary host `swietajadwiga.diecezja.pl` przedstawia certyfikat nowej domeny i nie daje się odczytać. Struktura strony bez zmian; adresy w tym dokumencie zaktualizowano 2026-10-05. |
 | `debniki_sdb` | **wyłączone** | Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. |
 | `debniki_intencje` | **wyłączone** | Źródło zostało wdrożone i działało (35 rekordów w przebiegu z 2026-08-18), po czym serwis objęto ochroną anty-botową odrzucającą ruch z zakresów centrów danych. Zabezpieczenia nie są obchodzone, dostęp nie jest odzyskiwany. |
 | `facebook_parafia_debniki` | wyłączone | Dostęp wymaga uwierzytelnienia (stan bez zmian od 2026-05-08). |
@@ -177,11 +177,11 @@ Ważne: intencje mszalne nie powinny być automatycznie traktowane jako zgon. Je
 | `salwator_grobonet` | Kraków Salwator – Grobonet | `generic_html` | `https://krakowsalwator.grobonet.com/nekrologi.php` | true |
 | `debniki_sdb` | Parafia św. Stanisława Kostki (Dębniki) | `generic_html` | `https://debniki.sdb.org.pl/` | **false** (patrz §0) |
 | `podwawelskie_nekrologi` | Podwawelskie – Nekrologi | `generic_html` | `https://www.podwawelskie.pl/aktualnosci/nekrologi.html` | true |
-| `sw_jadwiga_pogrzebowe` | Parafia św. Jadwigi – Msze święte pogrzebowe | `generic_html` | `https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe` | true |
+| `sw_jadwiga_pogrzebowe` | Parafia św. Jadwigi – Msze święte pogrzebowe | `generic_html` | `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe` | true |
 | `facebook_parafia_debniki` | Facebook – Parafia Dębniki | `generic_html` | `https://www.facebook.com/parafiadebniki/?locale=pl_PL` | false |
 | `debniki_intencje` | Parafia Dębniki – Intencje mszalne | `debniki_intencje` | `https://debniki.sdb.org.pl/intencje` | **false** (patrz §0) |
 
-> Tabela odzwierciedla konfigurację z 2026-05-08; kolumna „obecny type” opisuje stan sprzed migracji na parsery specyficzne dla źródeł. Kolumnę `enabled` zaktualizowano 2026-08-23. Bieżącą konfigurację zawiera `config/sources.json`.
+> Tabela odzwierciedla konfigurację z 2026-05-08; kolumna „obecny type” opisuje stan sprzed migracji na parsery specyficzne dla źródeł. Kolumnę `enabled` zaktualizowano 2026-08-23, adres `sw_jadwiga_pogrzebowe` — 2026-10-05. Bieżącą konfigurację zawiera `config/sources.json`.
 
 ---
 
@@ -1260,9 +1260,9 @@ Lista zawiera tytuły typu `śp. Józef Pasyk`, a niektóre wpisy mają już na 
 
 ### 2. Gdzie dokładnie są dane
 
-- URL startowy: `https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe`
+- URL startowy: `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe`
 - Link szczegółu:
-  - wzorzec `https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/<slug>`
+  - wzorzec `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/<slug>`
 - Paginacja:
   - linki z parametrem `?aktualnie=30`, itd.
 
@@ -1284,7 +1284,7 @@ Przykład z listy:
 ### 3. Jak pobrać listę wpisów
 
 - Metoda: `GET`
-- URL: `https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe`
+- URL: `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe`
 - Linki wpisów:
 
 ```css
@@ -1331,9 +1331,9 @@ a[href*="/parafia/msze-swiete-pogrzebowe/"]
 
 ```json
 {
-  "list_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-  "page_url_pattern": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/?aktualnie={offset}",
-  "detail_url_pattern": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/{slug}",
+  "list_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
+  "page_url_pattern": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/?aktualnie={offset}",
+  "detail_url_pattern": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/{slug}",
   "requires_detail_fetch": true,
   "is_funeral_mass_source": true,
   "requires_ocr": false,
@@ -1353,8 +1353,8 @@ a[href*="/parafia/msze-swiete-pogrzebowe/"]
   "place": "Parafia św. Jadwigi Królowej w Krakowie",
   "source_id": "sw_jadwiga_pogrzebowe",
   "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-  "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
-  "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+  "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
+  "source_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
   "note": "Msza święta pogrzebowa: Od córki Mirosławy Leśniak. To termin mszy, nie data zgonu."
 }
 ```
@@ -1369,8 +1369,8 @@ a[href*="/parafia/msze-swiete-pogrzebowe/"]
   "place": "Parafia św. Jadwigi Królowej w Krakowie",
   "source_id": "sw_jadwiga_pogrzebowe",
   "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-  "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
-  "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+  "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
+  "source_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
   "note": "Msza święta pogrzebowa: Od Ani, Przemka, Andrzejka i Grzesia Kluba."
 }
 ```
@@ -1385,8 +1385,8 @@ a[href*="/parafia/msze-swiete-pogrzebowe/"]
   "place": "Parafia św. Jadwigi Królowej w Krakowie",
   "source_id": "sw_jadwiga_pogrzebowe",
   "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-  "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
-  "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+  "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
+  "source_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
   "note": "Msza święta pogrzebowa: Od rodziny Abratańskich."
 }
 ```
@@ -1591,9 +1591,9 @@ Proponowana struktura konfiguracyjna:
       "id": "sw_jadwiga_pogrzebowe",
       "name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
       "type": "sw_jadwiga_pogrzebowe",
-      "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "list_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
-      "page_url_pattern": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/?aktualnie={offset}",
+      "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
+      "list_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
+      "page_url_pattern": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/?aktualnie={offset}",
       "enabled": true,
       "distance_km": 6.5,
       "requires_detail_fetch": true,
@@ -1682,8 +1682,8 @@ Poniżej zebrane realne rekordy z badania. Rekordy z PUK, Gabriel i Karawan są 
     "place": "Parafia św. Jadwigi Królowej w Krakowie",
     "source_id": "sw_jadwiga_pogrzebowe",
     "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
-    "url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
-    "source_url": "https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe",
+    "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/sp-jozef-pasyk",
+    "source_url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
     "note": "Msza święta pogrzebowa: Od córki Mirosławy Leśniak."
   }
 ]

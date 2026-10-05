@@ -132,15 +132,18 @@ test('Podwawelskie: kafelki z ikonami fa-star / fa-cross', async () => {
 });
 
 test('św. Jadwiga: zgłoszenia zgonu z datą publikacji, nigdy jako data pogrzebu', async () => {
-  const html = await fixture('sw_jadwiga_list_2026-08-18.html');
+  // Zrzut z nowego hosta parafii (jadwiga.eparafia.pl) — struktura listy bez zmian.
+  const html = await fixture('sw_jadwiga_list_2026-10-05.html');
   const rows = parseSwJadwigaPogrzeboweHtml(html, SOURCES.sw_jadwiga_pogrzebowe);
   assert.equal(rows.length, 30);
-  assert.equal(rows[0].name, 'Waldemar Musiał');
-  assert.equal(rows[0].date_death, '2026-08-13');
+  assert.equal(rows[0].name, 'Stefan Biernat');
+  assert.equal(rows[0].date_death, '2026-09-25');
   assert.equal(rows[0].kind, 'death');
   // Strony szczegółowe zawierają intencje mszalne, a nie termin pogrzebu.
   assert.ok(rows.every((r) => r.date_funeral === null));
-  assert.match(rows[0].url, /msze-swiete-pogrzebowe\/waldemar-musial/);
+  // Linki na liście są względne — rozwiązują się względem adresu źródła, więc po
+  // zmianie domeny muszą wskazywać nowy host, a nie martwy swietajadwiga.diecezja.pl.
+  assert.equal(rows[0].url, 'https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe/stefan-biernat');
 });
 
 test('Dębniki: linki zbierane przed usunięciem nawigacji i tylko z własnego hosta', async () => {

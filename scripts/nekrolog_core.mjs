@@ -31,7 +31,11 @@ const REQUIRED_SOURCES = [
   // Definicja i flaga tolerancji zostają, żeby ponowne włączenie było zmianą jednego pola.
   { id:"debniki_intencje", name:"Parafia Dębniki – Intencje mszalne", type:"debniki_intencje", url:"https://debniki.sdb.org.pl/intencje", enabled:false, distance_km:2.5, list_url:"https://debniki.sdb.org.pl/intencje", external_block_tolerated:true, ...DEFAULT_FLAGS },
   { id:"podwawelskie_nekrologi", name:"Podwawelskie – Nekrologi", type:"podwawelskie_nekrologi", url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", enabled:true, distance_km:2.5, list_url:"https://www.podwawelskie.pl/aktualnosci/nekrologi.html", requires_detail_fetch:true, max_detail_pages:50, requires_ocr:false, requires_pdf:false },
-  { id:"sw_jadwiga_pogrzebowe", name:"Parafia św. Jadwigi – Msze święte pogrzebowe", type:"sw_jadwiga_pogrzebowe", url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", enabled:true, distance_km:6.5, list_url:"https://swietajadwiga.diecezja.pl/parafia/msze-swiete-pogrzebowe", ...DEFAULT_FLAGS },
+  // Od 2026-10-02 parafia działa pod jadwiga.eparafia.pl. Stary host swietajadwiga.diecezja.pl
+  // przedstawia certyfikat nowej domeny (ERR_TLS_CERT_ALTNAME_INVALID), a po HTTP przekierowuje
+  // z powrotem na siebie po HTTPS — nie ma ścieżki, która by do treści doprowadziła.
+  // Adres zmieniaj razem z config/sources.json: przy scalaniu wygrywa zapisana konfiguracja.
+  { id:"sw_jadwiga_pogrzebowe", name:"Parafia św. Jadwigi – Msze święte pogrzebowe", type:"sw_jadwiga_pogrzebowe", url:"https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe", enabled:true, distance_km:6.5, list_url:"https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe", ...DEFAULT_FLAGS },
   { id:"facebook_parafia_debniki", name:"Facebook – Parafia Dębniki", type:"generic_html", url:"https://www.facebook.com/parafiadebniki/?locale=pl_PL", enabled:false, distance_km:2.5 }
 ];
 

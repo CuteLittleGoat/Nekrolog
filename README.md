@@ -19,7 +19,7 @@ Projekt działa w modelu:
 - `scripts/normalize.mjs` – luźne dopasowanie tekstu (diakrytyka, prefiksy `śp.`, myślniki, interpunkcja).
 - `scripts/discord_notify.mjs` – powiadomienia Discord: alerty per trafienie i heartbeat.
 - `scripts/date.mjs` – okna czasowe.
-- `config/sources.json` – lista i konfiguracja źródeł (uzupełniana automatycznie z definicji w `nekrolog_core.mjs`).
+- `config/sources.json` – lista i konfiguracja źródeł (uzupełniana automatycznie z definicji w `nekrolog_core.mjs`). Uzupełniane są tylko brakujące źródła i pola — zapisane wartości, w tym adresy, mają pierwszeństwo przed definicją. **Zmianę adresu źródła wprowadza się więc w obu plikach**; rozjazd wykrywa test w `tests/refresh.snapshot.test.mjs`.
 - `Frazy.json` – frazy monitorowanej osoby (formy odmienione i warianty zapisu).
 - `data/latest.json` – bieżący snapshot używany przez frontend.
 - `data/job.json` – status przebiegu, diagnostyka i kondycja źródeł.
@@ -60,7 +60,7 @@ Każdy rekord ma pole `kind`:
 | Facebook – Parafia Dębniki | `generic_html` | wyłączone (`enabled: false`) |
 
 Uwagi merytoryczne:
-- **św. Jadwiga** publikuje datę *zgłoszenia*, a strony szczegółowe zawierają intencje mszalne, nie termin pogrzebu — dlatego data trafia do `date_death`, nigdy do `date_funeral`.
+- **św. Jadwiga** publikuje datę *zgłoszenia*, a strony szczegółowe zawierają intencje mszalne, nie termin pogrzebu — dlatego data trafia do `date_death`, nigdy do `date_funeral`. Od 2026-10-02 strona parafii działa pod adresem `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe`. Stary host `swietajadwiga.diecezja.pl` przedstawia certyfikat nowej domeny (`ERR_TLS_CERT_ALTNAME_INVALID`), więc odczyt się nie udaje — weryfikacji certyfikatu nie wyłączamy. Struktura listy (`li.artykul`) się nie zmieniła.
 - **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`.
 - **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem; źródło ma wartość dla wyszukiwania fraz, a nie dla okna 7-dniowego.
 - **Dębniki (ogłoszenia)** są wyłączone. Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. Definicja zostaje w `nekrolog_core.mjs`, żeby zachować historię i umożliwić powrót po przebudowie strony parafii.

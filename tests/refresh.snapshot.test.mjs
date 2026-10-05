@@ -2,6 +2,7 @@
 // Wcześniej nie miała żadnych testów — a leżały w niej wszystkie defekty krytyczne.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { inWindow, todayLocalMidnight, addDays, toISODate } from '../scripts/date.mjs';
 import {
   mergeRequiredSources, mergeDuplicateRows, dedupeKeyForRow, resolveJobOutcome,
@@ -246,6 +247,19 @@ test('żadne włączone źródło nie dostarcza już kategorii intention', () =>
   // Test pilnuje, by ta strata była zauważona, gdyby ktoś dodawał źródło intencji.
   const intencje = REQUIRED_SOURCES.filter((s) => s.enabled !== false && s.type === 'debniki_intencje');
   assert.equal(intencje.length, 0);
+});
+
+test('adresy w config/sources.json zgadzają się z definicjami źródeł', async () => {
+  // Przy scalaniu adres z zapisanej konfiguracji wygrywa z definicją w kodzie. Zmiana
+  // adresu tylko w REQUIRED_SOURCES nic więc nie zmienia: przebieg dalej odpytuje stary
+  // host. Tak po przeniesieniu parafii św. Jadwigi na jadwiga.eparafia.pl (2026-10).
+  const cfg = JSON.parse(await readFile(new URL('../config/sources.json', import.meta.url), 'utf8'));
+  const stored = Object.fromEntries(cfg.sources.map((s) => [s.id, s]));
+  for (const def of REQUIRED_SOURCES) {
+    for (const key of ['url', 'list_url', 'base_url']) {
+      assert.equal(stored[def.id]?.[key] ?? null, def[key] ?? null, `${def.id}.${key}`);
+    }
+  }
 });
 
 test('mergeRequiredSources wymusza flagę tolerancji nad zastaną konfiguracją', () => {
