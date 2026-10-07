@@ -1,5 +1,13 @@
 {
-  "generated_at": "2026-10-07T14:21:54.024Z",
+  "generated_at": "2026-10-07T23:32:47.215Z",
   "errors": [],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "sw_jadwiga_pogrzebowe",
+      "source_name": "Parafia św. Jadwigi – Msze święte pogrzebowe",
+      "url": "https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
