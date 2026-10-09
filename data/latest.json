@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-08T23:42:19.350Z",
-  "updated_at": "2026-10-08T23:42:19.350Z",
+  "generated_at": "2026-10-09T14:16:43.529Z",
+  "updated_at": "2026-10-09T14:16:43.529Z",
   "window": {
-    "today": "2026-10-08",
-    "death_from": "2026-10-01",
-    "death_to": "2026-10-08",
-    "funeral_from": "2026-10-08",
-    "funeral_to": "2026-10-15"
+    "today": "2026-10-09",
+    "death_from": "2026-10-02",
+    "death_to": "2026-10-09",
+    "funeral_from": "2026-10-09",
+    "funeral_to": "2026-10-16"
   },
   "deaths": [
     {
@@ -21,6 +21,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Justyna-Markowska--Zemanek-MQIOROOJ4252",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "| Data pogrzebu 13.10.2026",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Halina Szymańska",
+      "date_death": null,
+      "date_funeral": "2026-10-13",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Szymanska-KJFGUTAZBG9W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P. | Data pogrzebu 13.10.2026",
       "priority_hit": false
     },
     {
@@ -740,20 +754,6 @@
     },
     {
       "kind": "death",
-      "name": "Maria Łudzik",
-      "date_death": "2026-09-30",
-      "date_funeral": "2026-10-08",
-      "time_funeral": "11:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-ludzik/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA ŁUDZIK | Pogrzeb dziś: 08.10.2026 (Czwartek) | Msza Święta: 08.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Przemysław Branny",
       "date_death": "2026-10-03",
       "date_funeral": "2026-10-09",
@@ -763,7 +763,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/przemyslaw-branny/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb jutro: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb dziś: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -777,7 +777,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/edward-zobek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb jutro: 09.10.2026 (Piątek)",
+      "note": "Pogrzeb dziś: 09.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -796,6 +796,20 @@
     },
     {
       "kind": "death",
+      "name": "Maria Łudzik",
+      "date_death": "2026-09-30",
+      "date_funeral": "2026-10-08",
+      "time_funeral": "11:40",
+      "place": "CMENTARZ RAKOWICE",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maria-ludzik/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MARIA ŁUDZIK | Pogrzeb wczoraj: 08.10.2026 (Czwartek) | Msza Święta: 08.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Maria Wodnicka",
       "date_death": "2026-09-23",
       "date_funeral": "2026-10-07",
@@ -805,7 +819,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/maria-wodnicka/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA WODNICKA | Pogrzeb wczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. MARIA WODNICKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -819,7 +833,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/maria-labedkowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA ŁABĘDKOWSKA | Pogrzeb wczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. MARIA ŁABĘDKOWSKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -833,23 +847,8 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-kulikowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KULIKOWSKA | Pogrzeb wczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ANNA KULIKOWSKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Barbara Lipska",
-      "date_death": "2026-09-28",
-      "date_funeral": "2026-10-06",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICE",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/barbara-lipska-2/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA LIPSKA | Pogrzeb przedwczoraj: 06.10.2026 (Wtorek) | Msza Święta: 06.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false,
-      "also_in_sources": []
     },
     {
       "kind": "death",
@@ -2674,6 +2673,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Halina Szymańska",
+      "date_death": null,
+      "date_funeral": "2026-10-13",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Szymanska-KJFGUTAZBG9W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Andrzej Zasada",
       "date_death": null,
       "date_funeral": "2026-10-10",
@@ -3387,7 +3400,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/edward-zobek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb jutro: 09.10.2026 (Piątek)",
+      "note": "Pogrzeb dziś: 09.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -3401,7 +3414,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/przemyslaw-branny/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb jutro: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb dziś: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3824,6 +3837,20 @@
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "",
       "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Halina Szymańska",
+      "date_death": null,
+      "date_funeral": "2026-10-13",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Szymanska-KJFGUTAZBG9W",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
     }
   ],
   "upcoming_intentions": [],
@@ -4203,9 +4230,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 82,
+      "accepted_rows": 84,
       "parser_status": "ok",
-      "rows": 82,
+      "rows": 84,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -4232,12 +4259,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 9,
-      "visited_links": 9,
+      "candidate_links": 7,
+      "visited_links": 7,
       "partial": false,
-      "accepted_rows": 9,
+      "accepted_rows": 7,
       "parser_status": "ok",
-      "rows": 9,
+      "rows": 7,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
