@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-09T23:07:24.602Z",
-  "updated_at": "2026-10-09T23:07:24.602Z",
+  "generated_at": "2026-10-10T13:29:14.581Z",
+  "updated_at": "2026-10-10T13:29:14.581Z",
   "window": {
-    "today": "2026-10-09",
-    "death_from": "2026-10-02",
-    "death_to": "2026-10-09",
-    "funeral_from": "2026-10-09",
-    "funeral_to": "2026-10-16"
+    "today": "2026-10-10",
+    "death_from": "2026-10-03",
+    "death_to": "2026-10-10",
+    "funeral_from": "2026-10-10",
+    "funeral_to": "2026-10-17"
   },
   "deaths": [
     {
@@ -740,6 +740,20 @@
     },
     {
       "kind": "death",
+      "name": "Maciej Cichy",
+      "date_death": "2026-10-03",
+      "date_funeral": "2026-10-12",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ BATOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/maciej-cichy/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. MACIEJ CICHY | Pogrzeb pojutrze: 12.10.2026 (Poniedziałek) | Msza Święta: 12.10.2026 o godz. 13:00 KAPLICA CMENTARNA BATOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
       "name": "Przemysław Branny",
       "date_death": "2026-10-03",
       "date_funeral": "2026-10-09",
@@ -749,7 +763,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/przemyslaw-branny/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb dziś: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb wczoraj: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -763,21 +777,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/edward-zobek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb dziś: 09.10.2026 (Piątek)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maciej Cichy",
-      "date_death": "2026-10-03",
-      "date_funeral": "2026-10-12",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ BATOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maciej-cichy/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MACIEJ CICHY | Data pogrzebu: 12.10.2026 (Poniedziałek) | Msza Święta: 12.10.2026 o godz. 13:00 KAPLICA CMENTARNA BATOWICE",
+      "note": "Pogrzeb wczoraj: 09.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -791,49 +791,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/maria-ludzik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA ŁUDZIK | Pogrzeb wczoraj: 08.10.2026 (Czwartek) | Msza Święta: 08.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Wodnicka",
-      "date_death": "2026-09-23",
-      "date_funeral": "2026-10-07",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-wodnicka/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA WODNICKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Łabędkowska",
-      "date_death": "2026-09-20",
-      "date_funeral": "2026-10-07",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maria-labedkowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MARIA ŁABĘDKOWSKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Anna Kulikowska",
-      "date_death": "2026-09-25",
-      "date_funeral": "2026-10-07",
-      "time_funeral": "10:20",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/anna-kulikowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA KULIKOWSKA | Pogrzeb przedwczoraj: 07.10.2026 (Środa) | Msza Święta: 07.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. MARIA ŁUDZIK | Pogrzeb przedwczoraj: 08.10.2026 (Czwartek) | Msza Święta: 08.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3023,21 +2981,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/edward-zobek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb dziś: 09.10.2026 (Piątek)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Przemysław Branny",
-      "date_death": "2026-10-03",
-      "date_funeral": "2026-10-09",
-      "time_funeral": "14:20",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/przemyslaw-branny/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb dziś: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Pogrzeb wczoraj: 09.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -3051,39 +2995,25 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/maciej-cichy/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MACIEJ CICHY | Data pogrzebu: 12.10.2026 (Poniedziałek) | Msza Święta: 12.10.2026 o godz. 13:00 KAPLICA CMENTARNA BATOWICE",
+      "note": "Śp. MACIEJ CICHY | Pogrzeb pojutrze: 12.10.2026 (Poniedziałek) | Msza Święta: 12.10.2026 o godz. 13:00 KAPLICA CMENTARNA BATOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Przemysław Branny",
+      "date_death": "2026-10-03",
+      "date_funeral": "2026-10-09",
+      "time_funeral": "14:20",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/przemyslaw-branny/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. PRZEMYSŁAW BRANNY | Pogrzeb wczoraj: 09.10.2026 (Piątek) | Msza Święta: 09.10.2026 o godz. 14:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
   "upcoming_funerals": [
-    {
-      "kind": "funeral",
-      "name": "Maria Sochacka",
-      "date_death": null,
-      "date_funeral": "2026-10-09",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Sochacka-RZE56K4FHZYT",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Krystyna Kapera",
-      "date_death": null,
-      "date_funeral": "2026-10-09",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Kapera-0MN883SP1DCR",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "ŚP.",
-      "priority_hit": false
-    },
     {
       "kind": "funeral",
       "name": "Andrzej Zasada",
@@ -3533,12 +3463,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 7,
-      "visited_links": 7,
+      "candidate_links": 4,
+      "visited_links": 4,
       "partial": false,
-      "accepted_rows": 7,
+      "accepted_rows": 4,
       "parser_status": "ok",
-      "rows": 7,
+      "rows": 4,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
