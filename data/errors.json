@@ -1,5 +1,20 @@
 {
-  "generated_at": "2026-10-10T13:29:15.148Z",
+  "generated_at": "2026-10-10T22:24:52.692Z",
   "errors": [],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    },
+    {
+      "source_id": "podwawelskie_nekrologi",
+      "source_name": "Podwawelskie – Nekrologi",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
