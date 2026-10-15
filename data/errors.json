@@ -1,13 +1,5 @@
 {
-  "generated_at": "2026-10-15T12:34:55.980Z",
+  "generated_at": "2026-10-15T22:03:32.783Z",
   "errors": [],
-  "warnings": [
-    {
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrologi/",
-      "fail_streak": 1,
-      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
-    }
-  ]
+  "warnings": []
 }
