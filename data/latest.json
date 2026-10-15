@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-14T22:09:45.967Z",
-  "updated_at": "2026-10-14T22:09:45.967Z",
+  "generated_at": "2026-10-15T12:34:55.457Z",
+  "updated_at": "2026-10-15T12:34:55.457Z",
   "window": {
-    "today": "2026-10-14",
-    "death_from": "2026-10-07",
-    "death_to": "2026-10-14",
-    "funeral_from": "2026-10-14",
-    "funeral_to": "2026-10-21"
+    "today": "2026-10-15",
+    "death_from": "2026-10-08",
+    "death_to": "2026-10-15",
+    "funeral_from": "2026-10-15",
+    "funeral_to": "2026-10-22"
   },
   "deaths": [
     {
@@ -558,174 +558,6 @@
     },
     {
       "kind": "death",
-      "name": "Józef Łojek",
-      "date_death": "2026-09-12",
-      "date_funeral": "2026-09-25",
-      "time_funeral": "11:00",
-      "place": "Cmentarz w Podgórkach Tynieckich",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jozef-lojek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Józef Łojek | Data pogrzebu: 25.09.2026 | Msza Święta: 25.09.2026 o godz. 11:00 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Teresa Wala",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-25",
-      "time_funeral": "11:00",
-      "place": "Cmentarz Parafialny Borek Fałęcki",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/teresa-wala/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Teresa Wala | Data pogrzebu: 25.09.2026 | Msza Święta: 25.09.2026 o godz. 11:00 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maria Grzybek",
-      "date_death": "2026-09-19",
-      "date_funeral": "2026-09-24",
-      "time_funeral": "13:40",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/maria-grzybek/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Maria Grzybek | Data pogrzebu: 24.09.2026 | Msza Święta: 24.09.2026 o godz. 13:40 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Joanna Lipanowicz",
-      "date_death": "2026-09-17",
-      "date_funeral": "2026-09-23",
-      "time_funeral": "10:00",
-      "place": "Cmentarz Podgórski",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/joanna-lipanowicz/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Joanna Lipanowicz | Data pogrzebu: 23.09.2026 | Msza Święta: 23.09.2026 o godz. 10:00 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Sylwester Kurant",
-      "date_death": "2026-09-18",
-      "date_funeral": "2026-09-22",
-      "time_funeral": "12:00",
-      "place": "Cmentarz Parafialny w Zielonkach",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/sylwester-kurant/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Sylwester Kurant | Data pogrzebu: 22.09.2026 | Msza Święta: 22.09.2026 o godz. 12:00 Kościół Narodzenia NMP w Zielonkach",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Anna Czort",
-      "date_death": "2026-09-16",
-      "date_funeral": "2026-09-21",
-      "time_funeral": "12:20",
-      "place": "Cmentarz Rakowicki",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/anna-czort/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Anna Czort | Data pogrzebu: 21.09.2026 | Msza Święta: 21.09.2026 o godz. 12:20 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Kazimierz Kuźma",
-      "date_death": "2026-09-13",
-      "date_funeral": "2026-09-18",
-      "time_funeral": "13:00",
-      "place": "Cmentarz Parafialny Prądnik Biały",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/kazimierz-kuzma/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Kazimierz Kuźma | Data pogrzebu: 18.09.2026 | Msza Święta: 18.09.2026 o godz. 13:00 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Wanda Olszewska",
-      "date_death": "2026-09-16",
-      "date_funeral": "2026-09-18",
-      "time_funeral": "10:20",
-      "place": "Cmentarz Rakowicki",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/wanda-olszewska/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Wanda Olszewska | Data pogrzebu: 18.09.2026 | Msza Święta: 18.09.2026 o godz. 10:20 Kaplica Cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Wojciech Kazior",
-      "date_death": "2026-09-10",
-      "date_funeral": "2026-09-16",
-      "time_funeral": "10:00",
-      "place": "Cmentarz Podgórski",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/wojciech-kazior/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Wojciech Kazior | Data pogrzebu: 16.09.2026 | Msza Święta: 16.09.2026 o godz. 10:00 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Jerzy Gdula",
-      "date_death": "2026-09-08",
-      "date_funeral": "2026-09-16",
-      "time_funeral": "13:00",
-      "place": "Cmentarz Rakowicki",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/jerzy-gdula/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Jerzy Gdula | Data pogrzebu: 16.09.2026 | Msza Święta: 16.09.2026 o godz. 13:00 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Marian Kobrzyński",
-      "date_death": "2026-09-07",
-      "date_funeral": "2026-09-14",
-      "time_funeral": "14:00",
-      "place": "Cmentarz Parafialny Prądnik Biały",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/marian-kobrzynski/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Marian Kobrzyński | Data pogrzebu: 14.09.2026 | Msza Święta: 14.09.2026 o godz. 14:00 kaplica cmentarna",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maksym Tkaczuk",
-      "date_death": "2026-09-07",
-      "date_funeral": "2026-09-11",
-      "time_funeral": "10:00",
-      "place": "Cmentarz komunalny Prądnik Czerwony- Batowice",
-      "source_id": "gabriel_nekrologi",
-      "source_name": "Gabriel24 – Nekrologi",
-      "url": "https://www.gabriel24.pl/nekrolog/maksym-tkaczuk/",
-      "source_url": "https://www.gabriel24.pl/nekrologi/",
-      "note": "Śp. Maksym Tkaczuk | Data pogrzebu: 11.09.2026 | Msza Święta: 11.09.2026 o godz. 10:00 Cerkiew Podwyższenia Krzyża Świętego",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Anna Czosnowska",
       "date_death": "2026-10-09",
       "date_funeral": "2026-10-15",
@@ -735,7 +567,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-czosnowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA CZOSNOWSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ANNA CZOSNOWSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -749,7 +581,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/olga-baranska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. OLGA BARAŃSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. OLGA BARAŃSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -763,7 +595,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/pawel-zbik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb jutro: 15.10.2026 (Czwartek)",
+      "note": "Pogrzeb dziś: 15.10.2026 (Czwartek)",
       "priority_hit": false
     },
     {
@@ -777,7 +609,35 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/alicja-zulikowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ALICJA ŻULIKOWSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ALICJA ŻULIKOWSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Kowalik-Ciaputa",
+      "date_death": "2026-10-11",
+      "date_funeral": "2026-10-16",
+      "time_funeral": "11:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/krystyna-kowalik-ciaputa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb jutro: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Jan Fiszer",
+      "date_death": "2026-10-05",
+      "date_funeral": "2026-10-16",
+      "time_funeral": "13:00",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/jan-fiszer/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. JAN FISZER | Pogrzeb jutro: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -791,21 +651,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/teresa-palka/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. TERESA PAŁKA | Pogrzeb wczoraj: 13.10.2026 (Wtorek) | Msza Święta: 13.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Maciej Cichy",
-      "date_death": "2026-10-03",
-      "date_funeral": "2026-10-12",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ BATOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/maciej-cichy/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. MACIEJ CICHY | Pogrzeb przedwczoraj: 12.10.2026 (Poniedziałek) | Msza Święta: 12.10.2026 o godz. 13:00 KAPLICA CMENTARNA BATOWICE",
+      "note": "Śp. TERESA PAŁKA | Pogrzeb przedwczoraj: 13.10.2026 (Wtorek) | Msza Święta: 13.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3418,7 +3264,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/olga-baranska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. OLGA BARAŃSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. OLGA BARAŃSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Krystyna Kowalik-Ciaputa",
+      "date_death": "2026-10-11",
+      "date_funeral": "2026-10-16",
+      "time_funeral": "11:40",
+      "place": "CMENTARZ RAKOWICKI",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/krystyna-kowalik-ciaputa/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb jutro: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3432,7 +3292,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/anna-czosnowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA CZOSNOWSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ANNA CZOSNOWSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3446,7 +3306,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/alicja-zulikowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ALICJA ŻULIKOWSKA | Pogrzeb jutro: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ALICJA ŻULIKOWSKA | Pogrzeb dziś: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -4316,7 +4176,15 @@
     "Śp. Dereń Heleno Gawin"
   ],
   "source_errors": [],
-  "source_warnings": [],
+  "source_warnings": [
+    {
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ],
   "source_diagnostics": [
     {
       "source_id": "zck_funerals",
@@ -4348,29 +4216,25 @@
       "source_id": "gabriel_nekrologi",
       "source_name": "Gabriel24 – Nekrologi",
       "url": "https://www.gabriel24.pl/nekrologi/",
-      "http_status": 200,
-      "candidate_links": 12,
-      "visited_links": 12,
-      "partial": false,
-      "accepted_rows": 12,
-      "parser_status": "ok",
-      "rows": 12,
-      "empty_streak": 0,
-      "fail_streak": 0,
+      "http_status": 0,
+      "parser_status": "http_error",
+      "rows": 0,
+      "empty_streak": 1,
+      "fail_streak": 1,
       "blocked_since": null,
-      "error": null
+      "error": "fetch: The operation was aborted. (prób: 3)"
     },
     {
       "source_id": "karawan_nekrologi",
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 6,
-      "visited_links": 6,
+      "candidate_links": 7,
+      "visited_links": 7,
       "partial": false,
-      "accepted_rows": 6,
+      "accepted_rows": 7,
       "parser_status": "ok",
-      "rows": 6,
+      "rows": 7,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -4419,7 +4283,7 @@
     }
   ],
   "refresh_error": null,
-  "refresh_warning": null,
+  "refresh_warning": "Gabriel24 – Nekrologi: fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
 }
