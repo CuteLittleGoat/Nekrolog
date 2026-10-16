@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T12:13:14.550Z",
-  "updated_at": "2026-10-16T12:13:14.550Z",
+  "generated_at": "2026-10-16T21:58:30.050Z",
+  "updated_at": "2026-10-16T21:58:30.050Z",
   "window": {
     "today": "2026-10-16",
     "death_from": "2026-10-09",
@@ -9,6 +9,20 @@
     "funeral_to": "2026-10-23"
   },
   "deaths": [
+    {
+      "kind": "death",
+      "name": "Bronisław Goleń",
+      "date_death": null,
+      "date_funeral": "2026-10-21",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bronislaw-Golen-9TJED8AAA9YW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P. | Data pogrzebu 21.10.2026",
+      "priority_hit": false
+    },
     {
       "kind": "death",
       "name": "Paweł Wąsik",
@@ -2691,6 +2705,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Bronisław Goleń",
+      "date_death": null,
+      "date_funeral": "2026-10-21",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bronislaw-Golen-9TJED8AAA9YW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Paweł Wąsik",
       "date_death": null,
       "date_funeral": "2026-10-21",
@@ -3890,6 +3918,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Bronisław Goleń",
+      "date_death": null,
+      "date_funeral": "2026-10-21",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bronislaw-Golen-9TJED8AAA9YW",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Paweł Wąsik",
       "date_death": null,
       "date_funeral": "2026-10-21",
@@ -4280,9 +4322,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 76,
+      "accepted_rows": 78,
       "parser_status": "ok",
-      "rows": 76,
+      "rows": 78,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
