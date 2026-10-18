@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-17T21:21:20.564Z",
-  "updated_at": "2026-10-17T21:21:20.564Z",
+  "generated_at": "2026-10-18T12:00:06.709Z",
+  "updated_at": "2026-10-18T12:00:06.709Z",
   "window": {
-    "today": "2026-10-17",
-    "death_from": "2026-10-10",
-    "death_to": "2026-10-17",
-    "funeral_from": "2026-10-17",
-    "funeral_to": "2026-10-24"
+    "today": "2026-10-18",
+    "death_from": "2026-10-11",
+    "death_to": "2026-10-18",
+    "funeral_from": "2026-10-18",
+    "funeral_to": "2026-10-25"
   },
   "deaths": [
     {
@@ -502,20 +502,6 @@
     },
     {
       "kind": "death",
-      "name": "Janina Zawicka-Tylec",
-      "date_death": null,
-      "date_funeral": "2026-09-23",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p | Data pogrzebu 23.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Tomasz Tytko",
       "date_death": null,
       "date_funeral": "2026-09-22",
@@ -698,20 +684,6 @@
     },
     {
       "kind": "death",
-      "name": "Barbara Ćwierz",
-      "date_death": "2026-10-13",
-      "date_funeral": "2026-10-17",
-      "time_funeral": "11:00",
-      "place": "CMENTARZ PARAFIALNY W MODLNICY",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/barbara-cwierz/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA ĆWIERZ | Pogrzeb dziś: 17.10.2026 (Sobota) | Msza Święta: 17.10.2026 o godz. 11:00 KOŚCIÓŁ ŚW. WOJCIECHA I MB BOLESNEJ",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Stefania Miałkowska",
       "date_death": "2026-10-12",
       "date_funeral": "2026-10-19",
@@ -721,7 +693,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stefania-mialkowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFANIA MIAŁKOWSKA | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STEFANIA MIAŁKOWSKA | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -735,7 +707,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janusz-nowotnik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANUSZ NOWOTNIK | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANUSZ NOWOTNIK | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -749,7 +721,21 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/zbigniew-basista/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW BASISTA | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ZBIGNIEW BASISTA | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Barbara Ćwierz",
+      "date_death": "2026-10-13",
+      "date_funeral": "2026-10-17",
+      "time_funeral": "11:00",
+      "place": "CMENTARZ PARAFIALNY W MODLNICY",
+      "source_id": "karawan_nekrologi",
+      "source_name": "Karawan – Nekrologi",
+      "url": "https://karawan.pl/nekrolog/barbara-cwierz/",
+      "source_url": "https://karawan.pl/nekrologi/",
+      "note": "Śp. BARBARA ĆWIERZ | Pogrzeb wczoraj: 17.10.2026 (Sobota) | Msza Święta: 17.10.2026 o godz. 11:00 KOŚCIÓŁ ŚW. WOJCIECHA I MB BOLESNEJ",
       "priority_hit": false
     },
     {
@@ -763,7 +749,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krystyna-kowalik-ciaputa/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb wczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb przedwczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -777,63 +763,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/jan-fiszer/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JAN FISZER | Pogrzeb wczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Anna Czosnowska",
-      "date_death": "2026-10-09",
-      "date_funeral": "2026-10-15",
-      "time_funeral": "13:00",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/anna-czosnowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ANNA CZOSNOWSKA | Pogrzeb przedwczoraj: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Olga Barańska",
-      "date_death": "2026-10-11",
-      "date_funeral": "2026-10-15",
-      "time_funeral": "10:20",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/olga-baranska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. OLGA BARAŃSKA | Pogrzeb przedwczoraj: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Pawel Zbik",
-      "date_death": "2026-09-28",
-      "date_funeral": "2026-10-15",
-      "time_funeral": null,
-      "place": "BRAMA GŁÓWNA CMENATRZA RAKOWICKIEGO",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/pawel-zbik/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb przedwczoraj: 15.10.2026 (Czwartek)",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Alicja Żulikowska",
-      "date_death": "2026-10-08",
-      "date_funeral": "2026-10-15",
-      "time_funeral": "13:40",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/alicja-zulikowska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ALICJA ŻULIKOWSKA | Pogrzeb przedwczoraj: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JAN FISZER | Pogrzeb przedwczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2759,20 +2689,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Janina Zawicka-Tylec",
-      "date_death": null,
-      "date_funeral": "2026-09-23",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Zawicka-Tylec-MT39MB80CSFI",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Tomasz Tytko",
       "date_death": null,
       "date_funeral": "2026-09-22",
@@ -2981,7 +2897,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/barbara-cwierz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. BARBARA ĆWIERZ | Pogrzeb dziś: 17.10.2026 (Sobota) | Msza Święta: 17.10.2026 o godz. 11:00 KOŚCIÓŁ ŚW. WOJCIECHA I MB BOLESNEJ",
+      "note": "Śp. BARBARA ĆWIERZ | Pogrzeb wczoraj: 17.10.2026 (Sobota) | Msza Święta: 17.10.2026 o godz. 11:00 KOŚCIÓŁ ŚW. WOJCIECHA I MB BOLESNEJ",
       "priority_hit": false
     },
     {
@@ -2995,7 +2911,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/stefania-mialkowska/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFANIA MIAŁKOWSKA | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. STEFANIA MIAŁKOWSKA | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3009,7 +2925,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/janusz-nowotnik/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. JANUSZ NOWOTNIK | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. JANUSZ NOWOTNIK | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3023,7 +2939,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/zbigniew-basista/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. ZBIGNIEW BASISTA | Pogrzeb pojutrze: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. ZBIGNIEW BASISTA | Pogrzeb jutro: 19.10.2026 (Poniedziałek) | Msza Święta: 19.10.2026 o godz. 12:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -3037,21 +2953,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krystyna-kowalik-ciaputa/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb wczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Olga Barańska",
-      "date_death": "2026-10-11",
-      "date_funeral": "2026-10-15",
-      "time_funeral": "10:20",
-      "place": "CMENTARZ RAKOWICKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/olga-baranska/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. OLGA BARAŃSKA | Pogrzeb przedwczoraj: 15.10.2026 (Czwartek) | Msza Święta: 15.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. KRYSTYNA KOWALIK-CIAPUTA | Pogrzeb przedwczoraj: 16.10.2026 (Piątek) | Msza Święta: 16.10.2026 o godz. 11:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -3476,9 +3378,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 76,
+      "accepted_rows": 74,
       "parser_status": "ok",
-      "rows": 76,
+      "rows": 74,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3505,12 +3407,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 10,
-      "visited_links": 10,
+      "candidate_links": 6,
+      "visited_links": 6,
       "partial": false,
-      "accepted_rows": 10,
+      "accepted_rows": 6,
       "parser_status": "ok",
-      "rows": 10,
+      "rows": 6,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
