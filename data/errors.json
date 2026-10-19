@@ -1,5 +1,12 @@
 {
-  "generated_at": "2026-10-19T14:31:29.728Z",
-  "errors": [],
+  "generated_at": "2026-10-19T22:51:00.679Z",
+  "errors": [
+    {
+      "source_id": "salwator_grobonet",
+      "source_name": "Kraków Salwator – Groby (Grobonet)",
+      "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
+      "error": "HTTP 403 (prób: 1)"
+    }
+  ],
   "warnings": []
 }
