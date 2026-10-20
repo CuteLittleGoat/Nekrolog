@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T12:38:16.682Z",
+  "generated_at": "2026-10-20T22:12:48.834Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -8,5 +8,13 @@
       "error": "HTTP 403 (prób: 1)"
     }
   ],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "gabriel_nekrologi",
+      "source_name": "Gabriel24 – Nekrologi",
+      "url": "https://www.gabriel24.pl/nekrologi/",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
