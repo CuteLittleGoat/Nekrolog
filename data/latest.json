@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-23T12:31:29.492Z",
-  "updated_at": "2026-10-23T12:31:29.492Z",
+  "generated_at": "2026-10-23T21:56:58.256Z",
+  "updated_at": "2026-10-23T21:56:58.256Z",
   "window": {
     "today": "2026-10-23",
     "death_from": "2026-10-16",
@@ -35,6 +35,20 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Waclawik-3OUW9D4SCCAF",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "ŚP. | Data pogrzebu 28.10.2026",
+      "priority_hit": false
+    },
+    {
+      "kind": "death",
+      "name": "Zbigniew Piecuch",
+      "date_death": null,
+      "date_funeral": "2026-10-28",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Piecuch-79NRZ17T9MIS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P. | Data pogrzebu 28.10.2026",
       "priority_hit": false
     },
     {
@@ -2836,6 +2850,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Zbigniew Piecuch",
+      "date_death": null,
+      "date_funeral": "2026-10-28",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Piecuch-79NRZ17T9MIS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Stefan Mędrecki",
       "date_death": null,
       "date_funeral": "2026-10-26",
@@ -4041,6 +4069,20 @@
     },
     {
       "kind": "funeral",
+      "name": "Zbigniew Piecuch",
+      "date_death": null,
+      "date_funeral": "2026-10-28",
+      "time_funeral": null,
+      "place": "PUK Kraków – Pożegnaliśmy",
+      "source_id": "puk_pozegnalismy",
+      "source_name": "PUK Kraków – Pożegnaliśmy",
+      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Piecuch-79NRZ17T9MIS",
+      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
+      "note": "Ś.P.",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Jan Józef Müller",
       "date_death": null,
       "date_funeral": "2026-10-29",
@@ -4438,9 +4480,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 84,
+      "accepted_rows": 86,
       "parser_status": "ok",
-      "rows": 84,
+      "rows": 86,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -4485,7 +4527,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 8,
+      "empty_streak": 9,
       "fail_streak": 0,
       "blocked_since": "2026-10-19T22:50:50.823Z",
       "error": "HTTP 403 (prób: 1)"
