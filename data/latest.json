@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-24T21:28:12.572Z",
-  "updated_at": "2026-10-24T21:28:12.572Z",
+  "generated_at": "2026-10-25T12:26:46.216Z",
+  "updated_at": "2026-10-25T12:26:46.216Z",
   "window": {
-    "today": "2026-10-24",
-    "death_from": "2026-10-17",
-    "death_to": "2026-10-24",
-    "funeral_from": "2026-10-24",
-    "funeral_to": "2026-10-31"
+    "today": "2026-10-25",
+    "death_from": "2026-10-18",
+    "death_to": "2026-10-25",
+    "funeral_from": "2026-10-25",
+    "funeral_to": "2026-11-01"
   },
   "deaths": [
     {
@@ -544,20 +544,6 @@
     },
     {
       "kind": "death",
-      "name": "Irena Jeziorek",
-      "date_death": null,
-      "date_funeral": "2026-09-29",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p | Data pogrzebu 29.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
       "name": "Maria Jamrozik",
       "date_death": null,
       "date_funeral": "2026-09-28",
@@ -580,20 +566,6 @@
       "source_id": "puk_pozegnalismy",
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jerzy-Pokigo-HV7W7YH4RGIJ",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P. | Data pogrzebu 28.09.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Julian Kaleta",
-      "date_death": null,
-      "date_funeral": "2026-09-28",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.P. | Data pogrzebu 28.09.2026",
       "priority_hit": false
@@ -777,7 +749,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/piotr-wrzesinski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. PIOTR WRZESIŃSKI | Pogrzeb pojutrze: 26.10.2026 (Poniedziałek) | Msza Święta: 26.10.2026 o godz. 13:00 KAPLICA NA CMENTARZU W GRĘBAŁOWIE",
+      "note": "Śp. PIOTR WRZESIŃSKI | Pogrzeb jutro: 26.10.2026 (Poniedziałek) | Msza Święta: 26.10.2026 o godz. 13:00 KAPLICA NA CMENTARZU W GRĘBAŁOWIE",
       "priority_hit": false
     },
     {
@@ -791,7 +763,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/grazyna-pajor/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. GRAŻYNA PAJOR | Pogrzeb wczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. GRAŻYNA PAJOR | Pogrzeb przedwczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 10:20 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -805,7 +777,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-zydek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb wczoraj: 23.10.2026 (Piątek)",
+      "note": "Pogrzeb przedwczoraj: 23.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -819,7 +791,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/inz-stanislaw-michalski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb wczoraj: 23.10.2026 (Piątek)",
+      "note": "Pogrzeb przedwczoraj: 23.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -833,7 +805,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/witold-worsztynowicz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WITOLD WORSZTYNOWICZ | Pogrzeb wczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WITOLD WORSZTYNOWICZ | Pogrzeb przedwczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -847,21 +819,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/krzysztof-mlodkowski/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. KRZYSZTOF MŁODKOWSKI | Pogrzeb wczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Stefan Krzyszkowski",
-      "date_death": "2026-10-16",
-      "date_funeral": "2026-10-22",
-      "time_funeral": "10:00",
-      "place": "CMENTARZ PODGÓRSKI",
-      "source_id": "karawan_nekrologi",
-      "source_name": "Karawan – Nekrologi",
-      "url": "https://karawan.pl/nekrolog/stefan-krzyszkowski/",
-      "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. STEFAN KRZYSZKOWSKI | Pogrzeb przedwczoraj: 22.10.2026 (Czwartek) | Msza Święta: 22.10.2026 o godz. 10:00 KAPLICA CMENTARNA PODGÓRZE",
+      "note": "Śp. KRZYSZTOF MŁODKOWSKI | Pogrzeb przedwczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:40 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     },
     {
@@ -2829,20 +2787,6 @@
     },
     {
       "kind": "funeral",
-      "name": "Irena Jeziorek",
-      "date_death": null,
-      "date_funeral": "2026-09-29",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Jeziorek-RM00RC7OSJ61",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.p",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
       "name": "Maria Jamrozik",
       "date_death": null,
       "date_funeral": "2026-09-28",
@@ -2865,20 +2809,6 @@
       "source_id": "puk_pozegnalismy",
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jerzy-Pokigo-HV7W7YH4RGIJ",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Julian Kaleta",
-      "date_death": null,
-      "date_funeral": "2026-09-28",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Julian-Kaleta-GK4QY84G122V",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.P.",
       "priority_hit": false
@@ -3010,7 +2940,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/malgorzata-zydek/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Pogrzeb wczoraj: 23.10.2026 (Piątek)",
+      "note": "Pogrzeb przedwczoraj: 23.10.2026 (Piątek)",
       "priority_hit": false
     },
     {
@@ -3024,7 +2954,7 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrolog/witold-worsztynowicz/",
       "source_url": "https://karawan.pl/nekrologi/",
-      "note": "Śp. WITOLD WORSZTYNOWICZ | Pogrzeb wczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
+      "note": "Śp. WITOLD WORSZTYNOWICZ | Pogrzeb przedwczoraj: 23.10.2026 (Piątek) | Msza Święta: 23.10.2026 o godz. 13:00 KAPLICA CMENTARNA RAKOWICE",
       "priority_hit": false
     }
   ],
@@ -3484,15 +3414,17 @@
     "Dereń Heleno Gawin",
     "Śp. Dereń Heleno Gawin"
   ],
-  "source_errors": [
+  "source_errors": [],
+  "source_warnings": [
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
-      "error": "HTTP 403 (prób: 1)"
+      "blocked_since": "2026-10-19T22:50:50.823Z",
+      "blocked_days": 5,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 5 dni"
     }
   ],
-  "source_warnings": [],
   "source_diagnostics": [
     {
       "source_id": "zck_funerals",
@@ -3512,9 +3444,9 @@
       "source_name": "PUK Kraków – Pożegnaliśmy",
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
-      "accepted_rows": 86,
+      "accepted_rows": 82,
       "parser_status": "ok",
-      "rows": 86,
+      "rows": 82,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3541,12 +3473,12 @@
       "source_name": "Karawan – Nekrologi",
       "url": "https://karawan.pl/nekrologi/",
       "http_status": 200,
-      "candidate_links": 7,
-      "visited_links": 7,
+      "candidate_links": 6,
+      "visited_links": 6,
       "partial": false,
-      "accepted_rows": 7,
+      "accepted_rows": 6,
       "parser_status": "ok",
-      "rows": 7,
+      "rows": 6,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -3559,7 +3491,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 11,
+      "empty_streak": 12,
       "fail_streak": 0,
       "blocked_since": "2026-10-19T22:50:50.823Z",
       "error": "HTTP 403 (prób: 1)"
@@ -3592,8 +3524,8 @@
       "error": null
     }
   ],
-  "refresh_error": "Kraków Salwator – Groby (Grobonet): HTTP 403 (prób: 1)",
-  "refresh_warning": null,
+  "refresh_error": null,
+  "refresh_warning": "Kraków Salwator – Groby (Grobonet): HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 5 dni",
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
 }
