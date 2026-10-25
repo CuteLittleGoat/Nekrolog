@@ -7,6 +7,28 @@ Analiza nie ma związku z wcześniejszymi przyczynami tego samego statusu (Dębn
 
 ---
 
+## Stan realizacji (aktualizacja 2026-10-25)
+
+| Pozycja | Stan |
+|---|---|
+| Analiza | **wykonana**, na `main` — commit `73e06ba` |
+| Decyzja użytkownika | **wariant A** (tolerowana blokada), kontrola trwałości blokady za 2–3 tygodnie |
+| Rekomendacja A — flaga `external_block_tolerated` dla `salwator_grobonet` | **wdrożona** na `main` — commit `6e1464d` (szczegóły: §9) |
+| Rekomendacja B — baner i komunikat pustej sekcji grobów | niewdrożona |
+| Rekomendacja C — wyłączenie źródła | niewdrożona — do decyzji przy kontroli |
+| Rekomendacja D — sonda dostępu | niewdrożona — potrzebna tylko razem z C |
+| Rekomendacja E — pogrzeby z Karawana i Gabriel24 | niewdrożona |
+| Próg tolerancji dla pojedynczego źródła | niewdrożony — zaproponowany w §9, bez decyzji |
+| Pierwszy przebieg produkcyjny po wdrożeniu | jeszcze się nie odbył w chwili zapisu (ostatni: #641, 2026-10-24 21:27 UTC, przed wdrożeniem) |
+
+**Daty do zapamiętania:**
+
+- **2026-10-19 22:50 UTC** — początek blokady (`blocked_since`).
+- **2026-11-02 ok. 23:00 UTC** — koniec 14-dniowej tolerancji. Jeżeli blokada trwa, od tego przebiegu status wraca do `done_with_errors` z komunikatem „przekroczono próg 14 dni”.
+- **2026-11-08 – 2026-11-15** — planowana kontrola użytkownika. Instrukcja kontroli: §10.
+
+---
+
 ## 1. Oryginalny pełny prompt użytkownika
 
 ```text
@@ -20,6 +42,16 @@ Dopisek użytkownika w trakcie pracy:
 
 ```text
 Analizę wrzuć na Main.
+```
+
+Kolejne polecenia użytkownika (realizacja opisana w §9 i §10):
+
+```text
+Wdrażamy wariant A. Za 2-3tyg sprawdzimy czy blokada jest stała po stronie źródła.
+```
+
+```text
+Zaktualizuj analizę. Zapisz co zostało wykonane. Będzie to potem potrzebne.
 ```
 
 Treść zrzutu ekranu (przepisana, bo obraz nie jest częścią repozytorium):
@@ -329,11 +361,14 @@ Podtrzymana rekomendacja E z analizy Dębnik: **nie obchodzić wyzwania Cloudfla
 
 ## 7. Następne kroki
 
-1. **Decyzja użytkownika:** wdrożyć wariant A (rekomendowany) czy od razu C (wyłączenie).
-2. Wdrożyć **B** niezależnie od wyboru w kroku 1 — bez tego kolejna awaria znów będzie pokazywana przez baner tak samo mylnie jak na zrzucie.
-3. Po wdrożeniu A: obserwować przebieg 2026-11-02 ~23:00 UTC. Jeżeli przed nim Grobonet zwróci 200 — nic więcej nie trzeba robić. Jeżeli status wróci do `done_with_errors` z komunikatem o przekroczeniu progu — przejść do C i D.
-4. Opcjonalnie, przed decyzją o self-hosted runnerze: jedno żądanie `curl` do adresu wyszukiwania z łącza domowego, żeby sprawdzić, czy wyzwanie dotyczy wszystkich klientów, czy tylko centrów danych.
-5. Rekomendacja E (pogrzeby z Karawana i Gabriel24) — osobno, jeśli użytkownik uzna ją za potrzebną.
+Stan na 2026-10-25, po wdrożeniu wariantu A:
+
+1. ~~**Decyzja użytkownika:** wdrożyć wariant A (rekomendowany) czy od razu C (wyłączenie).~~ **Wykonane** — wybrano A, wdrożone w commicie `6e1464d` (§9).
+2. Wdrożyć **B** niezależnie od wyboru w kroku 1 — bez tego kolejna awaria znów będzie pokazywana przez baner tak samo mylnie jak na zrzucie. **Otwarte.**
+3. Obserwować przebieg 2026-11-02 ~23:00 UTC. Jeżeli przed nim Grobonet zwróci 200 — nic więcej nie trzeba robić. Jeżeli status wróci do `done_with_errors` z komunikatem o przekroczeniu progu — to sygnał do decyzji, nie nowa awaria. **Otwarte.**
+4. **Kontrola użytkownika za 2–3 tygodnie (2026-11-08 – 2026-11-15)** — według instrukcji z §10: blokada zdjęta → nic do zrobienia; blokada trwa → C i D albo dłuższa tolerancja. **Otwarte.**
+5. Opcjonalnie, przed decyzją o self-hosted runnerze: jedno żądanie `curl` do adresu wyszukiwania z łącza domowego, żeby sprawdzić, czy wyzwanie dotyczy wszystkich klientów, czy tylko centrów danych. **Otwarte.**
+6. Rekomendacja E (pogrzeby z Karawana i Gabriel24) — osobno, jeśli użytkownik uzna ją za potrzebną. **Otwarte.**
 
 ---
 
@@ -358,6 +393,18 @@ Wdrażamy wariant A. Za 2-3tyg sprawdzimy czy blokada jest stała po stronie źr
 ```
 
 Wdrożono wyłącznie rekomendację **A**. Rekomendacje B (baner), C/D (wyłączenie i sonda) oraz E (pogrzeby z Karawana i Gabriel24) **nie zostały wdrożone**.
+
+### Wdrożenie
+
+| Pozycja | Wartość |
+|---|---|
+| Gałąź | `main`, bezpośrednio, tak jak analiza na polecenie „Analizę wrzuć na Main” |
+| Commit analizy | `73e06ba` — „Analiza: done_with_errors od 2026-10-19 — blokada Cloudflare na Grobonecie (Salwator)”, 2026-10-25 08:10 UTC |
+| Commit wdrożenia | `6e1464d` — „Grobonet Salwator: tolerowana blokada Cloudflare (wariant A analizy)”, 2026-10-25 08:46 UTC |
+| Zmienione pliki | `scripts/nekrolog_core.mjs`, `config/sources.json`, `tests/refresh.snapshot.test.mjs`, `README.md`, `Instrukcja_odczytu_zrodel_Nekrolog.md`, niniejsza analiza |
+| Pliki **niezmienione** | `data/*` (odświeży je harmonogram), `app.js`, `scripts/refresh_static.mjs` (próg `BLOCK_TOLERANCE_DAYS = 14` bez zmian), `scripts/fetch.mjs`, workflow |
+| Stan workflow przy wypchnięciu | żaden przebieg nie trwał — ostatni #641 (2026-10-24 21:27 UTC, `success`). Wypchnięcie nie mogło więc zderzyć się z `git push` bota |
+| Kiedy zmiana zadziała | od pierwszego przebiegu harmonogramu po 2026-10-25 08:46 UTC (cron `0 7,19 * * *` UTC, faktyczne starty bywają opóźnione o kilka godzin). Ręcznego uruchomienia workflow nie wykonano, bo wysłałoby heartbeat na Discord |
 
 ### Plik: `scripts/nekrolog_core.mjs`
 
@@ -455,3 +502,68 @@ Pliki w `data/` przywrócono do stanu z repozytorium. Zaktualizuje je najbliższ
 Plan użytkownika to kontrola **za 2–3 tygodnie** (ok. 2026-11-08 – 2026-11-15). Próg tolerancji liczy się jednak od `blocked_since` (2026-10-19 22:50 UTC), więc jeśli blokada nie ustąpi, **status wróci do `done_with_errors` ok. 2026-11-02 23:00 UTC**, czyli przed planowaną kontrolą. Komunikat będzie wtedy jednoznaczny („przekroczono próg 14 dni — źródło wymaga decyzji”). To zamierzone działanie wariantu A, a nie nowa awaria.
 
 Jeżeli ponowny `done_with_errors` przed kontrolą jest niepożądany, można dodać próg tolerancji dla pojedynczego źródła (np. pole `block_tolerance_days` w definicji, odczytywane w `classifySourceOutcome` zamiast globalnego `BLOCK_TOLERANCE_DAYS`). Nie zostało to wdrożone, bo wykracza poza zatwierdzony wariant A.
+
+---
+
+## 10. Instrukcja kontroli trwałości blokady (planowana na 2026-11-08 – 2026-11-15)
+
+Sekcja zapisana na prośbę użytkownika, żeby kontrolę dało się wykonać bez odtwarzania całej analizy.
+
+### 10.1. Co sprawdzić
+
+Rozstrzyga przebieg produkcyjny z runnera GitHub Actions, a nie odczyt z komputera domowego, bo blokady Cloudflare zależą od toru sieciowego.
+
+1. `data/job.json` → `status`, `error_message`, `warning_message`.
+2. `data/job.json` → `source_diagnostics`, wpis `salwator_grobonet`: `http_status`, `parser_status`, `rows`, `blocked_since`.
+3. `data/source_health.json` → `salwator_grobonet.last_nonempty_run` (ostatni udany odczyt; przed blokadą `2026-10-19T14:31:23.720Z`).
+4. W interfejsie: sekcja Log (wiersz „Kraków Salwator – Groby (Grobonet)”, „zablokowane od …”) i sekcja „Groby monitorowanych nazwisk” (przed blokadą 12 rekordów).
+5. Opcjonalnie, żeby potwierdzić, że to nadal ta sama blokada, a nie inna przyczyna:
+
+   ```bash
+   curl -sS -o /dev/null -D - -A "nekrolog-refresh-bot/1.0 (+https://github.com/)" \
+     "https://krakowsalwator.grobonet.com/grobonet/start.php?id=wyniki&name=Gawin" | grep -iE "^HTTP|cf-mitigated|^server"
+   ```
+
+   Blokada z tej analizy: `HTTP/2 403`, `server: cloudflare`, `cf-mitigated: challenge`.
+
+### 10.2. Interpretacja
+
+| Obserwacja w `source_diagnostics` | Znaczenie | Działanie |
+|---|---|---|
+| `http_status: 200`, `parser_status: "ok"`, `rows` ok. 12, `blocked_since: null`; `status: "done"` | blokada zdjęta | Nic do zmiany w kodzie. Flaga `external_block_tolerated` może zostać, bo przy działającym źródle nic nie robi i zabezpiecza przed nawrotem. Odnotować datę zdjęcia blokady w README §3, w §0 instrukcji źródeł i w tej analizie. |
+| `http_status: 403`, `parser_status: "blocked"`, `status: "done_with_errors"`, komunikat „przekroczono próg 14 dni” | blokada trwa co najmniej 14 dni | Decyzja: wariant C (+ D) albo dłuższa tolerancja — §10.3. |
+| `http_status: 200`, ale `rows: 0` i `parser_status: "empty"` | dostęp wrócił, ale strona się zmieniła | Sprawdzić parser `parseGrobonetGrobyHtml` na żywej stronie (selektor `.results_list li`) i zaktualizować zrzut `tests/fixtures/grobonet_groby_gawin_2026-08-18.html`. |
+| Inny status (404, 5xx, `0`) albo 403 bez `cf-mitigated: challenge` | inna przyczyna niż ta analiza | Nowa analiza. |
+
+### 10.3. Gotowe zakresy zmian, jeżeli blokada trwa
+
+**Wariant C — wyłączenie źródła** (analogicznie do `debniki_intencje` z 2026-08-23):
+
+| Plik | Zmiana |
+|---|---|
+| `scripts/nekrolog_core.mjs`, `REQUIRED_SOURCES`, wpis `salwator_grobonet` | `enabled:true` → `enabled:false`; komentarz z datą i powodem decyzji. Flagę `external_block_tolerated:true` **zostawić**, żeby ponowne włączenie było zmianą jednego pola. |
+| `config/sources.json`, obiekt `salwator_grobonet` | `"enabled": true` → `false`. **Obowiązkowe** — przy scalaniu `enabled` z zapisanej konfiguracji wygrywa nad definicją. |
+| `tests/refresh.snapshot.test.mjs`, test „Grobonet Salwator: blokada Cloudflare jest ostrzeżeniem tylko do progu tolerancji” | Test asertuje `source.enabled === true` i po wyłączeniu przestanie przechodzić. Zmienić asercję na `false` albo przenieść źródło do testu „źródła bez dostępu i bez wartości danych są wyłączone w definicji”. |
+| `app.js`, `loadAll`, `renderList("graves", …)` | Komunikat pustej sekcji zależny od tego, czy jest włączone źródło typu `grobonet_groby` — wzorem `intentionsEmptyText` (rekomendacja B4). |
+| `README.md` | §2: kategoria `grave` bez czynnego źródła. §3: tabela źródeł i uwaga o Grobonecie. §8: zdanie „Flagę ma obecnie `salwator_grobonet` (czynne)…” → wyłączone. |
+| `Instrukcja_odczytu_zrodel_Nekrolog.md`, §0 | wiersz `salwator_grobonet`: „wyłączone”, data i powód. |
+| `.github/workflows/debniki-probe.yml` (wariant D) | Drugi krok z żądaniem `GET https://krakowsalwator.grobonet.com/grobonet/start.php?id=wyniki&name=Gawin`. Bez tego wyłączonego źródła nic nie testuje i zdjęcie blokady przejdzie niezauważone. |
+
+Efekt: status wraca do `done`, `sources_total` spada z 7 do 6, sekcja grobów jest pusta z jawnym komunikatem.
+
+**Wariant „dłuższa tolerancja”** — jeżeli użytkownik woli jeszcze poczekać bez wyłączania źródła:
+
+- Nowe pole w definicji źródła, np. `block_tolerance_days:28`.
+- `classifySourceOutcome` (`scripts/nekrolog_core.mjs`): używać `Number(source.block_tolerance_days) || toleranceDays` zamiast samego `toleranceDays`.
+- `mergeRequiredSources`: wymusić to pole z definicji, tak jak `external_block_tolerated`. Bez tego przebieg zapisze je do `config/sources.json`, a od następnej zmiany wartość z konfiguracji wygrywałaby z kodem.
+- Test na klasyfikację przed i po nowym progu.
+
+To świadome przedłużenie ukrywania problemu, wbrew intencji progu opisanej w README §8. Ma sens tylko wtedy, gdy są przesłanki, że blokada jest przejściowa.
+
+### 10.4. Kontekst potrzebny przy kontroli
+
+- **Blokada:** Cloudflare Managed Challenge (`cType: 'managed'`) na całej strefie `grobonet.com`, także `robots.txt` i strona główna dostawcy. 403 z każdego sprawdzonego toru: proxy kontenera, bezpośrednio z GCP i z runnera GitHub Actions. Nagłówki żądania nie mają wpływu (§3.5).
+- **Hipoteza do weryfikacji przy kontroli:** blokada związana ze szczytem ruchu przed 1 listopada. Jeżeli zniknęła wkrótce po 1 listopada, hipoteza się potwierdza.
+- **Decyzje obowiązujące:** zabezpieczeń nie obchodzimy (analiza Dębnik, potwierdzone w §5 G). Kontakt z parafią Dębniki odrzucono wcześniej. Kontakt z dostawcą Grobonet nie został rozstrzygnięty (§5 F).
+- **Mechanika konfiguracji:** flaga `external_block_tolerated` pochodzi z definicji w kodzie. `enabled` i adresy pochodzą z `config/sources.json` (zapisane wartości wygrywają). Przebieg sam przepisuje `config/sources.json`.
+- **Punkt odniesienia po odblokowaniu:** 12 grobów osób o nazwisku Gawin na Cmentarzu Parafialnym Kraków-Salwator (stan z commitu `38d9f78`, 2026-10-19 14:31 UTC). Wyszukiwanie „Dereń” nie zwracało wyników także przed blokadą.
