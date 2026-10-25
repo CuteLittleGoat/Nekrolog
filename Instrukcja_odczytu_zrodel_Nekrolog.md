@@ -19,7 +19,7 @@ Zakres: publiczne pliki aplikacji z GitHub Pages / raw.githubusercontent.com ora
 | `puk_pozegnalismy` | czynne | — |
 | `gabriel_nekrologi` | czynne | — |
 | `karawan_nekrologi` | czynne | — |
-| `salwator_grobonet` | czynne | Wykorzystywana jest **wyszukiwarka grobów**, nie strona „Nekrologi” (ta nie zawiera wpisów). Adres w §4 jest nieaktualny. |
+| `salwator_grobonet` | czynne | Wykorzystywana jest **wyszukiwarka grobów**, nie strona „Nekrologi” (ta nie zawiera wpisów). Adres w §4 jest nieaktualny. Od 2026-10-19 cała strefa `grobonet.com` stoi za Cloudflare Managed Challenge (HTTP 403 na każdy odczyt automatyczny); blokada jest tolerowana przez 14 dni (`external_block_tolerated`), zabezpieczenia nie są obchodzone. Wpis uzupełniono 2026-10-25. |
 | `podwawelskie_nekrologi` | czynne | — |
 | `sw_jadwiga_pogrzebowe` | czynne | Od 2026-10-02 strona parafii działa pod **`jadwiga.eparafia.pl`**. Stary host `swietajadwiga.diecezja.pl` przedstawia certyfikat nowej domeny i nie daje się odczytać. Struktura strony bez zmian; adresy w tym dokumencie zaktualizowano 2026-10-05. |
 | `debniki_sdb` | **wyłączone** | Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. |

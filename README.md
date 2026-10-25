@@ -52,7 +52,7 @@ Każdy rekord ma pole `kind`:
 | PUK Kraków – Pożegnaliśmy | `puk_pozegnalismy` | zgon + pogrzeb (dwa rekordy na osobę), link do klepsydry |
 | Gabriel24 – Nekrologi | `gabriel24_nekrologi` | nekrologi spod `/nekrolog/<slug>/`; daty, godzina mszy, cmentarz |
 | Karawan – Nekrologi | `karawan_nekrologi` | jak wyżej (ten sam widżet e-Nekrolog) |
-| Kraków Salwator – Groby | `grobonet_groby` | **wyszukiwarka grobów**: miejsce pochówku dla nazwisk z `search_terms` |
+| Kraków Salwator – Groby | `grobonet_groby` | **wyszukiwarka grobów**: miejsce pochówku dla nazwisk z `search_terms`; od 2026-10-19 zablokowane przez Cloudflare — blokada tolerowana (`external_block_tolerated`) |
 | Parafia Dębniki – ogłoszenia | `debniki_sdb_pogrzeby` | wyłączone (`enabled: false`) – nigdy nie zwróciło rekordu |
 | Parafia Dębniki – Intencje mszalne | `debniki_intencje` | wyłączone (`enabled: false`) – serwis blokuje odczyt automatyczny |
 | Podwawelskie – Nekrologi | `podwawelskie_nekrologi` | kafelki z datami ur./zg. (ikony `fa-star` / `fa-cross`), 6 podstron |
@@ -61,7 +61,7 @@ Każdy rekord ma pole `kind`:
 
 Uwagi merytoryczne:
 - **św. Jadwiga** publikuje datę *zgłoszenia*, a strony szczegółowe zawierają intencje mszalne, nie termin pogrzebu — dlatego data trafia do `date_death`, nigdy do `date_funeral`. Od 2026-10-02 strona parafii działa pod adresem `https://jadwiga.eparafia.pl/parafia/msze-swiete-pogrzebowe`. Stary host `swietajadwiga.diecezja.pl` przedstawia certyfikat nowej domeny (`ERR_TLS_CERT_ALTNAME_INVALID`), więc odczyt się nie udaje — weryfikacji certyfikatu nie wyłączamy. Struktura listy (`li.artykul`) się nie zmieniła.
-- **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`.
+- **Grobonet** nie prowadzi listy nekrologów; użyteczna jest jego baza pochówków. Nazwiska do odpytania podaje `search_terms` w konfiguracji źródła — przy zmianie monitorowanej osoby aktualizuj je razem z `Frazy.json`. Od 2026-10-19 cała strefa `grobonet.com` (także `robots.txt` i strona dostawcy) stoi za Cloudflare Managed Challenge i odpowiada HTTP 403 na każdy odczyt automatyczny — **zabezpieczenia nie są obchodzone**. Blokada dotyczy wszystkich klientów dostawcy i może być przejściowa, dlatego źródło ma flagę `external_block_tolerated`: przez 14 dni od `blocked_since` daje ostrzeżenie zamiast błędu, a potem wraca do rangi błędu i wymaga decyzji (przywrócenie dostępu albo `enabled: false`). Źródło pozostaje włączone, więc każdy przebieg sprawdza, czy blokada ustąpiła. **Do tego czasu kategoria `grave` nie ma danych.**
 - **Podwawelskie** publikuje z kilkutygodniowym opóźnieniem; źródło ma wartość dla wyszukiwania fraz, a nie dla okna 7-dniowego.
 - **Dębniki (ogłoszenia)** są wyłączone. Parser znajdował linki, ale żaden nie przechodził walidacji — źródło nie zwróciło ani jednego rekordu w całej historii przebiegów, także przy HTTP 200. Definicja zostaje w `nekrolog_core.mjs`, żeby zachować historię i umożliwić powrót po przebudowie strony parafii.
 - **Dębniki (intencje)** są wyłączone. Host `debniki.sdb.org.pl` stoi za Cloudflare Managed Challenge, który odrzuca ruch z zakresów centrów danych — w tym z runnerów GitHub Actions. Decyzja o kryterium blokady zapada po reputacji adresu IP, nie po nagłówkach żądania, więc zmiana User-Agenta niczego nie daje, a **zabezpieczenia nie są obchodzone**. Ponieważ dostęp nie jest odzyskiwany, źródło zostało wyłączone. **Konsekwencja: kategoria `intention` nie ma dostawcy i sekcja „potrzeby” jest trwale pusta** — interfejs komunikuje to wprost, zamiast pokazywać pustą listę bez wyjaśnienia. Definicja źródła i flaga `external_block_tolerated` zostają w kodzie, więc ponowne włączenie to zmiana jednego pola.
@@ -153,7 +153,7 @@ Nie każda awaria odczytu jest defektem do naprawienia w kodzie. Pipeline rozdzi
 | Reakcja | poprawka kodu lub zrzutu testowego | zmiana drogi dostępu albo odczekanie kolejnego przebiegu; kod nie ma na to wpływu |
 | Widoczność | sekcja Log, `error_message` | sekcja Log (osobna lista), `warning_message`, baner w UI |
 
-Warunkiem potraktowania blokady jako ostrzeżenia jest flaga `external_block_tolerated: true` w definicji źródła. Bez niej HTTP 403 pozostaje zwykłym błędem.
+Warunkiem potraktowania blokady jako ostrzeżenia jest flaga `external_block_tolerated: true` w definicji źródła. Bez niej HTTP 403 pozostaje zwykłym błędem. Flagę ma obecnie `salwator_grobonet` (czynne) oraz `debniki_intencje` (wyłączone). Wartość ustala definicja w `scripts/nekrolog_core.mjs` — `mergeRequiredSources` nadpisuje nią zapis w `config/sources.json`.
 
 ### Awaria sieciowa: przejściowa czy trwała
 

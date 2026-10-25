@@ -17,7 +17,12 @@ const REQUIRED_SOURCES = [
   // Strona "Nekrologi" Salwatora jest pusta, ale wyszukiwarka grobów zwraca miejsce
   // pochówku szukanej osoby — i po to źródło zostaje. search_terms to nazwiska
   // odpytywane w bazie; przy zmianie monitorowanej osoby aktualizuj je razem z Frazy.json.
-  { id:"salwator_grobonet", name:"Kraków Salwator – Groby (Grobonet)", type:"grobonet_groby", url:"https://krakowsalwator.grobonet.com/grobonet/start.php", enabled:true, distance_km:5.5, list_url:"https://krakowsalwator.grobonet.com/grobonet/start.php", base_url:"https://krakowsalwator.grobonet.com/grobonet/", search_terms:["Gawin","Dereń"], max_detail_pages:50, ...DEFAULT_FLAGS },
+  // Od 2026-10-19 cała strefa grobonet.com (także robots.txt i strona dostawcy) stoi za
+  // Cloudflare Managed Challenge — HTTP 403 z każdego toru sieciowego. Blokada dotyczy
+  // wszystkich klientów dostawcy, nie tego projektu, i może być przejściowa (szczyt ruchu
+  // przed 1 listopada), więc jest tolerowana przez BLOCK_TOLERANCE_DAYS, a potem wraca
+  // do rangi błędu i wymaga decyzji: przywrócenie dostępu albo enabled: false.
+  { id:"salwator_grobonet", name:"Kraków Salwator – Groby (Grobonet)", type:"grobonet_groby", url:"https://krakowsalwator.grobonet.com/grobonet/start.php", enabled:true, distance_km:5.5, list_url:"https://krakowsalwator.grobonet.com/grobonet/start.php", base_url:"https://krakowsalwator.grobonet.com/grobonet/", search_terms:["Gawin","Dereń"], max_detail_pages:50, external_block_tolerated:true, ...DEFAULT_FLAGS },
   // Wyłączone: w całej zapisanej historii przebiegów źródło nie zwróciło ani jednego
   // rekordu (last_nonempty_run: null), także wtedy, gdy odpowiadało kodem 200 —
   // parser znajduje linki, ale żaden nie przechodzi walidacji. Zakres tematyczny

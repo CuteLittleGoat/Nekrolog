@@ -346,3 +346,112 @@ Na etapie analizy **nie zmieniano kodu ani konfiguracji** — zgodnie z `AGENTS.
 - `node scripts/refresh_static.mjs` z `DISCORD_NOTIFY_ENABLED=false` — przebieg diagnostyczny. Nadpisane pliki w `data/` **przywrócono do stanu z repozytorium** (`git checkout -- data/`). Żadne powiadomienie Discord nie zostało wysłane.
 - Symulacja `classifySourceOutcome` z flagą `external_block_tolerated` — wyłącznie w pamięci, bez zapisu plików.
 - Sondowanie sieciowe (`curl`, `fetchText` projektu) — wyłącznie żądania `GET`, po 1–2 na adres.
+
+---
+
+## 9. Zmiany wykonane w kodzie — wdrożenie wariantu A (2026-10-25)
+
+Prompt użytkownika:
+
+```text
+Wdrażamy wariant A. Za 2-3tyg sprawdzimy czy blokada jest stała po stronie źródła.
+```
+
+Wdrożono wyłącznie rekomendację **A**. Rekomendacje B (baner), C/D (wyłączenie i sonda) oraz E (pogrzeby z Karawana i Gabriel24) **nie zostały wdrożone**.
+
+### Plik: `scripts/nekrolog_core.mjs`
+
+Lokalizacja: linie 19–25, tablica `REQUIRED_SOURCES`, wpis `salwator_grobonet`
+
+Było:
+
+```js
+  // odpytywane w bazie; przy zmianie monitorowanej osoby aktualizuj je razem z Frazy.json.
+  { id:"salwator_grobonet", …, search_terms:["Gawin","Dereń"], max_detail_pages:50, ...DEFAULT_FLAGS },
+```
+
+Jest:
+
+```js
+  // odpytywane w bazie; przy zmianie monitorowanej osoby aktualizuj je razem z Frazy.json.
+  // Od 2026-10-19 cała strefa grobonet.com (także robots.txt i strona dostawcy) stoi za
+  // Cloudflare Managed Challenge — HTTP 403 z każdego toru sieciowego. Blokada dotyczy
+  // wszystkich klientów dostawcy, nie tego projektu, i może być przejściowa (szczyt ruchu
+  // przed 1 listopada), więc jest tolerowana przez BLOCK_TOLERANCE_DAYS, a potem wraca
+  // do rangi błędu i wymaga decyzji: przywrócenie dostępu albo enabled: false.
+  { id:"salwator_grobonet", …, search_terms:["Gawin","Dereń"], max_detail_pages:50, external_block_tolerated:true, ...DEFAULT_FLAGS },
+```
+
+To jedyna zmiana działająca: `mergeRequiredSources` bierze wartość flagi z definicji w kodzie.
+
+### Plik: `config/sources.json`
+
+Lokalizacja: linia 75, obiekt `"id": "salwator_grobonet"`
+
+Było: `"external_block_tolerated": false` jako ostatnie pole obiektu.
+
+Jest: `"external_block_tolerated": true` po `"max_detail_pages": 50`. To kolejność, w jakiej przebieg sam zapisuje scalone źródło. Sprawdzono, że kolejny przebieg nie zmienia już pliku, więc bot nie wygeneruje zmiany kosmetycznej w pierwszym commicie danych.
+
+### Plik: `tests/refresh.snapshot.test.mjs`
+
+Lokalizacja: linie 245–260, nowy test po `źródła bez dostępu i bez wartości danych są wyłączone w definicji`
+
+Było: brak testu dla Grobonetu.
+
+Jest:
+
+```js
+test('Grobonet Salwator: blokada Cloudflare jest ostrzeżeniem tylko do progu tolerancji', () => {
+  const merged = mergeRequiredSources([{ id: 'salwator_grobonet', type: 'grobonet_groby', external_block_tolerated: false }]);
+  const source = merged.find((s) => s.id === 'salwator_grobonet');
+  assert.equal(source.enabled, true);
+  assert.equal(source.external_block_tolerated, true);
+
+  const parsed = { rows: [], error: 'HTTP 403 (prób: 1)', diagnostics: { http_status: 403, parser_status: 'blocked' } };
+  const health = { blocked_since: '2026-10-19T22:50:50.823Z' };
+  const at = (iso) => classifySourceOutcome({ source, parsed, health, toleranceDays: 14, now: Date.parse(iso) }).kind;
+  assert.equal(at('2026-10-25T08:00:00Z'), 'warning');
+  assert.equal(at('2026-11-02T12:00:00Z'), 'warning');
+  assert.equal(at('2026-11-02T23:00:00Z'), 'error');
+});
+```
+
+Test sprawdza cały łańcuch: definicja → scalenie z konfiguracją, w której zapisano `false` → klasyfikacja przed progiem i po nim. Sprawdzono, że wykrywa błąd: po cofnięciu samej zmiany w `nekrolog_core.mjs` kończy się `not ok`.
+
+### Plik: `README.md`
+
+- Linia 55 (§3, tabela źródeł): dopisano, że źródło jest od 2026-10-19 zablokowane przez Cloudflare, a blokada jest tolerowana.
+- Linia 64 (§3, uwaga o Grobonecie): dopisano opis blokady (cała strefa `grobonet.com`, także `robots.txt`), zasadę nieobchodzenia zabezpieczeń, działanie progu 14 dni i decyzję po jego przekroczeniu oraz to, że kategoria `grave` nie ma do tego czasu danych.
+- Linia 156 (§8, „Błąd a ostrzeżenie”): dopisano, które źródła mają flagę, i że jej wartość ustala definicja w kodzie, a nie `config/sources.json`.
+
+### Plik: `Instrukcja_odczytu_zrodel_Nekrolog.md`
+
+Lokalizacja: linia 22, §0, wiersz `salwator_grobonet`
+
+Było: tylko uwaga o wyszukiwarce grobów i nieaktualnym adresie w §4.
+
+Jest: dopisano blokadę Cloudflare od 2026-10-19, tolerancję 14 dni, zasadę nieobchodzenia zabezpieczeń i datę uzupełnienia wpisu.
+
+### Weryfikacja
+
+| Sprawdzenie | Wynik |
+|---|---|
+| `npm test` | **64/64 pass** (63 przed zmianą + 1 nowy) |
+| Nowy test bez zmiany w `nekrolog_core.mjs` | `not ok` — test wykrywa brak flagi |
+| Przebieg na żywych źródłach, `DISCORD_NOTIFY_ENABLED=false` | `healthy=6/7 blocked=1 warnings=1 status=done`, `error_message: null` |
+| `warning_message` | `Kraków Salwator – Groby (Grobonet): HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 5 dni` |
+| `data/errors.json` | 0 błędów, 1 ostrzeżenie |
+| Stabilność `config/sources.json` | drugi przebieg nie zmienia pliku |
+
+Pliki w `data/` przywrócono do stanu z repozytorium. Zaktualizuje je najbliższy przebieg harmonogramu. Żadne powiadomienie Discord nie zostało wysłane.
+
+### Co zobaczy interfejs
+
+- Od najbliższego przebiegu harmonogramu status wraca do `done`. Baner pokazuje „Źródła z ostrzeżeniem (blokada zewnętrzna lub przejściowy błąd odczytu): 1”, a sekcja Log podaje Grobonet z liczbą dni blokady.
+- Sekcja „Groby monitorowanych nazwisk” pozostaje pusta z dotychczasowym komunikatem. Poprawka komunikatu to rekomendacja B4, niewdrożona.
+
+### Uwaga o terminie kontroli
+
+Plan użytkownika to kontrola **za 2–3 tygodnie** (ok. 2026-11-08 – 2026-11-15). Próg tolerancji liczy się jednak od `blocked_since` (2026-10-19 22:50 UTC), więc jeśli blokada nie ustąpi, **status wróci do `done_with_errors` ok. 2026-11-02 23:00 UTC**, czyli przed planowaną kontrolą. Komunikat będzie wtedy jednoznaczny („przekroczono próg 14 dni — źródło wymaga decyzji”). To zamierzone działanie wariantu A, a nie nowa awaria.
+
+Jeżeli ponowny `done_with_errors` przed kontrolą jest niepożądany, można dodać próg tolerancji dla pojedynczego źródła (np. pole `block_tolerance_days` w definicji, odczytywane w `classifySourceOutcome` zamiast globalnego `BLOCK_TOLERANCE_DAYS`). Nie zostało to wdrożone, bo wykracza poza zatwierdzony wariant A.

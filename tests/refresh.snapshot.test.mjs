@@ -242,6 +242,23 @@ test('źródła bez dostępu i bez wartości danych są wyłączone w definicji'
   assert.equal(byId.debniki_intencje.external_block_tolerated, true);
 });
 
+test('Grobonet Salwator: blokada Cloudflare jest ostrzeżeniem tylko do progu tolerancji', () => {
+  // Od 2026-10-19 cała strefa grobonet.com odpowiada 403 (Cloudflare Managed Challenge).
+  // Flaga musi przetrwać scalanie z konfiguracją, w której zapisano jeszcze false.
+  const merged = mergeRequiredSources([{ id: 'salwator_grobonet', type: 'grobonet_groby', external_block_tolerated: false }]);
+  const source = merged.find((s) => s.id === 'salwator_grobonet');
+  assert.equal(source.enabled, true);
+  assert.equal(source.external_block_tolerated, true);
+
+  const parsed = { rows: [], error: 'HTTP 403 (prób: 1)', diagnostics: { http_status: 403, parser_status: 'blocked' } };
+  const health = { blocked_since: '2026-10-19T22:50:50.823Z' };
+  const at = (iso) => classifySourceOutcome({ source, parsed, health, toleranceDays: 14, now: Date.parse(iso) }).kind;
+  assert.equal(at('2026-10-25T08:00:00Z'), 'warning');
+  assert.equal(at('2026-11-02T12:00:00Z'), 'warning');
+  // Po 14 dniach blokada wraca do rangi błędu i wymaga decyzji.
+  assert.equal(at('2026-11-02T23:00:00Z'), 'error');
+});
+
 test('żadne włączone źródło nie dostarcza już kategorii intention', () => {
   // Świadoma konsekwencja wyłączenia Dębnik: sekcja "potrzeby" nie ma zasilania.
   // Test pilnuje, by ta strata była zauważona, gdyby ktoś dodawał źródło intencji.

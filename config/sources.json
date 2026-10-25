@@ -72,11 +72,11 @@
         "Dereń"
       ],
       "max_detail_pages": 50,
+      "external_block_tolerated": true,
       "requires_detail_fetch": false,
       "requires_ocr": false,
       "requires_pdf": false,
-      "known_empty": false,
-      "external_block_tolerated": false
+      "known_empty": false
     },
     {
       "id": "debniki_sdb",
