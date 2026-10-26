@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T14:03:26.711Z",
+  "generated_at": "2026-10-26T23:04:11.096Z",
   "errors": [],
   "warnings": [
     {
@@ -7,8 +7,8 @@
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 6,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 6 dni"
+      "blocked_days": 7,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 7 dni"
     }
   ]
 }
