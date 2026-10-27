@@ -55,36 +55,3 @@ Wyjątek: można odwołać się do konkretnej analizy tylko wtedy, gdy użytkown
 Jeżeli polecenie użytkownika dotyczy zmiany kodu na podstawie pliku z analizą, po realizacji zadania należy zaktualizować ten plik analityczny.
 
 Do pliku należy dopisać sekcję opisującą wszystkie wykonane zmiany w kodzie.
-
-Sekcja musi zawierać:
-
-- nazwę zmienionego pliku;
-- numer linii lub możliwie dokładną lokalizację;
-- opis stanu przed zmianą;
-- opis stanu po zmianie.
-
-Format zapisu:
-
-````markdown
-## Zmiany wykonane w kodzie
-
-### Plik: `Second/app.js`
-
-Lokalizacja: linia 24
-
-Było:
-
-```js
-return false;
-```
-
-Jest:
-
-```js
-return true;
-```
-````
-
-Jeżeli numer linii nie jest stabilny albo nie można go jednoznacznie ustalić, należy podać najbliższą nazwę funkcji, selektora lub sekcji kodu.
-
----
