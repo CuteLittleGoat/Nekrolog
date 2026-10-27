@@ -9,7 +9,7 @@ import {
   buildFallbackSummaryForHelena, buildMatchHaystack, rowMatchesPhrases, HELENA_GAWIN_PHRASES,
   isIntentionLikeRow, isEligibleDeathRow, isBlockedByAntiBot, isConfirmedEmpty, classifySourceOutcome,
   isTransientNetworkFailure, fetchDetailRows,
-  REQUIRED_SOURCES
+  REQUIRED_SOURCES, isIntentionLikeSource, isPriorityHit, deathWindowDate, reuseCachedResult, nextSourceCacheEntry
 } from '../scripts/nekrolog_core.mjs';
 import { isCzerwonaHelenaRow, selectHits, buildStateKey, buildDiscordMessage, mentionPrefix } from '../scripts/discord_notify.mjs';
 
@@ -259,11 +259,67 @@ test('Grobonet Salwator: blokada Cloudflare jest ostrzeżeniem tylko do progu to
   assert.equal(at('2026-11-02T23:00:00Z'), 'error');
 });
 
-test('żadne włączone źródło nie dostarcza już kategorii intention', () => {
-  // Świadoma konsekwencja wyłączenia Dębnik: sekcja "potrzeby" nie ma zasilania.
-  // Test pilnuje, by ta strata była zauważona, gdyby ktoś dodawał źródło intencji.
-  const intencje = REQUIRED_SOURCES.filter((s) => s.enabled !== false && s.type === 'debniki_intencje');
-  assert.equal(intencje.length, 0);
+test('kategoria intention ma znów dostawców — parafie zamiast zablokowanych Dębnik', () => {
+  // Od wyłączenia Dębnik sekcja "potrzeby" nie miała zasilania. Intencje publikują
+  // parafie do 5 km od ul. Kapelanka; Dębniki pozostają wyłączone (Cloudflare).
+  const intencje = REQUIRED_SOURCES.filter((s) => s.enabled !== false && isIntentionLikeSource(s));
+  assert.ok(intencje.length >= 5);
+  assert.ok(!intencje.some((s) => s.type === 'debniki_intencje'));
+});
+
+test('źródła wykluczone świadomie nie wracają do konfiguracji', () => {
+  // Polska Press (Dziennik Polski, Gazeta Krakowska, nekrologi.net) zakazuje automatycznego
+  // pobierania bez pisemnej zgody, Agora (wyborcza.pl) zastrzega eksplorację tekstu i danych,
+  // a eCmentarze i MB Saletyńska stoją za Cloudflare wobec runnerów. Zabezpieczeń nie
+  // obchodzimy — patrz README, sekcja o ograniczeniach.
+  const excluded = /dziennikpolski24|gazetakrakowska|nekrologi\.net|wyborcza\.pl|ecemetery|saletyni/i;
+  for (const s of REQUIRED_SOURCES) {
+    for (const key of ['url', 'list_url', 'feed_url', 'api_url', 'data_url', 'base_url']) {
+      assert.doesNotMatch(String(s[key] || ''), excluded, `${s.id}.${key}`);
+    }
+  }
+});
+
+test('trafienie: frazy albo rekord zgłaszany zawsze (nowa osoba w obserwowanym grobie)', () => {
+  assert.equal(isPriorityHit(row({ name: 'Helena Gawin' }), HELENA_GAWIN_PHRASES), true);
+  assert.equal(isPriorityHit(row({ name: 'Maria Kowalska' }), HELENA_GAWIN_PHRASES), false);
+  assert.equal(isPriorityHit(row({ kind: 'grave', name: 'Maria Kowalska', force_match: true }), HELENA_GAWIN_PHRASES), true);
+});
+
+test('wzmianka bez daty zgonu wchodzi do okna datą ogłoszenia', () => {
+  assert.equal(deathWindowDate(row({ date_death: '2026-10-20', date_reported: '2026-10-25' })), '2026-10-20');
+  assert.equal(deathWindowDate(row({ date_death: null, date_reported: '2026-10-25' })), '2026-10-25');
+  assert.equal(deathWindowDate(row({ date_death: null })), null);
+});
+
+test('źródło odpytywane raz na dobę korzysta w przebiegu pośrednim z zapisanego wyniku', () => {
+  const source = { id: 'zck_lokalizator', min_interval_hours: 20 };
+  const parsed = { rows: [row({ kind: 'grave', name: 'Adam Gawin' })], error: null, diagnostics: { parser_status: 'ok', queries: 25 } };
+  const at = new Date('2026-10-27T07:05:00Z');
+  const entry = nextSourceCacheEntry(source, null, parsed, at);
+  assert.equal(entry.fetched_at, '2026-10-27T07:05:00.000Z');
+
+  // Przebieg wieczorny (12 h później): wynik z pamięci, bez nowych zapytań.
+  const evening = reuseCachedResult(source, entry, Date.parse('2026-10-27T19:05:00Z'));
+  assert.equal(evening.rows[0].name, 'Adam Gawin');
+  assert.equal(evening.diagnostics.cached, true);
+  assert.equal(evening.diagnostics.queries, 25);
+  // Wynik z pamięci nie odświeża znacznika czasu.
+  assert.equal(nextSourceCacheEntry(source, entry, evening), entry);
+  // Następny ranek (24 h): odczyt na nowo.
+  assert.equal(reuseCachedResult(source, entry, Date.parse('2026-10-28T07:05:00Z')), null);
+  // Źródło bez min_interval_hours nigdy nie korzysta z zapisanego wyniku.
+  assert.equal(reuseCachedResult({ id: 'x' }, entry, Date.parse('2026-10-27T08:00:00Z')), null);
+});
+
+test('stan źródła przetrwa nieudany odczyt', () => {
+  const source = { id: 'dabie_odeszli' };
+  const ok = nextSourceCacheEntry(source, null, { rows: [], error: null, state: { first_seen: { 'jan kowalski': 'baseline' } } });
+  assert.deepEqual(ok, { state: { first_seen: { 'jan kowalski': 'baseline' } } });
+  // Błąd odczytu nie może wyzerować pierwszych odczytów — kolejny przebieg uznałby
+  // wtedy całą listę za nową i wypełnił nią okno 7 dni.
+  assert.deepEqual(nextSourceCacheEntry(source, ok, { rows: [], error: 'HTTP 500', state: { first_seen: {} } }), ok);
+  assert.equal(nextSourceCacheEntry(source, null, { rows: [], error: null }), null);
 });
 
 test('adresy w config/sources.json zgadzają się z definicjami źródeł', async () => {
@@ -273,7 +329,7 @@ test('adresy w config/sources.json zgadzają się z definicjami źródeł', asyn
   const cfg = JSON.parse(await readFile(new URL('../config/sources.json', import.meta.url), 'utf8'));
   const stored = Object.fromEntries(cfg.sources.map((s) => [s.id, s]));
   for (const def of REQUIRED_SOURCES) {
-    for (const key of ['url', 'list_url', 'base_url']) {
+    for (const key of ['url', 'list_url', 'base_url', 'feed_url', 'api_url', 'data_url']) {
       assert.equal(stored[def.id]?.[key] ?? null, def[key] ?? null, `${def.id}.${key}`);
     }
   }

@@ -11,14 +11,17 @@ import {
   isEligibleDeathRow,
   mergeRequiredSources,
   mergeDuplicateRows,
-  rowMatchesPhrases,
   resolveJobOutcome,
   buildFallbackSummaryForHelena,
   isMeaningfulRow,
   isBlockedByAntiBot,
   isConfirmedEmpty,
   isTransientNetworkFailure,
-  classifySourceOutcome
+  classifySourceOutcome,
+  isPriorityHit,
+  deathWindowDate,
+  reuseCachedResult,
+  nextSourceCacheEntry
 } from './nekrolog_core.mjs';
 
 const CONFIG_PATH = 'config/sources.json';
@@ -26,6 +29,9 @@ const LATEST_PATH = 'data/latest.json';
 const JOB_PATH = 'data/job.json';
 const ERR_PATH = 'data/errors.json';
 const HEALTH_PATH = 'data/source_health.json';
+// Stan źródeł między przebiegami: wynik lokalizatora ZCK (odpytywany raz na dobę),
+// Last-Modified ewidencji grobów, pierwsze odczyty wpisów list bez dat, szczegóły kart PUK.
+const CACHE_PATH = 'data/source_cache.json';
 
 const WRITER = 'scripts/refresh_static.mjs';
 const VERSION = 'static-2';
@@ -108,6 +114,8 @@ async function main() {
 
     const enabled = mergedSources.filter((s) => s.enabled !== false);
     const previousHealth = await readJson(HEALTH_PATH, {});
+    const previousCache = await readJson(CACHE_PATH, {});
+    const sourceCache = {};
     const allRows = [];
     const sourceErrors = [];
     // Ostrzeżenia opisują stan znany i zewnętrzny — nie degradują statusu przebiegu,
@@ -122,12 +130,17 @@ async function main() {
     for (const s of enabled) {
       // Wyjątek w jednym parserze nie może kasować całego przebiegu — wcześniej
       // przerywał pętlę i latest.json nie był w ogóle zapisywany.
-      let parsed;
-      try {
-        parsed = await parseSource(s);
-      } catch (error) {
-        parsed = { rows: [], error: `wyjątek parsera: ${String(error?.message || error)}`, diagnostics: { parser_status: 'exception' } };
+      const cacheEntry = previousCache?.[s.id] || null;
+      let parsed = reuseCachedResult(s, cacheEntry);
+      if (!parsed) {
+        try {
+          parsed = await parseSource(s, { state: cacheEntry?.state ?? null });
+        } catch (error) {
+          parsed = { rows: [], error: `wyjątek parsera: ${String(error?.message || error)}`, diagnostics: { parser_status: 'exception' } };
+        }
       }
+      const nextEntry = nextSourceCacheEntry(s, cacheEntry, parsed);
+      if (nextEntry) sourceCache[s.id] = nextEntry;
 
       const health = updateSourceHealth(previousHealth, s, parsed);
       sourceHealth[s.id] = health;
@@ -147,7 +160,7 @@ async function main() {
 
       for (const r of parsed.rows || []) {
         if (!isMeaningfulRow(r)) continue;
-        allRows.push({ ...r, priority_hit: rowMatchesPhrases(r, targetPhrases) });
+        allRows.push({ ...r, priority_hit: isPriorityHit(r, targetPhrases) });
       }
 
       if (isBlockedByAntiBot(parsed)) sourcesBlocked += 1;
@@ -173,17 +186,18 @@ async function main() {
     const graves = rows.filter((r) => r.kind === 'grave');
 
     const upcoming_funerals = funerals.filter((r) => inWindow(r.date_funeral, funeralStart, funeralEnd));
-    const recent_deaths = deaths.filter((r) => inWindow(r.date_death, deathStart, deathEnd));
+    // Ogłoszenia parafialne nie podają daty zgonu — do okna wchodzą datą ogłoszenia.
+    const recent_deaths = deaths.filter((r) => inWindow(deathWindowDate(r), deathStart, deathEnd));
     const upcoming_intentions = intentions.filter((r) => inWindow(r.date_intention, funeralStart, funeralEnd));
     upcoming_funerals.sort((a,b)=> (a.date_funeral||'').localeCompare(b.date_funeral||'') || (a.time_funeral||'').localeCompare(b.time_funeral||''));
-    recent_deaths.sort((a,b)=> (b.date_death||'').localeCompare(a.date_death||''));
+    recent_deaths.sort((a,b)=> (deathWindowDate(b)||'').localeCompare(deathWindowDate(a)||''));
     upcoming_intentions.sort((a,b)=> (a.date_intention||'').localeCompare(b.date_intention||'') || (a.time_intention||'').localeCompare(b.time_intention||''));
 
     // Trafienia liczone na WSZYSTKICH rekordach, nie tylko na tych w oknie czasowym.
     // Wpis o monitorowanej osobie sprzed miesiąca (Podwawelskie) albo bez daty
     // ma zostać zgłoszony tak samo jak dzisiejszy.
     const matches = rows.filter((r) => r.priority_hit === true);
-    matches.sort((a,b)=> (b.date_death||b.date_funeral||b.date_intention||'').localeCompare(a.date_death||a.date_funeral||a.date_intention||''));
+    matches.sort((a,b)=> (b.date_death||b.date_reported||b.date_funeral||b.date_intention||'').localeCompare(a.date_death||a.date_reported||a.date_funeral||a.date_intention||''));
 
     const fallbackSummary = buildFallbackSummaryForHelena(recent_deaths, upcoming_funerals, upcoming_intentions, targetPhrases);
     // Do resolveJobOutcome trafiają wyłącznie błędy wymagające reakcji. Ostrzeżenia
@@ -213,6 +227,7 @@ async function main() {
     };
     await writeJson(LATEST_PATH, latest);
     await writeJson(HEALTH_PATH, sourceHealth);
+    await writeJson(CACHE_PATH, sourceCache);
 
     const outcome = resolveJobOutcome({
       recentDeaths: recent_deaths.length,

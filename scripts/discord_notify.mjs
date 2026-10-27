@@ -65,7 +65,10 @@ function buildDiscordMessage(row, mentionIds) {
   const label = ALERT_LABELS[kind];
 
   const details = [];
+  if (row?.match_reason) details.push(`Powód zgłoszenia: ${cleanValue(row.match_reason)}`);
   if (row?.date_death) details.push(`Data zgonu: ${cleanValue(row.date_death)}`);
+  if (!row?.date_death && row?.year_death) details.push(`Rok zgonu: ${cleanValue(row.year_death)}`);
+  if (row?.date_reported) details.push(`Data ogłoszenia: ${cleanValue(row.date_reported)}`);
   if (row?.date_funeral) details.push(`Data pogrzebu: ${cleanValue(row.date_funeral)}${row?.time_funeral ? `, godz. ${cleanValue(row.time_funeral)}` : ''}`);
   if (row?.date_intention) details.push(`Termin intencji: ${cleanValue(row.date_intention)}${row?.time_intention ? `, godz. ${cleanValue(row.time_intention)}` : ''}`);
   if (row?.place) details.push(`Miejsce: ${cleanValue(row.place)}`);
@@ -79,6 +82,41 @@ function buildDiscordMessage(row, mentionIds) {
     `Źródło: ${source}`,
     `Link: ${link}`
   ].join('\n');
+}
+
+// Intencje za tę samą osobę przychodzą seriami (np. 30 mszy gregoriańskich). Każda jest
+// osobnym rekordem i osobnym kluczem deduplikacji, ale nowe intencje z jednego źródła
+// w jednym przebiegu idą jedną wiadomością — inaczej tydzień takich mszy to siedem pingów.
+function buildIntentionGroupMessage(rows, mentionIds) {
+  const first = rows[0] || {};
+  const names = [...new Set(rows.map((r) => cleanValue(r?.name || r?.full_name)).filter(Boolean))];
+  const terms = rows
+    .map((r) => [cleanValue(r?.date_intention), cleanValue(r?.time_intention)].filter(Boolean).join(' '))
+    .filter(Boolean)
+    .sort();
+  const shown = terms.slice(0, 10);
+  return [
+    mentionPrefix(mentionIds),
+    `Zmienił się status Czerwonej Heleny! [${ALERT_LABELS.intention}]`,
+    `Imię/nazwisko w rekordzie: ${names.join('; ') || 'brak danych'}`,
+    `Terminy intencji (${terms.length}): ${shown.join(', ')}${terms.length > shown.length ? ', …' : ''}`,
+    ...(first?.place ? [`Miejsce: ${cleanValue(first.place)}`] : []),
+    `Źródło: ${cleanValue(first?.source_name || first?.source_id || 'brak danych')}`,
+    `Link: ${cleanValue(first?.url || first?.source_url || 'brak danych')}`
+  ].join('\n');
+}
+
+// Grupy wysyłki: pojedyncze trafienie albo wszystkie nowe intencje jednego źródła.
+function groupHitsForSending(hits) {
+  const groups = [];
+  const intentionGroups = new Map();
+  for (const hit of hits) {
+    if (hit?.kind !== 'intention') { groups.push([hit]); continue; }
+    const key = hit?.source_id || hit?.source_name || 'intention';
+    if (!intentionGroups.has(key)) { const group = []; intentionGroups.set(key, group); groups.push(group); }
+    intentionGroups.get(key).push(hit);
+  }
+  return groups;
 }
 
 function formatHeartbeatDate(value) {
@@ -185,25 +223,34 @@ async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImp
 
   // Każde trafienie sprawdzamy osobno. Wcześniej brany był wyłącznie pierwszy
   // rekord, więc już zgłoszony wpis blokował powiadomienia o pozostałych.
+  const fresh = [];
   for (const hit of hits) {
     const key = buildStateKey(hit);
     if (known.has(key)) {
       result.alerts.push({ key, kind: hit?.kind || null, sent: false, reason: 'already_notified' });
       continue;
     }
+    known.add(key);
+    fresh.push(hit);
+  }
 
+  for (const group of groupHitsForSending(fresh)) {
     result.attempted = true;
-    const post = await postDiscordWebhook(webhookUrl, buildDiscordMessage(hit, mentionIds), fetchImpl, mentionIds);
+    const message = group.length > 1 ? buildIntentionGroupMessage(group, mentionIds) : buildDiscordMessage(group[0], mentionIds);
+    const post = await postDiscordWebhook(webhookUrl, message, fetchImpl, mentionIds);
     result.status = post.status ?? result.status;
     if (post.ok) {
-      known.add(key);
-      freshKeys.push(key);
       result.sent = true;
       result.sent_count += 1;
-      result.alerts.push({ key, kind: hit?.kind || null, sent: true });
     } else {
-      result.alerts.push({ key, kind: hit?.kind || null, sent: false, reason: post.reason || 'unknown_error' });
       result.skipped_reason = post.reason || 'unknown_error';
+    }
+    for (const hit of group) {
+      const key = buildStateKey(hit);
+      if (post.ok) freshKeys.push(key);
+      result.alerts.push(post.ok
+        ? { key, kind: hit?.kind || null, sent: true, ...(group.length > 1 ? { grouped: group.length } : {}) }
+        : { key, kind: hit?.kind || null, sent: false, reason: post.reason || 'unknown_error' });
     }
   }
 
@@ -217,4 +264,4 @@ async function notifyCzerwonaHelena({ rows, webhookUrl, enabled = true, fetchImp
   return result;
 }
 
-export { buildDiscordMessage, buildNoMatchMessage, buildStateKey, notifyCzerwonaHelena, postDiscordWebhook, isCzerwonaHelenaRow, selectHits, selectFirstHit, mentionPrefix };
+export { buildDiscordMessage, buildIntentionGroupMessage, groupHitsForSending, buildNoMatchMessage, buildStateKey, notifyCzerwonaHelena, postDiscordWebhook, isCzerwonaHelenaRow, selectHits, selectFirstHit, mentionPrefix };

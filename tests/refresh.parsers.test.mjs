@@ -13,7 +13,8 @@ import {
   parseGrobonetGrobyHtml, grobonetSearchUrl,
   parsePodwawelskieRowsFromListHtml, parsePodwawelskieNekrologiHtml,
   parseDebnikiSdbPogrzebyHtml, parseDebnikiSdbDetailHtml, parseDebnikiIntencjeHtml,
-  parseSwJadwigaPogrzeboweHtml, parseSource, parseGenericHtml, mergeRequiredSources
+  parseSwJadwigaPogrzeboweHtml, parseSource, parseGenericHtml, mergeRequiredSources,
+  parseRssItems, parseKarawanFeedXml, parseKarawanNekrologi, parseEklepsydraEventsHtml, parsePukPozegnalismy
 } from '../scripts/nekrolog_core.mjs';
 
 const fixture = (name) => fs.readFile(new URL(`./fixtures/${name}`, import.meta.url), 'utf8');
@@ -224,4 +225,80 @@ test('ZCK: zniknięcie tabel to awaria, nie potwierdzony brak', async () => {
   // faktycznie się zmieni — alarm ma zadziałać.
   assert.equal(zckConfirmsNoFunerals('<html><body><h4>2026-08-23</h4><p>Brak pogrzebów</p></body></html>'), false);
   assert.equal(zckConfirmsNoFunerals('<html><body></body></html>'), false);
+});
+
+test('Karawan: kanał RSS podaje 10 ostatnich nekrologów, lista tylko bieżące', async () => {
+  const feed = await fixture('karawan_feed_2026-10-27.xml');
+  const items = parseRssItems(feed);
+  assert.equal(items.length, 10);
+  assert.equal(items[0].title, 'PIOTR WRZESIŃSKI');
+  const links = parseKarawanFeedXml(feed).map((x) => x.url);
+  assert.equal(links.length, 10);
+  assert.ok(links.every((u) => /karawan\.pl\/nekrolog\/[^/]+\/$/.test(u)));
+  // Strona listy z tego samego dnia pokazuje ułamek tego, co jest w kanale.
+  const list = parseKarawanNekrologiHtml(await fixture('karawan_list_2026-10-27.html'), SOURCES.karawan_nekrologi);
+  assert.ok(list.length < links.length);
+});
+
+test('Karawan: kandydaci z listy i z kanału są scalani, awaria jednej drogi nie zatrzymuje źródła', async () => {
+  const list = await fixture('karawan_list_2026-10-27.html');
+  const feed = await fixture('karawan_feed_2026-10-27.xml');
+  const detail = await fixture('karawan_detail_2026-08-18.html');
+  const asked = [];
+  const fetcherWith = (listOk, feedOk) => async (url) => {
+    asked.push(url);
+    if (url === SOURCES.karawan_nekrologi.list_url) return listOk ? { ok: true, status: 200, text: list } : { ok: false, status: 503, text: '', error: 'HTTP 503' };
+    if (url === SOURCES.karawan_nekrologi.feed_url) return feedOk ? { ok: true, status: 200, text: feed } : { ok: false, status: 0, text: '', error: 'timeout' };
+    return { ok: true, status: 200, text: detail };
+  };
+  const both = await parseKarawanNekrologi(SOURCES.karawan_nekrologi, { fetcher: fetcherWith(true, true) });
+  const fromList = parseKarawanNekrologiHtml(list, SOURCES.karawan_nekrologi).map((x) => x.url);
+  const fromFeed = parseKarawanFeedXml(feed).map((x) => x.url);
+  assert.equal(both.diagnostics.candidate_links, new Set([...fromList, ...fromFeed]).size);
+  assert.equal(both.diagnostics.feed_links, 10);
+  assert.equal(both.error, null);
+
+  // Lista niedostępna, kanał działa: źródło nie upada, awaria trafia do diagnostyki.
+  const feedOnly = await parseKarawanNekrologi(SOURCES.karawan_nekrologi, { fetcher: fetcherWith(false, true) });
+  assert.equal(feedOnly.error, null);
+  assert.equal(feedOnly.diagnostics.candidate_links, 10);
+  assert.match(feedOnly.diagnostics.list_error, /503/);
+
+  // Obie drogi niedostępne: błąd jak dotąd.
+  const none = await parseKarawanNekrologi(SOURCES.karawan_nekrologi, { fetcher: fetcherWith(false, false) });
+  assert.ok(none.error);
+  assert.equal(none.rows.length, 0);
+});
+
+test('PUK: godzina i cmentarz ze strony klepsydry, pobranej raz na kartę', async () => {
+  const detail = await fixture('eklepsydra_szczegoly_2026-10-27.html');
+  const events = parseEklepsydraEventsHtml(detail);
+  assert.deepEqual(events[0], { type: 'Pogrzeb', date: '2026-10-29', time: '13:00', place: 'Cmentarz Rakowicki', address: 'Rakowicka 26 Kraków' });
+
+  const list = await fixture('puk_pozegnalismy_2026-08-18.html');
+  const asked = [];
+  const fetcher = async (url) => {
+    asked.push(url);
+    if (url === SOURCES.puk_pozegnalismy.list_url) return { ok: true, status: 200, text: list };
+    return { ok: true, status: 200, text: detail };
+  };
+  const first = await parsePukPozegnalismy(SOURCES.puk_pozegnalismy, { fetcher, referenceIso: '2026-08-20', gapMs: 0 });
+  // Tylko pogrzeby od daty odniesienia wzwyż — przeszłe karty nie są pobierane.
+  const upcoming = new Set(first.rows.filter((r) => r.kind === 'funeral' && r.date_funeral >= '2026-08-20').map((r) => r.url));
+  assert.equal(first.diagnostics.detail_pages, upcoming.size);
+  assert.ok(upcoming.size > 0);
+  const nalborski = first.rows.filter((r) => r.name === 'Marek Nalborski');
+  assert.ok(nalborski.every((r) => r.place === 'Cmentarz Rakowicki (Rakowicka 26 Kraków)'));
+  // Data w klepsydrze (29.10) nie zgadza się z datą pogrzebu z karty (20.08) — godzina
+  // z klepsydry nie nadpisuje danych karty.
+  assert.equal(nalborski.find((r) => r.kind === 'funeral').time_funeral, '12:20');
+  // Karta z przeszłym pogrzebem zachowuje miejsce źródła.
+  assert.ok(first.rows.filter((r) => !upcoming.has(r.url)).every((r) => r.place === SOURCES.puk_pozegnalismy.name));
+
+  // Drugi przebieg z zapisanym stanem nie pyta ponownie o te same karty.
+  const before = asked.length;
+  const second = await parsePukPozegnalismy(SOURCES.puk_pozegnalismy, { fetcher, state: first.state, referenceIso: '2026-08-20', gapMs: 0 });
+  assert.equal(asked.length, before + 1, 'tylko strona listy');
+  assert.equal(second.diagnostics.detail_pages, 0);
+  assert.equal(second.rows.find((r) => r.name === 'Marek Nalborski').place, 'Cmentarz Rakowicki (Rakowicka 26 Kraków)');
 });

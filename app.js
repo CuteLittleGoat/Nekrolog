@@ -83,18 +83,26 @@ function renderFacts(row, type) {
     facts.push(`<div class="fact"><strong>Termin:</strong> ${compact([formatDate(row?.date_intention), row?.time_intention ? esc(row.time_intention) : ""]).join(", ") || "—"}</div>`);
   } else if (type === "death") {
     if (row?.date_death) facts.push(`<div class="fact"><strong>Zgon:</strong> ${formatDate(row.date_death)}</div>`);
+    // Ogłoszenia parafialne nie podają daty zgonu — tylko datę ogłoszenia (albo pierwszego
+    // odczytu wpisu na liście bez dat) i to ona decyduje o oknie -7 dni.
+    if (!row?.date_death && row?.date_reported) facts.push(`<div class="fact"><strong>Ogłoszono:</strong> ${formatDate(row.date_reported)}</div>`);
     if (row?.date_funeral || row?.time_funeral) facts.push(`<div class="fact"><strong>Pogrzeb:</strong> ${compact([formatDate(row.date_funeral), row?.time_funeral ? esc(row.time_funeral) : ""]).join(", ")}</div>`);
   } else if (type === "grave") {
     if (row?.date_birth) facts.push(`<div class="fact"><strong>Urodzony:</strong> ${formatDate(row.date_birth)}</div>`);
     if (row?.date_death) facts.push(`<div class="fact"><strong>Zgon:</strong> ${formatDate(row.date_death)}</div>`);
+    if (!row?.date_death && row?.year_death) facts.push(`<div class="fact"><strong>Rok zgonu:</strong> ${esc(row.year_death)}</div>`);
   } else if (type === "funeral") {
     facts.push(`<div class="fact"><strong>Pogrzeb:</strong> ${compact([formatDate(row?.date_funeral), row?.time_funeral ? esc(row.time_funeral) : ""]).join(", ") || "—"}</div>`);
   } else {
     if (row?.date_death) facts.push(`<div class="fact"><strong>Zgon:</strong> ${formatDate(row.date_death)}</div>`);
+    if (!row?.date_death && row?.year_death) facts.push(`<div class="fact"><strong>Rok zgonu:</strong> ${esc(row.year_death)}</div>`);
+    if (!row?.date_death && row?.date_reported) facts.push(`<div class="fact"><strong>Ogłoszono:</strong> ${formatDate(row.date_reported)}</div>`);
     if (row?.date_funeral) facts.push(`<div class="fact"><strong>Pogrzeb:</strong> ${compact([formatDate(row.date_funeral), row?.time_funeral ? esc(row.time_funeral) : ""]).join(", ")}</div>`);
     if (row?.date_intention) facts.push(`<div class="fact"><strong>Intencja:</strong> ${compact([formatDate(row.date_intention), row?.time_intention ? esc(row.time_intention) : ""]).join(", ")}</div>`);
   }
   if (row?.date_is_fallback === true) facts.push('<div class="fact warnText"><strong>Uwaga:</strong> data zastępcza (dzień pobrania)</div>');
+  // Rekord zgłaszany niezależnie od fraz, np. nowa osoba w obserwowanym grobie.
+  if (row?.match_reason) facts.push(`<div class="fact warnText"><strong>Powód zgłoszenia:</strong> ${esc(row.match_reason)}</div>`);
   if (row?.place) facts.push(`<div class="fact"><strong>Miejsce:</strong> ${esc(row.place)}</div>`);
   if (row?.source_name) facts.push(`<div class="fact"><strong>Źródło:</strong> ${esc(row.source_name)}</div>`);
   if (Array.isArray(row?.also_in_sources) && row.also_in_sources.length) facts.push(`<div class="fact"><strong>Także w:</strong> ${esc(row.also_in_sources.join(", "))}</div>`);
@@ -251,6 +259,10 @@ function renderStatus(snap, job, errors, matches) {
         d.parser_status ? `status=${d.parser_status}` : "",
         d.candidate_links !== undefined ? `linki=${d.candidate_links}` : "",
         d.candidate_pages !== undefined ? `strony=${d.candidate_pages}` : "",
+        d.documents !== undefined ? `dokumenty=${d.documents}` : "",
+        d.days_fetched !== undefined ? `kolejne dni=${d.days_fetched}` : "",
+        d.queries !== undefined ? `zapytania=${d.queries}` : "",
+        d.cached ? `wynik z ${formatTs(d.cached_at)}` : "",
         d.rows !== undefined ? `rekordy=${d.rows}` : "",
         d.empty_streak ? `pustych z rzędu=${d.empty_streak}` : "",
         d.blocked_since ? `zablokowane od ${formatTs(d.blocked_since)}` : "",
@@ -298,13 +310,16 @@ async function loadAll() {
   renderList("funerals", funerals, "funeral", phraseVariants);
   // Bez tego rozróżnienia sekcja bez żadnego zasilania wyglądałaby identycznie jak
   // tydzień bez intencji w oknie — a to dwie różne informacje dla czytającego.
-  const INTENTION_SOURCE_TYPES = ["debniki_intencje", "intencje_plus"];
+  // Lista musi odpowiadać INTENTION_SOURCE_TYPES w scripts/nekrolog_core.mjs. Ogłoszenia
+  // Klinów Borkowskich (parafia_ogloszenia) też niosą intencje, ale nie są tu potrzebne:
+  // komunikat o braku źródła dotyczy sytuacji, w której nie działa żaden dostawca.
+  const INTENTION_SOURCE_TYPES = ["debniki_intencje", "intencje_plus", "parafia_intencje", "eparafia_intencje_pogrzebowe"];
   const hasIntentionSource = sources.some((s) => s?.enabled !== false && INTENTION_SOURCE_TYPES.includes(s?.type));
   const intentionsEmptyText = hasIntentionSource
     ? "Brak intencji w oknie czasowym."
-    : "Brak źródła intencji — jedyny dostawca (Parafia Dębniki) jest wyłączony, bo serwis blokuje odczyt automatyczny. Sekcja pozostanie pusta do czasu włączenia innego źródła.";
+    : "Brak źródła intencji — żadne źródło intencji mszalnych nie jest włączone. Sekcja pozostanie pusta do czasu włączenia źródła.";
   renderList("intentions", intentions, "intention", phraseVariants, intentionsEmptyText);
-  renderList("graves", graves, "grave", phraseVariants, "Brak grobów w bazie dla monitorowanych nazwisk.");
+  renderList("graves", graves, "grave", phraseVariants, "Brak grobów monitorowanych nazwisk w dostępnych ewidencjach.");
   renderSources(sources);
   renderHelenaStatus(snap, matches, phraseVariants);
   renderStatus(snap, job, errors, matches);

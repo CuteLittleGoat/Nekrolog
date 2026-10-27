@@ -109,13 +109,16 @@ jobs:
           probe "św. Józefa (Podgórze) – ogłoszenia" "https://jozef.diecezja.pl/ogloszenia-parafialne/" "R4"
           probe "Wola Duchacka – ogłoszenia" "https://wola1.xcr.pl/ogloszenia.html" "R4"
           probe "NMP z Lourdes – ogłoszenia" "https://misjonarska.pl/category/ogoszenia/" "R4"
-          probe "MB Zwycięskiej (Borek) – ogłoszenia" "https://zwycieska.eparafia.pl/ogloszenia-parafialne(2)" "R4"
+          # Bieżące ogłoszenia Borku mają co tydzień nowy adres — parser zaczyna od strony głównej.
+          probe "MB Zwycięskiej (Borek) – strona główna (ogłoszenia)" "https://zwycieska.eparafia.pl/" "R4"
           probe "MB Zwycięskiej (Borek) – intencje pogrzebowe" "https://zwycieska.eparafia.pl/intencje-pogrzebowe(3)/intencje-pogrzebowe-2026" "R5"
           probe "MB Zwycięskiej (Borek) – ewidencja grobów" "https://zwycieska.eparafia.pl/clients/_krakow_mbzwyciezkiej/_upload/strona_3955/pio_2480.txt" "R6"
           probe "Kliny Borkowskie – ogłoszenia i intencje" "https://kliny.katolicki.eu/index.php/aktualnosci/ogloszenia-i-intencje.html" "R4"
           probe "Dąbie – Odeszli do Pana" "https://www.parafia.dabiekrakow.pl/biezace/odeszli-do-pana" "R4"
           probe "Kliny Zacisze – ogłoszenia" "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/" "R4"
-          probe "MB Saletyńskiej – intencje" "https://krakow.saletyni.pl/intencje/" "R5"
+          # Wykluczone 2026-10-27: runner dostał Cloudflare Managed Challenge. Zostaje w sondzie,
+          # żeby dało się sprawdzić, czy blokada ustąpiła — źródła nie włączamy bez tego.
+          probe "MB Saletyńskiej – intencje (wykluczone)" "https://krakow.saletyni.pl/intencje/" "R5, wykluczone"
           probe "św. Kingi – ogłoszenia (intencje)" "https://kinga.diecezja.krakow.pl/ogloszenia/" "R5"
           probe "Płaszów (sercanie) – intencje" "https://www.krakow.sercanie.pl/parafia/intencje-mszy-sw" "R5"
           probe "Os. Bronowickie – intencje" "https://swwojciech.com/category/intencje-mszalne/" "R5"

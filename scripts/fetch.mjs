@@ -207,4 +207,66 @@ export async function fetchText(url, timeoutMs = 20000) {
   return { ok: false, status: last?.status ?? 0, text: last?.text ?? "", error: `${error} (prób: ${attempts})`, attempts };
 }
 
+// ─────────────── Sesja HTTP: ciasteczka, POST, zapytania warunkowe ───────────────
+// fetchText obsługuje wyłącznie GET bez ciasteczek. Kalendarz pogrzebów i lokalizator
+// grobów ZCK wymagają tego samego co przeglądarka: tokenu CSRF z nagłówka strony
+// i ciasteczka _frontendCSRF, które serwer wydaje razem z nim każdemu odwiedzającemu.
+// Sesja niczego nie obchodzi — przedstawia się tym samym nagłówkiem bota co fetchText,
+// a ciasteczko wydane przez serwer odsyła tylko w obrębie jednego przebiegu.
+// Nie ma tu awaryjnego curl z nagłówkami przeglądarki: sesja nie podszywa się pod nic.
+function readSetCookies(headers) {
+  if (typeof headers?.getSetCookie === "function") return headers.getSetCookie();
+  if (typeof headers?.raw === "function") return headers.raw()["set-cookie"] || [];
+  const single = headers?.get?.("set-cookie");
+  return single ? [single] : [];
+}
+
+export function createHttpSession({ timeoutMs = 20000, fetchImpl = fetch, retryDelaysMs = RETRY_DELAYS_MS } = {}) {
+  const jar = new Map();
+
+  async function request(url, { method = "GET", headers = {}, body } = {}) {
+    let last = null;
+    let attempts = 0;
+    for (let attempt = 0; attempt <= retryDelaysMs.length; attempt += 1) {
+      attempts = attempt + 1;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+      try {
+        const cookie = [...jar].map(([name, value]) => `${name}=${value}`).join("; ");
+        const res = await fetchImpl(url, {
+          method,
+          body,
+          signal: ctrl.signal,
+          headers: {
+            "user-agent": BOT_USER_AGENT,
+            accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            ...(cookie ? { cookie } : {}),
+            ...headers
+          }
+        });
+        for (const raw of readSetCookies(res.headers)) {
+          const pair = String(raw).split(";")[0];
+          const eq = pair.indexOf("=");
+          if (eq > 0) jar.set(pair.slice(0, eq).trim(), pair.slice(eq + 1).trim());
+        }
+        const text = await res.text();
+        const header = (name) => res.headers?.get?.(name) ?? null;
+        last = { ok: res.ok, status: res.status, text, header, error: res.ok ? null : `HTTP ${res.status}` };
+        // 304 to odpowiedź na zapytanie warunkowe, a 4xx mówi coś konkretnego —
+        // ponawiamy wyłącznie statusy przejściowe.
+        if (res.ok || !isTransientStatus(res.status)) break;
+      } catch (error) {
+        last = { ok: false, status: 0, text: "", header: () => null, error: stringifyError(error, "fetch"), networkError: error };
+        if (!isConnectionFailure(error) && !isRetryableNetworkError(error)) break;
+      } finally {
+        clearTimeout(timer);
+      }
+      if (attempt < retryDelaysMs.length) await sleep(retryDelaysMs[attempt]);
+    }
+    return { ...last, attempts, error: last.error ? `${last.error} (prób: ${attempts})` : null };
+  }
+
+  return { request, cookies: jar };
+}
+
 export { isRetryableNetworkError, isTransientStatus, isConnectionFailure, BOT_USER_AGENT, BROWSER_USER_AGENT };

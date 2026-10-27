@@ -26,7 +26,42 @@ Zakres: publiczne pliki aplikacji z GitHub Pages / raw.githubusercontent.com ora
 | `debniki_intencje` | **wyłączone** | Źródło zostało wdrożone i działało (35 rekordów w przebiegu z 2026-08-18), po czym serwis objęto ochroną anty-botową odrzucającą ruch z zakresów centrów danych. Zabezpieczenia nie są obchodzone, dostęp nie jest odzyskiwany. |
 | `facebook_parafia_debniki` | wyłączone | Dostęp wymaga uwierzytelnienia (stan bez zmian od 2026-05-08). |
 
-**Konsekwencja:** kategoria `intention` („potrzeby”) nie ma obecnie żadnego dostawcy. Sekcja „Najbliższe potrzeby” w interfejsie jest trwale pusta i komunikuje przyczynę wprost.
+**Konsekwencja (stan do 2026-10-27):** kategoria `intention` („potrzeby”) nie miała żadnego dostawcy, a sekcja „Najbliższe potrzeby” komunikowała przyczynę wprost. Od 2026-10-27 kategorię zasilają parafie sąsiednie — patrz §0.1.
+
+### 0.1. Aktualizacja 2026-10-27 — rozszerzenia i nowe źródła
+
+Zmiany w źródłach istniejących:
+
+| Źródło | Zmiana |
+|---|---|
+| `zck_funerals` | Oprócz dnia bieżącego ze strony — kolejne 7 dni z API kalendarza: `POST https://www.zck-krakow.pl/funerals/api`, treść `"RRRR-MM-DD"` (JSON), nagłówek `X-CSRF-Token` z `<meta name="csrf-token">` strony i ciasteczko `_frontendCSRF` wydane razem z nim. Odpowiedź ma strukturę strony (`h4 strong` z datą, `table.funerals`), więc czyta ją ten sam parser. |
+| `karawan_nekrologi` | Kandydaci ze strony listy **oraz** z kanału `https://karawan.pl/nekrologi/feed/` (10 ostatnich nekrologów; strona listy pokazuje tylko pogrzeby bieżące). |
+| `puk_pozegnalismy` | Dla pogrzebów od dziś wzwyż — cmentarz i godzina ze strony klepsydry (eKlepsydra), do której linkuje karta PUK: blok wydarzenia „Pogrzeb / Data / Godzina / Miejsce”. Każda karta pobierana raz; wynik w `data/source_cache.json`. |
+| `debniki_sdb`, `debniki_intencje` | Bez zmian — wyłączone. Sonda z runnera GitHub Actions (2026-10-27): HTTP 403, Cloudflare Managed Challenge. |
+
+Nowe źródła:
+
+| Źródło | Typ | Adres | Jak czytane |
+|---|---|---|---|
+| `zck_lokalizator` | `zck_lokalizator` | `https://www.zck-krakow.pl/locator` | Lista cmentarzy z `<option>` strony (bez 14 — Podgórki Tynieckie, odesłanie do Grobonetu). `POST /locator/api` z `{name, surname, birthdate, deathdate, graveyard}`; HTTP 404 = brak wyników. Odpowiedź: lista `{name, surname, birthday, date, grave_quarter, grave_row, grave_spot, extra[]}`. Raz na dobę. Lista bazowa czterech historycznych wpisów „Helena Gawin” i obserwowany grób Adama Gawina — patrz README §3. |
+| `podwawelskie_ogloszenia` | `parafia_ogloszenia` | `https://www.podwawelskie.pl/aktualnosci/ogloszenia-duszpasterskie-1.html` | Kilka tygodni na stronie; nagłówek tygodnia „25.10.2026 - XXX Tydzień zwykły”; „W minionym tygodniu pożegnaliśmy: + …”. |
+| `jozef_ogloszenia` | `parafia_ogloszenia` | `https://jozef.diecezja.pl/ogloszenia-parafialne/` | Jedno ogłoszenie; data z nagłówka „Ogłoszenia parafialne 25 – 31.10. 2026”; „Ś.p … z ul. …” (ulica odcinana). |
+| `wola_duchacka_ogloszenia` | `parafia_ogloszenia` | `https://wola1.xcr.pl/ogloszenia.html` | Kilka tygodni; nagłówek „XXIX Niedziela Zwykła, 18.10.2026”; lista pionowa „śp. …” pod „odeszli do wieczności:”. |
+| `lourdes_ogloszenia` | `parafia_ogloszenia` | kanał `https://misjonarska.pl/category/ogoszenia/feed/` | Trzy ostatnie wpisy z `content:encoded`; data z tytułu wpisu („… – 25.10.2026”). |
+| `borek_ogloszenia` | `parafia_ogloszenia` | `https://zwycieska.eparafia.pl/` | Bieżące ogłoszenie ma co tydzień nowy adres (`ogloszenia-30-niedziela-zwykla-25-10-2026`) — dwa najnowsze linki ze strony głównej, uporządkowane po dacie z adresu. |
+| `kliny_borkowskie_ogloszenia` | `parafia_ogloszenia` | `https://kliny.katolicki.eu/index.php/aktualnosci/ogloszenia-i-intencje.html` | Najnowszy artykuł z listy (Joomla); data z „Intencje mszalne od 25.10 do 1.11.2026 r.”; ten sam artykuł daje też intencje tygodnia. |
+| `dabie_odeszli` | `parafia_ogloszenia` | `https://www.parafia.dabiekrakow.pl/biezace/odeszli-do-pana` | Lista „† Imię Nazwisko – ul. …” bez dat, do nagłówka „ROK 2026”; datą zgłoszenia jest pierwszy odczyt wpisu. |
+| `zacisze_ogloszenia` | `parafia_ogloszenia` | `https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/` | Strona zbiorcza od 2024 r.; nagłówek bloku „Kraków 25.10.2026” (bywa też „Kraków 2025.11.30”); ogłoszenia starsze niż 60 dni pomijane. |
+| `podwawelskie_intencje` | `parafia_intencje` | `https://www.podwawelskie.pl/aktualnosci/intencje-mszalne-1.html` | Data „2026-10-25”, dzień tygodnia, godzina i wpisy „+ …” w osobnych liniach. |
+| `kinga_intencje` | `parafia_intencje` | `https://kinga.diecezja.krakow.pl/ogloszenia/` | „Niedziela, 25.10:”, „07.30 + …”. |
+| `plaszow_intencje` | `parafia_intencje` | `https://www.krakow.sercanie.pl/parafia/intencje-mszy-sw` | „Poniedziałek, 26.10.2026 r.”, godzina „7:00 -” i treść „Za † …” w następnej linii. |
+| `bronowickie_intencje` | `parafia_intencje` | kanał `https://swwojciech.com/category/intencje-mszalne/feed/` | Dwa ostatnie wpisy tygodniowe; dzień tygodnia i data w osobnych liniach. |
+| `skotniki_intencje` | `parafia_intencje` | kanał `http://parafiaskotniki.pl/category/intencje-mszy-sw/feed/` | „Poniedziałek, 26.10”, „7.00 +Ewa Baran, od …” (zamawiający odcinany). |
+| `zacisze_intencje` | `parafia_intencje` | `https://www.kalinowski.malopolska.pl/ogloszenia-parafialne-2/intencje/` | „Niedziela 20 września”, „10.00 – +…”. |
+| `borek_intencje_pogrzebowe` | `eparafia_intencje_pogrzebowe` | `https://zwycieska.eparafia.pl/intencje-pogrzebowe(3)` | Najnowsza podstrona roczna z listy; „+ Imię Nazwisko”, pod nim terminy „01.12.2026 godz. 18:00 – od …” (z terminu bierzemy tylko datę i godzinę). |
+| `borek_ewidencja_grobow` | `eparafia_ewidencja_grobow` | plik `…/_upload/strona_3955/pio_2480.txt` (wyszukiwarka `https://zwycieska.eparafia.pl/znajdz-grob`) | JSON z polami `IdGrobu, Imie, Nazwisko, NrKwatery, NrGrobu, RokZgonu`; `If-Modified-Since`; nazwiska z `search_terms` porównywane po całych członach. |
+
+Wszystkie nowe adresy zostały sprawdzone sondą z runnera GitHub Actions (2026-10-27): HTTP 200, bez warstwy anty-botowej. Intencje parafii MB Saletyńskiej (`krakow.saletyni.pl`) odpowiadają runnerowi HTTP 403 (Cloudflare) i nie są źródłem. Szczegóły zachowania, reguły prywatności i diagnostyka — `README.md` §3, §4 i §8.
 
 ---
 

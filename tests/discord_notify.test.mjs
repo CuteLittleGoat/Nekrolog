@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { HELENA_GAWIN_PHRASES } from '../scripts/nekrolog_core.mjs';
 import { textMatchesAny } from '../scripts/normalize.mjs';
-import { buildDiscordMessage, buildNoMatchMessage, notifyCzerwonaHelena } from '../scripts/discord_notify.mjs';
+import { buildDiscordMessage, buildNoMatchMessage, notifyCzerwonaHelena, groupHitsForSending } from '../scripts/discord_notify.mjs';
 
 test('buildDiscordMessage uses expected template', () => {
   const msg = buildDiscordMessage({ name: 'Helena Gawin', source_name: 'Źródło test', url: 'https://example.com/x' });
@@ -73,4 +73,43 @@ test('loose matching handles punctuation, prefixes, dashes and diacritics', () =
   assert.equal(textMatchesAny('Helena Nowak', phrases), false);
   assert.equal(textMatchesAny('Gawron Helena', phrases), false);
   assert.equal(textMatchesAny('Helena', phrases), false);
+});
+
+test('nowe intencje jednego źródła idą jedną wiadomością, każda z własnym kluczem', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'nekrolog-discord-'));
+  const statePath = join(dir, 'discord_notified.json');
+  const intencja = (date) => ({ kind: 'intention', name: 'Helena Gawin – gregorianka', date_intention: date, time_intention: '07:00', source_id: 'p', source_name: 'Parafia', url: 'https://p/1' });
+  const rows = [intencja('2026-10-26'), intencja('2026-10-27'), intencja('2026-10-28'), { kind: 'death', name: 'Helena Gawin', source_id: 'z', source_name: 'Z', url: 'https://z/1' }];
+  const bodies = [];
+  const fetchImpl = async (_url, options) => { bodies.push(JSON.parse(options.body).content); return { ok: true, status: 204 }; };
+
+  const first = await notifyCzerwonaHelena({ rows, webhookUrl: 'https://discord.example/webhook', fetchImpl, statePath });
+  assert.equal(bodies.length, 2, 'jedna wiadomość dla trzech intencji i jedna dla zgonu');
+  assert.equal(first.sent_count, 2);
+  assert.equal(first.alerts.filter((a) => a.sent).length, 4);
+  assert.match(bodies[0], /Terminy intencji \(3\): 2026-10-26 07:00, 2026-10-27 07:00, 2026-10-28 07:00/);
+
+  // Kolejny przebieg z nowym terminem: zgłaszany jest tylko nowy termin.
+  const second = await notifyCzerwonaHelena({ rows: [...rows, intencja('2026-10-29')], webhookUrl: 'https://discord.example/webhook', fetchImpl, statePath });
+  assert.equal(bodies.length, 3);
+  assert.equal(second.sent_count, 1);
+  assert.match(bodies[2], /Termin intencji: 2026-10-29, godz\. 07:00/);
+});
+
+test('grupowanie dotyczy wyłącznie intencji', () => {
+  const groups = groupHitsForSending([
+    { kind: 'grave', source_id: 'a' }, { kind: 'grave', source_id: 'a' },
+    { kind: 'intention', source_id: 'b' }, { kind: 'intention', source_id: 'c' }, { kind: 'intention', source_id: 'b' }
+  ]);
+  assert.deepEqual(groups.map((g) => g.length), [1, 1, 2, 1]);
+});
+
+test('alert niesie powód zgłoszenia, datę ogłoszenia i rok zgonu', () => {
+  const grob = buildDiscordMessage({ kind: 'grave', name: 'Maria Kowalska', match_reason: 'nowa osoba w obserwowanym grobie Adam Gawin (Cmentarz Rakowicki, LXXIV/7/11)', place: 'Cmentarz Rakowicki, kw. LXXIV, rz. 7, m. 11', source_name: 'ZCK', url: 'https://zck/locator' });
+  assert.match(grob, /\[miejsce pochówku\]/);
+  assert.match(grob, /Powód zgłoszenia: nowa osoba w obserwowanym grobie Adam Gawin/);
+  const wzmianka = buildDiscordMessage({ kind: 'death', name: 'Helenę Gawin', date_reported: '2026-10-25', source_name: 'Parafia', url: 'https://p/1' });
+  assert.match(wzmianka, /Data ogłoszenia: 2026-10-25/);
+  const borek = buildDiscordMessage({ kind: 'grave', name: 'Helena Gawin', year_death: '2026', source_name: 'Borek', url: 'https://b/1' });
+  assert.match(borek, /Rok zgonu: 2026/);
 });
