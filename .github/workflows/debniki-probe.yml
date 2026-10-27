@@ -1,15 +1,18 @@
-# Sonda dostępu do Parafii Dębniki — rekomendacja C z analizy
-# Analizy/analiza-done-with-errors-gabriel24-timeout-i-debniki-intencje.md
+# Sonda dostępu do źródeł — uruchamiana wyłącznie ręcznie (workflow_dispatch).
 #
-# Źródła debniki_intencje i debniki_sdb są wyłączone, bo Cloudflare odrzuca ruch
-# z runnerów GitHub Actions. Blokada opiera się na reputacji adresu IP, a ta zmienia
-# się w czasie po stronie usługodawcy — wyłączone źródło nie jest przez nic testowane,
-# więc jej zdjęcie przeszłoby niezauważone. Ten workflow zamyka tę lukę kosztem
-# jednego żądania GET, uruchamianego wyłącznie ręcznie.
+# Pierwotnie sprawdzała tylko Parafię Dębniki (rekomendacja C z analizy
+# Analizy/analiza-done-with-errors-gabriel24-timeout-i-debniki-intencje.md): źródła
+# Dębnik są wyłączone, bo Cloudflare odrzuca ruch z runnerów GitHub Actions, a wyłączonego
+# źródła nic nie testuje. Od 2026-10-27 sprawdza też źródła wdrażane według analizy
+# Analizy/analiza-naprawa-zrodel-i-nowe-zrodla-kapelanka-rakowicki.md. Reputacja adresu
+# IP zmienia się w czasie, a z kontenera deweloperskiego nie da się ustalić, czy runner
+# zostanie przepuszczony — rozstrzyga dopiero żądanie wysłane z samego runnera.
 #
-# Sonda niczego nie obchodzi: wysyła to samo żądanie co zwykły przebieg, z tym samym
-# nagłówkiem bota, i tylko odnotowuje odpowiedź.
-name: Dębniki – sonda dostępu
+# Sonda niczego nie obchodzi: wysyła po jednym żądaniu z tym samym nagłówkiem bota co
+# zwykły przebieg (dla ZCK — ten sam przepływ z tokenem CSRF, który wykonuje przeglądarka)
+# i tylko odnotowuje odpowiedź. Nie zapisuje niczego w repozytorium i nie wysyła
+# powiadomień.
+name: Sonda dostępu do źródeł
 
 on:
   workflow_dispatch:
@@ -20,48 +23,119 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
-      - name: Sprawdź dostęp do intencji mszalnych
+      - name: Sprawdź dostęp do źródeł
         run: |
-          URL="https://debniki.sdb.org.pl/intencje/"
-          STATUS=$(curl --silent --location --max-time 25 \
-            --output /tmp/debniki.html \
-            --user-agent "nekrolog-refresh-bot/1.0 (+https://github.com/)" \
-            --header "accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
-            --write-out "%{http_code}" "$URL" || echo "000")
-          SIZE=$(wc -c < /tmp/debniki.html | tr -d ' ')
-
-          echo "URL:    $URL"
-          echo "HTTP:   $STATUS"
-          echo "Rozmiar odpowiedzi: $SIZE B"
+          UA="nekrolog-refresh-bot/1.0 (+https://github.com/)"
+          ACCEPT="accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          WORK=$(mktemp -d)
 
           {
-            echo "## Sonda dostępu: Parafia Dębniki – intencje"
+            echo "## Sonda dostępu do źródeł"
             echo
-            echo "| Pole | Wartość |"
-            echo "|---|---|"
-            echo "| URL | \`$URL\` |"
-            echo "| HTTP | \`$STATUS\` |"
-            echo "| Rozmiar | $SIZE B |"
-            echo
+            echo "| Źródło | HTTP | Rozmiar | Warstwa anty-botowa | Uwagi |"
+            echo "|---|---|---|---|---|"
           } >> "$GITHUB_STEP_SUMMARY"
 
-          case "$STATUS" in
+          # Wyzwanie Cloudflare albo hostingowe wyzwanie JS — wtedy źródło jest dla runnera
+          # niedostępne, niezależnie od kodu HTTP (część hostingów odpowiada 200).
+          challenge_of() {
+            if grep -qiE "cf-mitigated" "$1.hdr" 2>/dev/null; then echo "Cloudflare challenge"; return; fi
+            if grep -qiE "<title>(Just a moment|Attention Required)" "$1" 2>/dev/null; then echo "Cloudflare"; return; fi
+            if grep -qiE "<title>one moment, please" "$1" 2>/dev/null; then echo "wyzwanie JS hostingu"; return; fi
+            echo "—"
+          }
+
+          N=0
+          probe() {
+            N=$((N + 1))
+            local label="$1" url="$2" note="${3:-}" out="$WORK/probe_$N"
+            local code
+            code=$(curl --silent --location --max-time 25 --user-agent "$UA" --header "$ACCEPT" \
+              --dump-header "$out.hdr" --output "$out" --write-out "%{http_code}" "$url" || echo "000")
+            local size
+            size=$(wc -c < "$out" 2>/dev/null | tr -d ' ' || echo 0)
+            local guard
+            guard=$(challenge_of "$out")
+            echo "$label | HTTP $code | $size B | $guard | $url"
+            echo "| $label | \`$code\` | $size B | $guard | $note |" >> "$GITHUB_STEP_SUMMARY"
+            LAST_CODE="$code"
+          }
+
+          # ── Dębniki (wyłączone źródła) ──────────────────────────────────────────
+          probe "Dębniki – intencje" "https://debniki.sdb.org.pl/intencje/" "debniki_intencje"
+          DEBNIKI_STATUS=$LAST_CODE
+          probe "Dębniki – strona główna (ogłoszenia)" "https://debniki.sdb.org.pl/" "debniki_sdb"
+
+          # ── Rozszerzenia źródeł czynnych ───────────────────────────────────────
+          probe "Karawan – kanał RSS nekrologów" "https://karawan.pl/nekrologi/feed/" "R3"
+
+          # ZCK: przepływ przeglądarki — strona z tokenem CSRF i ciasteczkiem, potem
+          # zapytanie wysyłane przez kalendarz i wyszukiwarkę grobów.
+          JAR="$WORK/zck.jar"
+          probe "ZCK – porządek pogrzebów (strona)" "https://www.zck-krakow.pl/funerals" "dziś"
+          curl --silent --location --max-time 25 --user-agent "$UA" -c "$JAR" -b "$JAR" \
+            --output "$WORK/zck_f.html" "https://www.zck-krakow.pl/funerals" || true
+          TOKEN=$(grep -oE '<meta name="csrf-token" content="[^"]+"' "$WORK/zck_f.html" | sed 's/.*content="//; s/"$//' || true)
+          TOMORROW=$(TZ=Europe/Warsaw date -d '+1 day' +%F)
+          CODE=$(curl --silent --max-time 25 --user-agent "$UA" -c "$JAR" -b "$JAR" \
+            --header "accept: application/json; charset=utf-8" --header "content-type: application/json; charset=utf-8" \
+            --header "x-csrf-token: $TOKEN" --header "x-requested-with: XMLHttpRequest" \
+            --header "referer: https://www.zck-krakow.pl/funerals" \
+            --request POST --data "\"$TOMORROW\"" --output "$WORK/zck_api.html" --write-out "%{http_code}" \
+            "https://www.zck-krakow.pl/funerals/api" || echo "000")
+          ROWS=$(grep -o 'funeral-time' "$WORK/zck_api.html" 2>/dev/null | wc -l | tr -d ' ')
+          echo "ZCK – porządek pogrzebów (API, $TOMORROW) | HTTP $CODE | pozycji: $ROWS"
+          echo "| ZCK – porządek pogrzebów (API, $TOMORROW) | \`$CODE\` | — | — | pozycji w porządku: $ROWS (R1) |" >> "$GITHUB_STEP_SUMMARY"
+
+          curl --silent --location --max-time 25 --user-agent "$UA" -c "$JAR" -b "$JAR" \
+            --output "$WORK/zck_l.html" "https://www.zck-krakow.pl/locator" || true
+          TOKEN=$(grep -oE '<meta name="csrf-token" content="[^"]+"' "$WORK/zck_l.html" | sed 's/.*content="//; s/"$//' || true)
+          CODE=$(curl --silent --max-time 25 --user-agent "$UA" -c "$JAR" -b "$JAR" \
+            --header "accept: application/json; charset=utf-8" --header "content-type: application/json; charset=utf-8" \
+            --header "x-csrf-token: $TOKEN" --header "x-requested-with: XMLHttpRequest" \
+            --header "referer: https://www.zck-krakow.pl/locator" \
+            --request POST --data '{"name":"Adam","surname":"Gawin","birthdate":"","deathdate":"","graveyard":"2"}' \
+            --output "$WORK/zck_loc.json" --write-out "%{http_code}" "https://www.zck-krakow.pl/locator/api" || echo "000")
+          # Pole grave_quarter mają tylko wpisy główne; współpochowani są w tablicy extra.
+          FOUND=$(grep -o '"grave_quarter"' "$WORK/zck_loc.json" 2>/dev/null | wc -l | tr -d ' ')
+          echo "ZCK – lokalizator grobów (API, Adam Gawin @ Rakowicki) | HTTP $CODE | grobów: $FOUND"
+          echo "| ZCK – lokalizator grobów (API) | \`$CODE\` | — | — | Adam Gawin @ Rakowicki: grobów $FOUND (R2) |" >> "$GITHUB_STEP_SUMMARY"
+
+          # ── Parafie do 5 km od ul. Kapelanka ─────────────────────────────────────
+          probe "MB Fatimskiej (Os. Podwawelskie) – ogłoszenia" "https://www.podwawelskie.pl/aktualnosci/ogloszenia-duszpasterskie-1.html" "R4"
+          probe "św. Józefa (Podgórze) – ogłoszenia" "https://jozef.diecezja.pl/ogloszenia-parafialne/" "R4"
+          probe "Wola Duchacka – ogłoszenia" "https://wola1.xcr.pl/ogloszenia.html" "R4"
+          probe "NMP z Lourdes – ogłoszenia" "https://misjonarska.pl/category/ogoszenia/" "R4"
+          probe "MB Zwycięskiej (Borek) – ogłoszenia" "https://zwycieska.eparafia.pl/ogloszenia-parafialne(2)" "R4"
+          probe "MB Zwycięskiej (Borek) – intencje pogrzebowe" "https://zwycieska.eparafia.pl/intencje-pogrzebowe(3)/intencje-pogrzebowe-2026" "R5"
+          probe "MB Zwycięskiej (Borek) – ewidencja grobów" "https://zwycieska.eparafia.pl/clients/_krakow_mbzwyciezkiej/_upload/strona_3955/pio_2480.txt" "R6"
+          probe "Kliny Borkowskie – ogłoszenia i intencje" "https://kliny.katolicki.eu/index.php/aktualnosci/ogloszenia-i-intencje.html" "R4"
+          probe "Dąbie – Odeszli do Pana" "https://www.parafia.dabiekrakow.pl/biezace/odeszli-do-pana" "R4"
+          probe "Kliny Zacisze – ogłoszenia" "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/" "R4"
+          probe "MB Saletyńskiej – intencje" "https://krakow.saletyni.pl/intencje/" "R5"
+          probe "św. Kingi – ogłoszenia (intencje)" "https://kinga.diecezja.krakow.pl/ogloszenia/" "R5"
+          probe "Płaszów (sercanie) – intencje" "https://www.krakow.sercanie.pl/parafia/intencje-mszy-sw" "R5"
+          probe "Os. Bronowickie – intencje" "https://swwojciech.com/category/intencje-mszalne/" "R5"
+          probe "Skotniki – intencje" "http://parafiaskotniki.pl/category/intencje-mszy-sw/" "R5"
+
+          echo >> "$GITHUB_STEP_SUMMARY"
+          case "$DEBNIKI_STATUS" in
             200)
-              echo "Blokada zdjęta — można przejść do rekomendacji D (enabled: true dla debniki_intencje)." >> "$GITHUB_STEP_SUMMARY"
-              echo "::notice title=Dostęp odzyskany::HTTP 200 — źródło debniki_intencje można włączyć (rekomendacja D analizy)."
+              echo "Dębniki: blokada zdjęta — można włączyć \`debniki_intencje\` (enabled: true w obu plikach)." >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=Dębniki – dostęp odzyskany::HTTP 200 — źródło debniki_intencje można włączyć."
               ;;
             403)
               # Cloudflare Managed Challenge odpowiada stroną "Just a moment..." — to nie
               # jest awaria sondy, tylko jej prawidłowy, negatywny wynik.
-              echo "Blokada nadal obowiązuje — utrzymać \`enabled: false\`. Warianty C1–C4 w analizie." >> "$GITHUB_STEP_SUMMARY"
-              echo "::warning title=Blokada trwa::HTTP 403 (Cloudflare Managed Challenge) — źródło pozostaje wyłączone."
+              echo "Dębniki: blokada nadal obowiązuje — utrzymać \`enabled: false\`." >> "$GITHUB_STEP_SUMMARY"
+              echo "::warning title=Dębniki – blokada trwa::HTTP 403 (Cloudflare Managed Challenge) — źródło pozostaje wyłączone."
               ;;
             *)
-              echo "Wynik nierozstrzygający — powtórzyć sondę." >> "$GITHUB_STEP_SUMMARY"
-              echo "::warning title=Wynik nierozstrzygający::HTTP $STATUS — ani 200, ani 403."
+              echo "Dębniki: wynik nierozstrzygający (HTTP $DEBNIKI_STATUS) — powtórzyć sondę." >> "$GITHUB_STEP_SUMMARY"
+              echo "::warning title=Dębniki – wynik nierozstrzygający::HTTP $DEBNIKI_STATUS — ani 200, ani 403."
               ;;
           esac
 
