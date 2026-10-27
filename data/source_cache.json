@@ -1,1 +1,342 @@
-{}
+{
+  "puk_pozegnalismy": {
+    "state": {
+      "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Muller-WE4AKA28U3JY": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "13:00",
+          "date": "2026-10-29"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wieslawa-Lewandowska-VTXSQJKFP51T": {
+          "place": "CEREMONIA ŻAŁOBNA odprawiona zostanie w środę 28 października 2026 r. o godz. 14:30 w Kaplicy na Cmentarzu na Podgórkach Tynieckich w Krakowie przy ul. Wielogórskiej 16, po czym nastąpi odprowadzenie Zmarłej na miejsce spoczynku, o czym zawiadamia pogrążona w smutku RODZINA",
+          "address": "Wielogórska 16 Kraków",
+          "time": "14:30",
+          "date": "2026-10-28"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Michalina--Rostkowska-WXFKC7ONP1D1": {
+          "place": "Opactwo Benedyktynów w Tyńcu",
+          "address": "ul. Benedyktyńska 37 30-398 Kraków",
+          "time": "14:30",
+          "date": "2026-10-28"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Waclawik-3OUW9D4SCCAF": {
+          "place": "MSZA ŚW. ŻAŁOBNA odprawiona zostanie w środę 28 października 2026 r. o godz. 13:00 w Kaplicy na Cmentarzu w Podgórkach Tynieckich przy ul. Wielogórskiej 16 w Krakowie, po czym nastąpi odprowadzenie Zmarłej na miejsce spoczynku. O czym zawiadamia pogrążona w smutku RODZINA",
+          "address": "Wielogórska 16 Kraków",
+          "time": "13:00",
+          "date": "2026-10-28"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stefan-Gardon-OT0CQ4REDCXW": {
+          "place": "MSZA ŚWIĘTA ŻAŁOBNA odprawiona zostanie w środę 28 października 2026 r. o godz. 12:00 w Kaplicy na Cmentarzu Podgórskim, po czym nastąpi odprowadzenie Zmarłego na miejsce spoczynku, o czym zawiadamia pogrążona w smutku RODZINA",
+          "address": "Wapienna 13 Kraków",
+          "time": "12:00",
+          "date": "2026-10-28"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Zbigniew-Piecuch-79NRZ17T9MIS": {
+          "place": "Cmentarz Batowice (Kaplica Cmentarna Reduta)",
+          "address": "Reduta 31-422 Kraków",
+          "time": "11:00",
+          "date": "2026-10-28"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Adryan-E98IXCICK5WL": {
+          "place": "Kurhan w Karniowicach",
+          "address": "ul. Spacerowa 26 31-545 Karniowice",
+          "time": "14:00",
+          "date": "2026-10-27"
+        }
+      }
+    }
+  },
+  "zck_lokalizator": {
+    "fetched_at": "2026-10-27T13:06:00.307Z",
+    "result": {
+      "rows": [
+        {
+          "kind": "grave",
+          "name": "Adam Gawin",
+          "date_death": "2012-06-26",
+          "date_birth": "1939-12-27",
+          "date_funeral": null,
+          "time_funeral": null,
+          "place": "Cmentarz Rakowicki, kw. LXXIV, rz. 7, m. 11",
+          "source_id": "zck_lokalizator",
+          "source_name": "ZCK Kraków – Lokalizator grobów",
+          "url": "https://www.zck-krakow.pl/locator",
+          "source_url": "https://www.zck-krakow.pl/locator",
+          "note": "Obserwowany grób; współpochowani: Henryk Gawin (28.12.1911–27.06.1962)"
+        }
+      ],
+      "diagnostics": {
+        "http_status": 200,
+        "graveyards": 12,
+        "queries": 25,
+        "queries_failed": 0,
+        "baseline_matched": 4,
+        "historical_skipped": 0,
+        "accepted_rows": 1,
+        "parser_status": "ok"
+      }
+    }
+  },
+  "dabie_odeszli": {
+    "state": {
+      "first_seen": {
+        "janusza nowotnika": "baseline",
+        "joanne chmielek": "baseline",
+        "zofie wcis o": "baseline",
+        "stanis awe dryja": "baseline",
+        "haline pracuch": "baseline",
+        "helene jach": "baseline",
+        "haline bielecka": "baseline",
+        "irene grabska": "baseline",
+        "konrada lesniarka": "baseline",
+        "jana matejesiek": "baseline",
+        "janusza wandas": "baseline",
+        "aleksandre baran": "baseline",
+        "aleksandre piotrowicz kotarba": "baseline",
+        "romana karpiel": "baseline",
+        "marka knapczyka": "baseline",
+        "mariana wiatr": "baseline",
+        "marka lesniaka": "baseline",
+        "bogumi e kozakowska": "baseline",
+        "jana szarlinskiego": "baseline",
+        "jozefa bartnika": "baseline",
+        "janine szczucinska": "baseline",
+        "elzbiete pauli": "baseline",
+        "janusza stich": "baseline",
+        "barbare calik": "baseline",
+        "krystyne jaglarz": "baseline",
+        "andrzeja firleja": "baseline",
+        "adama czekajskiego": "baseline",
+        "antoniego giera t": "baseline",
+        "czes awe pyzik": "baseline",
+        "adama zuzek": "baseline",
+        "wojciecha slazyk": "baseline",
+        "ludwika blitek": "baseline",
+        "stanis awa jasnos": "baseline",
+        "stanis awe ko akowska": "baseline",
+        "marie micuda": "baseline",
+        "mariana piekarza": "baseline",
+        "kazimierza czekajskiego": "baseline",
+        "krystyne rdest": "baseline",
+        "barbare gucwa": "baseline",
+        "zdzis awa karcza": "baseline",
+        "stanis awe su kowska": "baseline",
+        "justyne trzopek": "baseline",
+        "stanis awa pracucha": "baseline",
+        "marie kozdron": "baseline",
+        "mieczys awa skrzypka": "baseline",
+        "janine kowalska": "baseline",
+        "jozefa ma ote": "baseline",
+        "jozefa morawskiego": "baseline",
+        "andrzeja pacek": "baseline",
+        "barbare walencik": "baseline",
+        "haline gabarczyk": "baseline",
+        "krzysztofa leszczynskiego": "baseline",
+        "anne wrona": "baseline",
+        "marka koczur": "baseline",
+        "jozefa pawlik": "baseline",
+        "krystyne karpecka": "baseline",
+        "janine kasprzyk": "baseline",
+        "zofie kulczynska": "baseline",
+        "antoniego durma a": "baseline",
+        "haline toszkow": "baseline",
+        "adolfa staniszewskiego": "baseline",
+        "stefana konskiego": "baseline",
+        "wande sajdak": "baseline",
+        "jozefa pajor": "baseline",
+        "olimpie trybus": "baseline",
+        "marie lesniak": "baseline",
+        "barbare dunal": "baseline",
+        "regine jamborska": "baseline",
+        "wande trzpis": "baseline",
+        "barbare schwabe": "baseline"
+      }
+    }
+  },
+  "borek_intencje_pogrzebowe": {
+    "state": {
+      "first_seen": {
+        "jacek migda ek": "baseline",
+        "cecylia kolut": "baseline",
+        "grzegorz zawalski": "baseline",
+        "greta antonina safinska": "baseline",
+        "mieczys aw miszkiel": "baseline",
+        "zuzanna pu czynska": "baseline",
+        "irena mrowiec": "baseline",
+        "zbigniew skotniczy": "baseline",
+        "mateusz gocyk": "baseline",
+        "edwarda mysliwczak": "baseline",
+        "maria nazimek": "baseline",
+        "marian musia": "baseline",
+        "anastazja wojtowicz": "baseline",
+        "boles aw buczak": "baseline",
+        "zofia zych": "baseline",
+        "jacek wojas": "baseline",
+        "stefania wawrzkowicz": "baseline",
+        "renata znachowska muniak": "baseline",
+        "wies aw wisniewski": "baseline",
+        "wojciech wawrzyniak": "baseline",
+        "tadeusz wojcik": "baseline",
+        "marcjanna szwed": "baseline",
+        "krzysztof sikora": "baseline",
+        "maria krasnoszczuk": "baseline",
+        "irena tylek": "baseline",
+        "w adys aw jurus": "baseline",
+        "kazimiera malisz": "baseline",
+        "jan s apak": "baseline",
+        "tomasz skotniczy": "baseline",
+        "marianna klama": "baseline",
+        "barbara biel": "baseline",
+        "maria gawor": "baseline",
+        "stanis aw koz owski": "baseline",
+        "krystyna zaborowska": "baseline",
+        "halina kuciel": "baseline",
+        "adam gociewicz": "baseline",
+        "agata otowska": "baseline",
+        "zofia russocka": "baseline",
+        "krzysztof pawlik": "baseline",
+        "bogus awa nowakowska": "baseline",
+        "ewa stasko": "baseline",
+        "wies aw grzesiak": "baseline",
+        "andrzej jonak": "baseline",
+        "jerzy chwastek": "baseline",
+        "stanis awa bartosik": "baseline",
+        "henryk tupta": "baseline",
+        "tadeusz drozdzak": "baseline",
+        "renata les": "baseline",
+        "tadeusz zebala": "baseline",
+        "stefan dudek": "baseline",
+        "jolanta zubko": "baseline",
+        "mariusz czop": "baseline",
+        "stefan strozik": "baseline",
+        "sabina fraczek": "baseline",
+        "janina ziemnicka": "baseline",
+        "tadeusz mocny": "baseline",
+        "kazimiera sekunda": "baseline",
+        "janina stanek": "baseline",
+        "maria czerenkiewicz": "baseline",
+        "leszek tarczynski": "baseline",
+        "krystyna kutszynska": "baseline",
+        "bogdan przebinda": "baseline",
+        "helena tratkiewicz": "baseline",
+        "marek solak": "baseline",
+        "krzysztof bochenek": "baseline",
+        "jerzy wierzba": "baseline",
+        "andrzej janusz": "baseline",
+        "zbigniew piwowarczyk": "baseline",
+        "stefan rozum": "baseline",
+        "jerzy sukiennik": "baseline",
+        "kazimiera slezak": "baseline",
+        "micha mackowiak": "baseline",
+        "barbara pintscher": "baseline",
+        "marta zwi a": "baseline",
+        "grazyna jasinska": "baseline",
+        "zbigniew palma": "baseline",
+        "janina pietruszka": "baseline",
+        "stanis aw bujas": "baseline",
+        "helena szeligiewicz": "baseline",
+        "danuta czarnecka": "baseline",
+        "andrzej tylek": "baseline",
+        "ma gorzata sagan": "baseline",
+        "tadeusz wroblewski": "baseline",
+        "andrzej apostolski": "baseline",
+        "hermina matoga": "baseline",
+        "wies awa gruszka": "baseline",
+        "jozef domaga a": "baseline",
+        "stanis awa jachowicz": "baseline"
+      }
+    }
+  },
+  "borek_ewidencja_grobow": {
+    "state": {
+      "last_modified": "Mon, 26 Oct 2026 15:39:34 GMT",
+      "total_records": 10366,
+      "records": [
+        {
+          "IdGrobu": "14/124",
+          "Imie": "Zuzanna",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "14",
+          "NrGrobu": "124",
+          "RokZgonu": "2007"
+        },
+        {
+          "IdGrobu": "4/22",
+          "Imie": "Janina",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "4",
+          "NrGrobu": "22",
+          "RokZgonu": "2003"
+        },
+        {
+          "IdGrobu": "30/106",
+          "Imie": "Adela",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "30",
+          "NrGrobu": "106",
+          "RokZgonu": "2014"
+        },
+        {
+          "IdGrobu": "9/89",
+          "Imie": "Katarzyna",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "9",
+          "NrGrobu": "89",
+          "RokZgonu": "1978"
+        },
+        {
+          "IdGrobu": "35/31",
+          "Imie": "Genowefa",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "35",
+          "NrGrobu": "31",
+          "RokZgonu": "2009"
+        },
+        {
+          "IdGrobu": "4/22",
+          "Imie": "Ryszard",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "4",
+          "NrGrobu": "22",
+          "RokZgonu": "2012"
+        },
+        {
+          "IdGrobu": "9/89",
+          "Imie": "Irena",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "9",
+          "NrGrobu": "89",
+          "RokZgonu": "2014"
+        },
+        {
+          "IdGrobu": "30/106",
+          "Imie": "Wojciech",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "30",
+          "NrGrobu": "106",
+          "RokZgonu": "2017"
+        },
+        {
+          "IdGrobu": "4/22",
+          "Imie": "Eugeniusz",
+          "Nazwisko": "Gawin",
+          "NrKwatery": "4",
+          "NrGrobu": "22",
+          "RokZgonu": "2019"
+        }
+      ],
+      "first_seen": {
+        "Cmentarz parafialny Borek Fałęcki, kwatera 14, grób 124|zuzanna gawin|2007": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 4, grób 22|janina gawin|2003": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 30, grób 106|adela gawin|2014": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 9, grób 89|katarzyna gawin|1978": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 35, grób 31|genowefa gawin|2009": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 4, grób 22|ryszard gawin|2012": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 9, grób 89|irena gawin|2014": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 30, grób 106|wojciech gawin|2017": "baseline",
+        "Cmentarz parafialny Borek Fałęcki, kwatera 4, grób 22|eugeniusz gawin|2019": "baseline"
+      }
+    }
+  }
+}
