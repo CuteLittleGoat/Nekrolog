@@ -2,10 +2,34 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jerzy-Nykiel-JBP438C0LALP": {
+          "place": "Cmentarz Grębałów",
+          "address": "Darwina 1G",
+          "time": "13:00",
+          "date": "2026-10-30"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jakub-Wiatr-QVFAU53PW37W": {
+          "place": "Kaplica Cm. Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "13:40",
+          "date": "2026-10-29"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Muller-WE4AKA28U3JY": {
           "place": "Cmentarz Rakowicki",
           "address": "Rakowicka 26 Kraków",
           "time": "13:00",
+          "date": "2026-10-29"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Wiatr-H9641KUOBQO9": {
+          "place": "Węgrzce",
+          "address": "Węgrzce",
+          "time": "13:00",
+          "date": "2026-10-29"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Bujak-JSEF5XI6LBMG": {
+          "place": "Kościół św. Mikołaja w Słaboszowie",
+          "address": "Słaboszów 58 32-218 Słaboszów",
+          "time": "12:00",
           "date": "2026-10-29"
         },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wieslawa-Lewandowska-VTXSQJKFP51T": {
