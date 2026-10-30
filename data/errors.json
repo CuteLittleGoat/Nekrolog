@@ -1,6 +1,13 @@
 {
-  "generated_at": "2026-10-29T23:12:52.275Z",
-  "errors": [],
+  "generated_at": "2026-10-30T13:57:44.120Z",
+  "errors": [
+    {
+      "source_id": "borek_ewidencja_grobow",
+      "source_name": "Cmentarz Borek Fałęcki – Ewidencja grobów",
+      "url": "https://zwycieska.eparafia.pl/znajdz-grob",
+      "error": "HTTP 404 (prób: 1)"
+    }
+  ],
   "warnings": [
     {
       "source_id": "salwator_grobonet",
