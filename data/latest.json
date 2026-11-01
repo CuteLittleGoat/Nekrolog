@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-01T14:11:27.668Z",
-  "updated_at": "2026-11-01T14:11:27.668Z",
+  "generated_at": "2026-11-01T22:40:29.094Z",
+  "updated_at": "2026-11-01T22:40:29.094Z",
   "window": {
     "today": "2026-11-01",
     "death_from": "2026-10-25",
@@ -15600,7 +15600,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 26,
+      "empty_streak": 27,
       "fail_streak": 0,
       "blocked_since": "2026-10-19T22:50:50.823Z",
       "error": "HTTP 403 (prób: 1)"
@@ -15644,6 +15644,8 @@
       "historical_skipped": 0,
       "accepted_rows": 1,
       "parser_status": "ok",
+      "cached": true,
+      "cached_at": "2026-11-01T14:11:02.706Z",
       "rows": 1,
       "empty_streak": 0,
       "fail_streak": 0,
@@ -15897,7 +15899,7 @@
       "http_status": 404,
       "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 5,
+      "empty_streak": 6,
       "fail_streak": 0,
       "blocked_since": null,
       "error": "HTTP 404 (prób: 1)"
