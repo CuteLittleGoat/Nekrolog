@@ -1,6 +1,14 @@
 {
-  "generated_at": "2026-11-02T16:57:47.697Z",
+  "generated_at": "2026-11-03T01:31:12.665Z",
   "errors": [
+    {
+      "source_id": "salwator_grobonet",
+      "source_name": "Kraków Salwator – Groby (Grobonet)",
+      "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
+      "blocked_since": "2026-10-19T22:50:50.823Z",
+      "blocked_days": 14,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 14 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+    },
     {
       "source_id": "borek_ewidencja_grobow",
       "source_name": "Cmentarz Borek Fałęcki – Ewidencja grobów",
@@ -8,14 +16,5 @@
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "warnings": [
-    {
-      "source_id": "salwator_grobonet",
-      "source_name": "Kraków Salwator – Groby (Grobonet)",
-      "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
-      "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 13,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 13 dni"
-    }
-  ]
+  "warnings": []
 }
