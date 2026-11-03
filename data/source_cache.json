@@ -14,6 +14,12 @@
           "time": "13:00",
           "date": "2026-11-05"
         },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Latawiec-B0SOAQFVOM7Q": {
+          "place": "Kościół pw. św. Małgorzaty",
+          "address": "Papieska Raciborowice",
+          "time": "12:00",
+          "date": "2026-11-05"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Pawel--Jasinski-3VKSUMO8TUPD": {
           "place": "MSZA ŚWIĘTA ŻAŁOBNA odprawiona zostanie w środę, 4 listopada 2026 r. o godz. 11:00 w Kaplicy na cmentarzu w Podgórkach Tynieckich przy ul. Wielogórskiej w Krakowie, po czym nastąpi odprowadzenie Zmarłego na miejsce spoczynku, o czym zawiadamia pogrążona w smutku RODZINA",
           "address": "Wielogórska 16 Kraków",
@@ -90,7 +96,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-02T16:57:18.634Z",
+    "fetched_at": "2026-11-03T14:56:47.787Z",
     "result": {
       "rows": [
         {
