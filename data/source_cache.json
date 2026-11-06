@@ -2,6 +2,18 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Kopcinska-YL7BXH1K4JF5": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "11:00",
+          "date": "2026-11-13"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Halina-Markiewicz-24JQGLS585QU": {
+          "place": "Cmentarz Batowice (Kaplica Powstańców)",
+          "address": "Powstańców 48 Kraków",
+          "time": "11:40",
+          "date": "2026-11-12"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Krystyna-Toton-8HJBCQHFCHBQ": {
           "place": "Cmentarz Rakowicki",
           "address": "Rakowicka 26 Kraków",
@@ -12,6 +24,12 @@
           "place": "Cmentarz Batowice (Kaplica Reduta)",
           "address": "Reduta Kraków",
           "time": "13:00",
+          "date": "2026-11-09"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Joanna-Serafin-H4X9UAML8MSO": {
+          "place": "Cmentarz Batowice (Kaplica Powstańców)",
+          "address": "Powstańców 48 Kraków",
+          "time": "11:40",
           "date": "2026-11-09"
         },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wiktor--Majta-GAVE9NBLLJY2": {
@@ -108,7 +126,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-05T15:17:48.421Z",
+    "fetched_at": "2026-11-06T14:55:11.299Z",
     "result": {
       "rows": [
         {
