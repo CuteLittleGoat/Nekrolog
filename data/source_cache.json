@@ -2,6 +2,18 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wlodzimierz-Hojny-UIAFA37CRDKZ": {
+          "place": "Kaplica Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "11:00",
+          "date": "2026-11-17"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Wroblewska-8UDS9E71VNSD": {
+          "place": "Cmentarz Batowice (Kaplica Powstańców)",
+          "address": "Powstańców 48 Kraków",
+          "time": "13:40",
+          "date": "2026-11-13"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Elzbieta-Kopcinska-YL7BXH1K4JF5": {
           "place": "Cmentarz Rakowicki",
           "address": "Rakowicka 26 Kraków",
@@ -126,7 +138,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-09T17:20:05.864Z",
+    "fetched_at": "2026-11-10T15:30:13.701Z",
     "result": {
       "rows": [
         {
