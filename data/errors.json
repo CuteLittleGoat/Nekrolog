@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-12T15:54:08.956Z",
+  "generated_at": "2026-11-13T00:02:31.701Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 23,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 23 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+      "blocked_days": 24,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 24 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
     },
     {
       "source_id": "borek_ewidencja_grobow",
