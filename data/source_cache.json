@@ -2,6 +2,18 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Kazimierz-Suder-WA3AFSYJFFVM": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "12:20",
+          "date": "2026-11-18"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Ryszard-Kursa-1XXMX8TL9VXS": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "10:20",
+          "date": "2026-11-18"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Wlodzimierz-Hojny-UIAFA37CRDKZ": {
           "place": "Kaplica Cmentarz Rakowicki",
           "address": "Rakowicka 26 Kraków",
@@ -138,7 +150,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-12T15:53:41.901Z",
+    "fetched_at": "2026-11-13T15:14:58.814Z",
     "result": {
       "rows": [
         {
