@@ -150,7 +150,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-13T15:14:58.814Z",
+    "fetched_at": "2026-11-14T14:01:45.729Z",
     "result": {
       "rows": [
         {
@@ -264,6 +264,8 @@
   "borek_intencje_pogrzebowe": {
     "state": {
       "first_seen": {
+        "agnieszka kapusta": "2026-11-14",
+        "zbigniew kuc": "2026-11-14",
         "stanis aw borzecki": "2026-10-31",
         "piotr witkowski": "2026-10-31",
         "elzbieta seweryn": "2026-11-07",
