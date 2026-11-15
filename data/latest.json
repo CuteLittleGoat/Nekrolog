@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-15T14:38:40.866Z",
-  "updated_at": "2026-11-15T14:38:40.866Z",
+  "generated_at": "2026-11-15T23:21:36.112Z",
+  "updated_at": "2026-11-15T23:21:36.112Z",
   "window": {
     "today": "2026-11-15",
     "death_from": "2026-11-08",
@@ -455,34 +455,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ucherska-RZBBJLYA3JTK",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.p | Data pogrzebu 22.10.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Bronisław Goleń",
-      "date_death": null,
-      "date_funeral": "2026-10-21",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bronislaw-Golen-9TJED8AAA9YW",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P. | Data pogrzebu 21.10.2026",
-      "priority_hit": false
-    },
-    {
-      "kind": "death",
-      "name": "Paweł Wąsik",
-      "date_death": null,
-      "date_funeral": "2026-10-21",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Pawel-Wasik-VR4HW1PHPWLC",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P. | Data pogrzebu 21.10.2026",
       "priority_hit": false
     },
     {
@@ -6224,6 +6196,36 @@
     },
     {
       "kind": "funeral",
+      "name": "Andrzej Bałchan",
+      "date_death": null,
+      "date_funeral": "2026-11-23",
+      "time_funeral": "12:20",
+      "date_is_fallback": false,
+      "place": "Kaplica – Cmentarz Rakowicki",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK 2026-11-23; Cmentarz Rakowicki",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
+      "name": "Zbigniew Rokitowski",
+      "date_death": null,
+      "date_funeral": "2026-11-23",
+      "time_funeral": "08:30",
+      "date_is_fallback": false,
+      "place": "Od bramy – Cmentarz Komunalny w Podgórkach Tynieckich",
+      "source_id": "zck_funerals",
+      "source_name": "ZCK Kraków – Porządek pogrzebów",
+      "url": "https://www.zck-krakow.pl/funerals",
+      "source_url": "https://www.zck-krakow.pl/funerals",
+      "note": "ZCK 2026-11-23; Cmentarz Komunalny w Podgórkach Tynieckich",
+      "priority_hit": false
+    },
+    {
+      "kind": "funeral",
       "name": "Barbara Wróblewska",
       "date_death": null,
       "date_funeral": "2026-11-13",
@@ -6626,34 +6628,6 @@
       "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Maria-Ucherska-RZBBJLYA3JTK",
       "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
       "note": "Ś.p",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Bronisław Goleń",
-      "date_death": null,
-      "date_funeral": "2026-10-21",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bronislaw-Golen-9TJED8AAA9YW",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
-      "priority_hit": false
-    },
-    {
-      "kind": "funeral",
-      "name": "Paweł Wąsik",
-      "date_death": null,
-      "date_funeral": "2026-10-21",
-      "time_funeral": null,
-      "place": "PUK Kraków – Pożegnaliśmy",
-      "source_id": "puk_pozegnalismy",
-      "source_name": "PUK Kraków – Pożegnaliśmy",
-      "url": "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Pawel-Wasik-VR4HW1PHPWLC",
-      "source_url": "https://www.puk.krakow.pl/pozegnalismy/",
-      "note": "Ś.P.",
       "priority_hit": false
     },
     {
@@ -14910,8 +14884,14 @@
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 26,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 26 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+      "blocked_days": 27,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 27 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+    },
+    {
+      "source_id": "zacisze_ogloszenia",
+      "source_name": "Parafia św. Rafała Kalinowskiego (Kliny Zacisze) – Ogłoszenia",
+      "url": "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/",
+      "error": "HTTP 404 (prób: 1)"
     },
     {
       "source_id": "borek_ewidencja_grobow",
@@ -14930,9 +14910,9 @@
       "days_requested": 7,
       "days_fetched": 7,
       "days_failed": 0,
-      "accepted_rows": 82,
+      "accepted_rows": 84,
       "parser_status": "ok",
-      "rows": 82,
+      "rows": 84,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -14944,9 +14924,9 @@
       "url": "https://www.puk.krakow.pl/pozegnalismy/",
       "http_status": 200,
       "detail_pages": 0,
-      "accepted_rows": 70,
+      "accepted_rows": 66,
       "parser_status": "ok",
-      "rows": 70,
+      "rows": 66,
       "empty_streak": 0,
       "fail_streak": 0,
       "blocked_since": null,
@@ -14992,7 +14972,7 @@
       "http_status": 403,
       "parser_status": "blocked",
       "rows": 0,
-      "empty_streak": 54,
+      "empty_streak": 55,
       "fail_streak": 0,
       "blocked_since": "2026-10-19T22:50:50.823Z",
       "error": "HTTP 403 (prób: 1)"
@@ -15036,6 +15016,8 @@
       "historical_skipped": 0,
       "accepted_rows": 1,
       "parser_status": "ok",
+      "cached": true,
+      "cached_at": "2026-11-15T14:38:15.087Z",
       "rows": 1,
       "empty_streak": 0,
       "fail_streak": 0,
@@ -15158,17 +15140,13 @@
       "source_id": "zacisze_ogloszenia",
       "source_name": "Parafia św. Rafała Kalinowskiego (Kliny Zacisze) – Ogłoszenia",
       "url": "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/",
-      "http_status": 200,
-      "documents": 1,
-      "deaths": 0,
-      "intentions": 0,
-      "accepted_rows": 0,
-      "parser_status": "empty",
+      "http_status": 404,
+      "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 1,
+      "empty_streak": 2,
       "fail_streak": 0,
       "blocked_since": null,
-      "error": null
+      "error": "HTTP 404 (prób: 1)"
     },
     {
       "source_id": "podwawelskie_intencje",
@@ -15289,13 +15267,13 @@
       "http_status": 404,
       "parser_status": "http_error",
       "rows": 0,
-      "empty_streak": 33,
+      "empty_streak": 34,
       "fail_streak": 0,
       "blocked_since": null,
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "refresh_error": "Kraków Salwator – Groby (Grobonet): HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 26 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false) | Cmentarz Borek Fałęcki – Ewidencja grobów: HTTP 404 (prób: 1)",
+  "refresh_error": "Kraków Salwator – Groby (Grobonet): HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 27 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false) | Parafia św. Rafała Kalinowskiego (Kliny Zacisze) – Ogłoszenia: HTTP 404 (prób: 1) | Cmentarz Borek Fałęcki – Ewidencja grobów: HTTP 404 (prób: 1)",
   "refresh_warning": null,
   "writer_name": "scripts/refresh_static.mjs",
   "writer_version": "static-2"
