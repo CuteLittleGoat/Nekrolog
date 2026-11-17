@@ -14,6 +14,12 @@
           "time": "13:00",
           "date": "2026-11-20"
         },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Barwacz-UNAF0SQ8GIMQ": {
+          "place": "cm. Salwator",
+          "address": null,
+          "time": "12:00",
+          "date": "2026-11-20"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Stanislaw-Popardowski-44GGICVNGCE5": {
           "place": "Cmentarz Batowice (Kaplica Powstańców)",
           "address": "Powstańców 48 Kraków",
@@ -168,7 +174,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-16T16:54:04.978Z",
+    "fetched_at": "2026-11-17T16:48:26.984Z",
     "result": {
       "rows": [
         {
