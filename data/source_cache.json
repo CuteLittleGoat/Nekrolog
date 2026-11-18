@@ -8,6 +8,12 @@
           "time": "12:00",
           "date": "2026-11-23"
         },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Barbara-Lipowska-CKCT1GOOSPT9": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "11:40",
+          "date": "2026-11-23"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Irena-Szczerbinska-1CUB5HO3C6AY": {
           "place": "cm. Salwator",
           "address": null,
@@ -174,7 +180,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-17T16:48:26.984Z",
+    "fetched_at": "2026-11-18T16:19:20.761Z",
     "result": {
       "rows": [
         {
