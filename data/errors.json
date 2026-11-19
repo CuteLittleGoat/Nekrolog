@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T01:02:07.568Z",
+  "generated_at": "2026-11-19T16:32:13.250Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -22,5 +22,27 @@
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "podwawelskie_nekrologi",
+      "source_name": "Podwawelskie – Nekrologi",
+      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    },
+    {
+      "source_id": "podwawelskie_ogloszenia",
+      "source_name": "Parafia MB Fatimskiej (Os. Podwawelskie) – Ogłoszenia",
+      "url": "https://www.podwawelskie.pl/aktualnosci/ogloszenia-duszpasterskie-1.html",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    },
+    {
+      "source_id": "podwawelskie_intencje",
+      "source_name": "Parafia MB Fatimskiej (Os. Podwawelskie) – Intencje tygodnia",
+      "url": "https://www.podwawelskie.pl/aktualnosci/intencje-mszalne-1.html",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
