@@ -2,10 +2,28 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Michalina-Polechonska-HO1GS23MRKYA": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "13:00",
+          "date": "2026-11-27"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Szynal-80TUTHOPUEPU": {
+          "place": "Cmentarz Batowice (Kaplica Powstańców)",
+          "address": "Powstańców 48 Kraków",
+          "time": "11:00",
+          "date": "2026-11-25"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Franciszek-Matlak-JPE57R6SPX3E": {
           "place": "MSZA ŚW. ŻAŁOBNA odprawiona zostanie 24 listopada 2026 r. o godz. 12:00 w Kościele M.B Królowej Polski przy ul. Zamiejskiej 6.",
           "address": "ul. Lubostroń Kraków",
           "time": "12:00",
+          "date": "2026-11-24"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Dorota-Kalafarska-X6UESNRRS9IM": {
+          "place": "Cmentarz Podgórski",
+          "address": "Wapienna 13 Kraków",
+          "time": "10:00",
           "date": "2026-11-24"
         },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Bogumila-Rzehak-K7XE45CYFWOY": {
@@ -192,7 +210,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-19T16:29:23.788Z",
+    "fetched_at": "2026-11-20T15:59:46.318Z",
     "result": {
       "rows": [
         {
