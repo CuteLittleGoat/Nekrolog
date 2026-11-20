@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-19T16:32:13.250Z",
+  "generated_at": "2026-11-20T01:08:15.056Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 30,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 30 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+      "blocked_days": 31,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 31 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
     },
     {
       "source_id": "zacisze_ogloszenia",
@@ -22,27 +22,5 @@
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "warnings": [
-    {
-      "source_id": "podwawelskie_nekrologi",
-      "source_name": "Podwawelskie – Nekrologi",
-      "url": "https://www.podwawelskie.pl/aktualnosci/nekrologi.html",
-      "fail_streak": 1,
-      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
-    },
-    {
-      "source_id": "podwawelskie_ogloszenia",
-      "source_name": "Parafia MB Fatimskiej (Os. Podwawelskie) – Ogłoszenia",
-      "url": "https://www.podwawelskie.pl/aktualnosci/ogloszenia-duszpasterskie-1.html",
-      "fail_streak": 1,
-      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
-    },
-    {
-      "source_id": "podwawelskie_intencje",
-      "source_name": "Parafia MB Fatimskiej (Os. Podwawelskie) – Intencje tygodnia",
-      "url": "https://www.podwawelskie.pl/aktualnosci/intencje-mszalne-1.html",
-      "fail_streak": 1,
-      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
-    }
-  ]
+  "warnings": []
 }
