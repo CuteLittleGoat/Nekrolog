@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T23:44:57.278Z",
+  "generated_at": "2026-11-22T15:12:16.108Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -16,11 +16,25 @@
       "error": "HTTP 404 (prób: 1)"
     },
     {
+      "source_id": "plaszow_intencje",
+      "source_name": "Parafia NSPJ (Płaszów) – Intencje mszalne",
+      "url": "https://www.krakow.sercanie.pl/parafia/intencje-mszy-sw",
+      "error": "HTTP 403 (prób: 1)"
+    },
+    {
       "source_id": "borek_ewidencja_grobow",
       "source_name": "Cmentarz Borek Fałęcki – Ewidencja grobów",
       "url": "https://zwycieska.eparafia.pl/znajdz-grob",
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "warnings": []
+  "warnings": [
+    {
+      "source_id": "kinga_intencje",
+      "source_name": "Parafia św. Kingi – Intencje mszalne",
+      "url": "https://kinga.diecezja.krakow.pl/ogloszenia/",
+      "fail_streak": 1,
+      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
+    }
+  ]
 }
