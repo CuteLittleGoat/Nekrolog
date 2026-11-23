@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:07:44.601Z",
+  "generated_at": "2026-11-23T19:08:00.042Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -8,12 +8,6 @@
       "blocked_since": "2026-10-19T22:50:50.823Z",
       "blocked_days": 34,
       "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 34 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
-    },
-    {
-      "source_id": "wola_duchacka_ogloszenia",
-      "source_name": "Parafia Zmartwychwstania Pańskiego (Wola Duchacka) – Ogłoszenia",
-      "url": "https://wola1.xcr.pl/ogloszenia.html",
-      "error": "HTTP 500 (prób: 3)"
     },
     {
       "source_id": "zacisze_ogloszenia",

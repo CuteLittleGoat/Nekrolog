@@ -8,6 +8,12 @@
           "time": "13:00",
           "date": "2026-11-27"
         },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam-Szymik-EA58K4L7RCE3": {
+          "place": "Cmentarz Batowice (Kaplica Powstańców)",
+          "address": "Powstańców 48 Kraków",
+          "time": "13:40",
+          "date": "2026-11-26"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tadeusz-Szynal-80TUTHOPUEPU": {
           "place": "Cmentarz Batowice (Kaplica Powstańców)",
           "address": "Powstańców 48 Kraków",
@@ -192,7 +198,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-22T15:10:40.337Z",
+    "fetched_at": "2026-11-23T19:07:34.383Z",
     "result": {
       "rows": [
         {
