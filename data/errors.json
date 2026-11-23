@@ -1,13 +1,19 @@
 {
-  "generated_at": "2026-11-22T15:12:16.108Z",
+  "generated_at": "2026-11-23T00:07:44.601Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 33,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 33 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+      "blocked_days": 34,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 34 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+    },
+    {
+      "source_id": "wola_duchacka_ogloszenia",
+      "source_name": "Parafia Zmartwychwstania Pańskiego (Wola Duchacka) – Ogłoszenia",
+      "url": "https://wola1.xcr.pl/ogloszenia.html",
+      "error": "HTTP 500 (prób: 3)"
     },
     {
       "source_id": "zacisze_ogloszenia",
@@ -16,25 +22,11 @@
       "error": "HTTP 404 (prób: 1)"
     },
     {
-      "source_id": "plaszow_intencje",
-      "source_name": "Parafia NSPJ (Płaszów) – Intencje mszalne",
-      "url": "https://www.krakow.sercanie.pl/parafia/intencje-mszy-sw",
-      "error": "HTTP 403 (prób: 1)"
-    },
-    {
       "source_id": "borek_ewidencja_grobow",
       "source_name": "Cmentarz Borek Fałęcki – Ewidencja grobów",
       "url": "https://zwycieska.eparafia.pl/znajdz-grob",
       "error": "HTTP 404 (prób: 1)"
     }
   ],
-  "warnings": [
-    {
-      "source_id": "kinga_intencje",
-      "source_name": "Parafia św. Kingi – Intencje mszalne",
-      "url": "https://kinga.diecezja.krakow.pl/ogloszenia/",
-      "fail_streak": 1,
-      "error": "fetch: The operation was aborted. (prób: 3) — przejściowe niepowodzenie odczytu (1 z 2 przed eskalacją do błędu)"
-    }
-  ]
+  "warnings": []
 }
