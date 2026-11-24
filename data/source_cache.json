@@ -8,6 +8,18 @@
           "time": "13:00",
           "date": "2026-11-27"
         },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jan-Cwiek-38RZZZO93VG2": {
+          "place": "MSZA ŚW. ŻAŁOBNA odprawiona zostanie w piątek 27 listopada 2026 r. o godz. 13:00 w Kaplicy na Cmentarzu w Borku Fałęckim przy ul. Zawiłej. Po czym nastąpi odprowadzenie Zmarłego na miejsce spoczynku, o czym zawiadamia pogrążona w smutku RODZINA",
+          "address": "Zawiła Kraków",
+          "time": "13:00",
+          "date": "2026-11-27"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Kopacz-JGZMS4SYHOM2": {
+          "place": "Cmentarz Batowice(Kaplica Reduta)",
+          "address": "Reduta Kraków",
+          "time": "09:40",
+          "date": "2026-11-27"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Adam-Szymik-EA58K4L7RCE3": {
           "place": "Cmentarz Batowice (Kaplica Powstańców)",
           "address": "Powstańców 48 Kraków",
@@ -187,18 +199,12 @@
           "address": "Wapienna 13 Kraków",
           "time": "12:00",
           "date": "2026-10-28"
-        },
-        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Janina-Adryan-E98IXCICK5WL": {
-          "place": "Kurhan w Karniowicach",
-          "address": "ul. Spacerowa 26 31-545 Karniowice",
-          "time": "14:00",
-          "date": "2026-10-27"
         }
       }
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-23T19:07:34.383Z",
+    "fetched_at": "2026-11-24T18:46:07.793Z",
     "result": {
       "rows": [
         {
@@ -312,6 +318,9 @@
   "borek_intencje_pogrzebowe": {
     "state": {
       "first_seen": {
+        "jozef sliwa": "2026-11-24",
+        "danuta kozuch mika": "2026-11-24",
+        "urszula kantyka": "2026-11-24",
         "agnieszka kapusta": "2026-11-14",
         "zbigniew kuc": "2026-11-14",
         "stanis aw borzecki": "2026-10-31",
