@@ -2,6 +2,18 @@
   "puk_pozegnalismy": {
     "state": {
       "details": {
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Jadwiga-Wieczorek-1JY3U0ZSWNHY": {
+          "place": "Cmentarz Rakowicki",
+          "address": "Rakowicka 26 Kraków",
+          "time": "11:40",
+          "date": "2026-12-02"
+        },
+        "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Tomasz-Glab-J8V1XXQEVREP": {
+          "place": "MSZA ŚW. ŻAŁOBNA odprawiona zostanie w poniedziałek 30 listopada 2026 r. o godz. 11:30 w Kaplicy na Cmentarzu w Podgórkach Tynieckich przy ul. Wielogórskiej 16. Po czym nastąpi odprowadzenie Zmarłego na miejsce spoczynku, o czym zawiadamia pogrążona w smutku RODZINA",
+          "address": "Wielogórska 16 Kraków",
+          "time": "11:30",
+          "date": "2026-11-30"
+        },
         "https://nekrolog.eklepsydra.pl/powiadomienie/PUK-Krakow/Michalina-Polechonska-HO1GS23MRKYA": {
           "place": "Cmentarz Rakowicki",
           "address": "Rakowicka 26 Kraków",
@@ -192,7 +204,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-25T17:53:56.367Z",
+    "fetched_at": "2026-11-26T17:38:50.654Z",
     "result": {
       "rows": [
         {
