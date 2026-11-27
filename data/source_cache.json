@@ -174,7 +174,7 @@
     }
   },
   "zck_lokalizator": {
-    "fetched_at": "2026-11-26T17:38:50.654Z",
+    "fetched_at": "2026-11-27T17:21:30.334Z",
     "result": {
       "rows": [
         {
@@ -288,6 +288,7 @@
   "borek_intencje_pogrzebowe": {
     "state": {
       "first_seen": {
+        "stanis aw kuc": "2026-11-27",
         "jozef sliwa": "2026-11-24",
         "danuta kozuch mika": "2026-11-24",
         "urszula kantyka": "2026-11-24",
