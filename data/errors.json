@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T01:50:19.830Z",
+  "generated_at": "2026-11-28T16:04:30.296Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
@@ -13,7 +13,7 @@
       "source_id": "zacisze_ogloszenia",
       "source_name": "Parafia św. Rafała Kalinowskiego (Kliny Zacisze) – Ogłoszenia",
       "url": "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/",
-      "error": "Brak rekordów w 25 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
+      "error": "Brak rekordów w 26 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
     },
     {
       "source_id": "borek_ewidencja_grobow",
