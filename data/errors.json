@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-27T17:21:55.142Z",
+  "generated_at": "2026-11-28T01:50:19.830Z",
   "errors": [
     {
       "source_id": "salwator_grobonet",
       "source_name": "Kraków Salwator – Groby (Grobonet)",
       "url": "https://krakowsalwator.grobonet.com/grobonet/start.php",
       "blocked_since": "2026-10-19T22:50:50.823Z",
-      "blocked_days": 38,
-      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 38 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
+      "blocked_days": 39,
+      "error": "HTTP 403 (prób: 1) — blokada anty-botowa źródła, trwa 39 dni; przekroczono próg 14 dni — źródło wymaga decyzji (przywrócenie dostępu albo enabled: false)"
     },
     {
       "source_id": "zacisze_ogloszenia",
       "source_name": "Parafia św. Rafała Kalinowskiego (Kliny Zacisze) – Ogłoszenia",
       "url": "https://www.kalinowski.malopolska.pl/2026/03/ogloszenia-parafialne/",
-      "error": "HTTP 404 (prób: 1)"
+      "error": "Brak rekordów w 25 kolejnych przebiegach — prawdopodobna zmiana struktury strony"
     },
     {
       "source_id": "borek_ewidencja_grobow",
